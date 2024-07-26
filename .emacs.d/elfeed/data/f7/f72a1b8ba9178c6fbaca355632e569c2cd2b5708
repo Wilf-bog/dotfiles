@@ -1,0 +1,241 @@
+<p>Update on what happened across the GNOME project in the week from November 17 to November 24.</p>
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@tbernard:gnome.org">Tobias Bernard</a> says</p>
+<blockquote>
+<p>As part of our infrastructure <a href="https://foundation.gnome.org/2023/11/09/gnome-recognized-as-public-interest-infrastructure/">initiative funded by the Sovereign Tech Fund</a>, a number of community members have been hard at work for the past weeks. Starting now we will send a weekly update of our progress on thisweek.gnome.org.</p>
+<p>Some highlights of our progress so far:</p>
+
+
+<h3 id="home-encryption">
+<a class="heading-anchor" href="#home-encryption" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Home Encryption
+</h3><p>Adrian Vovk added support for systemd homed in AccountService. This is the first step towards safer encryption and a nicer user experience.</p>
+<p>Sam Hewitt is working with Adrian on the designs and task definitions for home encryption.</p>
+
+
+<h3 id="xdg-desktop-portal">
+<a class="heading-anchor" href="#xdg-desktop-portal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>XDG Desktop Portal
+</h3><p>Georges Stavracas and Hubert Figuière are improving existing portals, doing various maintenance tasks on the project, and introducing some exciting new portal APIs, such as the USB portal. Things that have already landed include:</p>
+<ul>
+<li>Drag and drop of folders will now work with sandboxed applications (Drop a folder from Nautilus onto Amberol)</li>
+<li>Some bug fixes in the document portal, notably the one preventing ejection of USB flash drives (thanks Alex) and the one preventing using sqlite3 databases</li>
+<li>Expanded <a href="https://flatpak.github.io/xdg-desktop-portal/">website</a> and <a href="https://flatpak.github.io/xdg-desktop-portal/docs/">developer documentation</a></li>
+</ul>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/11/twig-123/portal.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/11/twig-123/portal.webm">download it</a> and watch it with your favorite video player!</span>
+</video>
+<p>The new USB portal is already capable of the following:</p>
+<ul>
+<li>Creating and monitoring apps using USB devices through the portal</li>
+<li>It has a permission to control which apps are allowed to use the portal</li>
+</ul>
+<p>In the works is accessing USB devices with per-device, per-app permissions.</p>
+
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib
+</h3><p>Philip Withnall is doing lots of maintenance tasks on GLib, including <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3724">porting documentation to gi-docgen</a>.</p>
+
+
+<h3 id="secret-management">
+<a class="heading-anchor" href="#secret-management" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Secret Management
+</h3><p>Dhanuka Warusadura ported the PAM module <a href="https://gitlab.gnome.org/GNOME/libsecret/-/merge_requests/128">from gnome-keyring to libsecret</a>.</p>
+<p>This is the first step towards replacing gnome-keyring with <a href="https://github.com/bilelmoussaoui/oo7">oo7</a>.</p>
+
+
+<h3 id="css-variables-in-gtk">
+<a class="heading-anchor" href="#css-variables-in-gtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>CSS Variables in GTK
+</h3><p>Alice is <a href="https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/6540">adding CSS variables (aka custom properties) support to GTK</a>.</p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-123/css.png" alt="" />
+</p>
+
+
+<h3 id="shell-and-compositor-performance">
+<a class="heading-anchor" href="#shell-and-compositor-performance" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Shell and Compositor Performance
+</h3><p>Ivan Molodetskikh is improving the GNOME Shell/Mutter profiling instrumentation and <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3391">adding integration for the Tracy profiler</a>. As part of this, he had already discovered several actionable performance bugs. Thanks to Mutter maintainers, <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3001">some</a> of <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3004">those</a> have <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3389">fixes</a> pending or <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3406">merged</a>.</p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-123/tracy.png" alt="" />
+</p>
+
+
+<h3 id="notifications">
+<a class="heading-anchor" href="#notifications" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Notifications
+</h3><p>Julian Sparber and Jonas Dreßler are working on improving notifications, both in terms of platform APIs and user interface. As part of this Julian is implementing grouping notifications by app in GNOME Shell.</p>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/11/twig-123/shell.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/11/twig-123/shell.webm">download it</a> and watch it with your favorite video player!</span>
+</video>
+
+
+<h3 id="gnome-online-accounts">
+<a class="heading-anchor" href="#gnome-online-accounts" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Online Accounts
+</h3><p>Andy Holmes is improving GNOME Online Accounts, including <a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/issues/1">CalDAV/CardDAV support</a>, <a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/142">port to GTK4</a>, and <a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/139">replacing the embedded web view</a> in favor of using the preferred browser for OAuth2. We&rsquo;re also discussing more general improvements to the GOA architecture.</p>
+
+
+<h3 id="accessibility">
+<a class="heading-anchor" href="#accessibility" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Accessibility
+</h3><p>Sam Hewitt has fixed some accessibility issues in the GNOME Shell stylesheet. Joanie Diggs is reducing technical debt in the Orca screen reader, improving documenation, and rewriting table and table cell support.</p>
+
+
+<h3 id="hardware-support">
+<a class="heading-anchor" href="#hardware-support" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Hardware Support
+</h3><p>Jonas Dreßler is working on hardware-accelerated screencasts and improvements to the Linux Bluetooth stack.</p>
+<p>Emmanuel Gil Peyrot (Link Mauve) is adding support for GL_KHR_robustness in Mutter. It allows the session to recover from a GPU driver crash. This is a requirement to unlock newer graphical features that aren&rsquo;t well tested yet with GPU drivers.</p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="maps">
+<a class="heading-anchor" href="#maps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Maps <a href="https://wiki.gnome.org/Apps/Maps"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Maps gives you quick access to maps all across the world.</p>
+<p><a href="https://matrix.to/#/@mlundblad:matrix.org">mlundblad</a> reports</p>
+<blockquote>
+<p>Maps is now showing the &ldquo;mode of transportation&rdquo; icon instead of the generic filled circle start icon in the turn instruction list for turn-by-turn navigation as an extra detail and to act as a reminder as to what kind of routing it is showing
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-123/tLPkvxvucDnuhUpSMFxhQbUC.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-123/apRKejyuvEpbprnnCPtjYeVt.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-123/CcZpBdrTpNQRNGvhCQoQNNZi.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> reports</p>
+<blockquote>
+<p>Alexander Slobodeniuk has added a <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3710">new <code>g_log_writer_default_set_debug_domains()</code> function</a> in GLib which allows enabled debug logging domains to be changed at runtime without modifying <code>G_MESSAGES_DEBUG</code> in the environment (which can never be threadsafe)</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@bragefuglseth:gnome.org">Brage Fuglseth</a> announces</p>
+<blockquote>
+<p>This week <a href="https://apps.gnome.org/Converter">Switcheroo</a> was accepted into GNOME Circle. Switcheroo lets you convert images to different file types and resize them. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-123/d988285077cd1891db0b23aabdd85b2c2c7bd34e1728153399062429696.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@bragefuglseth:gnome.org">Brage Fuglseth</a> says</p>
+<blockquote>
+<p>The second app to enter Circle this week is <a href="https://apps.gnome.org/Decibels/">Decibels</a>. Decibels lets you play audio files in a beautiful, convenient, and intuitive way. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-123/5ac66004c1e9b31cadf0a4d1b6ba1620d2aab7321728154266184450048.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="solanum">
+<a class="heading-anchor" href="#solanum" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Solanum <a href="https://gitlab.gnome.org/World/Solanum"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Balance working time and break time.</p>
+<p><a href="https://matrix.to/#/@brainblasted:gnome.org">Chris 🌱️</a> reports</p>
+<blockquote>
+<p>Solanum 5.0.0 has been released and is available on <a href="https://flathub.org/apps/org.gnome.Solanum">Flathub</a>.</p>
+<p>This release brings a minor visual refresh and few other changes:</p>
+<ul>
+<li>Added the ability to view the release notes for the latest version</li>
+<li>Swapped to a new audio player</li>
+<li>Fixed the notification buttons</li>
+<li>Miscellaneous translation updates</li>
+</ul>
+</blockquote>
+
+
+<h3 id="dialect">
+<a class="heading-anchor" href="#dialect" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Dialect <a href="https://github.com/dialect-app/dialect/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Translate between languages.</p>
+<p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> reports</p>
+<blockquote>
+<p>Dialect 2.2.0 has been released and is available on <a href="https://flathub.org/apps/app.drey.Dialect">Flathub</a>.</p>
+<p>This release contains various improvements and bug fixes, these are the most destacable:</p>
+<p>Now you can use Lingva Translate text-to-speech in addition to Google&rsquo;s. There are also new translation providers for Bing and Yandex.</p>
+<p>The preferences window has been redesigned to make it easier to change the settings for each provider.
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-123/ajDuQxJnqRySkbQqqyHVjOPn.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@akshaywarrier:matrix.org">Akshay Warrier</a> says</p>
+<blockquote>
+<p>Biblioteca 1.2 is now available on <a href="https://flathub.org/apps/app.drey.Biblioteca">Flathub</a>!</p>
+<p>Biblioteca now supports tabs! Middle-clicking on the sidebar or documentation links now opens them in new tabs. It also received some other improvements and bug fixes such as</p>
+<ul>
+<li>Fixed an issue where shortcuts window prevents app from closing</li>
+<li>Fixed an issue where main window CSS leaks into other windows</li>
+<li>Shows a status page in sidebar when no results found</li>
+<li>Fixed layout with &ldquo;Large Text&rdquo; accessibility option
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-123/xXVLoQsLvPsyauaKYPyzlxeh.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="girens-for-plex">
+<a class="heading-anchor" href="#girens-for-plex" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Girens for Plex <a href="https://flathub.org/apps/details/nl.g4d.Girens"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Girens is a Plex Gtk client for playing movies, TV shows and music from your Plex library.</p>
+<p><a href="https://matrix.to/#/@tijder:matrix.org">tijder</a> says</p>
+<blockquote>
+<p>This week Girens version 2.0.3 is released. This is a small update. In this version the old sidebar is replaced for an overlay sidebar. This will make the appearance of the application more inline with other Gnome applications.
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-123/rgzoEUtLFEqwTQVCiDLeAyRR.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="fractal">
+<a class="heading-anchor" href="#fractal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fractal <a href="https://gitlab.gnome.org/GNOME/fractal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Matrix messaging app for GNOME written in Rust.</p>
+<p><a href="https://matrix.to/#/@zecakeh:tedomum.net">Kévin Commaille</a> announces</p>
+<blockquote>
+<p>We just released Fractal 5! It is a full rewrite compared to Fractal 4, that now leverages GTK 4, libadwaita, and the Matrix Rust SDK. The two-and-a-half-year effort brings a new interface that fits all screens, big 🖥️ or small 📱, but should still look familiar to users of earlier versions.</p>
+<p>It still offers the same old features you know and love, with a few additions. Highlights (<em>italics</em> is new✨ in 5):</p>
+<ul>
+<li>Find rooms to discuss your favorite topics, or talk privately to people, securely thanks to <em>end-to-end encryption</em></li>
+<li>Send rich formatted messages, files, or <em>your current location</em></li>
+<li><em>Reply</em> to specific messages, <em>react</em> with emoji, <em>edit</em> or remove messages</li>
+<li>View images, and play audio and video directly in the conversation</li>
+<li>See <em>who has read messages</em>, and who is typing</li>
+<li>Log into <em>multiple accounts</em> at once (with <em>Single-Sign On</em> support)</li>
+</ul>
+<p>It will be available in a few hours on <a href="https://flathub.org/apps/org.gnome.Fractal">Flathub</a>.</p>
+<p>For our next version, we intend to add missing key features, like notification settings, room settings and moderation… We also plan on improving the accessibility and polish the rough edges. <a href="https://gitlab.gnome.org/GNOME/fractal/-/issues/?label_name%5B%5D=4.%20Newcomers">Any help</a> is greatly appreciated!
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-123/4361d4deff3cfaf68067789b6c190a88fdd22cf01728117788301590528.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="extension-manager">
+<a class="heading-anchor" href="#extension-manager" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Extension Manager <a href="https://github.com/mjakeman/extension-manager"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Browse and install GNOME Shell extensions.</p>
+<p><a href="https://matrix.to/#/@firox263:matrix.org">firox263</a> says</p>
+<blockquote>
+<p>Extension Manager 0.4.3 has been released and is now available on <a href="https://flathub.org/apps/com.mattjakeman.ExtensionManager">Flathub</a>.</p>
+<p>This release contains numerous fixes to sorting and search:</p>
+<ul>
+<li>Updated search to be fully compatible with the latest version of extensions.gnome.org</li>
+<li>Fixed a long running issue where correct search results were overwritten by a previous query</li>
+<li>Fixed an issue where the global extensions toggle became &lsquo;stuck&rsquo;</li>
+<li>Uses new libadwaita widgets and GNOME 45</li>
+</ul>
+<p>In special news, Extension Manager has reached its one millionth download on Flathub. Thanks to everyone for the support! 🎉</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

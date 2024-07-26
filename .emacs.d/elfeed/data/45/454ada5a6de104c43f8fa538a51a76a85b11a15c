@@ -1,0 +1,157 @@
+<p>Update on what happened across the GNOME project in the week from July 30 to August 06.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="gnome-builder">
+<a class="heading-anchor" href="#gnome-builder" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Builder <a href="https://gitlab.gnome.org/GNOME/gnome-builder"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>IDE for writing GNOME-based software.</p>
+<p><a href="https://matrix.to/#/@flyingpimonster:matrix.org">James Westman</a> says</p>
+<blockquote>
+<p>One of Builder&rsquo;s more obscure features&ndash;building and deploying a flatpak app to another device&ndash;got an upgrade. Once a device is set up, clicking &ldquo;Run&rdquo; now automatically builds, deploys, and runs the app, which is super useful for mobile development. <a href="https://www.jwestman.net/2021/08/06/finishing-gnome-builder-mobile-support.html">This blog post explains in more detail.</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@gwagner:gnome.org">gwagner</a> says</p>
+<blockquote>
+<p>GNOME Builder can now handle <a href="https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/414">flatpak make-args and make-install-args</a>. This makes it possible to develop applications like tuxpaint, which uses a pure Make Buildsystem, in a flatpak environment.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@vanadiae:matrix.org">vanadiae</a> announces</p>
+<blockquote>
+<p>Builder <a href="https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/419">got a rework and redesign of its Replace in Files panel</a>. Now the search can be done too from the panel, search options can be changed again and overall the panel is no longer one-time-use. There&rsquo;s also a persistent project-wide panel that can be quickly accessed using Ctrl+Shift+F. Both should avoid having search panels piling up like they did previously.
+
+<img src="https://thisweek.gnome.org/posts/2021/08/twig-4/cOUslsnPKRkZyjkSIdrsulDW.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@gwagner:gnome.org">gwagner</a> says</p>
+<blockquote>
+<p>GNOME Builder uses <a href="https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/424">now</a> the cmake codemodel to extract targets. This enables Builder to run CMake projects.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ryuukyu:matrix.org">Ryuukyu</a> announces</p>
+<blockquote>
+<p>Builder has received a new renderer for markdown documentation, which greatly improves readability in many cases.</p>
+<p><a href="https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/416">Merge Request</a>
+
+<img src="https://thisweek.gnome.org/posts/2021/08/twig-4/JVhyKPtjNAnkoxrpEagNaukb.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@nahuelwexd:matrix.org">Nahuel Gomez</a> reports</p>
+<blockquote>
+<p>Libadwaita now introduces a new base class for Adwaita apps: <a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/177">AdwApplication</a>. It saves repetitive code when loading your custom styles, while handling library initialization.</p>
+</blockquote>
+
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> says</p>
+<blockquote>
+<p>The work-in-progress <a href="https://imolodetskikh.wordpress.com/2021/06/29/gsoc-2021-gnome-shell-screenshot-ui/">new GNOME Shell screenshot UI</a> can now optionally capture the mouse pointer. You can toggle the mouse pointer on and off in the UI after capturing the screenshot. Read more about it in <a href="https://imolodetskikh.wordpress.com/2021/08/06/gsoc-2021-screenshots-with-pointer/">my GSoC update blog post</a>!
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/08/twig-4/acea4b6a0cf9aae435eaa00a5b3168949503b88d.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/08/twig-4/acea4b6a0cf9aae435eaa00a5b3168949503b88d.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@aday:gnome.org">Allan Day</a> announces</p>
+<blockquote>
+<p>Florian Müllner added the new power modes to GNOME Shell&rsquo;s system menu - <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1907">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1907</a></p>
+</blockquote>
+
+
+<h3 id="gjs">
+<a class="heading-anchor" href="#gjs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GJS <a href="https://gitlab.gnome.org/GNOME/gjs"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Use the GNOME platform libraries in your JavaScript programs. GJS powers GNOME Shell, Polari, GNOME Documents, and many other apps.</p>
+<p><a href="https://matrix.to/#/@ptomato:gnome.org">ptomato</a> announces</p>
+<blockquote>
+<p>In GJS, Marco Trevisan reduced the memory usage of GObjects by 40 bytes per object. Evan Welsh fixed two crashes. I wrote some updated documentation for new contributors.</p>
+</blockquote>
+
+
+<h3 id="web">
+<a class="heading-anchor" href="#web" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Web <a href="https://gitlab.gnome.org/GNOME/epiphany"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Web browser for the GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@pnormand:igalia.com">philnOoO</a> reports</p>
+<blockquote>
+<p>The GNOME Flatpak nightly repo now hosts a Canary flavor of GNOME Web. This new flatpak includes developer snapshots of WebKitGTK and the developer version of GNOME Web. This flavor can be used to test WebKitGTK unstable features in GNOME Web. More details: <a href="https://base-art.net/Articles/introducing-the-gnome-web-canary-flavor/">https://base-art.net/Articles/introducing-the-gnome-web-canary-flavor/</a>  <a href="https://gitlab.gnome.org/GNOME/epiphany/-/merge_requests/989/">https://gitlab.gnome.org/GNOME/epiphany/-/merge_requests/989/</a></p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="kooha">
+<a class="heading-anchor" href="#kooha" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Kooha <a href="https://github.com/SeaDve/Kooha"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple screen recorder with a minimal interface. You can simply click the record button without having to configure a bunch of settings.</p>
+<p><a href="https://matrix.to/#/@sedve:matrix.org">SeaDve</a> says</p>
+<blockquote>
+<p><a href="https://github.com/SeaDve/Kooha">Kooha</a> can now handle multiple sources, such as recording multiple monitors or windows at once. There is also an opt-in hardware accelerated encoding for more efficient recording through VAAPI.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1>
+
+<h3 id="fractal">
+<a class="heading-anchor" href="#fractal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fractal <a href="https://gitlab.gnome.org/GNOME/fractal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Matrix messaging app for GNOME written in Rust.</p>
+<p><a href="https://matrix.to/#/@afranke:matrix.org">Alexandre Franke</a> announces</p>
+<blockquote>
+<p>The Fractal interns kept busy, with Alejandro landing work on display names and avatars (<a href="https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/801">!801</a> and <a href="https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/802">!802</a>), and Kai working on room sorting in the sidebar.</p>
+<p>New contributor 🎉 enterprisey <a href="https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/804">brought back unlocking of the secret service collection</a> and <a href="https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/807">fixed the use of RUST_BACKTRACE in our manifest</a>.</p>
+</blockquote>
+
+
+<h3 id="highscore">
+<a class="heading-anchor" href="#highscore" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Highscore <a href="https://gitlab.gnome.org/World/highscore/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Retro gaming application for GNOME.</p>
+<p><a href="https://matrix.to/#/@adrien.plazas:gnome.org">Adrien Plazas</a> announces</p>
+<blockquote>
+<p>In Highscore, I added a high-definition rendering option, currently supported by Dreamcast, GameCube, Nintendo 3DS and Nintendo 64 games. <a href="https://gitlab.gnome.org/World/highscore/-/merge_requests/12">https://gitlab.gnome.org/World/highscore/-/merge_requests/12</a>
+
+<img src="https://thisweek.gnome.org/posts/2021/08/twig-4/8f4fd37caf9228d69609a891ac56bff008f5275a.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2021/08/twig-4/fadfa6df03477bedf36c2059e7a3fbf3334cacd5.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="portfolio">
+<a class="heading-anchor" href="#portfolio" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Portfolio <a href="https://github.com/tchx84/Portfolio"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A minimalist file manager for those who want to use Linux mobile devices.</p>
+<p><a href="https://matrix.to/#/@tchx84:matrix.org">Martín Abente Lahaye</a> reports</p>
+<blockquote>
+<p>Portfolio 0.9.11 released! New icon, trash folder, speedups and <a href="https://blogs.gnome.org/tchx84/2021/07/31/portfolio-0-9-11/">more</a>.
+
+<img src="https://thisweek.gnome.org/posts/2021/08/twig-4/jsiLPnOhszqkgxExPXceRTsE.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@aday:gnome.org">Allan Day</a> reports</p>
+<blockquote>
+<p>in Patterns, the new GNOME platform demo app, Alexander Mikhaylenko added demos for windows and utility panes, improved search, and added a welcome page. He also worked on scaffolding by adding CI, metadata, and an about dialog.
+
+<img src="https://thisweek.gnome.org/posts/2021/08/twig-4/f07e8dd905e1f161f13c4b3322770270dac6cd9b.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie Herold</a> reports</p>
+<blockquote>
+<p>I published a first preview for an <a href="https://sophie-h.pages.gitlab.gnome.org/malamute/">“Apps for GNOME” website.</a> I hope that the new app pages can get more users engaged with an app&rsquo;s community and the development process! The website should also help in promoting the best apps in the GNOME ecosystem. I&rsquo;m also trying to provide all of this with as much localization as possible.</p>
+<p>You can read more about the “Apps for GNOME” project in <a href="https://blogs.gnome.org/sophieh/2021/08/05/apps-for-gnome/">my latest blog post.</a>
+
+<img src="https://thisweek.gnome.org/posts/2021/08/twig-4/c7b04374b23d987b6a00d23837cbf374108f61ea.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

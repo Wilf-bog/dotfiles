@@ -1,0 +1,87 @@
+<p>Update on what happened across the GNOME project in the week from June 24 to July 01.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="web">
+<a class="heading-anchor" href="#web" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Web <a href="https://gitlab.gnome.org/GNOME/epiphany"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Web browser for the GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@pgriffis:igalia.com">patrick</a> reports</p>
+<blockquote>
+<p>Epiphany has received <a href="https://blog.tingping.se/2022/06/29/WebExtensions-Epiphany.html">numerous improvements to WebExtension support</a>.
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-50/xntzaUQiquSWztbutIKLjDrT.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> announces</p>
+<blockquote>
+<p>Libadwaita now has <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.MessageDialog.html"><code>AdwMessageDialog</code></a> as an adaptive replacement for <code>GtkMessageDialog</code>.
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-50/c639ec4df7493c3cbe33e7f0b80a45ad2f4dbb51.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-50/3347c6332d237f7fb1fde8e355c16acaae6bfd27.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="software">
+<a class="heading-anchor" href="#software" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Software <a href="https://gitlab.gnome.org/GNOME/gnome-software/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Lets you install and update applications and system extensions.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> says</p>
+<blockquote>
+<p>Milan Crha has <a href="https://gitlab.gnome.org/GNOME/gnome-software/-/merge_requests/1404/diffs#note_1480290">improved support for displaying flatpak permissions in gnome-software</a></p>
+</blockquote>
+
+
+<h3 id="settings">
+<a class="heading-anchor" href="#settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Settings <a href="https://gitlab.gnome.org/GNOME/gnome-control-center"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Configure various aspects of your GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> reports</p>
+<blockquote>
+<p>Thanks to the fantastic work of Kate Hsuan and Richard Hughes, device security information is now available in Settings. The security information is provided by the Fwupd project.
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-50/fd55c09ac7b0eb10b7c3d3cceeb0ccfaf03e6ef0.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-50/0274135a300d62af5d19b23864394d8dd8ae89cd.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-50/06aa1b4e7c093f9ebef39a17f7b4c79109766e9a.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> announces</p>
+<blockquote>
+<p>GLib 2.74 will require an additional part of the C99 specification: variadic arguments in macros using <code>__VA_ARGS__</code>. All supported toolchains (GCC, Clang, MSVC) already comply to the standard, so if you use a different compiler make sure it supports C99: <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/2791">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/2791</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> says</p>
+<blockquote>
+<p>Two new macros to define enumeration and flags types directly in your C code without using glib-mkenums are going to be available in the next stable release of GLib: <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/2788">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/2788</a></p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@brainblasted:gnome.org">Chris 🌱️</a> reports</p>
+<blockquote>
+<p>Loupe has gained a brand new gallery view, with smooth image loading, swipe navigation support, and more.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/07/twig-50/4e74b0ea517e3762002557460ce8e03a859ac323.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/07/twig-50/4e74b0ea517e3762002557460ce8e03a859ac323.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

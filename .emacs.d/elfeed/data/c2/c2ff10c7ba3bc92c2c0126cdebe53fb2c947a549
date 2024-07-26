@@ -1,0 +1,253 @@
+<p><em>Today, we’re happy to introduce you to Scott P. Scheper via this introduction to his fully, 100% analog and paper-based approach to Zettelkasten! Make sure to also check out his videos for a live demo at the end. Enjoy!</em></p>
+
+<hr />
+
+<figure class="post-figure "><a href="/posts/introduction-antinet-zettelkasten/picture1.jpg"><img alt="" src="/posts/introduction-antinet-zettelkasten/picture1.jpg" class="post-figure__image" /></a><figcaption class="post-figure__caption"></figcaption></figure>
+
+<p>Before we begin, please note that this piece assumes intermediate familiarity with Zettelkasten and its original creator, the social scientist Niklas Luhmann (1927–1998). It also is more conceptual in nature rather than a practical guide for how to build your own Antinet Zettelkasten.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<p>My goal is twofold: (1) I hope to motivate those who prefer paper-based thinking systems, and (2) I hope to present an alternative perspective for those who use digital Zettelkasten systems. I hope my perspective will add one or two valuable insights you can add to your Zettelkasten workflow (even a digital one).</p>
+
+<p>Let’s get started.</p>
+
+<p>In brief, an Antinet Zettelkasten possesses four principles. These four principles delineate what an Antinet Zettelkasten is and what it is not. Let’s explore these four principles now.</p>
+
+<h2 id="the-four-principles-of-an-antinet-zettelkasten">The Four Principles of an Antinet Zettelkasten</h2>
+<p>The four principles Niklas Luhmann used to build his notebox system are:</p>
+
+<ol>
+  <li>Analog</li>
+  <li>Numeric-alpha</li>
+  <li>Tree</li>
+  <li>Index</li>
+</ol>
+
+<p>The first letters of those four principles (A, N, T, I) are what comprise an <em>Antinet</em>. An Antinet Zettelkasten is a network of these four principles.</p>
+
+<p>Let’s dive into each of these four principles now.</p>
+
+<h3 id="principle-1-analog">Principle #1: Analog</h3>
+
+<p>The first principle is what Luhmann calls a <em>technical</em> requirement for a Zettelkasten. He refers to its analog nature as an <em>externality</em>, meaning it’s an indirect benefit to the other core principles of the Zettelkasten: “Wooden boxes, which have drawers that can be pulled open, and pieces of paper.”<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></p>
+
+<p>I hold that physical materials unlock some of the most powerful results that drive one’s experience using a Zettelkasten.</p>
+
+<p>Luhmann did not specify <em>analog</em> as a requirement over <em>digital</em>. The reason why is simple. Digital tools were not an option when he started building his Zettelkasten. I believe that if Niklas Luhmann were alive today, he would continue using physical materials to develop his thinking. In future writings, I will share why Luhmann would continue using an analog Zettelkasten if he were alive today.</p>
+
+<h3 id="principle-2-numeric-alpha">Principle #2: Numeric-alpha</h3>
+
+<p>Perhaps the most crucial principle in the Antinet Zettelkasten is the <em>Numeric-alpha</em> notecard address. What is meant by <em>Numeric-alpha</em> is simply this: addresses which start with a number and are combined with alphabetical characters. For instance, a notecard with an address in the top corner like: <code>3306/27A</code>. This enables what Luhmann phrased as “the possibility of linking.”<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> It’s the very thing that allows the system to become self-referential and a <em>cybernetic</em> network, as Luhmann thought of it.<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> The system is self-referential in that it can refer to its individual parts (each individual thought). One way to think of this is to think about yourself. You are a system. You have distinct pieces of yourself (like your left hand). Your left hand has its own label (i.e., ‘left hand’). This allows one to reference their individual parts. The same becomes true with the Antinet, thanks to Numeric-alpha addresses.</p>
+
+<p>When people first see a notecard address like <code>3306/2A/12</code>, they think of it as a hierarchical system. Yet it’s not. It’s merely the <em>location</em> of where the leaf lives on a branch or stem on your tree of knowledge. Think of it more like a <em>geographic coordinate system</em>, like a latitude and longitude scheme (for instance, <code>-77.0364,38.8951</code>). The slashes do not connote that of a hierarchy; the address ‘3306/2A/12’ could simply be represented as <code>3306.2A.12</code>, and that would be just fine. It’s a matter of personal preference.</p>
+
+<p>The Numeric-alpha address stands as a vital principle in Luhmann’s system. The Numeric-alpha address not only enables linking but also enables the self-referential composition of the Zettelkasten. The Numeric-alpha addresses never change; however, due to the infinite internal branching of the system, its position shifts over time.</p>
+
+<p>The Antinet’s <a href="https://zettelkasten.de/posts/add-identity/">permanent-address</a> scheme, with its shifting nature, gives the system a unique <em>personality</em>. The Antinet’s unique personality stands as one of the most integral aspects of the system.</p>
+
+<p>A key component that enables insightful communication with a human being is the human’s <em>personality</em>–the person’s unique way of communicating with you based on their unique perspectives and interpretations. The Numeric-alpha addresses provide the Zettelkasten with a unique personality. Over time, unique structures form due to Numeric-alpha addresses. This is important because it allows one to <em>communicate</em> with the Antinet, transforming it into a communication experience with a <em>second mind</em>, a <em>doppelgänger</em>, or a <em>ghost in a box</em>, as Luhmann called it.<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> This is the entity Luhmann referred to when he titled his paper, <em>Communicating with Noteboxes</em>.</p>
+
+<p>Numeric-alpha addresses make all of this possible.</p>
+
+<h3 id="principle-3-tree">Principle #3: Tree</h3>
+
+<p>The third principle is based on something Luhmann refers to as “the possibility of arbitrary internal branching.”<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup></p>
+
+<p><em>How can one devise a system built on that which best models reality?</em> Reality is chaos, yet it also emerges from ordered and simplistic rules (think the laws of thermodynamics). Reality emerges from simplistic laws (for instance, the atomic theory–that all matter is composed of particles called atoms). Reality is chaos built out of simple laws of order. These simple laws and units of order bind the system together, allowing one to navigate complexity. It was with <em>both</em> chaos and order in mind that Luhmann crafted his notebox system.<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup></p>
+
+<p>Within the current popularity of communities around Personal Knowledge Management (“PKM”), it’s become a popular idea to embrace so-called <em>dynamic</em> systems. Ones that are <em>fluid</em> and are built on things like <em>wikilinks</em> and <em>tags</em>. It’s become popular advice to ditch systems that use folders and directory structures.<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup> This notion, however, is a rather new idea. Luhmann’s Zettelkasten was not <em>dynamic</em>, nor was it <em>fluid</em>. It looks almost as if it’s built entirely of folders (in the digital computer directory sense).</p>
+
+<p>I argue that you should not strive for dynamic, fluid systems–ones that constantly can update themselves with <em>find-and-replace</em> text features. Such a structure would be lacking in rough, unique conventions. It would lack a unique personality or an “alter ego,” which is what Luhmann’s system aimed to create.<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup> One of Luhmann’s goals centered on replacing the need for an “expensive” research assistant.<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup> The way he achieved this was by architecting one with its own unique personality: his Zettelkasten.</p>
+
+<p>Simply stated, Luhmann’s Zettelkasten structure was not <em>dynamic</em> or <em>fluid</em> in nature. Yet, it was not <em>rigid</em>, either. Examples of a <em>rigid</em> structure are classification systems like the Dewey Decimal Classification System or Paul Otlet’s massive notecard world museum known as, <em>The Mundaneum</em>. These types of systems are helpful for <em>interpersonal knowledge systems</em>; however, they’re not illustrative of what Niklas Luhmann’s system was: an <em>intrapersonal communication system</em>. Luhmann’s notebox system was not logically and neatly organized to allow for the convenience of the public to access. Nor was it meant to be. It seemed chaotic to those who perused its contents other than its creator, Niklas Luhmann. One researcher who studied Luhmann’s system in person says, “at first glance, Luhmann’s organization of his collection appears to lack any clear order; it even seems chaotic. However, this was a deliberate choice.”<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup> Luhmann’s Zettelkasten was not a structure that could be characterized as one of <em>order</em>. Indeed, it seems closer to that of <em>chaos</em> than <em>order</em>.</p>
+
+<p>If Luhmann’s notebox system was not <em>dynamic</em> and <em>fluid</em> and not one of pure <em>order</em>, either, how can one think of Luhmann’s notebox system? In my experience using an Antinet Zettelkasten, I find it to be more <em>organic</em> in nature. Like nature, it has simple laws and fundamental rules by which it operates (like the laws of thermodynamics in physics); yet, it’s also subject to arbitrary decisions. We know this because in describing it, Luhmann uses the word <em>arbitrary</em> to describe its <em>arbitrary internal branching</em>. We can infer that <em>arbitrary</em>, means something that was decided by Luhmann outside of some external and strict criteria (i.e., strict schemes like the Dewey Decimal Classification).<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup> This <em>arbitrary</em>, <em>random</em> structure contributes to one of its most distinctive aspects of the system–the aspect of <em>surprises</em>. Because of its unique structure, the Antinet is noted as “a surprise generator,” and a system that develops “a creativity of its own.”<sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">13</a></sup></p>
+
+<p>Let’s jump back to the question: <em>How can one think of Luhmann’s notebox system?</em> It’s quite simple, and I’ll share with you precisely how you should think of the Zettelkasten in just a moment. Until then, it’s essential to close the loop on the characteristic which describes it.</p>
+
+<p>One of the knowledge scientists who studied Luhmann’s Zettelkasten closest is Johannes Schmidt, who works at Bielefeld University in Germany. Schmidt is currently the scientific coordinator of a project to digitize Luhmann’s notebox and publish its contents online for all to explore.<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">14</a></sup></p>
+
+<p>According to Schmidt, Niklas Luhmann’s notebox system is “a <em>rough</em> structure.”<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">15</a></sup> It’s organized “by subject areas, which is reflected in the first number assigned to the card.”<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">16</a></sup> A <em>rough</em> structure comprises both “order and disorder,” as Luhmann put it.<sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote" rel="footnote">17</a></sup></p>
+
+<p>I propose that one ought not to think of the Zettelkasten as a <em>dynamic</em> or <em>fluid</em> structure. Nor should one think of the Zettelkasten as a system of complete <em>order</em>. As Johannes Schmidt observed, I hold that it’s most precise to think of it as a <em>rough</em> structure. Yet, knowing this gets us only so far. Knowing the abstract traits of a system is nice, yes, but not really that useful in practice. For this reason, I’ll share with you what I’ve found to be the best illustration of what type of structure a Zettelkasten is.</p>
+
+<p>Think of a Zettelkasten as a tree. A real tree. What does a real tree contain? It contains a trunk, branches, stems, leaves, and vines (depending on the tree). Think of each individual leaf as a notecard. With a Zettelkasten, you’ll be building a tree of knowledge. One that has different branches, different stems of thought, and even vines that link to other branches. This allows one to explore and swing between branches, stems, and leaves.</p>
+
+<p>The importance of the Zettelkasten’s tree-like structure should not be overlooked. Long-term memory works in a way that closely models tree-like structures.<sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote" rel="footnote">18</a></sup> The same thing goes for the human brain, neurons, and neural networks. Some of the most beautiful tree-like images are the networks of the human brain.<sup id="fnref:19" role="doc-noteref"><a href="#fn:19" class="footnote" rel="footnote">19</a></sup></p>
+
+<p>This helps create a concept I like to call the <em>second mind</em>. The <em>second mind</em> is something different than the PKM term of <em>second brain</em>. The structure of the Zettelkasten is critical because it makes possible the emergence of a <em>second mind</em>. It’s not about storing information and creating bubbles that link concepts together; instead, it’s about <em>exploration</em>, as one knowledge scientist put it.<sup id="fnref:20" role="doc-noteref"><a href="#fn:20" class="footnote" rel="footnote">20</a></sup> It’s about exploration from one card to the next, and jumping to cards linked to remote branches. The tree structure of the Zettelkasten enables meaningful <em>exploration</em>. One knowledge scientist goes on to say, “secondary memories themselves have an inner order that allows for exploration.”<sup id="fnref:21" role="doc-noteref"><a href="#fn:21" class="footnote" rel="footnote">21</a></sup> Such things are enhanced by the tree structure of the Zettelkasten.</p>
+
+<h3 id="principle-4-index">Principle #4: Index</h3>
+
+<p>The last principle in Luhmann’s notebox system is the <em>index</em>. Luhmann calls this concept a “Register.”<sup id="fnref:22" role="doc-noteref"><a href="#fn:22" class="footnote" rel="footnote">22</a></sup> I prefer <em>index</em>, but you’re welcome to use whatever terminology you like best. You can think of the index as a <em>map</em> for exploring your own <em>tree of knowledge</em>.</p>
+
+<p>Say you’re traveling, staying in a new location, and suddenly you realize you haven’t eaten all day. You’re starving. You think to yourself, <em>I’m really craving In-N-Out Burger right now</em>. You recall seeing an In-N-Out Burger the previous day, but since you’re traveling, you’re not sure how to get there. You then pull out your phone and open up the maps app. What do you do next? Do you type in ‘32.7794303,-117.242262’? Or do you type in the human-memorable name ‘In-N-Out Burger’? Chances are you opt for the human-memorable name. This is precisely how to think of the index for you Zettelkasten. The index is a key-value associative array. The keyterm is the human-readable name, and the value is the location of the leaf on a tree in your Zettelkasten. For instance, here’s an example taken directly from my own Zettelkasten: <em>‘Truth’: ‘5455/1’</em>. This should look familiar if you’re familiar with data structures like JSON, Python dictionaries, or YAML arrays. You can get pretty advanced with your index and create nested items. However, I won’t cover such now.</p>
+
+<p>The bottom line is this: think of the index as your own map that enables you to swing onto a specific leaf, on a certain branch of a particular tree. From there, you can then continue exploring by reviewing the nearby stems of thoughts and the individual cards, which, themselves, contain remote links. These remote links enable you to swing around to other leaves on other branches of your tree of knowledge.</p>
+
+<figure class="post-figure "><a href="/posts/introduction-antinet-zettelkasten/picture2.jpg"><img alt="" src="/posts/introduction-antinet-zettelkasten/picture2.jpg" class="post-figure__image" /></a><figcaption class="post-figure__caption">Photo of Scott’s own 18 Antinet drawers as of February 2022, bound to expand further!</figcaption></figure>
+
+<h2 id="introducing-the-antinet">Introducing: “The Antinet”</h2>
+
+<p>Now that you know what the four principles are that Luhmann used to build his Zettelkasten, let’s summarize them briefly here.</p>
+
+<p>The four principles Luhmann used to build his notebox system are:</p>
+
+<ol>
+  <li><strong>A</strong>nalog</li>
+  <li><strong>N</strong>umeric-alpha</li>
+  <li><strong>T</strong>ree</li>
+  <li><strong>I</strong>ndex</li>
+</ol>
+
+<p>The first letters of those four principles (A, N, T, I) are what comprise <em>Antinet</em>. It’s also the four specific principles comprising a Luhmannian Zettelkasten.</p>
+
+<p>When first coming across the term <em>Antinet</em>, many people may mistake it for being <em>anti-digital</em>, or <em>anti-technology</em>. However, if you spend some time reading or watching what I actually say, I’m actually not as anti-digital as one would think. If one elects to stick with digital as their medium of choice for an <em>Antinet</em>, just drop the <em>analog</em> principle and stick with the rest (<em>Nitnet</em>). There are good reasons why you’d want to still ascribe to the other principles. One reason centers around stamping <em>cues</em> onto your mind (by way of using a manual index). This helps you retrieve thoughts instantly. It exercises your brain’s <em>neuro-associative recall</em> muscle. This happens by way of using the index (but also the Analog component helps significantly via neuro-imprinting).</p>
+
+<p>To be clear, I am anti-digital when it comes to a thinking development system such as the Antinet; but within reason. I understand that some people may operate and think better with digital tools. That’s fine. I believe a digital Zettelkasten is a compromised version; yet it seems to be a useful tool for others. However, after you read the research backing an <em>analog</em> thinking development system, I hope you’ll at least give it your best shot before reverting to the digital version.</p>
+
+<p>Before we move on, there’s one last thing you should know. It pertains to the <em>net</em> in <em>Antinet</em>.</p>
+
+<h3 id="the-net-in-antinet">The Net in Antinet</h3>
+
+<p>The <em>net</em> in <em>Antinet</em> refers to <em>network</em>. To Luhmann, the system he built was a network, a <em>cybernetic network</em>.<sup id="fnref:23" role="doc-noteref"><a href="#fn:23" class="footnote" rel="footnote">23</a></sup> The Antinet, according to Luhmann, was <em>self-referential</em> in nature. It was self-referential because of its ability to reference itself via the <em>numeric-alpha</em> addresses.</p>
+
+<p>This is all I’ll say about the <em>network</em> component of the Antinet for now.</p>
+
+<figure class="post-figure "><a href="/posts/introduction-antinet-zettelkasten/picture3.jpg"><img alt="" src="/posts/introduction-antinet-zettelkasten/picture3.jpg" class="post-figure__image" /></a><figcaption class="post-figure__caption"></figcaption></figure>
+
+<h2 id="what-an-antinet-really-is">What an Antinet <em>Really</em> Is</h2>
+
+<p>Now that you know the four principles of Luhmann’s notebox, you’re closer to understanding it. But there’s only one problem: you now know what an Antinet is comprised of, but you still have no idea what an Antinet <em>really</em> is. The reason why centers around the four principles merely describing the <em>parts</em> of Luhmann’s system. They describe its fundamental raw organs. You can’t understand what a human being is just by learning it’s made up of seventy-eight organs. The individual parts do not represent the <em>whole</em> that it creates. Like a human being, the four parts of an Antinet combine to create a whole more significant than the sum of its parts.</p>
+
+<p>When the four principles are combined into a system, the Antinet becomes a <em>thinking tool</em>, a <em>communication partner</em>, and a <em>second mind</em>. They combine to create many other novel phenomena, such as insightful <em>surprises</em> by way of ordered <em>randomness</em>. The Antinet becomes a system where <em>thought</em> is developed–both in the short-term, by way of thinking on paper with pen; as well as in the long-term, by its branched architecture that stamps things in time that are most useful later on (this includes mistakes in your own thinking that are stamped in time, which prove valuable later on). Also stamped in time is that of your own mind and its own context, with its own links that it thinks of at the time of writing and developing <em>thought</em>. In brief, there’s <em>temporal</em> context that is stamped and installed into your Antinet. This context, and your inner voice, evolve into a <em>second mind</em> enabling you to communicate with your Antinet (and in Luhmann’s phraseology, to ask it questions). It is the combination of all four of its principles that transform the Antinet from a mere notebox into a <em>second mind</em>–a whole greater than the sum of its parts.<sup id="fnref:24" role="doc-noteref"><a href="#fn:24" class="footnote" rel="footnote">24</a></sup></p>
+
+<p>Magic takes place when the four principles interact in the Antinet:</p>
+
+<ol>
+  <li>The <em>neuro-imprinting</em> on the mind via its <em>analog</em> medium of writing by hand.</li>
+  <li>The “(selective) relations” between notes are enabled via the <em>numeric-alpha addresses</em>.<sup id="fnref:25" role="doc-noteref"><a href="#fn:25" class="footnote" rel="footnote">25</a></sup></li>
+  <li>The “special filing technique,” with its <em>infinite internal branching</em> via the <em>tree</em> structure.<sup id="fnref:26" role="doc-noteref"><a href="#fn:26" class="footnote" rel="footnote">26</a></sup></li>
+  <li>The <em>index</em> enables you to neuro-imprint ideas and cues in human-memorable language.</li>
+</ol>
+
+<p>All of these four things interact and create unexpected effects. When you experience new links in the Antinet you unleash a phenomenon in human memory called <em>reverberation</em>. This refers to a “just-experienced association” setting off a ticking clock for a short period of time. Before the clock winds down, the association is easier to recall.<sup id="fnref:27" role="doc-noteref"><a href="#fn:27" class="footnote" rel="footnote">27</a></sup> The Antinet’s structure enables you to retain more knowledge and connections than you ever thought possible. You’ll begin to notice yourself reading differently. Certain keyterms you’ve stamped onto your mind by way of the deliberate act of writing them onto your index will start to arise while reading; all you have to do oftentimes is simply write down the keyterm in the book’s margin. Or, if you do not wish to write in a book’s margins, you can write the keyterm down on a notecard you keep with you while reading, which is what Luhmann did. This notecard acts as a <em>staging area</em> for your thoughts before you transform them into full reflections on individual cards.</p>
+
+<p>As it relates to the four principles, <em>this structure</em>, as Johannes Schmidt observes, <em>demonstrates how quickly</em> the Antinet sets you on a path away from what one would deem <em>ordered</em> (and taxonomically sound).<sup id="fnref:28" role="doc-noteref"><a href="#fn:28" class="footnote" rel="footnote">28</a></sup> Although seemingly nonsensical, to the creator–that is, to you–the Antinet becomes perfectly natural to understand. One is <em>lead away from the original topic and to a variety of other subjects that he or she would not have initially associated with one another</em>.<sup id="fnref:29" role="doc-noteref"><a href="#fn:29" class="footnote" rel="footnote">29</a></sup> All of these incommunicable experiences are formed by the structure of the Antinet’s four principles.</p>
+
+<p>The <em>whole</em> of an Antinet is incommunicable–meaning, you’ll need to understand it yourself by experiencing it yourself.</p>
+
+<h3 id="wrapping-things-up">Wrapping Things Up</h3>
+
+<p>An <em>Antinet</em>, defined, comprises four principles (Analog, Numeric-alpha, Tree, Index) which form a <em>thinking system</em> network. This system, in turn, transforms itself into a <em>second mind</em>.</p>
+
+<p>It may not seem like much from this definition, but there’s a lot to unpack here. I’ve provided you with a brief overview of the four principles of an Antinet. Yet, I’ve not adequately covered the concepts of an Antinet as a <em>thinking system</em>, nor have I covered the <em>second mind</em> in detail.</p>
+
+<p>Such concepts, and others, will be covered in the book I’m working on related to the Antinet. I’ve spent much of the past year researching and writing the book.</p>
+
+<p>If you want to learn more about the Antinet, and if you want a free copy of the book when it’s released, please head over to my website and sign up for my newsletter: <a href="https://scottscheper.com">https://scottscheper.com</a></p>
+
+<p>Warm regards,</p>
+
+<p>Scott P. Scheper</p>
+
+<hr />
+
+<p><strong>Sascha’s Comment:</strong>  When I saw that Scott actually had built a sizable Zettelkasten, I was eager to ask him to present his perspective on the matter on this blog. Though I disagree with him on a number of points, I think his perspective is very valuable for the overall exploration of how to develop a thinking machine.</p>
+
+<p>There is one thing I fully agree with: There is a very beneficial effect of writing in longhand.</p>
+
+<p>I, myself, will definitely check out his book when it is published.</p>
+
+<p><strong>Christian’s Comment:</strong>  I second Sascha’s impressions – there’s so much talk about paper-based note-taking systems, but nobody seems to stick to it long enough to truly write from their heart and experience. <a href="https://www.youtube.com/watch?v=O5kI1l7JXGY">Scott’s personal Antinet looks like</a> a sizable accomplishment on its own! (More videos on <a href="https://www.youtube.com/user/scottscheper/videos">his YouTube channel</a>)</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>For a more practical guide on building your own Antinet, try these two sources: (1) <a href="https://scottscheper.com/letter/1/">https://scottscheper.com/letter/1/</a>, (2)  <a href="https://www.youtube.com/watch?v=kj9zwGex-y0">https://www.youtube.com/watch?v=kj9zwGex-y0</a>. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>“Communicating with Slip Boxes by Niklas Luhmann,” accessed May 4, 2021, <a href="https://luhmann.surge.sh/communicating-with-slip-boxes">https://luhmann.surge.sh/communicating-with-slip-boxes</a>. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>“Communicating with Slip Boxes by Niklas Luhmann,” accessed May 4, 2021, <a href="https://luhmann.surge.sh/communicating-with-slip-boxes">https://luhmann.surge.sh/communicating-with-slip-boxes</a>. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>“ZK II: Note 9/8 - Niklas Luhmann Archive.” Accessed January 10, 2022. <a href="https://niklas-luhmann-archiv.de/bestand/Zettelkasten/zettel/ZK_2_NB_9-8_V">https://niklas-luhmann-archiv.de/bestand/Zettelkasten/zettel/ZK_2_NB_9-8_V</a>. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>“ZK II: Note 9 / 8.3 - Niklas Luhmann Archive,” accessed January 11, 2022, <a href="https://niklas-luhmann-archiv.de/bestand/Zettelkasten/zettel/ZK_2_NB_9-8-3_V">https://niklas-luhmann-archiv.de/bestand/Zettelkasten/zettel/ZK_2_NB_9-8-3_V</a>. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>“Communicating with Slip Boxes by Niklas Luhmann,” accessed May 4, 2021, <a href="https://luhmann.surge.sh/communicating-with-slip-boxes">https://luhmann.surge.sh/communicating-with-slip-boxes</a>. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>“Communicating with Slip Boxes by Niklas Luhmann,” accessed May 4, 2021, <a href="https://luhmann.surge.sh/communicating-with-slip-boxes">https://luhmann.surge.sh/communicating-with-slip-boxes</a>. “This parallel should not be exaggerated; but you will not be mistaken in the assumption that in society and especially in the realm of scientific research order results only from a combination of disorder and order.” <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8" role="doc-endnote">
+      <p>“1c.3 Using Folders - LYT Curriculum / Unit 1 - PKM &amp; Idea Emergence,” Linking Your Thinking, accessed October 25, 2021, <a href="https://forum.linkingyourthinking.com/t/1c-3-using-folders/142/2">https://forum.linkingyourthinking.com/t/1c-3-using-folders/142/2</a>. “Folders are rigid and exclusionary by their nature. Whatever is in a folder lives separated from the main collection. It’s a rigid hierarchy that imposes order.” <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:9" role="doc-endnote">
+      <p>“Communicating with Slip Boxes by Niklas Luhmann,” accessed May 4, 2021, <a href="https://luhmann.surge.sh/communicating-with-slip-boxes">https://luhmann.surge.sh/communicating-with-slip-boxes</a>. We find evidence of Luhmann gearing his Zettelkasten to emerge as a communication partner and develop its own personality from Luhmann stating, “As a result of extensive work with this technique a kind of secondary memory will arise, an alter ego with who we can constantly communicate.” We also see Luhmann emphasizing the idea that the Antinet takes on its own life–its own type of person from Luhmann stating, “it gets its own life, independent of its author.” <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:10" role="doc-endnote">
+      <p>“ZK II: Sheet 9/8.1 - Niklas Luhmann Archive,” accessed February 6, 2022, <a href="https://niklas-luhmann-archiv.de/bestand/zettelkasten/zettel/ZK_2_NB_9-8-1_V">https://niklas-luhmann-archiv.de/bestand/zettelkasten/zettel/ZK_2_NB_9-8-1_V</a>; “ZK II: Zettel 9/8,2 - Niklas Luhmann-Archiv,” accessed February 6, 2022, <a href="https://niklas-luhmann-archiv.de/bestand/zettelkasten/zettel/ZK_2_NB_9-8-2_V">https://niklas-luhmann-archiv.de/bestand/zettelkasten/zettel/ZK_2_NB_9-8-2_V</a>. In these notes Luhmann created in preparation for his paper on communicating with his Zettelkasten, we Luhmann deliberating with himself on how to create a personality–meaning, a true communication partner in the form of a person. The reason Luhmann desired to do this, opposed with hiring a “junior partner,” or research assistant centers on such being too expensive. <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:11" role="doc-endnote">
+      <p>Johannes Schmidt, “Niklas Luhmann’s Card Index: Thinking Tool, Communication Partner, Publication Machine,” Forgetting Machines. Knowledge Management Evolution in Early Modern Europe 53 (2016), https://pub.uni-bielefeld.de/record/2942475, 290. <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:12" role="doc-endnote">
+      <p>Angus Stevenson and Christine A. Lindberg, eds., <em>New Oxford American Dictionary 3rd Edition</em>, 3rd edition (Oxford ; New York: Oxford University Press, 2010). <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:13" role="doc-endnote">
+      <p>Johannes Schmidt, “Niklas Luhmann’s Card Index: Thinking Tool, Communication Partner, Publication Machine,” Forgetting Machines. Knowledge Management Evolution in Early Modern Europe 53 (2016), <a href="https://pub.uni-bielefeld.de/record/2942475">https://pub.uni-bielefeld.de/record/2942475</a>, 290. <a href="#fnref:13" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:14" role="doc-endnote">
+      <p>“PEVZ: Johannes Schmidt - Contact (Bielefeld University),” accessed January 11, 2022, <a href="https://ekvv.uni-bielefeld.de/pers_publ/publ/PersonDetail.jsp?personIde3450">https://ekvv.uni-bielefeld.de/pers_publ/publ/PersonDetail.jsp?personIde3450</a>. <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:15" role="doc-endnote">
+      <p>Johannes Schmidt, “Niklas Luhmann’s Card Index: Thinking Tool, Communication Partner, Publication Machine,” <em>Forgetting Machines. Knowledge Management Evolution in Early Modern Europe</em> 53 (2016), <a href="https://pub.uni-bielefeld.de/record/2942475">https://pub.uni-bielefeld.de/record/2942475</a>, 295. <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:16" role="doc-endnote">
+      <p>Johannes Schmidt, “Niklas Luhmann’s Card Index: Thinking Tool, Communication Partner, Publication Machine,” <em>Forgetting Machines. Knowledge Management Evolution in Early Modern Europe</em> 53 (2016), <a href="https://pub.uni-bielefeld.de/record/2942475">https://pub.uni-bielefeld.de/record/2942475</a>, 295. <a href="#fnref:16" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:17" role="doc-endnote">
+      <p>“Communicating with Slip Boxes by Niklas Luhmann,” accessed May 4, 2021, <a href="https://luhmann.surge.sh/communicating-with-slip-boxes">https://luhmann.surge.sh/communicating-with-slip-boxes</a>. <a href="#fnref:17" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:18" role="doc-endnote">
+      <p>Xiaodan Zhu, Parinaz Sobhani, and Hongyu Guo, “Long Short-Term Memory Over Tree Structures,” ArXiv:1503.04881 [Cs], March 16, 2015, http://arxiv.org/abs/1503.04881. <a href="#fnref:18" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:19" role="doc-endnote">
+      <p>For beautiful images, and exploration on this subject, see: Giorgio A. Ascoli, <em>Trees of the Brain, Roots of the Mind</em> (Cambridge, MA, USA: MIT Press, 2015). “If each nerve cell enlarged a thousandfold looks like a tree, then a small region of the nervous system at the same magnified scale resembles a gigantic, fantastic forest.” <a href="#fnref:19" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:20" role="doc-endnote">
+      <p>Alberto Cevolini, ed., <em>Forgetting Machines: Knowledge Management Evolution in Early Modern Europe</em>, Library of the Written Word, volume 53 (Leiden ; Boston: Brill, 2016), 16. <a href="#fnref:20" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:21" role="doc-endnote">
+      <p>Alberto Cevolini, ed., <em>Forgetting Machines: Knowledge Management Evolution in Early Modern Europe</em>, Library of the Written Word, volume 53 (Leiden ; Boston: Brill, 2016), 16. <a href="#fnref:21" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:22" role="doc-endnote">
+      <p>“Communicating with Slip Boxes by Niklas Luhmann,” accessed May 4, 2021, <a href="https://luhmann.surge.sh/communicating-with-slip-boxes">https://luhmann.surge.sh/communicating-with-slip-boxes</a>. <a href="#fnref:22" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:23" role="doc-endnote">
+      <p>“ZK II: Note 9/8 - Niklas Luhmann Archive.” Accessed January 10, 2022. <a href="https://niklas-luhmann-archiv.de/bestand/Zettelkasten/zettel/ZK_2_NB_9-8_V">https://niklas-luhmann-archiv.de/bestand/Zettelkasten/zettel/ZK_2_NB_9-8_V</a>. <a href="#fnref:23" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:24" role="doc-endnote">
+      <p>It’s become a marketing idea of late to refer to a system that stores information as a <em>second brain</em>; yet, that’s not really what you want, nor is that even a good term for what you’re developing with an Antinet. What you’re building is a second mind. In the scholarly field, this idea is often referred to as an <em>extended mind</em>. <a href="#fnref:24" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:25" role="doc-endnote">
+      <p>Johannes Schmidt, “Niklas Luhmann’s Card Index: Thinking Tool, Communication Partner, Publication Machine,” <em>Forgetting Machines. Knowledge Management Evolution in Early Modern Europe</em> 53 (2016), <a href="https://pub.uni-bielefeld.de/record/2942475">https://pub.uni-bielefeld.de/record/2942475</a>, 309. <a href="#fnref:25" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:26" role="doc-endnote">
+      <p>Johannes Schmidt, “Niklas Luhmann’s Card Index: Thinking Tool, Communication Partner, Publication Machine,” <em>Forgetting Machines. Knowledge Management Evolution in Early Modern Europe</em> 53 (2016), <a href="https://pub.uni-bielefeld.de/record/2942475">https://pub.uni-bielefeld.de/record/2942475</a>, 309. <a href="#fnref:26" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:27" role="doc-endnote">
+      <p>Michael Jacob Kahana, Foundations of Human Memory. (New York: Oxford University Press, 2014), 9. <a href="#fnref:27" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:28" role="doc-endnote">
+      <p>Johannes Schmidt, “Niklas Luhmann’s Card Index: Thinking Tool, Communication Partner, Publication Machine,” <em>Forgetting Machines. Knowledge Management Evolution in Early Modern Europe</em> 53 (2016), <a href="https://pub.uni-bielefeld.de/record/2942475">https://pub.uni-bielefeld.de/record/2942475</a>, 309. <a href="#fnref:28" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:29" role="doc-endnote">
+      <p>Johannes Schmidt, “Niklas Luhmann’s Card Index: Thinking Tool, Communication Partner, Publication Machine,” <em>Forgetting Machines. Knowledge Management Evolution in Early Modern Europe</em> 53 (2016), <a href="https://pub.uni-bielefeld.de/record/2942475">https://pub.uni-bielefeld.de/record/2942475</a>, 309. <a href="#fnref:29" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>

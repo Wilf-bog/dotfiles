@@ -1,0 +1,118 @@
+<p>Update on what happened across the GNOME project in the week from February 04 to February 11.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="software">
+<a class="heading-anchor" href="#software" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Software <a href="https://gitlab.gnome.org/GNOME/gnome-software/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Lets you install and update applications and system extensions.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> announces</p>
+<blockquote>
+<p>Adrien Plazas has <a href="https://gitlab.gnome.org/GNOME/gnome-software/-/merge_requests/1101">updated the appearance of app reviews in gnome-software</a>, as well as a number of other improvements across the UI</p>
+</blockquote>
+
+
+<h3 id="settings">
+<a class="heading-anchor" href="#settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Settings <a href="https://gitlab.gnome.org/GNOME/gnome-control-center"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Configure various aspects of your GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>Backgrounds can now change depending on the light/dark preference. Thanks Jakub Steiner for making dark versions of all default backgrounds and Georges Stavracas (feaneron) for reviews
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-30/e268c933560e14de1b12153f7fdcbc8f5db11e00.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-30/7161d8924ee8df4911f1e6883a4e163210d98bf3.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="vala">
+<a class="heading-anchor" href="#vala" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Vala <a href="https://gitlab.gnome.org/GNOME/vala"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An object-oriented programming language with a self-hosting compiler that generates C code and uses the GObject system</p>
+<p><a href="https://matrix.to/#/@lw64:gnome.org">lwildberg</a> says</p>
+<blockquote>
+<p>The examples in the <a href="https://developer.gnome.org/documentation/tutorials/beginners/components.html">beginners tutorial</a> are also now available in Vala. So the perfect time to start your GNOME app in Vala! Thanks also to Nahu for supporting. <a href="https://gitlab.gnome.org/Teams/documentation/developer-www/-/merge_requests/48">This</a> is the merge request.
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-30/4f27e40564ee12cb41f43a62f8f1367935707340.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="fragments">
+<a class="heading-anchor" href="#fragments" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fragments <a href="https://gitlab.gnome.org/World/Fragments"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Easy to use BitTorrent client.</p>
+<p><a href="https://matrix.to/#/@felix:haecker.io">Felix</a> says</p>
+<blockquote>
+<p>Fragments 2.0 is now available! You can download the latest version from <a href="https://flathub.org/apps/details/de.haeckerfelix.Fragments">Flathub</a> now. If you want to learn more, you should read my <a href="https://blogs.gnome.org/haeckerfelix/2022/02/07/the-road-to-fragments-2-0/">blog post</a>.
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-30/xhpIITFGaShWDUcbwojWmypD.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="pika-backup">
+<a class="heading-anchor" href="#pika-backup" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Pika Backup <a href="https://wiki.gnome.org/Apps/PikaBackup"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Simple backups based on borg.</p>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie Herold</a> announces</p>
+<blockquote>
+<p>This week Pika Backup got an interface for deleting old backup archives. The deletion happens based on user-defined prune rules. A lot of refactoring happened to make it easy to show progress for BorgBackup processes apart from backup creation.</p>
+<p>Support for pruning old backup archives is vital for scheduled backup support. Otherwise, schedule settings like &lsquo;Hourly&rsquo; could quickly fill up the backup storage.
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-30/ae372b809f382be6e51f03d6bb9b9fcecadc479e.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gtk-rs">
+<a class="heading-anchor" href="#gtk-rs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>gtk-rs <a href="https://gtk-rs.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Safe bindings to the Rust language for fundamental libraries from the GNOME stack.</p>
+<p><a href="https://matrix.to/#/@msandova:gnome.org">Maximiliano</a> announces</p>
+<blockquote>
+<p>Bilal Elmoussaoui and I made Rust bindings 🦀 for <a href="https://gitlab.gnome.org/GNOME/libsecret/">libsecret</a>, they can be found <a href="https://crates.io/crates/libsecret">here</a>. Docs <a href="https://world.pages.gitlab.gnome.org/Rust/libsecret-rs/stable/latest/docs/libsecret/index.html">here</a>.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@dabrain34:matrix.org">dabrain34</a> says</p>
+<blockquote>
+<p>GstPipelineStudio 0.2.3 is available on <a href="https://flathub.org/apps/details/org.freedesktop.dabrain34.GstPipelineStudio">flathub</a> with a few bug fixes related to the first flatpak release.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@foreverxmld:matrix.org">Forever</a> announces</p>
+<blockquote>
+<p>I released Random 1.1. This release includes a new icon, libadwaita 1.0, and some improved translations and behind-the-scenes things.</p>
+</blockquote>
+
+
+<h1 id="gnome-shell-extensions">
+<a class="heading-anchor" href="#gnome-shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell Extensions
+</h1><p><a href="https://matrix.to/#/@aunetx:matrix.org">aunetx</a> announces</p>
+<blockquote>
+<p>I released version 3 of <a href="https://extensions.gnome.org/extension/4805/panel-corners/">panel-corners extension</a>, which permits the user to keep rounded corners for the panel, following their recent removal.</p>
+<p>In addition, and thanks to Alexander Mikhaylenko, this extension also adds rounded corners to the screen; and permits you to configure the roundness settings (through gsettings for the moment).</p>
+<p>It is widely based on gnome-shell&rsquo;s own ancient code, and is already compatible with GNOME 40 and 41 for those who want to have rounded corners on the bottom of the screen!</p>
+</blockquote>
+
+
+<h3 id="just-perfection">
+<a class="heading-anchor" href="#just-perfection" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Just Perfection <a href="https://extensions.gnome.org/extension/3843/just-perfection/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A tweak tool to customize the GNOME Shell and to disable UI elements.</p>
+<p><a href="https://matrix.to/#/@justperfection:gnome.org">Just Perfection</a> reports</p>
+<blockquote>
+<p>Just Perfection extension version 17 has been released with <a href="https://gitlab.gnome.org/jrahmatzadeh/just-perfection/-/blob/main/CHANGELOG.md#1700-roslin-2022-02-11">some bug fixes</a>.
+Also <em>panel corner size</em> option has been removed for GNOME Shell 42.
+This version is named after <em>Alexander Roslin</em> (Swedish portrait painter).
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-30/01622d8a6328f76a3eef0a582b65001015cdab35.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

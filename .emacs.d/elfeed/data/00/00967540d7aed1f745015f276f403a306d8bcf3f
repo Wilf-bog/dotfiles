@@ -1,0 +1,241 @@
+<p>Update on what happened across the GNOME project in the week from February 03 to February 10.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="software">
+<a class="heading-anchor" href="#software" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Software <a href="https://gitlab.gnome.org/GNOME/gnome-software/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Lets you install and update applications and system extensions.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> announces</p>
+<blockquote>
+<p>Georges blogged about some nice performance improvements he’s made in gnome-software recently: <a href="https://feaneron.com/2023/02/07/profiling-optimizing-gnome-software/">https://feaneron.com/2023/02/07/profiling-optimizing-gnome-software/</a></p>
+</blockquote>
+
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> reports</p>
+<blockquote>
+<p>Emmanuele Bassi has just landed a new <code>GPathBuf</code> API in GLib, for easily building file paths, <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3216">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3216</a></p>
+</blockquote>
+
+
+<h1 id="gnome-incubating-apps">
+<a class="heading-anchor" href="#gnome-incubating-apps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Incubating Apps
+</h1>
+
+<h3 id="loupe">
+<a class="heading-anchor" href="#loupe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Loupe <a href="https://gitlab.gnome.org/Incubator/loupe"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple and modern image viewer.</p>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie</a> reports</p>
+<blockquote>
+<p>This week we made a bunch of progress in planning out the image rendering for Loupe. Not only did we land the first <a href="https://github.com/image-rs/image/commit/06b6052e0d531fe2dd2d30fc1f7bfd63819ccca0">upstream</a> tweak we needed, but we also discussed neat upcoming features in GTK that Loupe can make use of.</p>
+<p>I also landed a few minor tweaks.</p>
+<ul>
+<li>Added a double-tap gesture on touchscreens for zooming in and out</li>
+<li>Added a more natural rubber-band effect for zoom gestures when hitting the maximum or minimum zoom level</li>
+<li>Added some space between the images in the sliding view</li>
+<li>Fixed some issues for right-to-left text direction</li>
+<li>Fixed swipe gesture on touchscreens</li>
+<li>Added shortcuts for the <em>Home</em> and <em>End</em> button to got to the first or last image</li>
+</ul>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="gtk-rs">
+<a class="heading-anchor" href="#gtk-rs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>gtk-rs <a href="https://gtk-rs.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Safe bindings to the Rust language for fundamental libraries from the GNOME stack.</p>
+<p><a href="https://matrix.to/#/@slomo:matrix.org">slomo</a> says</p>
+<blockquote>
+<p>Just in time for the GNOME 44 API/ABI freeze there was a new gtk-rs release, and new releases of the Rust bindings for various other GNOME libraries. Check <a href="https://gtk-rs.org/blog/2023/02/10/new-release.html">https://gtk-rs.org/blog/2023/02/10/new-release.html</a> for the release notes.</p>
+</blockquote>
+
+
+<h3 id="gaphor">
+<a class="heading-anchor" href="#gaphor" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gaphor <a href="https://gaphor.org"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple UML and SysML modeling tool.</p>
+<p><a href="https://matrix.to/#/@amolenaar:matrix.org">Arjan</a> says</p>
+<blockquote>
+<p>TWIG-Bot Last weekend, <a href="https://gaphor.org">Gaphor</a> 2.16.0 has been released.</p>
+<ul>
+<li>The Model browser now supports multi select</li>
+<li>The GUI has been improved: diagram name shows in the header, improvements in spadding, backdrop when no diagrams are opened and icons. Thanks to Tobias Bernard.</li>
+<li>The editor&rsquo;s CSS editor now supports dark mode and variables.</li>
+<li>It&rsquo;s now easier to add top-level packages and diagrams in the model browser.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-82/FsqGxZeCMgHQSeuOUZMwAFhJ.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-82/rEFVFztjOOPCVcwTqZMAcsyU.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@nxyz:matrix.org">nxyz</a> says</p>
+<blockquote>
+<p>This week I released <a href="https://github.com/nate-xyz/paleta">Paleta</a>, a simple gtk4/libadwaita app that allows you to extract colors from an image and manage them in palettes. Extraction is done with the color-thief library and palettes are saved persistently. You can get it from <a href="https://flathub.org/apps/details/io.github.nate_xyz.Paleta">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-82/IpLUBDZnYHvYJdhyADWuUFRh.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@hunter:hunterwittenborn.com">Hunter Wittenborn</a> announces</p>
+<blockquote>
+<p>After a few months of work, <a href="https://github.com/hwittenborn/celeste">Celeste</a> has been released. Celeste is a file synchronization application, written in GTK, that can connect to a wide variety of cloud providers, including Google Drive, Dropbox, Nextcloud, ownCloud, and WebDAV. More storage types are also planned for the future, including Microsoft OneDrive and Amazon S3.</p>
+<p>Celeste can be installed as a <a href="https://flathub.org/apps/details/com.hunterwittenborn.Celeste">Flatpak</a>, <a href="https://snapcraft.io/celeste">Snap</a>, or <a href="https://github.com/hwittenborn/celeste#prebuilt-mpr-debianubuntu">Debian package</a>.</p>
+<p>The project is currently in it&rsquo;s alpha state, so if you have any issues please report them on the project&rsquo;s <a href="https://github.com/hwittenborn/celeste">issue tracker</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-82/TnqjAkhmVgJpagepsFAmyMLR.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@fiaxh:matrix.org">fiaxh</a> reports</p>
+<blockquote>
+<p><a href="https://dino.im/blog/2023/02/dino-0.4-release/">Dino 0.4 was released</a>. Dino is a secure and privacy-friendly messaging application. It uses the XMPP (Jabber) protocol for decentralized communication. The release adds support for message reactions and replies. We also switched from GTK3 to GTK4 and make use of libadwaita now.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-82/SbkzZLjRYTDDnhHvxMLrlgMo.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@dimmednerd:matrix.org">Diego Iván</a> says</p>
+<blockquote>
+<p>This week, I released a <a href="https://github.com/Diego-Ivan/pdf-metadata-editor">PDF Metadata Editor</a>. Edit the title, author, keywords, creator, producer, creation and modification dates of your PDF documents. You can get it from <a href="https://flathub.org/apps/details/io.github.diegoivan.pdf_metadata_editor">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-82/LTnSQvbeAAHgEvbYOGnAvcZo.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@dubstar_04:matrix.org">Daniel Wood</a> announces</p>
+<blockquote>
+<p>This week Design, a 2D CAD application for GNOME gets all touchy!
+Adding gesture input, usability improvements on small screens and more&hellip;</p>
+<ul>
+<li>Touch input for pan, pinch to zoom and double tap to zoom all</li>
+<li>Fix tabs not being shown</li>
+<li>Fixes for text rotation</li>
+<li>Fix files being read incorrectly</li>
+<li>Fix ARC selection</li>
+<li>Improve selection precision</li>
+<li>Added ability to Save As</li>
+<li>Handle keyboard shortcuts</li>
+</ul>
+<p>Design 43-alpha3 is available from Flathub:
+<a href="https://flathub.org/apps/details/io.github.dubstar_04.design">https://flathub.org/apps/details/io.github.dubstar_04.design</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-82/sDMKQOjlTISsGlTIiuyMcSYP.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gradience">
+<a class="heading-anchor" href="#gradience" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gradience <a href="https://github.com/GradienceTeam/Gradience"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Change the look of Adwaita, with ease.</p>
+<p><a href="https://matrix.to/#/@tfuxu:matrix.org">tfuxu</a> says</p>
+<blockquote>
+<p>This week, Gradience version 0.4.0 have been released, this release is a preparation for 0.8.0, the next major release that will bring GNOME Shell theming support and other long awaited features. Version 0.4.0 introduces a CLI interface, some bug fixes and general quality of life improvement changes.</p>
+<p>Here are some of the changes:</p>
+<ul>
+<li>Added CLI interface, useful for creating scripts or for those who prefer terminal tools (CLI guide available <a href="https://github.com/GradienceTeam/Gradience/wiki/Using-CLI">here</a>)</li>
+<li>Now Gradience warns user when switching to other presets, if current one has unsaved changes</li>
+<li>When running Gradience from terminal, you will see easier to understand error messages, thanks to the new logging facility</li>
+<li>Fixed sorting in &ldquo;Explore&rdquo; tab of Preset Manager not working with non-English locales</li>
+<li>Now Gradience will now internally use hexadecimal color values or RGBA formatted colors if transparency is used</li>
+</ul>
+<p>And some other bug fixes and under-the-hood improvements. You can find more detailed changelog <a href="https://github.com/GradienceTeam/Gradience/releases/tag/0.4.0">here</a>.</p>
+<p>As always, the latest release is available to download from <a href="https://flathub.org/apps/details/com.github.GradienceTeam.Gradience">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-82/gQBbrZbJCtoOwvYNlwBJwopY.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gircore">
+<a class="heading-anchor" href="#gircore" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gir.Core <a href="https://gircore.github.io/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Gir.Core is a project which aims to provide C# bindings for different GObject based libraries.</p>
+<p><a href="https://matrix.to/#/@badcel:matrix.org">badcel</a> announces</p>
+<blockquote>
+<p>Gir.Core 0.3.0 was released. Most prominent features in this release include:</p>
+<ul>
+<li>Addition of WebKitGtk to the supported libraries</li>
+<li>Improved runtime behaviour if using .NET 7 instead of .NET 6</li>
+<li>New C test library to not rely on API of other libraries to do unit tests</li>
+<li>Support for <a href="https://docs.gtk.org/gobject/concepts.html#the-detail-argument">detailed signals</a> via <code>GObject.Signal.Connect</code></li>
+<li>The <code>GType</code> of a class / interface is now available in the public API</li>
+</ul>
+<p>Additionally there were several bugs fixed, some new API was made available and some code cleanup took place. For details checkout the <a href="https://github.com/gircore/gir.core/releases/tag/0.3.0">release notes</a>.</p>
+</blockquote>
+
+
+<h3 id="denaro">
+<a class="heading-anchor" href="#denaro" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Denaro <a href="https://flathub.org/apps/details/org.nickvision.money"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A personal finance manager.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> announces</p>
+<blockquote>
+<p>Denaro <a href="https://github.com/nlogozzo/NickvisionMoney/releases/tag/2023.2.0">V2023.2.0</a> is here! Your favorite weekly pizza man is back with a new update for your favorite personal finance manager! In this update, we gave users the ability to add passwords to protect and encrypt their account files, we provided a way for users to transfer money between accounts of different currencies, and we improved the look and feel of the application, as well as many, many other features and enhancements.
+Here&rsquo;s a full changelog:</p>
+<ul>
+<li>Added the ability to add a password to an account (This will encrypt the nmoney file)</li>
+<li>Added the ability to transfer money between accounts with different currencies by providing a conversion rate in TransferDialog</li>
+<li>Added the ability to configure how Denaro uses locale separators in amount fields</li>
+<li>Added the ability to copy individual transactions</li>
+<li>Added the ability to sort transactions by amount</li>
+<li>LC_MONETARY and LC_TIME will now be respected</li>
+<li>Added &ldquo;Help&rdquo; button to toast notification when there are 0 imported transactions</li>
+<li>Recent accounts are now available to select from the TransferDialog</li>
+<li>Improved importing of qif and ofx files</li>
+<li>Added a &ldquo;New Window&rdquo; action to the main menu
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-82/egSswjfozVpaAbidbfZVbBYk.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-82/ihYhZRDlvjlnxVoOwPjwuOKg.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-82/fqwqNdiobtyQDudjCUfqyLpj.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="shell-extensions">
+<a class="heading-anchor" href="#shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Shell Extensions
+</h1><p><a href="https://matrix.to/#/@cleomenezesjr:matrix.org">Cleo Menezes Jr.</a> reports</p>
+<blockquote>
+<p>Version 16 of Auto Activities has been released.</p>
+<p>In this new version, the user is able to choose between showing the activities overview or the apps grid when there are no windows in the workspace. In addition, the maximum window check delay limit has been increased from 1 to 10 seconds</p>
+<p>Special thanks to <a href="https://github.com/Zetta1Reid0">Zetta1Reid0</a> who helped implement this.</p>
+<p><a href="https://github.com/CleoMenezesJr/auto-activities">Follow the development</a>
+<a href="https://extensions.gnome.org/extension/5500/auto-activities/">Get it on GNOME Extensions</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-82/WqeGFkOFXSKpFkhijxjyOKya.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/02/twig-82/IZsZtHeNRbctFwMpFmZDEzSC.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/02/twig-82/IZsZtHeNRbctFwMpFmZDEzSC.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="just-perfection">
+<a class="heading-anchor" href="#just-perfection" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Just Perfection <a href="https://extensions.gnome.org/extension/3843/just-perfection/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A tweak tool to customize the GNOME Shell and to disable UI elements.</p>
+<p><a href="https://matrix.to/#/@justperfection:gnome.org">Just Perfection</a> says</p>
+<blockquote>
+<p><a href="https://extensions.gnome.org/extension/3843/just-perfection/">Just Perfection GNOME Shell Extension</a> version 23 released with more features such as overview spacing size, screen recording and sharing indicator visibility, switcher popup delay, &hellip;</p>
+<p>This version named after Spanish painter Francisco Goya.</p>
+<p>We also had some <a href="https://gitlab.gnome.org/jrahmatzadeh/just-perfection/-/blob/master/CHANGELOG.md">bug fixes</a> in this version.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/VyY5MXKeqgk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

@@ -1,0 +1,196 @@
+<p>Update on what happened across the GNOME project in the week from July 07 to July 14.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="tracker">
+<a class="heading-anchor" href="#tracker" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tracker <a href="https://gitlab.gnome.org/GNOME/tracker/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A filesystem indexer, metadata storage system and search tool.</p>
+<p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> announces</p>
+<blockquote>
+<p>The Tracker search engine has a new full text search algorithm arriving in GNOME 45, thanks to Carlos Garnacho.  See <a href="https://gitlab.gnome.org/GNOME/tracker/-/merge_requests/611">https://gitlab.gnome.org/GNOME/tracker/-/merge_requests/611</a> for more details.</p>
+</blockquote>
+
+
+<h3 id="gtk">
+<a class="heading-anchor" href="#gtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GTK <a href="https://gitlab.gnome.org/GNOME/gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Cross-platform widget toolkit for creating graphical user interfaces.</p>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> announces</p>
+<blockquote>
+<p>Call for volunteers: if you are experienced in maintaining a GitLab CI runner on macOS, and you want to contribute to building and testing GLib and GTK on that platform, please join the GNOME Infrastructure team channel to help maintaining the macOS GitLab CI runner provided by the GNOME Foundation. If nobody volunteers, the CI runner will be retired in September. More details are available <a href="https://discourse.gnome.org/t/potential-retirement-of-the-macos-ci-builder-for-glib-and-gtk/16198">on Discourse</a>.</p>
+</blockquote>
+
+
+<h1 id="gnome-development-tools">
+<a class="heading-anchor" href="#gnome-development-tools" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Development Tools
+</h1><p><a href="https://matrix.to/#/@hergertme:gnome.org">hergertme</a> reports</p>
+<blockquote>
+<p>In an attempt to ease porting of applications to GTK 4, I&rsquo;ve released libspelling which provides inline spellchecking for GTK 4. It is extracted from the spellcheck engine I wrote for GNOME Text Editor and Builder. You can grab a copy from <a href="https://gitlab.gnome.org/chergert/libspelling">https://gitlab.gnome.org/chergert/libspelling</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-104/0ff774aa5064fb66f1526f1f407173faf46aa5d7.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="workbench">
+<a class="heading-anchor" href="#workbench" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Workbench <a href="https://github.com/sonnyp/Workbench/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A sandbox to learn and prototype with GNOME technologies.</p>
+<p><a href="https://matrix.to/#/@jcwasmx86:matrix.org">jcwasmx86</a> reports</p>
+<blockquote>
+<p>Workbench now supports <a href="https://github.com/JCWasmx86/GTKCssLanguageServer">GTKCssLanguageServer, a language server providing code intelligence for the GTK CSS flavor</a>. This moves the CSS code intelligence out-of-process and allows reusing the
+functionality in other editors. It&rsquo;s planned to include it in GNOME Builder later, when it is a bit more mature. Currently, the language server only provides diagnostics in Workbench, but documentation on hover and auto-completion will follow as soon as it adds support for those features.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/07/twig-104/aCPXpVwiERtPPcsjJwfYcfEr.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/07/twig-104/aCPXpVwiERtPPcsjJwfYcfEr.webm">download it</a> and watch it with your favorite video player!</span>
+</video>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/07/twig-104/epKYUTiLvdrQidsuOdCSowdG.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/07/twig-104/epKYUTiLvdrQidsuOdCSowdG.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="webfont-kit-generator">
+<a class="heading-anchor" href="#webfont-kit-generator" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Webfont Kit Generator <a href="https://github.com/rafaelmardojai/webfont-kit-generator"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Create @font-face kits easily.</p>
+<p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> says</p>
+<blockquote>
+<p>Webfont Kit Generator has received a small UI refresh with the new widgets from libadwaita. It now has a utility panel for the output options, allowing you to set everything in one view.
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-104/pmGjWOvArLzBZGfLVgEOnrHG.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="cartridges">
+<a class="heading-anchor" href="#cartridges" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Cartridges <a href="https://github.com/kra-mo/cartridges"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Launch all your games</p>
+<p><a href="https://matrix.to/#/@kramo:matrix.org">kramo</a> reports</p>
+<blockquote>
+<p>Thanks to Libadwaita 1.4, Cartridges has gained a new sidebar allowing you to filter games by source. It will also adapt to smaller screen sizes better thanks to AdwBreakpoint.</p>
+<p>These features will land alongside GNOME 45 in the fall.
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-104/EjLgNIftrjyotPpNeJdFxWYm.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-104/hVOxvJvieLfHZDcjOuewLXjt.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1>
+
+<h3 id="tagger">
+<a class="heading-anchor" href="#tagger" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tagger <a href="https://flathub.org/apps/details/org.nickvision.tagger"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Tag your music.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Tagger is now at <a href="https://github.com/NickvisionApps/Tagger/releases/tag/2023.7.1-beta2">V2023.7.1-beta2</a> !
+V2023.7.1 is shaping up to be a huge release with new features, more customization options, better performance, many bug fixes, and an improved user interface.</p>
+<p>Here&rsquo;s the full changelog so far:</p>
+<ul>
+<li>Added support for the following tag properties: BPM, Composer, Description, Publisher, ISRC</li>
+<li>Added help documentation with yelp-tools, accessible from the Help menu action</li>
+<li>Added more file sorting options</li>
+<li>Improved album art design and added support for managing back cover art and exporting album art</li>
+<li>Fixed an issue where corrupted music files would crash the app. Tagger will now display a dialog to warn the user of corrupted files</li>
+<li>Improved UI</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-104/sWyycQKmKJrZHVPhTnHttFyc.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="parabolic">
+<a class="heading-anchor" href="#parabolic" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Parabolic <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Download web video and audio.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Parabolic <a href="https://github.com/NickvisionApps/Parabolic/releases/tag/2023.7.2">V2023.7.2</a> is here!</p>
+<p>Here&rsquo;s the full changelog:</p>
+<ul>
+<li>Added the ability to select a download&rsquo;s audio language if more than one are available</li>
+<li>Added the option to allow for only Windows-supported characters in filenames</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-104/eImjztdDKEHICHrwfFVzATVH.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="iplan">
+<a class="heading-anchor" href="#iplan" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>IPlan <a href="https://github.com/iman-salmani/iplan"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Your plan for improving personal life and workflow</p>
+<p><a href="https://matrix.to/#/@imansalmani:matrix.org">Iman Salmani</a> announces</p>
+<blockquote>
+<p><a href="https://github.com/iman-salmani/iplan">IPlan 1.9.0</a> is now out!
+What&rsquo;s changed:</p>
+<ul>
+<li>Search button and Primary menu moved to the sidebar</li>
+<li>Navigation in the calendar by scroll</li>
+<li>Calendar Navigation buttons removed</li>
+<li>Now task changes apply to other parts of UI too. (instead of resetting them)</li>
+<li>Clickable URL Links in the task description</li>
+<li>Ctrl + w shortcut for closing window</li>
+<li>Code refactoring, Bug fixes, and UI improvements</li>
+</ul>
+<p>You can get it from <a href="https://flathub.org/apps/ir.imansalmani.IPlan">Flathub</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-104/hFZWWAApmCQJIknOriWPLjSt.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-network-displays">
+<a class="heading-anchor" href="#gnome-network-displays" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Network Displays <a href="https://gitlab.gnome.org/GNOME/gnome-network-displays"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Stream the desktop to Wi-Fi Display capable devices</p>
+<p><a href="https://matrix.to/#/@toluene:matrix.org">Pedro Sader Azevedo</a> announces</p>
+<blockquote>
+<p>Discovery of Chromecast and MICE devices was backported to the work-in-progress headless build of GNOME Network Displays.</p>
+</blockquote>
+
+
+<h3 id="flare">
+<a class="heading-anchor" href="#flare" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flare <a href="https://flathub.org/apps/details/de.schmidhuberj.Flare"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An unofficial Signal GTK client.</p>
+<p><a href="https://matrix.to/#/@schmiddi:matrix.org">schmiddi</a> announces</p>
+<blockquote>
+<p>Flare 0.9.0 was released, which included a lot of overall UI improvements, but also some new functionality. I will just list the most important improvements, a list of all improvements can be seen in <a href="https://gitlab.com/Schmiddiii/flare/-/blob/master/CHANGELOG.md#090-2023-07-10">the changelog</a>:</p>
+<ul>
+<li>Flare now supports receiving and playing voice messages.</li>
+<li>The UI of the messages got drastically improved. The message bubbles now also support theming with GNOME accent colors.</li>
+<li>The dropdown menu on messages got improved. Furthermore, the drop-down menu is now opened by right-click or (when using touch) holding the message instead of just a normal click.</li>
+<li>Updated to GTK 4.10 including updating from deprecated widgets to their new counterperts.</li>
+<li>Flare now supports receiving mentions (implemented in 0.8.2).</li>
+</ul>
+<p>I want to thank <a href="https://gitlab.com/Marc0x">@Marc0x</a> for doing most of the work on this release and bringing the UI of Flare to a new level.
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-104/gBRAjCSsMpmBGesOXCLnYWUP.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@chenriksen:gnome.org">Caroline Henriksen</a> reports</p>
+<blockquote>
+<p>This week you can find the Foundation at <a href="%5Bhttps://2023.fossy.us/">FOSSY</a>, a community-oriented conference hosted by the <a href="https://sfconservancy.org/">Software Freedom Conservancy</a>! If you’re attending in Portland, make sure to stop by the GNOME booth to grab some stickers or pick up a t-shirt.</p>
+<p>We’ve also been hard at work coordinating all the final details for GUADEC 2023! The conference starts in 12 days and that means we’ve got banners, signage, name badges, lanyards, t-shirts, and more to prepare. If you’re attending remotely or in person remember to <a href="https://events.gnome.org/event/101/">register ahead</a>. This helps us know how many people to expect and lets us have time to print your name on your badge.</p>
+<p>We’re still looking for GUADEC 2023 sponsors! If you or your company would like to sponsor this year’s conference, take a look at our <a href="https://www.gnome.org/wp-content/uploads/2023/02/SponsorBrochure-2023GUADEC.pdf">sponsorship brochure</a> and reach out to <a href="mailto:mwu@gnome.org">mwu@gnome.org</a> for more information.</p>
+<p>Volunteer Opportunity:
+We’re live-streaming the GUADEC talks, but are looking for a volunteer to edit the final footage into individual talk videos. If that sounds like a project you’re interested in let us know by emailing <a href="mailto:chenriksen@gnome.org">chenriksen@gnome.org</a>.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

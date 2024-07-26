@@ -1,0 +1,168 @@
+<p>Update on what happened across the GNOME project in the week from October 20 to October 27.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> reports</p>
+<blockquote>
+<p>The XDG Desktop Portal project has a <a href="https://flatpak.github.io/xdg-desktop-portal/">stylish new website</a>, thanks to Jakub Steiner!
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-119/a8e8a7a2e40dd81fcc72c056f57ec5c5f90e303b1715465173231206400.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-119/5bdf03cc8837154dbd3c4970fb20281d5573865a1715465205082750976.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="vala">
+<a class="heading-anchor" href="#vala" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Vala <a href="https://gitlab.gnome.org/GNOME/vala"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An object-oriented programming language with a self-hosting compiler that generates C code and uses the GObject system.</p>
+<p><a href="https://matrix.to/#/@lw64:gnome.org">lwildberg</a> reports</p>
+<blockquote>
+<p>Recently port of the Vala Reference Manual was merged and is now accessible online <a href="https://gnome.pages.gitlab.gnome.org/vala/manual/index.html">here</a>. This was a longstanding effort to move away from a wiki-based solution. If you want to contribute to it now, you need to create a merge request in the Vala repository. Also it looks just so much more beautiful, doesn&rsquo;t it? ;)
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-119/06a17a882f40deace399248f505707f67c2f0b511717142743563632640.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> reports</p>
+<blockquote>
+<p>After more than 10 years, GLib is now <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3636">generating the introspection data</a> for its API instead of making it the responsibility of gobject-introspection. This is a requested step towards <a href="https://gitlab.gnome.org/GNOME/glib/-/issues/3037">changing the documentation generator</a> for the GLib API references from gtk-doc to gi-docgen. Work is ongoing to <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3642">move libgirepository into GLib</a>, as part of the overall goal of <a href="https://gitlab.gnome.org/GNOME/glib/-/issues/2616">simplifying the introspection build</a>. For more information, you can check <a href="https://www.bassi.io/articles/2023/10/25/introspections-edge/">my blog</a>.</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie (she/her)</a> announces</p>
+<blockquote>
+<p>In our ongoing efforts to organize the GNOME pages a bit better, we have created a <a href="https://gitlab.gnome.org/Teams/Websites">Websites Team</a>. The Websites Team is currently a loose association of people maintaining websites within the GNOME project. In this context, a bunch of website repositories have already been moved to the <a href="https://gitlab.gnome.org/Teams/Websites">new GitLab team</a>. You can also find us in <a href="https://matrix.to/#/#pages:gnome.org">#pages:gnome.org</a>.</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="workbench">
+<a class="heading-anchor" href="#workbench" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Workbench <a href="https://github.com/sonnyp/Workbench/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A sandbox to learn and prototype with GNOME technologies.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> says</p>
+<blockquote>
+<p>Marco Köpcke (Capypara) added Python support to Workbench 🎉</p>
+<p>Are you learning Python or Gtk? Porting Library entries to Python is a great way to learn and contribute.
+Help welcome, see <a href="https://github.com/sonnyp/Workbench/blob/main/CONTRIBUTING.md">our guide</a>.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/10/twig-119/829ad86e05d0aed84362b88088c9fb0bc197d0691717640397066338304.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/10/twig-119/829ad86e05d0aed84362b88088c9fb0bc197d0691717640397066338304.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="gtk-rs">
+<a class="heading-anchor" href="#gtk-rs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>gtk-rs <a href="https://gtk-rs.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Safe bindings to the Rust language for fundamental libraries from the GNOME stack.</p>
+<p><a href="https://matrix.to/#/@julianhofer:gnome.org">Julian 🍃</a> announces</p>
+<blockquote>
+<p>I&rsquo;ve extended the chapter &ldquo;The Main Event Loop&rdquo; of the gtk-rs book to include more information on how to deal with <code>async</code> code.
+It shows how to:</p>
+<ul>
+<li>embed blocking calls in an async context,</li>
+<li>run async functions from external crates, and</li>
+<li>integrate with tokio.</li>
+</ul>
+<p>Thanks goes to Fina, Sabrina and Bilal Elmoussaoui for reviewing the changes.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@d-k-bo:matrix.org">d-k-bo</a> says</p>
+<blockquote>
+<p>Televido has been released and is available on <a href="https://flathub.org/apps/de.k_bo.Televido">Flathub</a>!</p>
+<p>It lets you livestream, search and play media from German-language public television services. Based on APIs provided by the <a href="https://mediathekview.de/">MediathekView</a> project, the content is delivered directly from the respective television services and may not be accessible outside of Germany.
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-119/pkOKBFsnpKikAeBSEfabbCbf.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@hunter:hunterwittenborn.com">Hunter Wittenborn</a> reports</p>
+<blockquote>
+<p>Celeste, a GTK file synchronization program that can connect to a plethora of cloud providers, has seen quite a few updates since last featured in This Week in GNOME.</p>
+<p>Some notable changes include the addition of Proton Drive support, and new app icons that greatly help in showing what Celeste is.</p>
+<p>Celeste is available on <a href="https://flathub.org/apps/com.hunterwittenborn.Celeste">Flathub</a> and the <a href="https://snapcraft.io/celeste">Snap Store</a> if you&rsquo;d like to give it a try.</p>
+</blockquote>
+
+
+<h3 id="tagger">
+<a class="heading-anchor" href="#tagger" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tagger <a href="https://flathub.org/apps/details/org.nickvision.tagger"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Tag your music.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Tagger <a href="https://github.com/NickvisionApps/Tagger/releases/tag/2023.10.0">V2023.10.0</a> is here! We&rsquo;ve been hard at work this month bringing you a release packed with features and fixes :)</p>
+<p>First, this release introduces a brand-new Windows version of the app built on WindowsAppSDK and WinUI 3! For all those unfortunately stuck using Windows at times, they can now use this great app on their system with a 1:1 feature match with the GNOME version!</p>
+<p>In terms of features, this release introduces full support for playlists with relative paths, new tag properties, and a new information dialog for album art. Tagger will also watch a music folder library for changes on disk and prompt the user to reload the folder within the app. Furthermore, we fixed many issues and tweaked the design of some aspects of the app in which you can read all about below!</p>
+<p>A special thanks to @kissthermite for bringing most of the changes in this release to our attention :)</p>
+<p>Here&rsquo;s the full changelog:</p>
+<ul>
+<li>Tagger is now available for Windows using Windows App SDK and WinUI 3</li>
+<li>Added the option to use relative paths when creating a playlist. This means that Tagger also now supports opening playlists with relative paths</li>
+<li>Added the Disc Number, Disc Total, and Publishing Date fields to additional properties</li>
+<li>Added information dialog for album art</li>
+<li>Added an option in Preferences to limit file name characters to those only supported by Windows</li>
+<li>Tagger will now watch a music folder library for changes on disk and prompt the user to reload if necessary</li>
+<li>Tagger will now display front album art within a music file row itself if available</li>
+<li>Tagger will now remember previously used format strings for file name to tag and tag to file name conversions</li>
+<li>Fixed an issue where downloaded lyrics would sometimes contain html encoded characters</li>
+<li>Fixed an issue where file names containing the <code>&lt;</code> character caused the music file row to not display</li>
+<li>Fixed an issue where the duration displayed for multiple selected files was wrong</li>
+<li>Improved create playlist dialog ux</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-119/BlWfNnigPsXcRScQxuixkkRA.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="login-manager-settings">
+<a class="heading-anchor" href="#login-manager-settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Login Manager Settings <a href="https://gdm-settings.github.io"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Customize your login screen.</p>
+<p><a href="https://matrix.to/#/@realmazharhussain:matrix.org">Mazhar Hussain</a> announces</p>
+<blockquote>
+<p>GDM Settings version 4 was released.</p>
+<ul>
+<li>It brings a new UI style, GNOME 45 support, and more. <a href="https://github.com/gdm-settings/gdm-settings/releases/tag/v4.0">Full release notes</a> are available in <a href="https://github.com/gdm-settings/gdm-settings/releases">GitHub releases</a>.</li>
+<li>Version 4 also brings the rename from &ldquo;Login Manager Settings&rdquo; to &ldquo;GDM Settings&rdquo;. Internally, GDM Settings has always been known as gdm-settings. So, the rename should makes things clearer and more consistent.</li>
+<li>GDM Settings now supports <a href="https://github.com/sponsors/gdm-settings">GitHub Sponsors</a> as well.
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-119/xkGpURmhetNDWGINRtNMuKBz.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-119/yILgWagVNnzLIjykJpyMsMtP.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-119/dorRDBdSltsZcnBULSsXeakA.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@chenriksen:gnome.org">Caroline Henriksen</a> reports</p>
+<blockquote>
+<p>This week the Foundation has been preparing for a few upcoming events! Now that our new Executive Director has started, we’re hosting a Meet and Greet to give everyone a chance to get to know Holly and ask questions about her plans for the Foundation. This event is open to everyone, you can register and submit your questions for Holly <a href="https://events.gnome.org/event/172/">here</a>. Please note that all question submissions are due by Nov 7th.</p>
+<p>We’ve also signed up for a booth at <a href="https://www.socallinuxexpo.org/scale/21x">SCaLE x21</a>. The 2024 conference will take place on March 14-17 and the CfP is still open. The deadline for <a href="https://www.socallinuxexpo.org/scale/21x/cfp">submitting talks</a> is Nov 1, 2023, so make sure to send yours in soon!</p>
+<p>In addition to these two events, GNOME Asia 2023 is just over a month away! The <a href="https://events.gnome.org/event/170/timetable/#20231201">full schedule of presentations</a> is available on the event website and registration is open for both in-person and remote attendees. Please let us know you’re attending by <a href="https://events.gnome.org/event/170/registrations/126/">registering</a>.</p>
+<p>Reminder:
+We’re still looking for sponsors for GNOME Asia 2023! If you or your company would like to sponsor this year&rsquo;s summit reach out to <a href="mailto:mwu@gnome.org">mwu@gnome.org</a> for more information.</p>
+<p>Volunteer Opportunity:
+We’re looking for people to help manage the Foundation’s social media channels. If you’re interested in getting involved reach out to <a href="mailto:chenriksen@gnome.org">chenriksen@gnome.org</a> for more information.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

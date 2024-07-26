@@ -1,0 +1,366 @@
+<p>Update on what happened across the GNOME project in the week from September 22 to September 29.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@harrymichal:matrix.org">martymichal</a> announces</p>
+<blockquote>
+<p>The long awaited port of GNOME System Monitor to GTK 4 has finally arrived! The porting effort focused on keeping the UI as close to the original but still minor enhancements can be seen. The port comes early in the new development cycle which gives us the opportunity to find possible bugs and make use of the new stylish widgetry in GTK 4 and libadwaita.</p>
+<p>See the original <a href="https://gitlab.gnome.org/GNOME/gnome-system-monitor/-/merge_requests/55">merge request</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/EClWPKxcBoDPInSFzZNXqTTo.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/zKjoUQMFtkyVdLxxbUdfSLLg.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/gxDoCzFeNlWHARsDytLdYgtC.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="webfont-kit-generator">
+<a class="heading-anchor" href="#webfont-kit-generator" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Webfont Kit Generator <a href="https://github.com/rafaelmardojai/webfont-kit-generator"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Create @font-face kits easily.</p>
+<p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> reports</p>
+<blockquote>
+<p>Webfont Kit Generator 1.1.0 has been released and is available on <a href="https://flathub.org/apps/com.rafaelmardojai.WebfontKitGenerator">Flathub</a>.</p>
+<p>It features some design improvements. It has been updated to the GNOME 45 style and the font options are now a utility panel instead of a separate view.</p>
+<p>The application is in maintenance mode, but this release brings some small additions. Its Google Fonts importer now allows the use of v1 CSS API urls, meaning that if you have an old url, you can import it without going back to Google Fonts. Base64 support has also been added, so you can now embed the fonts in the generated CSS file.</p>
+<p>As always, this update also includes minor bug fixes.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/LqmDsSFuCYukldIVdvzxUWaA.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="warp">
+<a class="heading-anchor" href="#warp" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Warp <a href="https://gitlab.gnome.org/World/warp"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Fast and secure file transfer.</p>
+<p><a href="https://matrix.to/#/@felinira:matrix.org">Fina</a> reports</p>
+<blockquote>
+<p>Warp 0.6 has been released. It features a redesigned code view and an update to the latest GNOME 45 style and widgets. Now your file transfers will look even better!
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/AHhxdvqkNzDFQmnuQVnsWSCN.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="share-preview">
+<a class="heading-anchor" href="#share-preview" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Share Preview <a href="https://github.com/rafaelmardojai/share-preview"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Test social media cards locally.</p>
+<p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> says</p>
+<blockquote>
+<p>Share Preview 0.4.0 is out and available on <a href="https://flathub.org/apps/com.rafaelmardojai.SharePreview">Flathub</a>, it adds two new services to the preview, Discourse, the self-hosted forum/discussion platform, and LinkedIn.</p>
+<p>It also adds the ability to open multiple instances of the application, along with some minor cosmetic improvements.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/WiyKJuMGfzRcNvIXgdGubeSZ.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="eyedropper">
+<a class="heading-anchor" href="#eyedropper" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Eyedropper <a href="https://flathub.org/apps/details/com.github.finefindus.eyedropper"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Pick and format colors.</p>
+<p><a href="https://matrix.to/#/@finefindus:matrix.org">FineFindus</a> says</p>
+<blockquote>
+<p>I&rsquo;ve released Eyedropper version 1.0.0. This is the biggest release for Eyedropper yet, here are some of the major features, including those from the last beta release</p>
+<ul>
+<li>Visual feedback when entering a color format</li>
+<li>Support for entering all formats</li>
+<li>Ability to search for colors in the activity overview</li>
+<li>Choice of file format when exporting palettes</li>
+<li>Export palettes for LibreOffice</li>
+<li>Updated design</li>
+<li>Show only unique colors (thanks @gregorni)</li>
+<li>Fixed bugs (and probably added new ones)</li>
+</ul>
+</blockquote>
+
+
+<h3 id="ear-tag">
+<a class="heading-anchor" href="#ear-tag" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Ear Tag <a href="https://gitlab.gnome.org/knuxify/eartag"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Edit audio file tags.</p>
+<p><a href="https://matrix.to/#/@knuxify:cybre.space">knuxify</a> says</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/World/eartag/-/releases/0.5.0">Ear Tag 0.5.0</a> has been released! This release introduces three main improvements:</p>
+<ul>
+<li>The cover art button has been expanded to allow for changing both the front and back covers. It also now has an option to remove cover art from the file.</li>
+<li>The &ldquo;Identify Selected Files&rdquo; dialog has been re-worked, and now pulls data from MusicBrainz based on present tags, not just AcoustID fingerprints. It also attempts to find the correct release for a track instead of selecting the first best one.</li>
+<li>The UI now uses the new libadwaita 1.4 widgets, and thus adapts to the new application style.</li>
+</ul>
+<p>You can get the latest version on <a href="https://flathub.org/apps/app.drey.EarTag">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/KjTvdahWAxopxCzVvyCjOYcB.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/obqemXZEcdQzJrlhfhGHredx.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="commit">
+<a class="heading-anchor" href="#commit" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Commit <a href="https://github.com/sonnyp/Commit"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An editor that helps you write better Git and Mercurial commit messages.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> reports</p>
+<blockquote>
+<p>Commit 4.1 is <a href="https://flathub.org/apps/re.sonny.Commit">available on Flathub</a>. This release brings spell check back thanks to <a href="https://gitlab.gnome.org/chergert/libspelling">libspelling</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/50062eb115cab8caf1d0a2234f592cf2f56771f8.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="chess-clock">
+<a class="heading-anchor" href="#chess-clock" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Chess Clock <a href="https://gitlab.gnome.org/World/chess-clock"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Time games of over-the-board chess.</p>
+<p><a href="https://matrix.to/#/@plum-nutty:matrix.org">Clara Hobbs (she/they)</a> says</p>
+<blockquote>
+<p>Chess Clock version 0.6.0 was released, bringing adaptivity refinements and alert sounds.</p>
+<ul>
+<li>Thanks to Mariko Ueno, we now have alert sounds when a player&rsquo;s timer runs low.  These can be muted if desired via the menu.</li>
+<li>The window adapts better to portrait aspect ratios and large screen sizes, enabling improved tablet support.</li>
+</ul>
+<p>By the time of publishing, the release should be available over on <a href="https://flathub.org/apps/com.clarahobbs.chessclock">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/HMkJkzUnJmFhiXzorTPXCvmd.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="apostrophe">
+<a class="heading-anchor" href="#apostrophe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Apostrophe <a href="https://gitlab.gnome.org/World/apostrophe"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A distraction free Markdown editor.</p>
+<p><a href="https://matrix.to/#/@somas95:gnome.org">Manu</a> announces</p>
+<blockquote>
+<p>Some weeks ago I resumed the ongoing port to GTK4 of Apostrophe. While doing so I took a little detour and implemented a full fledged toolbar. It allows to format text and input common markdown elements. It is context aware, so for example clicking the &ldquo;checklist button&rdquo; will toggle a checklist item if the cursor is in one! Next week I&rsquo;ll be improving the security of the app and sanding any rough edges there are still left
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/09/twig-115/32d8a85a9b24864ec380812f0cc7d3393e13994c.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/09/twig-115/32d8a85a9b24864ec380812f0cc7d3393e13994c.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@xjuan:gnome.org">xjuan</a> announces</p>
+<blockquote>
+<p>Cambalache 0.16.0 released!</p>
+<p>New release targeting GNOME SDK 45 with all the new goodies in Gtk and Adwaita 1.4</p>
+<p>Read more at <a href="https://blogs.gnome.org/xjuan/2023/09/28/cambalache-0-16-0-released/">https://blogs.gnome.org/xjuan/2023/09/28/cambalache-0-16-0-released/</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@scerveau:igalia.com">dabrain34</a> reports</p>
+<blockquote>
+<p>GstPipelineStudio version 0.3.4 is out ! Draw your own pipeline for GStreamer</p>
+<p>This is an <em>important</em> bug fix release for first adopters, here is the release notes and the binaries:</p>
+<p><a href="https://dabrain34.pages.freedesktop.org/GstPipelineStudio/">https://dabrain34.pages.freedesktop.org/GstPipelineStudio/</a></p>
+<p>An update is also available on flathub <a href="https://flathub.org/apps/org.freedesktop.dabrain34.GstPipelineStudio">https://flathub.org/apps/org.freedesktop.dabrain34.GstPipelineStudio</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/oiDZaWZhcHYRqqGKtnfvRhNu.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> reports</p>
+<blockquote>
+<p>My little application Diccionario de la Lengua, which is used to look up words in the Spanish dictionary, has received a small cosmetic update to follow the new GNOME 45 look and feel. It also now has a permanent history sidebar if the window is wide enough.</p>
+<p>Get it from <a href="https://flathub.org/apps/com.mardojai.DiccionarioLengua">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/iAnqdOQTTzdATbYrvVCeiVaT.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> announces</p>
+<blockquote>
+<p>For the people interested in high quality 2D rendering, I am proud to announce the first stable release of the Cairo 2D rendering library after 5 years of development. With the work of 77 committers, the 1.18 stable release introduces new API and features such as:</p>
+<ul>
+<li>support for COLR fonts</li>
+<li>support for the DWrite backend on Windows</li>
+<li>performance improvements on macOS</li>
+<li>dithering options for image surfaces</li>
+<li>a whole new build system, using <a href="https://mesonbuild.com">Meson</a>, for increased portability and speed
+on top of many, many build, documentation, and bug fixes. You can get the new release on the <a href="https://cairographics.org">Cairo website</a>.</li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@theevilskeleton:fedora.im">Hari Rana (TheEvilSkeleton)</a> reports</p>
+<blockquote>
+<p>Upscaler 1.2.0 is available on <a href="https://flathub.org/apps/io.gitlab.theevilskeleton.Upscaler">Flathub</a>!</p>
+<p>We&rsquo;ve put a lot of effort to improve stability and compliance with the GNOME interface guidelines. We&rsquo;ve also made the following changes/additions:</p>
+<ul>
+<li>New icon</li>
+<li>Add drag &amp; drop support</li>
+<li>New keyboard shortcuts</li>
+<li>Add labels for assistive technologies</li>
+<li>Improve support for high contrast</li>
+<li>Port to newer widgets</li>
+<li>Ellipsize text when file names are too long</li>
+<li>Add WebP support</li>
+<li>Transpose image (useful for photos taken by smartphones)</li>
+<li>New translations</li>
+<li>Add Vulkan checker
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/70cae7e925dafc1427e54a129f944f2fc157a9e7.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/b645727e093f0b001648a02b1300b18d9d981ab2.png" alt="" />
+</li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@0xmrtt:envs.net">0xMRTT [envs.net]</a> says</p>
+<blockquote>
+<p>This week Bavarder 1.0 was released! It&rsquo;s featuring a completely new UI with a multi-chat mode which works on desktop and mobile thanks to the new Libadwaita widgets. It&rsquo;s now possible to use local models, export conversations, change bot and user name, markdown support and more! Thanks to everyone who helped for making it possible!</p>
+<p>Check out the <a href="https://bavarder.codeberg.page/">website</a> for more and a full changelog!
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/c9bd2e467d22aa9223cc869acedfc3e1d61934a61705464522975739904.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/119204b2f0526787c76467c524fd2ed5565160db1705464529741152256.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/461140940be25e986ba76f05d6c87a91d99e7c241705464537383174144.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="ticket-booth">
+<a class="heading-anchor" href="#ticket-booth" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Ticket Booth <a href="https://github.com/aleiepure/ticketbooth"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Keep track of your favorite shows.</p>
+<p><a href="https://matrix.to/#/@aleiepure:matrix.org">Alessandro Iepure</a> says</p>
+<blockquote>
+<p>Say hello to Ticket Booth! Never again lose track of your favorite movies and TV shows.
+It leverages the power of TMDB’s API to serve you the latest information in a beautiful interface. It also features a fully offline mode if you prefer to handcraft your library without relying on a third-party service.
+Check it out on <a href="https://flathub.org/it/apps/me.iepure.Ticketbooth">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/eUuUShcAvRsYXxhEsFUqsAbP.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/qiyVdfMrqPNfyeXzmBKXJYSB.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="snoop">
+<a class="heading-anchor" href="#snoop" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Snoop <a href="https://gitlab.gnome.org/philippun1/snoop"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Snoop through your files.</p>
+<p><a href="https://matrix.to/#/@philippun:matrix.org">Philipp</a> says</p>
+<blockquote>
+<p>Snoop initially released!</p>
+<p><a href="https://gitlab.gnome.org/philippun1/snoop">Snoop</a> is a gui tool to search through your files. It also offers a Nautilus extension to directly start it from a folder and search in it.</p>
+<p>It is available as a <a href="https://flathub.org/apps/de.philippun1.Snoop">flatpak on flathub</a>.</p>
+<p>If you want to use the Nautilus extension with the flatpak, you have to manually get it from the repo and install it in a Nautilus extension folder, see the <a href="https://gitlab.gnome.org/philippun1/snoop/-/blob/main/README.md?ref_type=heads#flatpak">readme</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/JCPWLdeIrsRVHsNwnyTwASXH.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/tmWqkPmRZUZlDLTObDOGiofg.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="parabolic">
+<a class="heading-anchor" href="#parabolic" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Parabolic <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Download web video and audio.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Parabolic <a href="https://github.com/NickvisionApps/Parabolic/releases/tag/2023.9.1">V2023.9.1</a> is here! This release includes many features and bug fixes that make the subtitle experience a lot better in Parabolic :)</p>
+<p>Here&rsquo;s the changelog:</p>
+<ul>
+<li>Added an option to disable embedding subtitles in a file and instead download them in a separate file</li>
+<li>Added the ability to specify &ldquo;&ldquo;all&rdquo;&rdquo; in the subtitle languages list to download all available languages</li>
+<li>Fixed an issue where empty subtitles were sometimes embedded</li>
+<li>Fixed an issue where arte.tv links were not validating thanks to a yt-dlp update</li>
+<li>If embedding subtitles fails, Parabolic will automatically save them to separate files instead</li>
+<li>Improved Parabolic&rsquo;s display of progress in taskbar (dock)</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/hrEjVZzfrWwyjCjKQkMMMfHm.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="login-manager-settings">
+<a class="heading-anchor" href="#login-manager-settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Login Manager Settings <a href="https://gdm-settings.github.io"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Customize your login screen.</p>
+<p><a href="https://matrix.to/#/@realmazharhussain:matrix.org">Mazhar Hussain</a> says</p>
+<blockquote>
+<p>I released GDM Settings <a href="https://github.com/gdm-settings/gdm-settings/releases/tag/v4.beta0">v4.beta0</a>. This release brings</p>
+<ul>
+<li>New UI style</li>
+<li><a href="https://github.com/gdm-settings/gdm-settings/issues/184">GNOME 45 support</a></li>
+<li><a href="https://github.com/gdm-settings/gdm-settings/issues/180">Background image adjustment option</a></li>
+<li>Support for high contrast mode in GDM</li>
+<li>Application Window is dragable from anywhere now</li>
+<li><a href="https://github.com/gdm-settings/gdm-settings/issues/171">New graphical error message</a> (replaces an unhelpful error printed on the terminal)</li>
+</ul>
+<p>Since this is a beta release,</p>
+<ul>
+<li>Expect bugs and if you do encounter any bug, please <a href="https://github.com/gdm-settings/gdm-settings/issues/new/choose">report it</a>.</li>
+<li>It is not yet available on the regular (stable) Flathub repo. You can <a href="https://dl.flathub.org/beta-repo/appstream/io.github.realmazharhussain.GdmSettings.flatpakref">install it from Flathub beta repo</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/IBwUqmSdrQAsYyqtsCTcXFNC.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/QPYiFEZzSVChisqDJuuByLSe.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/OglNFUVjRnTAQlQlcggphlZT.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="flatseal">
+<a class="heading-anchor" href="#flatseal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flatseal <a href="https://github.com/tchx84/Flatseal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A graphical utility to review and modify permissions of Flatpak applications.</p>
+<p><a href="https://matrix.to/#/@tchx84:matrix.org">Martín Abente Lahaye</a> reports</p>
+<blockquote>
+<p>I am happy to announce the release of Flatseal 2.1.0. This new release comes with refined visuals, improved performance, support for a new permission, quality of life additions, and fixes.</p>
+<p>Read all the details <a href="https://blogs.gnome.org/tchx84/2023/09/28/flatseal-2-1-0/">here</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/zilgPLNOowMDnpfFvlxNiAzC.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="shell-extensions">
+<a class="heading-anchor" href="#shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Shell Extensions
+</h1><p><a href="https://matrix.to/#/@glerro:matrix.org">glerro</a> announces</p>
+<blockquote>
+<p><a href="https://extensions.gnome.org/extension/6204/transmission-daemon-indicator-ng/">Transmission Daemon Indicator NG</a> is updated for Gnome Shell 45</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@MateusRodCosta:matrix.org">Mateus R. Costa</a> announces</p>
+<blockquote>
+<p><a href="https://extensions.gnome.org/extension/4783/default-workspace/">Default Workspace</a> has been updated to work with GNOME 45.
+This gnome-shell extension allows you to choose a specific workspace to automatically switch to as soon as you login. This is particularly useful if you have a workflow where you use fixed workspaces and don&rsquo;t use the first workspace as the main one.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@justperfection:gnome.org">Just Perfection</a> says</p>
+<blockquote>
+<p>Thanks to Aryan Kaushik, <a href="https://extensions.gnome.org/">extensions.gnome.org</a> now supports <code>liberapay</code> and <code>opencollective</code> in <a href="https://gjs.guide/extensions/overview/anatomy.html#donations">donations key</a>.</p>
+</blockquote>
+
+
+<h1 id="events">
+<a class="heading-anchor" href="#events" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Events
+</h1><p><a href="https://matrix.to/#/@tbernard:gnome.org">Tobias Bernard</a> reports</p>
+<blockquote>
+<p>To celebrate the release of GNOME 45 we had a hackfest and release party last week!</p>
+<p>Some hightlights:</p>
+<ul>
+<li>Lots of productive discussions for how we can get GNOME OS (and image-based OSes more generally) to the next level</li>
+<li>We discussed in detail how we could do <a href="https://www.inkandswitch.com/local-first">local-first sync</a> in GNOME, and made a tentative plan for first prototypes</li>
+<li>Adrian and Jonas resurrected the transparent panel branch</li>
+<li>Julian looked into fixing <a href="https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/1663">default avatars</a></li>
+<li>Various discussions about improving developer experience</li>
+<li>Lots of work on apps, including Evince, Railway, and Dino</li>
+<li>There was cake! 🎂</li>
+</ul>
+<p>More details in this blog post: <a href="https://blogs.gnome.org/tbernard/2023/09/26/gnome-45-release-party-hackfest">https://blogs.gnome.org/tbernard/2023/09/26/gnome-45-release-party-hackfest</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-115/7dc50fd6cfe6bf9a48fff6c753d062bdf1a20491.jpg" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

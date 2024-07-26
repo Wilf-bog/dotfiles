@@ -1,0 +1,234 @@
+<p>Update on what happened across the GNOME project in the week from April 14 to April 21.</p>
+<h1 id="gnome-incubating-apps">
+<a class="heading-anchor" href="#gnome-incubating-apps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Incubating Apps
+</h1>
+
+<h3 id="loupe">
+<a class="heading-anchor" href="#loupe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Loupe <a href="https://gitlab.gnome.org/Incubator/loupe"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple and modern image viewer.</p>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie 🏳️‍🌈 🏳️‍⚧️ ✊</a> announces</p>
+<blockquote>
+<p>We have landed all features planned to make Loupe a suitable image viewer for GNOME Core. As a next step, we will primarily focus on removing bugs and polishing what we have.</p>
+<p>While basic image editing features are very frequently requested, it&rsquo;s very unlikely it will make it into GNOME 45. Much work is needed on different levels, especially in the libraries that handle image formats. I want to work on that in the future, but this is nothing that should be done under time pressure. Please let me know if you are experienced with image formats and/or rust and want to help!</p>
+<p>Since our last update, we have:</p>
+<ul>
+<li>Landed image printing.</li>
+<li>Added ICC color profile support for JPEG, PNG, HEIC, and AVIF.</li>
+<li>Filled an upstream fix for ICC profiles in PNGs.</li>
+<li>Made the overlay buttons hide after inactivity.</li>
+<li>Let Loupe correctly advertise to the system what images it supports.</li>
+<li>Made dragging the image also work with the middle mouse button.</li>
+<li>Optimized SVG rendering, showing a complete image more quickly when zooming for huge SVGs.</li>
+<li>Allow to drag and drop multiple images into Loupe to browse through those images.</li>
+<li>And finally made our CI builds three times faster on average.</li>
+</ul>
+<p>Thanks to everyone who helped with contributions, bug reports, and advice.
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/e0b2d20afffad8b4f84a7f3926675d25759b9519.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="workbench">
+<a class="heading-anchor" href="#workbench" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Workbench <a href="https://github.com/sonnyp/Workbench/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A sandbox to learn and prototype with GNOME technologies.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> announces</p>
+<blockquote>
+<p>Workbench 44 is out. Highlights are:</p>
+<ul>
+<li>Use GNOME platform/SDK 44</li>
+<li>Fully sandboxed and now considered Safe by GNOME Software</li>
+<li>An improved previewer</li>
+<li>18 new library entries</li>
+</ul>
+<p>Thank you to all new contributors, specially GSoC and Outreachy applicants.
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/b854c5c8669eaf28e00fd4beb04587de527db04b.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/ae97a26b628f50611aa1519cb528c95f714e8aa3.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="pika-backup">
+<a class="heading-anchor" href="#pika-backup" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Pika Backup <a href="https://apps.gnome.org/app/org.gnome.World.PikaBackup/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Keep your data safe.</p>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie 🏳️‍🌈 🏳️‍⚧️ ✊</a> says</p>
+<blockquote>
+<p>Pika Backup 0.6.1 is now available with some distribution specific bug fixes. We have fixed that archives could not be mounted on distributions that don&rsquo;t link <code>fusermount</code> to <code>fusermount3</code>, and removable drives can now be included in backups on all distributions again.</p>
+</blockquote>
+
+
+<h3 id="authenticator">
+<a class="heading-anchor" href="#authenticator" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Authenticator <a href="https://gitlab.gnome.org/World/Authenticator"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Simple application for generating Two-Factor Authentication Codes.</p>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> says</p>
+<blockquote>
+<p><a href="https://flathub.org/apps/details/com.belmoussaoui.Authenticator">Authenticator</a> 4.3.0 is out with one of the biggest code cleanup we have done since the port to GTK 4 &amp; Rust. The end user shouldn&rsquo;t notice that many changes though other then a finally very accurate TOTP implementation.</p>
+<ul>
+<li>Fix compatibility with <a href="https://2fas.com/check-token/">https://2fas.com/check-token/</a></li>
+<li>backup: Add FreeOTP+ JSON format support</li>
+<li>Allow importing from an image file containing a QR code</li>
+<li>Add tests for all the supported backup formats
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/9072f7ef2edd92ca8d3c8a407696f657d2fd2a66.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/e01b5cdae7f2fc174a96dec67c9d2715726c11f1.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@ovflowd:gnome.org">cwunder</a> reports</p>
+<blockquote>
+<p>Support for Chromecast on GNOME Network Displays finally landed and it&rsquo;s scheduled to be released with GNOME 45.</p>
+<p>More details about the Merge Request: <a href="https://gitlab.gnome.org/GNOME/gnome-network-displays/-/merge_requests/171">https://gitlab.gnome.org/GNOME/gnome-network-displays/-/merge_requests/171</a>.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> announces</p>
+<blockquote>
+<p>Dino, a modern chat and video call app is now <a href="https://flathub.org/apps/details/im.dino.Dino">available on Flathub</a>.</p>
+<p>Thanks to <a href="https://github.com/Aman9das">Aman9das</a>, <a href="https://linkmauve.fr/">Link Mauve</a> for the manifest and <a href="https://github.com/bl00mber">bl00mber</a> for <a href="https://github.com/flatpak/flatpak/pull/4958"><code>--socket=gpg-socket</code></a>.</p>
+<p>As a side note, thanks to its isolation, Flatpak is the first distribution of Dino to include fix for a CVE in one of it&rsquo;s dependency.
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/6e0008c8542b0b64017e9f39a24d0e3323d53c31.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@aleksrutins:matrix.org">Aleks Rūtiņš</a> reports</p>
+<blockquote>
+<p>This week, I released version 0.1 of Kaste, a stupidly simple abstraction for data storage in GNOME applications. <a href="https://gitlab.gnome.org/aleksrutins/kaste">Check it out!</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Nickvision apps (Denaro, Tube Converter, Tagger) have a new home, the <a href="https://github.com/NickvisionApps">NickvisionApps GitHub Organization</a>. This organization helps us keep all of ours apps in one place and manage our team as a whole. New website soon to follow :)
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/SMTVbHmTziIeyLyXTkathBVU.jpg" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="tube-converter">
+<a class="heading-anchor" href="#tube-converter" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tube Converter <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Get video and audio from the web.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> announces</p>
+<blockquote>
+<p>Tube Converter <a href="https://github.com/NickvisionApps/TubeConverter/releases/tag/2023.4.2">V2023.4.2</a> is here!</p>
+<p>This release includes some new features that make the downloader even more customizable. First, we added a configurable speed limit that can be used to limit individual download speeds. Furthermore, we added support for using aria2 as the downloader backend if users choose.</p>
+<p>We also fixed some issues, including an issue where not all logs were shown for a download.
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/HuupVuGVjYoKwoEulSvVHcsG.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="denaro">
+<a class="heading-anchor" href="#denaro" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Denaro <a href="https://flathub.org/apps/details/org.nickvision.money"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Manage your personal finances.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> reports</p>
+<blockquote>
+<p>Your favorite pizza man is here with a new release of Denaro! <a href="https://github.com/NickvisionApps/Denaro/releases/tag/2023.4.1">V2023.4.1</a></p>
+<p>First off, a new Notes field was added to transactions to allow users to write whatever extra notes they may choose for a transaction. We also added support for choosing to export all account information or just the transactions shown in the current filtered and sorted view. Support for displaying native digits instead of just Latin ones when working with numeric amounts was also added.</p>
+<p>Besides these new features, we also fixed many issues including an issue where custom separators would not parse correctly and an issue where CSV files were not exported in the correct format.</p>
+<p>Denaro Docs, available from the Help action in the main menu, are also now available to be <a href="https://hosted.weblate.org/projects/nickvision-money/docs/">translated via Weblate!</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/eoBmugXBjjwYtjWGwVuKFXVG.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="phosh">
+<a class="heading-anchor" href="#phosh" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Phosh <a href="https://gitlab.gnome.org/World/Phosh/phosh"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A pure wayland shell for mobile devices.</p>
+<p><a href="https://matrix.to/#/@agx:sigxcpu.org">Guido</a> says</p>
+<blockquote>
+<p>This week we finally merged <a href="https://gitlab.gnome.org/CoderThomasB">Thomas</a> support for handling emergency calls into Phosh.  Whenever gnome-calls reports available emergency numbers you can now either select them from an emergency contact list or dial them via the keypad (doesnt' matter if your phone is locked or not). You currently have to opt in via a configuration option as we want to get more testing feedback before enabling it by default - it would be bad if that feature failed you in a real emergency. Apart from that we landed some visual tweaks related to notifications, system modal dialogues and screenshots.
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/fXaoBODEuGbbgSqbMbqgXnqB.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/DZfnIzrfRyBYltbkiLUOPaTn.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/tFyByFFSvboAsfuvzPxhCdiL.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="graphs">
+<a class="heading-anchor" href="#graphs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Graphs <a href="https://graphs.sjoerd.se"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Plot and manipulate data in a breeze!</p>
+<p><a href="https://matrix.to/#/@sjoerdb93:matrix.org">Sjoerd Stendahl</a> says</p>
+<blockquote>
+<p>I am happy to announce that we have finally released Graphs 1.5! Graphs is a simple, yet powerful tool that allows you to plot and manipulate your data with ease. Data can be imported from column-files stored in most formats, or generated using an equation. You can easily manipulate or transform the data in various ways such as cutting, translations, multiplications, derivatives, fourier transforms and more. Some major highlights of this release include:</p>
+<ul>
+<li>A major overhaul of the UI: Graphs now tries to follows the GNOME HIG, giving a nice and consistent experience in GNOME</li>
+<li>A fully featured plot style editor: The style of your plot can now be saved in our now style editor where setting such as plot colours, ticks, the grid and even the default color cycle are all stored. A new plot style can easily be applied on an open project to quickly change your graph styling for a specific purpose</li>
+<li>Saving projects: Projects can now be saved as a single file, which can be opened later for further use. Allowing you to continue where you left off.</li>
+<li>Improved clipboard behaviour: Adding new data no longer resets the clipboard. And more actions are now included in the clipboard as well, so actions such as changing line colours, adding data, removing data and changing line names can all be undone/redone using the clipboard features.</li>
+<li>Tons of bug fixes and changes under the hood. Most code has been updated since the previous release.</li>
+<li>And many more changes, such as support for Panalytical .xrdml files, the ability to set the canvas limits from Plot Settings, the ability to reorder data by drag-and-drop within the side-panel, and a bunch of additional toast pop-ups to give the user feedback on specific occasions.</li>
+</ul>
+<p>Thanks to everyone involved in helping out. Specifically <a href="https://github.com/cmkohnen">@cmkohnen</a>, who&rsquo;s been co-developing Graphs with me, and I&rsquo;d also want to thank Tobias Bernard  for his useful feedback and help with the user interface! The latest release of Graphs can be found on <a href="https://flathub.org/apps/details/se.sjoerd.Graphs">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/HXhfZLYGBovJPlmlrOeAKfwN.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/XccVsYXElVYuUgBdFvDpxEma.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/pholRlGfLeNTRIckQmjKmAyl.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="cartridges">
+<a class="heading-anchor" href="#cartridges" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Cartridges <a href="https://github.com/kra-mo/cartridges"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Launch all your games</p>
+<p><a href="https://matrix.to/#/@kramo:matrix.org">kramo</a> announces</p>
+<blockquote>
+<p>I just released Cartridges <a href="https://github.com/kra-mo/cartridges/releases/v1.4">1.4</a>!</p>
+<p>This update brings:</p>
+<ul>
+<li>Support for animated covers</li>
+<li>A redesigned details view</li>
+<li>The ability to search for games on various databases</li>
+</ul>
+<p>Check it out on <a href="https://flathub.org/apps/details/hu.kramo.Cartridges">Flathub</a>!
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/04/twig-92/VawnqnHBFuJIHjfXihtmymCb.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/04/twig-92/VawnqnHBFuJIHjfXihtmymCb.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1><p><a href="https://matrix.to/#/@lw64:gnome.org">lwildberg</a> announces</p>
+<blockquote>
+<p>This week dark mode support for valadoc.org was merged! Check it out and enjoy looking up the beautiful API references with even more comfort! This was a long standing effort by colinkiama and others and now its finally there!
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-92/06376f082b7a67a36e87a115445ce605d5e75069.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@kristiprogri:gnome.org">Kristi Progri</a> reports</p>
+<blockquote>
+<p>Linux App Summit (LAS) is just a few days away and we’re excited to welcome you to Brno on April 22-23. We’ve been working hard to make sure the conference runs smoothly, so if you’re around, please feel free to join us. There’s still time to register at <a href="https://conf.linuxappsummit.org/event/5/registrations/">https://conf.linuxappsummit.org/event/5/registrations/</a>.</p>
+<p>In addition to LAS, we’re also busy organizing our big upcoming event, GUADEC. We’ll be publishing the full schedule and opening registration soon, so stay tuned!</p>
+<p>I’m also looking for someone to assist with leading the annual report project. If you’re interested in helping out, please reach out to me at <a href="mailto:kprogri@gnome.org">kprogri@gnome.org</a>. Your support would be greatly appreciated.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

@@ -1,0 +1,55 @@
+
+         
+         <p>Substitute is a set of commands that perform text replacement (i)
+throughout the buffer, (ii) limited to the current definition (per
+<code class="language-plaintext highlighter-rouge">narrow-to-defun</code>), (iii) from point to the end of the buffer, and
+(iv) from point to the beginning of the buffer.</p>
+
+<p>These substitutions are meant to be as quick as possible and, as such,
+differ from the standard <code class="language-plaintext highlighter-rouge">query-replace</code> (which I still use when
+necessary). The provided commands prompt for substitute text and
+perform the substitution outright, without moving the point.</p>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">substitute</code></li>
+  <li>Official manual: <a href="https://protesilaos.com/emacs/substitute">https://protesilaos.com/emacs/substitute</a></li>
+  <li>Git repositories:
+    <ul>
+      <li>GitHub: <a href="https://github.com/protesilaos/substitute">https://github.com/protesilaos/substitute</a></li>
+      <li>GitLab: <a href="https://gitlab.com/protesilaos/substitute">https://gitlab.com/protesilaos/substitute</a></li>
+    </ul>
+  </li>
+  <li>Video demo: <a href="https://protesilaos.com/codelog/2023-01-16-emacs-substitute-package-demo/">https://protesilaos.com/codelog/2023-01-16-emacs-substitute-package-demo/</a></li>
+  <li>Backronym: Some Utilities Built to Substitute Targets Independent of
+Their Utterances, Thoroughly and Easily.</li>
+</ul>
+
+<p>Below are the release notes.</p>
+
+<hr />
+
+<p>This is a small release that adds a quality-of-life refinement to an
+already stable package.</p>
+
+<h2>Access all commands via a prefix key</h2>
+
+<p>The command <code class="language-plaintext highlighter-rouge">substitute-prefix-map</code> can be assigned to a key to make
+it work as a prefix. This way, all Substitute commands are readily
+available. For example:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-c s"</span><span class="p">)</span> <span class="nf">#'</span><span class="nv">substitute-prefix-map</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>After evaluating that, type <code class="language-plaintext highlighter-rouge">C-c s C-h</code> to learn about all the key
+bindings. To change those, use something like this:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">define-key</span> <span class="nv">substitute-prefix-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"b"</span><span class="p">)</span> <span class="nf">#'</span><span class="nv">substitute-target-in-buffer</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">define-key</span> <span class="nv">substitute-prefix-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"d"</span><span class="p">)</span> <span class="nf">#'</span><span class="nv">substitute-target-in-defun</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">define-key</span> <span class="nv">substitute-prefix-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"r"</span><span class="p">)</span> <span class="nf">#'</span><span class="nv">substitute-target-above-point</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">define-key</span> <span class="nv">substitute-prefix-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"s"</span><span class="p">)</span> <span class="nf">#'</span><span class="nv">substitute-target-below-point</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Those commands can, of course, be used without the prefix key. In that
+case, bind them directly to the <code class="language-plaintext highlighter-rouge">global-map</code> instead of the <code class="language-plaintext highlighter-rouge">substitute-prefix-map</code>.</p>
+        
+      

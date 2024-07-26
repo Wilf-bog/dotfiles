@@ -1,0 +1,127 @@
+<p>Update on what happened across the GNOME project in the week from October 21 to October 28.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> announces</p>
+<blockquote>
+<p>Simon McVittie has just added a <code>g_autofd</code> attribute to GLib, which you can use to automatically close FDs when exiting a scope, just like <code>g_autofree</code> and <code>g_autoptr()</code> (<a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3007">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3007</a>)</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1>
+
+<h3 id="tagger">
+<a class="heading-anchor" href="#tagger" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tagger <a href="https://flathub.org/apps/details/org.nickvision.tagger"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An easy-to-use music tag (metadata) editor.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Tagger is now at V2022.10.5! This release added support for new audio file types.
+Here&rsquo;s the changelog:</p>
+<ul>
+<li>Added support for oga files</li>
+<li>Added support for m4a files
+
+<img src="https://thisweek.gnome.org/posts/2022/10/twig-67/tWHWKsEuNyoEPWAKktsqmGkD.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="girens-for-plex">
+<a class="heading-anchor" href="#girens-for-plex" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Girens for Plex <a href="https://flathub.org/apps/details/nl.g4d.Girens"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Girens is a Plex Gtk client for playing movies, TV shows and music from your Plex library.</p>
+<p><a href="https://matrix.to/#/@tijder:matrix.org">tijder</a> says</p>
+<blockquote>
+<p>Girens 2.0.0 is released. This is the biggest update of Girens since the first release. In this release the following things are done:</p>
+<ul>
+<li>Migrated from GTK 3 to GTK 4</li>
+<li>Migrated from Libhandy to Libadwaita</li>
+<li>Migrated to Blueprint for ui files</li>
+<li>Improved lists for large libraries (thanks to the new Gtk4 lists)</li>
+<li>Redesigned the album/artist view</li>
+<li>Redesigned the show view</li>
+<li>Added French and Norwegian translations</li>
+<li>Improved the windowed view</li>
+<li>A lot of bug fixes</li>
+</ul>
+<p>Also this week I added support for <a href="https://hosted.weblate.org/projects/girens/girens/">weblate translation</a>. If someone want&rsquo;s to help with translating, it is now a lot easier.
+
+<img src="https://thisweek.gnome.org/posts/2022/10/twig-67/AvrGYvThcMapBRnILwZPuDIq.jpg" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/10/twig-67/pSdOtqxYYwjhcbSqRjMmZKkc.jpg" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="login-manager-settings">
+<a class="heading-anchor" href="#login-manager-settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Login Manager Settings <a href="https://realmazharhussain.github.io/gdm-settings/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A settings app for the login manager GDM.</p>
+<p><a href="https://matrix.to/#/@realmazharhussain:matrix.org">Mazhar Hussain</a> reports</p>
+<blockquote>
+<p><a href="https://realmazharhussain.github.io/gdm-settings">Login Manager Settings</a> <a href="https://github.com/realmazharhussain/gdm-settings/releases/tag/v2.beta.0">v2.beta.0</a> has been released.</p>
+
+
+<h3 id="new-features">
+<a class="heading-anchor" href="#new-features" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>New Features
+</h3><ul>
+<li>Power settings</li>
+<li>Import/export to file</li>
+<li>Enlarge welcome message shown on login</li>
+</ul>
+
+
+<h3 id="bug-fixes">
+<a class="heading-anchor" href="#bug-fixes" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Bug Fixes
+</h3><ul>
+<li>&ldquo;Apply Current Display Settings&rdquo; feature not working on Ubuntu and similar systems</li>
+<li>Some text showing up untranslated even if translation existed (fix by <a href="https://github.com/libreajans">Sabri Ünal</a>)</li>
+<li>Some typos (fix by <a href="https://github.com/kianmeng">Kian-Meng Ang</a>)</li>
+</ul>
+
+
+<h3 id="other-changes">
+<a class="heading-anchor" href="#other-changes" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Other Changes
+</h3><ul>
+<li>
+<p>The app is now adaptive</p>
+<ul>
+<li>Main window is adaptive</li>
+<li>Pop-up dialogs are adaptive</li>
+</ul>
+</li>
+<li>
+<p>App uses the new &ldquo;About&rdquo; window</p>
+</li>
+<li>
+<p>Terminal output is colored now</p>
+</li>
+</ul>
+<p>For full release notes visit <a href="https://github.com/realmazharhussain/gdm-settings/releases/tag/v2.beta.0">https://github.com/realmazharhussain/gdm-settings/releases/tag/v2.beta.0</a>.
+
+<img src="https://thisweek.gnome.org/posts/2022/10/twig-67/eXkldPBOMBqQZtsvXqgSYIxb.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/10/twig-67/MhatPnHzkqDSEJhzuvIyFDSY.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="flare">
+<a class="heading-anchor" href="#flare" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flare <a href="https://flathub.org/apps/details/de.schmidhuberj.Flare"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A unofficial Signal GTK client.</p>
+<p><a href="https://matrix.to/#/@schmiddi:matrix.org">schmiddi</a> says</p>
+<blockquote>
+<p>Flare 0.5.3 was released. Compared to the last TWIG-update, Flare gained minor new features as pasting attachments into the input box, opening attachments in the default program  and notifications for incoming calls . In 0.5.3 an additional critical bug has been fixed that rendered the application useless since 26. Oct 2022 because Signal updated their certificates. I urge everyone to update such that Flare works again. I am sorry for any inconveniences that happened due to this incident and hope we can learn from it such that it does not happen again.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

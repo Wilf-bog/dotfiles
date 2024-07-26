@@ -1,0 +1,34 @@
+<p>On April 25, I published the first beta version of “Prot’s Dots For
+Debian” (PDFD).  Since then I made a series of incremental refinements
+and changes.  PDFD is a complete guide to reproducing my custom desktop
+session on Debian 10 ‘buster’.  Today I added the finishing touches and
+am happy to announce that the first official release is available.</p>
+
+<p>I am publishing this a few days prior to the release of Debian 10, which
+will happen on July 6, just to be sure that everything works as
+intended.</p>
+
+<p>As already noted in the previous announcement about PDFD:</p>
+
+<blockquote>
+  <p><em>Prot’s Dots For Debian</em> (PDFD) is available free of charge and freed
+from traditional copyright restrictions.  It is distributed under the
+terms of the <em>Creative Commons Attribution-ShareAlike Licence (CC BY-SA)
+4.0</em>.  Its code is licensed in the same spirit using the <em>GNU General
+Public License version 3 or later</em>.</p>
+
+  <p>You can <a href="https://protesilaos.com/pdfd/">read the book online</a> or visit its <a href="https://protesilaos.com/pdfd/print/">print-optimised
+page</a> to get a physical copy.</p>
+
+  <p>Because this is code-related, I assume that readers will have the
+minimum technical skills to also make use of the following <code class="language-plaintext highlighter-rouge">git</code>
+repositories (contributions are most welcome):</p>
+
+  <ul>
+    <li><a href="https://gitlab.com/protesilaos/pdfd">PDFD source files</a> with
+ instructions on how to get a local markdown file with the book.</li>
+    <li><a href="https://gitlab.com/protesilaos/cpdfd">Code for PDFD</a> containing the
+ latest “fixed release” of my dotfiles.</li>
+    <li><a href="https://gitlab.com/protesilaos/dotfiles">My dotfiles</a>.</li>
+  </ul>
+</blockquote>

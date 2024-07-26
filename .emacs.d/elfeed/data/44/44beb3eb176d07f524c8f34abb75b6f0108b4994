@@ -1,0 +1,56 @@
+
+         
+         <p>Raw link: <a href="https://www.youtube.com/watch?v=v8NaZV1LdN8">https://www.youtube.com/watch?v=v8NaZV1LdN8</a></p>
+         
+         <p>It is raining and I have no coaching work right now…  I am thus
+planning to do a live stream on various Emacs topics.  <strong>The video will
+be recorded and can be watched later.</strong></p>
+
+<p>There is nothing specific I want to talk about.  I will just do some
+general maintenance of Emacs code and go with the flow.</p>
+
+<p>A non-exhaustive list of items:</p>
+
+<ul>
+  <li>
+    <p>Write a <code class="language-plaintext highlighter-rouge">defalias</code> of <code class="language-plaintext highlighter-rouge">modus-themes-items</code> to
+<code class="language-plaintext highlighter-rouge">modus-themes-collection</code>.</p>
+  </li>
+  <li>
+    <p>Write the inverse for the <code class="language-plaintext highlighter-rouge">ef-themes</code>.</p>
+  </li>
+  <li>
+    <p>Document in the Modus manual how to add more spacing in the frame
+and between windows.</p>
+  </li>
+  <li>
+    <p>Solve a problem on how to get the cursor colour from the current
+theme (see snippet below).</p>
+
+    <div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;; Getting the cursor color</span>
+<span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nv">alist-get</span> <span class="ss">'cursor</span> <span class="nv">ef-duo-dark-palette</span><span class="p">))</span>
+<span class="c1">;; =&gt; "#ef6f11"</span>
+
+<span class="c1">;; Getting the theme and adding the "-palette" string to match the alist</span>
+<span class="p">(</span><span class="nv">intern-soft</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"%s-palette"</span>
+                     <span class="p">(</span><span class="nb">car</span> <span class="nv">custom-enabled-themes</span><span class="p">)))</span>
+<span class="c1">;; =&gt; ef-duo-dark-palette</span>
+
+<span class="c1">;; Getting frustrated for not being able to see the error....</span>
+<span class="p">(</span><span class="nv">alist-get</span> <span class="ss">'cursor</span>
+           <span class="p">(</span><span class="nv">intern-soft</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"%s-palette"</span>
+                                <span class="p">(</span><span class="nb">car</span> <span class="nv">custom-enabled-themes</span><span class="p">))))</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Contribute to the Denote mailing list thread about linking to
+non-note files:
+<a href="https://lists.sr.ht/~protesilaos/denote/%3C87fs8b85tq.fsf%40prevos.net%3E">https://lists.sr.ht/~protesilaos/denote/%3C87fs8b85tq.fsf%40prevos.net%3E</a>.</p>
+  </li>
+</ul>
+
+<p>Of course, I can also do whatever else may come up during the chat.  I
+understand this is a short notice (I am typing this at 2023-05-06
+08:01 +0300), so no worries if you can’t make it.</p>
+        
+      

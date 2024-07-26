@@ -1,0 +1,65 @@
+<p>Update on what happened across the GNOME project in the week from July 01 to July 08.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> reports</p>
+<blockquote>
+<p>Following message dialogs, Libadwaita now has <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.AboutWindow.html"><code>AdwAboutWindow</code></a>
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-51/6fe7138adae430ac906c096c1c5136421b4ef85b.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@raggesilver:matrix.org">Paulo</a> says</p>
+<blockquote>
+<p>Announcing <a href="https://gitlab.gnome.org/raggesilver/blackbox/">Black Box</a> — a beautiful Gtk 4 terminal.</p>
+<p>It features customizable tabs, a toggleable header bar, floating window controls, fullscreen support, and Tilix-compatible full-window theming. Last and most importantly, Black Box has tabs in the header bar.</p>
+<p>Black Box is written in Vala and built on top of Gtk 4, libadwaita, and VTE. Check it out!
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-51/LbbJEdLwTTmGtfpiQLbJlYuY.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="workbench">
+<a class="heading-anchor" href="#workbench" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Workbench <a href="https://github.com/sonnyp/Workbench/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A sandbox to learn and prototype with GNOME technologies.</p>
+<p><a href="https://matrix.to/#/@sonnyp:matrix.org">sonnyp</a> reports</p>
+<blockquote>
+<p>A new version of Workbench, the app to learn and prototype with GNOME technologies, is out.  Here are the highlights:</p>
+<ul>
+<li>Add an Icon Browser to find the right icons for your prototypes</li>
+<li>Add a Platform tools Library demo to learn about/from GTK Inspector, Adwaita Demo, GTK Demo and GTK Widget Factory</li>
+<li>Adopt the de facto standard light/dark style switcher</li>
+<li>Replace confirmation dialogs with toasts and undo</li>
+<li>Preview now support updates on root objects</li>
+<li>Support binding signal handlers from UI</li>
+<li>Add APIs to allow using templates from Code</li>
+<li>Add Center/Fill preview modes for templates</li>
+</ul>
+<p><a href="https://beta.flathub.org/apps/details/re.sonny.Workbench">https://beta.flathub.org/apps/details/re.sonny.Workbench</a>
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-51/YpSfHbWDVZWZSNRaQJugMyCj.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-to-do--endeavour">
+<a class="heading-anchor" href="#gnome-to-do--endeavour" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME To Do / Endeavour <a href="https://gitlab.gnome.org/GNOME/gnome-todo"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An intuitive and powerful application to manage your personal tasks.</p>
+<p><a href="https://matrix.to/#/@itsjamie9494:matrix.org">Jamie (She/Her)</a> reports</p>
+<blockquote>
+<p>GNOME To Do has been renamed to Endeavour, with a new feature making it possible to drag tasks between lists</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

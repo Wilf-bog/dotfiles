@@ -1,0 +1,236 @@
+<p>Update on what happened across the GNOME project in the week from May 19 to May 26.</p>
+<p><a href="https://matrix.to/#/@tchx84:matrix.org">Martín Abente Lahaye</a> reports</p>
+<blockquote>
+<p>Today, Friday May 26th, and tomorrow, Saturday May 27th, come <a href="https://events.gnome.org/event/136">join us</a> at GNOME Latam 2023! This is a two days event celebrating our Latin GNOME community with speakers from all over the Americas.
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/LAFVhdEbvBlPdyOJOZepOrjU.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alice (she/they)</a> announces</p>
+<blockquote>
+<p>I merged <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.NavigationView.html"><code>AdwNavigationView</code></a>. This is a widget that implements page-based navigation with an easier to use API than <code>AdwLeaflet</code>, and will eventually replace it
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/05/twig-97/f82e48cb6836c9dfcaeee1faec51d7c526598ab9.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/05/twig-97/f82e48cb6836c9dfcaeee1faec51d7c526598ab9.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="calendar">
+<a class="heading-anchor" href="#calendar" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Calendar <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple calendar application.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> says</p>
+<blockquote>
+<p>GNOME Calendar just received a small facelift on top of the new widgets provided by libadwaita. It now features a better delineated sidebar, and the views have a uniform look too.
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/b0aba4f3e7bfba75af7d6ad60215f3ea20e70ea6.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> reports</p>
+<blockquote>
+<p>This week, <a href="https://apps.gnome.org/app/hu.kramo.Cartridges/">Cartridges</a> joined GNOME Circle. Cartridges is a simple game launcher for all of your games. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/cc93854808c461503e48353f1ca4dea4ac94c241.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="cartridges">
+<a class="heading-anchor" href="#cartridges" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Cartridges <a href="https://github.com/kra-mo/cartridges"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Launch all your games</p>
+<p><a href="https://matrix.to/#/@kramo:matrix.org">kramo</a> says</p>
+<blockquote>
+<p>I just released Cartridges 1.5!</p>
+<p>Extra Steam libraries are now detected and added automatically, executables are now passed directly to the shell, allowing for more complex arguments, and a lot of UX improvements have been made.</p>
+<p>Oh yeah, and the app is now part of GNOME Circle!</p>
+<p>Check it out on <a href="https://flathub.org/apps/hu.kramo.Cartridges">Flathub</a>!
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/oRilyQhXldSmZSofMImUktrj.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="amberol">
+<a class="heading-anchor" href="#amberol" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Amberol <a href="https://gitlab.gnome.org/ebassi/amberol/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Plays music, and nothing else.</p>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> reports</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/World/amberol/-/releases/0.10.3">Amberol 0.10.3</a> is now out! Not a lot of changes, but two nice bug fixes: the waveform for short songs is now appropriately sized; and the cover art with a portrait orientation does not get squished any more. Plus, as usual, lots of translation updates.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@imansalmani:matrix.org">Iman Salmani</a> reports</p>
+<blockquote>
+<p><a href="https://github.com/iman-salmani/iplan">IPlan 1.2.0</a> is now out!
+Changes:
+Subtasks, Bug fixes, and UI improvements</p>
+<ul>
+<li>Task Window which contains task info, subtasks, and records</li>
+<li>Translation to Persian and Turkish languages. thanks to Sabri Ünal</li>
+<li>New toast message for moving back task from the tasks done list</li>
+<li>Users are now able to pick emojis for their projects in the edit window</li>
+<li>Projects and Tasks now can have descriptions
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/QzxvcoWrnoxEtFFXdSIzXcOO.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/pnsMXMZjsfdJOqSEroBnPLjY.png" alt="" />
+</li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@0xmrtt:envs.net">0xMRTT</a> reports</p>
+<blockquote>
+<p><a href="https://imaginer.codeberg.page">Imaginer</a> 0.2.2 has been released with the ability to use <a href="https://imaginer.codeberg.page/help/local/">stable diffusion running locally</a>. It&rsquo;s also now possible to customize the filename and some bugs has been fixed.
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/7154c5a5b3b1e59d680af4efa3ac83051240a881.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/14f0b49797da1c4429c4ef7cfe30b8634a6b15af.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@0xmrtt:envs.net">0xMRTT</a> says</p>
+<blockquote>
+<p><a href="https://bavarder.codeberg.page">Bavarder</a> 0.2.3 has been released with the ability to use <a href="https://bavarder.codeberg.page/help/local/">a custom model</a> which enable you to use either a model running on your computer or a custom API providing the model. The loading mechanism is now faster and some bugs has been fixed.</p>
+<p>You can download Bavarder from <a href="https://flathub.org/apps/io.github.Bavarder.Bavarder">Flathub</a> or from either <a href="https://github.com/Bavarder/Bavarder">GitHub</a> or <a href="https://codeberg.org/Bavarder/Bavarder">Codeberg</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/fc8ee260c2237f51c9ab36fbf8a28586c4809903.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@tfuxu:matrix.org">tfuxu</a> says</p>
+<blockquote>
+<p>I&rsquo;ve released Halftone, a simple app for lossy image compression using quantization and dithering techniques. Give your images a pixel art-like style and reduce the file size in the process with Halftone. You can check it out on <a href="https://github.com/tfuxu/Halftone">Github</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/UZwlGtdIxmMTuAGgXZlMnFmc.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/TQHGxpbtnqucAFNgVNMUKMJs.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/OcUvtnxbycxJqfxhXxUWUffE.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@JumpLink:matrix.org">JumpLink</a> reports</p>
+<blockquote>
+<p>I am pleased to announce the release of <a href="https://github.com/gjsify/ts-for-gir">ts-for-gir</a> v3.0.0 🚀 ts-for-gir is a powerful tool for generating TypeScript type definitions for GJS and GObject Introspection-based libraries.</p>
+<p>In this release, I have focused on introducing NPM packages 📦. These packages contain pre-generated TypeScript types that can be easily integrated into your GJS projects. By utilizing these types, you can benefit from TypeScript&rsquo;s strong typing and improved code navigation, whether you are working with JavaScript or TypeScript.</p>
+<p>The pre-generated NPM packages can be accessed directly on <a href="https://github.com/gjsify/types">GitHub</a>, or you can find them on NPM, such as the <a href="https://www.npmjs.com/package/@girs/gtk-4.0">Gtk-4.0</a> package.</p>
+<p>I encourage you to explore ts-for-gir / the NPM packages and provide your valuable feedback. Your input is greatly appreciated! 🤗️
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/hKnIrsHuBURtqKBKAHwkYwYT.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> reports</p>
+<blockquote>
+<p>I have added multi windows support to <a href="https://flathub.org/apps/org.gnome.design.Contrast">Contrast</a> because why not. Along with other fixes in v0.0.8
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/671674a5c3569750374c620410870896f7306449.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="tube-converter">
+<a class="heading-anchor" href="#tube-converter" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tube Converter <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Get video and audio from the web.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Tube Converter <a href="https://github.com/NickvisionApps/TubeConverter/releases/tag/2023.5.0">V2023.5.0</a> is here! This week&rsquo;s release features a brand new backend that makes Tube Converter much more stable!
+Besides the new backend, we added the ability to stop all downloads and retry all failed downloads, as well as clear all queued downloads. This release also introduces the feature to crop the thumbnail of a download as square (useful for downloading music) and the ability to choose specific resolutions for video downloads instead of the qualities Best, Good, Worst.
+Here&rsquo;s the full changelog:</p>
+<ul>
+<li>Added the per-download option to crop the thumbnail of a video as a square</li>
+<li>Added the ability to stop all downloads</li>
+<li>Added the ability to retry all failed downloads</li>
+<li>Added the ability to clear queued download</li>
+<li>When downloading a video, the quality options will be the specific resolutions of the video instead of Best, Good, Worst</li>
+<li>Fixed an issue where some downloads could not be stopped and retried</li>
+<li>Fixed an issue where some users would experience random crashing when downloading</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/suFDjLRFzmZvcawbtWQHxVrs.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="pods">
+<a class="heading-anchor" href="#pods" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Pods <a href="https://github.com/marhkb/pods"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A podman desktop application.</p>
+<p><a href="https://matrix.to/#/@marcusb86:matrix.org">marhkb</a> says</p>
+<blockquote>
+<p>I have released version 1.2.0 of <a href="https://github.com/marhkb/pods">Pods</a> with the following new features:</p>
+<ul>
+<li>Usabilty and UX has been improved in many places.</li>
+<li>Pruning of containers and pods is now possible.</li>
+<li>Container terminals are now detachable and can be used in parallel.</li>
+<li>Images can be pushed to a registry.</li>
+<li>The CPU utilization now takes the number of cores into account.
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/svpdUyKQvTCLQMDsVdqghqXT.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="denaro">
+<a class="heading-anchor" href="#denaro" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Denaro <a href="https://flathub.org/apps/details/org.nickvision.money"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Manage your personal finances.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Your favorite pizza man is back with another Denaro release! 🍕
+Denaro <a href="https://github.com/NickvisionApps/Denaro/releases/tag/2023.5.0">V2023.5.0</a> is here! This week&rsquo;s release features many fixes for bugs users were experiencing across the app. Denaro will also now show error messages if it attempts to access inaccessible files instead of crashing.
+Here&rsquo;s the full changelog:</p>
+<ul>
+<li>Fixed an issue where Denaro would crash on systems with unconfigured locales</li>
+<li>Fixed an issue where PDF exporting failed for accounts with many receipts</li>
+<li>Fixed an issue where a group&rsquo;s filter was reactivated when a transaction was added to that group</li>
+<li>Error messages will be shown if Denaro attempts to access inaccessible files instead of crashing</li>
+<li>Updated translations (Thanks to everyone on Weblate)!
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-97/jrbaZkCGaWWylOUrynDzYYvr.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> reports</p>
+<blockquote>
+<p>libmanette dev documentation is back online and will be included in <code>org.gnome.Sdk.Docs</code>
+<a href="https://gnome.pages.gitlab.gnome.org/libmanette/">https://gnome.pages.gitlab.gnome.org/libmanette/</a></p>
+<blockquote>
+<p>libmanette offers painless access to game controllers, from any programming language and with little dependencies.</p>
+</blockquote>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@kristiprogri:gnome.org">Kristi Progri</a> says</p>
+<blockquote>
+<p>After we successfully wrapped up LinuxAppSummit with a great team, we are moving forward with GUADEC preparations.</p>
+<p>The schedule is out now; you can check it at <a href="https://events.gnome.org/event/101/timetable/#20230726">https://events.gnome.org/event/101/timetable/#20230726</a>
+We are pleased to inform you that the call for registrations is now open as well <a href="https://events.gnome.org/event/101/registrations/,">https://events.gnome.org/event/101/registrations/,</a> get your ticket now and keep up with all the latest news and announcements we make.</p>
+<p>You can still submit your Bof/workshop even if you missed the original deadline at: <a href="https://events.gnome.org/event/101/surveys/13">https://events.gnome.org/event/101/surveys/13</a></p>
+<p>If you would like to volunteer and help us, consider signing up as a volunteer during the event time <a href="https://events.gnome.org/event/101/surveys/14">https://events.gnome.org/event/101/surveys/14</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

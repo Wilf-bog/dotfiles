@@ -1,0 +1,81 @@
+
+         
+         <p><code class="language-plaintext highlighter-rouge">beframe</code> enables a frame-oriented Emacs workflow where each frame has
+access only to the list of buffers visited therein.  In the interest of
+brevity, we call buffers that belong to frames “beframed”.</p>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">beframe</code></li>
+  <li>Official manual: <a href="https://protesilaos.com/emacs/beframe">https://protesilaos.com/emacs/beframe</a></li>
+  <li>Change log: <a href="https://protesilaos.com/emacs/beframe-changelog">https://protesilaos.com/emacs/beframe-changelog</a></li>
+  <li>Git repositories:
+    <ul>
+      <li>GitHub: <a href="https://github.com/protesilaos/beframe">https://github.com/protesilaos/beframe</a></li>
+      <li>GitLab: <a href="https://gitlab.com/protesilaos/beframe">https://gitlab.com/protesilaos/beframe</a></li>
+    </ul>
+  </li>
+  <li>Video demo: <a href="https://protesilaos.com/codelog/2023-02-28-emacs-beframe-demo/">https://protesilaos.com/codelog/2023-02-28-emacs-beframe-demo/</a></li>
+  <li>Backronym: Buffers Encapsulated in Frames Realise Advanced
+Management of Emacs.</li>
+</ul>
+
+<p>Below are the release notes</p>
+
+<hr />
+
+<p>This is a small release that adds some quality-of-life refinements to
+a stable package.</p>
+
+<h2>The <code class="language-plaintext highlighter-rouge">beframe-global-buffers</code> is more flexible</h2>
+
+<p>This is a user option to specify which buffers should appear in all
+frames. These “global” buffers are thus not associated only with the
+frame in which they where displayed in.</p>
+
+<p>Before, the value of this user option was a list of strings that were
+matching buffer names literally. Now it is a list of strings which are
+understood as regular expressions as well as a list of symbols
+representing major modes.</p>
+
+<p>Consider this example:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">setq</span> <span class="nv">beframe-global-buffers</span> <span class="o">'</span><span class="p">(</span><span class="s">"\\*scratch\\*"</span> <span class="s">".*notmuch.*"</span> <span class="nv">emacs-lisp-mode</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>It matches a buffer with the literal name <code class="language-plaintext highlighter-rouge">*scratch*</code>, all buffers
+that include <code class="language-plaintext highlighter-rouge">notmuch</code> in their name, and all buffers whose major mode
+is <code class="language-plaintext highlighter-rouge">emacs-lisp-mode</code> or derived therefrom.</p>
+
+<p>You can now more easily put all buffers in the global list, such as
+for email or IRC.</p>
+
+<h2>The <code class="language-plaintext highlighter-rouge">beframe-prefix-map</code> is now a command</h2>
+
+<p>Before, this symbol was defined as a variable, which held the value of
+the key bindings. Users where expected to bind this variable to a
+key, such as:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-c b"</span><span class="p">)</span> <span class="nv">beframe-prefix-map</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This would set up <code class="language-plaintext highlighter-rouge">C-c b</code> as a prefix for all the key bindings inside
+of <code class="language-plaintext highlighter-rouge">beframe-prefix-map</code>. However, any changes to that map would not be
+automatically included in the prefix. The above binding had to be
+evaluated again (because we were binding a fixed value directly,
+instead of having the indirection of a symbol that points to a value).</p>
+
+<p>Now the <code class="language-plaintext highlighter-rouge">beframe-prefix-map</code> is implemented as a variable and a
+command. The variable holds the value of the key bindings, while the
+command is meant to be assigned to a key. For users, the change is
+trivial:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-c b"</span><span class="p">)</span> <span class="ss">'beframe-prefix-map</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Notice the added single quote before <code class="language-plaintext highlighter-rouge">beframe-prefix-map</code>. While only
+an extra character in the user’s configuration, this is a major change
+because any changes made to the key map will now be automatically
+available under the defined prefix. No need to evaluate the key
+binding again.</p>
+        
+      

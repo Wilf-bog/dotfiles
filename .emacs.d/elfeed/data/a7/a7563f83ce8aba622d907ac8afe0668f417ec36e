@@ -1,0 +1,143 @@
+<p>Update on what happened across the GNOME project in the week from August 05 to August 12.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="tracker">
+<a class="heading-anchor" href="#tracker" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tracker <a href="https://gitlab.gnome.org/GNOME/tracker/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A filesystem indexer, metadata storage system and search tool.</p>
+<p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> announces</p>
+<blockquote>
+<p>Carlos Garnacho landed a major performance fix in Tracker Miners. Directory renames should now be processed within a few seconds even when many files are indexed. See <a href="https://gitlab.gnome.org/GNOME/tracker-miners/-/merge_requests/400">https://gitlab.gnome.org/GNOME/tracker-miners/-/merge_requests/400</a> for details.</p>
+</blockquote>
+
+
+<h3 id="gnome-contacts">
+<a class="heading-anchor" href="#gnome-contacts" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Contacts <a href="https://gitlab.gnome.org/GNOME/gnome-contacts"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Keep and organize your contacts information.</p>
+<p><a href="https://matrix.to/#/@nielsdg:gnome.org">nielsdg</a> says</p>
+<blockquote>
+<p>Contacts can now <a href="https://gitlab.gnome.org/GNOME/gnome-contacts/-/merge_requests/183">import and export</a> contacts in the vCard format (usually recognized by their .vcf file extension). This was the most popular feature request in the Contacts issue tracker for quite a while, so this should make quite a few people happy 😁</p>
+</blockquote>
+
+
+<h3 id="calls">
+<a class="heading-anchor" href="#calls" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Calls <a href="https://gitlab.gnome.org/GNOME/calls"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A phone dialer and call handler.</p>
+<p><a href="https://matrix.to/#/@evangelos.tzaras:talk.puri.sm">Evangelos</a> announces</p>
+<blockquote>
+<p>Calls now allows <a href="https://gitlab.gnome.org/GNOME/calls/-/merge_requests/579">sending SMS</a> from the call history 🎉
+and starts up faster and has more fluid scrolling  with <a href="https://gitlab.gnome.org/GNOME/calls/-/merge_requests/576">large histories</a> of more than 1k entries (which should especially help on weaker hardware) \o/
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-56/XVLbgVHHUVokGDpzYMtUCgaC.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/08/twig-56/cLvboPZNROxEGGbOWiNYeOGj.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/08/twig-56/cLvboPZNROxEGGbOWiNYeOGj.webm">download it</a> and watch it with your favorite video player!</span>
+</video>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/08/twig-56/rUMezyqZvnEbmKNzWcgPgpsA.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/08/twig-56/rUMezyqZvnEbmKNzWcgPgpsA.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="gjs">
+<a class="heading-anchor" href="#gjs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GJS <a href="https://gitlab.gnome.org/GNOME/gjs"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Use the GNOME platform libraries in your JavaScript programs. GJS powers GNOME Shell, Polari, GNOME Documents, and many other apps.</p>
+<p><a href="https://matrix.to/#/@ptomato:gnome.org">ptomato</a> says</p>
+<blockquote>
+<p>This week, a new version of GJS was released for GNOME 43.beta.</p>
+<ul>
+<li>It pulls in the JS engine from Firefox 102, bringing such APIs as <code>Object.hasOwn()</code> and <code>Intl.supportedValuesOf()</code>. With contributions from Evan Welsh, Chun-wei Fan, and myself.</li>
+<li>It&rsquo;s now possible to use <code>GObject.BindingGroup.prototype.bind_full()</code> with JS functions. Previously this method was unusable in JS. Thanks to Florian Müllner.</li>
+<li>Gio.FileEnumerator is now iterable, both synchronously (with for-of or array spread syntax) and asynchronously (with for-await-of). Thanks to Sonny Piers.</li>
+<li>Updates to the in-repo <a href="https://gitlab.gnome.org/GNOME/gjs/-/tree/master/doc">documentation</a> and <a href="https://gitlab.gnome.org/GNOME/gjs/-/tree/master/examples">examples</a>, by Andy Holmes and Sonny Piers.</li>
+</ul>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie</a> announces</p>
+<blockquote>
+<p>This week, <a href="https://apps.gnome.org/app/com.github.ADBeveridge.Raider/">File Shredder</a> joined GNOME Circle. File Shredder allows you to securely delete files that should not be recoverable. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-56/bff7d7b214356ccef3eb22d30401fd1f6864ef1b.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="newsflash-feed-reader">
+<a class="heading-anchor" href="#newsflash-feed-reader" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>NewsFlash feed reader <a href="https://gitlab.com/news-flash/news_flash_gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Follow your favorite blogs &amp; news sites.</p>
+<p><a href="https://matrix.to/#/@jangernert:matrix.org">Jan Lukas</a> announces</p>
+<blockquote>
+<p>NewsFlash gained support for basic highlighting of code blocks.
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-56/jHVPqgfJlsUyaigwSUpuCWHM.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@daudix_ufo:matrix.org">Daudix UFO</a> reports</p>
+<blockquote>
+<p><a href="https://github.com/AdwCustomizerTeam/AdwCustomizer">Adwaita Manager</a> was significantly redesigned, Thanks for hard work of @0xMRTT who maked it real and @daudix-UFO for providing design mockups.</p>
+<p>Adwaita Manager is a tool that allows you to customize Libadwaita applications and the adw-gtk3 theme with simple UI, as well with Material You Palette generation from wallpaper, Thanks @avanishsubbiah for porting Monet engine to Python!</p>
+<p>The name was changed to Gradience to remove any confusions. The project still available at the same <a href="https://github.com/AdwCustomizerTeam/AdwCustomizer">URL</a></p>
+<p>Also, @ArtyIF has migrated Adwaita Manager to Adwaita Manager Team, which allowed to add new maintainers, @0xMRTT, @daudix-UFO and @AndroGR.</p>
+<p>More amazing changes will come in near future!</p>
+<p>Note: Adwaita Manager is NOT an official GNOME app, the name will change in v0.2.0
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-56/pVokPdQJQeoGsxmwDnqGEadk.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-56/BDRWloyUNOKcdiYqbLUHLldJ.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1><p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> announces</p>
+<blockquote>
+<p>Pages on the <a href="https://developer.gnome.org/documentation">GNOME Developers Documentation website</a> now have a link to let you easily view and edit the source text in GitLab; if you spot an issue, or if you want to improve the documentation, you can now do that directly from your web browser.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@lw64:gnome.org">lwildberg</a> reports</p>
+<blockquote>
+<p>This week the port of the whole <a href="https://developer.gnome.org/documentation/tutorials/beginners/getting_started.html">getting started tutorial</a> to Vala on developer.gnome.org was merged and is now available online! Also the widget template tutorial was ported thanks to Vojtěch Perník .
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-56/a3a41b06fcbef33f0f2e9f003ff3d3c4d335e23e.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-shell-extensions">
+<a class="heading-anchor" href="#gnome-shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell Extensions
+</h1>
+
+<h3 id="just-perfection">
+<a class="heading-anchor" href="#just-perfection" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Just Perfection <a href="https://extensions.gnome.org/extension/3843/just-perfection/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A tweak tool to customize the GNOME Shell and to disable UI elements.</p>
+<p><a href="https://matrix.to/#/@justperfection:gnome.org">Just Perfection</a> says</p>
+<blockquote>
+<p>Just Perfection extension version 21 (code name Reynolds) has been added 7 new features including:</p>
+<ul>
+<li>OSD position</li>
+<li>Alt Tab icon size</li>
+<li>Alt Tab window preview size</li>
+<li>Alt Tab window preview icon size</li>
+<li>Dash separator visibility</li>
+<li>Looking glass size</li>
+<li>Take screenshot button visibility in window menu</li>
+</ul>
+<p>We also had some <a href="https://gitlab.gnome.org/jrahmatzadeh/just-perfection/-/blob/main/CHANGELOG.md#2100-reynolds-2022-08-06">bug fixes</a>.</p>
+<p>This version named after English painter Joshua Reynolds.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

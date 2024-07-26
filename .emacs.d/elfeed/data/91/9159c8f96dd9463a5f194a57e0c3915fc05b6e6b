@@ -1,0 +1,189 @@
+
+         
+         <p>The <code class="language-plaintext highlighter-rouge">ef-themes</code> are a collection of light and dark themes for GNU
+Emacs that provide colourful (“pretty”) yet legible options for users
+who want something with a bit more flair than the <code class="language-plaintext highlighter-rouge">modus-themes</code> (also
+designed by me).</p>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">ef-themes</code></li>
+  <li>Official manual: <a href="https://protesilaos.com/emacs/ef-themes">https://protesilaos.com/emacs/ef-themes</a></li>
+  <li>Change log: <a href="https://protesilaos.com/emacs/ef-themes-changelog">https://protesilaos.com/emacs/ef-themes-changelog</a></li>
+  <li>Sample pictures: <a href="https://protesilaos.com/emacs/ef-themes-pictures">https://protesilaos.com/emacs/ef-themes-pictures</a></li>
+  <li>Git repositories:
+    <ul>
+      <li>GitHub: <a href="https://github.com/protesilaos/ef-themes">https://github.com/protesilaos/ef-themes</a></li>
+      <li>GitLab: <a href="https://gitlab.com/protesilaos/ef-themes">https://gitlab.com/protesilaos/ef-themes</a></li>
+    </ul>
+  </li>
+  <li>Backronym: Eclectic Fashion in Themes Hides Exaggerated Markings,
+Embellishments, and Sparkles.</li>
+</ul>
+
+<p>Below are the release notes.</p>
+
+<hr />
+
+<p>This version contains minor refinements for many of the themes in the
+collection. It also introduces two new themes which, according to
+private feedback I have received, are already well received.</p>
+
+<h2>Experience the <code class="language-plaintext highlighter-rouge">ef-dream</code> and <code class="language-plaintext highlighter-rouge">ef-reverie</code> themes</h2>
+
+<p>Both themes revolve around the use of gold tones and subtle
+complementary colours.</p>
+
+<p>I announced them here: <a href="https://protesilaos.com/codelog/2024-04-09-emacs-ef-dream-reverie-themes/">https://protesilaos.com/codelog/2024-04-09-emacs-ef-dream-reverie-themes/</a>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">ef-themes</code> now cover a wide range of tastes, all while conforming
+with a high legibility standard (minimum WCAG AA, though many qualify
+for WCAG AAA).</p>
+
+<h2>Refinements for some themes</h2>
+
+<p>These are small changes that improve the consistency of the given
+theme.</p>
+
+<h3>ef-bio</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">preprocessor</code> semantic palette mapping uses a cyan-green colour
+instead of a vibrant green. This is to better differentiate elements
+in code, while remaining faithful to the style of the theme.</p>
+
+<h3>ef-cyprus</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">preprocessor</code> semantic palette mapping is redefined from a faint
+yellow to a firebrick red. This is to ensure that the various
+combinations of elements in code are easy to tell apart while
+remaining pleasant to look at.</p>
+
+<h3>ef-day</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">green-faint</code> value has reduced contribution from the blue channel
+of light, making it more green-yellow as a result. This colour is only
+used for comments: it achieves the two-fold goal of (i) applying
+subtle colouration to comments while (ii) making them sufficiently
+distinct from their context.</p>
+
+<h3>ef-dark</h3>
+
+<p>The value of the <code class="language-plaintext highlighter-rouge">preprocessor</code> is a bit darker red than its former
+brighter variant. This is to improve the visuals in files that include
+a high concentration of preprocessor constructs.</p>
+
+<h3>ef-duo-light</h3>
+
+<ul>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">cyan-warmer</code> entry in the palette is a bit less blue and more
+green. The change is imperceptible on its own (from <code class="language-plaintext highlighter-rouge">#3f6faf</code> to
+<code class="language-plaintext highlighter-rouge">#3f70a0</code>). The effect is more noticeable in the context of other
+constructs, such as in an Org document that combines headings of
+varying levels, with code and verbatim inline elements, as well as
+links.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">comment</code> semantic palette mapping uses a slightly more orange
+value. This is done for stylistic consistency with the rest of the
+theme, while making comments a bit easier to spot.</p>
+  </li>
+</ul>
+
+<h3>ef-duo-dark</h3>
+
+<p>As with its light counterpart, the <code class="language-plaintext highlighter-rouge">comment</code> entry in the palette uses
+a slightly different colour value. The effect is subtle and only
+appreciated in context.</p>
+
+<h3>ef-frost</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">yellow-faint</code> palette entry is considerably more yellow than its
+previous value. The reason for this change is to make comments and
+tags in Org headings stand out more when compared to some other subtle
+elements. The exact value of this yellow still feels ice-cold, like
+the rest of the theme.</p>
+
+<h3>ef-kassio</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">comment</code> semantic palette mapping uses a slightly more cyan
+value. Comments are easier to tell apart from their context, while
+retaining the spirit of their original design.</p>
+
+<h3>ef-light</h3>
+
+<ul>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">blue</code> entry in the palette is darker than before. This makes
+the links it is applied to easier to spot in their context.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">blue-faint</code> is a bit less purple/indigo than before. It is now
+applied to level 1 headings (such as in Org) instead of the previous
+<code class="language-plaintext highlighter-rouge">blue</code> value. Combined with the above it makes it easier to
+differentiate various elements that are rendered in some shade of
+blue (like Org verbatim and links).</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">preprocessor</code> semantic palette mapping uses a slightly darker
+red than before, to better fit in with the rest of the theme.</p>
+  </li>
+</ul>
+
+<h3>ef-melissa-light</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">red-warmer</code>, <code class="language-plaintext highlighter-rouge">red-cooler</code>, and <code class="language-plaintext highlighter-rouge">yellow</code> palette entries are
+revised in concert to (i) retain the overall balance of the theme
+while (ii) making those colours easier to tell apart.</p>
+
+<h3>ef-rosa</h3>
+
+<ul>
+  <li>
+    <p>Links use a different shade of green. It makes for a slightly better
+fit in the context of other elements.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">green</code> value is less saturated. It better complements the
+colours it is combined with, such as pink and magenta.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">mail-subject</code> semantic palette mapping uses the aforementioned
+<code class="language-plaintext highlighter-rouge">green</code>, as it makes for a better fit in that context.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">comment</code> semantic palette mapping has a faint green value.
+Comments are a bit easier to spot, while they better contribute to
+the aesthetics of the theme.</p>
+  </li>
+</ul>
+
+<h3>ef-summer</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">preprocessor</code> semantic palette mapping has a shade of green that
+has greater contribution from the blue channel of light. The first
+impression is the same as before, though the exact value is a better
+fit for the theme.</p>
+
+<h3>ef-symbiosis</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">preprocessor</code> semantic palette mapping is less intense than
+before to make sure there is no impression of exaggeration when there
+is a high concentration of it on the screen.</p>
+
+<h2>All light themes use slightly different graph colours</h2>
+
+<p>This is a subset of the palette that is used in some special cases
+such as the <code class="language-plaintext highlighter-rouge">org-habit</code> consistency graph. The change covers the
+lighter green and blue values, which are now easier to spot in their
+context.</p>
+
+<h2>The <code class="language-plaintext highlighter-rouge">doom-modeline</code> no longer uses <code class="language-plaintext highlighter-rouge">bold-italic</code></h2>
+
+<p>There were two instances where the <code class="language-plaintext highlighter-rouge">bold-italic</code> face was applied.
+This could break icons, by clipping their top. We revert to only using
+the <code class="language-plaintext highlighter-rouge">bold</code> face.</p>
+
+<p>Thanks to Filippo Argiolas for bringing this matter to my attention in
+issue 42: <a href="https://github.com/protesilaos/ef-themes/issues/42">https://github.com/protesilaos/ef-themes/issues/42</a>.</p>
+        
+      

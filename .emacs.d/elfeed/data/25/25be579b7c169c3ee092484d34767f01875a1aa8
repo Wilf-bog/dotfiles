@@ -1,0 +1,139 @@
+<p>Update on what happened across the GNOME project in the week from May 26 to June 02.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="files">
+<a class="heading-anchor" href="#files" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Files <a href="https://gitlab.gnome.org/GNOME/nautilus"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Providing a simple and integrated way of managing your files and browsing your file system.</p>
+<p><a href="https://matrix.to/#/@antoniof:gnome.org">antoniof</a> says</p>
+<blockquote>
+<p>Files search is faster. A series of performance optimizations by Carlos Garnacho gave momentum to a testing and developing team effort. There are further optimizations ahead, but the difference can already be felt in the <a href="https://wiki.gnome.org/Apps/Nightly">Nightly flatpak</a>.</p>
+</blockquote>
+
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alice (she/they)</a> announces</p>
+<blockquote>
+<p>I just landed <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.NavigationSplitView.html"><code>AdwNavigationSplitView</code></a> - the other part of replacing <code>AdwLeaflet</code>. This widget displays sidebar and content side by side or inside an <code>AdwNavigationView</code>. Meanwhile, <code>AdwHeaderBar</code> automatically hides redundant window buttons when used inside a split view.</p>
+<p><code>AdwNavigationSplitView</code> also manages sidebar width as a percentage of the full width when possible, as well as finally allows to implement the style from the original mockups that was impossible with <code>AdwLeaflet</code>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/06/twig-98/4c0947f12f11414f24ad918c3a657961d86ea249.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/06/twig-98/4c0947f12f11414f24ad918c3a657961d86ea249.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> announces</p>
+<blockquote>
+<p>I just released Forge Sparks, a simple git forges (Github, Gitea, Forgejo) notifier app.</p>
+<p>You can get it on <a href="https://flathub.org/apps/com.mardojai.ForgeSparks">Flathub</a>, and help translate it on <a href="https://hosted.weblate.org/engage/forge-sparks/">Weblate</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-98/SNJpymGpImWkmHapWfwLkkFW.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@gregorni:gnome.org">gregorni</a> reports</p>
+<blockquote>
+<p>This week, I released <a href="https://flathub.org/apps/io.gitlab.gregorni.Calligraphy">Calligraphy</a>, an app that turns your text into large ASCII banners. Spice up your online conversations and add that extra oomph to your messages!
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-98/c6ed22c886365d8d2d9dd43052cfd4fce6bffeb0.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-98/470d17f50ed096dce14556989d873b63bfdb3394.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-98/848b375c7d339999f9b362259b85ffc0033de97e.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-98/0bd7af1f03b2eeffb0c4c2995bb2b3887d1e3117.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@imansalmani:matrix.org">Iman Salmani</a> announces</p>
+<blockquote>
+<p><a href="https://github.com/iman-salmani/iplan">IPlan 1.3.0</a> is now out!
+Changes this week contain Code refactoring and UI improvements:</p>
+<ul>
+<li>New widgets for selecting Date and Time</li>
+<li>Changing duration of the new record by setting end time</li>
+<li>Add Brazilian Portuguese Translation thanks to Fúlvio Leo
+You can get it on <a href="https://flathub.org/apps/ir.imansalmani.IPlan">flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-98/lxaHsJpOrRVbVHhnCtVfSTCS.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="tube-converter">
+<a class="heading-anchor" href="#tube-converter" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tube Converter <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Get video and audio from the web.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> announces</p>
+<blockquote>
+<p>Tube Converter <a href="https://github.com/NickvisionApps/TubeConverter/releases/tag/2023.6.0-p1">V2023.6.0</a> is here! We have been hard at work implementing many new features, configuration options, user interface improvements, and plenty of bug fixes for this update.</p>
+<p>I&rsquo;d like to especially thank @fsobolev (my right-hand man), @soumyaDghosh (our wonderful snap maintainer), @DaPigGuy (our continuous tester and feature implementer), and all of the other testers, contributors and especially translators who put in countless time to make Tube Converter be the best that it can be! We wouldn&rsquo;t be here if it wasn&rsquo;t for all of your support ❤️</p>
+<p>Here&rsquo;s the full changelog:</p>
+<ul>
+<li>Added the ability to upload a cookie file to use for media downloads that require a login</li>
+<li>Added support for downloading media as M4A</li>
+<li>Added more configurable options for aria2 downloader</li>
+<li>Added options to configure when completed download notifications are shown</li>
+<li>Added the ability to clear completed downloads</li>
+<li>Added the ability to disallow conversions and simply download the appropriate video/audio format for the selected quality without converting to other formats</li>
+<li>Overwrite Existing Files is now a global option in Preferences instead of an individual setting in the AddDownloadDialog</li>
+<li>Tube Converter will check the clipboard for a valid media url and when AddDownloadDialog is opened</li>
+<li>Fixed an issue that prevented downloading m3u8 streams</li>
+<li>Fixed an issue that prevented downloading media to NTFS drives</li>
+<li>Updated UI/UX</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-98/zJJFtyBXAqXlNDbeCJKbkfpo.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-98/arssdDsXWMvRKTFfWMZsmozK.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="phosh">
+<a class="heading-anchor" href="#phosh" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Phosh <a href="https://gitlab.gnome.org/World/Phosh/phosh"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A pure wayland shell for mobile devices.</p>
+<p><a href="https://matrix.to/#/@agx:sigxcpu.org">Guido</a> says</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/World/Phosh/phosh">Phosh</a> 0.28.0 is out. This is a &ldquo;small things matter&rdquo; release: Several transitions have been smoothed out.  Notifications can unblank the screen and you can set at which urgency this happens. <code>&lt;super&gt;</code>-key can open the overview. Pressing and holding down the volume button works now (no more tapping multiple times). The lockscreen works on smaller displays and libcall-ui was updated to 0.1.0 bringing in some visual improvements.
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-98/sepafXXOHQeTFVxQxKFVzpLh.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@felipeborges:gnome.org">feborges</a> says</p>
+<blockquote>
+<p>GNOME will have an Outreachy intern working on &ldquo;Make GNOME platform demos for Workbench&rdquo;!</p>
+<p>We are happy to announce that GNOME is sponsoring an <a href="https://outreachy.org">Outreachy</a> internship project for the May-August cohort where the intern will be working on “<a href="https://gitlab.gnome.org/Teams/Engagement/internship-project-ideas/-/issues/27">Make GNOME platform demos for Workbench</a>&quot;.</p>
+<p><a href="https://josecodes.hashnode.dev/">Jose Hunter</a> will be working with mentor <a href="https://sonny.re/">Sonny Piers</a>.</p>
+<p>Stay tuned to <a href="https://planet.gnome.org/">Planet GNOME</a> for future updates on the progress of this project!</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@zana:gnome.org">Rosanna</a> announces</p>
+<blockquote>
+<p>This week has been a lot of churn of what used to be called paperwork. With the help with some expert bookkeepers we were able to get the info the accountant needed to file our taxes by their deadline. I am always grateful when we can get expert help; it saves me a lot of time trying to figure it out on my own and I can be more confident in the results.</p>
+<p>Speaking of deadlines, today is also the deadline for Executive Director applicants. I&rsquo;ve been collecting the applications and collating them for the search committee to go through. Will spend this weekend and early next week going through them before the next committee meeting.</p>
+<p>The travel committee had a lot more requests this year for GUADEC than our budget to handle. Because GUADEC is such a priority for us and being able to send interns is so fundamental to getting them to integrate with our community, I liaised between the committee and the Board to request additional funding. Hoping to be able to process the rest of the travel sponsorships soon.</p>
+<p>Speaking of GUADEC, the call for volunteers is still ongoing. If you are attending and have ever wondered what is necessary behind the scenes to get everything running smoothly, this is a great opportunity. Quick form is located here: <a href="https://events.gnome.org/event/101/surveys/14">https://events.gnome.org/event/101/surveys/14</a> — Make sure you also have registered for GUADEC first!</p>
+<p>Deadline for GUADEC BoFs or Workshops: June 12 — If you want to run a BoF or Workshop at GUADEC this year but have not submitted a request yet, please do so by June 12. More details here: <a href="https://foundation.gnome.org/2023/05/25/guadec-2023-call-for-bofs/">https://foundation.gnome.org/2023/05/25/guadec-2023-call-for-bofs/</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

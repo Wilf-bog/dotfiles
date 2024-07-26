@@ -1,0 +1,123 @@
+<p>Update on what happened across the GNOME project in the week from December 30 to January 06.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@tbernard:gnome.org">Tobias Bernard</a> announces</p>
+<blockquote>
+<p>The design team has been discussing alternatives to the app menu for indicating window focus in GNOME Shell, and we are seeking feedback on a prototype of the proposed new behavior.</p>
+
+
+<h3 id="the-why">
+<a class="heading-anchor" href="#the-why" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>The Why
+</h3><p>Back in 2018, <a href="https://blogs.gnome.org/aday/2018/10/09/farewell-application-menus/">we removed the unique menu items from the app menu</a>. However, we kept the menu itself, so that it could be used as a window focus indicator, and so it can show a loading spinner for apps that are slow to show a window.</p>
+<p>However, when doing user research over the past few years, we&rsquo;ve noticed that people are often confused by the app menu in the top bar. Often, they think that it&rsquo;s a task switcher, a shortcut to a specific app, or don&rsquo;t understand what it is at all. It seems to be a trip hazard for new users.</p>
+<p>Additionally, we&rsquo;ve realized that the app menu doesn&rsquo;t work very well as a window focus indicator. It doesn&rsquo;t differentiate multiple windows of the same app, it&rsquo;s only present on the primary monitor, and it&rsquo;s sometimes located a long way from the window that it&rsquo;s indicating.</p>
+<p>We&rsquo;re therefore investigating an alternative design for indicating window focus, which would both improve the focus indicator experience, and potentially enable us to stop showing the app menu in the top bar. The new design adds a subtle scale effect to newly focused windows when switching workspaces, super+tabbing, or closing a window.</p>
+<p>For the loading spinner, we are still exploring alternatives, but feel that this is a relatively easy design problem to solve. Showing a spinner in the top bar is one obvious option.</p>
+
+
+<h3 id="call-for-testing">
+<a class="heading-anchor" href="#call-for-testing" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Call for Testing
+</h3><p>Thanks to @Leleat we have a prototype of the new focus indicator behaviour, in the form of a GNOME Shell extension. We&rsquo;re looking for people to test this extension and give feedback about whether it works for them as a replacement for the app menu as a focus indicator. If you never use the app menu it&rsquo;d be still be helpful for you to test it, to know whether you notice it being gone.</p>
+<p>To participate, install this extension: <a href="https://extensions.gnome.org/extension/5612/focus-indicator">https://extensions.gnome.org/extension/5612/focus-indicator</a></p>
+<p>Feedback can be provided as <a href="https://discourse.gnome.org/t/window-focus-call-for-testing/13277">comments on the Discourse announcement</a> or on Matrix in #gnome-design.</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="tangram">
+<a class="heading-anchor" href="#tangram" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tangram <a href="https://github.com/sonnyp/Tangram"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A browser for your pinned tabs.</p>
+<p><a href="https://matrix.to/#/@sonnyp:matrix.org">sonnyp</a> announces</p>
+<blockquote>
+<p><a href="https://apps.gnome.org/app/re.sonny.Tangram/">Tangram</a> had 2 new releases</p>
+<p>1.5 available on Flathub is an update of Tangram GTK3 with an up to date GNOME runtime and WebKit engine</p>
+<p>2.0 beta available on flathub beta repository is a GTK4 / libadwaita port.</p>
+<p>🧪 It&rsquo;s note quite ready but if you&rsquo;d like to test or use; follow these instructions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">flatpak kill re.sonny.Tangram
+flatpak remove re.sonny.Tangram
+flatpak --user remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+flatpak --user install flathub-beta re.sonny.Tangram
+flatpak run --branch<span style="color:#f92672">=</span>beta re.sonny.Tangram
+</code></pre></div><p>⚠️ NVIDIA GPU: There is a bug affecting graphics – expertise needed <a href="https://bugs.webkit.org/show">https://bugs.webkit.org/show</a>_bug.cgi?id=228268</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@danialbehzadi:mozilla.org">دانیال بهزادی</a> reports</p>
+<blockquote>
+<p>Carbuteror 4.0 released with porting the main window to libadwaita. It is a graphical application for connecting to Tor mainly designed with GNU/Linux mobile phones in mind. Under the hood it uses a CLI program named &ldquo;Tractor&rdquo; which lets users to connect to Tor in userspace.</p>
+<p>It is already available in English, Persian, Spanish, Turkish, Croatian, Portuguese, German, French and Norwegian Bokmål</p>
+<p>Source: <a href="https://framagit.org/tractor/carburetor/">https://framagit.org/tractor/carburetor/</a>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/01/twig-77/aad1dfd5929eb03d4e027330c5a43dd8b49a3f99.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/01/twig-77/aad1dfd5929eb03d4e027330c5a43dd8b49a3f99.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sjoerdb93:matrix.org">Sjoerd Broekhuijsen</a> announces</p>
+<blockquote>
+<p>This week I released version 1.3.4 of Graphs, a data manipulation and graphing tool written for the GNOME environment. The latest release adds the ability to get the indefinite integral or the derivative of your data, as well as the possibility to perform Fourier Transforms. Since the last time I wrote about Graphs, there&rsquo;s been a bunch of other exciting new features as well such as the ability to plot data on different axes, as well as a ton of bug fixes. As always, the latest version of Graphs is <a href="https://flathub.org/apps/details/se.sjoerd.DatMan">available on Flathub</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/01/twig-77/vHAJKXUMgcoMiTPVAQDrBnvo.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="money">
+<a class="heading-anchor" href="#money" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Money <a href="https://flathub.org/apps/details/org.nickvision.money"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A personal finance manager.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> reports</p>
+<blockquote>
+<p>Money <a href="https://github.com/nlogozzo/NickvisionMoney/releases/tag/2023.1.0-beta3">V2023.1.0-beta3</a> is here! This beta features a brand new repeat transactions system (with support for biweekly transactions), as well as some design tweaks and performance improvements.</p>
+<p><a href="https://hosted.weblate.org/engage/nickvision-money/">Money is also now available to translate on Weblate!</a> We welcome all users to come and translate Money is their language :)</p>
+<p>Continued thanks to all the developers, testers, and translations (especially Fyodor Sobolev) for all their hard work as we gear up for the stable release next week!</p>
+<p>(Excuse the missing icons in the video, this is from a manual build on WSL. When running from Builder/flatpak this does not happen 🫠)
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/01/twig-77/NcgsXGQCOtwQfbkRMcrNAlPM.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/01/twig-77/NcgsXGQCOtwQfbkRMcrNAlPM.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="sound-recorder">
+<a class="heading-anchor" href="#sound-recorder" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sound Recorder <a href="https://wiki.gnome.org/Apps/SoundRecorder"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple, modern sound recorder.</p>
+<p><a href="https://matrix.to/#/@brainblasted:gnome.org">Chris 🌱️</a> reports</p>
+<blockquote>
+<p>The Sound Recorder TypeScript port has been merged. TypeScript is easy to use on top of our GJS ecosystem, and provides compile-time type checking.</p>
+</blockquote>
+
+
+<h3 id="eyedropper">
+<a class="heading-anchor" href="#eyedropper" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Eyedropper <a href="https://flathub.org/apps/details/com.github.finefindus.eyedropper"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A powerful color picker and formatter.</p>
+<p><a href="https://matrix.to/#/@finefindus:matrix.org">FineFindus</a> announces</p>
+<blockquote>
+<p>I&rsquo;ve released the 0.5.0 version of Eyedropper. The biggest improvements are the ability to change how a color is formatted (for example customize <code>rgb(r, g, b)</code> to <code>Color::rgb(r, g, b)</code>), two new color formats: LMS and Hunter-Lab, and a placeholder page when no color is picked.</p>
+<p>Eyedropper can be downloaded from <a href="https://flathub.org/apps/details/com.github.finefindus.eyedropper">flathub</a>.</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@sonnyp:matrix.org">sonnyp</a> reports</p>
+<blockquote>
+<p>Romain <a href="https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome/-/merge_requests/38">fixed an issue in xdg-desktop-portal-gnome</a> where opening a folder would necessarily be in read-only. Which this change – the default will be read/write and the user can select “read only” – just like for files. As an app developer, it means you&rsquo;ll be able to use the document portal to let users choose save locations.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> announces</p>
+<blockquote>
+<p>The <a href="https://gitlab.gnome.org/GNOME/gnome-build-meta/-/wikis/openqa/OpenQA-for-GNOME-developers#running-the-openqa-tests">OpenQA tests for GNOME</a> are now set to run against every change to &lsquo;master&rsquo; in the GNOME integration repo <a href="https://gitlab.gnome.org/GNOME/gnome-build-meta/">gnome-build-meta</a>. Thanks to everyone who helped us get to this point!</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

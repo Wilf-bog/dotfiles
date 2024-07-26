@@ -1,0 +1,300 @@
+<p>Update on what happened across the GNOME project in the week from February 17 to February 24.</p>
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie 🏳️‍🌈 🏳️‍⚧️ ✊</a> reports</p>
+<blockquote>
+<p>This week we are welcoming our 50th app into <a href="https://circle.gnome.org/">GNOME Circle</a>. With only existing for 2½ years, the GNOME Circle project has been an enormous success.</p>
+<p>We thank all the app maintainers and other contributors for their dedicated work on all those apps. We will do our best to help the community to keep our apps at such good quality.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/909e7c1019570773e61fb0802ed5e0caef5f7886.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie 🏳️‍🌈 🏳️‍⚧️ ✊</a> says</p>
+<blockquote>
+<p>This week, <a href="https://apps.gnome.org/app/com.clarahobbs.chessclock/">Chess Clock</a> joined GNOME Circle. Chess Clock allows you to time games of over-the-board chess. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/991fa8de954d44e2e3ed8ea3642976992e728644.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie 🏳️‍🌈 🏳️‍⚧️ ✊</a> says</p>
+<blockquote>
+<p>This week, <a href="https://apps.gnome.org/app/info.febvre.Komikku/">Komikku</a> joined GNOME Circle. Komikku allows you to read your favorite manga. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/50979fdba9b2a0ba0110dba8d092b29432a00650.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie 🏳️‍🌈 🏳️‍⚧️ ✊</a> says</p>
+<blockquote>
+<p>This week, <a href="https://apps.gnome.org/app/com.github.finefindus.eyedropper/">Eyedropper</a> joined GNOME Circle. Eyedropper allows you to pick colors and generate palettes. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/b4a08ca1214d0dee5a0862b8b2a33bd5425d95e6.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="workbench">
+<a class="heading-anchor" href="#workbench" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Workbench <a href="https://github.com/sonnyp/Workbench/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A sandbox to learn and prototype with GNOME technologies.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> reports</p>
+<blockquote>
+<p>Workbench news</p>
+<p>Workbench is now fully sandboxed. Starting with the next release, it will protect users from accidents or malicious code. Made possibly by Flatpak ❤️. <a href="https://floss.social/@sonny/109886525574894538">Read more</a></p>
+<p>Our project proposal &ldquo;Make GNOME platform demos for Workbench&rdquo; has been accepted as a Google Summer of Code project. I will be mentoring along with Andy Holmes and Tobias Bernard. <a href="https://floss.social/@sonny/109899494637821665">Read more</a></p>
+<p>I made a guide in how to get started contributing to Workbench. <a href="https://github.com/sonnyp/Workbench/blob/main/CONTRIBUTING.md">Read more</a></p>
+</blockquote>
+
+
+<h3 id="pika-backup">
+<a class="heading-anchor" href="#pika-backup" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Pika Backup <a href="https://apps.gnome.org/app/org.gnome.World.PikaBackup/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Keep your data safe.</p>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie 🏳️‍🌈 🏳️‍⚧️ ✊</a> says</p>
+<blockquote>
+<p>Version 0.5 of <a href="https://apps.gnome.org/app/org.gnome.World.PikaBackup/">Pika Backup</a> is now available. This version includes the following:</p>
+<ul>
+<li>Different presets for commonly excluded folders that can be activated independently.</li>
+<li>Support for adding exclusion rules based on regular expressions or shell patterns.</li>
+<li>Ability to manually delete specific archives.</li>
+<li>More automated help with finding and mounting USB drives when starting backups.</li>
+<li>More than 20 other changes, including small interface improvements and bug fixes.</li>
+</ul>
+<p>I&rsquo;m also happy to share that Fina joins Pika Backup as a second maintainer. Further, it is now possible to <a href="https://opencollective.com/pika-backup">support the development and maintenance on Open Collective</a>. Both steps will help to give the project a stable future.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/88ae916a4d06e6160f946781ff1e7966539910b0.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> says</p>
+<blockquote>
+<p>Luca Bacci has added support for getting pretty names of UWP apps on Windows in GLib, so the GTK app chooser dialogue is now a lot more useful! See screenshots on <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3168">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3168</a></p>
+</blockquote>
+
+
+<h3 id="gjs">
+<a class="heading-anchor" href="#gjs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GJS <a href="https://gitlab.gnome.org/GNOME/gjs"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Use the GNOME platform libraries in your JavaScript programs. GJS powers GNOME Shell, Polari, GNOME Documents, and many other apps.</p>
+<p><a href="https://matrix.to/#/@ptomato:gnome.org">ptomato</a> reports</p>
+<blockquote>
+<p>GJS 1.75.2 was released today, the beta release for the GNOME 44 series. Here&rsquo;s a selection of the new features:</p>
+<ul>
+<li>There are new <code>Gio.Application.prototype.runAsync()</code> and <code>GLib.MainLoop.prototype.runAsync()</code> methods which do the same thing as <code>run()</code> but return a Promise which resolves when the main loop ends, instead of blocking while the main loop runs. Use one of these methods (by awaiting it) if you use async operations with Promises in your application. Previously, it was easy to get into a state where Promises never resolved if you didn&rsquo;t run the main loop inside a callback. Thanks to Evan Welsh for working on this.</li>
+<li>There are new <code>Gio.InputStream.prototype.createSyncIterator()</code> and <code>Gio.InputStream.prototype.createAsyncIterator()</code> methods which allow easy iteration of input streams in consecutive chunks of bytes, either with a for-of loop or a for-await-of loop. This addition is from Sonny Piers.</li>
+<li>DBus proxy wrapper classes now have a static <code>newAsync()</code> method, which returns a Promise that resolves to an instance of the proxy wrapper class on which <code>initAsync()</code> has completed. Marco Trevisan laid the groundwork for this one.</li>
+<li>DBus property getters can now return GLib.Variant instances directly, if they have the correct type, instead of returning JS values and having them be packed into GLib.Variants. A quick quality-of-life improvement from Andy Holmes.</li>
+<li>Some long-existing typos in Cairo enums were spotted by Vítor Vasconcellos.</li>
+<li>More Cairo improvements, tuberry created <code>Cairo.SVGSurface.prototype.finish()</code> and <code>Cairo.SVGSurface.prototype.flush()</code> because previously SVG surfaces were only written to disk when the SVGSurface
+object was garbage collected, making it uncertain to rely on them.</li>
+</ul>
+</blockquote>
+
+
+<h1 id="gnome-development-tools">
+<a class="heading-anchor" href="#gnome-development-tools" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Development Tools
+</h1><p><a href="https://matrix.to/#/@felipeborges:gnome.org">Felipe Borges (afk)</a> says</p>
+<blockquote>
+<p>GNOME Boxes now has a more modern virtual machine creation dialog which is more aligned to the GNOME Human Interfaces Guidelines and simplifies the former approach that used pagination. <a href="https://gitlab.gnome.org/GNOME/gnome-boxes/-/merge_requests/571">https://gitlab.gnome.org/GNOME/gnome-boxes/-/merge_requests/571</a></p>
+</blockquote>
+
+
+<h3 id="gnome-builder">
+<a class="heading-anchor" href="#gnome-builder" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Builder <a href="https://gitlab.gnome.org/GNOME/gnome-builder"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>IDE for writing GNOME-based software.</p>
+<p><a href="https://matrix.to/#/@hergertme:gnome.org">hergertme</a> says</p>
+<blockquote>
+<p>Builder gained a toggle to allow you to start your application with the GTK inspector active. This helps in situations where you cannot otherwise activate it with keyboard shortcuts.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/742987e8c8ea68a13a19b633d7b6633bc5b5fd2f.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@hergertme:gnome.org">hergertme</a> says</p>
+<blockquote>
+<p>Builder now uses a PTY for cloning operations to provide more reliable messages from the git server.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/0c0a876737d72d148e41c7dc97594dafce10b70b.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@hergertme:gnome.org">hergertme</a> reports</p>
+<blockquote>
+<p>Builder got a revamped messages panel this week which allows users to troubleshoot issues with their project more easily. Various subsystems in Builder are being updated to raise awareness of operations to users.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/6066965a6b11847a66773aa0661de1d2a4fe4da7.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> reports</p>
+<blockquote>
+<p>I finally released Elastic - an editor for libadwaita spring animations: <a href="https://blogs.gnome.org/alexm/2023/02/24/introducing-elastic/">https://blogs.gnome.org/alexm/2023/02/24/introducing-elastic/</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/5be62f2a938ea2ac1a55847af7503cb4ff8ed7bf.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sedve:matrix.org">Dave Patrick</a> announces</p>
+<blockquote>
+<p>I am excited to announce that <a href="https://github.com/SeaDve/Mousai">Mousai</a> now supports offline mode. Through this update, instead of an error, the recordings will be saved and then recognized once you&rsquo;re back online. This is perfect for anyone who needs to recognize audio on the go. Aside from that, there have been significant improvements in navigation to make it more natural and intuitive.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/LKyogkqIgxbazlyXCqlkhXLW.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@nxyz:matrix.org">nxyz</a> says</p>
+<blockquote>
+<p>This week I released Paleta v0.3.0, a complete rewrite in Rust! This release brings with it the advantage of using <a href="https://github.com/RazrFalcon/color-thief-rs">colorthief-rs</a>, which makes extracting colors blazingly fast!</p>
+<p>Download rewritten Paleta from flathub: <a href="https://beta.flathub.org/apps/io.github.nate_xyz.Paleta">https://beta.flathub.org/apps/io.github.nate_xyz.Paleta</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/FXjzcaetTosiIGCVdlLNHeAK.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@tbernard:gnome.org">Tobias Bernard</a> reports</p>
+<blockquote>
+<p>Jonas published version 1.1 of Capsule, with support for mobile form factors!
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/2fc0dc946e44ac15911aa601e63d5db5fd592346.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="tube-converter">
+<a class="heading-anchor" href="#tube-converter" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tube Converter <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An easy-to-use video downloader (yt-dlp frontend).</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> reports</p>
+<blockquote>
+<p><a href="https://github.com/nlogozzo/NickvisionTubeConverter/pull/50">Tube Converter&rsquo;s C# rewrite</a> continues to move along. This week we rewrote the backend using <a href="http://pythonnet.github.io/">pythonnet</a>. This framework allows us to embed python directly within our application to use <code>yt-dlp</code> calls directly from python instead of relying on the executable, giving us more fine-grain control of downloads.</p>
+<p>Thanks to Brage we also have a new icon for this big release!</p>
+<p>I know I said this last week 😆, but we are hoping to have a beta by the end of the weekend!
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/rzRegWlBjNNPSXNYlkeeuxnv.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/yoqbIGWDQDpQzGUpnciYkqSB.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="login-manager-settings">
+<a class="heading-anchor" href="#login-manager-settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Login Manager Settings <a href="https://realmazharhussain.github.io/gdm-settings/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A settings app for the login manager GDM.</p>
+<p><a href="https://matrix.to/#/@realmazharhussain:matrix.org">Mazhar Hussain</a> announces</p>
+<blockquote>
+<p><a href="https://realmazharhussain.github.io/gdm-settings">Login Manager Settings</a> <a href="https://github.com/realmazharhussain/gdm-settings/releases/tag/v3.alpha.0">v3.alpha.0</a> was released. This version is not available on Flathub but you can download the flatpak (and AppImage) from its <a href="https://github.com/realmazharhussain/gdm-settings/releases/tag/v3.alpha.0">release page</a>.</p>
+<p>Some of the new features include</p>
+<ul>
+<li>An &ldquo;Always Show Accessibility Menu&rdquo; toggle in Top Bar settings</li>
+<li>Option to change cursor/pointer size</li>
+<li>Release notes available in the About Window</li>
+</ul>
+<p>Some other changes include</p>
+<ul>
+<li>Proper names are shown for themes instead of name of their directory</li>
+<li>Cursor only themes are not presented when choosing icon theme</li>
+</ul>
+<p>There&rsquo;s also a one-time donation request along with a &lsquo;Donate&rsquo; hamburger menu item.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/uMzuCvOSlkMMiLxmXlaZDJDa.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="fractal">
+<a class="heading-anchor" href="#fractal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fractal <a href="https://gitlab.gnome.org/GNOME/fractal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Matrix messaging app for GNOME written in Rust.</p>
+<p><a href="https://matrix.to/#/@zecakeh:tedomum.net">Kévin Commaille</a> reports</p>
+<blockquote>
+<p>Hello all! Fractal 4.4.2-beta2 is available on Flathub Beta.</p>
+<p>You read correctly, it&rsquo;s not Fractal 5 yet. This is a maintenance release that fixes the compilation of Fractal 4.4 with recent libraries and allows to build the Flatpak with the latest GNOME runtime. That means no more warning that the GNOME 41 runtime is outdated!</p>
+<p>There are no new features, but since we updated a lot of Rust dependencies we preferred to release a beta version before using it to update our stable release to the latest runtime. So please test it and if no major regression is reported, we will release it as stable in two weeks.</p>
+<p>To get it, run the following commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+flatpak install flathub-beta org.gnome.Fractal
+flatpak run --branch<span style="color:#f92672">=</span>beta org.gnome.Fractal
+</code></pre></div><p>Note that if you always want to use this beta version instead of the stable one, and run it from the icon in your launcher, you will need to change its desktop file to use the command in the last line.</p>
+<p>See you soon with some news regarding Fractal 5 hopefully!</p>
+</blockquote>
+
+
+<h3 id="eyedropper">
+<a class="heading-anchor" href="#eyedropper" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Eyedropper <a href="https://flathub.org/apps/details/com.github.finefindus.eyedropper"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Pick and format colors.</p>
+<p><a href="https://matrix.to/#/@finefindus:matrix.org">FineFindus</a> reports</p>
+<blockquote>
+<p>A new version of Eyedropper has been released, with many small UX and UI improvements. Most notably is a new icon, designed by <a href="https://github.com/bertob">bertob</a>, and the ability to export palettes as Adobe Swatch Exchange (ASE), hex, PAL or Paint.NET (txt) files. Minor improvements include an Undo toast after clearing the history and colors no longer displaying NaN. View the full changelog in-app after <a href="https://flathub.org/apps/details/com.github.finefindus.eyedropper">downloading it from Flathub</a> or on the <a href="https://github.com/FineFindus/eyedropper/releases">GitHub release page</a>.</p>
+</blockquote>
+
+
+<h3 id="denaro">
+<a class="heading-anchor" href="#denaro" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Denaro <a href="https://flathub.org/apps/details/org.nickvision.money"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A personal finance manager.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Denaro <a href="https://github.com/nlogozzo/NickvisionMoney/releases/tag/2023.2.1-p1">V2023.2.1</a> is here! This week we are bringing users some fixes to minor bugs and various UX improvements!</p>
+<p>Here&rsquo;s the full changelog:</p>
+<ul>
+<li>New and improved icon (Thanks @daudix-UFO)!</li>
+<li>Fixed an issue where the wrong group was selected in TransactionDialog</li>
+<li>Fixed an issue where some LC vars could not be parsed</li>
+<li>Various UX improvements
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/WbzHLPhIoXQrFmMAiVEhVVRM.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="bottles">
+<a class="heading-anchor" href="#bottles" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Bottles <a href="https://usebottles.com/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Easily run Windows software on Linux with Bottles!</p>
+<p><a href="https://matrix.to/#/@theevilskeleton:fedora.im">Hari Rana (TheEvilSkeleton)</a> says</p>
+<blockquote>
+<p>Bottles 51.0 was just released! As said last time, we focused on fixing bugs and quality of life changes.</p>
+<p>We revamped the &ldquo;New Bottle&rdquo; interface, to address several issues that were raised from users, including but not limited to:</p>
+<ul>
+<li>There wasn’t a clear indicator for which environment was chosen, especially when the Custom environment was selected and then collapsed.</li>
+<li>The window would increase and shrink in each page, and when the Custom environment was selected or collapsed. This caused a lot of distractions as the window would expand and shrink unexpectedly.</li>
+</ul>
+<p>There are also minor quality of life changes that will hopefully improve the user experience:</p>
+<ul>
+<li>The Library icon has been changed from a heart to books, to represent a libary.</li>
+<li>There is now a toast when launching executables with &ldquo;Run Executable&rdquo;. Before, there wasn&rsquo;t a clear indicator when the program was launching.</li>
+<li>Runners are now sorted according to a priority list. From the highest to the lowest priority: Soda, Caffe, Vaniglia, Lutris, and then the rest. Whenever you want to create a new bottle, or change the runner of an existing bottle, everything will be displayed in order.</li>
+<li>Bottles can now be named without any character restrictions. This means, for example, &ldquo;Assassin&rsquo;s Creed&rdquo;, &ldquo;Sid Meier’s Civilization&rdquo;, or &ldquo;Paw Patrol: On A Roll&rdquo; are now valid names.</li>
+<li>Bottles will now send a notification when a bottle has been created, but only when the window is unfocused.</li>
+</ul>
+<p>There are also several bug fixes that include:</p>
+<ul>
+<li>Adding a shortcut to Steam wouldn&rsquo;t add and would throw an error.</li>
+<li>Importing full backups wouldn&rsquo;t import and would throw an error.</li>
+<li>A lot of various issues with the library, like empty covers and crashes.</li>
+<li>Various bugs regarding text encoding, in games and in Bottles</li>
+<li>Bottles list not being updated correctly after deleting a bottle.</li>
+</ul>
+<p>You can find all information in the <a href="https://usebottles.com/blog/release-51.0/">release page</a>!
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-84/09df7ba5ae7759920195a0ce85488eef87343ecb.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@chenriksen:gnome.org">Caroline Henriksen</a> announces</p>
+<blockquote>
+<p>As the Brand Manager for the GNOME Foundation, I am involved in many of the Foundation’s projects, but most of my daily tasks involve graphic design, website maintenance, and social media management. This week I’ve been preparing for our booth at <a href="https://www.socallinuxexpo.org/scale/20x">SCaLE</a> next month by ordering new GNOME t-shirts and writing messages about the event to share in our Friends of GNOME newsletter and on our social channels. I&rsquo;ve also been working on building registration forms for <a href="https://linuxappsummit.org/">Linux App Summit (LAS)</a> (look for event registration to open very soon), designing LAS merchandise (these will be for sale in person by per-order or online in the LAS shop), addressing lots of GUADEC 2023 planning tasks, and working on the GNOME 44 release video with <a href="https://freehive.com/">Freehive</a>.</p>
+<p>Contributors welcome! If you would like to join me in working on GNOME social media or Foundation and Engagement Team graphic design projects find me on matrix @chenriksen.</p>
+<p>Open Calls for Participation:
+We’re still looking for locations for both GNOMEAsia 2023, and GUADEC 2024. If you’re interested in learning more about hosting a GNOME event or want to submit a proposal for either of our open calls you can learn more about GNOMEAsia 2023 <a href="https://foundation.gnome.org/2023/01/12/call-for-gnome-asia-2023-bids/">here</a> or GUADEC 2024 <a href="https://foundation.gnome.org/2023/01/27/call-for-guadec-2024-bids/">here</a>. Deadlines for both of these bids are coming up soon so submit your proposals asap!</p>
+<p>Volunteer Opportunities:
+GNOME will be hosting a booth at SCaLE in Pasadena, CA on March 10-12. If you are in the Los Angeles area or planning to attend SCaLE, we could use your help at our booth! Contact <a href="info@gnome.org">info@gnome.org</a> to volunteer.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

@@ -1,0 +1,155 @@
+<p>Update on what happened across the GNOME project in the week from November 05 to November 12.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>Maximiliano has <a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/235">implemented</a> toasts in libadwaita - an easier to use and sleeker replacement for the old in-app notifications pattern that never got a specialized widget
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-18/481d96eee8e7f42bcb30ba75a0c37000f3eb128a.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="files">
+<a class="heading-anchor" href="#files" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Files <a href="https://gitlab.gnome.org/GNOME/nautilus"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Providing a  simple and integrated way of managing your files and browsing your file system.</p>
+<p><a href="https://matrix.to/#/@antoniof:gnome.org">antoniof</a> says</p>
+<blockquote>
+<p>Joshua Lee has ported the file conflict dialog to GtkBuilder templates. This is part of the effort to get the Files application ready for GTK 4, but also gets us one step closer to the proposed redesign of this dialog.
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-18/ba8139b2b426019ca321dd3db4bad553ce3b0bae.png" alt="" />
+</p>
+</blockquote>
+<blockquote>
+<p>Peter Eisenmann and Allan Day have enhanced the Rename popover with a new design. Now the popover can grow wider for long file names.
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-18/a94ff9a17f83d49accd741a19cc8eafb97a131eb.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> says</p>
+<blockquote>
+<p>The work-in-progress <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1954">new GNOME Shell screenshot UI</a> had a bit of polish done this week.</p>
+<p>The corner handles for resizing are back with a cleaner look thanks to guidance from Tobias Bernard.</p>
+<p>The screenshot area is now preserved between screenshots, making it easy to capture the same window in different configurations (e.g. light vs. dark style). Left-click-dragging anywhere outside of the screenshot area now lets you draw a new area, which is indicated with a crosshair cursor. To accommodate this, the starting screenshot area has been made smaller. It will also appear correctly on the primary monitor, even if it&rsquo;s not the leftmost one.</p>
+<p>The screenshot cursor will no longer sometimes change when opening the UI, and it will no longer appear blurry.</p>
+<p>Finally, when there are no open windows to screenshot, the window selection button will be inactive.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/11/twig-18/015b84bf51c54274c1144f640de4a179d8920cb0.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/11/twig-18/015b84bf51c54274c1144f640de4a179d8920cb0.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="settings">
+<a class="heading-anchor" href="#settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Settings <a href="https://gitlab.gnome.org/GNOME/gnome-control-center"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Configure various aspects of your GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> reports</p>
+<blockquote>
+<p>A few weeks ago, I started porting GNOME Settings - and its dependencies - to GTK4. I&rsquo;m porting each panel individually. This week I managed to port 3 more panels: the Color, Display, and Background panels. With that, 27 out of 32 panels are ported.
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-18/f56f7e79cca1f2b6dc5e2b69c73391c7bcb8d32c.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-18/4614d99ef93b6ebeebd41e1d987090d85033284c.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-18/97cadeffbe634e80bca45e80ec11b504fdbbc87b.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-builder">
+<a class="heading-anchor" href="#gnome-builder" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Builder <a href="https://gitlab.gnome.org/GNOME/gnome-builder"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>IDE for writing GNOME-based software.</p>
+<p><a href="https://matrix.to/#/@gwagner:gnome.org">gwagner</a> says</p>
+<blockquote>
+<p>GNOME Builder contains now Gtk4 templates for Rust, Python and Vala thanks to Marco, Tim and Yotam.</p>
+<p>Georg Vienna landed fantastic features for our language servers this week:</p>
+<ul>
+<li>a typescript language server plugin using tsls (testing appreciated. Especially container usage is being worked on so we are happy about any user reports)</li>
+<li>code actions and workspace edit. Code Actions allow language specific refactorings or specific fixes to the codebase computed by the language server and the later allows projectwide renaming of symbols. (Details and Previews can be found in the merge request <a href="https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/461">https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/461</a>) Rust, Python and the TypeScript Plugin already use this facility.</li>
+</ul>
+<p>Thanks to Tomi GNOME Builder offers now a clang-format powered &ldquo;format on save&rdquo; option in order to properly format your code with a dedicated .clang-format file. Also the build output pane can now be configured to clean before a build. So you can easily inspect only the build informations from one build.</p>
+<p>The mono gtk3 template got a bit modernized and aligned to our other templates.</p>
+</blockquote>
+
+
+<h3 id="tracker">
+<a class="heading-anchor" href="#tracker" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tracker <a href="https://gitlab.gnome.org/GNOME/tracker/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A filesystem indexer, metadata storage system and search tool.</p>
+<p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> reports</p>
+<blockquote>
+<p>In Tracker, Carlos Garnacho fixed a  query cancellation issue which will improve performance when searching in Nautilus. Thanks to everyone who helped triage <a href="https://gitlab.gnome.org/GNOME/tracker/-/issues/264">https://gitlab.gnome.org/GNOME/tracker/-/issues/264</a></p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="health">
+<a class="heading-anchor" href="#health" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Health <a href="https://gitlab.gnome.org/World/Health"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Collect, store and visualise metrics about yourself.</p>
+<p><a href="https://matrix.to/#/@cogitri:cogitri.dev">Cogitri</a> says</p>
+<blockquote>
+<p>Health 0.93.3 has been released today with some bug fixes. This release of Health makes it adaptive to smaller screens (again), has nicer colours for its calories overview (thanks to Color Palette&rsquo;s nice colour picker)  and features some updated and new translations</p>
+</blockquote>
+
+
+<h3 id="gtk-rs">
+<a class="heading-anchor" href="#gtk-rs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>gtk-rs <a href="https://gtk-rs.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Safe bindings to the Rust language for fundamental libraries from the GNOME stack.</p>
+<p><a href="https://matrix.to/#/@julianhofer:gnome.org">Julian Hofer</a> says</p>
+<blockquote>
+<p>Aaron Erhardt and I added <a href="https://gtk-rs.org/gtk4-rs/stable/latest/book/installation.html">installation instructions</a> for Linux, macOS and Windows to the gtk4-rs book.</p>
+<p>If you are a macOS or Windows developer and have suggestions on how to make the instructions more idiomatic feel free to open an <a href="https://github.com/gtk-rs/gtk4-rs/issues/new/choose">issue</a>.</p>
+<p>Especially for macOS it would already help to simply follow the instructions and check if everything works as expected.
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-18/0d61db43bcb3afc0208acbb05d376a73ec3cc218.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> says</p>
+<blockquote>
+<p>Thanks to the Endless Orange Week, this week I could work on various portal-related tasks. Here are a few highlights:</p>
+<ul>
+<li><a href="https://github.com/flatpak/libportal/pull/54">Added introspection</a> to <code>libportal</code>, and <a href="https://github.com/flatpak/libportal/pull/53">introduced <code>libportal-gtk3</code>, <code>libportal-gtk4</code>, and <code>libportal-qt5</code></a>, with toolkit-specific functions.</li>
+<li><a href="https://github.com/flatpak/xdg-desktop-portal/pull/659">I&rsquo;m extending the &ldquo;Device&rdquo; portal</a> to allow opening PipeWire connections that filter all but the allowed devices. This allows sandboxed applications to not expose the <code>xdg-run/pipewire-0</code> socket unfiltered, which gives access to many devices like cameras and microphones without the corresponding permissions.</li>
+<li>Revisited my implementation of <a href="https://github.com/flatpak/xdg-desktop-portal/pull/638">screencast session restore</a>. This introduces a mechanism for applications to restore previous screencast sessions without querying the user again. I also <a href="https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome/-/merge_requests/14">implemented support for it in GNOME portals</a>, and a proof of concept in OBS Studio.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/11/twig-18/7435dae9f85d39d670cd592c193c556cb7651f27.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/11/twig-18/7435dae9f85d39d670cd592c193c556cb7651f27.webm">download it</a> and watch it with your favorite video player!</span>
+</video></li>
+</ul>
+</blockquote>
+
+
+<h3 id="telegrand">
+<a class="heading-anchor" href="#telegrand" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Telegrand <a href="https://github.com/melix99/telegrand/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A Telegram client optimized for the GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@melix99:gnome.org">Marco Melorio</a> reports</p>
+<blockquote>
+<p>Another week of good progress has passed in Telegrand! Marcus Behrendt continued his streak of contributions: he <a href="https://github.com/melix99/telegrand/pull/137">made the unread count badges gray</a> for muted chats, added previews for new chat types, like <a href="https://github.com/melix99/telegrand/pull/128">calls</a> and <a href="https://github.com/melix99/telegrand/pull/130">join/leave statuses from a group</a> and also added a <a href="https://github.com/melix99/telegrand/pull/123">cool indicator</a> to the avatars to show when an user is online.</p>
+<p>On the other hand, I have made fixes to the default window size and have also implemented a preferences window with a setting to enable the dark theme. It also has an option to follow the system-wide dark style preference that will come in GNOME 42!
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-18/98277a7b576bae6258f9b641c69e78303f6ed76e.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

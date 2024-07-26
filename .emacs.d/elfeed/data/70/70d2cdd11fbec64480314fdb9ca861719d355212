@@ -1,0 +1,119 @@
+<p>Update on what happened across the GNOME project in the week from August 13 to August 20.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> reports</p>
+<blockquote>
+<p>Just in time for the 41.beta release, Settings received two new panels: Multitasking, and Cellular. The Multitasking panel provides functionality useful to improve your productivity when working with many apps at once. The Cellular panel allows configuring various aspects of mobile connections and modems.
+
+<img src="https://thisweek.gnome.org/posts/2021/08/twig-6/af964f417fdb785e241ead463b5b97d6ff07bc2a.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> says</p>
+<blockquote>
+<p>The work-in-progress <a href="https://imolodetskikh.wordpress.com/2021/06/29/gsoc-2021-gnome-shell-screenshot-ui/">new screenshot UI</a> for GNOME Shell has got initial support for screen recording! I also created a <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1954">preliminary draft merge request</a> where it&rsquo;s possible to follow the development.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/08/twig-6/159aa1880ef6812d3935933f4c64b5ec6be9957f.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/08/twig-6/159aa1880ef6812d3935933f4c64b5ec6be9957f.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="calendar">
+<a class="heading-anchor" href="#calendar" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Calendar <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple calendar application.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> says</p>
+<blockquote>
+<p>GNOME Calendar is now able to open ICS files and import their events
+
+<img src="https://thisweek.gnome.org/posts/2021/08/twig-6/3bf7fc41533435866368da41e729350845404ab0.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gjs">
+<a class="heading-anchor" href="#gjs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GJS <a href="https://gitlab.gnome.org/GNOME/gjs"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Use the GNOME platform libraries in your JavaScript programs. GJS powers GNOME Shell, Polari, GNOME Documents, and many other apps.</p>
+<p><a href="https://matrix.to/#/@ptomato:gnome.org">ptomato</a> reports</p>
+<blockquote>
+<p>In GJS, Evan Welsh added a <code>console</code> global object with methods such as <code>console.log()</code> that developers who have written JavaScript before will probably know. We hope this will make GJS feel more familiar, and allow reusing code more easily between GNOME and other JavaScript environments. PS. Before you ask, we are not planning to add <code>alert()</code> 😉</p>
+<p>Daniel van Vugt added <code>setDeviceOffset()</code> and <code>setDeviceScale()</code> methods to <code>Cairo.Surface</code>, which wrap Cairo&rsquo;s similarly named C APIs. I added the corresponding <code>getDeviceOffset()</code> and <code>getDeviceScale()</code> as well.</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="cozy">
+<a class="heading-anchor" href="#cozy" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Cozy <a href="https://github.com/geigi/cozy/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An audiobook reader and manager.</p>
+<p><a href="https://matrix.to/#/@geigi7:matrix.org">geigi</a> announces</p>
+<blockquote>
+<p>Cozy 1.1.2 has been released! It features improved support for mobile devices and fixes multiple small issues that occurred in the redesigned UI.
+
+<img src="https://thisweek.gnome.org/posts/2021/08/twig-6/qdgKUwbKsNeBVCHHeVixxXfo.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="podcasts">
+<a class="heading-anchor" href="#podcasts" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Podcasts <a href="https://gitlab.gnome.org/podcasts"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Podcast app for GNOME.</p>
+<p><a href="https://matrix.to/#/@nee:tchncs.de">nee</a> reports</p>
+<blockquote>
+<p><a href="https://wiki.gnome.org/Apps/Podcasts">Podcasts</a> now has an <a href="https://gitlab.gnome.org/World/podcasts/-/merge_requests/178">episode description page</a> where users can <a href="https://gitlab.gnome.org/World/podcasts/-/issues/93">read the notes</a> for an episode, <a href="https://gitlab.gnome.org/World/podcasts/-/issues/203">full titles of long episode names</a> and <a href="https://gitlab.gnome.org/World/podcasts/-/issues/202">share the episode url</a>.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/08/twig-6/af46ce8d4f8e2dbb780dc6e5016fe46288c36807.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/08/twig-6/af46ce8d4f8e2dbb780dc6e5016fe46288c36807.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@alatiera:matrix.org">alatiera</a> announces</p>
+<blockquote>
+<p>Podcasts <a href="https://gitlab.gnome.org/World/podcasts/-/tags/0.5.0-beta">0.5.0-beta</a> is out. Highlights include remembering the position you left off an episode, and the new episode description page! Get the new release from <a href="https://dl.flathub.org/beta-repo/appstream/org.gnome.Podcasts.flatpakref">flathub-beta</a>!</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1>
+
+<h3 id="relm4">
+<a class="heading-anchor" href="#relm4" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Relm4 <a href="https://github.com/AaronErhardt/relm4"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A GUI library inspired by Elm.</p>
+<p><a href="https://matrix.to/#/@admin:matrix.aaron-erhardt.de">Aaron Erhardt</a> reports</p>
+<blockquote>
+<p>The first beta version of Relm4 was released. Relm4 is an idiomatic GUI library inspired by <a href="https://elm-lang.org/">Elm</a> and based on <a href="https://crates.io/crates/gtk4">gtk4-rs</a>. It&rsquo;s goal is to make developing GTK4 apps in Rust simpler and more productive. More information can be found in the <a href="https://aaronerhardt.github.io/blog/posts/relm_beta/">release blog post</a> and the <a href="https://github.com/AaronErhardt/relm4">repository</a>.</p>
+</blockquote>
+
+
+<h3 id="telegrand">
+<a class="heading-anchor" href="#telegrand" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Telegrand <a href="https://github.com/melix99/telegrand"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A Telegram client optimized for the GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@melix99:gnome.org">Marco Melorio</a> announces</p>
+<blockquote>
+<p><a href="https://github.com/melix99/telegrand">Telegrand</a> development has seen a great improvement over this week! I added the ability to load older messages and I also implemented the parser to correctly show the formatted text of the messages. Newbytee has added the ability to send messages by pressing enter.
+
+<img src="https://thisweek.gnome.org/posts/2021/08/twig-6/3ae156dc25936e9d6ae9eeb7bb447c1a63c9939b.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="fractal">
+<a class="heading-anchor" href="#fractal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fractal <a href="https://gitlab.gnome.org/GNOME/fractal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Matrix messaging app for GNOME written in Rust.</p>
+<p><a href="https://matrix.to/#/@afranke:matrix.org">Alexandre Franke</a> says</p>
+<blockquote>
+<p>Kai was on fire this week 🔥 with 5 (❗️) new merge requests that all landed! The highlights are that <a href="https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/810">rooms are now sorted by activity</a> and <a href="https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/811">room members now have a <code>power-level</code> property</a>. The other ones (<a href="https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/815">!815</a>, <a href="https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/816">!816</a>, <a href="https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/817">!817</a>) are maintenance and code quality related.</p>
+<p>Julian Hofer also contributed a code quality change by <a href="https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/818">making every subclass use <code>Default</code></a>.</p>
+<p>Shout out to Julian Sparber, who’s still busy with <a href="https://github.com/matrix-org/matrix-rust-sdk/pull/288">his upstream work in the Matrix Rust SDK</a>, and managed to review and merge all the above contributions.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

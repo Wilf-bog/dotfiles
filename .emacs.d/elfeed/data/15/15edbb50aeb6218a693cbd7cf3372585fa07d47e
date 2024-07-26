@@ -1,0 +1,173 @@
+<p>Update on what happened across the GNOME project in the week from September 16 to September 23.</p>
+<p><strong>This week we released GNOME 43!</strong></p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/43_banner.png" alt="" />
+</p>
+<p>This new major version of GNOME is full of exciting new features like a redesigned Shell quick settings menu, a modernized file manager, new device security settings - and of course much more. More information can be found in the <a href="https://release.gnome.org/43/">GNOME 43 release notes</a>.</p>
+<p>Readers who have been following this site for a few weeks will already know some of the new features. If you want to follow the development of GNOME 44 (Spring 2023), keep an eye on this page - we&rsquo;ll be posting exciting news every week!</p>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="newsflash-feed-reader">
+<a class="heading-anchor" href="#newsflash-feed-reader" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>NewsFlash feed reader <a href="https://gitlab.com/news-flash/news_flash_gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Follow your favorite blogs &amp; news sites.</p>
+<p><a href="https://matrix.to/#/@jangernert:matrix.org">Jan Lukas</a> says</p>
+<blockquote>
+<p>NewsFlash 2.0 has just been released on flathub. It has been ported to Gtk4 and can now sync with Nextcloud News &amp; FreshRSS. For more details take a look at issue 55, 56 &amp; 57 of &ldquo;This Week in GNOME&rdquo;.</p>
+</blockquote>
+
+
+<h3 id="dialect">
+<a class="heading-anchor" href="#dialect" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Dialect <a href="https://github.com/dialect-app/dialect/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Translate between languages.</p>
+<p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> says</p>
+<blockquote>
+<p><a href="https://github.com/dialect-app/dialect/pull/267">Dialect was updated</a> to use new widgets from libadwaita 1.2 like <code>AdwAboutWindow</code> and <code>AdwEntryRow</code>, it also received an style update to have a more flat look. These changes will be released in an upcoming version targeting GNOME 43 along with other minor improvements.
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/NtQSLFKoojOCAOoPUEUuPxBN.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/DtThMNeuNKmAUrKAPqQgiHye.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="apostrophe">
+<a class="heading-anchor" href="#apostrophe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Apostrophe <a href="https://gitlab.gnome.org/World/apostrophe"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A distraction free Markdown editor.</p>
+<p><a href="https://matrix.to/#/@somas95:gnome.org">Manu</a> reports</p>
+<blockquote>
+<p>I&rsquo;ve implemented some basic autocompletion for Apostrophe. It completes parenthesis, brackets, unordered lists, ordered lists and nested lists
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/09/twig-62/f4468c71711f78639b7ba81e5040e96280ca32ef.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/09/twig-62/f4468c71711f78639b7ba81e5040e96280ca32ef.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@finefindus:matrix.org">FineFindus</a> reports</p>
+<blockquote>
+<p>I&rsquo;ve released version 0.3.0 of <a href="https://github.com/FineFindus/eyedropper">Eyedropper</a>. This release features a basic color shades generation and the ability to customize the order of the shown color formats. The app has been translated into French by <a href="https://github.com/rene-coty">rene-coty</a> and German. It is now available on <a href="https://flathub.org/apps/details/com.github.finefindus.eyedropper">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/akxtnckBxndzdcJKAYSaZOXK.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@alexhuntley:matrix.org">alexhuntley</a> announces</p>
+<blockquote>
+<p>I released version 0.7.0 of Plots, a simple graphing app for GNOME. It introduces a new color picker, a preferences dialog, and support for the system dark theme.</p>
+<p>Plots was then ported from GTK 3 to GTK 4 and Libadwaita, with the current version 0.8.1 available on Flathub now.
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/PDiaFyoSpGckOEocjkScNasc.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/aZjBLjBoIHDagEWTHhPLPSLe.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/BtKKMnNiaWSLRMuefyfvlXXB.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie</a> announces</p>
+<blockquote>
+<p>I&rsquo;m announcing my small new project <a href="https://gitlab.gnome.org/sophie-h/key-rack">Key Rack</a>. Key Rack will allow you to browse and edit Passwords, Tokens, and similar things that Flatpak apps store encrypted. The app is intended for developers for debugging and for everyone for looking up the password that you forgot again. Key Rack currently has alpha quality.</p>
+<p>Why a new app? The TL;DR is: Currently, for technical reasons, your passwords might appear only in the Passwords app you are used to, or only in Key Rack. Maybe Key Rack will show all of them one day.</p>
+<p>A more details explanation is the following: Existing apps like <a href="https://wiki.gnome.org/Apps/Seahorse">Passwords and Keys (Seahorse)</a> allow access to the global key storage (accessible via <a href="https://specifications.freedesktop.org/secret-service/latest/">Secret Service</a>.) Since the global storage has no access control for Flatpaks, the recommended way to store keys in Flatpaks is for apps to use a local <a href="https://wiki.gnome.org/action/show/Projects/GnomeKeyring">Keyring</a> encrypted with a key derived from the secret obtained from the <a href="https://flatpak.github.io/xdg-desktop-portal/#gdbus-org.freedesktop.portal.Secret">secret portal</a>. Both <a href="https://developer-old.gnome.org/libsecret/0.18/">libsecret</a> and <a href="https://docs.rs/oo7">oo7</a> provide convenience APIs for your app, that automatically use a local Keyring when used inside a Flatpak.
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/a28470488f546ffcabb01e24e363fc044d3c67e9.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/575d611c36b66d8079cbe90b27359f6f3b4242b2.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="telegrand">
+<a class="heading-anchor" href="#telegrand" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Telegrand <a href="https://github.com/melix99/telegrand/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A Telegram client optimized for the GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@melix99:gnome.org">Marco Melorio</a> reports</p>
+<blockquote>
+<p>Summer is officially over, so now it&rsquo;s a good time to wrap up what has been done in Telegrand in the meantime. Here&rsquo;s a quick summary of the nearly 180 commits that happened since the last update:</p>
+<ul>
+<li>Reimplemented chat search in a new panel, which can now also search for global chats</li>
+<li>Show a list of recently found chats in the new search panel when no query is set</li>
+<li>Added timestamp to the messages in the chat history</li>
+<li>Added &ldquo;sending status&rdquo; and &ldquo;edited&rdquo; indicators to the messages in the chat history, by Marcus Behrendt</li>
+<li>Added a scroll to bottom button in the chat history, by Marcus Behrendt</li>
+<li>Show mini-thumbnails for media messages in the chat list, by Marcus Behrendt</li>
+<li>Added sending status indicator for last messages in the chat list, by Marcus Behrendt</li>
+<li>Added the ability to mark chats as read or unread in the chat list, by Marcus Behrendt</li>
+<li>Use new libadwaita widgets like AdwEntryRow and AdwMessageDialog, by Marcus Behrendt</li>
+<li>Show when a chat is from a deleted user account, by Carlod</li>
+</ul>
+<p>More really exciting things are in the works, so stay tuned for the next updates!
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/156c2584fbc29db65d507695add0dc9ef1e6ba25.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/0fb8a4e8204612edcfccf1934927557585375216.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/adf9bd1b6e02ee808b6254750b1dfe599d32e0f0.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gradience">
+<a class="heading-anchor" href="#gradience" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gradience <a href="https://github.com/GradienceTeam/Gradience"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Change the look of Adwaita, with ease.</p>
+<p><a href="https://matrix.to/#/@0xmrtt:envs.net">0xMRTT</a> announces</p>
+<blockquote>
+<p>Gradience Team is happy to announce new version of Gradience 0.3.0. This release introduces many new features and improvements.</p>
+<ul>
+<li>Added plugins support, this allows creating plugins for customizing other apps</li>
+<li>Preset Manager performance are significantly enhanced, presets are downloading much faster and app don&rsquo;t freeze on preset removal</li>
+<li>Added search to Preset Manager</li>
+<li>Community presets refactor</li>
+<li>Preset Manager is attached to the main window</li>
+<li>Added <em>Quick Preset Switcher</em> back, with it you can switch presets with less clicks</li>
+<li>Save dialog now shows up when you close app with unsaved preset</li>
+<li>Currently applied preset now auto-loads on app start-up</li>
+<li>Toasts now less annoying</li>
+<li>Added theming warning to Welcome screen</li>
+<li>Added Mini Welcome screen on update from previous version</li>
+<li>Added aarch64 builds
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/aecd3f14554ffe8f7f32782d477dd7abbb5a8d68.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/67a6bc1b6daccafe676fe16f1d6dd6646571b2b8.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="login-manager-settings">
+<a class="heading-anchor" href="#login-manager-settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Login Manager Settings <a href="https://realmazharhussain.github.io/gdm-settings/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A settings app for the login manager GDM.</p>
+<p><a href="https://matrix.to/#/@realmazharhussain:matrix.org">Mazhar Hussain</a> says</p>
+<blockquote>
+<p><a href="https://realmazharhussain.github.io/gdm-settings">Login Manager Settings</a> v1.0 (stable) has been released.</p>
+<p>There are not many changes compared to v1.0-beta.4. One significant change is that it utilizes <a href="https://gitlab.gnome.org/jwestman/blueprint-compiler">blueprint-compiler</a> v0.4.0 now instead of v0.2.0.</p>
+<p>Changes in v1.0-beta.4 and previous beta versions for v1.0 have already been posted to TWIG in <a href="https://thisweek.gnome.org/posts/2022/08/twig-58">#58</a>, <a href="https://thisweek.gnome.org/posts/2022/09/twig-59">#59</a>, and <a href="https://thisweek.gnome.org/posts/2022/09/twig-61">#61</a>.</p>
+<p>If you would like see all changes since the previous stable release either go to <a href="https://github.com/realmazharhussain/gdm-settings/releases">GitHub Releases</a> or <a href="https://flathub.org/apps/details/io.github.realmazharhussain.GdmSettings">Flathub page</a> for the app.
+
+<img src="https://thisweek.gnome.org/posts/2022/09/twig-62/ywFouQIyRymfZOXSnLJWgXlB.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@jjardon:matrix.org">jjardon</a> announces</p>
+<blockquote>
+<p>A preview of GNOME OS images for some mobile devices are available (at the moment pine64&rsquo;s PinePhone and PinePhone Pro. They both rely on the GNOME OS infrastructure so we have working atomic updates thanks to ostree! A preview of this work is already available, read more about it here: <a href="https://www.codethink.co.uk/articles/2022/gnome-os-mobile/">https://www.codethink.co.uk/articles/2022/gnome-os-mobile/</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

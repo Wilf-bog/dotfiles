@@ -1,0 +1,119 @@
+<p>Update on what happened across the GNOME project in the last two weeks from December 17 to December 30.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="files">
+<a class="heading-anchor" href="#files" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Files <a href="https://gitlab.gnome.org/GNOME/nautilus"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Providing a  simple and integrated way of managing your files and browsing your file system.</p>
+<p><a href="https://matrix.to/#/@antoniof:gnome.org">antoniof</a> reports</p>
+<blockquote>
+<p>The plan of porting Files to GTK4 is moving through the gears.</p>
+<p>With the valuable help of new contributor Matt Jakeman, the application no longer uses the <code>gtk_dialog_run()</code> blocking function.</p>
+<p>Dependency on libgd has been dropped. Event controllers have been further adopted.</p>
+<p>And a new, simpler yet more featureful, GTK4-ready pathbar has been prepared. Its current look is not final, because it&rsquo;s bound to change profoundly with the new Adwaita style.
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-24/95047908204f10d24415b6721e984a30d5230cdd.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@antoniof:gnome.org">antoniof</a> says</p>
+<blockquote>
+<p>Newcomer Manny has enhanced the &ldquo;Compress&hellip;&rdquo; feature in Files. The newly created compressed archives are now added to the list of Recent Files. Finding that .zip file to attach to an email has just become a lot easier!</p>
+</blockquote>
+
+
+<h3 id="gnome-console">
+<a class="heading-anchor" href="#gnome-console" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Console <a href="https://gitlab.gnome.org/GNOME/console"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple user-friendly terminal emulator</p>
+<p><a href="https://matrix.to/#/@zbrown:matrix.org">Zander Brown</a> reports</p>
+<blockquote>
+<p>KGX is now branded as Console and has moved to the <a href="https://gitlab.gnome.org/GNOME/console">GNOME/ namespace</a></p>
+</blockquote>
+
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> reports</p>
+<blockquote>
+<p>The <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1954">new GNOME Shell screenshot UI</a> got a few more improvements over the past few weeks.</p>
+<p>I&rsquo;ve added a search entry for taking a screenshot, making it a little more discoverable. Window selection now highlights the selected window more prominently with a tick and a light-blue background, so that it&rsquo;s easier to see. Additionally, windows on the primary monitor are now positioned slightly higher to reduce overlap with the screenshot UI panel. Clicking on the screenshot notification will open the screenshot in the default image viewer.</p>
+<p>The Shift+Ctrl+Alt+R key combination now opens the screenshot UI in the screen recording mode. Upon finishing a screencast, you&rsquo;ll get a notification like with screenshots. Finally, screencasts are now stored in the Videos/Screencasts/ sub-folder so as not to pollute the Videos directory.</p>
+<p>I&rsquo;ve thus finished all screenshot UI functionality planned for the GNOME 42 release, making it ready for code review.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/12/twig-24/2dad63389993cce1a30aec489a65f16b40d92050.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/12/twig-24/2dad63389993cce1a30aec489a65f16b40d92050.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="gnome-builder">
+<a class="heading-anchor" href="#gnome-builder" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Builder <a href="https://gitlab.gnome.org/GNOME/gnome-builder"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>IDE for writing GNOME-based software.</p>
+<p><a href="https://matrix.to/#/@flyingpimonster:matrix.org">James Westman</a> reports</p>
+<blockquote>
+<p>Blueprint, a new markup language for creating user interfaces with GTK, now has syntax highlighting and completion support in Builder. For more information you can find the language&rsquo;s documentation <a href="https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/">here</a>.</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie Herold</a> reports</p>
+<blockquote>
+<p>This week <a href="https://apps.gnome.org/app/re.sonny.Junction/">Junction</a> entered GNOME Circle. Junction lets you always choose the application to open certain file types and links. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-24/07720bf8989d6bd8727f03110210ed382ead4db0.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="junction">
+<a class="heading-anchor" href="#junction" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Junction <a href="https://github.com/sonnyp/Junction"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Lets you choose the application to open files and links.</p>
+<p><a href="https://matrix.to/#/@sonnyp:matrix.org">sonnyp</a> announces</p>
+<blockquote>
+<p><a href="https://apps.gnome.org/app/re.sonny.Junction/">Junction</a> 1.4.0 was released with desktop actions and snap applications support.
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-24/vzcJarSaHNJlDmKNnHqAtATi.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="tangram">
+<a class="heading-anchor" href="#tangram" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tangram <a href="https://github.com/sonnyp/Tangram"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A browser for your pinned tabs.</p>
+<p><a href="https://matrix.to/#/@sonnyp:matrix.org">sonnyp</a> announces</p>
+<blockquote>
+<p><a href="https://apps.gnome.org/app/re.sonny.Tangram/">Tangram</a> was ported to GTK 4 / libadwaita and <a href="https://hosted.weblate.org/engage/tangram/">available to translate on Weblate</a>.
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-24/wyTkyXfGCzMFMStSsXPfiYAh.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="health">
+<a class="heading-anchor" href="#health" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Health <a href="https://gitlab.gnome.org/World/Health"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Collect, store and visualise metrics about yourself.</p>
+<p><a href="https://matrix.to/#/@cogitri:cogitri.dev">Cogitri</a> says</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/World/Health/">Health</a> has received a major rework in its handling of data sources. Each data sources (like current weight, steps taken, activities done, calories burned) has been split into an individual plugin so the user can decide what data is relevant to them and only enable that subset of data sources. This should allow for Health to add more specific data sources soon, like blood pressure measurements. The UI of the individual plugins hasn&rsquo;t been finalized yet, but the implementation itself is working pretty well already.
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-24/XUESFhwgihfeMItOZwIFrutL.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1><p><a href="https://matrix.to/#/@msandova:gnome.org">Maximiliano</a> announces</p>
+<blockquote>
+<p>I ported the documentation of <a href="https://github.com/flatpak/libportal">libportal</a> to gi-docgen, and added Vala bindings on CI!, you can find the docs <a href="https://flatpak.github.io/libportal/index.html">here</a>.
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-24/0e97441676c46427f91aae11e4737a39c3260c2f.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week-year">
+<a class="heading-anchor" href="#thats-all-for-this-week-year" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this <del>week</del> year!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects! We wish everyone a good start to the new year 2022 🎆!</p>

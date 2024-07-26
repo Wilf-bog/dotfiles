@@ -1,0 +1,93 @@
+<p>Update on what happened across the GNOME project in the week from December 01 to December 08.</p>
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@tbernard:gnome.org">Tobias Bernard</a> reports</p>
+<blockquote>
+<p>As part of the <a href="https://foundation.gnome.org/2023/11/09/gnome-recognized-as-public-interest-infrastructure/">GNOME STF (Sovereign Tech Fund)</a> project, a number of community members are working on infrastructure related projects.</p>
+<ul>
+<li>Georges opened pull requests fo his work on the USB portal
+<ul>
+<li><a href="https://github.com/flatpak/flatpak/pull/5620">added &ndash;usb and &ndash;no-usb to flatpak</a></li>
+<li><a href="https://github.com/flatpak/xdg-desktop-portal/pull/1238">portal API specification</a></li>
+<li><a href="https://gitlab.gnome.org/World/boatswain/-/commit/c157851ff35300da1b22fd757d745fef0dd90b83">experimental branch of Boatswain for testing</a></li>
+</ul>
+</li>
+<li>Julian fixed a lot of style and polish issues on the <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3012">notification grouping MR</a></li>
+<li>Jonas <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2190">fixed hidden scrollbars taking up space in the layout</a> in GNOME Shell</li>
+<li>Joanie fixed several issues in Orca related to keygrabs, and some regressions from the giant table refactor</li>
+<li>Evan Welsh is working on sync, async and finish annotations for GObject introspection</li>
+<li>With the help of Daiki, Dhanuka <a href="https://gitlab.gnome.org/GNOME/libsecret/-/merge_requests/128">completed porting the PAM module from gnome-keyring to libsecret</a></li>
+</ul>
+<p>Areas we&rsquo;re currently investigating:</p>
+<ul>
+<li>Exploring the constraints and options for fractional scaling</li>
+<li>We are looking at the state of speech synthetizers on Linux, particularly in relationship with the screen reader</li>
+<li>We&rsquo;re discussing the technical requirements for <a href="https://gitlab.gnome.org/Teams/Design/os-mockups/-/blob/master/dialogs/bottom-sheets.png">adaptive dialogs (bottom sheets)</a></li>
+</ul>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/12/twig-125/usb.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/12/twig-125/usb.webm">download it</a> and watch it with your favorite video player!</span>
+</video>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="tracker">
+<a class="heading-anchor" href="#tracker" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tracker <a href="https://gitlab.gnome.org/GNOME/tracker/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A filesystem indexer, metadata storage system and search tool.</p>
+<p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> reports</p>
+<blockquote>
+<p>Some memory usage fixes landed in the Tracker SPARQL database library this week:</p>
+<ul>
+<li>Fewer memory allocation operations when processing text (<a href="https://gitlab.gnome.org/GNOME/tracker/-/merge_requests/637">!637</a>), thanks to Carlos Garnacho</li>
+<li>Memory leak in <code>tracker:strip-punctuation()</code> fixed (<a href="https://gitlab.gnome.org/GNOME/tracker/-/merge_requests/639">!639</a>), thanks to Lukáš Tyrychtr</li>
+</ul>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@giantpinkrobots:matrix.org">Giant Pink Robots!</a> reports</p>
+<blockquote>
+<p>I released the v2023.12.7 version of Varia, a new download manager written with GTK4 and Libadwaita. Originally released a week prior, but now it has more essential features built in.</p>
+<p>It&rsquo;s available on Flathub: <a href="https://flathub.org/apps/io.github.giantpinkrobots.varia">https://flathub.org/apps/io.github.giantpinkrobots.varia</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@lanseria:matrix.org">Krafting</a> says</p>
+<blockquote>
+<p>I&rsquo;m pleased to announce the release of <a href="https://flathub.org/apps/net.krafting.Playlifin">Playlifin</a>, a simple tool that aids in importing your YouTube music playlists to your Jellyfin server!</p>
+<p>It&rsquo;s now available on <a href="https://flathub.org/apps/net.krafting.Playlifin">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/12/twig-125/uwFaTbDnFUsAiVtAETEayqHO.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="phosh">
+<a class="heading-anchor" href="#phosh" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Phosh <a href="https://gitlab.gnome.org/World/Phosh/phosh"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A pure wayland shell for mobile devices.</p>
+<p><a href="https://matrix.to/#/@agx:sigxcpu.org">Guido</a> announces</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/World/Phosh">Phosh</a> 0.34.0 is out. This includes an updated Wayland compositor (phoc) that works with the recently released wlroots 0.17.0 adding support for new Wayland protocols like security-context-v1 (to limit protocol access for flatpaks). We also fixed night light support and drag and drop on touch screens.</p>
+<p>Check the full details <a href="https://phosh.mobi/releases/rel-0.34.0/">here</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/12/twig-125/iSIpDGoiQmCrtSDSMLYOiwdT.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@felipeborges:gnome.org">Felipe Borges</a> reports</p>
+<blockquote>
+<p>We are happy to announce that GNOME is sponsoring two <a href="https://www.outreachy.org/">Outreachy </a> internship projects for the December 2023 to March 2024 Outreachy internship round where they will be working on <a href="https://gitlab.gnome.org/GNOME/openqa-tests/-/blob/master/README.md?ref_type=heads">implementing end-to-end tests for GNOME OS using openQA</a>.</p>
+<p><a href="https://gitlab.gnome.org/kizdorothy">Dorothy Kabarozi</a> and <a href="https://gitlab.gnome.org/acha">Tanjuate Achaleke</a> will be working with mentors Sam Thursfield and Sonny Piers.</p>
+<p>Stay tuned to <a href="https://planet.gnome.org/">Planet GNOME </a> for future updates on the progress of this project!</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

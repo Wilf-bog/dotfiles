@@ -1,0 +1,104 @@
+<p>Update on what happened across the GNOME project in the week from October 22 to October 29.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>libadwaita has new style classes:</p>
+<ul>
+<li><code>.card</code> to help style standalone widgets similarly to boxed lists as seen in Software, Shortwave or Health</li>
+<li><code>.opaque</code> for making custom colored buttons</li>
+</ul>
+<p>and a demo listing most of the available style classes (both the ones that it adds and the ones from GTK) that can be used as a reference
+
+<img src="https://thisweek.gnome.org/posts/2021/10/twig-16/035ffa47b99df6eafea829698b0ae4904206fbd5.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2021/10/twig-16/db53c7902e2bbdd7c0f24a361e1b541c028ec4c8.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="settings">
+<a class="heading-anchor" href="#settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Settings <a href="https://gitlab.gnome.org/GNOME/gnome-control-center"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Configure various aspects of your GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> announces</p>
+<blockquote>
+<p>the <code>gnome-bluetooth</code> library was ported to GTK4. The GTK4 version can be installed in parallel to the GTK3 version.
+
+<img src="https://thisweek.gnome.org/posts/2021/10/twig-16/d832a2784f544e587a1a0234d8e837d03fe6f4a1.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-builder">
+<a class="heading-anchor" href="#gnome-builder" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Builder <a href="https://gitlab.gnome.org/GNOME/gnome-builder"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>IDE for writing GNOME-based software.</p>
+<p><a href="https://matrix.to/#/@melix99:gnome.org">Marco Melorio</a> announces</p>
+<blockquote>
+<p>I&rsquo;ve added a GTK4 Rust template to GNOME Builder. Compared to the GTK3 template, it features composite templates, subclassing, about dialog, gactions and accelerators.</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie Herold</a> says</p>
+<blockquote>
+<p>This week <a href="https://apps.gnome.org/app/io.github.seadve.Mousai/">Mousai</a> entered GNOME Circle. Mousai can identify playing songs via microphone or from you device audio. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2021/10/twig-16/94077fcc1cdeb59b8f183d149543eff139d733a5.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="newsflash-feed-reader">
+<a class="heading-anchor" href="#newsflash-feed-reader" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>NewsFlash feed reader <a href="https://gitlab.com/news-flash/news_flash_gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Follow your favorite blogs &amp; news sites.</p>
+<p><a href="https://matrix.to/#/@jangernert:matrix.org">jangernert</a> reports</p>
+<blockquote>
+<p>NewsFlash lost support for feedly due to the API secret expiring. The new release of version 1.5.0 removes the feedly option from the flathub builds. But the code is still present and custom builds with developer secrets are possible. As an alternative to feedly NewsFlash 1.5.0 now offers support for Inoreader. We are still looking to find a maintainer for the Inoreader integration who dog-foods NewsFlash together with Inoreader.</p>
+</blockquote>
+
+
+<h3 id="fragments">
+<a class="heading-anchor" href="#fragments" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fragments <a href="https://gitlab.gnome.org/World/Fragments"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Easy to use BitTorrent client.</p>
+<p><a href="https://matrix.to/#/@felix:haecker.io">Felix</a> announces</p>
+<blockquote>
+<p>This week I implemented queue support in Fragments v2 (the upcoming Rust/Libadwaita rewrite). The torrent queue can be reordered so that torrents are downloaded in the desired order. Maximiliano <a href="https://gitlab.gnome.org/World/Fragments/-/merge_requests/87">added support</a> for automatically detecting magnet links from the clipboard.
+
+<img src="https://thisweek.gnome.org/posts/2021/10/twig-16/yYxsQrMRLePTOyhrFBqkmvsK.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1>
+
+<h3 id="phosh">
+<a class="heading-anchor" href="#phosh" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Phosh <a href="https://gitlab.gnome.org/World/Phosh/phosh"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A pure wayland shell for mobile devices.</p>
+<p><a href="https://matrix.to/#/@guido.gunther:talk.puri.sm">Guido</a> announces</p>
+<blockquote>
+<p>We released phosh 0.14.0 featuring</p>
+<ul>
+<li>Launch splash support</li>
+<li>An improved media player widget with seek buttons</li>
+<li>Less flicker on startup</li>
+</ul>
+<p>and much more. Check the full <a href="https://gitlab.gnome.org/World/Phosh/phosh/-/tags/v0.14.0">release notes</a>
+for more details and contributors.
+
+<img src="https://thisweek.gnome.org/posts/2021/10/twig-16/RcRZcAbLCDebrtIKXvgdOzuQ.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

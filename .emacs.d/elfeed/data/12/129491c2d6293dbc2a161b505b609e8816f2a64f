@@ -1,0 +1,99 @@
+<p>Update on what happened across the GNOME project in the week from July 09 to July 16.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="webkitgtk">
+<a class="heading-anchor" href="#webkitgtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>WebKitGTK <a href="https://webkitgtk.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>GTK port of the WebKit rendering engine.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>WebKitGTK now <a href="https://bugs.webkit.org/show_bug.cgi?id=227834">uses</a> dark scrollbars for dark pages. This works even for pages that hadn&rsquo;t explicitly declared dark mode support.
+
+<img src="https://thisweek.gnome.org/posts/2021/07/twig-1/webkit1.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>WebKitGTK now <a href="https://bugs.webkit.org/show_bug.cgi?id=208204">supports</a> the <code>color-scheme</code> CSS property, allowing to use dark form controls and system colors.
+
+<img src="https://thisweek.gnome.org/posts/2021/07/twig-1/webkit2.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> says</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/1762">A patchset that helps reduce input latency on Wayland</a> has been merged in Mutter. Users should expect a slight decrease in input latency, especially on lower refresh-rate displays such as 60 Hz. In rare cases this patchset could also give a slight boost to the FPS in GNOME Shell.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> says</p>
+<blockquote>
+<p>I finished corner drag-and-drop support for area selection and initial window selection implementation in the <a href="https://imolodetskikh.wordpress.com/2021/06/29/gsoc-2021-gnome-shell-screenshot-ui/">new GNOME Shell screenshot UI</a>. Find more details and demos in my <a href="https://imolodetskikh.wordpress.com/2021/07/15/gsoc-2021-selection-editing-and-window-selection/">update blog-post</a>!
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/07/twig-1/shell1.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/07/twig-1/shell1.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>A <a href="https://github.com/IBBoard/cawbird">Cawbird</a> developer has implemented <a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/165">unread badges</a> for <code>AdwViewSwitcher</code> in libadwaita
+
+<img src="https://thisweek.gnome.org/posts/2021/07/twig-1/adwaita1.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-builder">
+<a class="heading-anchor" href="#gnome-builder" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Builder <a href="https://gitlab.gnome.org/GNOME/gnome-builder"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>IDE for writing GNOME-based software.</p>
+<p><a href="https://matrix.to/#/@vanadiae:matrix.org">vanadiae</a> reports</p>
+<blockquote>
+<p>This past week(s), I&rsquo;ve done some work to improve Builder&rsquo;s session saving. One of the primary reason that made me start this work is to have the ability to restore all the different pages types that Builder has, as currently only the main source code pages were restored on startup. The current session API made plugins handle the restoring of both the pages and their position in the workspace grid, which meant that it was nearly impossible for multiple addins to restore their pages in the right position in a reliable and straight-forward way. So I <a href="https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/345">reworked the whole Session API</a> to make addins only handle the content of their pages, without requiring them to care about restoring to the grid. This allowed me to <a href="https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/395">add support for Devhelp documentation pages</a> much more easily. So now it should be easy to add support for other pages types, like terminal pages or the folder browser pages. I&rsquo;ve also <a href="https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/398">fixed a small issue</a> which was already there before the rework, which made the visible pages not always being the visible ones when restoring, which can be annoying as you&rsquo;d need to switch to them again from the Open Pages popover to resume your work. Builder is also on the road to gain support for <a href="https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/400">autosaving the session</a> when a page is opened, moved or closed, or if you e.g. changed directory in a terminal, so that if Builder ever crashes you won&rsquo;t need to re-open all the pages you were working on, hence making crashes less disruptive. All those additions will make their way into GNOME 41, to be released in September.</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="gtk-rs">
+<a class="heading-anchor" href="#gtk-rs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>gtk-rs <a href="https://gtk-rs.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Safe bindings to the Rust language for fundamental libraries from the GNOME stack.</p>
+<p><a href="https://matrix.to/#/@julianhofer:gnome.org">Julian 🍃</a> reports</p>
+<blockquote>
+<p>The <a href="https://gitlab.gnome.org/bilelmoussaoui/gtk-rust-template">gtk-rust-template</a> has been updated to use the latest release of gtk4-rs. Additionally, gtk3-rs support has been dropped and the template script has been simplified. (see <a href="https://gitlab.gnome.org/bilelmoussaoui/gtk-rust-template/-/merge_requests/45">!45</a> and <a href="https://gitlab.gnome.org/bilelmoussaoui/gtk-rust-template/-/merge_requests/46">!46</a>)</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> announces</p>
+<blockquote>
+<p>gtk4-rs got a 0.2 release already. It includes API fixes for <code>gsk::RenderNode</code> / <code>gsk::Renderer</code> / <code>gtk::Snapshot</code> / <code>gdk::Drop</code> / <code>gtk::DropTargetAsync</code></p>
+</blockquote>
+
+
+<h3 id="obfuscate">
+<a class="heading-anchor" href="#obfuscate" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Obfuscate <a href="https://gitlab.gnome.org/World/obfuscate"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Censor your private information on any image.</p>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> announces</p>
+<blockquote>
+<p>Obfuscate got ported to GTK 4 in the latest release. The only noticeable difference by the end-user is very fast rendering as the application doesn&rsquo;t use cairo for that anymore.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@felix:haecker.io">Felix</a> announces</p>
+<blockquote>
+<p>I worked on <a href="https://github.com/haecker-felix/hebbot">hebbot</a> which gets used to generate &ldquo;This Week in GNOME&rdquo; blog posts. You can read more about it in my <a href="https://blogs.gnome.org/haeckerfelix/2021/07/16/introducing-this-week-in-gnome/">blog post</a>!</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

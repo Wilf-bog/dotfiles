@@ -1,0 +1,108 @@
+
+         
+         <p>Substitute is a set of commands that perform text replacement (i)
+throughout the buffer, (ii) limited to the current definition (per
+<code class="language-plaintext highlighter-rouge">narrow-to-defun</code>), (iii) from point to the end of the buffer, and
+(iv) from point to the beginning of the buffer.</p>
+
+<p>These substitutions are meant to be as quick as possible and, as such,
+differ from the standard <code class="language-plaintext highlighter-rouge">query-replace</code> (which I still use).  The
+provided commands prompt for substitute text and perform the
+substitution outright, without moving the point.</p>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">substitute</code></li>
+  <li>Official manual: <a href="https://protesilaos.com/emacs/substitute">https://protesilaos.com/emacs/substitute</a></li>
+  <li>Git repo on SourceHut: <a href="https://git.sr.ht/~protesilaos/substitute">https://git.sr.ht/~protesilaos/substitute</a>
+    <ul>
+      <li>Mirrors:
+        <ul>
+          <li>GitHub: <a href="https://github.com/protesilaos/substitute">https://github.com/protesilaos/substitute</a></li>
+          <li>GitLab: <a href="https://gitlab.com/protesilaos/substitute">https://gitlab.com/protesilaos/substitute</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Mailing list: <a href="https://lists.sr.ht/~protesilaos/general-issues">https://lists.sr.ht/~protesilaos/general-issues</a></li>
+  <li>Video demo: <a href="https://protesilaos.com/codelog/2023-01-16-emacs-substitute-package-demo/">https://protesilaos.com/codelog/2023-01-16-emacs-substitute-package-demo/</a></li>
+  <li>Backronym: Some Utilities Built to Substitute Targets Independent of
+Their Utterances, Thoroughly and Easily.</li>
+</ul>
+
+<p>Below are the release notes.</p>
+
+<hr />
+
+<p>The package has been in a stable state since its inception, to the
+point where I thought I had already formalised its latest version as a
+release…</p>
+
+<p>The value proposition of <code class="language-plaintext highlighter-rouge">substitute</code> is shown in the video I did for
+it: <a href="https://protesilaos.com/codelog/2023-01-16-emacs-substitute-package-demo/">https://protesilaos.com/codelog/2023-01-16-emacs-substitute-package-demo/</a>.</p>
+
+<p>Notable refinements:</p>
+
+<ul>
+  <li>
+    <p>It is now possible to substitute a target with an empty string.  We
+could not do that with <code class="language-plaintext highlighter-rouge">read-string</code> function that was originally in
+use, as the empty input is automatically interpreted as the value of
+the DEFAULT-VALUE argument that <code class="language-plaintext highlighter-rouge">read-string</code> gets.  This is
+standard for most Emacs minibuffer interactions, though in our case
+it makes sense to accept an empty string that is distinct from the
+default value, as we may, e.g., want to remove a prefix from a
+target.  Thanks to Kostas Andreadis for discussing this with me in
+issue 2 on the GitHub mirror as well as pull request 3:</p>
+
+    <ul>
+      <li><a href="https://github.com/protesilaos/substitute/issues/2">https://github.com/protesilaos/substitute/issues/2</a></li>
+      <li><a href="https://github.com/protesilaos/substitute/pull/3">https://github.com/protesilaos/substitute/pull/3</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Target strings that contain escape sequences do not confuse
+Substitute anymore.  The substitution will be performed as expected.
+Thanks to Kostas Andreadis for the contribution, which was done in
+pull request 3 on the GitHub mirror:
+<a href="https://github.com/protesilaos/substitute/pull/3">https://github.com/protesilaos/substitute/pull/3</a>.</p>
+  </li>
+  <li>
+    <p>Calling <code class="language-plaintext highlighter-rouge">undo</code> after a substitution no longer moves the point.  This
+is consistent with the behaviour of Substitute when it replaces the
+target text.  Thanks to Ed Tavinor for the patch, which was done via
+a private channel.</p>
+  </li>
+  <li>
+    <p>Normally, Substitute will retain the letter casing of the underlying
+target.  This means that if it is replacing “hello” with “hey” and
+there is a “HELLO” instance, it will replace it with “HEY”.  This is
+often the desired behaviour.  Though now all Substitute commands
+accept an optional prefix argument (<code class="language-plaintext highlighter-rouge">C-u</code> with default key
+bindings), which is interpreted as a “fixed case” substitution: the
+user input is applied as-is, regardless of the underlying letter
+casing.  To always have fixed letter casing, set the user option
+<code class="language-plaintext highlighter-rouge">substitute-fixed-letter-case</code> to a non-nil value.  Doing so is the
+same as always calling the commands with a prefix argument.  Thanks
+to revrari for bringing this matter to my attention in issue 4 on
+the GitHub mirror:
+<a href="https://github.com/protesilaos/substitute/issues/4">https://github.com/protesilaos/substitute/issues/4</a>.</p>
+  </li>
+  <li>
+    <p>Substitute will not even try to perform its task in a read-only
+buffer.  Thanks to ersi-dnd for bringing this matter to my
+attention.  This was done in issue 6 on the GitHub mirror:
+<a href="https://github.com/protesilaos/substitute/issues/6">https://github.com/protesilaos/substitute/issues/6</a>.</p>
+  </li>
+  <li>
+    <p>The built-in <code class="language-plaintext highlighter-rouge">subr-x</code> library is explicitly required to avoid byte
+compilation warnings.  Thanks to Chunye Wang for the contribution,
+which was done in pull request 1 on the GitHub mirror:
+<a href="https://github.com/protesilaos/substitute/pull/1">https://github.com/protesilaos/substitute/pull/1</a>.</p>
+  </li>
+</ul>
+
+<p>The code contributions from Ed Tavinor, Kostas Andreadis, and Chunye
+Wang are small, meaning that their respective authors do not need to
+assign copyright to the Free Software Foundation.</p>
+        
+      

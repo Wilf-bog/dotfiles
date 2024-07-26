@@ -1,0 +1,46 @@
+#+title: Elfeed configuration
+  
+* Feeds                                                              :elfeed:
+** Emacs                                                         :emacs:tech:
+Emacs-related information.
+*** https://lucidmanager.org/tags/emacs/index.xml
+*** https://protesilaos.com/codelog.xml
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCEqYjPJdmEcUVfHmQwJVM9A
+*** http://gdata.youtube.com/feeds/base/users/SystemCrafters/uploads
+*** https://www.youtube.com/feeds/videos.xml?user=SystemCrafters
+*** http://yummymelon.com/devnull/
+*** https://protesilaos.com/news.xml
+** Linux                                                         :linux:tech:
+*** https://drewdevault.com/blog/index.xml
+*** https://www.omgubuntu.co.uk/feed
+*** https://thisweek.gnome.org/index.xml
+*** https://framablog.org/feed/
+** News                                                               :news:
+*** https://pivot.quebec/feed/
+** Tech                                                                :tech:
+*** https://tante.cc/feed/
+** Philosophie                                                   :philosophy:
+*** https://protesilaos.com/books.xml
+*** https://protesilaos.com/commentary.xml
+*** https://protesilaos.com/interpretations.xml
+** Écologie                                                         :ecology:
+*** https://polemos-decroissance.org/feed/
+*** https://www.degrowth.global/feed/
+*** https://timotheeparrique.com/feed/
+*** https://theecologist.org/whats_new/feed
+** Antispécisme                                      :antispeciesism:ecology:
+*** https://lamorce.co/feed/
+*** https://drstevebest.wordpress.com/feed/
+** Musique                                                            :music:
+*** https://www.psychedelicbabymag.com/feed
+*** https://morefuzz.net/feed/
+** PKM                                                                  :pkm:
+*** https://writingslowly.com/feed.xml
+*** https://zettelkasten.de/feed.atom
+*** https://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-and-teaser.xml
+** Zoo                                                   :zoo:antispeciesism:
+*** https://blog.zeta-verein.de/fr/feed/
+*** https://zooey.pub/feed.xml
+** Politique                                                       :politics:
+*** https://lundi.am/spip.php?page=backend
+*** https://protesilaos.com/politics.xml

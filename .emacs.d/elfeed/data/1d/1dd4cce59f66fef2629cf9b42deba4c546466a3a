@@ -1,0 +1,183 @@
+<p>Update on what happened across the GNOME project in the week from October 27 to November 03.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> announces</p>
+<blockquote>
+<p>GLib has seen recent improvements for support on Hurd and musl, and is in the middle of an exciting port from gtk-doc to gi-docgen!</p>
+</blockquote>
+
+
+<h3 id="evolution-data-server">
+<a class="heading-anchor" href="#evolution-data-server" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Evolution Data Server
+</h3><p><a href="https://matrix.to/#/@tintou:matrix.org">Corentin Noël</a> announces</p>
+<blockquote>
+<p>This week the Evolution Data Server library gained <a href="https://gnome.pages.gitlab.gnome.org/evolution-data-server/">a new homepage for its documentation</a> using GitLab for an always up-to-date version and GI-Docgen to align with the documentation of other libraries in the ecosystem.</p>
+</blockquote>
+
+
+<h3 id="vte--terminal">
+<a class="heading-anchor" href="#vte--terminal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>VTE / Terminal
+</h3><p><a href="https://matrix.to/#/@hergertme:gnome.org">hergertme</a> announces</p>
+<blockquote>
+<p>The venerable GNOME Terminal is working towards moving to GTK 4! You can find an initial implementation has landed in the git repository. A number of things need to be worked out for GNOME 46 and you can help make that happen! See <a href="https://gitlab.gnome.org/GNOME/gnome-terminal/-/wikis/Gtk4Warts">https://gitlab.gnome.org/GNOME/gnome-terminal/-/wikis/Gtk4Warts</a> for some outstanding issues.</p>
+<p>Additionally, VTE will now time it&rsquo;s rendering work based on the GdkFrameClock. This removes a longstanding issue where rendering would be capped around 40 frames-per-second.
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-120/b5d950b59625ec14094da726b4880d87242522d41719130765574275072.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@caspermeijn:matrix.org">Casper Meijn</a> says</p>
+<blockquote>
+<p>This week I <a href="https://www.caspermeijn.nl/posts/read-it-later-0.5.0/">released</a> version 0.5.0 of Read It Later. This is a client for <a href="https://www.wallabag.it/en">Wallabag</a>, which allows you to save web articles and read them later. The significant changes are the upgrade to GNOME 45, a crash fix, better support for links in articles, and new translations. Download on <a href="https://flathub.org/apps/details/com.belmoussaoui.ReadItLater">Flathub</a>.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@turtle:turtle.garden">paddis 🌻🐢</a> says</p>
+<blockquote>
+<p>I released the first version of Jellybean, an app that allows you to manage inventories of various items, this week!
+You can download it from Flathub <a href="https://flathub.org/apps/garden.turtle.Jellybean">here</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-120/oeHJaRaMttyBF1iaFGfbrmWPJSiCgt8R.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@kaii-lb:matrix.org">kaii</a> reports</p>
+<blockquote>
+<p><a href="https://github.com/kaii-lb/overskride">Overskride</a> v0.5.2 was released!</p>
+<p>this release brings a lot of new features:</p>
+<ul>
+<li>Audio profile support! now you can choose what profile to use with supported devices</li>
+<li>Battery polling, so you can see the battery of the connected device</li>
+<li>Auto accept files from trusted devices</li>
+<li>&hellip;and a lot more fixes and quality of life improvements!
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-120/pVQHLtEzZTBhOiUxvPjAfwQs.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="tagger">
+<a class="heading-anchor" href="#tagger" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tagger <a href="https://flathub.org/apps/details/org.nickvision.tagger"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Tag your music.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Tagger <a href="https://github.com/NickvisionApps/Tagger/releases/tag/2023.11.0">V2023.11.0</a> is here!</p>
+<p>This release simply fixes an issue where Tagger crashed when loading album art data for some files.
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-120/hLpGIauGhjuGCEHLCdCEuXIG.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="phosh">
+<a class="heading-anchor" href="#phosh" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Phosh <a href="https://gitlab.gnome.org/World/Phosh/phosh"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A pure wayland shell for mobile devices.</p>
+<p><a href="https://matrix.to/#/@agx:sigxcpu.org">Guido</a> announces</p>
+<blockquote>
+<p>Hot of the press is <a href="https://gitlab.gnome.org/World/Phosh">Phosh</a> 0.33.0. The
+release is a bit smaller than usual as we spent some timer modernizing
+<a href="https://gitlab.gnome.org/World/Phosh/phoc">phoc</a> to work well with wlroots git
+but there&rsquo;s still some user visible improvements:</p>
+<ul>
+<li>a consistent toggle for password visibility in modal dialogs</li>
+<li>a new lockscreen plugin to spawn apps. Most useful when you forgot to launch
+your music player and don&rsquo;t want to unlock just for that</li>
+<li>better troubleshooting information</li>
+<li>improved support for Indic languages</li>
+</ul>
+<p>Check the full details <a href="https://phosh.mobi/releases/rel-0.33.0/">here</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-120/VsZHjAwfnmxPIiEHBeVjElfa.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="hebbot">
+<a class="heading-anchor" href="#hebbot" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Hebbot <a href="https://github.com/haecker-felix/hebbot"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Hebbot is the bot behind TWIG that manages all the news.</p>
+<p><a href="https://matrix.to/#/@felix:haecker.io">Felix</a> says</p>
+<blockquote>
+<p>This week there were some technical difficulties, because TWIG-Bot (Hebbot) crashed during the creation of the issue (which is the reason for the delay).</p>
+<p>This was caused by a <a href="https://github.com/haecker-felix/hebbot/commit/e1dadab9b9438ef3bd57e4c3164d3c6e01d78928">rare bug involving Unicode text splitting</a>. Thanks to the help of Sophie and Zander Brown, the problem was quickly identified and eliminated. I deployed a new updated version of the bot which fixes the crash.</p>
+<p>Happy ending, the weekend is saved, I can publish TWIG! 🥳</p>
+</blockquote>
+
+
+<h3 id="blueprint">
+<a class="heading-anchor" href="#blueprint" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Blueprint <a href="https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A markup language for app developers to create GTK user interfaces.</p>
+<p><a href="https://matrix.to/#/@gregorni:gnome.org">gregorni</a> announces</p>
+<blockquote>
+<p>This week, the Blueprint formatter was merged! 🎉 You no longer have to worry about redundant whitespaces, forgotten indentations or random newlines anymore when editing your .blp files! This will make writing UI templates for GTK apps a <em>lot</em> more pleasant for developers.</p>
+<p>The formatter is also part of the Blueprint LSP, meaning it should be integrated into development tools like GNOME Builder, VS Code and Workbench pretty soon.</p>
+<p>I&rsquo;d like to thank James Westman and Sonny for guiding me through the process of writing the formatter, they helped me a lot.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/11/twig-120/e71b221fd9d0d8cfeeee36d18fa4cc17d6dd12691720434448710762496.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/11/twig-120/e71b221fd9d0d8cfeeee36d18fa4cc17d6dd12691720434448710762496.webm">download it</a> and watch it with your favorite video player!</span>
+</video>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/11/twig-120/058c761cb10c69b8ae4f89349a88b74808d1d71e1720436042793746432.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/11/twig-120/058c761cb10c69b8ae4f89349a88b74808d1d71e1720436042793746432.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="gnome-websites">
+<a class="heading-anchor" href="#gnome-websites" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Websites
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie (she/her)</a> reports</p>
+<blockquote>
+<p>After <a href="https://discourse.gnome.org/t/welcome-to-gnome-a-landing-page-for-newcomers/14668">pitching a <em>Welcome to GNOME</em> website</a> in March of this year, the pages are now <a href="https://teams.pages.gitlab.gnome.org/Websites/welcome.gnome.org/">ready for review</a>.</p>
+<p><a href="https://teams.pages.gitlab.gnome.org/Websites/welcome.gnome.org/"><em>Welcome to GNOME</em></a> not only gives a lot of information about how to get started in GNOME but also generates a page for each Core, Circle, and Development app, providing the correct links and instructions for the respective app. That includes docs for the right programming language and GTK version, instructions on installing nightly builds if available, instructions on setting up GitLab or GitHub respectively, and much more customized information.</p>
+<p>You can use the <a href="https://gitlab.gnome.org/Teams/Websites/welcome.gnome.org/-/issues">project’s issue tracker</a> for feedback or create pull requests with content additions or corrections. If the content seems stable enough the pages will be submitted to our translation system within the next weeks, allowing for translation before the release.
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-120/f4086e5a22e2a57e3471976ab8a8b840a0e55ed61720507194933248000.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="shell-extensions">
+<a class="heading-anchor" href="#shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Shell Extensions
+</h1><p><a href="https://matrix.to/#/@somepaulo:matrix.org">somepaulo</a> announces</p>
+<blockquote>
+<p>A new version of the <a href="https://extensions.gnome.org/extension/5660/weather-or-not/">Weather or Not</a> extension has been released, introducing a control to change the position of the indicator in the panel. You can now choose to place the indicator in either the left or right panel boxes or in one of four different positions in the central box. This is implemented in the main, GS45+ branch of the extension only.
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-120/ZycsNOuRchErBqEUHRLhNSLI.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@barthalion:matrix.org">barthalion</a> says</p>
+<blockquote>
+<p><a href="https://github.com/flathub/flatpak-builder-lint">flatpak-builder-lint</a> is now capable of checking build directories and ostree repositories, regardless of the build tool used to produce an app. There also are new checks that ensure screenshots are properly mirrored and AppStream passes appstream-glib&rsquo;s validation. We have also started publishing a Docker image to make it easier to integrate it with external CI systems. See its README for details!</p>
+<p>We are putting the finishing touches to the updates moderation in Flathub. We have been historically very lenient past the initial review, trusting no one will try to sneak through with potentially shoddy AppStream changes. New builds changing certain user-facing fields will be marked for review and withheld until manually approved (or not!).</p>
+<p>The server-side validation and the moderation dashboard are the backbone of the upcoming direct uploads feature, that will allow verified developers to publish their apps directly, without poking me or being forced to use either GitHub or flatpak-builder. There is no launch date for that yet, but we are getting there!
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-120/SOWHtyUFCwtlOpwMYXneFeZW.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> reports</p>
+<blockquote>
+<p>Thanks to <a href="https://gitlab.gnome.org/GNOME/pygobject/-/merge_requests/250">the stellar work of Arjan Molenaar</a>, the pygobject bindings have been dramatically improving over the past month. Now Python developers can finally use instances of fundamental types, which was one of the big blockers for people implementing custom widgets with GTK4.</p>
+<p>Starting with the GNOME 46 run time, you&rsquo;ll be able to do advanced custom drawing using render nodes, as well as accessing low level windowing system event objects, in your Python applications.</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> reports</p>
+<blockquote>
+<p>Applications have now closed for the December Outreachy project, &ldquo;Implement end-to-end tests for GNOME OS using openQA&rdquo;. We received a number of very promising contributions to the openqa-tests and applications for the internship. Thanks to everyone who took the time to get involved. The accepted interns will be announced on <strong>Nov. 20, 2023 at 4pm UTC</strong>.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

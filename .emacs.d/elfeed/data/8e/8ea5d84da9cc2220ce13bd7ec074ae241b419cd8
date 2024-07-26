@@ -1,0 +1,134 @@
+<p>Update on what happened across the GNOME project in the week from November 25 to December 02.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="mutter">
+<a class="heading-anchor" href="#mutter" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Mutter <a href="https://gitlab.gnome.org/GNOME/mutter/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A Wayland display server and X11 window manager and compositor library.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> announces</p>
+<blockquote>
+<p>The Mutter &amp; Shell team published an article about the recent developments on automating the testing of the compositor of the GNOME desktop. <a href="https://blogs.gnome.org/shell-dev/2022/12/02/automated-testing-of-gnome-shell/">Have a read!</a>
+
+<img src="https://thisweek.gnome.org/posts/2022/12/twig-72/04b4049357d3d9f34ab98164b8735a8ab8e5285a.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gtk">
+<a class="heading-anchor" href="#gtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GTK <a href="https://gitlab.gnome.org/GNOME/gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Cross-platform widget toolkit for creating graphical user interfaces.</p>
+<p><a href="https://matrix.to/#/@alatiera:matrix.org">Jordan Petridis</a> reports</p>
+<blockquote>
+<p>After more than <a href="https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/merge_requests/588">a year of work</a>, the rusty GStreamer Paintable Sink for GTK 4 has received support for GL Textures, reducing dramatically the CPU consumed (from 400-500% to 10-15% for the a 4k stream scenarios we tested) and allowing for zero-copy rendering when used with hardware decoders.</p>
+</blockquote>
+
+
+<h3 id="settings">
+<a class="heading-anchor" href="#settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Settings <a href="https://gitlab.gnome.org/GNOME/gnome-control-center"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Configure various aspects of your GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> announces</p>
+<blockquote>
+<p>GNOME Settings continues to receive polish, reviews, and new designs from various contributors. We&rsquo;re already stashing exciting improvements for the next release:</p>
+<ul>
+<li>Continuous improvements to the Device Security panel have been added. These improvements range from better wording of the security features, new designs for the dialogs, and making the panel more actionable. Thanks to Kate Hsuan and Richard Hughes for diligently working on this.</li>
+<li>The Accessibility panel was redesigned. This is the first panel implementing a more modern navigation model in Settings. More panels should be redesigned for this navigation pattern in the future. Thanks to Sadiq for this.</li>
+<li>The Date &amp; Time panel is now more mobile friendly, by using a two-column layout to the month selector. This change was also thanks to Sadiq.</li>
+<li>The Network &amp; Wi-Fi panels now use libnma&rsquo;s own security widgets for managing connections. This is a massive cleanup in the codebase, and allows us to concentrate efforts on a single place. This change was made possible by Lubomir Rintel.</li>
+<li>Various polishes and smaller improvements to lots of panels, like Users, Wacom, Region and Language, and others
+
+<img src="https://thisweek.gnome.org/posts/2022/12/twig-72/63b4f08b995d5fde6e840555f55e1ff031185262.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/12/twig-72/44b149c0af869f40ce7afa6e0e21a0133d26c643.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="gaphor">
+<a class="heading-anchor" href="#gaphor" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gaphor <a href="https://gaphor.org"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple UML and SysML modeling tool.</p>
+<p><a href="https://matrix.to/#/@Yeaw:matrix.org">Dan Yeaw</a> says</p>
+<blockquote>
+<p><a href="https://gaphor.org">Gaphor</a>, the simple modeling tool, feature release version 2.13.0 is now out! It includes some great updates, including:</p>
+<ul>
+<li>Auto-layout for diagrams</li>
+<li>Relations to actors can connect below actor name</li>
+<li>Export to EPS</li>
+<li>Zoom with Ctrl+scroll wheel works again</li>
+</ul>
+<p>It is also got some great UI improvements, with GTK4 and libadwaita now the default for Linux and Windows.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@lw64:gnome.org">lwildberg</a> announces</p>
+<blockquote>
+<p>I am announcing the first release of the new app &ldquo;Meeting Point&rdquo;. It is a video conferencing client using BigBlueButton in the background. At the moment the features exposed in the still experimental UI are:</p>
+<ul>
+<li>join meetings (also with passwords) hosted by senfcall.de, a free BigBlueButton provider</li>
+<li>watch webcam video streams of participants</li>
+<li>read the public group chat</li>
+<li>see a list of all participants</li>
+<li>listen to audio (can be turned off)</li>
+<li>delete the group chat history, if you are moderator</li>
+</ul>
+<p>The source code is <a href="https://gitlab.gnome.org/lwildberg/meeting-point">here</a>. To try Meeting Point out, open it with GNOME Builder and hit the run button. New features will come soon! I will be also happy to guide anyone who is interested through the internals :)
+
+<img src="https://thisweek.gnome.org/posts/2022/12/twig-72/b7739906d9d7ce75fa81d25e634791fa47b37304.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/12/twig-72/64184f5c28427924da4c9edc57ca64afcdc0c395.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@adhami:matrix.org">Khaleel Al-Adhami</a> says</p>
+<blockquote>
+<p>Introducing Converter, a libadwaita GTK4 app that lets you convert and manipulate images in a sleek interface. It is built on top of imagemagick as well as other python libraries.</p>
+<p>Converter 1.1.0 was released with SVG support and resizing operations! It&rsquo;s available on flathub:
+<a href="https://flathub.org/apps/details/io.gitlab.adhami3310.Converter">https://flathub.org/apps/details/io.gitlab.adhami3310.Converter</a></p>
+</blockquote>
+
+
+<h3 id="girens-for-plex">
+<a class="heading-anchor" href="#girens-for-plex" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Girens for Plex <a href="https://flathub.org/apps/details/nl.g4d.Girens"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Girens is a Plex Gtk client for playing movies, TV shows and music from your Plex library.</p>
+<p><a href="https://matrix.to/#/@tijder:matrix.org">tijder</a> says</p>
+<blockquote>
+<p>Girens version 2.0.1 just released. With this version the transcoding protocol is changed to <a href="https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP">DASH</a>. Thanks to changing the transcode protocol some resume playback bugs are fixed.
+Also now if items are loaded from the server in the section view a loading icon is showed. The sidebar containing the titles of the section have now an icon next to it. Also the translations are updated. For more details about the changes see the <a href="https://gitlab.gnome.org/tijder/girens/-/releases/v2.0.1">changelog</a>.</p>
+</blockquote>
+
+
+<h3 id="blueprint">
+<a class="heading-anchor" href="#blueprint" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Blueprint <a href="https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A markup language for app developers to create GTK user interfaces.</p>
+<p><a href="https://matrix.to/#/@flyingpimonster:matrix.org">James Westman</a> reports</p>
+<blockquote>
+<p>blueprint-compiler v0.6.0 is out! This is mostly a bugfix release, but it also adds a <code>typeof()</code> operator for specifying GType properties like <code>Gio.ListStore:item-type</code>. It also includes some internal refactoring that paves the way for some great features in the future, including alternate output formats!</p>
+</blockquote>
+
+
+<h3 id="blackfennec">
+<a class="heading-anchor" href="#blackfennec" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>BlackFennec <a href="https://blackfennec.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A beautiful and easy to use application for viewing and editing semi-structured data like JSON.</p>
+<p><a href="https://matrix.to/#/@simon:yodabyte.ch">Simon</a> announces</p>
+<blockquote>
+<p>BlackFennec v0.10 is out!</p>
+<p>This version introduces actions! It is now possible to execute functions on elements . Try out one of the new actions such as <code>to lower</code> on strings and <code>clear collection</code> on lists.</p>
+<p>We have also added the ability to undo and redo any changes you made to your data; a handy feature if you accidentally cleared a collection 😉</p>
+<p>My favorite new addition however is copy and paste. You can export or import any element to and from JSON via your clip board!
+
+<img src="https://thisweek.gnome.org/posts/2022/12/twig-72/luVzSnwRYMkiGcthWaWbHAMh.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

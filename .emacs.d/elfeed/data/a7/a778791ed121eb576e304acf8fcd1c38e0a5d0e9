@@ -1,0 +1,122 @@
+<p>Update on what happened across the GNOME project in the week from April 21 to April 28.</p>
+<h1 id="gnome-incubating-apps">
+<a class="heading-anchor" href="#gnome-incubating-apps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Incubating Apps
+</h1><p><a href="https://matrix.to/#/@msandova:gnome.org">Maximiliano 🥑</a> says</p>
+<blockquote>
+<p>Snapshot was recently accepted into the <a href="https://gitlab.gnome.org/Incubator/">Incubator</a> group and the first new preview release is out. Snapshot aims to be the next generation camera app for GNOME, supporting both desktop and mobile devices.</p>
+<p>You can get Snapshot at <a href="https://flathub.org/apps/org.gnome.Snapshot">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-93/e9b24c02d04a7cce22e66e0d5fd04dd0cafb3a1d.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alice (she/they)</a> announces</p>
+<blockquote>
+<p>after almost a year, <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.BreakpointBin.html">breakpoints</a> have finally landed in libadwaita. They allow to do arbitrary layout changes depending on the bin/window size and aspect ratio, with the tradeoff of losing automatic minimum size calculation. This finally allows to do things such as adding a bottom bar on narrow sizes without issues, and enable a lot of designs that are currently impractically hard to implement.</p>
+<p>Breakpoints can also be used directly on <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.Window.html#breakpoints"><code>AdwWindow</code> and <code>AdwApplicationWindow</code></a> for convenience.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/04/twig-93/b0801f360fe501abc4497c50c08030ec84ff3afd.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/04/twig-93/b0801f360fe501abc4497c50c08030ec84ff3afd.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> says</p>
+<blockquote>
+<p>GLib has just acquired an internal list of pending <code>GTask</code>s, for debugging what’s going on in your app using gdb. Use it by calling <code>print g_task_print_alive_tasks()</code> in gdb. See <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3404">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3404</a></p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie 🏳️‍🌈 🏳️‍⚧️ ✊</a> says</p>
+<blockquote>
+<p>This week, <a href="https://apps.gnome.org/app/io.github.fkinoshita.Telegraph/">Telegraph</a> joined GNOME Circle. With Telegraph, you can translate Morse code back and forth. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-93/95ee03f452bcd44862ce26291053b35fef0ac729.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="amberol">
+<a class="heading-anchor" href="#amberol" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Amberol <a href="https://gitlab.gnome.org/ebassi/amberol/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Plays music, and nothing else.</p>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> reports</p>
+<blockquote>
+<p>You thought I forgot about Amberol, but here we are, with a new release! And what a release is this, with lots and lots of fixes big and small:</p>
+<ul>
+<li>you can now restore the playlist from your last session</li>
+<li>background playback can be toggled</li>
+<li>there&rsquo;s a quick mute/unmute button</li>
+<li>no duplicate songs in the playlist</li>
+<li>the UI has been slightly tweaked to avoid confusing the volume scale with the song position</li>
+<li>the readability of the drop overlay has been improved</li>
+<li>the base run time and dependencies have been updated to GNOME 44</li>
+<li>lots and lots of big and small fixes</li>
+</ul>
+<p>Plus, Amberol is now verified on the new <a href="https://flathub.org/apps/io.bassi.Amberol">Flathub</a> website, and we&rsquo;re close to 100k downloads in a bit over a year of development!
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-93/e6b512c56e701a8c600dd0035994af853447c342.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-93/8b49bcd21a8aeccebe002a515c648e63e86e5058.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-93/a7027679450bd7b102d141a1d603b84bd62b67d7.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1>
+
+<h3 id="flatseal">
+<a class="heading-anchor" href="#flatseal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flatseal <a href="https://github.com/tchx84/Flatseal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A graphical utility to review and modify permissions of Flatpak applications.</p>
+<p><a href="https://matrix.to/#/@tchx84:matrix.org">Martín Abente Lahaye</a> says</p>
+<blockquote>
+<p>To celebrate Flatseal reaching <a href="https://flathub.org/apps/com.github.tchx84.Flatseal">800,000</a> downloads on Flathub 🤯, a new release is out! <a href="https://blogs.gnome.org/tchx84/2023/04/28/flatseal-2-0/">Flatseal 2.0</a> comes with improved visuals powered by GTK 4 and Libadwaita and, with that, a few quality of life improvements and bug fixes.</p>
+<p>Kudos to <a href="https://github.com/natasria">natasria</a> for the initial work on porting the user interface to GTK 4 and Libadwaita, and to <a href="https://github.com/A6GibKm">A6GibKm</a> for helping with the reviews and making <strong>a lot</strong> of further improvements to that work.</p>
+<p>Download on <a href="https://flathub.org/apps/com.github.tchx84.Flatseal">Flathub</a>!
+
+<img src="https://thisweek.gnome.org/posts/2023/04/twig-93/rkwfAPnzmlOgWgGNYdPjfAoU.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@caspermeijn:matrix.org">Casper Meijn</a> announces</p>
+<blockquote>
+<p>A long-standing issue with the GNOME CI templates is fixed. Rust apps were built three times by the template. The old template executes a normal build. Then rebuilds all the dependencies in preparation for the tests. And will accidentally build again during the test execution. With the recent change, the CI job rewrites the Flatpak manifest to enable <code>run-tests</code>. Flatpak will take care of executing the test suite during the build.</p>
+<p><a href="https://gitlab.gnome.org/GNOME/citemplates/-/issues/5">https://gitlab.gnome.org/GNOME/citemplates/-/issues/5</a></p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@zana:gnome.org">Rosanna</a> says</p>
+<blockquote>
+<p>(Some of the hats I wear here at the Foundation include work on the Travel Committee, the Code of Conduct Committee, the Executive Committee, the Finance Committee, as well as the staff liaison to the Board of Directors. For the sake of clarity, I will avoid using the word &ldquo;we&rdquo; without specifying which group I am referring to.)</p>
+<p>With another successful LAS conference completed, the Foundation staff spent this week recovering, traveling, or switching gears. With scheduling for GUADEC happening this week, the travel committee is also getting into gear to go through travel requests. I have also been invoicing the generous folks who have committed to sponsoring GUADEC this year.</p>
+<p>The Code of Conduct Committee has been made aware that the sending of reports to discourse is not working for some people. The committee and staff are working on an alternative at blogs.gnome.org/coc/. Reports can already be sent via this webpage, but it does need a bit more work. It needs to allow anonymous reports and to link to the code of conduct. Only those on the Code of Conduct Committee and moderators on gitlab.gnome.org have access to these reports. If you wish to report on anyone on that list, you can still personally email a report to the other members of the committee.</p>
+<p>I have had some meetings with some nonprofit bookkeepers in an effort to find help to lighten my load. I am looking forward to carving out more time to be able to catch up on some of my other tasks.</p>
+<p>In other goings on this week, I have also corresponded with the 401K accountant to figure out some discrepancies for a tax filing, updated the employee handbook, paid some bills, filled out and uploaded some forms for compliance, and spent time at the bank. Just another regular week working for the Foundation.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

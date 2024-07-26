@@ -1,0 +1,239 @@
+<p>Update on what happened across the GNOME project in the week from March 03 to March 10.</p>
+<h1 id="gnome-incubating-apps">
+<a class="heading-anchor" href="#gnome-incubating-apps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Incubating Apps
+</h1>
+
+<h3 id="loupe">
+<a class="heading-anchor" href="#loupe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Loupe <a href="https://gitlab.gnome.org/Incubator/loupe"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple and modern image viewer.</p>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie 🏳️‍🌈 🏳️‍⚧️ ✊</a> says</p>
+<blockquote>
+<p>The new image decoding code has finally landed in Loupe. This change will be the basis for many features to come, like supporting color profiles, animated images, and potentially sandboxed decoding. Already landed has the support for viewing SVGs. Thanks to GTK 4 and tiled rendering, you can view large SVGs without the UI seeing any performance penalties. However, a few known rendering bugs still have to be fixed.</p>
+<p>The GDK-PixBuf support has, for now, been removed from Loupe. Loupe already supports many image formats directly, making it unclear if support for GDK-PixBuf plugins is required. Please let us know if an image format vital to you is missing from the <a href="https://gitlab.gnome.org/Incubator/loupe#supported-formats">list of supported formats</a>.</p>
+<p>Apart from this, we have:</p>
+<ul>
+<li>Fixed some memory leaks,</li>
+<li>redone the scroll-wheel logic to support high-resolution scroll wheels,</li>
+<li>made rotation and pan gestures work correctly on touch screens, and</li>
+<li>merged many more bug fixes, tweaks, code improvements, and documentation.</li>
+</ul>
+<p>Finally, a small optical change: Drag and drop now features a newly designed thumbnail that provides more contrast to the content behind it.
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/1beba251b9a17a12081a837066606c1d6f150b0a.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="workbench">
+<a class="heading-anchor" href="#workbench" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Workbench <a href="https://github.com/sonnyp/Workbench/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A sandbox to learn and prototype with GNOME technologies.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> announces</p>
+<blockquote>
+<p>In just 2 weeks, Workbench gained 11 new GNOME Platform demos and examples. More on the way.
+A huge thanks to all the contributors!
+Library examples and demos have 3 functions</p>
+<ul>
+<li>Showcase the capabilities of the platform</li>
+<li>Teach how to use the APIs, patterns, and widgets</li>
+<li>Provide functional snippets ready to use</li>
+</ul>
+<p>The plan for now is to focus on a wide set of UI / JavaScript entries. In the long run, we want to support more languages into Workbench and port the examples.</p>
+<p>I have written a guide on how to get started contributing to Workbench <a href="https://github.com/sonnyp/Workbench/blob/main/CONTRIBUTING.md">https://github.com/sonnyp/Workbench/blob/main/CONTRIBUTING.md</a>
+For the time being I will be focusing on stability, mentoring and preparing Workbench 44</p>
+<p>Tobias Bernard Shared their experience using Workbench as a design / prototype tool <a href="https://mastodon.social/@tbernard/109972593064382462">https://mastodon.social/@tbernard/109972593064382462</a></p>
+<p>James Westman and I discussed reducing the scope of Blueprint 1.0 in order to drop its experimental status and make it the default syntax in Workbench</p>
+<p>I&rsquo;d like to give kudos and thanks to GSoC and Outreachy early applicants for their contributions ✨
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/9228a4d6ed00a43ed7c1deb90ac2b4089fa39858.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/be3515dc8f564ed8ee342a3763e3d08272519a6f.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/2069ca2306bab3b49ba1191a80881c9726082eae.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/79689552167dd2c8d42b01afafdf250ea247b92d.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/aacfe5677eedd62ea3d9e4723954e34fd82de54d.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="share-preview">
+<a class="heading-anchor" href="#share-preview" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Share Preview <a href="https://github.com/rafaelmardojai/share-preview"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Test social media cards locally.</p>
+<p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> reports</p>
+<blockquote>
+<p>Share Preview has a new &ldquo;logs&rdquo; feature. The app will now give better hints about errors, missing metadata, and limits set by social platforms like image size.</p>
+<p>This new feature has added a lot of new strings. Everyone is welcome to contribute or update translations for their language on <a href="https://hosted.weblate.org/engage/share-preview/">Weblate</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/HTlIGXiKQmBBIHSZAOWclznT.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="pika-backup">
+<a class="heading-anchor" href="#pika-backup" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Pika Backup <a href="https://apps.gnome.org/app/org.gnome.World.PikaBackup/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Keep your data safe.</p>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie 🏳️‍🌈 🏳️‍⚧️ ✊</a> announces</p>
+<blockquote>
+<p>After the release of Pika Backup 0.5, Fina has taken care of many outstanding smaller and more significant issues. Pika Backup now also uses the new background status for apps that will be available with GNOME Shell 44. That way, you can always check what Pika Backup is doing in the background.</p>
+<p>Some of the other changes that happened:</p>
+<ul>
+<li>Fix compact is not run after pruning</li>
+<li>Fix potential crash after deleting archives</li>
+<li>Fix spurious &lsquo;Pika Backup crashed&rsquo; messages</li>
+<li>Change secret service error messages to include specific instructions how to resolve the issue</li>
+<li>Change to explain checkpoint creation when aborting backups</li>
+<li>Change to restart backup after SSH connection timeout</li>
+<li>Change reconnection to be abortable and count down seconds remaining</li>
+<li>Add ability to answer questions from borg process
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/ea2a07ee17472e089d8ce2bf0e0ee14678c69b17.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@aleiepure:matrix.org">Alessandro Iepure</a> announces</p>
+<blockquote>
+<p>I released Dev Toolbox! If you are tired of using random websites for conversions or simple checks during your coding, give it a try. Simple to use with local processing. Includes encoders and decoders, formatters for various languages, image converters, text and hash generators, and much more. Available on Flathub: <a href="https://beta.flathub.org/apps/me.iepure.devtoolbox">https://beta.flathub.org/apps/me.iepure.devtoolbox</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/GXhoNwrEsmHajmFsEZXCqawI.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@josh-leh:matrix.org">Can Lehmann</a> announces</p>
+<blockquote>
+<p>This week we released <a href="https://github.com/can-lehmann/owlkettle">owlkettle 2.2.0</a>, a declarative GUI framework based on GTK. Owlkettle is a library for the Nim programming language. One major focus for this release was improving the documentation. There are <a href="https://github.com/can-lehmann/owlkettle/tree/main/examples">15 new examples</a> as well as a new document explaining how owlkettle works internally. We also improved the support for libadwaita by adding bindings for the EntryRow, ComboRow, ExpanderRow, WindowSurface, Flap and SplitButton widgets. Other improvements include support for multithreading and sending notifications. You can find a short tutorial for getting started with owlkettle <a href="https://github.com/can-lehmann/owlkettle/blob/main/docs/tutorial.md">here</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/QwraNTlDbnGvEJRogBseAuxN.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@realmazharhussain:matrix.org">Mazhar Hussain</a> says</p>
+<blockquote>
+<p><a href="https://github.com/realmazharhussain/nautilus-code">nautilus-code</a> received support for translations and has already been translated in Hungarian and Italian.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@nxyz:matrix.org">nxyz</a> reports</p>
+<blockquote>
+<p>This week I released <a href="https://github.com/nate-xyz/chromatic">Chromatic</a>, a simple tuner app written in Rust. Chromatic detects the frequency of audio input, converts it to the correct musical note and octave, and displays the cents error. Cents are displayed on an analog gauge to make tuning more visually intuitive. Requires PulseAudio or PipeWire.</p>
+<p>GH repo: <a href="https://github.com/nate-xyz/chromatic">https://github.com/nate-xyz/chromatic</a>
+Flathub page: <a href="https://beta.flathub.org/apps/io.github.nate">https://beta.flathub.org/apps/io.github.nate</a>_xyz.Chromatic
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/WpCKEdtFRDDzLweXzsLeGcyD.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="telegrand">
+<a class="heading-anchor" href="#telegrand" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Telegrand <a href="https://github.com/melix99/telegrand/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A Telegram client optimized for the GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@melix99:gnome.org">Marco Melorio</a> announces</p>
+<blockquote>
+<p>It&rsquo;s finally time for a new update about Telegrand development! This is a brief look at the new biggest changes from the last update:</p>
+<ul>
+<li>Added support for file messages by yuraiz</li>
+<li>Added support for GIF messages</li>
+<li>Added support for more event-like messages by Alisson Lauffer</li>
+<li>Added support for viewing message replies by karl0d</li>
+<li>Added ability to edit and reply to messages</li>
+<li>Added a Christmast easter egg animation by yuraiz (sorry, we’re late!)</li>
+<li>Added markdown support for composing messages by karl0d</li>
+<li>Added more information in the chat info window, like group description, usernames and phone number</li>
+<li>Added a contacts window to view saved contacts</li>
+<li>Improved the chat view for channels, by adding a mute/unmute button by karl0d</li>
+<li>Improved the style of the chat view by yuraiz</li>
+<li>Big performance improvements to chat view scrolling</li>
+<li>Ground work for future support of chat folders and archived chats
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/f77ddcf9804808daebd96e90ba22ca2a0201e899.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="flare">
+<a class="heading-anchor" href="#flare" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flare <a href="https://flathub.org/apps/details/de.schmidhuberj.Flare"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An unofficial Signal GTK client.</p>
+<p><a href="https://matrix.to/#/@schmiddi:matrix.org">schmiddi</a> reports</p>
+<blockquote>
+<p>Flare 0.7.0-beta.1 was released. It does not provide any big new features, but updates many dependencies which lead to pretty big changes in the codebase. To check everything is working as expected, this beta was released for anyone to try out if they want. Note that due to changes in the storage, a relink will be required at the first start of the application.</p>
+<p>Furthermore, Flare has gained experimental support for integrating with <a href="https://source.puri.sm/Librem5/feedbackd">feedbackd</a> to provide vibration or audio feedback on message receive.</p>
+</blockquote>
+
+
+<h3 id="blurble">
+<a class="heading-anchor" href="#blurble" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Blurble <a href="https://gitlab.gnome.org/World/Blurble"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Word guessing game</p>
+<p><a href="https://matrix.to/#/@pervoj:matrix.org">Vojtěch Perník</a> reports</p>
+<blockquote>
+<p>After a longer time I started working on <a href="https://gitlab.gnome.org/World/Blurble">Blurble</a> again and the app has moved a few steps closer to version 1.0.0:</p>
+<ul>
+<li>Keyboard navigation has been improved. The currently active cell is highlighted and it is possible to navigate the UI using the Tab key.</li>
+<li>The buttons on the keyboard are now also colored. For better playability are now keyboard buttons also colored based on if and where the character is in the word.</li>
+<li>The app has been redesigned. A welcome page, help and nicer game result information have been added.</li>
+</ul>
+<p>You can get the latest version from <a href="https://flathub.org/apps/details/app.drey.Blurble">Flathub</a>.</p>
+<p>Also, a big thanks to the GNOME design team, namely Tobias Bernard and Allan Day, for helping come up with better solutions.
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/OWEMrdfYvVKunfppDdysqOoi.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="shell-extensions">
+<a class="heading-anchor" href="#shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Shell Extensions
+</h1><p><a href="https://matrix.to/#/@oae:matrix.org">oae</a> reports</p>
+<blockquote>
+<p>I have updated the Pano - Clipboard Manager with new features and fixes</p>
+<ul>
+<li>Gnome Shell 44 support</li>
+<li>Marking items as a favorite is now possible.</li>
+<li>New Emoji type</li>
+<li>Many customization options are added (Item styles, Pano height&hellip;).</li>
+<li>Links can be now opened in the default browser</li>
+<li>History can be filtered based on the item type</li>
+<li>Content-aware notifications</li>
+<li>Many navigation improvements</li>
+<li>And many more changes.</li>
+<li>You can read more on <a href="https://github.com/oae/gnome-shell-pano">GitHub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-86/PLfErcWZhypgaZWFddXMIEup.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/03/twig-86/nejJeLBJBzXvPkroQUdhpEIU.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/03/twig-86/nejJeLBJBzXvPkroQUdhpEIU.webm">download it</a> and watch it with your favorite video player!</span>
+</video>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/03/twig-86/odSBdObmRFOUptXAqGsBnAVr.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/03/twig-86/odSBdObmRFOUptXAqGsBnAVr.webm">download it</a> and watch it with your favorite video player!</span>
+</video></li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@justperfection:gnome.org">Just Perfection</a> announces</p>
+<blockquote>
+<p>Extension download count is now available to the public on <a href="https://extensions.gnome.org/">extensions.gnome.org</a>.</p>
+<p>Currently, <a href="https://extensions.gnome.org/extension/1176/argos/">Argos extension</a> (not developed since 3.32) holding the records for more than 13.8M downloads following by <a href="https://extensions.gnome.org/extension/307/dash-to-dock/">Dash to Dock extension</a> with 6.2M downloads.</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@mwu:gnome.org">mwu</a> reports</p>
+<blockquote>
+<p>My name is Melissa Wu and I am a Project Coordinator with the GNOME Foundation.  I’m in charge of special projects, fundraising and assist Caroline Henriksen with marketing and branding and Kristi Progri  with events and conferences.  I’m also the resident travel coordinator for hotels and other conference travel.</p>
+<p>Right now I have two focuses – Raising sponsorships for GUADEC 2023 in Riga, Lativa (<a href="https://events.gnome.org/event/101/">https://events.gnome.org/event/101/</a>) and organizing our volunteers.  I need help with both!! If you are interested, please feel free to reach out to me directly.  This is a great time to learn something new or share your talents with us!</p>
+<p>This week I am preparing for SCaLE where I will manning the booth for the next three days – fundraising, selling shirts, and sharing what&rsquo;s new with GNOME.  If you are in the area, come see us at the booth or stop by our GNOME Beers event on Sat (March 11) at 6pm at Craft by Smoke and Fire (30 W. Green Street. Pasadena, CA)</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

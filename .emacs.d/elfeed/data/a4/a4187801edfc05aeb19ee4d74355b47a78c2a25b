@@ -1,0 +1,309 @@
+<p>Update on what happened across the GNOME project in the week from July 08 to July 15.</p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/twig.png" alt="" />
+</p>
+<p>I am pleased to announce that TWIG is having its first anniversary! 52 weeks ago, 52 TWIG issues later, or to put it simply - one year ago I <a href="https://blogs.gnome.org/haeckerfelix/2021/07/16/introducing-this-week-in-gnome/">launched TWIG</a>!</p>
+<p>The first issue was published on July 16, 2021, and was named <a href="https://thisweek.gnome.org/posts/2021/07/twig-1/"><em>&quot;#1 Scrolling in the Dark&quot;</em></a>.
+After discussing the concept with some other GNOME contributors, we had to search for &ldquo;news&rdquo; in order to have enough material for the first issue.</p>
+<p>Now, one year later, it gives me great pleasure to announce that we have set a new record for news on the anniversary. There has never been that many news as this week in the whole year!
+I am cautiously optimistic, and claim the concept has now become established in the GNOME community, and is being used by more and more projects to quickly and easily announce news.</p>
+<p>What do you think about TWIG? Do you have any suggestions for improvements? Criticism? Compliments? Let us know! You can contact us in our Matrix <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> room anytime!</p>
+<p>But now to the actual news - Next year is sure to be at least as exciting!</p>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@thib:ergaster.org">Thib</a> reports</p>
+<blockquote>
+<p>GUADEC is already happening! You can find <a href="https://events.gnome.org/event/77/timetable/#20220720">the complete timetable here</a> and most information on <a href="https://guadec.org">https://guadec.org</a></p>
+<p>This year the event is hybrid: some of us are lucky enough to be able to make it to Guadalajara, but for those who aren’t, the talks will be broadcasted online as well.</p>
+<p>Register on <a href="https://guadec.org">https://guadec.org</a> to get all the details on how to join the event remotely.</p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/guadec.jpg" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="files">
+<a class="heading-anchor" href="#files" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Files <a href="https://gitlab.gnome.org/GNOME/nautilus"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Providing a simple and integrated way of managing your files and browsing your file system.</p>
+<p><a href="https://matrix.to/#/@antoniof:gnome.org">antoniof</a> reports</p>
+<blockquote>
+<p>Files 43.alpha has been released, <a href="https://gitlab.gnome.org/GNOME/nautilus/-/commit/3bb9c98d705571749e25ba933311b6237c19fc07">with the largest change set for an alpha release since version 3.29.90</a></p>
+<p>This is the first fully functional GTK4-based development release. Notably, drag-and-drop works again, courtesy of Corey Berla!
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/nautilus.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@brainblasted:gnome.org">Chris 🌱️</a> reports</p>
+<blockquote>
+<p>Nautilus now uses AdwFlap for the sidebar. At small sizes the sidebar automatically hides, and a button to show it appears. The sidebar can also be shown and hidden with a swipe on touchscreens.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/07/twig-52/8ec3fb6b380feb2a55f73ca1d62358f0c1842869.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/07/twig-52/8ec3fb6b380feb2a55f73ca1d62358f0c1842869.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@brainblasted:gnome.org">Chris 🌱️</a> says</p>
+<blockquote>
+<p>with the merging of AdwAboutWindow, I&rsquo;ve submitted MRs to port multiple apps to the new window:</p>
+<ul>
+<li>Disk Usage Analyzer</li>
+<li>Characters</li>
+<li>Text Editor</li>
+<li>Weather</li>
+<li>Fonts</li>
+<li>Files</li>
+<li>Calendar</li>
+<li>Logs</li>
+<li>Music</li>
+<li>Clocks</li>
+<li>Calculator</li>
+<li>Extensions</li>
+</ul>
+<p>Alexander has also submitted a port for Contacts.
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/3f90873016c836288ae9ee81ca56151abdec7c74.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gtk">
+<a class="heading-anchor" href="#gtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GTK <a href="https://gitlab.gnome.org/GNOME/gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Cross-platform widget toolkit for creating graphical user interfaces.</p>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> reports</p>
+<blockquote>
+<p>GTK 4.7.1 has been released! This is a new development snapshot towards the 4.8 release, which will be available in GNOME 43. A few of the latest changes:</p>
+<ul>
+<li>a new text widget, <a href="https://docs.gtk.org/gtk4/class.Inscription.html">GtkInscription</a>, which can be used inside list views and wherever you want the text to respond to the UI layout instead of the other way around</li>
+<li>performance improvements for GtkListView, with culling of out of view rows</li>
+<li>support for fractional <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing">letter spacing in CSS</a></li>
+<li>improvements in the accessibility of GtkStack and GtkTextView</li>
+<li>improved touchpad support on Windows</li>
+<li>multiple input fixes when using Wayland</li>
+</ul>
+</blockquote>
+
+
+<h3 id="gnome-builder">
+<a class="heading-anchor" href="#gnome-builder" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Builder <a href="https://gitlab.gnome.org/GNOME/gnome-builder"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>IDE for writing GNOME-based software.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> says</p>
+<blockquote>
+<p>Thanks to the massive amounts of work of Christian Hergert, Builder was ported to GTK4 and libadwaita. This port was merged this week, and the first unstable release with it (43.alpha0) was published. This version of Builder has a different app-id, <code>org.gnome.Builder.Devel</code>, and therefore needs to be manually installed. Some of the highlights include:</p>
+<ul>
+<li>New tabbed editor which uses traditional tabs instead of Builder&rsquo;s document stack</li>
+<li>A new status bar at the bottom with contextual information, such as the git branch, language syntax options, and others</li>
+<li>Dark and light styles</li>
+<li>Improved flow for creating new projects</li>
+<li>Support for many other run options when running applications with Valgrind</li>
+<li>Deeper integration with the Sysprof profiler</li>
+<li>Run applications with specific accessibility settings, such as high contrast</li>
+<li>Reorganizable panels thanks to libpanel</li>
+<li>More powerful shortcuts management</li>
+<li>Command editor to add custom run commands to the pipeline</li>
+</ul>
+<p>&hellip; and a lot more. Many previously available features are still in the works, and anyone interested can help pushing Builder to the finish line by picking any task at <a href="https://gitlab.gnome.org/GNOME/gnome-builder/-/issues/1675">the GTK4 port checklist</a>.</p>
+<p>Thanks again to Christian Hergert for this exciting and impressive work on Builder!
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/5cca47ee8df9a0ee6830e76163c92f174a200b3a.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/e67a75862ff1fb89ef777140304f457f911d462f.jpg" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/f20608da915bea36a89998f34d8ca0888dd09e95.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/6ef3bea5d7cb054a98df1b5a5a3541e138400a13.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/097ec2cdbcd23cb1b27d5af91f6bee44c678e37a.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="vala">
+<a class="heading-anchor" href="#vala" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Vala <a href="https://gitlab.gnome.org/GNOME/vala"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An object-oriented programming language with a self-hosting compiler that generates C code and uses the GObject system</p>
+<p><a href="https://matrix.to/#/@itsmune:matrix.org">colinkiama</a> announces</p>
+<blockquote>
+<p>This week, the new Vala website has been released: <a href="https://vala.dev">https://vala.dev</a></p>
+<p>This will be the new starting point for newcomers to the language and hub for Vala-related resources across the web.</p>
+<p>Also, we are currently working on a <a href="https://lwildberg.pages.gitlab.gnome.org/vala-tutorial/">new documentation website</a>. There is still quite a bit missing, so contributors are appreciated!</p>
+<p>Furthermore, the Vala Reference Manual has been ported to a new format <a href="https://lwildberg.pages.gitlab.gnome.org/vala-reference-manual/">here</a>. The source code of both is easily accessible through <a href="https://gitlab.gnome.org/lwildberg/vala-tutorial">gitlab</a>.</p>
+<p>Eventually all these will replace the current Vala wiki pages.
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/yyNAGpAvWHHzCzbZQghlbgnT.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/vala2.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/vala1.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> says</p>
+<blockquote>
+<p>GLib has <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/2529">ported from libpcre to libpcre2</a>, which is a huge amount of work done by Aleksei Rybalkin. It shouldn’t cause any behaviour changes for <code>GRegex</code> users, though.</p>
+</blockquote>
+
+
+<h3 id="gjs">
+<a class="heading-anchor" href="#gjs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GJS <a href="https://gitlab.gnome.org/GNOME/gjs"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Use the GNOME platform libraries in your JavaScript programs. GJS powers GNOME Shell, Polari, GNOME Documents, and many other apps.</p>
+<p><a href="https://matrix.to/#/@ptomato:gnome.org">ptomato</a> says</p>
+<blockquote>
+<p>In GJS 1.73.1, Nasah Kuma landed a more intelligent output display for the interactive interpreter, which pretty-prints objects' properties and values based on their type. This improvement also applies to the <code>log()</code> and <code>logError()</code> functions.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ptomato:gnome.org">ptomato</a> says</p>
+<blockquote>
+<p>Also in GJS 1.73.1, thanks to Sergio Costas, DBus proxy classes now include methods named with the suffix <code>Async</code>, which perform async calls to DBus APIs and return Promises. This is in addition to the existing suffixes <code>Sync</code> (for blocking calls) and <code>Remote</code> (for async calls with callbacks.)</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ptomato:gnome.org">ptomato</a> reports</p>
+<blockquote>
+<p>Another improvement from GJS 1.73.1 from Sonny Piers is an override for <code>Gio.ActionMap.prototype.add_action_entries()</code>. Previously this method wouldn&rsquo;t work because it required an array of <code>Gio.ActionEntry</code> objects, which are not possible to construct in GJS. Now it can be used with an array of plain objects. (e.g. <code>this.add_action_entries([{name: 'open', activate() { ... }}]);</code></p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie</a> reports</p>
+<blockquote>
+<p>This week, <a href="https://apps.gnome.org/app/org.gnome.World.Citations/">Citations</a> joined GNOME Circle. Citations allows you to manage your bibliographies using the BibTeX format. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/d209954a014ac38aa342a5484967b778a8f529bc.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gaphor">
+<a class="heading-anchor" href="#gaphor" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gaphor <a href="https://gaphor.org"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple UML and SysML modeling tool.</p>
+<p><a href="https://matrix.to/#/@Yeaw:matrix.org">danyeaw</a> announces</p>
+<blockquote>
+<p>Version 2.11.0 of Gaphor, the simple modeling tool, is out! It adds support for adding elements to diagrams using double click, union types, SysML Enumerations as ValueTypes, and numerous bug fixes. We also greatly improved compatibility with GTK4, and we expect the next release will shift it to be the default version of GTK.</p>
+</blockquote>
+
+
+<h3 id="dialect">
+<a class="heading-anchor" href="#dialect" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Dialect <a href="https://github.com/dialect-app/dialect/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Translate between languages.</p>
+<p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> announces</p>
+<blockquote>
+<p>Dialect 2.0.0 has been released! You can get it from <a href="https://flathub.org/apps/details/app.drey.Dialect">Flathub</a>.</p>
+<p>It features the following changes:</p>
+<ul>
+<li>Ported to GTK4 and libadwaita</li>
+<li>New in-app color scheme switcher</li>
+<li>Added Lingva Translate support</li>
+<li>Google Translate module rewritten from scratch to not rely on external libraries and improve reliability.</li>
+<li>GNOME Search Provider improvements</li>
+<li>APP ID changed to app.drey.Dialect</li>
+<li>Added API keys support for LibreTranslate</li>
+<li>Added translation suggestions support for LibreTranslate</li>
+<li>Fixed proxies by rewriting the http backend</li>
+<li>Character limit is now service-dependent</li>
+<li>Major code base refactoring
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/gnIqsUiPiinYLOfjrfDGrSKw.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@pervoj:matrix.org">Vojtěch Perník</a> announces</p>
+<blockquote>
+<p>The first version of the word guessing game <a href="https://flathub.org/apps/details/app.drey.Blurble">Blurble</a> was released this week! Blurble is a GTK clone of Wordle written in Vala and made with localization in mind.
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/HArizHCARkmncNGhrVulHKdK.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@brainblasted:gnome.org">Chris 🌱️</a> says</p>
+<blockquote>
+<p>Loupe has been updated to follow new mockups from Allan Day.
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/bd2d8b52f83b8226b3cbbf14438fb4791b0cebaa.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="geary">
+<a class="heading-anchor" href="#geary" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Geary <a href="https://wiki.gnome.org/Apps/Geary"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Send and receive email.</p>
+<p><a href="https://matrix.to/#/@nielsdg:gnome.org">nielsdg</a> says</p>
+<blockquote>
+<p>Geary is getting some love again, thanks to Cédric Bellegarde (gnumdk) stepping up to co-maintain it together with me</p>
+</blockquote>
+
+
+<h3 id="crosswords">
+<a class="heading-anchor" href="#crosswords" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Crosswords <a href="https://gitlab.gnome.org/jrb/crosswords"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple Crossword player and Editor.</p>
+<p><a href="https://matrix.to/#/@jblandford:matrix.org">jrb</a> says</p>
+<blockquote>
+<p>Crosswords 0.3.3 was <a href="https://blogs.gnome.org/jrb/2022/07/11/crosswords-0-3-3-double-dutch/">released</a>. This is a simple Crossword game for GNOME. New in this version:</p>
+<ul>
+<li>A preferences dialog to filter puzzle sets by language</li>
+<li>Fully marked for translation.
+<ul>
+<li>Dutch and Spanish translations are added</li>
+</ul>
+</li>
+<li>Dutch-language crosswords work with the &lsquo;IJ&rsquo; cell</li>
+<li>It doesn&rsquo;t grab focus when clicking on a row</li>
+<li>Copy/Paste support</li>
+<li>Undo/Redo support</li>
+<li>Numerous bug fixes</li>
+<li>Use the new libadwaita About dialog</li>
+<li>Fixes to build and run on MacsOS</li>
+</ul>
+<p><a href="https://flathub.org/apps/details/org.gnome.Crosswords">Download on flathub</a>
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/bqFhGikxCDTCLZqOvsaBReZj.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="bottles">
+<a class="heading-anchor" href="#bottles" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Bottles <a href="https://usebottles.com/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Easily run Windows software on Linux with Bottles!</p>
+<p><a href="https://matrix.to/#/@theevilskeleton:fedora.im">Hari Rana (TheEvilSkeleton)</a> reports</p>
+<blockquote>
+<p>Bottles 2022.7.14 was released! We introduce a new Wine runner called Soda, which will be supported by the Bottles team. The aforementioned runner is based on Valve&rsquo;s Wine, with the inclusion of patches from Proton, TKG and GE.</p>
+<p>We also bring in new installers UI to make the installation process prettier and more fun.</p>
+<p>With that out of the way, here are all the changes available in the release page: <a href="https://usebottles.com/blog/release-2022.7.14">https://usebottles.com/blog/release-2022.7.14</a> !
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/1c0b47ae5d7ac97892d954cf452d82ce2ef08f28.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/1793aa7079c6701cc466a7614bf1c40eaa27b9cf.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@theevilskeleton:fedora.im">Hari Rana (TheEvilSkeleton)</a> says</p>
+<blockquote>
+<p>Bottles was ported to AdwAboutWindow thanks to <a href="https://axtloss.github.io/">axtlos</a>!
+
+<img src="https://thisweek.gnome.org/posts/2022/07/twig-52/55503e99a3980eff0204d7915cc27511b6930c29.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

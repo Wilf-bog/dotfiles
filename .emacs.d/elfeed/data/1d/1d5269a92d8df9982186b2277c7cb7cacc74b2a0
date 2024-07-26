@@ -1,0 +1,67 @@
+
+         
+         <p>The current stable version of Denote include optional means to link
+directly to an Org heading, using its <code class="language-plaintext highlighter-rouge">CUSTOM_ID</code> property (creating
+it, if necessary). I have already demonstrated this in video form:
+<a href="https://protesilaos.com/codelog/2024-01-20-emacs-denote-link-org-headings/">https://protesilaos.com/codelog/2024-01-20-emacs-denote-link-org-headings/</a>.</p>
+
+<p>As part of the development work towards version <code class="language-plaintext highlighter-rouge">3.0.0</code>, we now define
+a new command that displays a buffer with backlinks to the current Org
+heading: <code class="language-plaintext highlighter-rouge">denote-org-extras-backlinks-for-heading</code>. It is part of the
+<code class="language-plaintext highlighter-rouge">denote-org-extras.el</code> file, which contains optional extensions that
+only work with Org mode files.</p>
+
+<p>The name of the backlinks buffer includes the text of the heading it
+is about.</p>
+
+<p><a href="https://protesilaos.com/assets/images/attachments/2024-04-21-emacs-denote-heading-backlinks.png"><img alt="Denote Org file+heading link sample" src="https://protesilaos.com/assets/images/attachments/2024-04-21-emacs-denote-heading-backlinks.png" /></a></p>
+
+<p>Note that links to headings are also pointing to the underlying file,
+using its identifier. They are a composite of <code class="language-plaintext highlighter-rouge">FILE-ID::#HEADING-ID</code>,
+which still leverages the robust Denote file-naming scheme.</p>
+
+<h2>Part of the current development version</h2>
+
+<p>Things are in a state of flux as we are fleshing out Denote <code class="language-plaintext highlighter-rouge">3.0.0</code>.
+If you do try this feature, please let me know how it works for you
+and if you would like to see something done differently.</p>
+
+<p>Denote is highly flexible and designed to be easy to extend: you do
+not have to be an expert. We do everything using small functions and
+code that has no obscure macros and/or deeply nested expressions. This
+will continue to be the case. So feel welcome to take a look and send
+your feedback.</p>
+
+<p>Version <code class="language-plaintext highlighter-rouge">3.0.0</code> will hopefully be released in June or July 2024.</p>
+
+<h2>Denote sources</h2>
+
+<p>Denote is a simple note-taking tool for Emacs.  It is based on the idea
+that notes should follow a predictable and descriptive file-naming
+scheme.  The file name must offer a clear indication of what the note is
+about, without reference to any other metadata.  Denote basically
+streamlines the creation of such files while providing facilities to
+link between them.</p>
+
+<p>Denote’s file-naming scheme is not limited to “notes”.  It can be used
+for all types of file, including those that are not editable in Emacs,
+such as videos.  Naming files in a consistent way makes their
+filtering and retrieval considerably easier.  Denote provides relevant
+facilities to rename files, regardless of file type.</p>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">denote</code></li>
+  <li>Official manual: <a href="https://protesilaos.com/emacs/denote">https://protesilaos.com/emacs/denote</a></li>
+  <li>Change log: <a href="https://protesilaos.com/emacs/denote-changelog">https://protesilaos.com/emacs/denote-changelog</a></li>
+  <li>Git repositories:
+    <ul>
+      <li>GitHub: <a href="https://github.com/protesilaos/denote">https://github.com/protesilaos/denote</a></li>
+      <li>GitLab: <a href="https://gitlab.com/protesilaos/denote">https://gitlab.com/protesilaos/denote</a></li>
+    </ul>
+  </li>
+  <li>Video demo: <a href="https://protesilaos.com/codelog/2022-06-18-denote-demo/">https://protesilaos.com/codelog/2022-06-18-denote-demo/</a></li>
+  <li>Backronyms: Denote Everything Neatly; Omit The Excesses.  Don’t Ever
+Note Only The Epiphenomenal.</li>
+</ul>
+        
+      

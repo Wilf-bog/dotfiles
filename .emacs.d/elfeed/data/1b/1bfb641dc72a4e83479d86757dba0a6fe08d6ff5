@@ -1,0 +1,32 @@
+
+         
+         <p>Raw link: <a href="https://www.youtube.com/watch?v=f2mQXNnChwc">https://www.youtube.com/watch?v=f2mQXNnChwc</a></p>
+         
+         <p>Video overview of the powerful tools Emacs has to search files, create
+a dynamic index of matches, search and replace, use grep and make
+editable grep buffers, match strings or regular expressions, etc.</p>
+
+<p>The code I showed in the video:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;; Display a counter showing the number of the current and the other</span>
+<span class="c1">;; matches.  Place it before the prompt, though it can be after it.</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">isearch-lazy-count</span> <span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">lazy-count-prefix-format</span> <span class="s">"(%s/%s) "</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">lazy-count-suffix-format</span> <span class="no">nil</span><span class="p">)</span>
+
+<span class="c1">;; Make regular Isearch interpret the empty space as a regular</span>
+<span class="c1">;; expression that matches any character between the words you give</span>
+<span class="c1">;; it.</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">search-whitespace-regexp</span> <span class="s">".*?"</span><span class="p">)</span>
+
+<span class="c1">;; Install the `wgrep' package.  It makes the grep buffers editable.</span>
+
+<span class="c1">;; Install the `consult' package.  It provides lots of useful commands that</span>
+<span class="c1">;; enhance the minibuffer experience of Emacs (e.g. for searching</span>
+<span class="c1">;; lines/heading).</span>
+
+<span class="c1">;; Install the `embark' package.  It allows you to perform context-sensitive</span>
+<span class="c1">;; actions, using a prompt and then a key/action selection interface.</span>
+</code></pre></div></div>
+        
+      

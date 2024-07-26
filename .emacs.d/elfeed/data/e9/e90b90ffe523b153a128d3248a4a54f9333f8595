@@ -1,0 +1,171 @@
+<p>Update on what happened across the GNOME project in the week from August 25 to September 01.</p>
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="workbench">
+<a class="heading-anchor" href="#workbench" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Workbench <a href="https://github.com/sonnyp/Workbench/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A sandbox to learn and prototype with GNOME technologies.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> reports</p>
+<blockquote>
+<p><a href="https://akshaywarrier.medium.com">Akshay Warrier</a> made a beautiful offline documentation viewer.
+It will ship with Workbench 45 and probably turn into a standalone app in the future.</p>
+<p>So far it supports gi-docgen docs, searching for pages and back/forward navigation.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-111/8d1495df54fb81bb5c08be6476e8e588e90b2d6a.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-111/b3cafa4c4d828afd909bd74a0db94dafba6654e0.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="cartridges">
+<a class="heading-anchor" href="#cartridges" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Cartridges <a href="https://github.com/kra-mo/cartridges"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Launch all your games</p>
+<p><a href="https://matrix.to/#/@kramo:matrix.org">kramo</a> says</p>
+<blockquote>
+<p>This week, I released Cartridges 2.3!</p>
+<ul>
+<li>New import source: desktop entries!</li>
+<li>You can now choose executables directly via a file picker.</li>
+<li>Short covers added manually will now be padded with a blurred background instead of stretched.</li>
+</ul>
+<p>Check it out on <a href="https://flathub.org/apps/hu.kramo.Cartridges">Flathub</a>!</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> says</p>
+<blockquote>
+<p>A new minor release of <a href="https://gitlab.gnome.org/GNOME/libmks">libmks</a> is out. Mostly containing small fixes that should make the rendering perfectly smooth. The next step is to get clipboard sharing and USB redirection working. The library is also available on <a href="https://download.gnome.org/sources/libmks/0.1/">https://download.gnome.org/sources/libmks/0.1/</a> if people wish to start testing/packaging it.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@gountal:matrix.org">gountal</a> announces</p>
+<blockquote>
+<p>I released the version 0.1.0 of Package Transporter.</p>
+<p>This application is meant to facilitate migration from an installation to another. Currently, the application can only backup Flatpak applications, their settings and data.</p>
+<p>This is only a preview release as you cannot restore a backup of your apps yet.</p>
+<p>Check it out on <a href="https://flathub.org/apps/io.gitlab.gwendalj.package-transporter">Flathub</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-111/ePDKkHvoedTXeQbKPMHBOWHH.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="portfolio">
+<a class="heading-anchor" href="#portfolio" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Portfolio <a href="https://github.com/tchx84/Portfolio"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A minimalist file manager for those who want to use Linux mobile devices.</p>
+<p><a href="https://matrix.to/#/@tchx84:matrix.org">Martín Abente Lahaye</a> reports</p>
+<blockquote>
+<p>I am happy to announce the release of Portfolio 1.0.0! This new release is the first step in the modernization process to GTK 4 and Libadwaita. It’s also a continuation to my efforts of bringing a minimalist file manager to the mobile Linux community, with a few important bug fixes.</p>
+<p><a href="https://blogs.gnome.org/tchx84/2023/08/29/portfolio-1-0-0/">https://blogs.gnome.org/tchx84/2023/08/29/portfolio-1-0-0/</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-111/hNEGgLlbEJwAmLCFXLNzTImn.gif" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="fretboard">
+<a class="heading-anchor" href="#fretboard" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fretboard <a href="https://github.com/bragefuglseth/fretboard"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Look up guitar chords</p>
+<p><a href="https://matrix.to/#/@bragefuglseth:matrix.org">Brage Fuglseth</a> says</p>
+<blockquote>
+<p>This week I released Fretboard 2.0. This major release of Fretboard brings a bunch of exciting improvements:</p>
+<ul>
+<li>View different ways to play the same chord, to find the one that suits your situation the best</li>
+<li>Bookmark chords to save them for a later practice session or gig</li>
+<li>An additional fret in the chord diagram, to help you practice those really tricky positionings</li>
+<li>Hover over positions in the chord diagram to see their respective note names</li>
+<li>Smarter and more precise chord detection</li>
+</ul>
+<p>If you would like to come with suggestions, report bugs, translate the app, or contribute otherwise, feel free to reach out!</p>
+<p>You can get Fretboard from <a href="https://flatpak.app/fretboard">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-111/pgdvxgSMDQxCdNbtYChVlpYc.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-111/CAravRQKAfyiQoEnNFTGeAkT.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="flare">
+<a class="heading-anchor" href="#flare" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flare <a href="https://flathub.org/apps/details/de.schmidhuberj.Flare"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Chat with your friends on Signal.</p>
+<p><a href="https://matrix.to/#/@schmiddi:matrix.org">schmiddi</a> says</p>
+<blockquote>
+<p>Flare 0.10.0 got released. There were tons of features, UI improvements and fixes compared to the last TWIG (with also 4 minor releases), so I will just list for the most notable ones. For all the changes, consult the changelog.</p>
+<ul>
+<li>One can now receive notifications when someone reacts to a message (if one wants that to happen).</li>
+<li>Added support for libspelling.</li>
+<li>Fixed some major performance issues.</li>
+<li>Deleting messages of a channel locally.</li>
+<li>Added blurhash support, such that even unloaded images and videos look great.</li>
+<li>Tons of UI improvements.</li>
+<li>Many fixes.</li>
+</ul>
+<p>There were some organizational changes made to my Linux mobile related apps in general:</p>
+<ul>
+<li>Updated descriptions and a new common namespace. You can now find all my projects for Linux mobile in this GitLab group.</li>
+<li>We now also have an Mastodon Account. We will post any updates to the apps right here.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-111/JPDBvhUZkBDPxwtZvxUxlRUA.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/09/twig-111/xBQhxSJiQdggMVAFDleLgcKT.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/09/twig-111/xBQhxSJiQdggMVAFDleLgcKT.webm">download it</a> and watch it with your favorite video player!</span>
+</video></li>
+</ul>
+</blockquote>
+
+
+<h3 id="daikhan">
+<a class="heading-anchor" href="#daikhan" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Daikhan <a href="https://flathub.org/apps/io.gitlab.daikhan.stable"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Play Videos/Music with style.</p>
+<p><a href="https://matrix.to/#/@realmazharhussain:matrix.org">Mazhar Hussain</a> reports</p>
+<blockquote>
+<p>Daikhan received</p>
+<ul>
+<li>A welcome page</li>
+<li>Support for more codecs.</li>
+<li>New translations
+<ul>
+<li>Czech</li>
+<li>French</li>
+<li>Russian</li>
+<li>Turkish (previously translated; included in the flatpak now)</li>
+</ul>
+</li>
+</ul>
+<p>and</p>
+<ul>
+<li>It disables fullscreen when no media is open.</li>
+<li>It remembers fullscreen state of the player and restores it when opening files.
+
+<img src="https://thisweek.gnome.org/posts/2023/09/twig-111/DbfNOmixXPUqEVRPwClGRqjP.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@cassidyjames:gnome.org">Cassidy James</a> says</p>
+<blockquote>
+<p>I’ve been editing down the day-long GUADEC 2023 streams into individual talks. To help share how I approached this using some excellent apps designed for GNOME, I provided instructions and a couple of videos on the <a href="https://gitlab.gnome.org/Teams/Engagement/Events/GUADEC/guadec-2023/guadec-2023/-/issues/30">GitLab issue</a>. Hopefully this can help people in the future for GUADEC and other conferences.
+Huge thanks to HappiePlant NL from YouTube for providing comprehensive timestamps for each GUADEC 2023 talk! This type of work is often too invisible in the community, and yet is an excellent way to contribute. The next step is to get the videos actually uploaded to the channel with proper titles and descriptions—look forward to that soon.</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@mwu:gnome.org">mwu</a> says</p>
+<blockquote>
+<p>The Foundation team is ramping up for GNOME  ASIA. The call for papers is available at:  <a href="https://events.gnome.org/event/170/abstracts/">https://events.gnome.org/event/170/abstracts/</a> and we are excited for your submission. Be on the look out for registration, hotel info and more!  And, as always, we are on the look out for sponsors! Please reach out to us if you or your company would like to participate.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

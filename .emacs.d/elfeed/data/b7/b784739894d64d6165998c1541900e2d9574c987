@@ -1,0 +1,214 @@
+<p>Update on what happened across the GNOME project in the week from January 19 to January 26.</p>
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> says</p>
+<blockquote>
+<p>As part of the <a href="https://foundation.gnome.org/2023/11/09/gnome-recognized-as-public-interest-infrastructure/">GNOME STF (Sovereign Tech Fund)</a> project, a number of community members are working on infrastructure related projects.</p>
+<p>Today we celebrate <a href="https://blogs.gnome.org/sophieh/">Sophie</a> joining the team to work on <a href="https://gitlab.gnome.org/sophie-h/glycin">Glycin</a> to work on</p>
+<ul>
+<li>Improved sandboxing for image loaders</li>
+<li>GObject Introspection support to broaden interoperability with the GNOME platform</li>
+</ul>
+<p>Accessibility</p>
+<ul>
+<li>Joanie added a system information presenter in Orca</li>
+<li>Joanie finished code clean-up and removal of pyatspi dependency for hypertext and hyperlink interfaces</li>
+<li>Joanie started code clean-up creation of AT-SPI2 utilities for Orca&rsquo;s accessible-text related functionality <a href="https://gitlab.gnome.org/GNOME/orca/-/issues/300">issue</a></li>
+<li>Joanie <a href="https://gitlab.gnome.org/GNOME/at-spi2-core/-/issues/154">made a proposal</a> to facilitate text selection via ATK/AT-SPI2 across multiple objects at once (similar to what IAccessible2 created)</li>
+<li>Joanie <a href="https://gitlab.gnome.org/GNOME/at-spi2-core/-/issues/153">made a proposal</a> to have an attributes-changed signal for object attributes</li>
+<li>Joanie began converting Orca&rsquo;s WebKitGtk support over to the generic web support currently shared by Chromium and Gecko.</li>
+<li>Matt pushed a partial <a href="https://gitlab.freedesktop.org/mwcampbell/wayland-protocols/tree/accessibility">Wayland protocol extension</a> for accessibility consumers (screen readers and the like)</li>
+<li>Matt started implementation the accessibility extension as a <a href="https://gitlab.gnome.org/mwcampbell/mutter/tree/wayland-native-a11y">proof of concept in Mutter</a></li>
+<li>Tobias investigated where we still use TreeViews and <a href="https://gitlab.gnome.org/GNOME/Initiatives/-/issues/49">started an initiative</a> to port to more accessible widgets (e.g. ListView, ColumnView)</li>
+<li>Evan landed <a href="https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/6807">gtk: Add AccessibleList to enable relations in bindings</a>
+<ul>
+<li>enables languages like GJS and Python to pass lists of Gtk widgets to accessibility relations like LABELLED_BY in GTK4</li>
+<li>started a GJS MR for it to apply a convenience override to automatically wrap JS arrays in Gtk.AccessibleList in the relevant APIs</li>
+</ul>
+</li>
+<li>Georges is working on WebKitGTK accessibility
+<ul>
+<li>experimented with a potential new GTK4 API to be consumed by WebKitGTK. The experiment was a success and it correctly bridged the web page DOM a11y tree with the rest of the program, which allows screen readers and other accessible technologies to read that. I&rsquo;m currently cleaning up the code and discussing the approach with GTK developers.</li>
+<li>published and improved <a href="https://gitlab.gnome.org/feaneron/aleveny">Aleveny</a> a tool to inspect the accessible object tree of apps.</li>
+</ul>
+</li>
+<li>Sonny helped with coordination efforts to land <a href="https://github.com/flatpak/xdg-desktop-portal/pull/1175">High Contrast hint on settings portal</a>
+<ul>
+<li>Hub will work on <a href="https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome/-/issues/119">GNOME backend implementation</a></li>
+</ul>
+</li>
+</ul>
+<p>
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-132/f55405e23cea5dde117a68ab1046e15a26ab85df1750972228364664832.png" alt="" />
+</p>
+<p>Platform</p>
+<ul>
+<li>Hub fixed a <a href="https://github.com/flatpak/flatpak-builder/pull/579">bug in flatpak-builder rename-appdata-file</a></li>
+<li>Julian landed <a href="https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/merge_requests/215">using libadwaita Avatar in gnome-initial-setup</a></li>
+<li>Julian is working on extending the XDG portal notification API with sounds and images <a href="https://github.com/flatpak/xdg-desktop-portal/issues/983">portal issue</a></li>
+<li>Sonny started a <a href="https://gitlab.gnome.org/jwestman/blueprint-compiler/-/merge_requests/176">proof of concept for a GTK linter</a></li>
+<li>Stef joined the team and started working on <a href="https://github.com/flatpak/xdg-desktop-portal/issues/567">GFileMonitor does not work with document portal</a></li>
+<li>Evan made progress on async/sync annotations support in introspection, there are currently 4 MRs for it
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3797">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3797</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3853">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3853</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3830">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3830</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3746">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3746</a></li>
+</ul>
+</li>
+<li>Evan is investigating the amount of work needed to make WASM support in GJS production ready - currently evaluating the mergeability of multi-threaded promises and import maps</li>
+<li>Philip fixed the following in GLib
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/issues/3218">Segfault in gi_function_info_prep_invoker</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3846">gibaseinfo: Fix use of stack-allocated GIBaseInfos</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3856">girepository: Drop gi_repository_get_default()</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/issues/3234">Reference cycle between GIRepository and GIBaseInfos cached by it</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3854">girnode: Document ownership and element types of internal structs</a></li>
+</ul>
+</li>
+<li>Philip released GLib 2.78.4 and 2.79.1</li>
+<li>Alice finished and landed <a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1018">adaptive dialogs</a> (see her individual update below)</li>
+</ul>
+<p>Hardware support</p>
+<ul>
+<li>Dor continued iterating on <a href="https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/2523#note_1971815">VRR configuration UX in Settings</a></li>
+<li>Dor investigated and fixed a number of issues related to VRR
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3521">Remove assumption about fixed refresh rate in empty frame handling</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/mutter/-/issues/3259">Cursor movement becomes synchronized with main content updates after VT switch</a></li>
+</ul>
+</li>
+</ul>
+<p>
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-132/ec4582d585a6c84eb3c561dc55753708a7771a6f1750973560861491200.png" alt="" />
+</p>
+<ul>
+<li>Alice landed bottom sheets in libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1018">https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1018</a>
+<ul>
+<li>Documentation <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.Dialog.html">https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.Dialog.html</a></li>
+<li>There&rsquo;s also a migration guide for porting apps to using it <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/migrating-to-adaptive-dialogs.html">https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/migrating-to-adaptive-dialogs.html</a></li>
+</ul>
+</li>
+<li>Jonas (Dreßler) is investigating remaining issues in Jonas (Ådahl) fractional scaling branch</li>
+</ul>
+<p>Security:</p>
+<ul>
+<li>Dhanuka continued his work on implementing secret server/backend in oo7 <a href="https://github.com/bilelmoussaoui/oo7/pull/56">https://github.com/bilelmoussaoui/oo7/pull/56</a>
+<ul>
+<li>implemented <code>CreateCollection</code> and <code>SearchItems</code> on <code>org.freedesOnceCellktop.Secret.Service</code> interface</li>
+<li>implemented <code>Delete</code> on <code>org.freedesktop.Secret.Item</code> interface</li>
+<li>updated <code>CreateItem</code> on <code>org.freedesktop.Secret.Collection</code> to use <code>oo7::dbus::api::properties::Properties</code></li>
+</ul>
+</li>
+<li>We are investigating and coordinating usage of <a href="https://github.com/systemd/systemd/pull/30968">systemd per-user encrypted credentials</a></li>
+</ul>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alice (she/her)</a> says</p>
+<blockquote>
+<p><a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.Dialog.html"><code>AdwDialog</code></a> has landed, along with <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.AlertDialog.html"><code>AdwAlertDialog</code></a>, <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.PreferencesDialog.html"><code>AdwPreferencesDialog</code></a> and <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.AboutDialog.html"><code>AdwAboutDialog</code></a>. There&rsquo;s also a <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/migrating-to-adaptive-dialogs.html">migration guide</a> for all of the new widgets. The old widgets aren&rsquo;t deprecated yet, but will be in GNOME 47
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/01/twig-132/f0f069452220a38eb6a22b2255adc0c9baf8e04c1750946597975359488.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/01/twig-132/f0f069452220a38eb6a22b2255adc0c9baf8e04c1750946597975359488.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="gtk">
+<a class="heading-anchor" href="#gtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GTK <a href="https://gitlab.gnome.org/GNOME/gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Cross-platform widget toolkit for creating graphical user interfaces.</p>
+<p><a href="https://matrix.to/#/@matthiasc:gnome.org">Matthias Clasen</a> says</p>
+<blockquote>
+<p>The GTK 4.13.6 release out this week changes the default renderer to be the ngl renderer.</p>
+<p>The intent of this change is to get wider testing and verify that the new renderers are production-ready. If significant problems show up, it may get reverted for the stable 4.14 release in March.</p>
+<p>You can still override the renderer choice using the GSK_RENDERER environment variable.</p>
+<p>Since ngl can handle fractional scaling much better than the old gl renderer, fractional scaling is now enabled by default with gl.</p>
+<p>If you are using the old gl renderer (e.g. because your system is limited to GLES2), you can disable fractional scaling by setting the GDK_DEBUG environment variable to include the gl-no-fractional key.</p>
+</blockquote>
+
+
+<h3 id="maps">
+<a class="heading-anchor" href="#maps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Maps <a href="https://wiki.gnome.org/Apps/Maps"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Maps gives you quick access to maps all across the world.</p>
+<p><a href="https://matrix.to/#/@mlundblad:matrix.org">mlundblad</a> says</p>
+<blockquote>
+<p>Maps now shows an empty state for the favorites menu, and also allows removing favorites directly from the popover (with an undo toast). Also James Westman has improved GeoJSON shapelayer rendering, show descriptions for marked places, and also shows the layer name in the bubbles
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-132/gdnQzesBfJhGqrRSXAbFdiEF.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-132/BlwfuKfoppWrnNNwpSObCTry.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-132/IdeYYADZnirrdbtPDNbQEPMS.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-132/ykvbMLazOFGiUuVwWDydbfWh.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="fragments">
+<a class="heading-anchor" href="#fragments" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fragments <a href="https://gitlab.gnome.org/World/Fragments"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Easy to use BitTorrent client.</p>
+<p><a href="https://matrix.to/#/@felix:haecker.io">Felix</a> announces</p>
+<blockquote>
+<p>Fragments now allows you to search for added torrents 🔎
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/01/twig-132/znRKVwnQYCTGXLWddfLoNmRr.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/01/twig-132/znRKVwnQYCTGXLWddfLoNmRr.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> announces</p>
+<blockquote>
+<p><a href="https://github.com/bilelmoussaoui/oo7">oo7</a>, a Rust client library for interacting with the system keyring, received two new additions:</p>
+<ul>
+<li>A rewrite of secret-tool, a cli application to interact with the keyring</li>
+<li>A rewrite of the secret portal</li>
+</ul>
+<p>On top of that Dhanuka Warusadura have been working on a server side implementation
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-132/2e5bc670ab0fae61af708597d53fb5a4c9fdaec41750614100586528768.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@badcel:matrix.org">badcel</a> announces</p>
+<blockquote>
+<p>I published the repository <a href="https://github.com/badcel/Maus">Maus</a> containing an early stages Adwaita C# app which allows to configure a Microsoft Intellimouse Pro. Feedback is welcome.</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@cassidyjames:gnome.org">Cassidy James</a> reports</p>
+<blockquote>
+<p>Flathub, the app store developed by KDE, GNOME, and independent contributors, has <a href="https://docs.flathub.org/blog/over-one-million-active-users-and-growing">announced over one million active users</a>! This means when you bring your app to Flathub—either independently or as a part of <a href="https://circle.gnome.org/">GNOME Circle</a>—you&rsquo;re reaching a potential audience of over a million Linux users.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@dorothyk:matrix.org">Dorothy K</a> reports</p>
+<blockquote>
+<p>As Outreachy Interns,for the past couple of weeks Tanjuate and I have been working on implementing end-to-end testing for GNOME with openQA for <a href="https://www.outreachy.org/">Outreachy</a> and our focus in the last few weeks has been a11y tests for GNOME OS.We have written tests for accessibility features ie, High contrast,Large text,Overlay scrollbars, Screen reader, Zoom, Over amplification,Visual alerts and On Screen Keyboard features.</p>
+<p>Take a look at some of the tests we have added with a prefix “a11y-” <a href="https://openqa.gnome.org/tests/3058">here</a> and this <a href="https://discourse.gnome.org/t/implementing-end-to-end-tests-for-gnome-os-using-openqa-accesibility-tests-feedback/19124">post</a> for more context
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-132/outreachy.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

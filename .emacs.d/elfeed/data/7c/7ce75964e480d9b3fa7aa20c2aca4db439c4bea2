@@ -1,0 +1,143 @@
+<p>Update on what happened across the GNOME project in the week from February 11 to February 18.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@brainblasted:gnome.org">Chris 🌱️</a> reports</p>
+<blockquote>
+<p>Evan Welsh has ported Fonts and Weather to GTK4 + libadwaita. The Fonts port reworks how we load font previews, allowing us to recolor them so that they work with libadwaita&rsquo;s dark style preference.
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-31/5d57da5d40b6f57d78b53f6e0dc4b866b9fe9cd4.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-31/735d0bb3582936114622aa4fc1e19ebdd11d571f.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> reports</p>
+<blockquote>
+<p>In the next GNOME 42 release Clocks, Maps, Calendar &amp; Weather will be using the location portal when sandboxed. Which means they can no longer access the location without the user&rsquo;s consent</p>
+</blockquote>
+
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> announces</p>
+<blockquote>
+<p>Light/dark preference now uses a uniform crossfade transition
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/02/twig-31/51b298f775148d7c7a3e07d185983f7998c602ab.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/02/twig-31/51b298f775148d7c7a3e07d185983f7998c602ab.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> says</p>
+<blockquote>
+<p>The new GNOME Shell screenshot UI has landed in full for GNOME 42. Since the last update, a new screen recording indicator has been added to the top panel, which shows the recording duration and lets you stop the recording in a single click. The UI itself has seen a few design tweaks: for example, the close button has moved to the top-right corner of the panel. Additionally, the icons on the screenshot UI notifications have been refreshed. Of course, there were a few bugfixes, too: overview drag-and-drop now works again during screen recording, and the screenshot UI will automatically close when the screen is locked from inactivity.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/02/twig-31/2b491eeb234326a75837e9cadcd83249ebc0c24a.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/02/twig-31/2b491eeb234326a75837e9cadcd83249ebc0c24a.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="webfont-kit-generator">
+<a class="heading-anchor" href="#webfont-kit-generator" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Webfont Kit Generator <a href="https://github.com/rafaelmardojai/webfont-kit-generator"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Create @font-face kits easily.</p>
+<p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> announces</p>
+<blockquote>
+<p>Webfont Kit Generator now includes a tool that allows you to download and import fonts from Google Fonts using a CSS API url, handy for self-hosting them.
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-31/jZnpyDVeCbQFYQUDIVnAcxGc.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@foreverxmld:matrix.org">Forever</a> announces</p>
+<blockquote>
+<p>Today I released Random 1.2. It completely changes the UI of the app to fit current UI guidelines. You can download it on <a href="https://flathub.org/apps/details/page.codeberg.foreverxml.Random">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-31/mrzaZPZkvSrkoPLwwLuWNqhh.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> reports</p>
+<blockquote>
+<p>I have released flatpak-vscode 0.0.17</p>
+<ul>
+<li>New output terminal for less output delay and working terminal colors</li>
+<li>New status bar item for current build and run status</li>
+<li>New rust-analyzer integration to run runnables within the sandbox</li>
+<li>Improved build and runtime terminal integration</li>
+<li>Trigger documents portal in activate (May still be problematic when other extensions, like-rust-analyzer, startups earlier)</li>
+<li>Display the &ldquo;Flatpak manifest detected&rdquo; dialog only once</li>
+</ul>
+<p>Huge thanks to SeaDve for most of the changes that landed this release!</p>
+</blockquote>
+
+
+<h3 id="telegrand">
+<a class="heading-anchor" href="#telegrand" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Telegrand <a href="https://github.com/melix99/telegrand/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A Telegram client optimized for the GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@melix99:gnome.org">Marco Melorio</a> announces</p>
+<blockquote>
+<p>It&rsquo;s been a while since I last wrote about Telegrand, but the development hasn&rsquo;t been stopped at all! Here&rsquo;s a short list of what&rsquo;s new since the last update:</p>
+<ul>
+<li>Implemented chats and contacts search</li>
+<li>We now show more information in the chat list, like the mention badge and draft message</li>
+<li>We now support the photo message type</li>
+<li>Added multi account support (thanks to Marcus Behrendt!)</li>
+<li>General improvements to the style</li>
+</ul>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1><p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> says</p>
+<blockquote>
+<p>I have added a &ldquo;Getting Started&rdquo; tutorial to the Developer Documentation website; you can follow various lessons to go from the basic GNOME application template in Builder to a working simple text viewer. At the end of the process you&rsquo;ll know how to load and save files asynchronously, how to update your UI in response to changes, and how to save and load settings: <a href="https://developer.gnome.org/documentation/tutorials/beginners/getting_started.html">https://developer.gnome.org/documentation/tutorials/beginners/getting_started.html</a>
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-31/b9c07cc311e4fde12e32ff4074dd4fa22a0b6e23.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-31/7339f89fa2c0a677f838e48e5481b9fd5d2a73df.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-31/f269a5aac9be24578644fe0fad05e21bead4c6fd.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-31/6cbb58eb59895230dbd9033bd0f866adedadd6f7.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sonnyp:matrix.org">sonnyp</a> says</p>
+<blockquote>
+<p>The GNOME developer documentation now contains JavaScript examples. Here is the <a href="https://gitlab.gnome.org/Teams/documentation/developer-www/-/merge_requests/58">merge request</a>.
+
+<img src="https://thisweek.gnome.org/posts/2022/02/twig-31/uaLSTOCpuEChkaCMzaNdGFUd.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gtk-rs">
+<a class="heading-anchor" href="#gtk-rs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>gtk-rs <a href="https://gtk-rs.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Safe bindings to the Rust language for fundamental libraries from the GNOME stack.</p>
+<p><a href="https://matrix.to/#/@julianhofer:gnome.org">Julian Hofer</a> announces</p>
+<blockquote>
+<p>I&rsquo;ve refactored the gtk4-rs book and touched most chapters during this process. The biggest changes are:</p>
+<ul>
+<li>The <a href="https://gtk-rs.org/gtk4-rs/stable/latest/book/gobject_signals.html">signals</a> chapter includes the new <code>glib::closure_local!</code> macro.</li>
+<li>The interface builder chapter has been renamed to <a href="https://gtk-rs.org/gtk4-rs/stable/latest/book/composite_templates.html">composite templates</a></li>
+<li>The composite templates chapter dropped the section about<code>gtk::Builder</code> in favor of introducing<code>gio::Resource</code>.</li>
+<li>The composite templates chapter app uses the newly introduced support for template callbacks.</li>
+<li>The <a href="https://gtk-rs.org/gtk4-rs/stable/latest/book/todo_app_2.html">second todo app</a> chapter now uses automatic resources to add the shortcut window.</li>
+<li>The second todo app chapter uses<code>gio::Settings</code> instead of<code>serde_json</code> to save its state.</li>
+</ul>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

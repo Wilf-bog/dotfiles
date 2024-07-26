@@ -1,0 +1,101 @@
+
+         
+         <p>This is a simple package to automatically preview in a side window the
+file at point in Dired buffers. Preview windows are closed when they
+are no longer relevant, while preview buffers are killed if they have
+not been used for other purposes beside previewing. The package
+provides several customisation options to control its behaviour.</p>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">dired-preview</code></li>
+  <li>Official manual: <a href="https://protesilaos.com/emacs/dired-preview">https://protesilaos.com/emacs/dired-preview</a></li>
+  <li>Git repositories:
+    <ul>
+      <li>GitHub: <a href="https://github.com/protesilaos/dired-preview">https://github.com/protesilaos/dired-preview</a></li>
+      <li>GitLab: <a href="https://gitlab.com/protesilaos/dired-preview">https://gitlab.com/protesilaos/dired-preview</a></li>
+    </ul>
+  </li>
+  <li>Backronym: Directories Invariably Render Everything Decently …
+preview; dired … PDFs Require Extra Viewing Instructions for Emacs
+to Work.</li>
+</ul>
+
+<p>Below are the release notes</p>
+
+<hr />
+
+<p>This release brings many small improvements and fixes some bugs.</p>
+
+<h2>The preview shows up right away on new directories</h2>
+
+<p>In the past, entering a new directory would not trigger a preview: it
+would wait for some motion before doing so. This could make it seem
+that the mode was not enabled in the current buffer. Now, the preview
+shows up immediately.</p>
+
+<p>Thanks to Nofint for the initial contribution in pull request 8:
+<a href="https://github.com/protesilaos/dired-preview/pull/8">https://github.com/protesilaos/dired-preview/pull/8</a>. The changes are
+small and do not require copyright assignment to the Free Software
+Foundation.</p>
+
+<h2>Directories are previewed as well</h2>
+
+<p>The contents are displayed in a Dired buffer, using the current
+settings for it. This means that colours are possible icons are shown
+too.</p>
+
+<h2>Large files are previewed in <code class="language-plaintext highlighter-rouge">hexl-mode</code></h2>
+
+<p>As the documentation of this mode suggests:</p>
+
+<blockquote>
+  <p>A mode for editing binary files in hex dump format.
+This is not an ordinary major mode; it alters some aspects
+of the current mode’s behavior, but not all; also, you can exit
+Hexl mode and return to the previous mode using C-c C-c.</p>
+</blockquote>
+
+<p>The <code class="language-plaintext highlighter-rouge">C-c C-c</code> key binding toggles the mode, in case you want to see
+the raw output.</p>
+
+<p>Thanks to Karthik Chikmagalur for the contribution. This was done on
+the now defunct mailing list:
+<a href="https://lists.sr.ht/~protesilaos/general-issues/%3C871qeb56bw.fsf@gmail.com%3E">https://lists.sr.ht/~protesilaos/general-issues/%3C871qeb56bw.fsf@gmail.com%3E</a>.</p>
+
+<h2>Previews are displayed in a full-featured mode</h2>
+
+<p>Before, we would delay the execution of the mode hooks to speed things
+up. Though this came at the cost of (i) making the buffer less capable
+and (ii) forcing us to handle the execution of those hooks at a later
+stage when they would be needed, which proved to be error-prone in a
+number of scenaria.</p>
+
+<h2>Files without an extension are still previewed</h2>
+
+<p>This is a bug fix. Before, they would be considered as part of the
+files to be ignored, per <code class="language-plaintext highlighter-rouge">dired-preview-ignored-extensions-regexp</code>.</p>
+
+<h2>Previews are not added to what <code class="language-plaintext highlighter-rouge">recentf-mode</code> tracks</h2>
+
+<p>Thanks to Juergen Hoetzel for reporting this issue and for tweaking my
+suggested patch for it. This was done in pull request 12:
+<a href="https://github.com/protesilaos/dired-preview/pull/12">https://github.com/protesilaos/dired-preview/pull/12</a>. The change is
+small, so Juergen does not need to assign copyright to the Free
+Software Foundation.</p>
+
+<h2>A nil value for <code class="language-plaintext highlighter-rouge">split-width-threshold</code> still works</h2>
+
+<p>We no longer consider this an error and adapt the preview accordingly.
+Thanks to Juergen Hoetzel for the contribution. This was done in pull
+request 11 and does not require copyright assignment:
+<a href="https://github.com/protesilaos/dired-preview/pull/11">https://github.com/protesilaos/dired-preview/pull/11</a>.</p>
+
+<h2>For developers: previews are done with <code class="language-plaintext highlighter-rouge">cl-defmethod</code></h2>
+
+<p>Each file type will thus have its own method on how to display the
+contents in a buffer. The idea is to make this easier to extend. The
+goal is to have methods that can preview PDFs and images without
+blocking Emacs. Other file types can be considered as well, though
+those two are the immediate priority.</p>
+        
+      

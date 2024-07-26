@@ -1,0 +1,106 @@
+<!-- Conclusion: Creating Fiction is the same as creating non-fiction. It is about creating a linearly readable text with *some* cross-referencing. -->
+
+<p><strong>Recap:</strong> In the <a href="https://zettelkasten.de/posts/zettelkasten-fiction-writing-part-1-knowledge/">first part</a>, we learned not to care about the source of the knowledge we deal with, but about its nature. In the <a href="https://zettelkasten.de/posts/zettelkasten-fiction-writing-part-2-elements-of-story/">second part</a>, we learned what we are dealing with when we deal with story. In the <a href="https://zettelkasten.de/posts/zettelkasten-fiction-writing-part-3-tools-analysing-story/">third part</a>, we learned how to use our Zettelkasten to analyse story.</p>
+
+<p>What is left for us to learn? Creation.</p>
+
+<figure class="post-figure "><a href="/img/blog/20220125181653_pit-bull-kisses.jpg"><img alt="" src="/img/blog/20220125181653_pit-bull-kisses.jpg" class="post-figure__image" /></a><figcaption class="post-figure__caption">Image by <a href="https://pixabay.com/users/rescuewarrior-2251306/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2047469">Beverly Lussier</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2047469">Pixabay</a></figcaption></figure>
+
+<p>Writing books with the Zettelkasten is <a href="https://zettelkasten.de/posts/write-book-without-even-trying-so-hard/">not that difficult</a>:</p>
+
+<ol>
+  <li>Create a structure note that governs the outline of your book. Either create a preliminary outline up front, or create the outline bottom-up while you incorporate new notes.</li>
+  <li>I recommend double-entry bookkeeping: Incorporate each note into the note specific to the book, and into a note that deals with the topic in a systematic way instead of sticking to the original didactic or rhetorical form of the book.</li>
+  <li>Whenever you create a note that can be part of the book, incorporate it into the outline for the book and into the systematic part of your Zettelkasten.</li>
+</ol>
+
+<p>Topics are not linear in general. Think about ecology. It is the <em>circle</em> of life, <a href="https://en.wikipedia.org/wiki/Circle_of_Life">Simba</a>. Not the ray of life. But if you want to write a book on ecology, then the didactic and rhetoric nature of a book forces you to translate non-linearity into linearity.</p>
+
+<p>Creating fiction is the same as creating non-fiction: It is about creating a linearly readable text with <em>some</em> cross-references that make the non-linear nature of its content availabe.</p>
+
+<p>How do you start a fiction project within your Zettelkasten?</p>
+
+<ol>
+  <li>Create a structure note for the outline of your book. Either create a preliminary outline, or create the outline bottom-up while you incorporate new notes. In fiction writing, the outline is guided by the plot. It provides linearity, because effect always <em>follows</em> cause. (Please, be quiet, naughty time travelers.)</li>
+  <li>Create notes for a systematic approach to your story. Plot, characters, leading question, symbols and world-building are good starters.</li>
+  <li>Whenever you create a note that can be part of the book, incorporate it into the outline for the book and into the corresponding systematic note.</li>
+</ol>
+
+<p>It does look so similar to the setup for a non-fiction book because the underlying structure is the same: A linear approach (writing a book) to a non-linear matter (the topic).</p>
+
+<p>That’s it for the setup. There are two additional practices I want to share with you since they help me a lot.</p>
+
+<h2 id="mark-prose">Mark Prose</h2>
+
+<p>Prose and non-fiction text have different criteria for being good. That is the reason I mark prose with a “T” in the title of the note, so I can filter them visually pretty easy. A title looks like this <code>202112010811 T Nyx du bist meine Welt</code>. (“Nyx, you are my world”)</p>
+
+<h2 id="do-create-links-even-if-you-write-prose">Do Create Links Even If You Write Prose</h2>
+
+<p>Within your Zettelkasten, linking is powerful. You can add commentary, highlight comparisons to other parts of your book, and point to reference material – be its origin fiction or non-fiction. It adds to the depth of your writing.</p>
+
+<p><strong>Disclaimer:</strong> This note is part of a script of mine and a translation of the real text. Please spare my fragile artist’s soul. :) (The translation is shitty since I cannot invest hours to find the right English words.)</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The old woman looked through Lykaras' eyes into something inside of him:
+
+"Become who you are."[[202109031324]]
+
+"Become who you are." Lykaras softly murmured this sentence. It felt
+like a distant echo. Yet, he had the impression that these words
+boomed as if the echo in an empty hall amplified each word.
+
+"Yes. You are always more than you are.[[260320121735]] Become who you
+are: more. This is true for each of us. Everyone understands at least
+a little bit of it. Some great people understand more. Almost no one
+fully accepts this truth. This is your task, Lykaras. Your world
+[[202112010811 T Nyx you are my world]] will live only if you
+understand all of it and accept all of it, no matter how great your
+pain."
+</code></pre></div></div>
+
+<p>I’ll explain what the links refer to:</p>
+
+<ol>
+  <li><strong>Become who your are</strong> (<code>202109031324</code>) is a reference to an aphorism by Nietzsche based on <a href="https://de.wikipedia.org/wiki/Pindar">Pindar</a>.</li>
+  <li><strong>You are always more than you are</strong> (<code>260320121735</code>) is a reference to a concept that combines some of Kant’s and Nietzsche’s view on self-development. It is my own concept, and an aphorism I came up with to condense the idea into one sentence: Becoming who you are means experiencing limits by overcoming them. (Again: Shitty translation for now.)</li>
+  <li><strong>Your world</strong> (<code>202112010811 T Nyx you are my world</code>) is a refence to a short dialog between Lykaras and his wife. One of the topics of this book is <a href="https://en.wikipedia.org/wiki/Lifeworld">lifeworld</a> and how it is created. So many characters will utter their opinion on these, giving different answers (let’s see how they will act: according to their opinion, or their <em>true opinion</em>).</li>
+</ol>
+
+<p>You can see that I am referencing to two types of notes:</p>
+
+<ol>
+  <li><strong>Notes that deal with non-fictional concepts.</strong> Also fictional <em>non-fictional</em> concepts: An example would be a fictional beast description. It is fictional because I imagined it. But it is non-fictional in its behavior because the only difference is that the source is my imagination and not a real book on animals.</li>
+  <li><strong>Notes that deal with other prose.</strong> Those cross-references help me to keep consistency and coherence throughout the book.</li>
+</ol>
+
+<h2 id="fourth-conclusion-writing-books-is-writing-books">Fourth Conclusion: Writing Books Is Writing Books</h2>
+
+<p>Using the Zettelkasten Method to write fiction is no different from writing non-fiction. <strong>It is about creating a linearly readable text with <em>some</em> cross-referencing that also makes the non-linear nature of its content available.</strong></p>
+
+<p>In isolation, the Zettelkasten Method just gives you architectual guidelines. But the specifics are dependent on the application. Let’s recap the four conclusions of this series:</p>
+
+<ol>
+  <li><a href="https://zettelkasten.de/posts/zettelkasten-fiction-writing-part-1-knowledge/">Do not care about the source.</a> Knowledge is knowledge. This was the first installment because it is the most common issue I encounter.</li>
+  <li><a href="https://zettelkasten.de/posts/zettelkasten-fiction-writing-part-2-elements-of-story/">Learn how to deal with story first.</a> There are species of knowledge and species of story. The Zettelkasten Method in its core does not dictate species of knowledge. You need to decide how you understand knowledge. I think my catalogue of species is accurate. (See: <a href="https://zettelkasten.de/posts/reading-is-searching/">Species of knowledge</a> and <a href="https://zettelkasten.de/posts/zettelkasten-fiction-writing-part-2-elements-of-story/">species of story</a>) But you can have a different catalogue. This does not change the fact that you still create notes, that you link them and navigate your Zettelkasten. If you are dealing with stories, you have to deal with different species. That’s all that is important to use the Zettelkasten Method for story writing.</li>
+  <li><a href="https://zettelkasten.de/posts/zettelkasten-fiction-writing-part-3-tools-analysing-story/">Create a tool box to analyse story.</a> If you have your personal framework of elements of story down, you need to develop the skill – skill comes first! –, and the tools to either analyse or create stories.</li>
+  <li>Writing books is writing books. Again, the Zettelkasten Method stays the same whether you apply it to writing fiction or non-fiction. The reason is that the Zettelkasten Method entails very general principles. The word “general” essentially means “non-changing”. This unchanging nature is the difference between “general” and “specific”.</li>
+</ol>
+
+<hr />
+
+<p>Do you want me to assist you with using the Zettelkasten Method? <a href="https://zettelkasten.de/coaching/">I offer 1-on-1 coaching</a>.</p>
+
+<aside class="coaching__tldr">
+  <h2 class="skip-toc">Zettelkasten Coaching in&nbsp;a&nbsp;Nutshell</h2>
+  <ul>
+    <li>Learn from a decade of experience and dedication</li>
+    <li>Live 1-on-1 video chat</li>
+    <li>80 EUR (US$95) per hour</li>
+  </ul>
+  <div class="coaching__action-container">
+    <a href="mailto:&#x73;&#x61;&#x73;&#x63;&#x68;&#x61;&#x66;&#x61;&#x73;&#x74;&#x40;&#x67;&#x6D;&#x61;&#x69;&#x6C;&#x2E;&#x63;&#x6F;&#x6D;?subject=Zettelkasten%20Coaching&amp;body=Hi%20Sascha%2C%0A%0AI%20am%20%5BYOUR%20NAME%5D.%20I%20want%20Zettelkasten%20Coaching.%0A%0A-%20My%20professional%20background%3A%0A%0A-%20My%20current%20goals%3A%0A%0A-%20I%20was%20inspired%20to%20learn%20the%20Zettelkasten%20Method%20the%20most%20by%3A%0A%0A-%20My%20current%20approach%20to%20organise%20notes%20and%20knowledge%20in%20general%3A%0A%0A-%20My%20note-taking%20habit%20looks%20like%20this%3A%0A%0A-%20My%20current%20Zettelkasten%20software%3A%0A%0A-%20My%20address%20%28necessary%20in%20Germany%20for%20invoicing%29%3A%0A%0A" class="coaching__action">Send Me an E-Mail</a>
+  </div>
+</aside>
+
+<hr />
+
+<p><strong>Christian’s Comment:</strong> Hmm, the closest thing I have to fiction writing are notes for a computer role-playing game I wanted to write back when I was a teen. Some of these are in some kind of order, others utterly disconnected from the rest, small fragments or gameplay ideas. The low-hanging fruit I now see is this: incorporate world-building notes, like iconography and how magic works, into the Zettelkasten as regular notes. Interlinking them in the usual way, and also pointing to real-world examples in my Zettelkasten as backup reference. That shouldn’t be any trouble. Plus outlines for the story archs and plots of the games. That’d actually be a first for me, but I cannot come up with a reason <em>not</em> to include it into my Zettelkasten now anymore :)</p>

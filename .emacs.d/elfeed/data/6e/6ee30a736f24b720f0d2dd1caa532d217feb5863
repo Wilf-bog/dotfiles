@@ -1,0 +1,72 @@
+<p>Update on what happened across the GNOME project in the week from April 19 to April 26.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="gtk">
+<a class="heading-anchor" href="#gtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GTK <a href="https://gitlab.gnome.org/GNOME/gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Cross-platform widget toolkit for creating graphical user interfaces.</p>
+<p><a href="https://matrix.to/#/@matthiasc:gnome.org">Matthias Clasen</a> says</p>
+<blockquote>
+<p>GTK 4.15.0 is out.</p>
+<p>This release changes the default GSK renderer to be Vulkan, on Wayland. Other platforms still use ngl.</p>
+<p>The intent of this change is to get wider testing and verify that Vulkan drivers are good enough for us to rely on. If significant problems show up, we will revert this change for 4.16.</p>
+<p>You can still override the renderer choice using the GSK_RENDERER environment variable.</p>
+<p>This release also changes font rendering settings by introducing a new high-level gtk-font-rendering settings which gives GTK more freedom to decide on font rendering.</p>
+<p>You can still use the low-level font-related settings by changing the new property to &lsquo;manual&rsquo;.</p>
+<p>If you are building GTK for a distribution, notice that some deprecated build options have been removed.</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@finefindus:matrix.org">FineFindus</a> reports</p>
+<blockquote>
+<p>I&rsquo;ve released a new version of Hieroglyphic. This version features a new app icon by Tobias Bernard, refines the UI and improves the symbol recognition speed. You can download it from <a href="https://flathub.org/apps/io.github.finefindus.Hieroglyphic">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2024/04/twig-145/pZSOyuDlhJgquNxHlyJWqjtu.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="graphs">
+<a class="heading-anchor" href="#graphs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Graphs <a href="https://graphs.sjoerd.se"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Plot and manipulate data</p>
+<p><a href="https://matrix.to/#/@sjoerdb93:matrix.org">Sjoerd Stendahl</a> reports</p>
+<blockquote>
+<p>This week we released version 1.8 of Graphs. This release mostly focuses on background changes to the code, but there&rsquo;s still a number of nice quality of life changes that are interesting to highlight:</p>
+<ul>
+<li>Graphs now has full support for touchscreen devices</li>
+<li>Equation handling has been improved. Now it is no longer needed to add a <code>*</code> symbol between every single parameter upon multiplication, instead an equation such as <code>y = 4sin(2x + pi)</code> is handled without any issues.</li>
+<li>Support has been added for additional trigonometric functions and their inverses, such as <code>sinh</code> and <code>cosh</code>. Now the vast majority of trig functions should work without any issues.</li>
+<li>Help has been ported to Yelp, and can now be accesed directly from the app. This documentation is still a work in progress and will be expanded upon throughout this release cycle.</li>
+<li>There is now a warning when editing a style with poor contrast between the labels and background colours.</li>
+<li>Numerical entries throughout the application now indicate whenever an invalid input is given.</li>
+<li>Multiple bug fixes were implemented, especially with regard to the equation handling in the curve fitting dialog.</li>
+<li>Many different improvements have been added to the translation process such as more translatable strings, and added context to strings. Thanks for the feedback from the translation team :)</li>
+</ul>
+<p>As always, the latest release can be found on <a href="https://flathub.org/apps/details/se.sjoerd.Graphs">Flathub</a>. For any feedback, suggestions or bug reports, please file an issue at the <a href="https://gitlab.gnome.org/World/Graphs/-/issues/">GitLab issue tracker</a>.
+
+<img src="https://thisweek.gnome.org/posts/2024/04/twig-145/wEOjJqThEviNQZVdoXDVyJsR.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/04/twig-145/MOJRlxgsKENPNTqyFoaLgNFn.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/04/twig-145/LrxmSYKljSygwAhLiLvFadAW.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/04/twig-145/LrxmSYKljSygwAhLiLvFadAW.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@ramcq:matrix.org">ramcq</a> announces</p>
+<blockquote>
+<p>The board of the GNOME Foundation is pleased to <a href="https://discourse.gnome.org/t/update-from-the-board/20653">share an update</a> about finances, strategy, fundraising, and our exciting plans to bring more diverse and inclusive representation into how the Foundation is governed and can best support and promote the GNOME community. We&rsquo;re adding two seats to the board from the upcoming election which starts next month, and are interested to speak with prospective candidates about what&rsquo;s involved and how they can help.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

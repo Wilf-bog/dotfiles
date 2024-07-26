@@ -1,0 +1,156 @@
+
+         
+         <p>This is a simple package that renders an indicator with an email count
+of the <code class="language-plaintext highlighter-rouge">notmuch</code> index on the Emacs mode line.  The underlying mechanism
+is that of <code class="language-plaintext highlighter-rouge">notmuch-count(1)</code>, which is used to find the number of items
+that match the given search terms.  In practice, the user can define one
+or more searches and display their counters.  These form a listing which
+realistically is like: <code class="language-plaintext highlighter-rouge">@50 😱1000 💕0</code> for unread messages, bills, and
+love letters, respectively.</p>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">notmuch-indicator</code></li>
+  <li>Official manual: <a href="https://protesilaos.com/emacs/notmuch-indicator">https://protesilaos.com/emacs/notmuch-indicator</a></li>
+  <li>Change log: <a href="https://protesilaos.com/emacs/notmuch-indicator-changelog">https://protesilaos.com/emacs/notmuch-indicator-changelog</a></li>
+  <li>Git repositories:
+    <ul>
+      <li>GitHub: <a href="https://github.com/protesilaos/notmuch-indicator">https://github.com/protesilaos/notmuch-indicator</a></li>
+      <li>GitLab: <a href="https://gitlab.com/protesilaos/notmuch-indicator">https://gitlab.com/protesilaos/notmuch-indicator</a></li>
+    </ul>
+  </li>
+  <li>Backronym: notmuch-… Interested in Notmuch Data Indicators that
+Count Any Terms Ordinarily Requested.</li>
+</ul>
+
+<p>Below are the release notes.</p>
+
+<hr />
+
+<p>This version brings quality-of-life refinements to an already stable
+package.</p>
+
+<h2>More styles for the indicator</h2>
+
+<p>The user option <code class="language-plaintext highlighter-rouge">notmuch-indicator-args</code> always accepted an optional
+face that was applied to the label that accompanies the given counter.
+The same can now be done for the counter itself. To be concrete:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LABEL       COUNTER
+
+[unread]    10
+</code></pre></div></div>
+
+<p>Or what you will most likely prefer:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[U] 10
+</code></pre></div></div>
+
+<p>The technicalities of how to set those up are covered in the
+documentation string of <code class="language-plaintext highlighter-rouge">notmuch-indicator-args</code>. Here is a variant of
+what I use (I actually have custom faces):</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">setq</span> <span class="nv">notmuch-indicator-args</span>
+      <span class="o">'</span><span class="p">((</span> <span class="ss">:terms</span> <span class="s">"tag:unread and tag:inbox"</span>
+          <span class="ss">:label</span> <span class="s">"[A] "</span>
+          <span class="ss">:label-face</span> <span class="nv">font-lock-string-face</span>
+          <span class="ss">:counter-face</span> <span class="nv">font-lock-string-face</span><span class="p">)</span>
+        <span class="p">(</span> <span class="ss">:terms</span> <span class="s">"tag:unread and tag:inbox and not tag:package and not tag:coach"</span>
+          <span class="ss">:label</span> <span class="s">"[U] "</span>
+          <span class="ss">:label-face</span> <span class="nv">font-lock-type-face</span>
+          <span class="ss">:counter-face</span> <span class="nv">font-lock-type-face</span><span class="p">)</span>
+        <span class="p">(</span> <span class="ss">:terms</span> <span class="s">"tag:unread and tag:package"</span>
+          <span class="ss">:label</span> <span class="s">"[P] "</span>
+          <span class="ss">:label-face</span> <span class="nv">font-lock-function-name-face</span>
+          <span class="ss">:counter-face</span> <span class="nv">font-lock-function-name-face</span><span class="p">)</span>
+        <span class="p">(</span> <span class="ss">:terms</span> <span class="s">"tag:unread and tag:coach"</span>
+          <span class="ss">:label</span> <span class="s">"[C] "</span>
+          <span class="ss">:label-face</span> <span class="nv">font-lock-preprocessor-face</span>
+          <span class="ss">:counter-face</span> <span class="nv">font-lock-preprocessor-face</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<p>For backward-compatibility, <code class="language-plaintext highlighter-rouge">:face</code> has the same meaning as <code class="language-plaintext highlighter-rouge">:label-face</code>.</p>
+
+<h2>Control exactly where the indicator is placed</h2>
+
+<p>This is for advanced users, though I am happy to help you set it up if
+you are interested.</p>
+
+<p>By default, the indicator (the block with all the email counters) is
+appended to the mode line. It thus shows up on the mode line of the
+current window but also on that of all inactive windows.</p>
+
+<p>To control exactly where the indicator is placed set the user option
+<code class="language-plaintext highlighter-rouge">notmuch-indicator-add-to-mode-line-misc-info</code> to nil. This will no
+longer display the indicator on the mode line. Then do any of the
+following:</p>
+
+<ol>
+  <li>
+    <p>If you are using the built-in <code class="language-plaintext highlighter-rouge">tab-bar-mode</code>, add the
+<code class="language-plaintext highlighter-rouge">notmuch-indicator-tab-bar-format</code> to the list of <code class="language-plaintext highlighter-rouge">tab-bar-format</code>.
+Like this:</p>
+
+    <div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">setq</span> <span class="nv">tab-bar-format</span>
+      <span class="o">'</span><span class="p">(</span> <span class="nv">tab-bar-format-history</span>
+         <span class="nv">tab-bar-format-tabs</span>
+         <span class="nv">tab-bar-separator</span>
+         <span class="nv">tab-bar-format-add-tab</span>
+         <span class="nv">tab-bar-format-align-right</span>
+         <span class="nv">notmuch-indicator-tab-bar-format</span> <span class="c1">; here it is</span>
+         <span class="nv">tab-bar-separator</span>
+         <span class="nv">tab-bar-format-global</span><span class="p">))</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add the <code class="language-plaintext highlighter-rouge">notmuch-indicator-mode-line-construct</code> to the
+<code class="language-plaintext highlighter-rouge">mode-line-format</code>. This allows you to put it wherever you want,
+such as before the buffer name.</p>
+  </li>
+  <li>
+    <p>Create your own mode line construct with the extra logic you need
+and then add it anywhere you want in the <code class="language-plaintext highlighter-rouge">mode-line-format</code> list.
+This is what I do to display the indicator only on the active mode
+line:</p>
+
+    <div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;; Here is my variant of the indicator.</span>
+<span class="p">(</span><span class="nv">defvar-local</span> <span class="nv">prot-modeline-notmuch-indicator</span>
+    <span class="o">'</span><span class="p">(</span><span class="nv">notmuch-indicator-mode</span>
+      <span class="p">(</span><span class="s">" "</span>
+       <span class="p">(</span><span class="ss">:eval</span> <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">mode-line-window-selected-p</span><span class="p">)</span>
+                <span class="nv">notmuch-indicator--counters</span><span class="p">))))</span>
+  <span class="s">"The equivalent of `notmuch-indicator-mode-line-construct'.
+Display the indicator only on the focused window's mode line."</span><span class="p">)</span>
+
+<span class="c1">;; And here I format my modeline to place everything exactly where I want.</span>
+<span class="p">(</span><span class="nv">setq-default</span> <span class="nv">mode-line-format</span>
+              <span class="o">'</span><span class="p">(</span><span class="s">"%e"</span>
+                <span class="c1">;; ... things before</span>
+                <span class="nv">prot-modeline-notmuch-indicator</span>
+                <span class="c1">;; ... things after</span>
+                <span class="nv">prot-modeline-misc-info</span><span class="p">))</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2>Escape queries to avoid shell errors</h2>
+
+<p>We now escape all special shell characters before running the
+<code class="language-plaintext highlighter-rouge">notmuch</code> shell command to get the number of emails. This way, more
+complex queries are read without any issue. Thanks to Sébastien
+Delafond for the contribution, which was done in pull request 4:
+<a href="https://github.com/protesilaos/notmuch-indicator/pull/4">https://github.com/protesilaos/notmuch-indicator/pull/4</a>.</p>
+
+<p>The change is small, meaning that Sébastien does not need to assign
+copyright to the Free Software Foundation.</p>
+
+<h2>Bind call to the <code class="language-plaintext highlighter-rouge">notmuch</code> binary to the user’s home directory</h2>
+
+<p>The reason for this is explained by @shimeike (MikeS):
+<a href="https://github.com/protesilaos/notmuch-indicator/issues/2#issuecomment-1819853525">https://github.com/protesilaos/notmuch-indicator/issues/2#issuecomment-1819853525</a>.
+In short, we want to make sure we use the correct binary while
+visiting files via TRAMP.</p>
+
+<p>Also thanks to Mohamed Suliman for corroborating the findings
+discussed therein.</p>
+        
+      

@@ -1,0 +1,137 @@
+<p>Update on what happened across the GNOME project in the week from August 12 to August 19.</p>
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="newsflash-feed-reader">
+<a class="heading-anchor" href="#newsflash-feed-reader" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>NewsFlash feed reader <a href="https://gitlab.com/news-flash/news_flash_gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Follow your favorite blogs &amp; news sites.</p>
+<p><a href="https://matrix.to/#/@jangernert:matrix.org">Jan Lukas</a> says</p>
+<blockquote>
+<p>Thanks to a contribution of Pierre Auclair NewsFlash gained the ability to render Latex math formulas inside of articles with the help of mathjax.
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-57/RPYeAIfRBNZeBkoBpHAqrCpS.png" alt="NewsFlash showing an article with math formulas" />
+</p>
+</blockquote>
+
+
+<h3 id="kooha">
+<a class="heading-anchor" href="#kooha" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Kooha <a href="https://github.com/SeaDve/Kooha"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple screen recorder with a minimal interface. You can simply click the record button without having to configure a bunch of settings.</p>
+<p><a href="https://matrix.to/#/@sedve:matrix.org">SeaDve</a> reports</p>
+<blockquote>
+<p><a href="https://github.com/SeaDve">Kooha</a> 2.1.0 was released with the following new features and fixes:</p>
+<ul>
+<li>Previously selected video sources are now remembered.</li>
+<li>It is now possible to cancel while flushing the recording.</li>
+<li>Settings toggle button now uses different icons to discern state more clearly.</li>
+<li>Added 3 seconds delay option.</li>
+<li>MP4 encoder failing to initialize on uneven resolutions is now fixed.</li>
+<li>Fixed time display on time greater than an hour.</li>
+<li>Recordings are now stored default in a &ldquo;Kooha&rdquo; XDG videos subfolder. (This won&rsquo;t affect existing settings.)</li>
+<li>&ldquo;Show in Files&rdquo; button now highlights the recording in the file manager.</li>
+<li>Improve support information through the about window.</li>
+<li>Other error handling and stability improvements.</li>
+</ul>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@0xmrtt:matrix.org">0xMRTT</a> announces</p>
+<blockquote>
+<p>This week, <a href="https://github.com/GradienceTeam/Gradience">Gradience</a> (Adwaita Manager) have some improvements</p>
+<ul>
+<li>Project was renamed to &ldquo;<a href="https://github.com/GradienceTeam/Gradience">Gradience</a>&rdquo; to remove any confusion with official GNOME app.</li>
+<li>Monet <a href="https://github.com/avanishsubbiah/material-color-utilities-python">engine</a> performance improved (2 sec in v0.2.0 and 2.5 minutes in v0.1.0)</li>
+<li>Fixed invisible text in &ldquo;cards&rdquo; when Monet palette was applied</li>
+<li>Small UI improvements
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-57/DpDsuOEemkfJsUHfPBEMJBED.png" alt="Gradience showing the monet engine colors in light mode" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-57/EtHjVtiEWIJexLKcTzrSuXlE.png" alt="Gradience showing the monet engine colors in dark mode" />
+</li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@raggesilver:matrix.org">Paulo</a> says</p>
+<blockquote>
+<p>It&rsquo;s been over a month since <a href="https://flathub.org/apps/details/com.raggesilver.BlackBox">Black Box</a> was announced on TWIG. Since then, a lot has changed. Most recently, version 0.12.0 brought:</p>
+<ul>
+<li>Support for searching text in the terminal</li>
+<li>Support for customizing the number of lines kept in the buffer</li>
+<li>Support for reserving part of the header bar to drag the window</li>
+<li>Improved theme integration and refined UI</li>
+<li>Lower CPU usage, thanks to an update in VTE</li>
+</ul>
+<p>Also, 18 bugs have been fixed, and new translations have been added for 2 languages, with 2 more on the way. <a href="https://flathub.org/apps/details/com.raggesilver.BlackBox">Check it out!</a>
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-57/nLgMcyJsohsSTHGtVMfEUMYi.png" alt="BlackBox terminal showing system information and a color palette" />
+</p>
+</blockquote>
+
+
+<h3 id="bottles">
+<a class="heading-anchor" href="#bottles" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Bottles <a href="https://usebottles.com/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Easily run Windows software on Linux with Bottles!</p>
+<p><a href="https://matrix.to/#/@theevilskeleton:fedora.im">Hari Rana (TheEvilSkeleton)</a> announces</p>
+<blockquote>
+<p>Bottles 2022.8.14 was released!</p>
+<p>We are introducing <a href="https://github.com/hoytech/vmtouch">vmtouch</a> to cache data and improve performance! This can be enabled from preferences.</p>
+<p>We are also introducing a new dialog to configure <a href="https://github.com/DadSchoorse/vkBasalt">vkBasalt</a> settings, to change effects and color lookup table!</p>
+<p>To further integrate vkBasalt, we now allow modifying vkBasalt configurations per-bottle. This means that each bottle can now have a separate vkBasalt configuration!</p>
+<p>We brought back the dark mode switcher as well, as many desktop environments and distributions don&rsquo;t come with a dark style preference. That way, users have the option to force dark mode.</p>
+<p>Other changes include:</p>
+<ul>
+<li>Prevent programs from launching when clicking on the entry instead of the play button</li>
+<li>Windows can now be closed by pressing Escape</li>
+<li>The Library view now supports program settings overrides</li>
+<li>“Add to Steam” and “Add Desktop Entry” now supports integrations (Epic, Ubisoft, etc.)</li>
+<li>The bottles-cli “programs” option now list programs from integrations as well</li>
+<li>Gamescope is now compatible with FSR</li>
+<li>Minor UI improvements</li>
+<li>Fix missing translations, thanks to @A6GibKm</li>
+<li>Fix a bug in “Add to Steam”, was not supporting ~/.steam</li>
+<li>Fix a regression on renaming programs, this was causing duplicated entries</li>
+<li>Fix a bug in the internal-sandbox, wine symlinks were not unlinked if the username had special characters</li>
+<li>Fix a bug in generating desktop entries for programs with spaces in their names</li>
+<li>Fix a bug in the copy_dll dependency action, wildcards were not handled correctly, thanks to @siroccal</li>
+<li>Fix a bug in loading gstreamer libraries, were not respecting the bottle architecture</li>
+<li>Fix a regression in library mode, adding a new program was causing a loop when the bottle name and path mismatched</li>
+<li>Improved translations</li>
+</ul>
+<p>For more information about the new update, check out our <a href="https://usebottles.com/blog/release-2022.8.14/">release page</a>!
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-57/0f1cb2135830561db34064063701963ae8b0e05d.png" alt="Bottles vkBasalt settings" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-57/894af95c36d0354b4cd5870de17ea1741cec6e87.png" alt="Bottles vmtouch settings" />
+</p>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1>
+
+<h3 id="gtk-rs">
+<a class="heading-anchor" href="#gtk-rs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>gtk-rs <a href="https://gtk-rs.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Safe bindings to the Rust language for fundamental libraries from the GNOME stack.</p>
+<p><a href="https://matrix.to/#/@julianhofer:gnome.org">Julian 🍃</a> says</p>
+<blockquote>
+<p>I&rsquo;ve published two new sections of the gtk-rs book. They introduce Libadwaita, show how to add it to a gtk-rs app and let the Todo app use Libadwaita with minimal changes to the code base. You can find the libadwaita chapter here: <a href="https://gtk-rs.org/gtk4-rs/stable/latest/book/libadwaita.html">https://gtk-rs.org/gtk4-rs/stable/latest/book/libadwaita.html</a>.</p>
+<p>The sections have been reviewed by Alexander Mikhaylenko and Ivan Molodetskikh.</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> announces</p>
+<blockquote>
+<p>25 years ago this week, Miguel de Icaza <a href="https://mail.gnome.org/archives/gtk-list/1997-August/msg00123.html">announced</a> GNOME, a project for creating a free software desktop environment and application development platform. A quarter of a century later, and the GNOME project is still here, working to make a better, free, open desktop for everyone. <a href="https://happybirthdaygnome.org/">Happy birthday, GNOME</a>, and let&rsquo;s raise a glass to the next 25 years!</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

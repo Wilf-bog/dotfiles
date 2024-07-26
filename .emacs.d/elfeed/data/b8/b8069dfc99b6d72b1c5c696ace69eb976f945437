@@ -1,0 +1,272 @@
+<p>Update on what happened across the GNOME project in the week from February 09 to February 16.</p>
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@tbernard:gnome.org">Tobias Bernard</a> announces</p>
+<blockquote>
+<p>As part of the <a href="https://foundation.gnome.org/2023/11/09/gnome-recognized-as-public-interest-infrastructure/">GNOME STF (Sovereign Tech Fund)</a> project, a number of community members are working on infrastructure related projects.</p>
+<p><strong>Accessibility</strong></p>
+<ul>
+<li>Joanie worked on De-PyAtSpi-ing Orca
+<ul>
+<li>AtspiDocument: done
+<ul>
+<li>Create AT-SPI2 based utilities for the document interface.: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/f36310b6e">https://gitlab.gnome.org/GNOME/orca/-/commit/f36310b6e</a></li>
+<li>Use AXDocument in chromium, gecko, and thunderbird scripts + bookmarks: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/ebe677317">https://gitlab.gnome.org/GNOME/orca/-/commit/ebe677317</a></li>
+<li>Use AXDocument in the web script: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/7a3dc4871">https://gitlab.gnome.org/GNOME/orca/-/commit/7a3dc4871</a></li>
+</ul>
+</li>
+<li>AtspiComponent: done
+<ul>
+<li>Add an AT-SPI2 grab_focus function to AXObject and use it instead of pyatspi: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/a43dfffa3">https://gitlab.gnome.org/GNOME/orca/-/commit/a43dfffa3</a></li>
+<li>Create AT-SPI2 component interface utilities: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/47c76e406">https://gitlab.gnome.org/GNOME/orca/-/commit/47c76e406</a></li>
+<li>Use AXComponent in the event synthesizer: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/1e004fe98">https://gitlab.gnome.org/GNOME/orca/-/commit/1e004fe98</a></li>
+<li>Use AXComponent in more places: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/a0602b147">https://gitlab.gnome.org/GNOME/orca/-/commit/a0602b147</a></li>
+<li>Begin using AXComponent in scripts and Where Am I Presenter: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/2e595ce6a">https://gitlab.gnome.org/GNOME/orca/-/commit/2e595ce6a</a></li>
+<li>Use AXComponent in script utilities and flat review: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/b6a87ff05">https://gitlab.gnome.org/GNOME/orca/-/commit/b6a87ff05</a></li>
+<li>Use AXComponent in a couple of places missed before: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/c1761de2a">https://gitlab.gnome.org/GNOME/orca/-/commit/c1761de2a</a></li>
+<li>Remove code obsoleted by AXComponent: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/1573c7d37">https://gitlab.gnome.org/GNOME/orca/-/commit/1573c7d37</a></li>
+</ul>
+</li>
+<li>AtspiText: WIP
+<ul>
+<li>Last (known) use of pyatspi in Orca</li>
+<li>Orca should be pyatspi-free when Orca v46 is released 🎉</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Joanie removed some hacks from Orca
+<ul>
+<li>Remove broken _adjustPositionForObj hack: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/1654dfa69">https://gitlab.gnome.org/GNOME/orca/-/commit/1654dfa69</a></li>
+<li>Remove the isShowingAndVisible hack: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/e857c5361">https://gitlab.gnome.org/GNOME/orca/-/commit/e857c5361</a></li>
+<li>Remove isZombie; use AXObject.is_valid instead: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/5c3ef549f">https://gitlab.gnome.org/GNOME/orca/-/commit/5c3ef549f</a></li>
+<li>Web: Eliminate (nearly all of) our text sanity-checks and hacks: <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/0aab0e5da">https://gitlab.gnome.org/GNOME/orca/-/commit/0aab0e5da</a></li>
+</ul>
+</li>
+<li>Sam fixed some minor things in GNOME Shell
+<ul>
+<li>Style papercut fixes before freeze: <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3165">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3165</a></li>
+<li>Fixed the Screen Reader regression in Shell&rsquo;s Alt-Tab interface: <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3127">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3127</a></li>
+</ul>
+</li>
+<li>Andy continued work in integration Spiel with Orca
+<ul>
+<li><a href="https://github.com/eeejay/spiel-demos/pull/1">https://github.com/eeejay/spiel-demos/pull/1</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/orca/-/merge_requests/182">https://gitlab.gnome.org/GNOME/orca/-/merge_requests/182</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>New Accessibility Stack (Newton)</strong></p>
+<ul>
+<li>Matt is working on a client library for Orca and other ATs</li>
+</ul>
+<p><strong>Platform</strong></p>
+<ul>
+<li>Andy fixed some papercuts withthe gnome-online-accounts settings panel UI: <a href="https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/2891">https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/2891</a></li>
+<li>Julian worked on making notifications in the calendar popover expandable and worked with Sam on refreshing the style <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3173">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3173</a></li>
+<li>Andy, Tobias, and Sam worked on fixing papercuts with the gnome-online-accounts GTK4 port
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/162">https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/162</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/164">https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/164</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/175">https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/175</a></li>
+</ul>
+</li>
+<li>We are investigating a solution for a UX regression AdwDialog <a href="https://gitlab.gnome.org/GNOME/libadwaita/-/issues/797">https://gitlab.gnome.org/GNOME/libadwaita/-/issues/797</a></li>
+<li>Evan landed async support on gobject introspection <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/-/merge_requests/404">https://gitlab.gnome.org/GNOME/gobject-introspection/-/merge_requests/404</a>
+<ul>
+<li>Async API support in GLib is deferred to next release <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3746">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3746</a></li>
+<li>Looking at how to update meson in other projects to use the new GLib GI compiler instead of the old one without async support.</li>
+</ul>
+</li>
+<li>Evan is working on finishing merging the gi.ts and ts-for-gir codebases for GI-driven TypeScript bindings. MR here: <a href="https://github.com/gjsify/ts-for-gir/pull/144">https://github.com/gjsify/ts-for-gir/pull/144</a></li>
+<li>Sonny landed AdwDialog support in Blueprint <a href="https://gitlab.gnome.org/jwestman/blueprint-compiler/-/merge_requests/177">https://gitlab.gnome.org/jwestman/blueprint-compiler/-/merge_requests/177</a></li>
+<li>Andy landed GTK4 port of GNOME Online Account
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/142">https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/142</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/2039">https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/2039</a></li>
+</ul>
+</li>
+<li>Andy landed migratation of existing WebDAV accounts in GOA <a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/146">https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/146</a></li>
+</ul>
+<p><strong>Hardware Support</strong></p>
+<ul>
+<li>Jonas worked on fractional scaling on XWayland <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3567">https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3567</a></li>
+<li>Jonas opened a mutter MR for fractional scaling on XWayland <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3567">https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3567</a></li>
+<li>Jonas landed screencast pipeline blocklisting (<a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2976">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2976</a>)
+<ul>
+<li>we are very close to getting the HW encoder support merged <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2080">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2080</a></li>
+</ul>
+</li>
+<li>Dor worked on variable refresh rate support, which is still under review <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/1154">https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/1154</a></li>
+<li>Dor implemented small refinements to the Settings UI for VRR <a href="https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/734">https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/734</a></li>
+<li>Dor added support for showing the VRR range of monitors in the Settings UI when possible:
+<ul>
+<li>Mutter: <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3576">https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3576</a></li>
+<li>Settings: <a href="https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/2260">https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/2260</a></li>
+</ul>
+</li>
+<li>Sam and Dor continued to iterate on the design for VRR in display settings
+<ul>
+<li>adjusted the design for the proposed list rows: <a href="https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/2523#note_2005469">https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/2523#note_2005469</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>Security</strong></p>
+<ul>
+<li>Dhanuka continued work on implementing the oo7-daemon: <a href="https://github.com/bilelmoussaoui/oo7/pull/56">https://github.com/bilelmoussaoui/oo7/pull/56</a>
+<ul>
+<li>Fixed most of the issues (a few remains) flagged by Bilal&rsquo;s review.</li>
+<li>Fixed some clippy warnings found in oo7 client when the unstable feature is on: <a href="https://github.com/bilelmoussaoui/oo7/pull/67">https://github.com/bilelmoussaoui/oo7/pull/67</a></li>
+<li>Updated oo7::portal::Keyring::create_item() to return portal::Item: <a href="https://github.com/bilelmoussaoui/oo7/pull/68">https://github.com/bilelmoussaoui/oo7/pull/68</a></li>
+<li>Updated oo7::portal::Keyring API&rsquo;s &ldquo;attributes&rdquo; parameter: <a href="https://github.com/bilelmoussaoui/oo7/pull/69">https://github.com/bilelmoussaoui/oo7/pull/69</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>Wayland &amp; Portal APIs</strong></p>
+<ul>
+<li>Hubert worked on a number of flatpak/portal related things:
+<ul>
+<li>libportal settings support
+<ul>
+<li>Fixed test so the app fits on smaller screens: <a href="https://github.com/flatpak/libportal/pull/142">https://github.com/flatpak/libportal/pull/142</a></li>
+<li>Settings API (in review) <a href="https://github.com/flatpak/libportal/pull/143">https://github.com/flatpak/libportal/pull/143</a></li>
+</ul>
+</li>
+<li>flatpak device support:
+<ul>
+<li>Proposed and started implementing a compatibility mechanism: <a href="https://github.com/flatpak/flatpak/issues/5681">https://github.com/flatpak/flatpak/issues/5681</a></li>
+<li>Running the test with ASAN leak all over the place: PR <a href="https://github.com/flatpak/flatpak/pull/5683">https://github.com/flatpak/flatpak/pull/5683</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="maps">
+<a class="heading-anchor" href="#maps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Maps <a href="https://wiki.gnome.org/Apps/Maps"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Maps gives you quick access to maps all across the world.</p>
+<p><a href="https://matrix.to/#/@flyingpimonster:matrix.org">James Westman</a> reports</p>
+<blockquote>
+<p>Maps' &ldquo;Experimental Map&rdquo; mode has a new look for GNOME 46! Features include:</p>
+<ul>
+<li>Dark mode</li>
+<li>Translated labels, where available</li>
+<li>Large Text accessibility setting</li>
+<li>Symbols for highway routes</li>
+<li>Adwaita icons</li>
+</ul>
+<p>You can read more about the new style in <a href="https://www.jwestman.net/2024/02/10/new-look-for-gnome-maps.html">my blog post</a>.</p>
+<p>Also in experimental mode, you can now click a label and the info bubble appears immediately, no need to right click and choose &ldquo;What&rsquo;s Here?&rdquo;.
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-135/DSiZrBiZmwbusylGjNriHCgl.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@zeenix:gnome.org">zeenix</a> says</p>
+<blockquote>
+<p><a href="https://github.com/dbus2/zbus/releases/tag/zbus-4.0.0">zbus 4.0</a> released. <a href="https://github.com/dbus2/zbus">zbus</a> is a pure Rust D-Bus crate that many GNOME apps and components rely on. The new version brings a more ergonomic and safer API.</p>
+</blockquote>
+
+
+<h3 id="newsflash-feed-reader">
+<a class="heading-anchor" href="#newsflash-feed-reader" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>NewsFlash feed reader <a href="https://gitlab.com/news-flash/news_flash_gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Follow your favorite blogs &amp; news sites.</p>
+<p><a href="https://matrix.to/#/@jangernert:matrix.org">Jan Lukas</a> says</p>
+<blockquote>
+<p>Newsflash 3.1 was released. It brings quality of life improvements and bugfixes.</p>
+<p><a href="https://blogs.gnome.org/jangernert/2024/02/12/newsflash-3-1/">https://blogs.gnome.org/jangernert/2024/02/12/newsflash-3-1/</a></p>
+</blockquote>
+
+
+<h3 id="apostrophe">
+<a class="heading-anchor" href="#apostrophe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Apostrophe <a href="https://gitlab.gnome.org/World/apostrophe"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A distraction free Markdown editor.</p>
+<p><a href="https://matrix.to/#/@somas95:gnome.org">Manu</a> says</p>
+<blockquote>
+<p>Apostrophe&rsquo;s bottombar has seen some improvements. Now the statistics button adapts to the available space, and a lot of under-the-hood changes have been made to the whole bottombar widget
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/02/twig-135/01aeb55147c00d28d5741b62d810a5dd1515ae131757067533145341952.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/02/twig-135/01aeb55147c00d28d5741b62d810a5dd1515ae131757067533145341952.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@ghani1990:matrix.org">ghani1990</a> reports</p>
+<blockquote>
+<p>This week, <a href="https://github.com/david-swift/Flashcards">Flashcards</a> app has introduced some exciting changes that enhance user experience and organization:</p>
+<ul>
+<li>Tags: Now, users can group flashcards within a set using tags. This feature streamlines organization and makes it easier to manage related cards.</li>
+<li>Keywords: The app also introduces keywords, allowing users to group entire sets. These keywords serve as filters in the sidebar, making it effortless to locate specific sets.
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-135/CacfiCkkfVoIrMAWQbosyRCk.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-135/gSbsdnSTeyjJHxhKRtMABpKT.png" alt="" />
+</li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@danialbehzadi:mozilla.org">دانیال بهزادی</a> says</p>
+<blockquote>
+<p>Love is in the air for privacy enthusiasts and individuals residing in tyrannical states. As a Valentine&rsquo;s Day gift version 4.5.0 of Carburetor released with support for Snowflake and WebTunnel bridges, providing you with even more opportunities to seamlessly connect to the TOR network.</p>
+<p>Built upon Libadwaita, Carburetor allows you to easily set up a TOR proxy on your session without getting your hands dirty with system configs. Initially designed to simplify the lives of GNOME enthusiasts on their mobile phones, it’s now fully usable with mouse and/or keyboard too.
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-135/c289f6c7456a19a2cfa4f343e6f81871f258d0381758173128904671232.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ghani1990:matrix.org">ghani1990</a> says</p>
+<blockquote>
+<p>A new update for <a href="https://flathub.org/apps/dev.edfloreshz.Done">Done</a>,The ultimate task management solution for seamless organization and efficiency, is now available! This update includes a new design, a moved services bar, and the ability to expand task details from within each task.
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-135/vimEkQhqTIwxEScoWxexgcfb.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-135/CtHJBZhSesjLfbUdHCiLjTOJ.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sungsphinx:matrix.org">Dexter Reed</a> announces</p>
+<blockquote>
+<p>Chats (aka Chatty) has been ported to use the modern libadwaita 1.4 widgets and sidebar by Chris Talbot, with some help from me (sungsphinx) and Bart Gravendeel (aka Monster).</p>
+<p>You can view the pull request here: <a href="https://gitlab.gnome.org/World/Chatty/-/merge_requests/1317">https://gitlab.gnome.org/World/Chatty/-/merge_requests/1317</a>
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-135/dfavaDXvtnRpGmqVIilPPPOm.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-135/TmVBBkcLyEGipfgbFHGgbSMr.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@xjuan:gnome.org">xjuan</a> says</p>
+<blockquote>
+<p>I am happy to announce Cambalache&rsquo;s Gtk4 port has a beta release!</p>
+<p>Version 0.17.2 features minors improvements and a brand new UI ported to Gtk 4!</p>
+<p>Available in flathub beta!</p>
+<p>More information at <a href="https://blogs.gnome.org/xjuan/2024/02/16/cambalache-gtk4-port-goes-beta/">https://blogs.gnome.org/xjuan/2024/02/16/cambalache-gtk4-port-goes-beta/</a>
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-135/9bed3ae769724d8fe1298158ce41380831a3950e1758500351943639040.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="blueprint">
+<a class="heading-anchor" href="#blueprint" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Blueprint <a href="https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A markup language for app developers to create GTK user interfaces.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> announces</p>
+<blockquote>
+<p><code>AdwAlertDialog</code> support was added to <a href="https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/">Blueprint</a>.
+Blueprint is able to support new widgets automatically thanks to GObject Introspection but some widgets have custom builder syntax that needs to be added to Blueprint. Here is the merge request if you&rsquo;d like to see how custom builder syntax works in Blueprint <a href="https://gitlab.gnome.org/jwestman/blueprint-compiler/-/merge_requests/177">https://gitlab.gnome.org/jwestman/blueprint-compiler/-/merge_requests/177</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

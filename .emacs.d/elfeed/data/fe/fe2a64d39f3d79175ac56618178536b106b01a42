@@ -1,0 +1,204 @@
+<p>Update on what happened across the GNOME project in the week from June 02 to June 09.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alice (she/they)</a> says</p>
+<blockquote>
+<p>libadwaita now has <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.OverlaySplitView.html"><code>AdwOverlaySplitView</code></a> as an overlay sidebar counterpart to <code>AdwNavigationSplitView</code> and a future replacement of <code>AdwFlap</code> that works with breakpoints. It provides a cleaned up API and the same dynamic sizing, styling and automatic window button handling as <code>AdwNavigationSplitView</code>
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-99/b62b886927b22ee22ff8b1fabfab156e5b6d912b.png" alt="Screenshot of a window with a utility pane at desktop sizes. There is a button at the top left with an icon mirroring the shape of the window. This button controls the visibility of the sidebar. It is currently toggled, and the sidebar shows next to the main content." />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-99/7c08ab5a4ccdafe4041d7ae2655e5b22d7de9236.png" alt="Screenshot of a window with a utility pane at a small width. There is a button at the top left with an icon mirroring the shape of the window. This button controls the visibility of the sidebar. It is currently toggled, and the sidebar overlays the main content." />
+</p>
+</blockquote>
+
+
+<h3 id="settings">
+<a class="heading-anchor" href="#settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Settings <a href="https://gitlab.gnome.org/GNOME/gnome-control-center"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Configure various aspects of your GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@toluene:matrix.org">Pedro Sader Azevedo</a> announces</p>
+<blockquote>
+<p>As part of an ongoing GSoC internship to integrate screen casting into GNOME, we&rsquo;re running a user survey to better understand the most common use-cases for this feature. Answer our poll on <a href="https://www.reddit.com/r/gnome/comments/143wfnh/what_would_you_use_screen_casting_for_in_gnome/">reddit</a> and leave a comment if you have the time, it&rsquo;ll be greatly appreciated!</p>
+</blockquote>
+
+
+<h3 id="gnome-builder">
+<a class="heading-anchor" href="#gnome-builder" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Builder <a href="https://gitlab.gnome.org/GNOME/gnome-builder"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>IDE for writing GNOME-based software.</p>
+<p><a href="https://matrix.to/#/@hergertme:gnome.org">hergertme</a> announces</p>
+<blockquote>
+<p>Now that GJS has merged support for running scripts within a given mozjs Realm, libpeas has gained support for loading plugins written in JavaScript. Christian&rsquo;s blog post at <a href="https://blogs.gnome.org/chergert/2023/06/02/gjs-plugins-for-libpeas-2-0/">https://blogs.gnome.org/chergert/2023/06/02/gjs-plugins-for-libpeas-2-0/</a> has more details on how to use this and how it will be integrated with GNOME Builder.</p>
+</blockquote>
+
+
+<h1 id="gnome-development-tools">
+<a class="heading-anchor" href="#gnome-development-tools" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Development Tools
+</h1><p><a href="https://matrix.to/#/@hergertme:gnome.org">hergertme</a> announces</p>
+<blockquote>
+<p>An initial alpha release of libmks is available at <a href="https://gitlab.gnome.org/chergert/libmks/-/releases/0.1.0">https://gitlab.gnome.org/chergert/libmks/-/releases/0.1.0</a>. Libmks provides a &ldquo;Mouse, Keyboard, and Screen&rdquo; implementation for QEMU utilizing the D-Bus display device. It supports importing DMA-BUF into GdkTexture with damages for more efficient rendering as part of a GTK 4-based application.</p>
+<p>We expect a number of new features to land in the future ranging from touchpad integration, clipboard, and sound devices.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@hergertme:gnome.org">hergertme</a> says</p>
+<blockquote>
+<p>Libdex, an async/await/futures library for GLib based applications, gained support for performing async I/O on traditional file-descriptors in the public API. This was always available internally and utilizes <code>io_uring</code> on Linux. Additionally, a number of new GIO abstractions were provided for <code>GDBusConnection</code> and <code>GSubprocess</code>. Fixes were also added to improve GObject Introspection integration.</p>
+</blockquote>
+
+
+<h3 id="gnome-builder">
+<a class="heading-anchor" href="#gnome-builder" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Builder <a href="https://gitlab.gnome.org/GNOME/gnome-builder"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>IDE for writing GNOME-based software.</p>
+<p><a href="https://matrix.to/#/@hergertme:gnome.org">hergertme</a> announces</p>
+<blockquote>
+<p>Hot on the heels of <code>libpeas-2</code> gaining support for JavaScript-based plugins powered by GJS, GNOME Builder has switched to JavaScript as it&rsquo;s dynamic language for plugins. That means you can write third-party plugins for Builder in C, C++, Rust, Vala, JavaScript, or any other language which supports both GObject Introspection and compiling to a shared library (<code>.so</code>).</p>
+</blockquote>
+
+
+<h1 id="gnome-incubating-apps">
+<a class="heading-anchor" href="#gnome-incubating-apps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Incubating Apps
+</h1>
+
+<h3 id="loupe">
+<a class="heading-anchor" href="#loupe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Loupe <a href="https://gitlab.gnome.org/Incubator/loupe"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple and modern image viewer.</p>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie (busy)</a> says</p>
+<blockquote>
+<p>Loupe is now using <a href="https://gitlab.gnome.org/sophie-h/glycin">glycin</a> to decode images. Glycin is a new library that loads images via sandboxed processes. This will allow adding support for additional image formats via additional loaders, similar to GdkPixbuf. The sandboxed image loading will increase security and neatly separate image loading from the Loupe UI. There will be more details announced on this in the future. You can try the changes via <a href="https://nightly.gnome.org/">GNOME Nightly</a>.</p>
+<p>There have also been a bunch of smaller fixes and tweaks by new contributors. If you are interested in contributing as well, we are trying to keep a list of <a href="https://gitlab.gnome.org/GNOME/Incubator/loupe/-/issues/?label_name%5B%5D=4.%20Newcomers">“Newcomers” issues</a> now.</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="solanum">
+<a class="heading-anchor" href="#solanum" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Solanum <a href="https://gitlab.gnome.org/World/Solanum"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Balance working time and break time.</p>
+<p><a href="https://matrix.to/#/@brainblasted:gnome.org">Chris 🌱️</a> reports</p>
+<blockquote>
+<p>Solanum 4.0.0 is out with the feature to restart your pomodoro sessions from the beginning and some fixes for long-standing bugs.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@byteseb:matrix.org">ByteSeb</a> says</p>
+<blockquote>
+<p>I made a simple Rock, Paper, Scissors Libadwaita application. It serves as a demo for my free Libadwaita App Development video tutorial. You can inspect the source code at: <a href="https://github.com/ByteSeb/Duel">https://github.com/ByteSeb/Duel</a>
+And watch the tutorial at: <a href="https://youtu.be/WtvObZHhdf0">https://youtu.be/WtvObZHhdf0</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@adhami:matrix.org">Khaleel Al-Adhami</a> announces</p>
+<blockquote>
+<p>In under 24 hours, I made Impression; the simplest app you could imagine to create bootable devices with a clean interface. All while following safe flatpak permissions!</p>
+<p><a href="https://flathub.org/apps/io.gitlab.adhami3310.Impression">https://flathub.org/apps/io.gitlab.adhami3310.Impression</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-99/pBVyhEMGDZYQoccvivbuyctL.png" alt="Screenshot of Impression&amp;rsquo;s main window. It shows the name of the .iso file the user selected above a list of two devices with the top device selected. Below the list there&amp;rsquo;s a big red &amp;ldquo;Flash!&amp;rdquo; button and a warning that all data on the selected device will be erased." />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@tfuxu:matrix.org">tfuxu</a> reports</p>
+<blockquote>
+<p>Halftone 0.3.0 is out! It comes with a slightly revised look to the dithering page, new controls for brightness and contrast, and a button for opening previews in external image viewers. You can check it out on <a href="https://github.com/tfuxu/halftone">Github</a> or download directly from <a href="https://flathub.org/apps/io.github.tfuxu.Halftone">Flathub</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-99/OjgMWpDCchbgKwLUuhWQxvSl.png" alt="Screenshot of Halftone&amp;rsquo;s main window. The image selected is a picture of a frog on a plant, looking toward the viewer. Below it is a list of dithering options." />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@imansalmani:matrix.org">Iman Salmani</a> says</p>
+<blockquote>
+<p><a href="https://github.com/iman-salmani/iplan">IPlan 1.4.0</a> is now out!</p>
+<p>New features and updates</p>
+<ul>
+<li>Backing up system</li>
+<li>Calendar for Exploring tasks by date</li>
+<li>Tasks can have date and reminders (Application will remain in background for handling reminders)</li>
+<li>When a task doesn&rsquo;t have record, Timer button will move to options</li>
+<li>Record edit window</li>
+<li>Now users able to edit record duration by changing start time</li>
+<li>Bug fixes, and UI improvements</li>
+</ul>
+<p>You can get it from <a href="https://flathub.org/apps/ir.imansalmani.IPlan">flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-99/gusbhqivhPpXlKonosGpIpuq.png" alt="Screenshot of IPlan&amp;rsquo;s main window, showing various projects and their associated tasks." />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-99/gkyQLKoXewKcxlBCgKEBOVrJ.png" alt="Screenshot of IPlan&amp;rsquo;s task configuration window, showing options to configure on the task and subtasks." />
+</p>
+</blockquote>
+
+
+<h3 id="furtherance">
+<a class="heading-anchor" href="#furtherance" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Furtherance <a href="https://github.com/lakoliu/Furtherance"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Track your time without being tracked.</p>
+<p><a href="https://matrix.to/#/@rickykresslein:matrix.org">Ricky Kresslein</a> reports</p>
+<blockquote>
+<p><a href="https://github.com/lakoliu/Furtherance">Furtherance</a> v1.8.0 was released and includes lots of new features:</p>
+<ul>
+<li>Today&rsquo;s total time ticks up with the current timer (optional)</li>
+<li>Added &lsquo;This week&rsquo; and &lsquo;Last week&rsquo; options to Reports</li>
+<li>Exported CSVs have a total seconds column</li>
+<li>Total time is displayed across from the date in the task list</li>
+<li>The task input and history list expand with the window</li>
+<li>Preferences is sorted into three sections
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-99/twMylpVrXhnUhhHZJYsEynzO.png" alt="Screenshot of Furtherance&amp;rsquo;s main window, showing tasks across multiple days. The timer is not running." />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="denaro">
+<a class="heading-anchor" href="#denaro" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Denaro <a href="https://flathub.org/apps/details/org.nickvision.money"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Manage your personal finances.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> announces</p>
+<blockquote>
+<p>Denaro <a href="https://github.com/NickvisionApps/Denaro/releases/tag/2023.6.0-beta2">V2023.6.0-beta2</a> has been released this week! Version 2023.6.0 is shaping up to be a big release with many new features and fixes!</p>
+<p>Here&rsquo;s the current changelog:</p>
+<ul>
+<li>Added a new account setup dialog to make it easier to configure new accounts</li>
+<li>Added the ability to remove recent accounts from the list</li>
+<li>Denaro will now suggest autocompletions for transaction descriptions</li>
+<li>Moved deleting groups and transactions from their rows to their dialogs</li>
+<li>Changed the default sorting order of new accounts to last to first by date</li>
+<li>Amounts shown in the sidebar will now reflect that of the transactions shown in view</li>
+<li>Fixed an issue importing CSV files</li>
+<li>Improved UI/UX</li>
+<li>Updated translations (Thanks to everyone on Weblate)!
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-99/nRKbhTYcCHnRYPsWPOyNHmYL.png" alt="Screenshot of Denaro&amp;rsquo;s account setup dialog." />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-99/EFIPkcWGaaSWBBHuneEtyPbI.png" alt="Screenshot of Denaro&amp;rsquo;s transaction dialog." />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="shell-extensions">
+<a class="heading-anchor" href="#shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Shell Extensions
+</h1><p><a href="https://matrix.to/#/@andyholmes:gnome.org">andyholmes</a> announces</p>
+<blockquote>
+<p>Shell Extensions now support donation URLs!</p>
+<p>Thanks to work by Martin Zurowietz and Javad Rahmatzadeh, extension developers can now add donation links for several popular services, as well as custom URLs.</p>
+<p>See the documentation at <a href="https://gjs.guide/extensions/overview/anatomy.html#donations">https://gjs.guide/extensions/overview/anatomy.html#donations</a> for details on how to get set up.</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@chenriksen:gnome.org">Caroline Henriksen</a> says</p>
+<blockquote>
+<p>This week, the GNOME Foundation has been getting everything ready for GUADEC 2023! The conference is only a month and a half away and there are still lots of tasks to do. The Riga team has planned two fun social outing options for our last conference day and we’re currently working on getting all the details up on the website as well as opening registration for both. In other event news, we will also be attending <a href="https://2023.fossy.us/">FOSSY</a>, hosted by the Software Freedom Conservancy, in July in Portland, OR (USA). If you’re in the area or planning to attend be sure to stop by our booth!</p>
+<p>In addition to event planning, we’re working on finalizing all of the articles for last year’s annual report. Once all of the writing is complete I’ll be designing the report and preparing it for online and print publication in time for GUADEC. Something we can always use help with is collecting photos for annual reports. If you have any GNOME photos from 2021-2022 that you would like to share please take a look at our <a href="https://gitlab.gnome.org/Teams/Engagement/AnnualReport/-/issues/73">GitLab issue</a> and consider submitting them.</p>
+<p>Reminders:
+The GUADEC 2023 call for BoFs and Workshops is open for a few more days. If you would like to host a BoF in Riga make sure to <a href="https://events.gnome.org/event/101/surveys/">submit your application</a> by June 12.</p>
+<p>We’re still looking for GUADEC 2023 sponsors! If you or your company would like to sponsor this year’s conference, you can find our brochure and learn more on <a href="https://events.gnome.org/event/101/page/167-sponsors">guadec.org</a>.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

@@ -1,0 +1,255 @@
+<p>Update on what happened across the GNOME project in the week from March 01 to March 08.</p>
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> reports</p>
+<blockquote>
+<p>As part of the <a href="https://foundation.gnome.org/2023/11/09/gnome-recognized-as-public-interest-infrastructure/">GNOME STF (Sovereign Tech Fund)</a> project, a number of community members are working on infrastructure related projects.</p>
+<p>Here are the highlights of the last 2 weeks.</p>
+
+
+<h3 id="accessibility">
+<a class="heading-anchor" href="#accessibility" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Accessibility
+</h3><p>Dorotha joined the team to work on global shortcuts portal for GNOME and better screen reader support on Wayland.</p>
+<p>Andy landed Spiel support in Orca <a href="https://gitlab.gnome.org/GNOME/orca/-/merge_requests/182">#182</a></p>
+<p><a href="https://github.com/eeejay/spiel">Spiel</a> is a speech synthesis (TTS) API and framework</p>
+<p><a href="https://gitlab.gnome.org/GNOME/orca">Orca</a> is the screen reader of the Linux desktop</p>
+
+
+<h3 id="hardware-support">
+<a class="heading-anchor" href="#hardware-support" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Hardware Support
+</h3><p>Ivan <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/7375#note_2026507">published experiments</a> on the extra frame of latency in GNOME Shell</p>
+<p>Ivan <a href="https://gitlab.gnome.org/-/snippets/6439">benchmarked and measured latency</a> of VTE (with Ptyxis), comparing together GTK&rsquo;s three renderers (current GL, new GL, new Vulkan)</p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-138/ba590a55e5a1c8e855efd935bb89b6b2e7f878d31766171132358033408.png" alt="" />
+</p>
+<p>Jonas landed <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3211">h264 (software) encoding for screencasts</a> -  recordings in GNOME 46 will be smoother on slow hardware and have better compatibility on the web</p>
+<p>Dor landed <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/1154">variable refresh rate support</a></p>
+
+
+<h3 id="platform">
+<a class="heading-anchor" href="#platform" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Platform
+</h3><p>Tobias submitted a <a href="https://gitlab.gnome.org/Teams/Design/os-mockups/-/blob/master/background-apps/background-apps-redux.png">mockup for extending background apps</a> with</p>
+<ul>
+<li>Dynamic actions that can change at runtime</li>
+<li>Show background apps in the dash with a dimmed dot indicator</li>
+<li>Show the status string and actions in the dash menu</li>
+</ul>
+<p>
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-138/49f4d6ef6e2147ad0970c9a8e17eac8eb496a4991766170917106352128.png" alt="" />
+</p>
+<p>Julian <a href="https://github.com/flatpak/xdg-desktop-portal/pull/1298">opened a draft for notifications API/portal v2</a></p>
+<p>Julian <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3173">landed expandable notifications in calendar drawer</a> - coming to GNOME 46</p>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/03/twig-138/4a223e4585ef561bce4efdf25222df140109619b1766170780367847424.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/03/twig-138/4a223e4585ef561bce4efdf25222df140109619b1766170780367847424.webm">download it</a> and watch it with your favorite video player!</span>
+</video>
+<p>Julian solved unecessary cases of <code>&lt;Application&gt; is ready</code> notifications <a href="https://github.com/flatpak/xdg-desktop-portal-gtk/pull/468">1</a>, <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3199">2</a>, <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3198">3</a>, <a href="https://gitlab.gnome.org/GNOME/libnotify/-/merge_requests/38">4</a></p>
+
+
+<h3 id="flatpak">
+<a class="heading-anchor" href="#flatpak" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flatpak
+</h3><p>Hub <a href="https://github.com/flatpak/libportal/pull/143">landed supports for the settings portal in libportal</a></p>
+<p>Hub <a href="https://github.com/flatpak/flatpak/pull/5708">opened a draft to implement fallback devices in Flatpak</a></p>
+<p>Georges <a href="https://github.com/WebKit/WebKit/pull/25496">submitted a patch to support geolocation in sandboxed Flatpak WebKit applications</a></p>
+<p>Georges <a href="https://github.com/WebKit/WebKit/pull/25575">submitted a patch to support Drag&rsquo;n Drop in Flatpak WebKit applications</a></p>
+
+
+<h3 id="home-encryption">
+<a class="heading-anchor" href="#home-encryption" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Home Encryption
+</h3><p>Adrian landed <a href="https://github.com/systemd/systemd/pull/30612">Freeze user sessions for all types of sleep</a> in systemd</p>
+<p>Adrian landed <a href="https://github.com/systemd/systemd/pull/31310">session fields for user-record</a> in systemd</p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="gjs">
+<a class="heading-anchor" href="#gjs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GJS <a href="https://gitlab.gnome.org/GNOME/gjs"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Use the GNOME platform libraries in your JavaScript programs. GJS powers GNOME Shell, Polari, GNOME Documents, and many other apps.</p>
+<p><a href="https://matrix.to/#/@ptomato:gnome.org">ptomato</a> says</p>
+<blockquote>
+<p>This week GJS 1.79.90 was released, the release candidate for GNOME 46. In this release we have a crash fix and some preparations for performance improvements.</p>
+<p>Also, have you ever tried using <code>WeakRef</code> or <code>FinalizationRegistry</code> in GJS and noticed &hellip; that they don&rsquo;t actually work? Due to not realizing that we had to do something on our end to enable these when Mozilla added them to the JS engine, it turns out the <code>WeakRef</code> would actually create a strong ref, and the <code>FinalizationRegistry</code>&rsquo;s callbacks would never be called. This is fixed now and you can use them with confidence because the functionality is now covered by tests! We also wrote <a href="https://github.com/mozilla-spidermonkey/spidermonkey-embedding-examples/pull/75">documentation for Mozilla&rsquo;s JS embedders repo</a> to prevent problems like this in the future.</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@hugolabe:matrix.org">Hugo Olabera</a> announces</p>
+<blockquote>
+<p>I just published version 3 of Wike, which is renewed to adapt to the new design styles in GNOME applications. It also adds some new features and the usual bunch of improvements and fixes.</p>
+<ul>
+<li>Side panel redesign that is now located on the left.</li>
+<li>New left bar that provides quick access to all side panel elements.</li>
+<li>Search moves to side panel.</li>
+<li>New design for the languages selection window.</li>
+<li>Selection mode added to the bookmarks and history lists.</li>
+<li>New option to hide the tab bar in desktop mode.</li>
+<li>New option to show all languages in language links.</li>
+<li>Added match counter for text searches.</li>
+<li>Switching to libsoup for Wikipedia queries.</li>
+<li>New and updated translations.</li>
+</ul>
+<p>Thanks to all contributors and translators!
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-138/KRANnLzunbZHqHewxYRArGeq.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-138/WHFerGDygjOwNZhTUXzoEmnC.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="warp">
+<a class="heading-anchor" href="#warp" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Warp <a href="https://gitlab.gnome.org/World/warp"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Fast and secure file transfer.</p>
+<p><a href="https://matrix.to/#/@felinira:matrix.org">Fina</a> announces</p>
+<blockquote>
+<p>Warp 0.7 beta 1 was released to Flathub beta. It includes experimental support for QR code scanning via PipeWire and the camera portal. This feature allows to initiate a file transfer just by scanning a code on the receiving device. Any feedback is much appreciated. 📸️</p>
+<p>To install the beta, follow the instructions in the beta announcement.
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-138/KouiCMiUHqsukZcGEISImRgW.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="apostrophe">
+<a class="heading-anchor" href="#apostrophe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Apostrophe <a href="https://gitlab.gnome.org/World/apostrophe"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A distraction free Markdown editor.</p>
+<p><a href="https://matrix.to/#/@somas95:gnome.org">Manu</a> says</p>
+<blockquote>
+<p>Alice has done a bunch of work on Apostrophe to port widgets to their new libadwaita counterparts, as well as improving the overall styling
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-138/133e777f03b9be94197bcdeb9ecc442f8a6b6c551766199721564569600.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-138/19f2aa62b699708bbc8bc65d6de8a7cdfaca2c811766199560171945984.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@slomo:matrix.org">slomo</a> says</p>
+<blockquote>
+<p>The GStreamer team is thrilled to announce a new major feature release of your favourite cross-platform multimedia framework!</p>
+<p>The 1.24 release series adds new features on top of the 1.22 series and is part of the API and ABI-stable 1.x release series.</p>
+<p>As always, this release is again packed with new features, bug fixes and many other improvements.</p>
+
+
+<h1 id="highlights">
+<a class="heading-anchor" href="#highlights" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Highlights
+</h1><ul>
+<li>New Discourse forum and Matrix chat space</li>
+<li>New Analytics and Machine Learning abstractions and elements</li>
+<li>Playbin3 and decodebin3 are now stable and the default in gst-play-1.0, GstPlay/GstPlayer</li>
+<li>The va plugin is now preferred over gst-vaapi and has higher ranks</li>
+<li>GstMeta serialization/deserialization and other GstMeta improvements</li>
+<li>New GstMeta for SMPTE ST-291M HANC/VANC Ancillary Data</li>
+<li>New unixfd plugin for efficient 1:N inter-process communication on Linux</li>
+<li>cudaipc source and sink for zero-copy CUDA memory sharing between processes</li>
+<li>New intersink and intersrc elements for 1:N pipeline decoupling within the same process</li>
+<li>Qt5 + Qt6 QML integration improvements including qml6glsrc, qml6glmixer, qml6gloverlay, and qml6d3d11sink elements</li>
+<li>DRM Modifier Support for dmabufs on Linux</li>
+<li>OpenGL, Vulkan and CUDA integration enhancements</li>
+<li>Vulkan H.264 and H.265 video decoders</li>
+<li>RTP stack improvements including new RFC7273 modes and more correct header extension handling in depayloaders</li>
+<li>WebRTC improvements such as support for ICE consent freshness, and a new webrtcsrc element to complement webrtcsink</li>
+<li>WebRTC signallers and webrtcsink implementations for LiveKit and AWS Kinesis Video Streams</li>
+<li>WHIP server source and client sink, and a WHEP source</li>
+<li>Precision Time Protocol (PTP) clock support for Windows and other additions</li>
+<li>Low-Latency HLS (LL-HLS) support and many other HLS and DASH enhancements</li>
+<li>New W3C Media Source Extensions library</li>
+<li>Countless closed caption handling improvements including new cea608mux and cea608tocea708 elements</li>
+<li>Translation support for awstranscriber</li>
+<li>Bayer 10/12/14/16-bit depth support</li>
+<li>MPEG-TS support for asynchronous KLV demuxing and segment seeking, plus various new muxer features</li>
+<li>Capture source and sink for AJA capture and playout cards</li>
+<li>SVT-AV1 and VA-API AV1 encoders, stateless AV1 video decoder</li>
+<li>New uvcsink element for exporting streams as UVC camera</li>
+<li>DirectWrite text rendering plugin for windows</li>
+<li>Direct3D12-based video decoding, conversion, composition, and rendering</li>
+<li>AMD Advanced Media Framework AV1 + H.265 video encoders with 10-bit and HDR support</li>
+<li>AVX/AVX2 support and NEON support on macOS on Apple ARM64 CPUs via new liborc</li>
+<li>GStreamer C# bindings have been updated</li>
+<li>Rust bindings improvements and many new and improved Rust plugins</li>
+<li>Rust plugins now shipped in packages for all major platforms including Android and iOS</li>
+<li>Lots of new plugins, features, performance improvements and bug fixes</li>
+</ul>
+<p>Full release notes can be found at: <a href="https://gstreamer.freedesktop.org/releases/1.24/">https://gstreamer.freedesktop.org/releases/1.24/</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@josh-leh:matrix.org">Can Lehmann</a> announces</p>
+<blockquote>
+<p>This week, <a href="https://github.com/can-lehmann/owlkettle">Owlkettle 3.0.0</a> has been released! Owlkettle is a declarative GUI framework for the Nim programming language based on GTK 4. This release wraps 27 new widgets and improves on the documentation:</p>
+<ul>
+<li>27 new GTK &amp; libadwaita widgets</li>
+<li>Support for custom CSS classes &amp; inline stylesheets</li>
+<li>Generate interactive widget examples with the <code>owlkettle/playground</code> module</li>
+<li><code>private</code> and <code>onlyState</code> modifiers</li>
+<li>Documentation website with guides on installation, application architecture and wrapping new widgets</li>
+</ul>
+<p>See the full <a href="https://github.com/can-lehmann/owlkettle/releases/tag/v3.0.0">changelog here</a>. This is a major release which contains breaking changes. A migration guide can be found <a href="https://can-lehmann.github.io/owlkettle/docs/migrating_2_to_3.html">here</a>.</p>
+<p>Thanks to all contributors!</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@rdbende:matrix.org">rdbende</a> reports</p>
+<blockquote>
+<p>After almost two years, we released <a href="https://flathub.org/apps/com.github.geigi.cozy">Cozy 1.3</a> last week! This release brings an updated user interface along with numerous bug fixes and improved performance.</p>
+<p>The user interface has been ported to GTK4 and Libadwaita. Thus, Cozy benefits from the new style sheet, automatic dark mode, and utilizes the latest and greatest UI elements throughout the application.</p>
+<p>Other changes include:</p>
+<ul>
+<li>Improved mobile support</li>
+<li>Smaller visual refinements to match the state of the art of GNOME apps</li>
+<li>Dozens of bug fixes and performance improvements</li>
+<li>Significant cleanup and improvements to the codebase</li>
+<li>As always, updated translations thanks to all translators!</li>
+</ul>
+<p>Many thanks to Julian Geywitz for the great app and codebase, and to all the contributors who helped make this release happen!
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-138/NLhZFkuQmlVvYNWTCbqMTsNF.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-138/VqJHYZnjpvBYaAsfhbdlKWkP.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="phosh">
+<a class="heading-anchor" href="#phosh" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Phosh <a href="https://gitlab.gnome.org/World/Phosh/phosh"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A pure wayland shell for mobile devices.</p>
+<p><a href="https://matrix.to/#/@agx:sigxcpu.org">Guido</a> says</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/World/Phosh">Phosh</a> 0.37.0 is out:</p>
+<ul>
+<li>Wi-Fi networks can now be selected from quick settings</li>
+<li>Add your own Custom quick settings via plugins</li>
+<li>There&rsquo;s a new caffeine quick setting using that</li>
+<li>Support cutouts and notches of 16 more phones</li>
+</ul>
+<p>There&rsquo;s more. Check the full details <a href="https://phosh.mobi/releases/rel-0.37.0/">here</a>
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-138/vxHNQhmMGKlgWmRLnimrLnft.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="shell-extensions">
+<a class="heading-anchor" href="#shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Shell Extensions
+</h1>
+
+<h3 id="just-perfection">
+<a class="heading-anchor" href="#just-perfection" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Just Perfection <a href="https://extensions.gnome.org/extension/3843/just-perfection/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A tweak tool to customize the GNOME Shell and to disable UI elements.</p>
+<p><a href="https://matrix.to/#/@justperfection:gnome.org">Just Perfection</a> reports</p>
+<blockquote>
+<p><a href="https://extensions.gnome.org/extension/3843/just-perfection/">Just Perfection extension</a> is ported to GNOME Shell 46.
+We have a new feature in this version called <em>window maximized by default</em> to open all windows in maximized automatically.
+This version is named after English artist Edward Lear.
+<a href="https://www.youtube.com/watch?v=FBMM8s2J2zI">https://www.youtube.com/watch?v=FBMM8s2J2zI</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

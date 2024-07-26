@@ -1,0 +1,138 @@
+<p>Update on what happened across the GNOME project in the week from January 06 to January 13.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="settings">
+<a class="heading-anchor" href="#settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Settings <a href="https://gitlab.gnome.org/GNOME/gnome-control-center"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Configure various aspects of your GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@melix99:gnome.org">Marco Melorio</a> says</p>
+<blockquote>
+<p>The redesign of the sound panel of GNOME Settings is continuing! This week the &ldquo;Volume Levels&rdquo; section has been moved in a separate window, to make the main panel more compact by default. Also, the app icons in the new design are now bigger and full-colored and the rows also include a volume level indicator.
+
+<img src="https://thisweek.gnome.org/posts/2023/01/twig-78/22eb9f4a4b7928cf2082c1cdb85bcc24d49947a3.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/01/twig-78/f7d0cf99b5ce0815549f71efd49ab79360de2256.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="tracker">
+<a class="heading-anchor" href="#tracker" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tracker <a href="https://gitlab.gnome.org/GNOME/tracker/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A filesystem indexer, metadata storage system and search tool.</p>
+<p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> says</p>
+<blockquote>
+<p>Carlos Garnacho added support in the Tracker database library for exporting data as <a href="https://en.wikipedia.org/wiki/JSON-LD">JSON-LD</a>. This will be available via the <code>tracker3 export</code> command in Tracker 3.5.</p>
+<p>This feature builds on a series of incremental improvements around data serialization and deserialization in libtracker-sparql. See <a href="https://gitlab.gnome.org/GNOME/tracker/-/merge_requests/523">MR tracker!523</a> for more details.</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="gaphor">
+<a class="heading-anchor" href="#gaphor" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gaphor <a href="https://gaphor.org"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple UML and SysML modeling tool.</p>
+<p><a href="https://matrix.to/#/@amolenaar:matrix.org">Arjan</a> reports</p>
+<blockquote>
+<p>This week Dan Yeaw released <a href="https://gaphor.org">Gaphor</a> 2.15.0. The improvements include, but are not limited to:</p>
+<ul>
+<li>Basic git merge conflict support by asking which model to load</li>
+<li>Improvements to CSS autocomplete for Gaphor&rsquo;s style sheets</li>
+<li>Native file chooser support in Windows</li>
+<li>Fixed UTF-8 encoding issues on Windows</li>
+<li>Fixed translations not loading in Windows, macOS, and AppImage</li>
+</ul>
+<p>Many thanks to everyone who helped out with translating Gaphor. Special thanks for <a href="https://github.com/vanillajonathan">Jonathan</a> and <a href="https://github.com/oscfdezdz">Óscar Fernández Díaz</a> for their code contributions.
+
+<img src="https://thisweek.gnome.org/posts/2023/01/twig-78/NXAZfTiRuuOXMhwdxKvOqiBi.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@raggesilver:matrix.org">Paulo</a> reports</p>
+<blockquote>
+<p>Black Box 0.13.0 is finally out! This release brings much-anticipated features and bug fixes:</p>
+<ul>
+<li>Customizable keyboard shortcuts with support for fully disabling shortcuts</li>
+<li>Background transparency</li>
+<li>Customizable cursor blinking mode</li>
+<li>Experimental Sixel support (Settings &gt; Advanced &gt; Sixel Support)</li>
+<li>Fixed scrolling on touchpad and touchscreens</li>
+<li>Fixed issues with copy/paste</li>
+</ul>
+<p>You can check out the full release notes <a href="https://gitlab.gnome.org/raggesilver/blackbox/-/releases/v0.13.0">here</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/01/twig-78/ubShBDQWiVupBhFpEfXwVUHc.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@romainvigier:matrix.org">Romain</a> announces</p>
+<blockquote>
+<p>I updated <a href="https://gitlab.com/rmnvgr/uishooter">UI Shooter</a>, my tool to take screenshots of GTK4 widgets, used for example in CI to take screenshots in different languages for documentation. The new release correctly sets the direction of widgets in right-to-left languages, and the <a href="https://gitlab.com/rmnvgr/uishooter/container_registry/2639982">container image</a> now includes all langpacks fonts.</p>
+</blockquote>
+
+
+<h3 id="rnote">
+<a class="heading-anchor" href="#rnote" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Rnote <a href="https://github.com/flxzt/rnote"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Sketch and take handwritten notes.</p>
+<p><a href="https://matrix.to/#/@flxzt:matrix.org">flxzt</a> says</p>
+<blockquote>
+<p>I just merged the <code>tabs</code> branch into <code>main</code> in the Rnote repository. Thanks to the awesome &ldquo;TabView&rdquo; libadwaita widget the tabs themselves were really easy to implement.  Alongside with it I also implemented a global colorpicker, and made the UI more pretty with floating toolbars. There are still some things left to do and likely bugs to squash, but I am really excited to get this out as a beta release soon.
+
+<img src="https://thisweek.gnome.org/posts/2023/01/twig-78/qinMQajFQvFDuttTxTFzAsBh.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="denaro">
+<a class="heading-anchor" href="#denaro" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Denaro <a href="https://flathub.org/apps/details/org.nickvision.money"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A personal finance manager.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> reports</p>
+<blockquote>
+<p>Money has been renamed to Denaro!
+As many of you have seen, Money has been rewritten in C# and has many new features. To further signify this great new release, Money has been renamed to Denaro! Although there is a new name, the code will continue to use <code>NickvisionMoney</code> for namespaces and <code>.nmoney</code> for files. All <code>.nmoney</code> files from previous stable Money releases are 100% compatible with Denaro.</p>
+<p>Denaro <a href="https://github.com/nlogozzo/NickvisionMoney/releases/tag/2023.1.0-rc1">V2023.1.0-rc1</a> was also released! Compared to previous betas:</p>
+<ul>
+<li>We implemented a completely new Account Settings dialog that allows users to further customize their Denaro accounts (including support for a custom currency).</li>
+<li>We also implemented the Export to PDF feature, which generates a beautiful overview report of your account with groups, transactions, and receipts all included.</li>
+<li>Documentation for the app is also available, built using yelp-tools which is available through the Help menu item on both GNOME and WinUI!</li>
+</ul>
+<p>We hoped to release the stable version today, but we found a memory leak that we are investigating and are trying to fix. New planned release day is Sunday :)
+
+<img src="https://thisweek.gnome.org/posts/2023/01/twig-78/DilKoOxAeNbOBdQvxJBdpZAH.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/01/twig-78/hAeaNhcOGxofYbsugdgctIcn.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="login-manager-settings">
+<a class="heading-anchor" href="#login-manager-settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Login Manager Settings <a href="https://realmazharhussain.github.io/gdm-settings/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A settings app for the login manager GDM.</p>
+<p><a href="https://matrix.to/#/@realmazharhussain:matrix.org">Mazhar Hussain</a> reports</p>
+<blockquote>
+<p><a href="https://github.com/realmazharhussain/gdm-tools">gdm-tools</a> <a href="https://github.com/realmazharhussain/gdm-tools/releases/tag/v1.2">v1.2</a> has been released.</p>
+<p>It is a boring bug fix release improving the install/uninstall experience. The only notable new feature is a <code>--no-ask</code> option to the install script which enables hands-free/non-interactive install process.</p>
+<p>I still recommend <a href="https://realmazharhussain.github.io/gdm-settings">Login Manager Settings</a> over this but for the people who want to use gdm-tools, the install/uninstall process should be better now.</p>
+</blockquote>
+
+
+<h3 id="flare">
+<a class="heading-anchor" href="#flare" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flare <a href="https://flathub.org/apps/details/de.schmidhuberj.Flare"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A unofficial Signal GTK client.</p>
+<p><a href="https://matrix.to/#/@schmiddi:matrix.org">schmiddi</a> reports</p>
+<blockquote>
+<p>Flare version 0.6.0 has been released. In the last few months, there were not too many updates happening with Flare, but many bugs were fixed that leads to Flare being more stable and usable. In total, in the last three months, there were seven minor releases of Flare fixing bugs.</p>
+<p>This week, Flare version 0.6.0 has been released with the major addition for notifications in the background. This means that (once the option is enabled in the settings) Flare will be able to start in the background and send message notifications without it being manually opened by the user. Furthermore, there has been some work done on restarting Flare after waking up from suspension, which is great for usage in Linux-based phones that regularly enter and exit suspension. This addition was mainly implemented by Cédric Bellegarde.</p>
+<p>In additions to these major features, a <a href="https://gitlab.com/Schmiddiii/flare/-/issues/4#note_1234642176">workaround</a> has been found for the <a href="https://gitlab.com/Schmiddiii/flare/-/issues/4">notorious issue</a> where Flare would not work with libsecret on some distributions. If you previously had that problem with Flare, applying that workaround should make Flare usable on your distribution. Furthermore, the summary of Flare has received a minor update to correct a grammatical mistake that was present for over six months.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

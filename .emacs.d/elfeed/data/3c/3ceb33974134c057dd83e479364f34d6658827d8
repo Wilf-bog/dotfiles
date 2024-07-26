@@ -1,0 +1,248 @@
+<p>Update on what happened across the GNOME project in the week from March 17 to March 24.</p>
+<p><strong>This week we released GNOME 44!</strong></p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-88/44_banner.png" alt="" />
+</p>
+<p>This new major version of GNOME is full of exciting changes, such as major improvements to the Settings app, a better quick settings menu, a streamlined Software app - and of course much more. More information can be found in the <a href="https://release.gnome.org/44/">GNOME 44 release notes</a>.</p>
+<p>Readers who have been following this site for a few weeks will already know some of the new features. If you want to follow the development of GNOME 45 (Fall 2023), keep an eye on this page - we&rsquo;ll be posting exciting news every week!</p>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@itsjamie9494:gnome.org">Jamie</a> announces</p>
+<blockquote>
+<p>AdwAboutWindow has a <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/ctor.AboutWindow.new_from_appdata.html"><code>new_from_appdata</code></a> constructor now, allowing creation of AdwAboutWindow from valid AppStream metadata
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-88/181a5a37d6a7890e9a01e449f397db3690112e85.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-incubating-apps">
+<a class="heading-anchor" href="#gnome-incubating-apps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Incubating Apps
+</h1>
+
+<h3 id="loupe">
+<a class="heading-anchor" href="#loupe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Loupe <a href="https://gitlab.gnome.org/Incubator/loupe"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple and modern image viewer.</p>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie 🏳️‍🌈 🏳️‍⚧️ ✊</a> says</p>
+<blockquote>
+<p>Loupe now supports showing animated GIFs, PNGs, and WebPs. The HEIC image format (x265 codec) can now be separated into an extension that is automatically loaded if available. This is primarily due to <a href="https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding#Patent_licensing">pending software patents</a> that might apply in some countries. Last but not least, the image format detection has been unified. Loupe will now, in many situations, be able to load images with the wrong extension and show the actual image format in the properties.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/03/twig-88/9b47e4fa67af897f2889f9cba36682b9b12e2cd1.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/03/twig-88/9b47e4fa67af897f2889f9cba36682b9b12e2cd1.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="share-preview">
+<a class="heading-anchor" href="#share-preview" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Share Preview <a href="https://github.com/rafaelmardojai/share-preview"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Test social media cards locally.</p>
+<p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> announces</p>
+<blockquote>
+<p>Share Preview 0.3.0 has been released in time for GNOME 44 and is available from <a href="https://flathub.org/apps/details/com.rafaelmardojai.SharePreview">Flathub</a>.</p>
+<p>It includes the following changes:</p>
+<ul>
+<li>New scraping logger feature</li>
+<li>Remember last selected social platform</li>
+<li>Design improvements</li>
+<li>Updated to use latest libadwaita features</li>
+<li>Many small bug fixes</li>
+<li>Updated translations
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-88/zbylChHZLocDLQvDruqpYcjc.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="identity">
+<a class="heading-anchor" href="#identity" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Identity <a href="https://gitlab.gnome.org/YaLTeR/identity"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Compare images and videos.</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> says</p>
+<blockquote>
+<p>I released Identity v0.5. In this version I implemented the long-awaited side-by-side comparison mode! Images and videos can be arranged in a row or a column, and their position and zoom remain fully synchronized.</p>
+<p>I also reworked mouse gestures for zooming, panning, and drag-and-drop, taking heavy inspiration from <a href="https://gitlab.gnome.org/Incubator/loupe">Loupe</a>. They make Identity much more pleasant to use.
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-88/e1d467972e77ea7f0b2ea40a3b18bb3033cea7fb.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/03/twig-88/65d75612c9deaf06f505fd79b3bfec28a59fbcd7.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/03/twig-88/65d75612c9deaf06f505fd79b3bfec28a59fbcd7.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="dialect">
+<a class="heading-anchor" href="#dialect" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Dialect <a href="https://github.com/dialect-app/dialect/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Translate between languages.</p>
+<p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> announces</p>
+<blockquote>
+<p>This week we merged some new things on Dialect. The preferences window has been redesigned a bit. Now you can choose from multiple text-to-speech providers, currently Google and Lingva. We also added new translation providers for Bing and Yandex.
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-88/KfYEGXFoYrbCPEDrZaJKDIFK.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="commit">
+<a class="heading-anchor" href="#commit" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Commit <a href="https://github.com/sonnyp/Commit"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An editor that helps you write better Git and Mercurial commit messages.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> says</p>
+<blockquote>
+<p>Commit message editor 4.0 is out</p>
+<ul>
+<li>GNOME 44</li>
+<li>Ask for confirmation before dismissing changes</li>
+<li>Show the name of the repository in the title bar</li>
+<li>Prevent shortcut from saving empty commit (by axtloss)</li>
+<li>Improve tooltips (by Felipe Kinoshita)</li>
+<li>Design improvements</li>
+</ul>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> reports</p>
+<blockquote>
+<p>After a few months, I finally got the time to do a release of the various design tools! The releases mostly contain bug fixes, translations updates &amp; code cleanups for:</p>
+<ul>
+<li><a href="https://flathub.org/apps/details/org.gnome.design.Contrast">Contrast</a></li>
+<li><a href="https://flathub.org/apps/details/org.gnome.design.AppIconPreview">App IconPreview</a></li>
+<li><a href="https://flathub.org/apps/details/org.gnome.design.IconLibrary">Icon Library</a></li>
+</ul>
+<p>Additionally <a href="https://flathub.org/apps/details/org.gnome.design.SymbolicPreview">Symbolic Preview</a> now supports exporting the css classes used by symbolic icons.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@swanux:matrix.org">swanux</a> reports</p>
+<blockquote>
+<p>This week I <a href="https://github.com/swanux/hbud/releases/tag/v0.4.2">released</a> version 0.4.2 of my simple mediaplayer HBud. As the version number indicates, it hasn&rsquo;t reached its final form yet, but with this version many problems have been ironed out. HBud is not intended to compete with any of the &ldquo;big ones&rdquo; (this being a one-man show, wouldn&rsquo;t even be possible), the goal is to provide a simple and convenient alternative for those with similar preferences to me. Check it out on <a href="https://flathub.org/apps/details/io.github.swanux.hbud">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-88/hGMHjOBPzLPvRRvMWAqJOawJ.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-88/fFgbwrHnNdPhMaJfixVeWqpQ.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="geopard">
+<a class="heading-anchor" href="#geopard" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Geopard <a href="https://github.com/ranfdev/Geopard"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A Gemini client.</p>
+<p><a href="https://matrix.to/#/@ranfdev:matrix.org">ranfdev</a> says</p>
+<blockquote>
+<p>﻿Geopard has finally received a new release!
+Take a look at the changes:</p>
+<ul>
+<li>Updated to latest libadwaita and GTK to improve performance and compatibility, including the use of the new Adw.TabOverview widget for improved tab management on small screens.</li>
+<li>Added support for opening files and gemini mime types from the command line.</li>
+<li>Added tab history menu on right click over arrows for easier navigation.</li>
+<li>Fixed issue with links without whitespace not working properly.</li>
+<li>Moved scrollbar to the edge of the window for a cleaner UI.</li>
+<li>Added tooltips for items in header bar to provide more information to users.</li>
+<li>Added more information to the About window to give users a better idea of the project&rsquo;s.</li>
+<li>Various fixes and refactorings.</li>
+</ul>
+<p>Download it from <a href="https://flathub.org/apps/details/com.ranfdev.Geopard">flathub</a></p>
+</blockquote>
+
+
+<h3 id="login-manager-settings">
+<a class="heading-anchor" href="#login-manager-settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Login Manager Settings <a href="https://realmazharhussain.github.io/gdm-settings/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A settings app for the login manager GDM.</p>
+<p><a href="https://matrix.to/#/@realmazharhussain:matrix.org">Mazhar Hussain</a> reports</p>
+<blockquote>
+<p><a href="https://realmazharhussain.github.io/gdm-settings">Login Manager Settings</a> <a href="https://github.com/realmazharhussain/gdm-settings/releases/tag/v3.beta.0">v3.beta.0</a> was released.</p>
+<p>Changes compared to the previous alpha release are:</p>
+<ul>
+<li>The flatpak runtime has been updated to version 44.</li>
+<li>Fixed a bug where the app could not launch on PureOS.</li>
+<li>A few code improvements were made.</li>
+</ul>
+</blockquote>
+
+
+<h3 id="cawbird">
+<a class="heading-anchor" href="#cawbird" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Cawbird <a href="https://ibboard.co.uk/cawbird/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A native Twitter client for your Linux desktop.</p>
+<p><a href="https://matrix.to/#/@coded_ore:matrix.org">CodedOre</a> reports</p>
+<blockquote>
+<p>After an overhaul of the system responsible for managing timelines, Cawbird 2.0 can now show and mark pinned posts on a users detail page.
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-88/bXmXMEFzamyMtTfpidusxige.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1><p><a href="https://matrix.to/#/@aday:gnome.org">Allan Day</a> reports</p>
+<blockquote>
+<p>With Libadwaita 1.3 officially released, GNOME&rsquo;s Human Interface Guidelines were updated to include <a href="https://developer.gnome.org/hig/patterns/feedback/banners.html">guidance on the new banner widget</a>. This replaces the guidance on info bars, which have been deprecated.</p>
+</blockquote>
+
+
+<h1 id="shell-extensions">
+<a class="heading-anchor" href="#shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Shell Extensions
+</h1>
+
+<h3 id="auto-activities">
+<a class="heading-anchor" href="#auto-activities" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Auto Activities <a href="https://extensions.gnome.org/extension/5500/auto-activities/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Show activities overview when there are no windows, or hide it when there are new windows.</p>
+<p><a href="https://matrix.to/#/@cleomenezesjr:matrix.org">Cleo Menezes Jr.</a> announces</p>
+<blockquote>
+<p>In this new version, Auto Activities receives significant improvements, some of which are:</p>
+<ul>
+<li>Add preference to ignore last workspace</li>
+<li>Hide New Window option is enabled by default.</li>
+<li>Revamp preferences window
+
+<img src="https://thisweek.gnome.org/posts/2023/03/twig-88/AwpxPzywYmVQoNAWDOqJWjYd.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/03/twig-88/ZVciHQMmiiQhThynpGHWwDBC.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/03/twig-88/ZVciHQMmiiQhThynpGHWwDBC.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></li>
+</ul>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@zana:gnome.org">Rosanna</a> reports</p>
+<blockquote>
+<p>Work at the Foundation is humming along. For me, this week was a paperwork week. This involved:</p>
+<ul>
+<li>Filing some paperwork with the state of California to keep us in good standing</li>
+<li>Checking on the status of staff health insurance policy</li>
+<li>Updating payroll</li>
+<li>Working with our 401k accountants on some tax forms</li>
+<li>Updating the employee handbook</li>
+<li>Reimbursing some travel expenses</li>
+<li>Forwarding some paperwork to the bank</li>
+<li>Updating the accounting books</li>
+<li>Invoicing some corporate sponsors</li>
+<li>etc.</li>
+</ul>
+<p>These are the types of things required to do on a regular basis to keep our foundation running.</p>
+<p>In addition, some of the staff got together this week to start compiling a document on all the programming we currently do to address diversity. We hope of getting a better idea of where we currently stand and what we can do to improve.</p>
+<p>Reminder: Get your talks for GUADEC submitted now! The deadline is March 27. More details at <a href="https://foundation.gnome.org/2023/02/24/guadec-2023-cfp/">https://foundation.gnome.org/2023/02/24/guadec-2023-cfp/</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

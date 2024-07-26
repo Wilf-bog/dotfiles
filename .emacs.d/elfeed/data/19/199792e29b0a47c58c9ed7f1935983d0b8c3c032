@@ -1,0 +1,156 @@
+<p>Update on what happened across the GNOME project in the week from December 03 to December 10.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>just in time for beta, the second part of Manu &rsquo;s work has landed and libadwaita now has physics-based spring animations. Leaflet, flap and carousel have all been updated to use them, and swipe tracker now provides velocity to pass into a spring animation, rather than a duration for a timed animation.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/12/twig-22/3692f2cf4c0a3dbb0ebfb5969c17e6d1ba3fdb73.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/12/twig-22/3692f2cf4c0a3dbb0ebfb5969c17e6d1ba3fdb73.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="mutter">
+<a class="heading-anchor" href="#mutter" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Mutter <a href="https://gitlab.gnome.org/GNOME/mutter/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A Wayland display server and X11 window manager and compositor library.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> announces</p>
+<blockquote>
+<p>Thanks to Carlos Garnacho, Mutter now sends input events at the device rate to applications. This should significantly increase perceived responsiveness for games and artistic applications. You can read more here: <a href="https://blogs.gnome.org/shell-dev/2021/12/08/an-eventful-instant/">https://blogs.gnome.org/shell-dev/2021/12/08/an-eventful-instant/</a></p>
+</blockquote>
+
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">YaLTeR</a> reports</p>
+<blockquote>
+<p>The work-in-progress new GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1954">screenshot UI</a> is slowly but surely making its way to completion.</p>
+<p>I added an area indicator during screencast recording making the boundaries easy to see. Also, screencasts no longer produce files with broken length.</p>
+<p>The screenshot/screencast switch and the preferences button got keyboard hotkeys, and window selection got arrow navigation, making the screenshot UI fully keyboard-accessible. New tooltips show the hotkeys, making them easier to learn.</p>
+<p>Finally, the screenshot UI mode is now preserved across screenshots letting you quickly take multiple window screenshots for example.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/12/twig-22/b143621941775e0bd0c000a77799b12a06848231.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/12/twig-22/b143621941775e0bd0c000a77799b12a06848231.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="video-trimmer">
+<a class="heading-anchor" href="#video-trimmer" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Video Trimmer <a href="https://gitlab.gnome.org/YaLTeR/video-trimmer"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Trim videos quickly</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> announces</p>
+<blockquote>
+<p><a href="https://flathub.org/apps/details/org.gnome.gitlab.YaLTeR.VideoTrimmer">Video Trimmer</a> v0.7 is out, featuring Adwaita updates, dark style &amp; high contrast support, optional re-encoding for accurate trimming, &ldquo;Show in Files&rdquo; button and new translations.
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-22/StztnmnbAlp2lXhi6Jf71lFkJphvB478pZZ68phQL7w.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="newsflash-feed-reader">
+<a class="heading-anchor" href="#newsflash-feed-reader" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>NewsFlash feed reader <a href="https://gitlab.com/news-flash/news_flash_gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Follow your favorite blogs &amp; news sites.</p>
+<p><a href="https://matrix.to/#/@jangernert:matrix.org">jangernert</a> says</p>
+<blockquote>
+<p>NewsFlash 2.0 (aka the Gtk4 port) now has functional CI flatpaks. It was blocked for a long time by the Gtk4 version of webkit. 🥳 to the maintainers of the org.gnome.Sdk runtime. More details about whats new will follow as we&rsquo;re inching closer to a release.
+In addition Felix Bühler (aka @Stunkymonkey) added FreshRSS support to NewsFlash.
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-22/MjBjtgdgIWugaFbwGtgrVtnj.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-22/mTSoNQiBPcUxAtGfkKUjUvHj.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="fragments">
+<a class="heading-anchor" href="#fragments" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fragments <a href="https://gitlab.gnome.org/World/Fragments"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Easy to use BitTorrent client.</p>
+<p><a href="https://matrix.to/#/@felix:haecker.io">Felix</a> says</p>
+<blockquote>
+<p>Earlier this week I released the first beta version of Fragments 2.0. To make the final version as bug-free as possible, please download the <a href="https://flathub.org/beta-repo/flathub-beta.flatpakrepo">beta version</a> and test it as much as possible (feedback is welcome!). I showcased many of the new features in a <a href="https://twitter.com/haeckerfelix/status/1467942368250839043">Twitter thread</a>.
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-22/KZfobceYldEmuCygrNQWqRpA.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@msandova:gnome.org">Maximiliano</a> reports</p>
+<blockquote>
+<p>Now App Icon Preview, Emblem and Icon Library count with support for drag and drop!</p>
+<p>You can drag icons from icon library into emblem, nautilus, or any svg editor. Both Emblem and App Icon Preview can now open SVG files by dragging them directly into the app.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/12/twig-22/62f046df3b2fa468ab6ef2489d32ab15cbe923ec.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/12/twig-22/62f046df3b2fa468ab6ef2489d32ab15cbe923ec.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="squeekboard">
+<a class="heading-anchor" href="#squeekboard" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Squeekboard <a href="https://gitlab.gnome.org/World/Phosh/squeekboard"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An on-screen-keyboard input method for Wayland</p>
+<p><a href="https://matrix.to/#/@guido.gunther:talk.puri.sm">Guido</a> reports</p>
+<blockquote>
+<p>Squeekboard now features PIN, url and email layouts. We also reworked the theme handling so squeekboard defaults to dark-mode when run with <a href="https://gitlab.gnome.org/World/Phosh/phosh">phosh</a> and matches its high contrast setting. Translations are now done via regular po files.
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-22/TegTLCPtPKgwdoIQziDtSsnd.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="phosh">
+<a class="heading-anchor" href="#phosh" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Phosh <a href="https://gitlab.gnome.org/World/Phosh/phosh"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A pure wayland shell for mobile devices.</p>
+<p><a href="https://matrix.to/#/@guido.gunther:talk.puri.sm">Guido</a> announces</p>
+<blockquote>
+<p>We&rsquo;ve released phosh 0.14.1 featuring</p>
+<ul>
+<li>avatars during phone calls on lockscreen</li>
+<li>DTMF during phone calls on lockscreen</li>
+<li>an initial &ldquo;Run command&rdquo; prompt (Alt-F2)</li>
+<li>better thumbnails in the overview</li>
+<li>docked mode improvements</li>
+<li>plenty of bug fixes and cleanups</li>
+<li>updated translations</li>
+</ul>
+<p>and much more. Check the full <a href="https://gitlab.gnome.org/World/Phosh/phosh/-/tags/v0.14.1">release notes</a>
+for more details and contributors.
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-22/snNdMjsBrtQCiHblUgKgUczw.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-shell-extensions">
+<a class="heading-anchor" href="#gnome-shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell Extensions
+</h1><p><a href="https://matrix.to/#/@schneegans:matrix.org">Simon Schneegans</a> says</p>
+<blockquote>
+<p>The new <a href="https://extensions.gnome.org/extension/4648/desktop-cube/">Desktop Cube Extension</a> does not increase your productivity but gives some good old Compiz vibes!
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/12/twig-22/FSLmYaPIROTLPSCWXNWKLPiM.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/12/twig-22/FSLmYaPIROTLPSCWXNWKLPiM.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@heartmire:matrix.org">heartmire</a> reports</p>
+<blockquote>
+<p>New extension - Focus changer. Change focus between windows in all directions using your keyboard. The extension will first try to find a suitable window within the same monitor. If there is none, it will try to find one on the next monitor in that direction (in a multi-monitor setup).</p>
+<p>Available for GNOME Shell 3.6 - 41</p>
+<p><a href="https://extensions.gnome.org/extension/4627/focus-changer/">https://extensions.gnome.org/extension/4627/focus-changer/</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

@@ -1,0 +1,144 @@
+<p>Update on what happened across the GNOME project in the week from June 30 to July 07.</p>
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="gaphor">
+<a class="heading-anchor" href="#gaphor" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gaphor <a href="https://gaphor.org"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple UML and SysML modeling tool.</p>
+<p><a href="https://matrix.to/#/@amolenaar:matrix.org">Arjan</a> says</p>
+<blockquote>
+<p>This week Dan Yeaw  released Gaphor 2.19.1. The simple modeling tool has received a lot of small improvements and bug fixes. Parts of the UI have been updated to use new GTK 4 elements. Information Flow for Associations has been added, and Object Flows can now connect to Join/Fork Nodes. Get your copy from <a href="https://gaphor.org/download/">Gaphor&rsquo;s download page</a> or directly from <a href="https://flathub.org/apps/org.gaphor.Gaphor">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-103/enLfMUqOGmufbNryQfpZLBWu.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="cartridges">
+<a class="heading-anchor" href="#cartridges" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Cartridges <a href="https://github.com/kra-mo/cartridges"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Launch all your games</p>
+<p><a href="https://matrix.to/#/@kramo:matrix.org">kramo</a> announces</p>
+<blockquote>
+<p>After months of work, Cartridges 2.0 is finally here.</p>
+<p>Two new import sources have been added: Legendary and Flatpak.</p>
+<p>Alongside several UX improvements, the import backed has been completely rewritten, huge thanks to <a href="https://github.com/GeoffreyCoulaud/">Geoffrey Coulaud</a>. This allows for faster imports, much better error handling and makes adding new sources much easier, so a lot more are coming soon!</p>
+<p>Check it out on <a href="https://flathub.org/apps/hu.kramo.Cartridges">Flathub</a>!
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-103/kOSlceGXEkXPjbLZwpjgqfvm.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@sidevesh:matrix.org">Swapnil Devesh</a> reports</p>
+<blockquote>
+<p>This week I released Luminance, an app that lets you change brightness of displays including external ones that support DDC/CI (almost all non ancient displays support it). The app is intentionally really simple, and integrates very well with GNOME desktop. It also has a CLI interface for adjusting brightness from scripts or keyboard shortcuts, its available to install for Arch based distros in AUR and deb and rpm packages are available on GitHub releases. Would be looking at porting to GTK4 next, would have loved to make it available as a Flatpak but don&rsquo;t think that would be possible due to the app needing permissions to access i2c and backlight devices.
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-103/pMFGKyKLUIRrYsqfQAMPSced.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@mrvladus:matrix.org">Vlad Krupinski</a> says</p>
+<blockquote>
+<p>After two weeks of development I&rsquo;ve released <a href="https://github.com/mrvladus/List">List</a> 44.6.7. The main feature of this release is implementation of Drag and Drop. Now you can easily move tasks around! Moving sub-tasks between tasks now works too.</p>
+<p>This update also includes:</p>
+<ul>
+<li>Added smooth fade effect on top of the tasks list</li>
+<li>Tasks list now scrolls when new task added</li>
+<li>Added button to scroll to the top</li>
+<li>Minor UI changes and improvements
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-103/IiSLxsQPdrQDBUBjxMKEGucf.png" alt="" />
+</li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@computerbustr:matrix.org">Gianni Rosato</a> announces</p>
+<blockquote>
+<p>Aviator 0.4.1 is released today with the following changes:</p>
+<ul>
+<li>The custom SVT-AV1 fork used in Aviator has been updated, promising up to a 40% speed improvement for the slower, higher quality presets</li>
+<li>A new &ldquo;Crop&rdquo; option for switching between cropping &amp; scaling resolution has been added</li>
+<li>The internal SVT-AV1 parameters have been tweaked for a 0.3-0.8% improvement in perceptual quality
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-103/ggyyMqnmMolaDXVJieQYZAWK.webp" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="phosh">
+<a class="heading-anchor" href="#phosh" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Phosh <a href="https://gitlab.gnome.org/World/Phosh/phosh"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A pure wayland shell for mobile devices.</p>
+<p><a href="https://matrix.to/#/@agx:sigxcpu.org">Guido</a> announces</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/World/Phosh/phosh">Phosh</a> 0.29.0 is out. This release adds improved audio device selection and notifications for ongoing calls. When phosh has information about a device&rsquo;s notches it can avoid placing UI elements there and you can enable suspend from the system menu. Notifications can now take more screen space on the lockscreen and we made a bunch of robustness fixes to the emergency info preferences plugin.
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-103/TrzlPLfKCPFKMngdlJgkblZO.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="parabolic">
+<a class="heading-anchor" href="#parabolic" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Parabolic <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Download web video and audio.</p>
+<p><a href="https://matrix.to/#/@fsobolev:matrix.org">Fyodor Sobolev</a> reports</p>
+<blockquote>
+<p>Parabolic <a href="https://github.com/NickvisionApps/Parabolic/releases/tag/2023.7.1">V2023.7.1</a> is here! In this release we fixed 2 bugs and added 1 new feature:</p>
+<ul>
+<li>Fixed an issue where CPU usage was high during download due to excessive logging</li>
+<li>When downloading a playlist with enabled metadata embedding, a media&rsquo;s position will be written to the tag&rsquo;s track property</li>
+<li>Fixed an issue where Validate button was sensitive during validation, causing error if the button was pressed multiple times</li>
+<li>Updated translations (Thanks everyone on Weblate!)</li>
+</ul>
+</blockquote>
+
+
+<h3 id="iplan">
+<a class="heading-anchor" href="#iplan" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>IPlan <a href="https://github.com/iman-salmani/iplan"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Your plan for improving personal life and workflow</p>
+<p><a href="https://matrix.to/#/@imansalmani:matrix.org">Iman Salmani</a> announces</p>
+<blockquote>
+<p><a href="https://github.com/iman-salmani/iplan">IPlan 1.8.0</a> is now out!
+What&rsquo;s changed:</p>
+<ul>
+<li>Move up and down option for tasks rows</li>
+<li>Fade effect for moving between projects</li>
+<li>Improve date format</li>
+<li>Popovers aligned and calendar navigation buttons width reduced, to fit in the phone form factor</li>
+<li>Code refactoring, Bug fixes, and UI improvements</li>
+</ul>
+<p>You can get it from <a href="https://flathub.org/apps/ir.imansalmani.IPlan">Flathub</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-103/sbhWVsCRSuzowPbOalJNDXEe.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="fretboard">
+<a class="heading-anchor" href="#fretboard" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fretboard <a href="https://github.com/bragefuglseth/fretboard"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Look up guitar chords</p>
+<p><a href="https://matrix.to/#/@bragefuglseth:matrix.org">Brage</a> reports</p>
+<blockquote>
+<p>This week I released <a href="https://github.com/bragefuglseth/fretboard">Fretboard</a>, an app that lets you find guitar chords by typing their names or plotting them on an interactive guitar neck. No matter if you are a beginner or an advanced guitarist, you can use Fretboard to practice, learn, and master your favorite songs!</p>
+<p>I&rsquo;d appreciate your help with improving the chord data. Please report any weird chord recommendations in the issue tracker, and I&rsquo;ll have a look at it.</p>
+<p>Install Fretboard from <a href="https://flathub.org/apps/dev.bragefuglseth.Fretboard">Flathub</a> and give it a spin!
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-103/XgysFywEoPVcLOqAqcAtkwkX.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@zana:gnome.org">Rosanna</a> says</p>
+<blockquote>
+<p>This was a short week because of the holiday, but there still was a lot going on. With GUADEC coming soon at the end of the month, the staff is working towards making sure everything happens as smoothly as possible. If you haven&rsquo;t signed up for the Latvia social trip yet, there are still some spots open: <a href="https://events.gnome.org/event/101/page/164-northern-latvia-trip">https://events.gnome.org/event/101/page/164-northern-latvia-trip</a>. I am very much looking forward to that!</p>
+<p>I spent a lot of this week catching up on lots of minutiae. There has been an emphasis on taxes and books this past month, as we have been onboarding our bookkeeper and working towards filing our taxes. I also renewed our mailbox, went over our foundation insurance policies, did state-mandated training, etc. In between that, I had meetings on the Executive Director search, travel issues, and finances, along with individual meetings with staff.</p>
+<p>I am also getting ready to attend FOSSY next week where I will be giving a talk on creating crosswords with free software. GNOME will also be running a booth there, so please drop on by and say hi if you are going to be in Portland!</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

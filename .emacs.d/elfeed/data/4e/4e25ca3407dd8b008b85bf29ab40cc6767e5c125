@@ -1,0 +1,81 @@
+<p>I want a minimal approach to making notes.</p>
+<p>I don&rsquo;t want anything fancy, just enough structure to be useful.</p>
+<p>When I see people&rsquo;s souped-up Obsidian note-taking vaults my head spins (OK, I&rsquo;m jealous). I also wonder, though, what <em>extra</em> result is achieved with a fantastically complex system. Having said that, I&rsquo;m keen on people <a href="https://writingslowly.com/2024/05/27/how-you-can.html">creating a working environment</a> that works for them, and I do admire people&rsquo;s creativity in this area.</p>
+<p>I just can&rsquo;t be bothered to do it myself.</p>
+<p>When discussing the Zettelkasten approach to making notes, it seems there are a lot of different note types to consider, which confuses people. The extensive discussion about different types of notes caused by reading Sonke Ahrens&rsquo;s book <em>How to Take Smart Notes</em> makes me think this multiple-note-types approach is just too complicated for me. So what do I do instead?</p>
+<p>I prefer to look directly at what sociologist <a href="https://niklas-luhmann-archiv.de/">Niklas Luhmann</a> did with his Zettelkasten (and the associated <a href="https://niklas-luhmann-archiv.de/projekt/publikationen">research project</a> on it.</p>
+<p>I&rsquo;ve also found inspiration in Dan Alloso&rsquo;s book, <em>How to Make Notes and Write</em>. This is what Anna Havron said about it at <a href="https://analogoffice.net/2022/08/12/a-paper-zettelkasten.html">Analogue Office</a></p>
+<blockquote>
+<p>&ldquo;I found Dan Allosso’s zettelkasten system to be cleaner and simpler than anything else I’ve read.
+He does not parse out four or five fine-grained types of notes (fleeting, literature, evergreen, sprout, etc).
+He uses two: source notes, and point notes. “Source Notes” are notes he makes mostly from the source but with some initial thoughts and questions. “Point Notes” are his own thoughts:
+“Others have called these “Main Notes” or “Permanent Notes” or “Evergreen Notes”. I called them Point Notes to remind myself that when I write them I should be making a point.” (Allosso 2022, p 66)&rdquo;</p>
+<ul>
+<li>Allosso, Dan; Allosso, S.F.(2022) <em>How to Make Notes and Write</em>. Kindle Edition.</li>
+</ul>
+</blockquote>
+<p>He&rsquo;s not the only person claiming there&rsquo;s only two kinds of notes. <a href="https://writing.bobdoto.computer/what-is-a-permanent-note-correcting-some-common-misunderstandings/">Bob Doto</a> says of Sonke Ahrens&rsquo;s book (p.23-24):</p>
+<blockquote>
+<p>&ldquo;the author refers to <strong>two categories of notes</strong><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> permanently stored in the slip-box: &ldquo;the main notes&rdquo; and &ldquo;literature notes.&rdquo;&rdquo;</p>
+</blockquote>
+<p>What I get from all this is that there are really only <em>two kinds of note</em> worth thinking about and putting in your Zettelkasten, at least when you start out. Yes, <em>only two</em>, and here they are:</p>
+<ol>
+<li>
+<p>The note you write to make sure you record the source of information. This is a <strong>source note</strong> (also known as a literature note or a reference note or a bibliographic note). As <a href="https://writing.bobdoto.computer/what-is-a-literature-note/">Bob Doto</a> says: it&rsquo;s &ldquo;a single note containing references to all the interesting passages in a book (or other piece of media) that you encounter.&rdquo;</p>
+</li>
+<li>
+<p>The note you write to make some kind of point, whatever it is. Ideally, this will be either a concept or a proposition, but&hellip; you do you. This is a <strong>point note</strong> (but you can call it a permanaent note, a main note, a Zettel, an evergreen note, or even, confusingly, a literature note, and that&rsquo;s fine too.)</p>
+</li>
+</ol>
+<p>Now I&rsquo;m going to show you what these two notes look like. They are quite straightforward.</p>
+<h2 id="what-does-a-source-note-look-like">What does a source note look like?</h2>
+<p>A source note looks like this (lifted from the excellent article <a href="https://writing.bobdoto.computer/what-is-a-literature-note/">What is a literature note?</a>:</p>
+<blockquote>
+<p>Ahrens, S. (2017). How to Take Smart Notes.
+CreateSpace Independent Publishing Platform.</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>13 reference to speed writing (effort)</li>
+<li>14 trying to squeeze too much (squeeze)</li>
+<li>15 no effort (effort)</li>
+<li>18 ref to bibliography (lit note)</li>
+<li>20 index ref (index)</li>
+<li>21 need only make a few changes (effort)</li>
+<li>24 discrepancies btw lit/perm (perm)</li>
+</ul>
+</blockquote>
+<p>You record the bibliographic details of something you&rsquo;re reading (or viewing or listening to), and you briefly note interesting ideas, with their page number.</p>
+<p>When you want to expand one of these ideas, you link the line on the source note to a point note that takes the idea further in some way.</p>
+<h2 id="what-does-a-point-note-look-like">What does a point note look like?</h2>
+<p>A note looks like this (from the indispensable article <a href="https://zettelkasten.de/introduction/">Introduction to the Zettelkasten Method</a>, which you should definitely read):
+<img src="https://cdn.uploads.micro.blog/97469/2024/complete-zettel.png" width="600" height="311" alt="a Zettel (note), annotated"></p>
+<p>Sure, a note like this has plenty of metadata such as an ID, a title, some links and maybe some references, but in the body of the note, the author is just making <em>a single point</em>.</p>
+<p>So, to recap: <strong>you only need two kinds of notes: source notes and point notes</strong> (or reference notes and main notes, or literature notes and&hellip; look, just call them what you want, OK?).</p>
+<p><strong>Bonus tip:</strong>  There is actually one other type of note that you might want to use once you’ve got your system going, but it&rsquo;s optional, especially when starting out.</p>
+<p>The one further useful kind of note is the <strong>hub note</strong> (or structure note, or map of content<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>). You use it to create a bit of structure in your collection of notes. But remember, <a href="https://writingslowly.com/2023/08/11/a-network-of.html">a network of notes is a rhizome not a tree</a>. You don&rsquo;t need to impose the structure prematurely - it arises organically from your notes as you write them, not from top-down categories.</p>
+<p>What does a hub note look like? It looks like a note title followed by a simple list of other linked note titles and note IDs. It’s almost like a mini- table of contents or an outline for an article. But really, it’s just a point note where the point of the note is: “here&rsquo;s a list of linked notes that are all related to the title of <em>this</em> note”. What&rsquo;s helpful about this is that the hubs emerge gradually from your notes as they accumulate, from the bottom up.</p>
+<p>That’s it really. Source notes, point notes and hub notes.</p>
+<p>That’s all you need to get going (and then to continue). After that you can invent all the note types you like, as and when they suit your particular uses. For example, in the novel <em>Lila</em>, Robert Pirsig’s protagonist Phaedrus writes about ‘program slips’, which describe how his note system works.</p>
+<blockquote>
+<p>&ldquo;PROGRAM slips were instructions for what to do with the rest of the slips. They kept track of the forest while he was busy thinking about individual trees. With more than ten thousand trees that kept wanting to expand to one hundred thousand, the PROGRAM slips were absolutely necessary to keep from getting lost.&rdquo;</p>
+</blockquote>
+<p>Well, maybe. Pirsig just made that note type up, as well as a few others, and so can you if you want.</p>
+<p><strong>Now read:</strong></p>
+<p><a href="https://writingslowly.com/2024/03/06/how-to-start.html">How to start a Zettelkasten from your existing deep experience</a></p>
+<p><a href="https://writingslowly.com/2024/01/26/even-the-index.html">Even the index is just another note</a></p>
+<p><a href="https://writingslowly.com/2024/01/29/does-the-zettelkasten.html">Does the Zettelkasten have a top and a bottom?</a></p>
+<p><a href="https://writingslowly.com/2024/01/10/three-worthwhile-modes.html">Three worthwhile modes of notetaking</a></p>
+<p><a href="https://writingslowly.com/2023/08/27/how-to-connect.html">How to connect your notes to make them more effective</a></p>
+<p><a href="https://writingslowly.com/2024/03/31/when-it-comes.html">When it comes to writing notes how much mess is just enough?</a></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>My emphasis&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>See Nick Milo’s <a href="https://www.linkingyourthinking.com/resources">Linking your Thinking</a> for detailed information about maps of content&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>

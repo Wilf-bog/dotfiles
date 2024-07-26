@@ -1,0 +1,302 @@
+<p>Update on what happened across the GNOME project in the week from January 21 to January 28.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> announces</p>
+<blockquote>
+<p>After thorough reviews from Tobias Bernard, Jonas Dreßler and Georges Stavracas, the main part of the <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1954">new GNOME Shell screenshot UI</a> has been merged for GNOME 42! 🎉🎉 Since the last time, the screenshot UI has got another round of design review, more polish and a big close button in the top right.</p>
+<p>Screencasts and a few other minor additions have been split into separate, smaller merge requests for easier review and should hopefully also make it in time for the GNOME 42 UI freeze next week.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/01/twig-28/62683d3c97e2e5c74a76b1103e459a5fa63f2ba1.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/01/twig-28/62683d3c97e2e5c74a76b1103e459a5fa63f2ba1.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="webkitgtk">
+<a class="heading-anchor" href="#webkitgtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>WebKitGTK <a href="https://webkitgtk.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>GTK port of the WebKit rendering engine.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> announces</p>
+<blockquote>
+<p>WebKitGTK has had a few touchscreen-related fixes and supports using the accent colors from the app or system when rendering scrollbars and other widgets now</p>
+</blockquote>
+
+
+<h3 id="vala">
+<a class="heading-anchor" href="#vala" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Vala <a href="https://gitlab.gnome.org/GNOME/vala"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An object-oriented programming language with a self-hosting compiler that generates C code and uses the GObject system</p>
+<p><a href="https://matrix.to/#/@Prince781:matrix.org">Prince781</a> says</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/GNOME/vala/-/commit/e13e0d6894abb17189f1846b8727b38388b739cc">Vala 0.55.2 has been released with new features and bug fixes.</a></p>
+<p>Last week we <a href="https://gitlab.gnome.org/GNOME/vala/-/commit/45fe8523ad392f1aaa0f24d83b63e91774938775">added support for <code>async main()</code></a>, allowing you to call asynchronous methods from <code>main</code> using <code>yield</code>.</p>
+<pre tabindex="0"><code class="language-vala" data-lang="vala">// ls.vala
+async int main (string[] args) {
+  string dir = args.length == 2 ? args[1] : &quot;.&quot;;
+  var file = File.new_for_commandline_arg (dir);
+  try {
+    FileEnumerator enumerator =
+      yield file.enumerate_children_async (
+        &quot;standard::*,time::*&quot;,
+        FileQueryInfoFlags.NOFOLLOW_SYMLINKS
+      );
+    List&lt;FileInfo&gt; children =
+      yield enumerator.next_files_async (int.MAX);
+    print (&quot;total %lu\n&quot;, children.length ());
+    foreach (var info in children) {
+      // &lt;file-type&gt; &lt;access-date&gt; &lt;size&gt; &lt;name&gt;
+      print (&quot;%26s %24s %10&quot;+int64.FORMAT+&quot; B %s\n&quot;,
+        info.get_content_type (),
+        info.get_access_date_time ().to_string (),
+        info.get_size (),
+        info.get_name ());
+    }
+  } catch (Error e) {
+    printerr (&quot;failed to enumerate files - %s\n&quot;, e.message);
+    return 1;
+  }
+  return 0;
+}
+</code></pre><p>Similarly, we added support for using <a href="https://gitlab.gnome.org/GNOME/vala/-/commit/eea3a2ac0e6ef4e88df5e9424b486f399d7ff036"><code>yield</code> within main blocks</a>.</p>
+<p>This week, we added support for using <code>foreach</code> with <a href="https://gitlab.gnome.org/GNOME/vala/-/commit/0db2ebd9035c95efa062ecab310bca88a70d8faf"><code>GLib.Array</code></a> and <a href="https://gitlab.gnome.org/GNOME/vala/-/commit/44195a02c9d26453dc698282deb4947425a4b0b1"><code>GLib.Sequence</code></a>.</p>
+<p>All these features are available in Vala 0.55.2 and you can use them in your code now.</p>
+</blockquote>
+
+
+<h3 id="libhandy">
+<a class="heading-anchor" href="#libhandy" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libhandy <a href="https://gitlab.gnome.org/GNOME/libhandy"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK3.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>libhandy development branch has been renamed from master to main. If you&rsquo;re using it as a subproject or in a flatpak manifest, you may need to update it</p>
+</blockquote>
+
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>Chris 🌱️ has implemented suffix widget support for AdwPreferencesGroup. Apps like Settings have been using a similar pattern for a while but we never had a proper support for it
+
+<img src="https://thisweek.gnome.org/posts/2022/01/twig-28/465c22222ad76d572f0dac227cd0fbe2fd29c72a.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-tour">
+<a class="heading-anchor" href="#gnome-tour" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Tour <a href="https://gitlab.gnome.org/GNOME/gnome-tour"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A guided tour and greeter for GNOME.</p>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> reports</p>
+<blockquote>
+<p>I have landed a slightly redesigned Tour and also dropped the video feature as it is no longer used by distributors
+
+<img src="https://thisweek.gnome.org/posts/2022/01/twig-28/04459f542b3de98e11a32a5706f124bfceac5c7b.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-builder">
+<a class="heading-anchor" href="#gnome-builder" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Builder <a href="https://gitlab.gnome.org/GNOME/gnome-builder"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>IDE for writing GNOME-based software.</p>
+<p><a href="https://matrix.to/#/@gwagner:gnome.org">gwagner</a> reports</p>
+<blockquote>
+<p>GNOME Builder resolves files now to a toolbox or podman container correctly and therefore can offer clang completions, symbol resolution and hover information from the container. This should make working in C/C++ with a container much more enjoyable. Also, Christian tweaked the colorschemes in Builder therefore the Adwaita colorscheme has much better contrast and a nice color palette to distinguish the elements better. Veli took the work and wrote a plugin to enable Builder to lint reStructured Text. And we fixed a little bug in our CMake plugin about the target path resolution.
+
+<img src="https://thisweek.gnome.org/posts/2022/01/twig-28/c60f78ad46957dca1e6d2634ad600243b8fd5c4d.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> reports</p>
+<blockquote>
+<p>Emmanuel Fleury has also been continuing his campaign against old tests and incomplete test coverage in GLib, moving a number of old tests to the newer test framework and improving code coverage as he goes</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> reports</p>
+<blockquote>
+<p>I extended GLib&rsquo;s gdbus-codegen tool to take a D-Bus interface XML file and produce a reStructuredText file that can be used with multiple documentation generators, like Python docutils and Sphinx, and simplify the process of documenting D-Bus API.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> says</p>
+<blockquote>
+<p>Marc-André Lureau and Loïc Le Page have been landing various fixes and improvements to GLib on Windows, including static linking support, <code>AF_UNIX</code> socket support, various test fixes, and <code>GMemoryMonitor</code> support</p>
+</blockquote>
+
+
+<h3 id="gjs">
+<a class="heading-anchor" href="#gjs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GJS <a href="https://gitlab.gnome.org/GNOME/gjs"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Use the GNOME platform libraries in your JavaScript programs. GJS powers GNOME Shell, Polari, GNOME Documents, and many other apps.</p>
+<p><a href="https://matrix.to/#/@ptomato:gnome.org">ptomato</a> says</p>
+<blockquote>
+<p>In GJS this week, we have a <a href="https://gitlab.gnome.org/GNOME/gjs/-/merge_requests/710/diffs">bug fix</a> from Nasah Kuma and a <a href="https://gitlab.gnome.org/GNOME/gjs/-/merge_requests/711/diffs">documentation fix</a> from Andy Holmes.</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="health">
+<a class="heading-anchor" href="#health" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Health <a href="https://gitlab.gnome.org/World/Health"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Collect, store and visualise metrics about yourself.</p>
+<p><a href="https://matrix.to/#/@cogitri:cogitri.dev">Cogitri</a> reports</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/World/Health">Health</a>&rsquo;s notifications have been reworked - instead of a separate daemon launching, Health itself is DBus-activatable now and sends notifications via a GApplication service. Additionally, Health&rsquo;s UI files have been ported to <a href="https://gitlab.gnome.org/jwestman/blueprint-compiler">Blueprint</a> and the overview of activities has been switched over to <code>AdwExpanderRow</code>.
+
+<img src="https://thisweek.gnome.org/posts/2022/01/twig-28/VCgJvZYEdNjqSnMdBlDRqEsq.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/01/twig-28/iedmWBVkNEQpRHrJiikbMyih.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="ashpd">
+<a class="heading-anchor" href="#ashpd" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>ashpd <a href="https://github.com/bilelmoussaoui/ashpd"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Rust wrapper around freedesktop portals.</p>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> says</p>
+<blockquote>
+<p>After months of work I have finally released <a href="https://lib.rs/ashpd">ashpd</a> 0.2. The release consists of a ton of changes that happened during the last 6 alpha releases and one beta. It consists of mostly:</p>
+<ul>
+<li>Async only API using <a href="https://lib.rs/zbus">zbus</a></li>
+<li>A new almost fully featured demo of the API available on <a href="https://flathub.org/apps/details/com.belmoussaoui.ashpd.demo">https://flathub.org/apps/details/com.belmoussaoui.ashpd.demo</a></li>
+<li>Integration with both GTK4/GTK3 for x11/Wayland window handle retrieval (optional)</li>
+<li>Integration with PipeWire for retrieving the camera NodeID when possible (optional)</li>
+<li>Integration with raw-window-handle crate to allow creating a WindowIdentifier from it, very useful for cross-platform crates that wants to make use of the portals on Linux (optional)</li>
+<li>Library calls logging using the tracing API (optional)</li>
+<li>Docs aliases for finding the Rust alternatives to what libportal offers or for finding the proxy to use from the DBus interface</li>
+<li>Enjoy!</li>
+</ul>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@tbernard:gnome.org">Tobias Bernard</a> reports</p>
+<blockquote>
+<p>I forgot to report it last week, but there&rsquo;s a new release of <a href="https://flathub.org/apps/details/im.bernard.Nostalgia">Nostalgia</a>, my tiny app to set historic GNOME wallpapers! It&rsquo;s been ported to GTK4 and Libadwaita thanks to Maximiliano, Alexander Mikhaylenko, and Julian Sparber 🎉
+
+<img src="https://thisweek.gnome.org/posts/2022/01/twig-28/233bb5da656eecb1dbd848f17a9f6be39cc56657.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="fractal">
+<a class="heading-anchor" href="#fractal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fractal <a href="https://gitlab.gnome.org/GNOME/fractal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Matrix messaging app for GNOME written in Rust.</p>
+<p><a href="https://matrix.to/#/@jsparber:gnome.org">Julian Sparber</a> announces</p>
+<blockquote>
+<p>Hello folks, it&rsquo;s been a while since we last spoke! We have been focused on the code, but we&rsquo;re long overdue for an update. A lot has happened since November. Fractal-Next is getting closer to feature parity with current Fractal, and even supports new things:</p>
+<ul>
+<li>
+<p>Timeline</p>
+<ul>
+<li>
+<p>Fractal-Next now allows you to open and save sent files</p>
+</li>
+<li>
+<p>It also displays images, videos and stickers in the timeline</p>
+</li>
+<li>
+<p>You can also get a better view of media send to the room thanks to the built-in media viewer</p>
+</li>
+<li>
+<p>It (finally!) supports reactions (displaying them and sending new ones)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>User verification</p>
+<ul>
+<li>
+<p>Fractal-Next now supports verification of other users by scanning their QR code, or via emoji</p>
+</li>
+<li>
+<p>When a user is verified, an icon is displayed next to their username in the list of room members</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Room details</p>
+<ul>
+<li>The room details show now the members of the room including the power level</li>
+</ul>
+</li>
+<li>
+<p>General UX</p>
+<ul>
+<li>
+<p>Fractal-Next is better integrated with GNOME&rsquo;s secret management service Seahorse</p>
+</li>
+<li>
+<p>It supports room upgrades</p>
+</li>
+<li>
+<p>It also supports inviting users to a room</p>
+</li>
+<li>
+<p>Users can change the category of rooms in the sidebar  via drag and drop or by using the context menu</p>
+</li>
+</ul>
+<p>If you want a more lengthy writing about what we&rsquo;ve been up to and a note about the NLnet grant, please head out to <a href="https://blogs.gnome.org/jsparber/2022/01/28/a-long-overdue-update-fractal-next/">my blog post &ldquo;A Long Overdue Update — Fractal Next&rdquo;</a>
+
+<img src="https://thisweek.gnome.org/posts/2022/01/twig-28/8e54c94c7d76b8e8a7f321487c586cd2f3943bf0.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/01/twig-28/ccb673ae54d9481d042bae1ea8e02eb462a58cc9.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/01/twig-28/7a631abacba98b5286db9a8d3e1885194bf40606.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/01/twig-28/6dc69e2663fb5e76b198eb1e8ed732842b151469.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/01/twig-28/6dc69e2663fb5e76b198eb1e8ed732842b151469.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="gnome-shell-extensions">
+<a class="heading-anchor" href="#gnome-shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell Extensions
+</h1><p><a href="https://matrix.to/#/@firox263:matrix.org">firox263</a> says</p>
+<blockquote>
+<p><a href="https://github.com/mjakeman/extension-manager/">Extension Manager</a>, a simple app for browsing and installing Shell Extensions, had its second release. This adds much-requested support for screenshots, as well as a new dark theme and many other quality of life improvements.</p>
+<p>The highlights are:</p>
+<ul>
+<li>Displays screenshots from extensions.gnome.org</li>
+<li>Dark theme support</li>
+<li>GNOME Shell version compatibility check</li>
+<li>Sort search results by Popularity, Recently Updated, etc</li>
+<li>Global extension on/off toggle</li>
+<li>Shows user and system extensions separately
+
+<img src="https://thisweek.gnome.org/posts/2022/01/twig-28/nJkEYRfvbiOrIFhlfUFagVSF.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/01/twig-28/oCenGKjBlRsWskuOpaWDhfMF.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@nmcgovern:matrix.org">Neil McGovern</a> says</p>
+<blockquote>
+<p>FOSDEM returns, virtually. At this year&rsquo;s virtual booth we have planned themed chat times with a variety of GNOME team, staff, and board members. Be sure to check out our booth page for a full schedule, fun GNOME links, and to join us in chat: <a href="https://stands.fosdem.org/stands/the_gnome_foundation/">https://stands.fosdem.org/stands/the_gnome_foundation/</a>. In true FOSDEM tradition, we&rsquo;re also hosting a GNOME Beers social! Bring your beverage of choice and join us for this informal virtual event on Feb 5th at 18:00 UTC. Let us know you&rsquo;re coming by <a href="https://events.gnome.org/event/96/">registering online</a>.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@nmcgovern:matrix.org">Neil McGovern</a> says</p>
+<blockquote>
+<p>The <a href="https://foundation.gnome.org/2022/01/21/further-investments-in-desktop-linux/">Foundation announced</a> three new projects that focus on improving our developer experience, making more applications available on the GNOME platform and creating a more equitable and sustainable revenue models for developers within our ecosystems.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

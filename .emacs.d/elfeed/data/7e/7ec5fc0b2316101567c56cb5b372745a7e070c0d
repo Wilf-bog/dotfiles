@@ -1,0 +1,152 @@
+<p>Update on what happened across the GNOME project in the week from October 06 to October 13.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="software">
+<a class="heading-anchor" href="#software" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Software <a href="https://gitlab.gnome.org/GNOME/gnome-software/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Lets you install and update applications and system extensions.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> reports</p>
+<blockquote>
+<p>gnome-software has branched for 46, and Milan Crha has started landing various nice UI fixes which had been queued up after 45</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="video-trimmer">
+<a class="heading-anchor" href="#video-trimmer" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Video Trimmer <a href="https://gitlab.gnome.org/YaLTeR/video-trimmer"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Trim videos quickly.</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> says</p>
+<blockquote>
+<p>I have released Video Trimmer 0.8.2, a minor update to refresh the visuals for GNOME 45.
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-117/146e8d2cb0843af5e1e40c83b6702029e2d503f31710962576046686208.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="cartridges">
+<a class="heading-anchor" href="#cartridges" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Cartridges <a href="https://github.com/kra-mo/cartridges"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Launch all your games</p>
+<p><a href="https://matrix.to/#/@kramo:matrix.org">kramo</a> announces</p>
+<blockquote>
+<p>I released Cartridges 2.6 with a much requested new feature:</p>
+<p>You can now search your game library from your desktop!</p>
+<p>To enable the feature, toggle &ldquo;Cartridges&rdquo; on from the Search page in the Settings app.</p>
+<p>You can get the app from <a href="https://flathub.org/apps/hu.kramo.Cartridges">Flathub</a>.</p>
+<p>PS: If you want to support my work, I now accept donations through <a href="https://github.com/sponsors/kra-mo">GitHub Sponsors</a>! 💜
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-117/KHDVSJXJoZuDFclFKoLLAMUo.gif" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@philippun:matrix.org">Philipp</a> says</p>
+<blockquote>
+<p>Migrating Meld</p>
+<p>This is a little status update on my current progress of the <a href="https://gitlab.gnome.org/GNOME/meld/-/merge_requests/105">meld migration to Gtk4 / libadwaita</a>:</p>
+<ul>
+<li>MainWindow uses Adw.ApplicationWindow</li>
+<li>NewDiff page and both the FileDiff and DirDiff page are also migrated (mostly)</li>
+<li>The Preferences dialog uses Adw.PreferencesDialog</li>
+<li>Most of the signals have been migrated to event controllers</li>
+<li>Most methods have been migrated to new signature (i.e. do_snapshot, do_size_allocate, etc.)</li>
+</ul>
+<p>There are also things that are a bit more difficult, which I might not be able to solve alone:</p>
+<ul>
+<li>Dialog execution is now async (save file, etc.) and has to be rewritten</li>
+<li>Gdk.WindowAttr is gone (is it even needed anymore?)</li>
+<li>Gtk.RecentChooser is gone, is there a replacement?</li>
+<li>MeldSourceMap do_snapshot_layer not being called, although the new syntax is being used</li>
+<li>DiffGrid do_size_allocate not being called, although the new syntax is being used (which currently prevents the colored overlay being drawn in HandleWindow)</li>
+</ul>
+<p>Help is welcome!
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-117/CEoUYWhaTUCmzENpzphiihBD.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-117/exBydWMKCQjGxecjWrQcRmfO.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-117/ydLJXvQdjsyisMoHreUJCplP.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@diegopvlk:mozilla.org">Diego Povliuk</a> announces</p>
+<blockquote>
+<p>Dosage, an app to track your medications, it&rsquo;s now available on <a href="https://flathub.org/apps/io.github.diegopvlk.Dosage">Flathub</a>. It packs a lot of features like inventory tracking, history, notifications and frequency modes.
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-117/50cc1942fa47169aa5ef75108fdc0fb0d6b87a3a1712139292232384512.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-117/8ee5940e31e3a23b9fafda52a1133047f3de4c411712139265338507264.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="wildcard">
+<a class="heading-anchor" href="#wildcard" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Wildcard <a href="https://github.com/fkinoshita/Wildcard"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Test your regular expressions.</p>
+<p><a href="https://matrix.to/#/@fkinoshita:gnome.org">Felipe Kinoshita</a> says</p>
+<blockquote>
+<p>Wildcard 0.3.0 is out and available on <a href="https://flathub.org/apps/com.felipekinoshita.Wildcard">Flathub</a>, this update brings a new references panel to quickly test common regex patterns.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/10/twig-117/2655a9892c593d6078223ba4217d28dd987c74531711163448601083904.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/10/twig-117/2655a9892c593d6078223ba4217d28dd987c74531711163448601083904.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="gircore">
+<a class="heading-anchor" href="#gircore" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gir.Core <a href="https://gircore.github.io/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Gir.Core is a project which aims to provide C# bindings for different GObject based libraries.</p>
+<p><a href="https://matrix.to/#/@badcel:matrix.org">badcel</a> says</p>
+<blockquote>
+<p>Gir.Core 0.5.0-preview.2 got released. It is the next step to the upcoming 0.5.0 release and features some Api cleanups, bugfixes and added some more async APIs. See the <a href="https://github.com/gircore/gir.core/releases/tag/0.5.0-preview.2">release notes</a> for further details.</p>
+</blockquote>
+
+
+<h3 id="fretboard">
+<a class="heading-anchor" href="#fretboard" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fretboard <a href="https://github.com/bragefuglseth/fretboard"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Look up guitar chords</p>
+<p><a href="https://matrix.to/#/@bragefuglseth:gnome.org">Brage Fuglseth</a> reports</p>
+<blockquote>
+<p>This week a couple of nice accessibility improvements landed in Fretboard:</p>
+<ul>
+<li>Support for both left-handed and right-handed guitar types<!-- raw HTML omitted --></li>
+<li>Independence from text direction for the chord diagram, fixing the mirroring issue it had with right-to-left languages<!-- raw HTML omitted --></li>
+<li>Turkish, Spanish, Norwegian, Portugese and Brazillian Portugese translations, making Fretboard available in a total of 9 languages<!-- raw HTML omitted --></li>
+</ul>
+<p>You can get Fretboard on <a href="https://flatpak.app/fretboard">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/10/twig-117/ad787af405135407f195081c3ac11a73b61cf3651712569202314838016.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="shell-extensions">
+<a class="heading-anchor" href="#shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Shell Extensions
+</h1><p><a href="https://matrix.to/#/@somepaulo:matrix.org">somepaulo</a> says</p>
+<blockquote>
+<p>The Weather Or Not extension (<a href="https://extensions.gnome.org/extension/5660/weather-or-not/">https://extensions.gnome.org/extension/5660/weather-or-not/</a>) has been updated to fix a long-standing bug for Gnome 42-44 users where the indicator would appear twice. A new version has also been published, ingesting backend changes from upstream (Weather O&rsquo;Clock extension) and refactoring code to work with Gnome Shell 45. For the next release, an options backend is in the works to allow changing the weather indicator placement on the panel.</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> says</p>
+<blockquote>
+<p>The board of directors has created the Internship Committee. It is responsible for promoting, organizing, and conducting internship programs such as Outreachy and Google Summer of Code.</p>
+<p><a href="https://wiki.gnome.org/InternshipCommittee">https://wiki.gnome.org/InternshipCommittee</a>
+<a href="https://gitlab.gnome.org/Teams/internship">https://gitlab.gnome.org/Teams/internship</a></p>
+<p>Project proposals should now be submitted to <a href="https://gitlab.gnome.org/Teams/internship/project-ideas/">https://gitlab.gnome.org/Teams/internship/project-ideas/</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

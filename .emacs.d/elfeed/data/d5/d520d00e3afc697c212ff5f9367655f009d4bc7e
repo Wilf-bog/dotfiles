@@ -1,0 +1,131 @@
+
+         
+         <p>In the <code class="language-plaintext highlighter-rouge">denote</code> package, the user creates a single directory for their
+notes or long-term storage files: the <code class="language-plaintext highlighter-rouge">denote-directory</code>. This
+directory can have subdirectories or can be a flat file listing.
+Denote works the same regardless. All <code class="language-plaintext highlighter-rouge">denote:</code> links to files inside
+the <code class="language-plaintext highlighter-rouge">denote-directory</code> work as expected, even if the files are renamed
+or moved from one subdirectory to another. This is because the links
+point to the identifier, which is internally read and expanded into
+the appropriate file system path.</p>
+
+<p>While a singular <code class="language-plaintext highlighter-rouge">denote-directory</code> can be sufficient, there are cases
+where strictly separate directories are needed (e.g. a “home” versus
+“work” kind of scenario, or “public” and “private”). We call those
+“silos” and make them work with Emacs’ facility of directory-local
+variables. Any directory in the file system can be turned into a silo
+by setting the value of <code class="language-plaintext highlighter-rouge">denote-directory</code> to its path. Do this in a
+file called <code class="language-plaintext highlighter-rouge">.dir-locals.el</code>. Its contents can be something like the
+following:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;;; Directory Local Variables.  For more information evaluate:</span>
+<span class="c1">;;;</span>
+<span class="c1">;;;     (info "(emacs) Directory Variables")</span>
+
+<span class="p">((</span><span class="no">nil</span> <span class="o">.</span> <span class="p">((</span><span class="nv">denote-directory</span> <span class="o">.</span> <span class="s">"/path/to/silo/"</span><span class="p">))))</span>
+</code></pre></div></div>
+
+<p>All Denote commands, such as to create notes or link to files, read
+the silo’s path when they are called from inside there. Otherwise,
+they read the global value of <code class="language-plaintext highlighter-rouge">denote-directory</code>. This is a nice
+arrangement to keep a separation of concerns and to purposefully
+operate with contextuality in mind.</p>
+
+<h2>Use <code class="language-plaintext highlighter-rouge">#+bind</code> to set local values for Org export</h2>
+
+<p>While Denote works perfectly fine with the aforementioned, we do have
+a major constraint when dealing with Org’s export mechanism. Users may
+want to maintain a silo where they write Org entries that are
+eventually collected into a set of HTML files that form a blog. This
+does not work because the Org export mechanism is designed to ignore
+directory-local variables. So all <code class="language-plaintext highlighter-rouge">denote:</code> links inside the silo will
+be broken, because their path is not resolved correctly at export
+time.</p>
+
+<p>We can work around this constraint by leveraging Org’s <code class="language-plaintext highlighter-rouge">#+bind</code>
+keyword. Before we do that, we need to enable support for such
+bindings. Add the following to your Emacs configuration:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">setq</span> <span class="nv">org-export-allow-bind-keywords</span> <span class="no">t</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Then we may insert the <code class="language-plaintext highlighter-rouge">#+bind</code> in each affected file. Write the
+following somewhere towards the top of the file:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">#+</span><span class="nv">bind:</span> <span class="nv">denote-directory</span> <span class="s">"/path/to/silo/"</span>
+</code></pre></div></div>
+
+<p>As you can tell, the syntax is <code class="language-plaintext highlighter-rouge">#+bind: variable value</code>.</p>
+
+<h2>Use <code class="language-plaintext highlighter-rouge">.dir-locals.el</code> to automatically insert the <code class="language-plaintext highlighter-rouge">#+bind</code></h2>
+
+<p>One of the principles of Denote’s development, is to keep the code
+hackable. The front matter that Denote inserts to newly created Org
+notes is stored as a string in the variable <code class="language-plaintext highlighter-rouge">denote-org-front-matter</code>.
+Since our silo already uses the <code class="language-plaintext highlighter-rouge">.dir-locals.el</code>, we can add another
+entry to it, to make the front matter include the desired <code class="language-plaintext highlighter-rouge">#+bind</code>
+directive. No need to write the whole thing each time.</p>
+
+<p>Building on the previous example, we have this for our <code class="language-plaintext highlighter-rouge">.dir-locals.el</code>:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="c1">;;; Directory Local Variables.  For more information evaluate:</span>
+   <span class="c1">;;;</span>
+   <span class="c1">;;;     (info "(emacs) Directory Variables")</span>
+
+   <span class="p">((</span><span class="no">nil</span> <span class="o">.</span> <span class="p">((</span><span class="nv">denote-directory</span> <span class="o">.</span> <span class="s">"/path/to/silo/"</span><span class="p">)</span>
+            <span class="p">(</span><span class="nv">denote-org-front-matter</span> <span class="o">.</span> 
+             <span class="s">"#+title:      %s
+#+date:       %s
+#+filetags:   %s
+#+identifier: %s
+#+bind:       denote-directory \"/path/to/silo/\"
+\n"</span><span class="p">))))</span>
+</code></pre></div></div>
+
+<p>Note that the value of the <code class="language-plaintext highlighter-rouge">denote-directory</code> has to be a string, so
+we need to keep the double quotes there around the <code class="language-plaintext highlighter-rouge">/path/to/silo/</code>,
+hence the <code class="language-plaintext highlighter-rouge">\"/path/to/silo/\"</code>.</p>
+
+<p>Now all new Org files created with Denote will include that extra line
+in the front matter.</p>
+
+<h2>Small changes for a big improvement</h2>
+
+<p>I wish Org export would support directory-local variables, though I
+understand there are technical constraints for that. By making those
+minor tweaks, we get the expected results.</p>
+
+<p>If you had problems with Org files in Denote silos, please try this
+solution.</p>
+
+<h2>About Denote</h2>
+
+<p>Denote is a simple note-taking tool for Emacs.  It is based on the idea
+that notes should follow a predictable and descriptive file-naming
+scheme.  The file name must offer a clear indication of what the note is
+about, without reference to any other metadata.  Denote basically
+streamlines the creation of such files while providing facilities to
+link between them.</p>
+
+<p>Denote’s file-naming scheme is not limited to “notes”.  It can be used
+for all types of file, including those that are not editable in Emacs,
+such as videos.  Naming files in a consistent way makes their
+filtering and retrieval considerably easier.  Denote provides relevant
+facilities to rename files, regardless of file type.</p>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">denote</code></li>
+  <li>Official manual: <a href="https://protesilaos.com/emacs/denote">https://protesilaos.com/emacs/denote</a></li>
+  <li>Change log: <a href="https://protesilaos.com/emacs/denote-changelog">https://protesilaos.com/emacs/denote-changelog</a></li>
+  <li>Git repositories:
+    <ul>
+      <li>GitHub: <a href="https://github.com/protesilaos/denote">https://github.com/protesilaos/denote</a></li>
+      <li>GitLab: <a href="https://gitlab.com/protesilaos/denote">https://gitlab.com/protesilaos/denote</a></li>
+    </ul>
+  </li>
+  <li>Video demo: <a href="https://protesilaos.com/codelog/2022-06-18-denote-demo/">https://protesilaos.com/codelog/2022-06-18-denote-demo/</a></li>
+  <li>Backronyms: Denote Everything Neatly; Omit The Excesses.  Don’t Ever
+Note Only The Epiphenomenal.</li>
+</ul>
+        
+      

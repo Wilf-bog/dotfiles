@@ -1,0 +1,89 @@
+
+         
+         <p>This package provides a global minor mode to increase the
+spacing/padding of Emacs windows and frames.  The idea is to make
+editing and reading feel more comfortable.  Enable the mode with <code class="language-plaintext highlighter-rouge">M-x
+spacious-padding-mode</code>.  Adjust the exact spacing values by modifying
+the user option <code class="language-plaintext highlighter-rouge">spacious-padding-widths</code>.</p>
+
+<p>Inspiration for this package comes from <a href="https://github.com/rougier">Nicolas Rougier’s impressive
+designs</a> and <a href="https://github.com/minad/org-modern">Daniel Mendler’s
+<code class="language-plaintext highlighter-rouge">org-modern</code> package</a>.</p>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">spacious-padding</code></li>
+  <li>Official manual: <a href="https://protesilaos.com/emacs/spacious-padding">https://protesilaos.com/emacs/spacious-padding</a></li>
+  <li>Change log: <a href="https://protesilaos.com/emacs/spacious-padding">https://protesilaos.com/emacs/spacious-padding</a></li>
+  <li>Git repositories:
+    <ul>
+      <li>GitHub: <a href="https://github.com/protesilaos/spacious-padding">https://github.com/protesilaos/spacious-padding</a></li>
+      <li>GitLab: <a href="https://gitlab.com/protesilaos/spacious-padding">https://gitlab.com/protesilaos/spacious-padding</a></li>
+    </ul>
+  </li>
+  <li>Sample images:
+    <ul>
+      <li><a href="https://protesilaos.com/codelog/2023-06-03-emacs-spacious-padding/">https://protesilaos.com/codelog/2023-06-03-emacs-spacious-padding/</a></li>
+      <li><a href="https://protesilaos.com/codelog/2023-11-15-spacious-padding-extra-ui-dev/">https://protesilaos.com/codelog/2023-11-15-spacious-padding-extra-ui-dev/</a></li>
+    </ul>
+  </li>
+  <li>Backronyms: Space Perception Adjusted Consistently Impacts Overall
+Usability State … padding; Spacious … Precise Adjustments to
+Desktop Divider Internals Neatly Generated.</li>
+</ul>
+
+<p>Release notes below.</p>
+
+<hr />
+
+<p>This is a bug fix release.</p>
+
+<h2>Starting a frame from the daemon/server works as well</h2>
+
+<p>Before, if Emacs would start as a new server process via a client, it
+would not set the faces and the frame parameters correctly.</p>
+
+<p>I have made sure this no longer happens, so the padding/spacing should
+look as expected at startup no matter what.</p>
+
+<p>Thanks to tusharhero and Julian Flake for reporting this and testing
+the updated code. It was done in issue 13:
+<a href="https://github.com/protesilaos/spacious-padding/issues/13">https://github.com/protesilaos/spacious-padding/issues/13</a>.</p>
+
+<h2>The padding of relevant elements can be set to 0</h2>
+
+<p>This concerns anything that has a box with padding around it. From the
+user option <code class="language-plaintext highlighter-rouge">spacious-padding-widths</code>, we have the following
+attributes:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">:tab-width</code></li>
+  <li><code class="language-plaintext highlighter-rouge">:tab-bar-width</code></li>
+  <li><code class="language-plaintext highlighter-rouge">:tab-line-width</code></li>
+  <li><code class="language-plaintext highlighter-rouge">:header-line-width</code></li>
+  <li><code class="language-plaintext highlighter-rouge">:mode-line-width</code></li>
+</ul>
+
+<p>Thanks to Ruby Iris Juric for the contribution. It was done in pull
+request 7: <a href="https://github.com/protesilaos/spacious-padding/pull/7">https://github.com/protesilaos/spacious-padding/pull/7</a>.</p>
+
+<p>The change is less than the 15-line limit, so Ruby does not need to
+assign copyright to the Free Software foundation.</p>
+
+<h2>The right-divider-width has a fallback value at all times</h2>
+
+<p>This means that even if the <code class="language-plaintext highlighter-rouge">:right-divider-width</code> is not included in
+the value of <code class="language-plaintext highlighter-rouge">spacious-padding-widths</code>, there will still be a padding
+in place. We were already doing this for other scenaria, but not for
+this specific case. Thanks to Stefano Rodighiero for bringing this
+matter to my attention in issue 11:
+<a href="https://github.com/protesilaos/spacious-padding/issues/11">https://github.com/protesilaos/spacious-padding/issues/11</a>.</p>
+
+<h2>Reasonable defaults even if <code class="language-plaintext highlighter-rouge">spacious-padding-widths</code> is set to nil</h2>
+
+<p>All the attributes of the <code class="language-plaintext highlighter-rouge">spacious-padding-widths</code> should be optional
+and the value could even be nil. We take care internally to use a
+reasonable fallback value. We do this on the assumption that the user
+who enables <code class="language-plaintext highlighter-rouge">spacious-padding-mode</code> does actually want “spacious
+padding” and not something that does nothing.</p>
+        
+      

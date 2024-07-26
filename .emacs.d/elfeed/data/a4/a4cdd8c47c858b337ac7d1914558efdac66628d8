@@ -1,0 +1,58 @@
+
+         
+         <p>Raw link: <a href="https://www.youtube.com/watch?v=TJrAkCyH6Dk">https://www.youtube.com/watch?v=TJrAkCyH6Dk</a></p>
+         
+         <p>Video overview on how to use the mark and registers in Emacs to select
+or edit text efficiently, as well as to quickly jump to points of
+interest across files/buffers.  I also mention bookmarks, which are
+functionally the same as registers.</p>
+
+<p>Some basic configurations:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;; Make Emacs repeat the C-u C-SPC command (`set-mark-command') by</span>
+<span class="c1">;; following it up with another C-SPC.  It is faster to type</span>
+<span class="c1">;; C-u C-SPC, C-SPC, C-SPC, than C-u C-SPC, C-u C-SPC, C-u C-SPC...</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">set-mark-command-repeat-pop</span> <span class="no">t</span><span class="p">)</span>
+
+<span class="c1">;; By default, the built-in `savehist-mode' only keeps a record of</span>
+<span class="c1">;; minibuffer histories.  This is helpful as it surfaces the most</span>
+<span class="c1">;; recently selected items to the top, allowing you to access them again</span>
+<span class="c1">;; very quickly.  With the variable `savehist-additional-variables' we</span>
+<span class="c1">;; can make `savehist-mode' keep a record of any variable we want, so</span>
+<span class="c1">;; that it persists between Emacs sessions.  I do this to store the</span>
+<span class="c1">;; `kill-ring' and the `register-alist'.</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">savehist-additional-variables</span> <span class="o">'</span><span class="p">(</span><span class="nv">register-alist</span> <span class="nv">kill-ring</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">savehist-mode</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">;; I want Emacs to write the list of bookmarks to the `bookmark-file'</span>
+<span class="c1">;; as soon as I set a new bookmark.  The default behaviour of Emacs is</span>
+<span class="c1">;; to write to the disk as a final step before closing Emacs.  Though</span>
+<span class="c1">;; this can lead to data loss, such as in the case of a power failure.</span>
+<span class="c1">;; Storing the data outright mitigates this problem.</span>
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">prot/bookmark-save-no-prompt</span> <span class="p">(</span><span class="k">&amp;rest</span> <span class="nv">_</span><span class="p">)</span>
+  <span class="s">"Run `bookmark-save' without prompts.
+
+The intent of this function is to be added as an :after advice to
+`bookmark-set-internal'.  Concretely, this means that when
+`bookmark-set-internal' is called, this function is called right
+afterwards.  We set this up because there is no hook after
+setting a bookmark and we want to automatically save bookmarks at
+that point."</span>
+  <span class="p">(</span><span class="nb">funcall</span> <span class="ss">'bookmark-save</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">advice-add</span> <span class="ss">'bookmark-set-internal</span> <span class="ss">:after</span> <span class="ss">'prot/bookmark-save-no-prompt</span><span class="p">)</span>
+
+<span class="c1">;; After publishing the above, I learnt about this variable, which has</span>
+<span class="c1">;; the same effect as `prot/bookmark-save-no-prompt':</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">bookmark-save-flag</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">;; If you are using the wonderful `consult' package, set up the</span>
+<span class="c1">;; register preview facility with its more informative presentation:</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">register-preview-delay</span> <span class="mf">0.8</span>
+      <span class="nv">register-preview-function</span> <span class="nf">#'</span><span class="nv">consult-register-format</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>UPDATE 2023-06-30 22:33 +0300:</strong> Add two more snippets to the code block.</p>
+        
+      

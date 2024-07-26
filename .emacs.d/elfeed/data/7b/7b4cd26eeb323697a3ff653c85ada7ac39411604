@@ -1,0 +1,107 @@
+<p>Update on what happened across the GNOME project in the week from May 06 to May 13.</p>
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@thib:ergaster.org">Thib</a> reports</p>
+<blockquote>
+<p>The GNOME Foundation&rsquo;s Board of Directors would like to inform the members of the GNOME Foundation that regrettably, Alberto Ruiz submitted his resignation from the Board of Directors for a combination of work and personal reasons.</p>
+<p>We are pleased to announce that we have appointed Martín Abente Lahaye to serve on the Board as per the bylaws. Martín is an active community member, the author of Flatseal and Portfolio, and has experience promoting and deploying FOSS in educational and impact settings through his previous work with One Laptop Per Child Paraguay, Sugar Labs and Endless. We believe Martín is a great asset to help us implementing our roadmap and are excited to start working together.</p>
+<p>Full details in <a href="https://discourse.gnome.org/t/board-of-directors-resignation-appointment/9833">this Discourse post</a>. Welcome onboard Martín Abente Lahaye !</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@thib:ergaster.org">Thib</a> says</p>
+<blockquote>
+<p>The GNOME Foundation&rsquo;s Board of Directors has been working on a high-level roadmap to give the Foundation a clear direction. Rob posted <a href="https://discourse.gnome.org/t/evolving-a-strategy-for-2022-and-beyond/9759">the three initiatives</a> that will keep us busy. Full details in the post, but the strategy is to:</p>
+<ol>
+<li>Make the newcomers initiative more sustainable, with paid contributors polishing the documentation and welcoming people on our platform</li>
+<li>Make GNOME an appealing platform to develop for, by making Flathub support payments</li>
+<li>Make GNOME a local-first platform to empower individuals by reducing their dependency on the cloud and more generally the Internet</li>
+</ol>
+<p>In short: funnel more people to contribute to the GNOME project, make them able to earn money from the skills they developed, and allow them to create apps that have a strong impact on the world.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@thib:ergaster.org">Thib</a> reports</p>
+<blockquote>
+<p>The GNOME Foundation&rsquo;s Board of Directors <a href="https://discourse.gnome.org/t/updated-bylaw-amendment-allow-non-members-to-stand-for-election/9761">has proposed an amendment to the bylaws of the Foundation</a> to allow a limited number of non-members to run for the Board of Directors if they are backed by enough Foundation members.</p>
+<p>The rationale behind this amendment is that our roadmap is about getting more people from outside our community to understand and support the GNOME Project. The initiatives we work on are ambitious and need to be funded properly to have the full impact we want them to have. Fundraising is not something most of the current board and Foundation members are very experienced with.</p>
+<p>Given the initial feedback and concerns some members have raised, the Board has decided to submit this amendment to full vote. If you are a member of the Foundation, you should have received instructions to vote. If you haven&rsquo;t, please reach out to Andrea Veri.</p>
+<p>In short: we want to open the Board of Directors to people with different skills than the one we have today, to maximise our chances to make GNOME useful for more people, with proper safeguards so it&rsquo;s still representative of the Foundation members.</p>
+</blockquote>
+
+
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>Libadwaita has gained <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.PropertyAnimationTarget.html"><code>AdwPropertyAnimationTarget</code></a> for animating object properties in addition to <code>AdwCallbackAnimationTarget</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">AdwAnimationTarget <span style="color:#f92672">*</span>target <span style="color:#f92672">=</span> adw_property_animation_target_new (G_OBJECT (widget), <span style="color:#e6db74">&#34;opacity&#34;</span>);
+g_autoptr (AdwAnimation) animation <span style="color:#f92672">=</span> adw_timed_animation_new (widget, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">250</span>, target);
+
+adw_animation_play (animation);
+</code></pre></div></blockquote>
+
+
+<h3 id="gtk">
+<a class="heading-anchor" href="#gtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GTK <a href="https://gitlab.gnome.org/GNOME/gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Cross-platform widget toolkit for creating graphical user interfaces.</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> reports</p>
+<blockquote>
+<p>GTK 4 has seen a few performance improvements to ListView and ColumnView scrolling. Additionally, a fix for unstable FPS after opening a popup menu has been finally merged. Both of these are already available on the gnome-nightly Flatpak runtime and should be included in GTK 4.6.4.</p>
+</blockquote>
+
+
+<h3 id="software">
+<a class="heading-anchor" href="#software" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Software <a href="https://gitlab.gnome.org/GNOME/gnome-software/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Lets you install and update applications and system extensions.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> announces</p>
+<blockquote>
+<p>Basic webapps support has just landed in gnome-software, the culmination of a project by Phaedrus Leeds</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@followhollows:matrix.org">flxzt</a> says</p>
+<blockquote>
+<p>Last week I released Rnote v0.5 . It now features an additional eraser mode, new shape types such as ellipses from foci and bezier curves. Additionally, the undo / redo system was overhauled, handwriting latency reduced and you can now enable automatic saving. There were also some UI tweaks, stability improvements and <strong>a lot</strong> of internal code refactoring
+
+<img src="https://thisweek.gnome.org/posts/2022/05/twig-43/rnote.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@felinira:matrix.org">Fina</a> announces</p>
+<blockquote>
+<p>I released the first version of Warp - A one-to-one file transfer application. Warp allows you to securely send files to each other via the Internet or local network by exchanging a word-based code.</p>
+<p>To try it out visit <a href="https://flathub.org/apps/details/app.drey.Warp">https://flathub.org/apps/details/app.drey.Warp</a>
+
+<img src="https://thisweek.gnome.org/posts/2022/05/twig-43/VrwovVKerazbWKMzvdFaxWdM.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="workbench">
+<a class="heading-anchor" href="#workbench" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Workbench <a href="https://github.com/sonnyp/Workbench/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A sandbox to learn and prototype with GNOME technologies.</p>
+<p><a href="https://matrix.to/#/@sonnyp:matrix.org">sonnyp</a> reports</p>
+<blockquote>
+<p><a href="https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/">Blueprint</a> support has landed in Workbench. This new markup language from James Westman not only provides a much nicer experience for handwriting GTK, but also comes with a language server which will allow us to present educational hints. <a href="https://wiki.gnome.org/Apps/Builder">GNOME Builder</a> already support Blueprint language server – definitely worth checking out.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/05/twig-43/ElKfDGmTcMaFONsCzdJGAuTj.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/05/twig-43/ElKfDGmTcMaFONsCzdJGAuTj.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sonnyp:matrix.org">sonnyp</a> announces</p>
+<blockquote>
+<p>lwildberg  made great progress on Vala support in Workbench. The sub-process can now compile, run, preview and update !
+We are making the architecture easy to use for additional language support. Stay tuned.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/05/twig-43/pEDUTsNzLYnqVqSkMhQiVQgy.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/05/twig-43/pEDUTsNzLYnqVqSkMhQiVQgy.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

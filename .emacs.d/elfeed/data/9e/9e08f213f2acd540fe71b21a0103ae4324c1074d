@@ -1,0 +1,126 @@
+<p>Update on what happened across the GNOME project in the week from January 26 to February 02.</p>
+<h1 id="events">
+<a class="heading-anchor" href="#events" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Events
+</h1><p><a href="https://matrix.to/#/@cassidyjames:gnome.org">Cassidy James Blaede</a> reports</p>
+<blockquote>
+<p>Going to FOSDEM this weekend? Meet up with GNOME and Flathub folks!</p>
+<ul>
+<li><a href="https://foundation.gnome.org/2024/01/29/gnome-at-fosdem-2024/">GNOME booth and GNOME Beers</a></li>
+<li><a href="https://docs.flathub.org/blog/fosdem-2024">Flathub BoF and more</a></li>
+</ul>
+<p>If you&rsquo;re unable to make the Flathub BoF but still want to chat, you can catch the team around the GNOME and KDE stands.</p>
+<p>See you there!</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@alatiera:matrix.org">alatiera</a> reports</p>
+<blockquote>
+<p>We are organizing a <a href="https://hedgedoc.gnome.org/gstreamer-hackfest-spring-2024">GStreamer hackfest</a> in Thessaloniki, Greece on May 27th-29th. In addition the #9 installment of the <a href="https://hedgedoc.gnome.org/hackfest-gnome-rust-2024#">GNOME ♥️ Rust Hackfest</a> series will take place in the days after 31st of May - 5th of July. For more details see the <a href="https://blogs.gnome.org/alatiera/2024/02/02/thessaloniki-spring-hackfests/">blogpost</a> and the handbook <a href="https://handbook.gnome.org/events/hackfests.html">hackfests page</a>.
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-133/aYwHEmlGOrGmVgelAgRGQdXa.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="gtk">
+<a class="heading-anchor" href="#gtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GTK <a href="https://gitlab.gnome.org/GNOME/gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Cross-platform widget toolkit for creating graphical user interfaces.</p>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> says</p>
+<blockquote>
+<p>The GTK developers are having a hackfest in Brussels right before the FOSDEM weekend. Lots of work on rendering, media, input, and accessibility. Look forward to a full report on the GTK development blog.</p>
+</blockquote>
+
+
+<h1 id="gnome-websites">
+<a class="heading-anchor" href="#gnome-websites" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Websites
+</h1><p><a href="https://matrix.to/#/@aday:gnome.org">Allan Day</a> announces</p>
+<blockquote>
+<p>The <a href="https://handbook.gnome.org/">GNOME Project Handbook</a> was <a href="https://blogs.gnome.org/aday/2024/01/30/announcing-the-gnome-project-handbook/">officially announced</a>! This new resource provides all the information people need to participate in the GNOME project, including how the project works, how to get accounts and use project infrastructure, the release cycle, issue management, and much more. Everyone is invited to help keep the handbook up to date and accurate.
+The handbook is part of an ongoing to effort to the retire the GNOME wiki. More announcements about this will be coming soon.</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="paper-clip">
+<a class="heading-anchor" href="#paper-clip" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Paper Clip <a href="https://apps.gnome.org/PdfMetadataEditor/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Edit PDF document metadata.</p>
+<p><a href="https://matrix.to/#/@dimmednerd:matrix.org">Diego Iván M.E</a> says</p>
+<blockquote>
+<p>This week, Paper Clip v5.0 was released! This release brings a couple of quality-of-life improvements, enhancements and a shiny new feature:</p>
+<ul>
+<li>Paper Clip now supports editing encrypted documents, thanks to a brand new dialog that allows users to open files protected by a password.</li>
+<li>The DublinCore XMP metadata format is now synchronized with their PDF equivalents.</li>
+<li>Updated translations, including French, Basque, Russian, Italian, Occitan and Spanish. Thanks to rene-coty, Sergio Varela, Ser82-png, albanobattistella and Mejans for their contributions!</li>
+<li>Appdata improvements by Sabri Ünal</li>
+</ul>
+<p>Get the latest release from <a href="https://flathub.org/apps/io.github.diegoivan.pdf_metadata_editor">Flathub</a>!
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-133/AUdumycYybeItVtxaiuHkzrX.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@shuriken:fedora.im">SHuRiKeN</a> says</p>
+<blockquote>
+<p>Eeman app is now <a href="https://flathub.org/apps/sh.shuriken.Eeman">available on Flathub</a>, made using GTK 4 and Libadwaita, this app lets you track and get notified of your Salah (prayer) timings, and lets you read the beautiful Quran.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ghani1990:matrix.org">ghani1990</a> says</p>
+<blockquote>
+<p>A new version of <a href="https://flathub.org/apps/io.github.diegopvlk.Dosage">Dosage</a> app to Keep track of your treatments was released  this week</p>
+<p>this version (1.5.1) has many improvements, the most important of which are:</p>
+<p>• It&rsquo;s now possible to edit history entries
+• New preference to auto-clear history
+• New row style for select frequency
+• New row style for select date
+• New badge style for history confirmed item
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-133/NCfVrFusZzNjpetgPsfGQHrE.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="denaro">
+<a class="heading-anchor" href="#denaro" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Denaro <a href="https://flathub.org/apps/details/org.nickvision.money"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Manage your personal finances.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> announces</p>
+<blockquote>
+<p>Denaro <a href="https://github.com/NickvisionApps/Denaro/releases/tag/2024.2.0">V2024.2.0</a> was released this week.
+This release contains some bug fixes to make your experience more stable!</p>
+<p>Here&rsquo;s the changelog:</p>
+<ul>
+<li>Improved importing of QIF files</li>
+<li>Fixed a bug where the app would crash when filtering transactions for certain dates (mainly leap years like this year 😅)</li>
+<li>Updated and added translations (Thanks to everyone on Weblate)!
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-133/vdTQqIANlnvMWkYKcFPxmgls.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie (she/her)</a> says</p>
+<blockquote>
+<p>The <a href="https://release.gnome.org/calendar/#freezes">feature freeze for GNOME 46</a> is closing in. Starting Feb 10 no changes to UI, features, and APIs are allowed without <a href="https://handbook.gnome.org/release-planning/freezes.html">approval from the release team</a>.</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@zana:gnome.org">Rosanna</a> reports</p>
+<blockquote>
+<p>This week has been very busy for the Foundation staff. I started the beginning of the week meeting with our bookkeepers and discussing our books as well as our budget. Midweek was spent travelling to Brussels, where our Executive Director Holly and I spent yesterday meeting with the GNOME Board of Directors and today meeting with our Advisory Board. This weekend is FOSDEM, where I am looking forward to seeing folks stopping by our booth as well as at GNOME Beers Saturday night. I&rsquo;ve already had a lot of very productive conversations here in Brussels and am sure there will be many more to come.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

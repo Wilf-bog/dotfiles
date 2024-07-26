@@ -1,0 +1,350 @@
+<p>Update on what happened across the GNOME project in the week from February 02 to February 09.</p>
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> says</p>
+<blockquote>
+<p>As part of the <a href="https://foundation.gnome.org/2023/11/09/gnome-recognized-as-public-interest-infrastructure/">GNOME STF (Sovereign Tech Fund)</a> project, a number of community members are working on infrastructure related projects. We didn&rsquo;t get around to reporting our progress last week because many of us were at FOSDEM in Brussels, so this is work from the past two weeks.</p>
+<p>Andy updated his GNOME Online Account work from last year
+Andy worked on <a href="https://gitlab.gnome.org/GNOME/orca/-/merge_requests/182">Spiel integration with Orca</a>
+Sophie added basic filtering of syscalls to glycin bwrap sandboxes via a seccomp allow list</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/sophie-h/glycin/-/merge_requests/50">https://gitlab.gnome.org/sophie-h/glycin/-/merge_requests/50</a></li>
+<li>Currently tested on x86_64, i386, and aarch64</li>
+</ul>
+<p>Hubert implemented high contrast hint portal setting in</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome/-/merge_requests/143">xdg-desktop-portal-gnome</a></li>
+<li><a href="https://github.com/flatpak/xdg-desktop-portal-gtk/pull/466">xdg-desktop-portal-gtk</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1039">libadwaita</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libhandy/-/merge_requests/845">libhandy</a></li>
+</ul>
+<p>Sam made a bunch of tweaks to GNOME Shell stylesheet and High Contrast
+Sam made a <a href="https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/2523#note_1983921">new design</a> for Variable Refresh Rate (VRR) Settings
+Matt implemented the compositor side of <a href="https://blogs.gnome.org/a11y/2023/10/27/a-new-accessibility-architecture-for-modern-free-desktops/">Newton, the new a11y architecture prototype</a></p>
+<ul>
+<li>Current protocol drafts: <a href="https://gitlab.freedesktop.org/mwcampbell/wayland-protocols/tree/accessibility">https://gitlab.freedesktop.org/mwcampbell/wayland-protocols/tree/accessibility</a></li>
+<li>Provider implementation in AccessKit: <a href="https://github.com/AccessKit/accesskit/tree/unix2-prototype">https://github.com/AccessKit/accesskit/tree/unix2-prototype</a></li>
+<li>Mutter implementation: <a href="https://gitlab.gnome.org/mwcampbell/mutter/tree/wayland-native-a11y">https://gitlab.gnome.org/mwcampbell/mutter/tree/wayland-native-a11y</a></li>
+<li>Test consumer implementation: <a href="https://gitlab.gnome.org/mwcampbell/newton-test-consumer">https://gitlab.gnome.org/mwcampbell/newton-test-consumer</a></li>
+</ul>
+<p>Dor made several improvements to Mutter related to VVR</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3549">https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3549</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3560">https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3560</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3561">https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3561</a></li>
+</ul>
+<p>Dor updated his VVR work and made it ready for review</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/1154#note_1998670">https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/1154#note_1998670</a></li>
+</ul>
+<p>Dor continued experimentation for getting smooth cursor updates with the KMS thread</p>
+<p>Adrian continued his work on systemd-homed integration</p>
+<ul>
+<li><a href="https://github.com/systemd/systemd/pull/30840">https://github.com/systemd/systemd/pull/30840</a></li>
+<li><a href="https://github.com/systemd/systemd/pull/30226">https://github.com/systemd/systemd/pull/30226</a></li>
+<li><a href="https://github.com/systemd/systemd/pull/31031">https://github.com/systemd/systemd/pull/31031</a></li>
+<li><a href="https://github.com/systemd/systemd/pull/31039">https://github.com/systemd/systemd/pull/31039</a></li>
+<li><a href="https://gitlab.freedesktop.org/accountsservice/accountsservice/-/merge_requests/144">https://gitlab.freedesktop.org/accountsservice/accountsservice/-/merge_requests/144</a></li>
+<li><a href="https://github.com/systemd/systemd/pull/31039">https://github.com/systemd/systemd/pull/31039</a></li>
+<li><a href="https://github.com/systemd/systemd/pull/31153">https://github.com/systemd/systemd/pull/31153</a></li>
+<li><a href="https://github.com/systemd/systemd/pull/31206">https://github.com/systemd/systemd/pull/31206</a></li>
+<li><a href="https://gitlab.freedesktop.org/accountsservice/accountsservice/-/merge_requests/146">https://gitlab.freedesktop.org/accountsservice/accountsservice/-/merge_requests/146</a></li>
+</ul>
+<p>Adrian is investigating behavior of kernel&rsquo;s page cache when encryption keys are removed</p>
+<ul>
+<li><a href="https://lore.kernel.org/all/20240116-tagelang-zugnummer-349edd1b5792@brauner/">https://lore.kernel.org/all/20240116-tagelang-zugnummer-349edd1b5792@brauner/</a></li>
+</ul>
+<p>Jonas (Dreßler) continued improving Jonas (Ådahl) wayland fractional scaling branch
+Jonas started work on migrating monitor configs to the new format for enabling fractional scaling by default</p>
+<p>Jonas updated the screencast MRs for blocklisting pipelines and hardware encoding</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2976">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2976</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2080">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2080</a></li>
+</ul>
+<p>Jonas investigating an issue with variable framerate in screencasts</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/7335">https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/7335</a></li>
+</ul>
+<p>Julian refactored a lot of the notification API in GNOME Shell as part of <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3103">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3103</a></p>
+<p>Julian landed</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/merge_requests/215">using libadwaita Avatar for gnome-initial-setup</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/1939">using libadwaita Avatar for Settings</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3156">Use single notification Source for all system notifications</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3066">notification: Show symbolic icons in a circle and smaller</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3103">notifications: Add header for messages</a> - GNOME Shell</li>
+<li><a href="https://gitlab.gnome.org/GNOME/libnotify/-/merge_requests/35">Set the icon-name property as image hint instead of as app-icon</a> - libnotify</li>
+</ul>
+<p>Julian submitted an MR to <a href="https://gitlab.gnome.org/GNOME/gnome-settings-daemon/-/merge_requests/352">use the proper hint for setting images for notifications</a> in gnome-settings-daemon</p>
+<p>Julian is working on image support in notification portal via passing an fd</p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/d236004a2094ea6cb49efb43a8b3331d0a6a62a61756044844125388800.png" alt="" />
+</p>
+<p>Georges landed WebKit GTK4 accessibility support</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/6827">https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/6827</a></li>
+<li><a href="https://github.com/WebKit/WebKit/pull/23926">https://github.com/WebKit/WebKit/pull/23926</a></li>
+</ul>
+<p>Georges fixed Gamepad support in WebkitGTK / Epiphany</p>
+<ul>
+<li><a href="https://github.com/WebKit/WebKit/pull/23598">https://github.com/WebKit/WebKit/pull/23598</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/epiphany/-/merge_requests/1428">https://gitlab.gnome.org/GNOME/epiphany/-/merge_requests/1428</a></li>
+</ul>
+<p>Alice implemented a window-backed mode for AdwDialog</p>
+<ul>
+<li>used when the parent window is non-resizable, doesn&rsquo;t support built-in dialogs or is null</li>
+<li><a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1037">https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1037</a></li>
+</ul>
+<p>Alice made a number of AdwDialog improvements</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1035">https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1035</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1034">https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1034</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1033">https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1033</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1032">https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1032</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1031">https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1031</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1030">https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1030</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1041">https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1041</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1046">https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1046</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1045">https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1045</a></li>
+</ul>
+<p>Alice released libadwaita 1.5 beta <a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1049">https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1049</a></p>
+<p>Philip worked on splitting platform-specific docs in GLib (proof of concept)</p>
+<p>Philip landed</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/issues/3217">stack allocation support to libgirepository</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3797">GIRepository GIR generation to avoid cyclical dependency</a></li>
+</ul>
+<p>Evan landed</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3797">Refactor GIRepository GIR generation to avoid cyclical dependency</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3853"> girepository: Update gir-compiler and use it to compile GIRs</a></li>
+</ul>
+<p>Sam improved High Contrast support on the lock screen <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3154">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3154</a></p>
+<p>Sam tested and fixed issues with RTL <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3150">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3150</a></p>
+<p>Ivan investigated an input latency issue in Mutter <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/7375">https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/7375</a></p>
+<p>Joanie replaced autotools with meson in Orca <a href="https://gitlab.gnome.org/GNOME/orca/-/commit/3a702c4cf">https://gitlab.gnome.org/GNOME/orca/-/commit/3a702c4cf</a></p>
+<p>Joanie is working on removing more of pyatspi in Orca <a href="https://gitlab.gnome.org/GNOME/orca/-/issues/300">https://gitlab.gnome.org/GNOME/orca/-/issues/300</a></p>
+<p>Joanie implemented using window coordinates insetad of screen when getting bounding boxes:</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/orca/-/commit/3f80aee0f">https://gitlab.gnome.org/GNOME/orca/-/commit/3f80aee0f</a></li>
+<li>Needed for GTK4</li>
+<li>Needed for Wayland</li>
+</ul>
+<p>Joanie finished removal of Orca&rsquo;s overrides for character names for non-math content <a href="https://gitlab.gnome.org/GNOME/orca/-/issues/313">https://gitlab.gnome.org/GNOME/orca/-/issues/313</a></p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> says</p>
+<blockquote>
+<p>Maxim Moskalets has added support for <code>--version</code> to <code>GApplication</code>: just call <code>g_application_set_version()</code> in your app to make use of it (<a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3889">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3889</a>)</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="secrets">
+<a class="heading-anchor" href="#secrets" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Secrets <a href="https://gitlab.gnome.org/World/secrets"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A password manager which makes use of the KeePass v.4 format.</p>
+<p><a href="https://matrix.to/#/@msandova:gnome.org">Maximiliano 🥑</a> announces</p>
+<blockquote>
+<p>Secrets have gained numerous updates during this development season. At first, thanks to his work at Volkswagen,
+Jan-Michael Brummer has reworked the architecture to support different key providers beside simple key files. Based on
+this work he added YubiKey and PKCS11 (Smartcard) support. Furthermore Maximiliano revamped
+UI to make use of libadwaita navigation split view widgets. Last but not least Cleo Menezes Jr. OTP added a quick copy action to the entry rows.
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/2ca14f06d3ba56536a1e27d743523850c431b4b81755285554737446912.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="errands">
+<a class="heading-anchor" href="#errands" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Errands <a href="https://github.com/mrvladus/Errands"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Manage your tasks.</p>
+<p><a href="https://matrix.to/#/@ghani1990:matrix.org">ghani1990</a> says</p>
+<blockquote>
+<p><a href="https://flathub.org/apps/io.github.mrvladus.List">Errands</a>, shines brighter with its latest update this week, packing exciting new features and bug fixes to enhance your productivity experience.
+<strong>New Features:</strong></p>
+<ul>
+<li>Drag and drop tasks between lists</li>
+<li>Markdown syntax highlighting in task notes</li>
+<li>Progress bars for each task</li>
+</ul>
+<p><strong>Bug Fixes:</strong></p>
+<ul>
+<li>Reduced sync requests for faster syncing</li>
+<li>Improved handling of edits with sync enabled</li>
+<li>Improved translations
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/hdrzUEUiKuCytJcKIgOXvNQW.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/LdzUIkdpPsFXIlcCbjoMXeKB.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="graphs">
+<a class="heading-anchor" href="#graphs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Graphs <a href="https://graphs.sjoerd.se"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Plot and manipulate data</p>
+<p><a href="https://matrix.to/#/@sjoerdb93:matrix.org">Sjoerd Stendahl</a> announces</p>
+<blockquote>
+<p>Since Graphs is part of GNOME Circle, we&rsquo;ve spent some time on updating the infrastructure. The codebase has now been moved to the <a href="https://gitlab.gnome.org/World/Graphs">GNOME GitLab</a>, and translations are now done using the <a href="https://l10n.gnome.org/module/Graphs/">GNOME translation platform</a>. The GitHub page remains available, but only mirrors the GitLab repository. If you wish to get involved or submit an issue, please turn to the GitLab page instead.</p>
+<p>Furthermore, we&rsquo;ve applied some minor quality-of-life changes since last time:</p>
+<ul>
+<li>Label and title size in the stylesheets can now be set with finer increments.</li>
+<li>Curves that are hidden are now no longer used when setting the limits of the canvas automatically.</li>
+<li>The subtitle in the main application now shows the file location without the file name, which is already displayed above.</li>
+<li>Some minor tweaks under the hood, which should result in slightly faster (about 0.3 s on my setup) start-up times.</li>
+<li>We updated some strings, and updated the metadata to reflect the move to GNOME GitLab.</li>
+</ul>
+<p>The latest release is available <a href="https://flathub.org/apps/se.sjoerd.Graphs">on Flathub</a>!
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/GBEnHnSCBKhhssRlWmGgONsw.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@computerbustr:matrix.org">Gianni Rosato</a> says</p>
+<blockquote>
+<p>Aviator 0.5.1! TL;DR, mostly SVT-AV1-PSY improvements. But still exciting, in my opinion!</p>
+<ul>
+<li>The &ldquo;Open GOP&rdquo; toggle has been renamed to &ldquo;oGOP&rdquo;</li>
+<li>Speed -1 and -2 are now supported with a warning when you go below Speed 3. Speed -2 can take over 8 hours for a minute of video on a Ryzen 9</li>
+<li>New &ldquo;Perceptual Tuning&rdquo; checkbox toggles some new SVT-AV1-PSY features to &ldquo;on&rdquo; by default to improve visual fidelity at the cost of some metric scores</li>
+<li>Surround sound encodes will now benefit from Opus&rsquo;s multichannel optimizations</li>
+<li>Video encoding defaults have been modified, re-enabling temporal filtering by default
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/GSrUzdbRTbWMMjQrfmLgarxz.webp" alt="" />
+</li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@ghani1990:matrix.org">ghani1990</a> reports</p>
+<blockquote>
+<p><a href="https://flathub.org/apps/io.github.giantpinkrobots.varia">Varia</a> download manager has received a new visual identity this week, new icon and a number of new features and improvements, such as:</p>
+<ul>
+<li>A sidebar that hosts buttons for all downloads, downloads in progress, and completed downloads.</li>
+<li>A setting for adjusting the simultaneous download amount.</li>
+<li>Bug fixes and adjustments.
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/fRYFRPjuhagkbNEIBMfTLPyM.png" alt="" />
+</li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@tchx84:matrix.org">Martín Abente Lahaye</a> announces</p>
+<blockquote>
+<p>After three months of development, <a href="https://flathub.org/apps/dev.tchx84.Gameeky">Gameeky</a> reaches its first public release.</p>
+<p>Gameeky is a learning tool in the shape of a game engine. Therefore, its primary goal is to provide a better learning experience for programming, arts and other STEAM-related skills. More about this rationale <a href="https://blogs.gnome.org/tchx84/2023/12/15/gameeky-a-new-learning-tool-to-develop-steam-skills/">here</a>.</p>
+<p>This first release comes the following:</p>
+<ul>
+<li>A game launcher to manage projects more easily.</li>
+<li>A game client to play games cooperatively.</li>
+<li>A scene editor to create and modify game worlds.</li>
+<li>An entity editor to create and modify game objects.</li>
+<li>A Python library for a LOGO-like experience.</li>
+<li>Plugins support to extend the games logic and entities behavior.</li>
+<li>An offline beginner’s guide.</li>
+<li>The first thematic pack to create role-playing games in a medieval fantasy setting.</li>
+<li>And more…</li>
+</ul>
+<p>Gameeky is available in English and Spanish, including the beginner’s guide.</p>
+<p>Check the release <a href="https://blogs.gnome.org/tchx84/2024/02/08/gameeky-released/">post</a> for more information about this project and its future plans.
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/SzFiYMURDnMfrwUImdVMiVTK.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/IbxwWmqAYRMWeyJGItYVxSUv.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@alextee:matrix.org">alextee</a> reports</p>
+<blockquote>
+<p>The <a href="https://www.zrythm.org/en/index.html">Zrythm</a> team has just released Zrythm 1.0.0-beta.6.3.11 featuring a brand new libadwaita-based greeter window among other improvements. Special thanks to Miró Allard for various contributions!</p>
+<ul>
+<li>Many UI elements were ported to new libadwaita widgets</li>
+<li>Visualizers have been moved to bottom bar while the header bar has been simplified/revamped and the secondary header toolbar has been removed</li>
+<li>The welcome/greeter window has been revamped to look more like GNOME apps</li>
+<li>Zrythm no longer depends on breeze icons and some icons have changed</li>
+<li>A bug when copy-pasting audio regions after a BPM change was fixed</li>
+<li>Zrythm is now fully REUSE 3.0 compliant (license issues reported by <code>reuse lint</code> have been fixed)
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/JhQKORjmPsbquKwbjtmYhcTq.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/pvixBvLNADqgvhfXtRVvwvuR.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@ghani1990:matrix.org">ghani1990</a> announces</p>
+<blockquote>
+<p><a href="https://github.com/david-swift">David</a>, is embarking on a mission to bridge the gap between the sleek Swift programming language and the established GNOME and Adwaita ecosystem.
+His efforts go beyond simply bringing Swift to GNOME. he&rsquo;s actively building Adwaita for Swift, a framework specifically designed to create user interfaces for GNOME applications using an API remarkably similar to Apple&rsquo;s SwiftUI. This intuitive approach promises to significantly reduce the learning curve for developers familiar with the SwiftUI paradigm, encouraging wider adoption of Swift within the GNOME realm.</p>
+<p><strong>Exciting New Developments:</strong></p>
+<p>David&rsquo;s dedication extends beyond the Adwaita for Swift framework. He is actively contributing to the <a href="https://github.com/AparokshaUI/adwaita-swift">Adwaita-Swift</a> library, introducing a wave of new features designed to further empower developers:</p>
+<p>* Support for auto-generated widget bindings
+* Support for setting a view&rsquo;s visibility
+* Enhanced support for signals
+* Improved onClick observer</p>
+<p>Adwaita for Swift&rsquo;s intuitive API and the continuous improvements to the Adwaita-Swift library hold immense potential to attract new developers, it&rsquo;s worth noting that this bridge also extends to existing macOS developers. This opens up exciting possibilities for attracting talent and fostering cross-platform collaboration, ultimately benefiting the GNOME ecosystem as a whole.</p>
+<p><strong>Flashcards: A Swift Showcase:</strong></p>
+<p>David’s recent project, <a href="https://github.com/david-swift/Flashcards">Flashcards</a> application, demonstrates Swift’s potential. Although still in early stages, Flashcards packs simplicity and power. Key features include creating, editing, viewing, and studying sets. Need to prepare for an exam? The test mode has you covered. Plus, importing existing Quizlet sets is a breeze.</p>
+<p>This journey towards a more diverse and vibrant GNOME development environment continues, fueled by the dedication and foresight of open-source developers.
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/SrCVrkZWZCFCDEgsaIYIIZbu.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/ISoJIQPgyaItaWOpvHUCtaKU.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/02/twig-134/JbGgcpjPhSwVXlatsOcFDMdR.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/02/twig-134/JbGgcpjPhSwVXlatsOcFDMdR.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@dorothyk:matrix.org">Dorothy K</a> announces</p>
+<blockquote>
+<p>As Outreachy interns,we have landed a <code>gnome_locales</code> testsuite to test locale changes  for some languages with different alphabets ie. <strong>Russian</strong> and <strong>Japanese</strong> and RTL languages ie. <strong>Arabic</strong>.                                                                  Check it out here: <a href="https://openqa.gnome.org/tests/3294#step/gnome_welcome_locales/13">https://openqa.gnome.org/tests/3294#step/gnome_welcome_locales/13</a>
+
+<img src="https://thisweek.gnome.org/posts/2024/02/twig-134/qCqRqxybRWhmrIHNkWohmJdz.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="events">
+<a class="heading-anchor" href="#events" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Events
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> announces</p>
+<blockquote>
+<p>FOSDEM is over, thanks to everyone for attending and organizing. Here is a selection of talks from GNOME contributors</p>
+<ul>
+<li><a href="https://fosdem.org/2024/schedule/event/fosdem-2024-3013-a-fully-open-source-stack-for-mipi-cameras/">A fully open source stack for MIPI cameras</a></li>
+<li><a href="https://fosdem.org/2024/schedule/event/fosdem-2024-3648-privacy-respecting-usage-metrics-for-free-software-projects/">Privacy respecting usage metrics for Free Software projects</a></li>
+<li><a href="https://fosdem.org/2024/schedule/event/fosdem-2024-2542-drop-the-docs-and-embrace-the-model-with-gaphor/">Drop the docs and embrace the model with Gaphor</a></li>
+<li><a href="https://fosdem.org/2024/schedule/event/fosdem-2024-2949-enhancing-linux-accessibility-a-unified-approach/">Enhancing Linux Accessibility: A Unified Approach</a></li>
+<li><a href="https://fosdem.org/2024/schedule/event/fosdem-2024-2972-wayland-s-input-method-is-broken-and-it-s-my-fault/">Wayland&rsquo;s input-method is broken and it&rsquo;s my fault</a></li>
+<li><a href="https://fosdem.org/2024/schedule/event/fosdem-2024-3590-gstreamer-state-of-the-union-2024/">GStreamer: State of the Union 2024</a></li>
+<li><a href="https://fosdem.org/2024/schedule/event/fosdem-2024-3557-the-state-of-video-offloading-on-the-linux-desktop/">The state of video offloading on the Linux Desktop</a></li>
+<li><a href="https://fosdem.org/2024/schedule/event/fosdem-2024-2123-from-kernel-api-to-desktop-integration-how-do-we-integrate-battery-charge-limiting-in-the-desktop/">From Kernel API to Desktop Integration, how do we integrate battery charge limiting in the desktop</a></li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@chenriksen:gnome.org">Caroline Henriksen</a> reports</p>
+<blockquote>
+<p>The GUADEC 2024 Call for Participation is still open! We are looking for proposals for both in-person and remote talks, as well as workshops and BoFs. If you have a talk you would like to share with GUADEC attendees make sure to submit it by Feb 18: <a href="https://foundation.gnome.org/2024/01/10/guadec-2024-call-for-participation-opens/">https://foundation.gnome.org/2024/01/10/guadec-2024-call-for-participation-opens/</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

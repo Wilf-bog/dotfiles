@@ -1,0 +1,141 @@
+<p>Update on what happened across the GNOME project in the week from May 27 to June 03.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@verdre:gnome.org">verdre</a> says</p>
+<blockquote>
+<p>News from the Shell team! We&rsquo;re improving the experience on small screens and things are progressing quickly, GNOME Shell might run on your phone sooner than you think. Check out our <a href="https://blogs.gnome.org/shell-dev/2022/05/30/towards-gnome-shell-on-mobile/">blogpost</a> for more information.
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-46/5eb93e767927cdfe9f7b58bf53cfc0ba0083c7fb.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="webkitgtk">
+<a class="heading-anchor" href="#webkitgtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>WebKitGTK <a href="https://webkitgtk.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>GTK port of the WebKit rendering engine.</p>
+<p><a href="https://matrix.to/#/@aperez:igalia.com">adrian</a> announces</p>
+<blockquote>
+<p>The recent WebKitGTK <a href="https://webkitgtk.org/2022/05/28/webkitgtk2.36.3-released.html">2.36.3</a> release included fixes for a <a href="https://webkitgtk.org/security/WSA-2022-0005.html">number of security issues</a> that allowed remote code execution. While we are not aware of any of them being exploited, it is nevertheless strongly recommended to update to the latest release.</p>
+<p>There are a number of improvements in the multimedia backend as well: GStreamer elements known to be problematic are now explicitly by default, we have enabled capture from devices which can use hardware-accelerated encoding, fixed display capture using Pipewire, and improved streaming video playback.</p>
+</blockquote>
+
+
+<h3 id="software">
+<a class="heading-anchor" href="#software" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Software <a href="https://gitlab.gnome.org/GNOME/gnome-software/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Lets you install and update applications and system extensions.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> reports</p>
+<blockquote>
+<p>Milan Crha has added support for listing other apps by the same author in gnome-software
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-46/jXCHOAssZrTOpnJCQIOysaff.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="calls">
+<a class="heading-anchor" href="#calls" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Calls <a href="https://gitlab.gnome.org/GNOME/calls"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A phone dialer and call handler.</p>
+<p><a href="https://matrix.to/#/@evangelos.tzaras:talk.puri.sm">Evangelos</a> reports</p>
+<blockquote>
+<p>Calls can now do encrypted <a href="https://en.wikipedia.org/wiki/Voice_over_IP">VoIP</a> calls with <a href="https://en.wikipedia.org/wiki/Session_Initiation_Protocol">SIP</a> using <a href="https://en.wikipedia.org/wiki/Secure_Real-time_Transport_Protocol">SRTP</a> 🎉
+Supporting SRTP roughly consisted of two parts:</p>
+<ul>
+<li>Change the <a href="https://gitlab.gnome.org/GNOME/calls/-/merge_requests/540">GStreamer</a> <a href="https://gitlab.gnome.org/GNOME/calls/-/merge_requests/541">pipeline</a> to do SRTP instead of plain RTP</li>
+<li>Handle the <a href="https://datatracker.ietf.org/doc/html/rfc4568">key exchange</a> in the <a href="https://gitlab.gnome.org/GNOME/calls/-/merge_requests/545">signalling</a></li>
+</ul>
+<p>Please note that we don&rsquo;t make use of the encryption indicator yet, for more details see <a href="https://gitlab.gnome.org/GNOME/calls/-/issues/446">this issue</a> where you can also find some <a href="https://gitlab.gnome.org/GNOME/calls/-/issues/446#note_1463379">nice designs</a> by Sam Hewitt of how things should eventually behave.
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-46/vnJcSQLCyJpWSjPSkdJoxnRU.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> reports</p>
+<blockquote>
+<p>Benjamin Berg has <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/2561">fixed a nasty deadlock</a> in <code>GFileMonitor</code> in GLib</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="gaphor">
+<a class="heading-anchor" href="#gaphor" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gaphor <a href="https://gaphor.org"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple UML and SysML modeling tool.</p>
+<p><a href="https://matrix.to/#/@amolenaar:matrix.org">Arjan</a> says</p>
+<blockquote>
+<p>Gaphor <a href="https://github.com/gaphor/gaphor/releases/tag/2.10.0">2.10.0</a> has been release last week. Among the improvements Activity diagrams have been extended. Model loading has been improved and Gaphor finally has full drag and drop support from the tree view to a diagram.
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-46/jXgEOvVmvxvnuCLdSclJnpJJ.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="authenticator">
+<a class="heading-anchor" href="#authenticator" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Authenticator <a href="https://gitlab.gnome.org/World/Authenticator"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Simple application for generating Two-Factor Authentication Codes.</p>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> says</p>
+<blockquote>
+<p>A new bugfixes release of <a href="https://flathub.org/apps/details/com.belmoussaoui.Authenticator">Authenticator</a> is out. The new release also migrates your tokens from the host keyring to inside the sandbox so other sandboxed apps can&rsquo;t access them.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1>
+
+<h3 id="flatseal">
+<a class="heading-anchor" href="#flatseal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flatseal <a href="https://github.com/tchx84/Flatseal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A graphical utility to review and modify permissions of Flatpak applications.</p>
+<p><a href="https://matrix.to/#/@tchx84:matrix.org">Martín Abente Lahaye</a> says</p>
+<blockquote>
+<p>I am happy to <a href="https://blogs.gnome.org/tchx84/2022/05/31/flatseal-1-8-0/">announce</a> the release of Flatseal 1.8.0 🎉. This new release comes with the ability to review and modify global overrides, highlight changes made by users, follow system-level color styles, support for more languages and a few bugs fixes.
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-46/UxrVfHuieFlvBzDXzEnPFYJt.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="amberol">
+<a class="heading-anchor" href="#amberol" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Amberol <a href="https://gitlab.gnome.org/ebassi/amberol/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Plays music, and nothing else.</p>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> announces</p>
+<blockquote>
+<p>New Amberol release! Lots of small UI fixes to improve consistency and give better feedback when importing songs in the playlist. Colors and spacing between elements have also been improved, as well as general reliability.
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-46/451263160ba3dd513dad2fc708c75a00e6cbef17.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-46/96c35365a7f6011b0a0c197a0d5cdf1c2c7569d6.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@federicomena:matrix.org">federico</a> announces</p>
+<blockquote>
+<p>The accessibility infrastructure modules are now merged: <a href="https://viruta.org/accessibility-repos-are-now-merged.html">https://viruta.org/accessibility-repos-are-now-merged.html</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ranfdev:matrix.org">ranfdev</a> announces</p>
+<blockquote>
+<p>Frustrated by the standard .ui file writing experience (that xml is very verbose) and inspired by the <a href="https://gitlab.gnome.org/jwestman/blueprint-compiler">blueprint compiler</a>, I&rsquo;ve decided to write a custom Domain Specific Language to generate .ui files.  Compared to blueprint compiler, this let&rsquo;s you use a complete programming language, with variables and functions, to generate your ui. Check out the <a href="https://github.com/ranfdev/nickel-gtk-ui">project page</a> for more information
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/06/twig-46/RYskhVLjUGfOAEgqQZPVrdiC.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/06/twig-46/RYskhVLjUGfOAEgqQZPVrdiC.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

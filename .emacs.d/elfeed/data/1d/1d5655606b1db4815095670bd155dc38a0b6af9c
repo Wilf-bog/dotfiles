@@ -1,0 +1,87 @@
+<p>Update on what happened across the GNOME project in the week from August 19 to August 26.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="maps">
+<a class="heading-anchor" href="#maps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Maps <a href="https://wiki.gnome.org/Apps/Maps"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Maps gives you quick access to maps all across the world.</p>
+<p><a href="https://matrix.to/#/@mlundblad:matrix.org">mlundblad</a> reports</p>
+<blockquote>
+<p>Upcoming Maps GTK 4 and libshumate port with the last touch-ups by Chris 🌱️ for GNOME 43, also sporting porting from libsoup 2 to libsoup 3 and using the OAuth 2 protocol instead of OAuth 1.1a for signing up editing points-of-interest in OpenStreetMap
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-58/KWaKKUcxSoBLhzaWkbFITqdR.png" alt="Maps GTK4" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@realmazharhussain:matrix.org">Mazhar Hussain</a> announces</p>
+<blockquote>
+<p><a href="https://realmazharhussain.github.io/gdm-settings">Login Manager Settings</a> v1.0 is in beta now.</p>
+<ul>
+<li>Thanks to <a href="https://github.com/thalesruan">Thales Bindá</a>, the app has a new icon that follows <a href="https://developer.gnome.org/hig">GNOME HIG</a>.</li>
+<li>It got a few new dialogs to show errors to the user instead of panicking on the terminal.</li>
+<li>Previously, the app froze after hitting &lsquo;Apply&rsquo; until it was done applying settings. That has been fixed.</li>
+<li>The app now shows a log-out dialog (if required) after applying settings.</li>
+<li>When applying current display settings, scaling is also applied (may not work on all systems).</li>
+<li>The app is now DBusActivatable</li>
+</ul>
+<p>But many of the changes happened to the code itself, making it easier to work on the app in future. One of those changes was how the settings were being saved; which means the users will lose some of their settings. I will refrain from making such user-experience breaking changes in the future though. I only let it happen because the app was new, incomplete, still in a version below 1.0 and the change would make coding experience dramatically better.
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-58/wSLGUtdgfazMKEOkDRNfOEIb.png" alt="Login Manager Settings main screen" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@daudix_ufo:matrix.org">Daudix UFO</a> announces</p>
+<blockquote>
+<p>This week, <a href="https://github.com/GradienceTeam/Gradience">Gradience</a> v0.2.0 released 🚀 here are some exciting updates:</p>
+<ul>
+<li>Added a presets manager, with it you can rename, delete and download other users' presets</li>
+<li>Added a welcome screen</li>
+<li>Improved monet theme generation</li>
+<li>Small UI improvements</li>
+</ul>
+<p>You can download v0.2.0 from <a href="https://github.com/GradienceTeam/Gradience/releases/tag/0.2.0">GitHub</a>. Gradience will be available on Flathub very soon 🎉
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-58/sJsiZFLekBPcGFEamosGgkFX.png" alt="Gradience startup tour" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-58/jPOXMlWPstAaxjFxsWSJzBWc.png" alt="Gradience preset search" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-58/pWJpWcPqhfCogPIWDYNXtrca.png" alt="Gradience color customization" />
+</p>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1><p><a href="https://matrix.to/#/@federicomena:matrix.org">federico</a> announces</p>
+<blockquote>
+<p>Librsvg now has a development guide, intended for interns and newcomers to the code.  It&rsquo;s available at <a href="https://gnome.pages.gitlab.gnome.org/librsvg/devel-docs/index.html">https://gnome.pages.gitlab.gnome.org/librsvg/devel-docs/index.html</a></p>
+</blockquote>
+
+
+<h1 id="gnome-shell-extensions">
+<a class="heading-anchor" href="#gnome-shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell Extensions
+</h1><p><a href="https://matrix.to/#/@oae:gnome.org">oae</a> announces</p>
+<blockquote>
+<p>I have released the first version of <a href="https://github.com/oae/gnome-shell-pano">Pano</a>. An extension that manages the clipboard history. Currently, it supports;</p>
+<ul>
+<li>Code blocks (w/ syntax highlighting)</li>
+<li>Color codes (hex/rgb)</li>
+<li>Images (w/ size and resolution information)</li>
+<li>Links (w/ previews)</li>
+<li>Texts</li>
+<li>File Operations (Cut/Copy)
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-58/b49ad8aec622bcdd49361acf6d3df9ff036f28ef.png" alt="GNOME Shell with the Pano extension" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

@@ -1,0 +1,76 @@
+<p>Update on what happened across the GNOME project in the week from February 25 to March 04.</p>
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie Herold</a> reports</p>
+<blockquote>
+<p>Chris 🌱️ and I launched the <a href="https://gitlab.gnome.org/GNOME/Initiatives/-/issues/34">Update App Screenshots Initiative</a>. Our short-term goal is to have up-to-date screenshots for all Core apps for the upcoming GNOME 42 release. So far, for 15 of 30 Core apps, merge requests are created or already merged.</p>
+<p>If you are maintaining or contributing to an app, you can have a look at our <a href="https://gitlab.gnome.org/GNOME/Initiatives/-/wikis/Update-App-Screenshots">screenshot guidelines</a>, and if needed update your screenshots accordingly.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> announces</p>
+<blockquote>
+<p><a href="https://github.com/bilelmoussaoui/flatpak-vscode">flatpak-vscode</a> 0.0.21 is out with support of</p>
+<ul>
+<li>New Flatpak manifest selector</li>
+<li>Watch for Flatpak manifests changes and modify state accordingly</li>
+<li>Support JSON manifests with comments</li>
+<li>Support <code>--require-version</code></li>
+<li>Better state management</li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@felix:haecker.io">Felix</a> announces</p>
+<blockquote>
+<p>I have released an updated version of &ldquo;Audio Sharing&rdquo;. The interface has been adapted to the new Adwaita design, and some bugs that prevented streaming have been fixed.</p>
+<p>In case you don&rsquo;t know it yet - with this small tool you can stream the audio playback from your computer to other devices in your local network.
+You can find a more detailed description on the <a href="https://gitlab.gnome.org/World/AudioSharing">project homepage</a>. It is available for download on <a href="https://flathub.org/apps/details/de.haeckerfelix.AudioSharing">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2022/03/twig-33/LglYdcTrysrNIdBOXlbBAmBj.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sonnyp:matrix.org">sonnyp</a> says</p>
+<blockquote>
+<p>The first release of Workbench is out</p>
+<p>Workbench is</p>
+<ul>
+<li>A sandbox to learn and experiment with GNOME technologies</li>
+<li>A developer tool for testing and building with an instant feedback loop</li>
+</ul>
+<p><a href="https://flathub.org/apps/details/re.sonny.Workbench">https://flathub.org/apps/details/re.sonny.Workbench</a>
+
+<img src="https://thisweek.gnome.org/posts/2022/03/twig-33/JakhAxNRhhrQFEbzscEpLBLU.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1><p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> announces</p>
+<blockquote>
+<p>The Getting Started tutorial for newcomers to GNOME application development is now complete. You can follow it to learn how to use GNOME Builder to write your own GNOME application; loading and saving content with asynchronous operations; changing the style of your application; adding menus; and saving preferences. The documentation is ready for GNOME 42 and libadwaita: <a href="https://developer.gnome.org/documentation/tutorials/beginners/getting_started.html">https://developer.gnome.org/documentation/tutorials/beginners/getting_started.html</a></p>
+</blockquote>
+
+
+<h1 id="gnome-shell-extensions">
+<a class="heading-anchor" href="#gnome-shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell Extensions
+</h1><p><a href="https://matrix.to/#/@schneegans:matrix.org">Simon Schneegans</a> says</p>
+<blockquote>
+<p>The <a href="https://extensions.gnome.org/extension/4648/desktop-cube/">Desktop-Cube extension</a> for GNOME Shell has been updated and brings <a href="https://github.com/Schneegans/Desktop-Cube/blob/main/docs/changelog.md">many new features</a>! Most importantly, you can now freely rotate the cube by click-and-drag. This works in the overview, on the desktop, and on the panel. The latter is especially cool if you have a maximized window!</p>
+<p>Other changes include:</p>
+<ul>
+<li>Support for GNOME 42.</li>
+<li>Proper touch-screen support.</li>
+<li>Support for <a href="https://hosted.weblate.org/engage/desktop-cube/">online-translations</a>.</li>
+</ul>
+<p>You can <a href="https://www.youtube.com/watch?v=J7pdnkv7v1A">watch a trailer on YouTube</a>!
+
+<img src="https://thisweek.gnome.org/posts/2022/03/twig-33/enRenYcytitNDBKAonuYoBpZ.jpg" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

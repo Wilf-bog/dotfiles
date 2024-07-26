@@ -1,0 +1,152 @@
+<p>Update on what happened across the GNOME project in the week from July 29 to August 05.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> reports</p>
+<blockquote>
+<p>I <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2394">optimized</a> GNOME Shell&rsquo;s layout performance a little bit, and then <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2395">a tiny bit more</a>. This code runs every frame during the overview animations so it&rsquo;s important that it&rsquo;s fast.</p>
+</blockquote>
+
+
+<h3 id="photos">
+<a class="heading-anchor" href="#photos" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Photos <a href="https://gitlab.gnome.org/GNOME/gnome-photos"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Access, organize and share your photos on GNOME</p>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> announces</p>
+<blockquote>
+<p>GNOME Photos now uses the Wallpaper portal for setting a picture as your background / lockscreen.</p>
+</blockquote>
+
+
+<h3 id="web">
+<a class="heading-anchor" href="#web" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Web <a href="https://gitlab.gnome.org/GNOME/epiphany"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Web browser for the GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@cleomenezesjr:matrix.org">Cleo Menezes Jr.</a> announces</p>
+<blockquote>
+<p>GNOME Web gets a more friendly way to get screenshots. It is now possible to do this through the context menu by choosing the Take Screenshot option or pressing Shift + Ctrl + S.
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-55/fhZkyJCfOUmQSfOdIyBOEiHP.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-55/HTCsEZjbAcDaYOuvOooUavQX.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="solanum">
+<a class="heading-anchor" href="#solanum" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Solanum <a href="https://gitlab.gnome.org/World/Solanum"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Balance working time and break time.</p>
+<p><a href="https://matrix.to/#/@brainblasted:gnome.org">Chris 🌱️</a> reports</p>
+<blockquote>
+<p>Solanum now has the ability to completely reset sessions without restarting the app. New contributor Dani Rodríguez is responsible for implementing this. Thank you, Dani!</p>
+</blockquote>
+
+
+<h3 id="newsflash-feed-reader">
+<a class="heading-anchor" href="#newsflash-feed-reader" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>NewsFlash feed reader <a href="https://gitlab.com/news-flash/news_flash_gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Follow your favorite blogs &amp; news sites.</p>
+<p><a href="https://matrix.to/#/@jangernert:matrix.org">Jan Lukas</a> says</p>
+<blockquote>
+<p>NewsFlash recently gained support for Nextcloud News. It only supports API v1.3 which will be available in their next release 18.1.1. So Make sure to update you Nextcloud News if you plan to sync with NewsFlash.
+Since my last update on TWIG was some time ago I should also mention the updated tagging workflow: you can create tags &amp; tag articles now in one step without a single click. The login &amp; reset pages have gotten a libadwaita makeover and are now more mobile friendly. And of course the new libadwaita about dialog has to be mentioned.
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-55/hcdtJhLyMXSdRIzsLhdWIYpB.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-55/xXPRlevmcJTBAVSRJuhIQUzA.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-55/kkjpGtgctRPmJnufZJmRumEe.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="amberol">
+<a class="heading-anchor" href="#amberol" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Amberol <a href="https://gitlab.gnome.org/ebassi/amberol/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Plays music, and nothing else.</p>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> reports</p>
+<blockquote>
+<p>Amberol 0.9.0 is out, now with fuzzy matching when searching inside the playlist, loads of bug fixes in the code, style, and dependencies that deal with loading metadata, and translation updates. You can get the new release from <a href="https://flathub.org/apps/details/io.bassi.Amberol">Flathub</a> or the software center application nearest to you.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@brainblasted:gnome.org">Chris 🌱️</a> reports</p>
+<blockquote>
+<p>Loupe now has the ability to show file properties. NOTE: These are based on the file&rsquo;s basic info and not exif data currently. Properties based on exif data will come later.
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-55/59789fcb7d0f457c125376adeefa6630da7de1db.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ranfdev:matrix.org">ranfdev</a> announces</p>
+<blockquote>
+<p>I&rsquo;m announcing <strong>Lobjur</strong>, a simple GTK4 client for <a href="https://lobste.rs">https://lobste.rs</a>.</p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>Browse the hottest and most recently active stories</li>
+<li>View the comments of each story</li>
+<li>Browse stories by tag, by domain, or by user.</li>
+<li>View some information about the user who just commented below that awesome story</li>
+</ul>
+<p>Also, as far as I know, this is the first application on flathub to use <strong>ClojureScript</strong> and GTK.</p>
+<p>Get this application from <a href="https://flathub.org/apps/details/com.ranfdev.Lobjur">Flathub</a> !
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-55/RtesUIaIQpdXlqhxdSkieRoH.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@knuxify:cybre.space">knuxify</a> announces</p>
+<blockquote>
+<p>The first version (and first minor patch) of <a href="https://github.com/knuxify/eartag">Ear Tag</a> has been released!
+Ear Tag is a small and simple music tag editor meant to be used for editing single files, rather than entire music collections like many other tagging programs. You can <a href="https://flathub.org/apps/details/app.drey.EarTag">get it on FlatHub</a>, or get the code from <a href="https://github.com/knuxify/eartag/releases/tag/0.1.1">the release page</a>.
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-55/ODIthXeWVKFDdkBMsJHEtfiP.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ovflowd:gnome.org">cwunder</a> says</p>
+<blockquote>
+<p>One of our GSoC students Anupam Kumar had great progress on the development of Chromecast (Cast v2) protocol support on GNOME Network Displays. You can read it more <a href="https://kyteinsky.github.io/p/chromecast-protocol/">here</a>.</p>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1><p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> says</p>
+<blockquote>
+<p>Two new tutorials are now available on the GNOME developers documentation website: <a href="https://developer.gnome.org/documentation/tutorials/drag-and-drop.html">how to implement drag and drop with GTK</a> and <a href="https://developer.gnome.org/documentation/tutorials/widget-templates.html">how and when to use composite widget templates</a>. The full project code for the <a href="https://developer.gnome.org/documentation/tutorials/beginners/getting_started.html">Getting Started tutorial</a> is also now <a href="https://gitlab.gnome.org/Teams/documentation/getting-started-tutorial">available on GitLab</a>.</p>
+</blockquote>
+
+
+<h1 id="gnome-shell-extensions">
+<a class="heading-anchor" href="#gnome-shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell Extensions
+</h1><p><a href="https://matrix.to/#/@lupantano:matrix.org">lupantano</a> reports</p>
+<blockquote>
+<p><a href="https://github.com/lupantano/readingstrip">ReadingStrip</a> is an extension for Gnome-Shell. It works as a reading guide for computer and this is really useful for people affected by dyslexia. It works great in helping children focusing to read very well, it marks the sentence that they are reading and hides the previous and the next one. It&rsquo;s already used in education projects at schools, it puts the attention on screen but it&rsquo;s also really useful for programmers and graphic designers who want to check their works.
+
+<img src="https://thisweek.gnome.org/posts/2022/08/twig-55/pnUzwoPKfXZVeeyvVvsMfHUV.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@pervoj:matrix.org">Vojtěch Perník</a> reports</p>
+<blockquote>
+<p>The new <a href="https://cz.gnome.org/">Czech GNOME community website</a>, along with the <a href="https://matrix.to/#/#gnome-cz:matrix.org">Czech Matrix room</a> and <a href="https://mastodon.social/@gnome_cz">Mastodon</a>/<a href="https://twitter.com/gnomecz">Twitter</a> accounts, has been released! Thanks to the GNOME Infrastructure team for their help with publishing the page, and to Martin Thibault and Felix Häcker for their help with creating the Matrix room!</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> reports</p>
+<blockquote>
+<p>GNOME Nightly has now the necessary infrastructure for building and deploying your nightly apps targetting aarch64. More details on the following blog post. <a href="https://blogs.gnome.org/alatiera/2022/08/04/aarch64-for-gnome-nightly-apps/">https://blogs.gnome.org/alatiera/2022/08/04/aarch64-for-gnome-nightly-apps/</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

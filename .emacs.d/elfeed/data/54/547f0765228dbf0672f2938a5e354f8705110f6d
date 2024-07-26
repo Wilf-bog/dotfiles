@@ -1,0 +1,104 @@
+<p>Update on what happened across the GNOME project in the week from September 17 to September 24.</p>
+<p>In this week we have released GNOME 41.</p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2021/09/twig-11/41_banner.png" alt="" />
+</p>
+<p>This new major version of GNOME is full of exciting new features like a completely <a href="https://thisweek.gnome.org/posts/2021/08/twig-7/#software">redesigned Software app</a>, <a href="https://thisweek.gnome.org/posts/2021/08/twig-6/#gnome-shell">new multitasking settings</a>, <a href="https://thisweek.gnome.org/posts/2021/07/twig-2/#settings">better power management</a> - and of course much more. More information can be found in the <a href="https://help.gnome.org/misc/release-notes/41.0/">GNOME 41 release notes</a>.</p>
+<p>Readers who have been following this site for a few weeks will already know some of the new features. If you want to follow the development of GNOME 42 (March 2022), keep an eye on this page - we&rsquo;ll be posting exciting news every week!</p>
+
+
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> reports</p>
+<blockquote>
+<p>libadwaita and libhandy now have <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.StyleManager.html">API</a> for interacting with the upcoming cross-desktop dark style preference. If you&rsquo;re maintaining an app using libadwaita, make sure it works with it
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/09/twig-11/009d8f90420a1ec9a8e4082b96a7c9b99453fd11.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/09/twig-11/009d8f90420a1ec9a8e4082b96a7c9b99453fd11.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie Herold</a> says</p>
+<blockquote>
+<p>This week <a href="https://apps.gnome.org/app/re.sonny.Commit/">Commit</a> entered GNOME Circle. Commit helps you write better Git and Mercurial commit messages. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2021/09/twig-11/9597bb8c4bd15917a43bc189778f0a00e22961f6.png" alt="" />
+</p>
+</blockquote>
+<blockquote>
+<p>As another addition to GNOME Circle, we welcome <a href="https://apps.gnome.org/app/com.adrienplazas.Metronome/">Metronome</a> this week. Metronome does not only allow to keep the tempo, but it also serves as a beat counter. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2021/09/twig-11/da05e2517562210a4f314180b0cba561c8199b9a.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="metadata-cleaner">
+<a class="heading-anchor" href="#metadata-cleaner" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Metadata Cleaner <a href="https://gitlab.com/rmnvgr/metadata-cleaner"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>View and clean metadata in files.</p>
+<p><a href="https://matrix.to/#/@romainvigier:matrix.org">Romain</a> says</p>
+<blockquote>
+<p>I released v2.0.0 of <a href="https://metadatacleaner.romainvigier.fr">Metadata Cleaner</a>! This is a major upgrade featuring a brand new user interface built with GTK4 and libadwaita, a new help system and a whole set of new and updated translations.
+
+<img src="https://thisweek.gnome.org/posts/2021/09/twig-11/YxGBJQdHMzBkpespiNncGHBO.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="kooha">
+<a class="heading-anchor" href="#kooha" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Kooha <a href="https://github.com/SeaDve/Kooha"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple screen recorder with a minimal interface. You can simply click the record button without having to configure a bunch of settings.</p>
+<p><a href="https://matrix.to/#/@sedve:matrix.org">SeaDve</a> reports</p>
+<blockquote>
+<p>Kooha version 2.0.0 is now available at <a href="https://flathub.org/apps/details/io.github.seadve.Kooha">Flathub</a>. It comes with many new bug fixes and features, such as GIF format and opt-in hardware accelerated encoding. For full changelog, see the <a href="https://github.com/SeaDve/Kooha/releases/tag/v2.0.0">release page</a>.</p>
+</blockquote>
+
+
+<h3 id="gtk-rs">
+<a class="heading-anchor" href="#gtk-rs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>gtk-rs <a href="https://gtk-rs.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Safe bindings to the Rust language for fundamental libraries from the GNOME stack.</p>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> says</p>
+<blockquote>
+<p>GTK 4.4 API changes landed in gtk4-rs in its latest release 0.3.</p>
+</blockquote>
+
+
+<h3 id="déjà-dup-backups">
+<a class="heading-anchor" href="#d%c3%a9j%c3%a0-dup-backups" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Déjà Dup Backups <a href="https://wiki.gnome.org/Apps/DejaDup/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple backup tool.</p>
+<p><a href="https://matrix.to/#/@mterry:gnome.org">Michael Terry</a> says</p>
+<blockquote>
+<p>Déjà Dup 43.alpha has been released! It adds support for Microsoft OneDrive, experimental opt-in support for the Restic backup tool, and a general UI refresh. See the <a href="https://discourse.gnome.org/t/call-for-testing-deja-dup-43-alpha/7602">call-for-testing forum post</a> if any of that interests you.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@felix:haecker.io">Felix</a> reports</p>
+<blockquote>
+<p>I released <a href="https://flathub.org/apps/details/de.haeckerfelix.AudioSharing">Audio Sharing</a>! It&rsquo;s a small tool which allows you to stream your current computer audio over the network as a RTSP stream.</p>
+<p>By sharing the audio as a network stream, you can use devices that are not intended to be used as audio sinks (eg. smartphones) to receive it. For example, there are audio accessories that are not compatible with desktop computers (e.g. because the computer does not have a Bluetooth module installed). With the help of this small tool, the computer audio can be played back on a smartphone, which is then connected to the Bluetooth accessory.
+
+<img src="https://thisweek.gnome.org/posts/2021/09/twig-11/DyAmGQLHbFLrmwTyQDnrNatV.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@foreverxmld:matrix.org">Forever</a> reports</p>
+<blockquote>
+<p>My randomization app, Random, has version 0.9 up on <a href="https://flathub.org/apps/details/page.codeberg.foreverxml.Random">Flathub</a>. This release brings working translations to 2 languages, along with the features from older releases.
+
+<img src="https://thisweek.gnome.org/posts/2021/09/twig-11/cIoYpUHvlDgrnBCjEIxeLWAa.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

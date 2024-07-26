@@ -1,0 +1,268 @@
+<p>Update on what happened across the GNOME project in the week from March 15 to March 22.</p>
+<p><strong>This week we released GNOME 46!</strong></p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/46-banner.webp" alt="" />
+</p>
+<p>This new major release of GNOME is full of exciting changes, such as a new global file search, an enhanced Files app, improved online accounts with OneDrive support, remote login via RDP, improved accessibility, experimental variable refresh rate (VRR) support and so much more! See the <a href="https://release.gnome.org/46/">GNOME 46 release notes</a> and <a href="https://release.gnome.org/46/developers/index.html">developer notes</a> for more information.</p>
+<p>Readers who have been following this site will already be aware of some of the new features. If you&rsquo;d like to follow the development of GNOME 47 (Fall 2024), keep an eye on this page - we&rsquo;ll be posting exciting news every week!</p>
+
+
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> announces</p>
+<blockquote>
+<p>As part of the <a href="https://foundation.gnome.org/2023/11/09/gnome-recognized-as-public-interest-infrastructure/">GNOME STF (Sovereign Tech Fund)</a> initiative, a number of community members are working on infrastructure related projects.</p>
+<p>Besides helping with the GNOME 46 release (congrats everyone!); here are the highlights for the past week</p>
+<p>This week we welcome Jerry, Tom, Neill and Jude of Codethink into the team.</p>
+<p>Jerry and Tom got started with finishing <a href="https://github.com/systemd/systemd/pull/28134">sysupdate: Implement dbus service</a>. This will allow apps such as GNOME Software, KDE Discover, &hellip; to support <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd-sysupdate.html">systemd-sysupdate</a></p>
+<p>Neill got started making GNOME openQA more robust with</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/openqa-needles/-/merge_requests/68">Needle cleanup script, for unused/expired needles</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/openqa-tests/-/issues/62">GNOME Shell sometimes fails to start</a></li>
+</ul>
+<p>Julian <a href="https://github.com/jsparber/xdg-desktop-portal/tree/implement_v2_notification_spec">implemented 9 new properties for notifications in xdg-desktop-portal</a> such as icon (via fd), sound, actions, markup-body, &hellip;</p>
+<p>Julian worked on <a href="https://github.com/flatpak/xdg-desktop-portal/pull/1303">making notifications in xdg-desktop-portal forward compatible by allowing unknown properties</a>.</p>
+<p>Dorota is working on an interface for global shortcuts in Mutter/GNOME Shell suitable for the global shortcuts portal (except listing shortcuts)</p>
+<p>Dhanuka <a href="https://hedgedoc.gnome.org/s/ySwSXZnwl">has been testing</a> the Rust DBus Secret Service provider implementation in oo7 to replace GNOME Keyring</p>
+<p>Jonas made improvements in audio integration <a href="https://gitlab.gnome.org/GNOME/libgnome-volume-control/-/merge_requests/25">#25</a>, <a href="https://gitlab.gnome.org/GNOME/libgnome-volume-control/-/merge_requests/26">#26</a></p>
+<p>Alice resumed work on <a href="https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/6540">CSS custom properties / variables support in GTK</a>; animations are now supported.</p>
+<p>Andy <a href="https://github.com/flatpak/xdg-desktop-portal/pull/1313">made a protoype</a> to allow opening URLs with apps. The goal is for an app such as GNOME Maps to advertise support for and handle openstreetmap.org or google.com/maps URLs.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/03/twig-140/a0d71b3cd45dd83b9798753660bb29f727e5b1751771265865681993728.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/03/twig-140/a0d71b3cd45dd83b9798753660bb29f727e5b1751771265865681993728.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> announces</p>
+<blockquote>
+<p>Christian Hergert added support for sub-millisecond timeouts in GLib using <code>ppoll()</code> (<a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3958">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3958</a>)</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> reports</p>
+<blockquote>
+<p>Sudhanshu Tiwari has made a start on porting some of the GIO documentation comments to gi-docgen in <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3969">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3969</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> reports</p>
+<blockquote>
+<p>JSON-GLib, the library for parsing and generating JSON data, is now <a href="https://gitlab.gnome.org/GNOME/json-glib/-/merge_requests/67">capable of strict compliance</a> with the <a href="https://datatracker.ietf.org/doc/html/rfc8259">JSON specification</a>. To avoid breaking backward compatibility, strictness must be explicitly enabled by setting the <a href="https://gnome.pages.gitlab.gnome.org/json-glib/property.Parser.strict.html"><code>JsonParser:strict</code></a> property, or using the <code>--strict</code> option for the <code>json-glib-validate</code> command line tool. To enforce strict compliance, JSON-GLib now includes a whole <a href="https://github.com/nst/JSONTestSuite/">JSON conformance test suite</a>.</p>
+</blockquote>
+
+
+<h1 id="gnome-incubating-apps">
+<a class="heading-anchor" href="#gnome-incubating-apps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Incubating Apps
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie (she/her)</a> announces</p>
+<blockquote>
+<p><a href="https://apps.gnome.org/Decibels/">Decibels</a> has been accepted into the GNOME Incubator. The GNOME <a href="https://gitlab.gnome.org/GNOME/Incubator/Submission">incubation process</a> is for apps that are designated to be accepted into <a href="https://gitlab.gnome.org/Teams/Releng/AppOrganization/-/blob/main/OfficialAppDefinition.md">GNOME Core or GNOME Development Tools</a> if they reach the required maturity.</p>
+<p>Decibels is a basic audio player that is supposed to fill the gap of GNOME currently not having a Core app that is designed to open single audio files. The incubation progress will be <a href="https://gitlab.gnome.org/Teams/Releng/AppOrganization/-/issues/25">tracked in this issue</a>.
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/748b8847728182e09591f74934a15f7bf6493a8a1769802713131909120.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@tbernard:gnome.org">Tobias Bernard</a> reports</p>
+<blockquote>
+<p><a href="https://apps.gnome.org/en/DieBahn">Railway</a> has been accepted into GNOME Circle. It allows you to easily look up travel information across rail networks and borders without having to use multiple different websites. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/564acc30396be08cc06672429649112984d1b8251769823382691381248.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="workbench">
+<a class="heading-anchor" href="#workbench" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Workbench <a href="https://github.com/sonnyp/Workbench/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A sandbox to learn and prototype with GNOME technologies.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> announces</p>
+<blockquote>
+<p>Workbench 46 is <a href="https://flathub.org/apps/re.sonny.Workbench">out on Flathub</a>! Here are the highlights</p>
+<p>Everybody is excited about them so I&rsquo;ll start by saying you can try libadwaita 1.5 adaptive dialogs with the new &ldquo;Dialog&rdquo; and &ldquo;Message Dialogs&rdquo; demos in the Library.</p>
+<p>Workbench now shows inline diagnostics for Rust and Python.</p>
+<p>A new Library demo &ldquo;Snapshot&rdquo; was added to demonstrate one of GTK4 coolest feature.</p>
+<p>26 additional demos have been ported to Python</p>
+<p>5 additional demos have been ported to Vala</p>
+<p><a href="https://release.gnome.org/46/developers/index.html#workbench">The GNOME 46 release notes includes all the changes between Workbench 45 and 46.</a></p>
+<p>Thank you to all contributors
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/7b68bbce921f0c4a18a8d108bc1652f37b91c3a21770499732490158080.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/ae9cce39562df037d66fcc057c474e33a47f28191770499686134710272.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/03/twig-140/751a8ecaea91860720c8676792aa885a34bf65341770499876849713152.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/03/twig-140/751a8ecaea91860720c8676792aa885a34bf65341770499876849713152.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="fretboard">
+<a class="heading-anchor" href="#fretboard" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fretboard <a href="https://apps.gnome.org/Fretboard"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Look up guitar chords</p>
+<p><a href="https://matrix.to/#/@bragefuglseth:gnome.org">Brage Fuglseth</a> reports</p>
+<blockquote>
+<p>Happy release week! Like many other apps, Fretboard has been updated to the GNOME 46 platform, taking advantage of the many platform improvements that have happened this cycle. It also recently gained the ability to notify you when there are no available variants of a chord in its internal chord set, prompting you to reach out and help improve it.</p>
+<p>As always, you can get Fretboard on <a href="https://flathub.gnome.org/apps/dev.bragefuglseth/Fretboard">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/f5b35572d53fad5b6726edb172bc724ab28a401d1770924686385872896.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@robert.mader:gnome.org">robert.mader</a> announces</p>
+<blockquote>
+<p>Livi 0.1.0 is now available on Flathub. Bundled with Gstreamer 1.24 and build against the GTK 4.14 it is the first desktop-targeting app to enable zero-copy Video playback by default in the Wayland ecosystem. Doing so enables highly power-efficient playback, closing the gap to other OSs or embedded environments.
+We expect quite a few people to hit driver bugs in the beginning - so in order to pave the way for other apps to pick up the technology, please help testing on you devices :)
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/a51b50585e7e3d824cb8ba6e519d3c2340ce500b1771236878033354752.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@a23_mh:matrix.org">Alain</a> reports</p>
+<blockquote>
+<p>Planify has received several updates this week, including bug fixes and design enhancements.</p>
+<p>As part of the effort to apply for Gnome Circle, the user interface has been updated with new icons, design elements, and typography.</p>
+<p>What&rsquo;s new:</p>
+<ul>
+<li>Performance of synchronization with Nextcloud has been improved.</li>
+<li>It&rsquo;s now possible to select the Pinboard view as the homepage.</li>
+<li>You can now add a task to the Pinboard view from the contextual menu.</li>
+<li>Various reported bugs have been fixed.
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/IESuBebpVYGCMiomMyKjcQVE.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/RKpwHoslIrYQurZtvtPcGsjO.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/cUSAwYzskLZNvYAtswgiWSrS.png" alt="" />
+</li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@akshaywarrier:matrix.org">Akshay Warrier</a> reports</p>
+<blockquote>
+<p>Biblioteca 1.3 is now available on <a href="https://flathub.org/apps/app.drey.Biblioteca">Flathub</a>!</p>
+<p>This release comes with several additions and improvements such as:</p>
+<ul>
+<li>Added docs for GLib/Gio/GObject</li>
+<li>Added support for web content</li>
+<li>Improved searching UI</li>
+<li>Added support for keyboard navigation in the sidebar</li>
+<li>Added zoom buttons to the primary menu</li>
+<li>Added shortcuts to view open tabs and toggle sidebar
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/nlNHhrXmdGaxjCQIagBBuZaM.png" alt="" />
+</li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@camelcasenick:matrix.org">Markus Göllnitz</a> announces</p>
+<blockquote>
+<p>Rumour has it there was a recent release of Usage – complete with <del>leaked</del> release screenshots.</p>
+<ul>
+<li>So far, It looks like, it features an indicator for applications running in background.</li>
+<li>Apparently, it is even displaying individual Android applications when you run Waydroid, now. That is something.</li>
+<li>On top of it, I would say, the split of the performance view into processor and memory and the subsequent use of flat header bars works quite well.</li>
+</ul>
+<p>Find it at a distro near you.
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/SFUrwUgBRJZJpzdHHUBmOWDQ.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/ZuyxuOyvGHERgTyXHvjvByXz.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@finefindus:matrix.org">FineFindus</a> says</p>
+<blockquote>
+<p>I&rsquo;m happy to announce the first release of Hieroglyphic, a forked and updated version of TeX-Match, which helps to find LaTeX symbols by drawing them. It&rsquo;s available for download on <a href="https://flathub.org/apps/io.github.finefindus.Hieroglyphic">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/TYhkoLeEORSvrLFhbANzBqLo.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="kooha">
+<a class="heading-anchor" href="#kooha" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Kooha <a href="https://github.com/SeaDve/Kooha"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Elegantly record your screen.</p>
+<p><a href="https://matrix.to/#/@sedve:matrix.org">Dave Patrick</a> says</p>
+<blockquote>
+<p>Kooha 2.3 is <a href="https://flathub.org/apps/io.github.seadve.Kooha">now released on Flathub</a>! While there are no groundbreaking new features, this release is focused more on fixes and quality-of-life improvements.</p>
+<p>The following features and fixes are the highlights:</p>
+<ul>
+<li>The area selector window is now resizable, making selecting an area more flexible.</li>
+<li>The previously selected area is now remembered across sessions.</li>
+<li>The current video format and FPS configurations are now visible in the main view.</li>
+<li>The recording done notification now shows the duration and size of the recording.</li>
+<li>Progress is now shown while flushing the recording.</li>
+<li>Recording in stereo rather than in mono is now more preferred.</li>
+<li>Audio stutters on long recordings are now properly fixed.</li>
+<li>The preferences dialog is now more descriptive and provides a more convenient FPS selection box.</li>
+<li>Incorrect recording orientation on certain compositors is now fixed.</li>
+</ul>
+<p>For a more detailed changelog, check out the <a href="https://github.com/SeaDve/Kooha/releases/tag/v2.3.0">full release notes</a>.
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/cXlvTzbBfeyBIfnocEUGcZTA.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/cJaOSlLgPJxAXPyTmKgWCGAR.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="flare">
+<a class="heading-anchor" href="#flare" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flare <a href="https://flathub.org/apps/details/de.schmidhuberj.Flare"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Chat with your friends on Signal.</p>
+<p><a href="https://matrix.to/#/@schmiddi:matrix.org">schmiddi</a> reports</p>
+<blockquote>
+<p>Flare version 0.14.1 was released. This release includes updating the dialogs to the new adwaita adaptive dialogs. Furthermore, we also have a new &ldquo;new channel&rdquo; dialog and channel information dialog. This release also contains a hotfix for newly linked devices not working with groups and another minor fix for an error in certain groups.
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/sdwHuSHayxgFZcfxbYWzjRRK.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-140/CZEHWJSDAKSrzzJxZoTLOWjX.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="blueprint">
+<a class="heading-anchor" href="#blueprint" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Blueprint <a href="https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A markup language for app developers to create GTK user interfaces.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> announces</p>
+<blockquote>
+<p><a href="https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/">Blueprint</a>; the markup language and tooling for GTK is out in version 0.12</p>
+<p>Here are the highlights ✨</p>
+<p>Brand-new formatter to keep files tidy</p>
+<p><code>AdwAlertDialog</code> are supported</p>
+<p>Emit warnings for deprecated features in GTK, GLib, etc</p>
+<p>New IDE integration features</p>
+<ul>
+<li>document symbols</li>
+<li>&ldquo;Go to definitions&rdquo;</li>
+<li>Code action for importing missing namespace</li>
+</ul>
+<p>We also celebrate 70 applications on Flathub built with Blueprint.</p>
+</blockquote>
+
+
+<h1 id="events">
+<a class="heading-anchor" href="#events" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Events
+</h1><p><a href="https://matrix.to/#/@deepeshaburse:matrix.org">Deepesha Burse</a> reports</p>
+<blockquote>
+<p>The deadline for the GUADEC 2024 Call for Participation is closing soon!
+This year&rsquo;s conference will take place in Denver, Colorado, from July 19th to July 24th and we encourage all interested contributors, speakers, and participants to submit their proposals before the deadline on 24th March. This is an excellent opportunity to share your insights, experiences, and ideas with the GNOME community and contribute to the success of GUADEC 2024.
+Please visit guadec.org to submit your proposals. If you have any questions or need assistance, feel free to reach out to the organizing committee at <a href="mailto:guadec@gnome.org">guadec@gnome.org</a>.
+We look forward to receiving your submissions and seeing you at GUADEC 2024 in Denver and online!</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

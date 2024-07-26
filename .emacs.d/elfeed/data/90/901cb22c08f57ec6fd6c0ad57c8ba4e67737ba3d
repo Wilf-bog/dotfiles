@@ -1,0 +1,188 @@
+
+         
+         <p><em>Iosevka Comfy</em> is a customised build of the <a href="https://github.com/be5invis/Iosevka">Iosevka
+typeface</a>, with a consistent
+rounded style and overrides for almost all individual glyphs in both
+roman (upright) and italic (slanted) variants.</p>
+
+<p>IMAGES HERE: <a href="https://protesilaos.com/emacs/iosevka-comfy-pictures">https://protesilaos.com/emacs/iosevka-comfy-pictures</a>.</p>
+
+<ul>
+  <li>Git repo on SourceHut: <a href="https://git.sr.ht/~protesilaos/iosevka-comfy">https://git.sr.ht/~protesilaos/iosevka-comfy</a>
+    <ul>
+      <li>Mirrors:
+        <ul>
+          <li>GitHub: <a href="https://github.com/protesilaos/iosevka-comfy">https://github.com/protesilaos/iosevka-comfy</a></li>
+          <li>GitLab: <a href="https://gitlab.com/protesilaos/iosevka-comfy">https://gitlab.com/protesilaos/iosevka-comfy</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Mailing list: <a href="https://lists.sr.ht/~protesilaos/general-issues">https://lists.sr.ht/~protesilaos/general-issues</a></li>
+  <li>Backronym: Iosevka … Could Only Modify a Font, Yes</li>
+</ul>
+
+<p>Below are the release notes.</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>Include table in the <code class="language-plaintext highlighter-rouge">README.md</code> file that succinctly describes the
+Iosevka Comfy variants.  This is it:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Family</th>
+          <th>Shapes</th>
+          <th>Spacing</th>
+          <th>Style</th>
+          <th>Ligatures</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Iosevka Comfy</td>
+          <td>Sans</td>
+          <td>Compact</td>
+          <td>Monospaced</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Iosevka Comfy Fixed</td>
+          <td>Sans</td>
+          <td>Compact</td>
+          <td>Monospaced</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Iosevka Comfy Duo</td>
+          <td>Sans</td>
+          <td>Compact</td>
+          <td>Duospaced</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>Iosevka Comfy Motion</td>
+          <td>Slab</td>
+          <td>Compact</td>
+          <td>Monospaced</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Iosevka Comfy Motion Fixed</td>
+          <td>Slab</td>
+          <td>Compact</td>
+          <td>Monospaced</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Iosevka Comfy Motion Duo</td>
+          <td>Slab</td>
+          <td>Compact</td>
+          <td>Duospaced</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>Iosevka Comfy Wide</td>
+          <td>Sans</td>
+          <td>Wide</td>
+          <td>Monospaced</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Iosevka Comfy Wide Fixed</td>
+          <td>Sans</td>
+          <td>Wide</td>
+          <td>Monospaced</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Iosevka Comfy Wide Duo</td>
+          <td>Sans</td>
+          <td>Wide</td>
+          <td>Duospaced</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>Iosevka Comfy Wide Motion</td>
+          <td>Slab</td>
+          <td>Wide</td>
+          <td>Monospaced</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Iosevka Comfy Wide Motion Fixed</td>
+          <td>Slab</td>
+          <td>Wide</td>
+          <td>Monospaced</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Iosevka Comfy Wide Motion Duo</td>
+          <td>Slab</td>
+          <td>Wide</td>
+          <td>Duospaced</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>Review all glyph codes to preserve the font’s style in light of the
+numerous breaking stages in the main Iosevka repository.  An example
+of such a change is when <code class="language-plaintext highlighter-rouge">cv20 = 2</code> has a different style than what
+it used to or when the <code class="language-plaintext highlighter-rouge">cvXX</code> refers to another character than what
+it once did.</p>
+  </li>
+  <li>
+    <p>Ensure the lower case italic form of <code class="language-plaintext highlighter-rouge">f</code> has a crossbar at the
+x-height. This is how its roman counterpart is: it aligns with <code class="language-plaintext highlighter-rouge">i</code>
+and <code class="language-plaintext highlighter-rouge">t</code>.</p>
+  </li>
+  <li>
+    <p>Make the capital <code class="language-plaintext highlighter-rouge">B</code> in all the “motion” variants (slab serif families)
+consist of two symmetric chambers.  This is consistent with the sans
+serif variants of Iosevka Comfy.</p>
+  </li>
+  <li>
+    <p>Revise the <code class="language-plaintext highlighter-rouge">f</code> in the “motion” variants to be the same as their sans
+serif counterparts.  The reason is that the previous glyph was
+closed at the top and was thus harder to read at small point sizes.</p>
+  </li>
+  <li>
+    <p>Change the italic forms of lower case <code class="language-plaintext highlighter-rouge">v</code>, <code class="language-plaintext highlighter-rouge">w</code>, <code class="language-plaintext highlighter-rouge">x</code>, and <code class="language-plaintext highlighter-rouge">z</code> from
+curly to straight across all the variants.  This is to ensure a
+consistent rhythm in all contexts between upper and lower case
+characters as well as upright and slanted forms.</p>
+  </li>
+  <li>
+    <p>Let capital <code class="language-plaintext highlighter-rouge">W</code> have a middle joint below the height of its two
+sides in order to be consistent with capital <code class="language-plaintext highlighter-rouge">M</code> and the lower case
+<code class="language-plaintext highlighter-rouge">w</code>.</p>
+  </li>
+  <li>
+    <p>Adjust the bar character <code class="language-plaintext highlighter-rouge">|</code> (also known as “pipe”) to have no slope
+in italic forms.  The intent is to disambiguate it from the forward
+slash.  Also, the pipe can now be used in plain text tables even if
+those are italicised (e.g. a comment in programming code).</p>
+  </li>
+  <li>
+    <p>Declare the Iosevka Comfy Wide Motion Duo as a slab serif font.
+This affects characters that are not explicitly defined in our list
+of overrides.</p>
+  </li>
+  <li>
+    <p>Clarify some comments in the build plan of Iosevka Comfy to better
+describe the intended looks of the referenced characters.</p>
+  </li>
+</ul>
+        
+      

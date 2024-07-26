@@ -1,0 +1,111 @@
+<p>Update on what happened across the GNOME project in the week from February 23 to March 02.</p>
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> reports</p>
+<blockquote>
+<p>The GNOME STF team is running too late today for the deadline.  Sorry about that, we&rsquo;ll be back next Friday with 2 weeks worth of updates. Have a great weekend!</p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="calendar">
+<a class="heading-anchor" href="#calendar" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Calendar <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple calendar application.</p>
+<p><a href="https://matrix.to/#/@theevilskeleton:fedora.im">Hari Rana | TheEvilSkeleton (any/all)</a> reports</p>
+<blockquote>
+<p>GNOME Calendar 46 beta was released, bringing some exciting changes and additions:</p>
+<ul>
+<li><a href="https://fortintam.com/en">Jeff Fortin</a> worked on <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/354">harmonizing the mini calendar&rsquo;s week numbers with GNOME Shell</a>.</li>
+<li><a href="https://feaneron.com/">Georges Stavracas</a> ported every window to <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.Dialog.html"><code>AdwDialog</code></a>, and <a href="https://sungsphinx.codeberg.page/">Dexter Reed</a> ported the about window to <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/411"><code>AdwAboutDialog</code></a>.</li>
+<li><a href="https://gitlab.gnome.org/ramialkawadri">Rami Alkawadri</a> fixed a bug in the creation popover where <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/359">full-day events would show &ldquo;00:00 — 00:00&rdquo;</a>.</li>
+<li>Georges Stavracas ported the <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/365">date selector to Settings portal</a>.</li>
+<li><a href="https://felipekinoshita.com/">Felipe Kinoshita</a> added <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/380">debug information to the about dialog</a>.</li>
+<li>Georges Stavracas ported from <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/402">GtkLabel to GtkInscription for displaying events</a>. Using GtkInscription for this use case increases performance.</li>
+<li>Hari Rana added <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/401">month separators</a>, making it easier to distinguish beginning and end of each month.</li>
+<li>Hari Rana added a <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/393">lock icon for read-only calendars</a></li>
+<li>Hari Rana <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/389">improved the handling of event names</a>, which adds visual feedback to when the event name is invalid.
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-137/5781cb6c4c6a9b317ef58550c264abd8790e34a11761755798108635136.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/03/twig-137/6d4ed4451f8a1d441a198ed2a807e05a9d01ca3a1761782790996623360.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/03/twig-137/6d4ed4451f8a1d441a198ed2a807e05a9d01ca3a1761782790996623360.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></li>
+</ul>
+</blockquote>
+
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> says</p>
+<blockquote>
+<p>Luca Bacci has improved file info queries on Windows, to improve the responsiveness of file choosers (in GIMP and everywhere else): <a href="https://gitlab.gnome.org/GNOME/glib/-/issues/3080">https://gitlab.gnome.org/GNOME/glib/-/issues/3080</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@mcatanzaro:gnome.org">Michael Catanzaro</a> reports</p>
+<blockquote>
+<p>Last week <a href="https://gitlab.gnome.org/GNOME/glib-networking/-/merge_requests/249">I fixed a major performance issue in glib-networking</a> causing the system certificate trust to be parsed repeatedly when running under flatpak or in other containerized environments that use p11-kit-server. Epiphany Technology Preview is now able to load <a href="https://www.cnn.com">https://www.cnn.com</a> in 7-8 seconds for me, down from 31-35 seconds. You should notice network performance improvements in many flatpak apps. This fix will be released in glib-networking 2.80.rc and 2.78.1.</p>
+</blockquote>
+
+
+<h1 id="gnome-incubating-apps">
+<a class="heading-anchor" href="#gnome-incubating-apps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Incubating Apps
+</h1><p><a href="https://matrix.to/#/@pabloyoyoista:matrix.org">Pablo Correa Gomez</a> says</p>
+<blockquote>
+<p>This week Qiu Wenbo replaced <a href="https://apps.gnome.org/Papers/">Papers</a> custom <a href="https://gitlab.gnome.org/GNOME/Incubator/papers/-/merge_requests/81">thread scheduler</a> with GLib&rsquo;s GThreadPool. In consequence, multiple jobs are allowed to be scheduled concurrently (so for example, multiple pages can render at the same time), and we are no longer leaking every thread&rsquo;s memory (the custom scheduler would never call <code>g_thread_join</code>)</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@MateusRodCosta:matrix.org">Mateus R. Costa</a> says</p>
+<blockquote>
+<p>For the past few days I have been working on a new thumbnailer that follows the <a href="https://specifications.freedesktop.org/thumbnail-spec/thumbnail-spec-latest.html">Freedesktop Thumbnail Managing standard</a> for thumbnailing Nintendo handheld systems roms and files.</p>
+<p>While a thumbnailer already existed only for .nds roms as <a href="https://gitlab.gnome.org/GNOME/gnome-nds-thumbnailer">gnome-nds-thumbnailer</a>, I decided to do my own implementation written in Rust and try to add support to the Nintendo 3DS files as well. As you might guess, this was intended to be a way to practice Rust skills on a real-world project.</p>
+<p>The resulting thumbnailer is <a href="https://github.com/MateusRodCosta/bign-handheld-thumbnailer">bign-handheld-thumbnailer</a>. It supports Nintendo DS .nds (although animated DSi icons are not supported and only the standard DS icon is used instead) files and for Nintendo 3DS .cia (3DS installer files, as long as a &ldquo;Meta&rdquo; section is present on the file containing a valid SMDH with the large icon data), .smdh (3DS banner metadata) and .3dsx (3DS homebrew, only if a extended header is present with SMDH data) files are currently supported.
+.cci/.3ds (actual 3DS rom) file support will be added in the future, as it seems to rely on mounting a virtual filesystem to extract the icon file.</p>
+<p>The compiled release from the project is just shy of 1 MB of size. It was also a great learning experience, especially around extracting specific data from a file byte&rsquo;s according to the file structure and around Rust error handling.
+Do note that there isn&rsquo;t a .cia mime type installed by default, so I borrowed a definition from the Citra emulator which might need to be installed alongside the thumbnailer. Depending on how the thumbnailer is installed it might run into issues with the fact that nautilus runs thumbnailers inside a sandbox.</p>
+<p>A Fedora RPM is pending to a future moment due to the Fedora repo crate versions being lower than the project&rsquo;s, requiring either waiting for an update or downgrading the project&rsquo;s dependencies.</p>
+<p><strong>Update from later in the week</strong>: I got some some help from @daknig:matrix.org about the binary size and managed to reduce it from ~990 kB to ~540 kB. This involved moving from clap to pico-args (which is better fit due to being way simpler and adding less size in the final binary) and also adjusting some compilation option from the release build to optimize for a smaller binary.
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-137/aBKJMtuBtQRepNALkyjHMBXP.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@giantpinkrobots:matrix.org">Giant Pink Robots!</a> announces</p>
+<blockquote>
+<p><a href="https://giantpinkrobots.github.io/varia/">Varia</a> download manager has received many new features with the v2024.2.29-1 update this week.</p>
+<ul>
+<li>Support for Firefox and Chrome/ium extension.</li>
+<li>Initial torrenting support.</li>
+<li>Remote mode that allows connection to a remote aria2 instance.</li>
+<li>Background mode that allows the window to be hidden while still downloading.</li>
+<li>Bug fixes and adjustments.
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-137/UKiGDUOnpidFlziiuNRfoGiR.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="turtle">
+<a class="heading-anchor" href="#turtle" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Turtle <a href="https://gitlab.gnome.org/philippun1/turtle"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Manage git repositories in Nautilus.</p>
+<p><a href="https://matrix.to/#/@philippun:matrix.org">Philipp</a> reports</p>
+<blockquote>
+<p>Turtle 0.7 has been released.</p>
+<p>It now runs a service application in background which will calculate the file manager emblems and is accessed via D-Bus. This drastically improves speed, eliminating roughly 80% overhead.</p>
+<p>The <a href="https://gitlab.gnome.org/philippun1/turtle/-/tree/packaging/debian">packaging/debian</a> branch has been updated and now can successfully build the deb packages on Debian and Ubuntu. There is also a turtle-nautilus-flatpak package, which comes in handy if you want to use the nautilus plugin combined with the flatpak.</p>
+<p>There were also some minor bug fixes.
+
+<img src="https://thisweek.gnome.org/posts/2024/03/twig-137/sxSzwyRhEpCcsxNyJomFZrBK.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

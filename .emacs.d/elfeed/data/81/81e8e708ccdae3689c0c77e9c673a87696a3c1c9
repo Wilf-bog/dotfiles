@@ -1,0 +1,145 @@
+<p>Update on what happened across the GNOME project in the week from May 05 to May 12.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="maps">
+<a class="heading-anchor" href="#maps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Maps <a href="https://wiki.gnome.org/Apps/Maps"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Maps gives you quick access to maps all across the world.</p>
+<p><a href="https://matrix.to/#/@mlundblad:matrix.org">mlundblad</a> reports</p>
+<blockquote>
+<p>Maps now has moved the zoom control buttons back to use overlay buttons (they were moved to the headerbar to work around issues with Clutter and GTK overlays in earliear versions when using Clutter), additionally there is a button to indicate map rotation, with the ability to click it to reset to normal &ldquo;north is up&rdquo;. Useful on touch screens when using gestures to rotate. Additionally there&rsquo;s now keyboard shortcuts to rotate, and reset rotation
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/pUjhaWTVpLQfwiDmVzwvxSMN.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="metronome">
+<a class="heading-anchor" href="#metronome" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Metronome <a href="https://gitlab.gnome.org/aplazas/metronome"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Practice music with a regular tempo.</p>
+<p><a href="https://matrix.to/#/@plum-nutty:matrix.org">Clara Hobbs (she/they)</a> reports</p>
+<blockquote>
+<p>Metronome 1.2.1 was released! This new release updates the Flatpak runtime to GNOME 44, finally bringing support for the dark style.  It is now possible to toggle the metronome using the spacebar, regardless what GUI element is selected.  We also landed some minor UI improvements, bringing the app more in line with the HIG.
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/BjDKDAuXfwbGrVKZVTKEQlrZ.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> announces</p>
+<blockquote>
+<p><a href="https://flathub.org/apps/org.gnome.design.IconLibrary">Icon Library</a> finally has the most requested feature: Displaying the license of the icons and a lot of new icons brought to you by the design team.
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/78115c8b0f73cca79a4d5e8c6833862df841a050.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/14b0b17d34869b8203aefd4509a7bfd34fce3fac.png" alt="" />
+</p>
+</blockquote>
+<blockquote>
+<p>I have published a new release of <a href="https://flathub.org/apps/org.gnome.design.SymbolicPreview">Symbolic Preview</a> featuring progressive icons rendering. The old release used to block the UI until all the icons were rendered.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/05/twig-95/1816e7e584abbdac480b19520f83b8efd64a0460.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/05/twig-95/1816e7e584abbdac480b19520f83b8efd64a0460.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@gregorni:hackliberty.org">gregorni</a> announces</p>
+<blockquote>
+<p>This week, I released version 1.3.0 of Letterpress (previously ASCII Images) on <a href="https://flathub.org/apps/io.gitlab.gregorni.ASCIIImages">Flathub</a>! The new release features a better warning dialog when the output is too big, the &ldquo;Output Width&rdquo; setting&rsquo;s subtitle is now more adaptive, and the buttons for copying and saving the output have been swapped. As part of the rebrand, the welcome page now shows a nice illustration (shoutout to Brage, who also came up with the new name) instead of the app&rsquo;s symbolic icon. Finally, Czech and Turkish translations have been added as well.
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/qWWeJMcdDzcxuBJcUjVBJICz.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/iMCjjEeqmuTAZKQdeGjleIxa.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/gdPXFpHPDNKflxvzQymERSol.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@0xmrtt:envs.net">0xMRTT</a> announces</p>
+<blockquote>
+<p>Imaginer has been released! Imaginer is a new application for generating pictures with various AI.</p>
+<p>You can download Imaginer from <a href="https://flathub.org/apps/page.codeberg.Imaginer.Imaginer">Flathub</a> or from either <a href="https://github.com/ImaginerApp/Imaginer">Github</a> or <a href="https://codeberg.org/Imaginer/Imaginer">Codeberg</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/cd221aee84320e331abcac9fc5e1b1756139154d.png" alt="" />
+</p>
+</blockquote>
+<blockquote>
+<p>Bavarder 0.2.0 has been released with support for a formatted output (table/code) and a new website with documentation for explaining how to get a token.
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/b38358c541d9308e0608476fa1d62d65161a3097.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/f68977be51f7838aa0c0187a56ccc55383830853.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@mterry:gnome.org">Michael Terry</a> announces</p>
+<blockquote>
+<p><a href="https://flathub.org/apps/app.drey.MultiplicationPuzzle">Multiplication Puzzle</a> 12.0 released with some UI tweaks (uses an AdwBanner now for the victory screen) and it also changed appids, which flatpak should prompt you about when updating</p>
+</blockquote>
+
+
+<h3 id="tube-converter">
+<a class="heading-anchor" href="#tube-converter" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tube Converter <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Get video and audio from the web.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Tube Converter received <a href="https://github.com/NickvisionApps/TubeConverter/releases/tag/2023.5.0-beta1">V2023.5.0-beta1</a> this week!</p>
+<p>This update includes the ability to stop all downloads, retry all failed downloads, and clear all downloads that you may have in your queue (previously these actions had to happen on a per download basis).</p>
+<p>Besides that, we completely rewrote the backend for managing downloads, which should now fix many of the crashing issues users were experiencing :)
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/LfxdEGjPbeeruRKuZAOUJTKS.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="flare">
+<a class="heading-anchor" href="#flare" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flare <a href="https://flathub.org/apps/details/de.schmidhuberj.Flare"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An unofficial Signal GTK client.</p>
+<p><a href="https://matrix.to/#/@schmiddi:matrix.org">schmiddi</a> says</p>
+<blockquote>
+<p>Flare 0.8.1 was release with many UI and UX improvements including some style changes to the message list to better differentiate own messages from messages sent by others. Furthermore, channels that don&rsquo;t have messages yet are now hidden by default, one now has to explicitly show them using the new &ldquo;compose&rdquo;-button. The final noteworthy addition is a new button to scroll down in the list view.
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/lGTCzGjfBKeaVKePLpwvYhrO.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> says</p>
+<blockquote>
+<p>There are improvements to the GNOME openQA tests:</p>
+<ul>
+<li>The tests are now split into multiple testsuites. Now we can develop multiple sets of tests and run them independently (<a href="https://gitlab.gnome.org/GNOME/openqa-tests/-/issues/26">issue 26</a>)</li>
+<li>A commandline tool named <code>pipeline_report.py</code> was merged to make it easier to analyse test failures (<a href="https://gitlab.gnome.org/GNOME/openqa-tests/-/merge_requests/25">MR 25</a>)</li>
+<li>The individual openQA test results are now shown in the Gitlab merge request UI (<a href="https://gitlab.gnome.org/GNOME/openqa-tests/-/issues/32">issue 32</a> - screenshot below)</li>
+<li>Most importantly, we are about to run test #1000 at <a href="https://openqa.gnome.org/">https://openqa.gnome.org/</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/05/twig-95/zyzxhUPUXCqKDWWzYvTrCkXa.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="google-summer-of-code">
+<a class="heading-anchor" href="#google-summer-of-code" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Google Summer of Code
+</h1><p><a href="https://matrix.to/#/@felipeborges:gnome.org">feborges</a> reports</p>
+<blockquote>
+<p>GNOME will be mentoring 9 new contributors in Google Summer of Code 2023!</p>
+<p>GSoC is a program focused on bringing new contributors into open source software development. A number of long term GNOME developers are former GSoC interns, making the program a very valuable entry point for new members in our project.</p>
+<p>The new contributors will soon get their blogs added to <a href="https://planet.gnome.org">Planet GNOME</a>, making it easy for the GNOME community to get to know them and the projects that they will be working on.</p>
+<p><a href="https://discourse.gnome.org/t/announcement-gnome-will-be-mentoring-9-new-contributors-in-google-summer-of-code-2023/15232">https://discourse.gnome.org/t/announcement-gnome-will-be-mentoring-9-new-contributors-in-google-summer-of-code-2023/15232</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

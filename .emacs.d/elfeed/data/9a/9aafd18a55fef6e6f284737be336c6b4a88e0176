@@ -1,0 +1,189 @@
+<p>Update on what happened across the GNOME project in the week from March 25 to April 01.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@msandova:gnome.org">Maximiliano</a> says</p>
+<blockquote>
+<p>GNOME Logs was <a href="https://gitlab.gnome.org/GNOME/gnome-logs/-/merge_requests/30">ported to GTK 4</a> and libadwaita 🎊.
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-37/e8c9f3bf82ba3e657876e7f46be9d4ee965494ec.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="webkitgtk">
+<a class="heading-anchor" href="#webkitgtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>WebKitGTK <a href="https://webkitgtk.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>GTK port of the WebKit rendering engine.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> announces</p>
+<blockquote>
+<p>WebKitGTK Adwaita widgets, as well as scrollbars, now more closely resemble their libadwaita versions than GTK3 versions, and support CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color">accent-color</a> following the Cocoa WebKit ports
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-37/79adf0cecbd38c0c341b4374d9fc75c9ab4edbc8.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="webfont-kit-generator">
+<a class="heading-anchor" href="#webfont-kit-generator" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Webfont Kit Generator <a href="https://github.com/rafaelmardojai/webfont-kit-generator"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Create @font-face kits easily.</p>
+<p><a href="https://matrix.to/#/@rafaelmardojai:matrix.org">Rafael Mardojai CM</a> reports</p>
+<blockquote>
+<p>Webfont Kit Generator 1.0.0 is out and available in <a href="https://flathub.org/apps/details/com.rafaelmardojai.WebfontKitGenerator">Flathub</a>!</p>
+<p>Major changes are:</p>
+<ul>
+<li>Ported to GTK4 and libadwaita</li>
+<li>New Google Fonts importer</li>
+<li>New app icon by Tobias Bernard</li>
+</ul>
+<p>The app now will be in maintenance mode.</p>
+</blockquote>
+
+
+<h3 id="shortwave">
+<a class="heading-anchor" href="#shortwave" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Shortwave <a href="https://gitlab.gnome.org/World/Shortwave"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Internet radio player with over 25000 stations.</p>
+<p><a href="https://matrix.to/#/@felix:haecker.io">Felix</a> announces</p>
+<blockquote>
+<p>It is now possible to add <a href="https://gitlab.gnome.org/World/Shortwave/-/merge_requests/434">local stations</a> in Shortwave that are not publicly published on radio-browser.info. I also added a new transition for the miniplayer mode using <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/class.TimedAnimation.html">Adw.TimedAnimation</a>.
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-37/CDVRnQUUgVNAokblJjvhyzEu.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/04/twig-37/BazSUgnFKkDobpiewtcFiPso.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/04/twig-37/BazSUgnFKkDobpiewtcFiPso.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="pika-backup">
+<a class="heading-anchor" href="#pika-backup" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Pika Backup <a href="https://wiki.gnome.org/Apps/PikaBackup"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Simple backups based on borg.</p>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie Herold</a> reports</p>
+<blockquote>
+<p>A new release for Pika Backup is planned for May the 15th. This means that version 0.4 will be released exactly one year after version 0.3.</p>
+<p>This week I landed the following:</p>
+<ul>
+<li>
+<p>Added desktop notifications for postponed scheduled backups. Backups can be postponed if the repository is in use, the internet connection is metered, or the device is not connected to power.</p>
+</li>
+<li>
+<p>Updated some text and icons in the user interface.</p>
+</li>
+<li>
+<p>Added a desktop notification for crashes of the app running the backups. This should only happen on unlikely events like segfaults in underlying libraries or saturated memory.</p>
+</li>
+<li>
+<p>Added archives prefixes to the user interface including a dialog to change them.</p>
+</li>
+<li>
+<p>Until now, BorgBackup created checkpoints every 30 minutes in Pika Backup. Checkpoints are points in the backup process from where you can continue an incomplete backup.</p>
+<p>Since BorgBackup 1.2 it is also possible to create a checkpoint when manually aborting a running backup. Now, this is also the default when aborting a backup in Pika Backup.</p>
+</li>
+<li>
+<p>A lot of technical details around the background monitor that enables scheduled backups have been fixed.</p>
+</li>
+<li>
+<p>The dialog that asked for the repository password now shows which repository is requiring the password.</p>
+</li>
+<li>
+<p>Added support for <em>Fnmatch</em> (shell wildcard patterns) to the backend. Adding them outside the config file will probably be delayed until version 0.5.</p>
+</li>
+<li>
+<p>Continued to make the setup workflow more pleasing.</p>
+</li>
+<li>
+<p>Fixed several bugs in showing when the next backup is scheduled.</p>
+</li>
+<li>
+<p>Notify about connected backup devices if they aren&rsquo;t set up for scheduled backups, to quickly start a backup from the desktop notification.</p>
+</li>
+<li>
+<p>Properly notify about missing devices for backup that is scheduled for this moment.
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-37/1b810d484cfe5bafe7f5e645c3bc4c6306900b92.png" alt="" />
+</p>
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="identity">
+<a class="heading-anchor" href="#identity" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Identity <a href="https://gitlab.gnome.org/YaLTeR/identity"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Compare images and videos</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> reports</p>
+<blockquote>
+<p>Identity v0.3 is out with zoom support! You can set the scale to 100% for pixel-perfect comparisons, or zoom in and out with mouse, touchpad or touchscreen. Zoom and view position are synchronized across open files.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/04/twig-37/6a20927d0e554aecc03584c29cb2e72784ae1b55.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/04/twig-37/6a20927d0e554aecc03584c29cb2e72784ae1b55.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@rickykresslein:matrix.org">rickykresslein</a> says</p>
+<blockquote>
+<p><a href="https://github.com/lakoliu/Furtherance">Furtherance</a> is a new time tracking app written in Rust using GTK 4 and libadwaita.
+Features include:</p>
+<ul>
+<li>Track time spent on individual tasks</li>
+<li>Idle detection on GNOME</li>
+<li>Task names and times can be edited</li>
+<li>Tasks are sorted by day and similar tasks are grouped
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-37/BCZWCYsLMxLGIzqkpGqJCmDd.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="fractal">
+<a class="heading-anchor" href="#fractal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fractal <a href="https://gitlab.gnome.org/GNOME/fractal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Matrix messaging app for GNOME written in Rust.</p>
+<p><a href="https://matrix.to/#/@jsparber:gnome.org">Julian Sparber</a> says</p>
+<blockquote>
+<p>This week I have something really exciting to report. We moved Fractal-next to the main development branch. This means that we now have nightly flatpak builds[1], so users can already try out the new version of Fractal without having to build it from source. This will also give use much more feedback and many more bug reports, hopefully not too many :) Note that this isn&rsquo;t a release and the software should still be considered  unstable.</p>
+<p>[1] <a href="https://gitlab.gnome.org/GNOME/fractal#development-version">https://gitlab.gnome.org/GNOME/fractal#development-version</a></p>
+</blockquote>
+
+
+<h1 id="gnome-shell-extensions">
+<a class="heading-anchor" href="#gnome-shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell Extensions
+</h1><p><a href="https://matrix.to/#/@firox263:matrix.org">firox263</a> reports</p>
+<blockquote>
+<p><a href="https://github.com/mjakeman/extension-manager/">Extension Manager</a>, a simple app for browsing and installing Shell Extensions, had its third release. This update adds some of the final missing pieces when  compared with the extensions website.</p>
+<p>The highlights are:</p>
+<ul>
+<li>Displays comments and reviews</li>
+<li>Support for updating in-app</li>
+<li>A new GNOME-style app icon</li>
+<li>Improved handling of errors</li>
+<li>Correct labelling of out-of-date extensions</li>
+<li>Significantly reduced file size
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-37/YJYAdKgodrAzawjLFfywnAET.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="just-perfection">
+<a class="heading-anchor" href="#just-perfection" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Just Perfection <a href="https://extensions.gnome.org/extension/3843/just-perfection/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A tweak tool to customize the GNOME Shell and to disable UI elements.</p>
+<p><a href="https://matrix.to/#/@justperfection:gnome.org">Just Perfection</a> reports</p>
+<blockquote>
+<p><a href="https://extensions.gnome.org/extension/3843/just-perfection/">Just Perfection extension</a> version 20 has been released with some bug fixes and two new features (calendar and events visibility).
+This version is named after Francesco Hayez (Italian painter).
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-37/bdb32a0e4df4a1d783df171f049ecaaaecb9bb66.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

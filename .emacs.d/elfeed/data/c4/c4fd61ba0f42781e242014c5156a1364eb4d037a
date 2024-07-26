@@ -1,0 +1,44 @@
+
+<p>So this just happened:</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><a href="https://tldr.nettime.org/@tante/112004861936954526"><img loading="lazy" decoding="async" width="590" height="563" data-attachment-id="5013" data-permalink="https://tante.cc/2024/02/27/the-automattic-ai-thing/screenshot-from-2024-02-27-23-58-26/" data-orig-file="https://i0.wp.com/tante.cc/wp-content/uploads/2024/02/Screenshot-from-2024-02-27-23-58-26.png?fit=590%2C563&amp;ssl=1" data-orig-size="590,563" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot-from-2024-02-27-23-58-26" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/tante.cc/wp-content/uploads/2024/02/Screenshot-from-2024-02-27-23-58-26.png?fit=590%2C563&amp;ssl=1" data-large-file="https://i0.wp.com/tante.cc/wp-content/uploads/2024/02/Screenshot-from-2024-02-27-23-58-26.png?fit=590%2C563&amp;ssl=1" tabindex="0" role="button" src="https://i0.wp.com/tante.cc/wp-content/uploads/2024/02/Screenshot-from-2024-02-27-23-58-26.png?resize=590%2C563&#038;ssl=1" alt="Mastodon post by me at https://tldr.nettime.org/@tante/112004861936954526:
+
+&quot;Holy shit, WordPress.com/Automattic is really trying to destroy all the goodwill it has built over years. 
+
+Selling user posts to &quot;AI&quot; companies is such a breach of trust and an insult. It negates any respect for user contribution that is the basis for a good and sustainable relationship.
+
+https://mastodon.social/@404mediaco/112004850884204466&quot;" class="wp-image-5013" srcset="https://i0.wp.com/tante.cc/wp-content/uploads/2024/02/Screenshot-from-2024-02-27-23-58-26.png?w=590&amp;ssl=1 590w, https://i0.wp.com/tante.cc/wp-content/uploads/2024/02/Screenshot-from-2024-02-27-23-58-26.png?resize=420%2C401&amp;ssl=1 420w" sizes="(max-width: 590px) 100vw, 590px" data-recalc-dims="1" /></a></figure>
+
+
+
+<p>and I thought it might make sense to add a few more words to it.</p>
+
+
+
+<p>So Automattic, the company financing the development of the Open Source WordPress blogging platform (which this site and a huge part of the Internet runs on) is in talks to <a href="https://www.404media.co/tumblr-and-wordpress-to-sell-users-data-to-train-ai-tools/">sell user generated data to Midjourney and OpenAI</a>. This only applies to users/customers of their hosted WordPress.com offering and Tumblr, a struggling social media platform they bought a while ago. (So your own instance is in the clear for now &#8211; until you realize that these companies are scraping the web anyways so your writing or drawing or whatever is in their training set).</p>
+
+
+
+<p>This is bad for a bunch of reasons.</p>
+
+
+
+<p>Firstly it shouldn&#8217;t be &#8220;opt-out&#8221;: Making this feature a thing you need to actively reject shows how Automattic sees their user base and it&#8217;s not better than how Meta looks at their little content producer drones. There was a level of trust between Automattic (which was seen as one of the good companies [spoiler: Those do not exist<strong>)</strong>] and its users. Automattic wanted some money for hosting or maybe place a few ads but they didn&#8217;t appear overly creepy or greedy. Of course Automattic always had the power but they played the role of the nice king, the well meaning ruler. Now they show that with all the free money that is sloshing around due to the &#8220;AI&#8221; hype nothing is sacred. This will make many people even more suspect of &#8220;the nice companies&#8221; and might lead to a &#8220;anyone is going to screw me anyways so I can just as well publish on some closed platform. Some people might also just drop out of publishing to the web because the friction to move is such a hassle.</p>
+
+
+
+<p>Secondly it shows the fucking brainrot that the &#8220;AI&#8221; hype creates. WordPress a product that got its market and mind share because of enabling people to write, to publish, to be creative and expressive now tells you that anything you do is just data sludge to feed to whoever has the most NVIDIA cards to burn through. Signs of this already emerged when WordPress added &#8220;AI&#8221; writing assistants to their products. It&#8217;s no longer about you having the tools to write and create and through that connect to others, it&#8217;s just about creating whatever content. Who cares what&#8217;s in your posts anyways? A tool for creation whose makers and owners very explicitly display a total disregard for the people using it to create something and the artifacts they create. Because the loop &#8220;AI writing assistant&#8221; to &#8220;training stochastic parrots on people writing&#8221; back to &#8220;writing assistant&#8221; tells a clear story of that is valued. Your writing is valuable not as your expression but as something with some information density and entropy that OpenAI can use to fuck up the web even more.</p>
+
+
+
+<p>Thirdly this damage to the WordPress <em>brand</em> might affect the open source project as well. Which is massively bad for a web that&#8217;s not controlled by big corporations. WordPress might not be the fanciest tool on the market but it has one thing going for it: Nothing comes close to ease of deployment and running. WordPress enabled so many non techy writers and artists to run their own platform should they choose to do so. It was one of the few successful mainstream projects that actually got people to realistically choose not to post their stuff on Medium or Substack or some other closed hosting platform. Because while there are more open source publishing platforms really nothing is near WordPress&#8217; sweet spot of features, ease of use, ease of deployment and plugin landscape. The fancy shmancy new tools running increasingly complex JavaScript stacks or even more obscure tech are not ready for non nerds to run (and often fragile as fuck). And that&#8217;s on the nerds and techies. We were so busy rewriting things in rust or JavaScript that we never thought about what to do when Automattic falls. We were very naive.</p>
+
+
+
+<p>I don&#8217;t think it&#8217;s necessary to move away from your self-hosted WordPress instance. Yet. But Automattic has shown their true colors and this goes beyond implementing a new editor you don&#8217;t super like or not adding some feature you&#8217;d like to see. This is about the things you do, the products of your creativity, your expressions of joy and anger and pain and love and beauty. It&#8217;s about a company who used to claim to support writers and other creators deciding that all you do, all the things you care enough to express in whatever imperfect, broken, dumb way are up for grabs to feed to a machine whose expressed purpose is to replace you, to drown your work in the digital equivalent to toxic waste. And very obviously Automattic knew it was shady. Because they worked on this completely in secret: They could have introduced an opt-in system for third party data use beforehand. Communicated things honestly, going into an exchange with their users before accepting checks from Microsoft/OpenAI and others. But they didn&#8217;t. Because they didn&#8217;t think that the writers and artists that made WordPress and Automattic what they are and their work are deserving of respect.</p>
+
+
+
+<p>When people show you who they are and what they think, believe them. Maybe WordPress needs a fork and a new home governed by an entity that does care about the people using it to express themselves. Automattic obviously does not want to be that.</p>

@@ -1,0 +1,293 @@
+<p>Update on what happened across the GNOME project in the week from May 31 to June 07.</p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2024/06/twig-151/pride.png" alt="A GNOME window with a pride flag background and a raised first on top of it" />
+</p>
+<p>This Week in GNOME is dedicated to the struggles of all lesbian, gay, trans, inter, bi, pan, asexual, aromantic, non-binary, and queer people.</p>
+<p>LGBTQIA+ people have always been an integral part of our project, across all different roles. We wish to take this opportunity to thank you all from the bottom of our hearts for all your contributions to GNOME and to our community as whole.</p>
+<p>We as a project have a fundamental responsibility to ensure the safety and well-being of everyone in our community. This can only be accomplished by prioritizing marginalized people’s safety over privileged people’s comfort. To accomplish this we expect everyone to follow our <a href="https://conduct.gnome.org/">Code of Conduct</a>, we moderate our chat rooms via cross-community moderation lists and we believe in speaking up whenever something is not right. This takes a remarkable effort every single day, and we still have a lot to learn and to improve. Let us learn and grow together, to become the best we can be.</p>
+<p>Our thoughts go out to all the people that have to fight for their right to exist. We stand with you and we fight with you.</p>
+
+
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> reports</p>
+<blockquote>
+<p>As part of the <a href="https://foundation.gnome.org/2023/11/09/gnome-recognized-as-public-interest-infrastructure">GNOME STF (Sovereign Tech Fund)</a> initiative, a number of community members are working on infrastructure related projects.</p>
+<p>Here are the highlights for the past two weeks:</p>
+
+
+<h1 id="tooling-and-qa">
+<a class="heading-anchor" href="#tooling-and-qa" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tooling and QA
+</h1><p>Martin published a post on discourse: <a href="https://discourse.gnome.org/t/towards-a-better-way-to-hack-and-test-your-system-components/21075/1">Towards a better way to hack and test your system components</a>. Feedback welcome!</p>
+<p>Martin made an <a href="https://gitlab.gnome.org/tchx84/sysext-utils/-/merge_requests/1">initial implementation of sysext-utils</a> based on the proposal ahead.</p>
+<p>Abderrahim <a href="https://gitlab.gnome.org/GNOME/gnome-build-meta/-/merge_requests/2923">made a GNOME OS single installer image</a> that can install both the ostree and the sysupdate variants. The ostree variant can be dropped when sysupdate is no longer considered experimental.</p>
+
+
+<h1 id="platform">
+<a class="heading-anchor" href="#platform" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Platform
+</h1><p>Alice <a href="https://blogs.gnome.org/alicem/2024/06/07/css-happenings/">wrote a blog post about all of the CSS work</a></p>
+<p>Alice landed <a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1125">AdwMultiLayoutView</a> in libadwaita.</p>
+<p>Sophie added option to <a href="https://gitlab.gnome.org/sophie-h/glycin/-/merge_requests/84">apply image orientation</a> to texture data in glycin.</p>
+<p>Sophie <a href="https://gitlab.gnome.org/sophie-h/glycin/-/merge_requests/86">split C bindings</a> into libglycin and libglycin-gtk4 and added necessary features such that projects that don&rsquo;t want/need to depend on GTK (liker mutter) can use glycin without depending on it.</p>
+
+
+<h1 id="flatpak">
+<a class="heading-anchor" href="#flatpak" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flatpak
+</h1><p>Dorota <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3343">added an internal API to GNOME Shell</a> that provides additional functionality for managing key grabs, suitable for the GlobalShortcuts portal.</p>
+<p>Hub <a href="https://github.com/flatpak/flatpak/issues/5816">fixed a leak</a> in Flatpak that was spoiling the CLI output.</p>
+<p>Hub wrote the Flatpak docs chapter on <a href="https://github.com/flatpak/flatpak-docs/pull/478">fallback devices</a>.</p>
+<p>António landed many refactors and the part 1 of <a href="https://gitlab.gnome.org/GNOME/nautilus/-/merge_requests/1502">FileChooser portal implementation</a> for Nautilus.</p>
+
+
+<h1 id="accessibility">
+<a class="heading-anchor" href="#accessibility" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Accessibility
+</h1><p>Matt implemented support for the GtkTextView multi-line text widget in <a href="https://gitlab.gnome.org/mwcampbell/gtk/tree/accesskit">the GTK AccessKit implementation</a>.</p>
+<p>Matt <a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1134">fixed a bug</a> in libadwaita that caused the accessibility tree under an AdwTabView or AdwViewStack to be inconsistent, leading to a crash in AccessKit.</p>
+<p>Matt started key grabbing protocol support in Mutter/Orca to improve screen reader compatibility in Wayland.</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/mwcampbell/mutter/tree/newton">Mutter</a></li>
+<li><a href="https://gitlab.gnome.org/mwcampbell/orca/tree/newton">Orca</a></li>
+</ul>
+<p>Georges fixed a bug in WebKit where accessible events aren&rsquo;t notified</p>
+<ul>
+<li>Multidisciplinary fix, pending reviews but the relevant people are MIA</li>
+<li>WebKit: <a href="https://github.com/WebKit/WebKit/pull/29052">https://github.com/WebKit/WebKit/pull/29052</a></li>
+<li>Flatpak: <a href="https://github.com/flatpak/flatpak/pull/5828">https://github.com/flatpak/flatpak/pull/5828</a></li>
+<li>xdg-dbus-proxy: <a href="https://github.com/flatpak/xdg-dbus-proxy/pull/61">https://github.com/flatpak/xdg-dbus-proxy/pull/61</a></li>
+</ul>
+
+
+<h1 id="secrets">
+<a class="heading-anchor" href="#secrets" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Secrets
+</h1><p>Felix <a href="https://gitlab.gnome.org/sophie-h/key-rack/-/merge_requests/16">added file monitor</a> to Key Rack to watch for Flatpak app keyring changes</p>
+<p>Felix <a href="https://gitlab.gnome.org/sophie-h/key-rack/-/merge_requests/15">landed a major refactor</a> in Key Rack to merge logic for system and flatpak items.</p>
+<p>Dhanuka implemented the secret prompt interface in oo7</p>
+<ul>
+<li><a href="https://github.com/bilelmoussaoui/oo7/pull/73/commits/4530a0bb89aa3a5ead41204f61956992bf144b92">Implemented org.gnome.keyring.Prompter interface</a></li>
+<li><a href="https://github.com/bilelmoussaoui/oo7/pull/73/commits/22e1f8604c88adcb1c02a72ca8cf213323f9bc44">Implemented org.freedesktop.Secret.Prompt interface</a></li>
+<li><a href="https://github.com/bilelmoussaoui/oo7/pull/73/commits/fc9bc209d43aeca15fbdad50459b13a1529bf98a">Integrated secret prompt into oo7-daemon</a></li>
+</ul>
+
+
+<h1 id="interoperability">
+<a class="heading-anchor" href="#interoperability" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Interoperability
+</h1><p>Andy landed tons of things on GNOME Online Account</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/227">SRV lookup</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/227">Parallel SRV lookups for DAV</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/239">IMAP/SMTP autoconfig</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/211">Kerberos KEYRING support (big battery improvements)</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/merge_requests/232">Port to AdwDialog</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/2625">Settings: don&rsquo;t show account details when setup completes</a></li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@neillydun:matrix.org">Neill Whillans</a> says</p>
+<blockquote>
+<p>More visible CVE reports for gnome-build-meta                                                                                                                                                                                                        Recently we have made a few changes to the generation and accessibility of CVE reports for gnome-build-meta.</p>
+<p>These changes include the generation of additional CVE reports for both the vm and vm-secure manifests, for master and all future, supported release branches. We also make use of Gitlab Pages to automatically publish not only the CVE reports for the master branch, but also reports for each currently supported release branch. A list of these individual reports can be obtained through a newly added badge that can be found at the top of gnome-build-meta’s README.</p>
+<p>This work was carried out as part of Codethink’s collaboration with the GNOME Foundation, through the Sovereign Tech Fund (STF).
+
+<img src="https://thisweek.gnome.org/posts/2024/06/twig-151/mdFeoyAZqjMuBrdEAWuuepNT.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/06/twig-151/HmIeWxjGNEHJhWWZjtMHoApb.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="gtk">
+<a class="heading-anchor" href="#gtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GTK <a href="https://gitlab.gnome.org/GNOME/gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Cross-platform widget toolkit for creating graphical user interfaces.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alice (she/her)</a> reports</p>
+<blockquote>
+<p>I wrote a blog post about the recent work in GTK to modernize its CSS engine, and the implications for apps using GTK and libadwaita: <a href="https://blogs.gnome.org/alicem/2024/06/07/css-happenings/">https://blogs.gnome.org/alicem/2024/06/07/css-happenings/</a></p>
+</blockquote>
+
+
+<h1 id="gnome-incubating-apps">
+<a class="heading-anchor" href="#gnome-incubating-apps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Incubating Apps
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie (she/her)</a> reports</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/GNOME/Incubator/showtime">Showtime</a> has been accepted into the GNOME Incubator. The GNOME <a href="https://gitlab.gnome.org/GNOME/Incubator/Submission">incubation process</a> is for apps that are designated to be accepted into <a href="https://gitlab.gnome.org/Teams/Releng/AppOrganization/-/blob/main/OfficialAppDefinition.md">GNOME Core or GNOME Development Tools</a> if they reach the required maturity.</p>
+<p>Showtime is slated to replace Totem, GNOME&rsquo;s current video app. The reason is that Totem has now been unmaintained for nearly a year and still uses GTK 3.</p>
+<p>You can help improve Showtime by testing <a href="https://welcome.gnome.org/app/Showtime/#installing-a-nightly-build">the nightly version</a> and contributing. The incubation progress will be <a href="https://gitlab.gnome.org/Teams/Releng/AppOrganization/-/issues/29">tracked in this issue</a>.
+
+<img src="https://thisweek.gnome.org/posts/2024/06/twig-151/61a57394f46e80abca4747619b07995911b2834e1799029095082754048.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="railway">
+<a class="heading-anchor" href="#railway" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Railway <a href="https://gitlab.com/schmiddi-on-mobile/railway"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Travel with all your train information in one place.</p>
+<p><a href="https://matrix.to/#/@camelcasenick:matrix.org">Markus Göllnitz</a> says</p>
+<blockquote>
+<p>We have some great news about Railway! @schmiddi:matrix.org has done a tremendous job at boring up the backend code of the application, as well as its library counterpart. Railway is no longer limited to the HAFAS API. 🎉 That is not just a theoretical improvement: As the first newly supported network, you can test the Swiss SBB through search.ch.</p>
+<p>If you use Railway and want to test this new network, or want to help us make sure we did not introduce obscure regressions, be sure to test our Railway beta release on Flathub beta: <code>flatpak install https://flathub.org/beta-repo/appstream/de.schmidhuberj.DieBahn.flatpakref</code>. If you do test it: Thank You! And feel free to share feedback with us over at <a href="https://matrix.to/#/#railwayapp:matrix.org">#railwayapp:matrix.org</a> or <a href="https://gitlab.com/schmiddi-on-mobile/railway/-/issues">at our issue tracker</a>.</p>
+<p>Aaaand … @schmiddi:matrix.org even went so far as to implement support for MOTIS. You never heard of that? It is used by an open data based routing project: the <a href="https://transitous.org/">Transitous</a> project. As they say about themselves, “Transitous is a community-run provider-neutral international public transport routing service.” If you hate the need to change the network in Railway, care about FLOSS server-side as much as client-side, and want to see open data in open formats, such as GTFS, excel, you will love this. In the beta release, you can find it as “Worldwide (beta) using Transitous,” but bear in mind that official providers are still more accurate, more up-to-date, and will stay for a reason. If you want to see that changed, you can get involved with said project.</p>
+</blockquote>
+
+
+<h3 id="gtk-rs">
+<a class="heading-anchor" href="#gtk-rs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>gtk-rs <a href="https://gtk-rs.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Safe bindings to the Rust language for fundamental libraries from the GNOME stack.</p>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> says</p>
+<blockquote>
+<p>It took a bit too long but we have finally released a blog post that covers the changes that landed in the latest Rust bindings release. <a href="https://gtk-rs.org/blog/2024/06/01/new-release.html">https://gtk-rs.org/blog/2024/06/01/new-release.html</a></p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@nokse22:matrix.org">Nokse</a> reports</p>
+<blockquote>
+<p>I have released <a href="https://flathub.org/apps/io.github.nokse22.Exhibit">Exhibit</a>, an app to view 3D models, powered by <a href="https://f3d.app/">F3D</a>.</p>
+<p>Some of the features are:</p>
+<ul>
+<li>Support for many file formats, including glTF, USD, STL, STEP, PLY, OBJ, FBX, Alembic and many more</li>
+<li>Many rendering and visual settings</li>
+<li>HDRI or colored background</li>
+<li>Export render to image</li>
+<li>Drag and drop files</li>
+<li>It installs mimetype and icon for supported file types</li>
+</ul>
+<p>For now it only works with X11/Xwayland because the library can only be compiled to work with one compositor at a time.
+
+<img src="https://thisweek.gnome.org/posts/2024/06/twig-151/pEbgvbXvRfkFGwJPScWSDBuP.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/06/twig-151/VCrHmfZDCVLWsQqtkrqScHIx.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/06/twig-151/hWzgXozeoEHsZuicmzNkiFhQ.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/06/twig-151/hXvTrFoiTiDribnIpOeBgTDc.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/06/twig-151/hXvTrFoiTiDribnIpOeBgTDc.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@dubstar_04:matrix.org">Daniel Wood</a> announces</p>
+<blockquote>
+<p>Design - 2D CAD for GNOME has recieved an update with lots of changes. This update forms a foundation for more advanced drawing entities like dimensions. Highlights include:</p>
+<ul>
+<li>Manage text and line styles from the preferences window</li>
+<li>Update text and line style from the properties window</li>
+<li>Highlight design entities on mouse hover</li>
+<li>Fix opening files as arguments e.g. &lsquo;open with&rsquo; from file browser</li>
+<li>Improve Trim and Extend command selection highlighting</li>
+<li>Fix behaviour when no commands have been performed</li>
+<li>Prevent selection of items on locked or frozen layers</li>
+<li>Fix ortho and polar snaps when typed point data is entered</li>
+<li>Update rotate command to match typical workflow</li>
+<li>Underline shortcut letter of command options</li>
+<li>Use consistent prompt for command with options</li>
+<li>Remove custom headerbar buttons from layers window</li>
+<li>Use RGB colours internally for all colour definitions</li>
+<li>Support DXF true colours</li>
+<li>Fix issue with layers being updated with incorrect state when editing layer data</li>
+<li>Draw entities using correct colour when part of a block, supporting colour &lsquo;ByBlock&rsquo;</li>
+<li>Add Block command, enabling creation of blocks</li>
+<li>Add Explode command, enabling decomposition of blocks into primitive entities</li>
+<li>Add Hatch command and common hatch patterns</li>
+<li>Update to the latest GNOME dev kit icons</li>
+<li>Add Purge command, clearing unused, blocks, layers and line types</li>
+<li>Show suggestions for invalid command input</li>
+</ul>
+<p>Get it on Flathub: <a href="https://flathub.org/apps/io.github.dubstar_04.design">https://flathub.org/apps/io.github.dubstar_04.design</a>
+
+<img src="https://thisweek.gnome.org/posts/2024/06/twig-151/qNwxAWctYhwPwiKlppYoJgbK.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/06/twig-151/dSFANpESdYaOMhfKOSUZBHnL.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="keypunch">
+<a class="heading-anchor" href="#keypunch" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Keypunch <a href="https://github.com/bragefuglseth/keypunch"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Practice your typing skills</p>
+<p><a href="https://matrix.to/#/@bragefuglseth:gnome.org">Brage Fuglseth</a> reports</p>
+<blockquote>
+<p>How fast can you type? Find out with my new app, Keypunch!</p>
+<p>I&rsquo;ve worked on this for the last couple of months, and it&rsquo;s finally out. Keypunch lets you practice your typing skills with automatically generated pseudo-text in your language of choice. Alternatively, you can supply it with your own text, such as song lyrics, Wikipedia articles, and quotes. Get ready to accelerate your typing speed!</p>
+<p>Get it on Flathub: <a href="https://flathub.org/apps/dev.bragefuglseth.Keypunch">https://flathub.org/apps/dev.bragefuglseth.Keypunch</a>
+
+<img src="https://thisweek.gnome.org/posts/2024/06/twig-151/aba33d137708706fed025fd0821fb55ddd2870ff1798410037652094977.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="shell-extensions">
+<a class="heading-anchor" href="#shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Shell Extensions
+</h1><p><a href="https://matrix.to/#/@arcaege:matrix.org">Arca</a> says</p>
+<blockquote>
+<p><strong>Day Progress</strong>: an extension that shows a progress bar of your day to help you track your time.</p>
+<p>I actually released this last week, but it took another week for it to become stable enough to call it a stable release. Here&rsquo;s how it works: you set the start and reset (end) times in the extension preferences (for example, the start and end of your workday) and it displays a progress bar of the current time in the top panel.</p>
+<p>Features:</p>
+<ul>
+<li>Customisable start and end times, including the ability to wrap around midnight</li>
+<li>Option to show time elapsed instead of remaining</li>
+<li>Customisable bar width and height</li>
+<li>Option to display a bar with smooth, curved ends (experimental)</li>
+<li>Customisable panel position and index</li>
+<li>Shows percentage and time elapsed and remaining in the tooltip (see image below)</li>
+</ul>
+<p>You can download the extension at: <a href="https://extensions.gnome.org/extension/7042/day-progress/">https://extensions.gnome.org/extension/7042/day-progress/</a>
+The GitHub repository is at: <a href="https://github.com/ArcaEge/day-progress">https://github.com/ArcaEge/day-progress</a></p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2024/06/twig-151/https:/extensions.gnome.org/extension-data/screenshots/screenshot_7042_utrZmJN.png" alt="screenshot image" />
+</p>
+</blockquote>
+
+
+<h1 id="internships">
+<a class="heading-anchor" href="#internships" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Internships
+</h1><p><a href="https://matrix.to/#/@pabloyoyoista:matrix.org">Pablo Correa Gomez</a> announces</p>
+<blockquote>
+<p>as part of GSoC camelCaseNick landed support for floating zoom buttons in Papers! This design pattern was part of the mockups for more than 5 years, but was never implemented! This is a first step to make the top bar fitting on mobile!
+
+<img src="https://thisweek.gnome.org/posts/2024/06/twig-151/qvlaseGaiFiINnZBRrjiWqqh.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="events">
+<a class="heading-anchor" href="#events" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Events
+</h1><p><a href="https://matrix.to/#/@asmit2952:matrix.org">Asmit Malakannawar</a> reports</p>
+<blockquote>
+<p>Hello everyone,</p>
+<p>We&rsquo;re thrilled to announce that the call for volunteers and the call for BoFs for GUADEC 2024 is now open!</p>
+<p>If you&rsquo;re passionate about making GUADEC 2024 a success and want to lend a helping hand, please fill out the volunteer form.</p>
+<p>For those interested in presenting a workshop or leading a Birds of a Feather (BoF) session, we&rsquo;d love to hear from you! Please fill out the BoFs form to submit your proposal.</p>
+<p><a href="https://events.gnome.org/event/209/surveys/124">Volunteer Form Link</a>
+<a href="https://events.gnome.org/event/209/surveys/123">BoFs Form Link</a></p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@zana:gnome.org">Rosanna</a> reports</p>
+<blockquote>
+<p>My week has been very busy with financial things. I had meetings with our bookkeeper and our accountant. With their support, our books have never looked as good as they do now. In addition, working within our board-approved balanced budget has meant that our numbers look healthier as well. This point was made more apparent to me when our accountant asked if we had considered finding higher interest accounts for our funds. More research on this is now on my to-do list.</p>
+<p>The Foundation&rsquo;s Strategic Plan Draft <a href="https://foundation.gnome.org/strategicplan/">https://foundation.gnome.org/strategicplan/</a> is still open for feedback. Please submit using the link on that page. While we value all feedback, having it all in one place makes it easier for us to make sure we don&rsquo;t lose any of your views.</p>
+<p>If you haven&rsquo;t registered for GUADEC yet, please do so: <a href="https://events.gnome.org/event/209/registrations/!">https://events.gnome.org/event/209/registrations/!</a> The earlier we know how many people are coming, the easier it will be for us to plan. And don&rsquo;t forget to register for the baseball game as well. Go Red Sox!</p>
+<p>We are still looking for more sponsors for GUADEC. If you or your employer are interested, please let us know!</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@chenriksen:gnome.org">Caroline Henriksen</a> reports</p>
+<blockquote>
+<p>In honor of Pride Month, we&rsquo;d like to give a special shout out to our LGBTQIA+ community. Thank you for contributing your voices and efforts to GNOME, we appreciate all of your hard work!</p>
+<p>We’d also like to invite everyone to join us in celebrating Pride Month at a special GNOME Social Hour on June 24 at 17:30 UTC. Come chat with contributors and Foundation members, and share ideas on how we can better support our LGBTQIA+ community. <a href="https://discourse.gnome.org/t/celebrate-pride-month-at-the-gnome-social-hour-june-24/21421">https://discourse.gnome.org/t/celebrate-pride-month-at-the-gnome-social-hour-june-24/21421</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

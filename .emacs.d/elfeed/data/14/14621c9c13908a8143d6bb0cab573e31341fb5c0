@@ -1,0 +1,105 @@
+
+         
+         <p>Cursory provides a thin wrapper around built-in variables that affect
+the style of the Emacs cursor on graphical terminals.  The intent is
+to allow the user to define preset configurations such as “block with
+slow blinking” or “bar with fast blinking” and set them on demand.
+The use-case for such presets is to adapt to evolving interface
+requirements and concomitant levels of expected comfort, such as in
+the difference between writing and reading.</p>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">cursory</code></li>
+  <li>Official manual: <a href="https://protesilaos.com/emacs/cursory">https://protesilaos.com/emacs/cursory</a></li>
+  <li>Change log: <a href="https://protesilaos.com/emacs/cursory-changelog">https://protesilaos.com/emacs/cursory-changelog</a></li>
+  <li>Git repo on SourceHut: <a href="https://git.sr.ht/~protesilaos/cursory">https://git.sr.ht/~protesilaos/cursory</a>
+    <ul>
+      <li>Mirrors:
+        <ul>
+          <li>GitHub: <a href="https://github.com/protesilaos/cursory">https://github.com/protesilaos/cursory</a></li>
+          <li>GitLab: <a href="https://gitlab.com/protesilaos/cursory">https://gitlab.com/protesilaos/cursory</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Mailing list: <a href="https://lists.sr.ht/~protesilaos/cursory">https://lists.sr.ht/~protesilaos/cursory</a></li>
+  <li>Backronym: Cursor Usability Requires Styles Objectively Rated Yearlong</li>
+</ul>
+
+<p>Below are the release notes.</p>
+
+<hr />
+
+<p>Cursory has been in a stable state for a long time.  I use it daily
+and am happy with what it does.  This version refactors parts of the
+code in the interest of legibility/hackability, while providing a
+quality-of-life feature for users.</p>
+
+<h2>A preset can now inherit from another</h2>
+
+<p>In the interest of defining multiple presets while avoiding
+duplication, the user option <code class="language-plaintext highlighter-rouge">cursory-presets</code> now accepts an
+<code class="language-plaintext highlighter-rouge">:inherit</code> property.  For example:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">setq</span> <span class="nv">cursory-presets</span>
+      <span class="o">'</span><span class="p">(</span>
+        <span class="c1">;; Sample code here ...</span>
+
+        <span class="p">(</span><span class="nv">bar</span>
+         <span class="ss">:cursor-type</span> <span class="p">(</span><span class="nv">bar</span> <span class="o">.</span> <span class="mi">2</span><span class="p">)</span>
+         <span class="ss">:cursor-in-non-selected-windows</span> <span class="nv">hollow</span>
+         <span class="ss">:blink-cursor-mode</span> <span class="mi">1</span>
+         <span class="ss">:blink-cursor-blinks</span> <span class="mi">10</span>
+         <span class="ss">:blink-cursor-interval</span> <span class="mf">0.5</span>
+         <span class="ss">:blink-cursor-delay</span> <span class="mf">0.2</span><span class="p">)</span>
+
+        <span class="p">(</span><span class="nv">bar-no-other-window</span>
+         <span class="ss">:inherit</span> <span class="nv">bar</span>
+         <span class="ss">:cursor-in-non-selected-windows</span> <span class="no">nil</span><span class="p">)</span>
+
+        <span class="c1">;; More sample code here ...</span>
+        <span class="p">))</span>
+</code></pre></div></div>
+
+<p>Presets were already capable of getting properties from a default <code class="language-plaintext highlighter-rouge">t</code>
+preset.  Now they can be controlled with greater precision.</p>
+
+<p>The value of <code class="language-plaintext highlighter-rouge">cursory-presets</code> is updated accordingly to benefit from
+this mechanism and to showcase how it is done:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">defcustom</span> <span class="nv">cursory-presets</span>
+  <span class="o">'</span><span class="p">((</span><span class="nv">box</span>
+     <span class="ss">:blink-cursor-interval</span> <span class="mf">0.8</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">box-no-blink</span>
+     <span class="ss">:blink-cursor-mode</span> <span class="mi">-1</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">bar</span>
+     <span class="ss">:cursor-type</span> <span class="p">(</span><span class="nv">bar</span> <span class="o">.</span> <span class="mi">2</span><span class="p">)</span>
+     <span class="ss">:blink-cursor-interval</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">bar-no-other-window</span>
+     <span class="ss">:inherit</span> <span class="nv">bar</span>
+     <span class="ss">:cursor-in-non-selected-windows</span> <span class="no">nil</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">underscore</span>
+     <span class="ss">:cursor-type</span> <span class="p">(</span><span class="nv">hbar</span> <span class="o">.</span> <span class="mi">3</span><span class="p">)</span>
+     <span class="ss">:blink-cursor-blinks</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">underscore-thin-other-window</span>
+     <span class="ss">:inherit</span> <span class="nv">underscore</span>
+     <span class="ss">:cursor-in-non-selected-windows</span> <span class="p">(</span><span class="nv">hbar</span> <span class="o">.</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="p">(</span><span class="no">t</span> <span class="c1">; the default values</span>
+     <span class="ss">:cursor-type</span> <span class="nv">box</span>
+     <span class="ss">:cursor-in-non-selected-windows</span> <span class="nv">hollow</span>
+     <span class="ss">:blink-cursor-mode</span> <span class="mi">1</span>
+     <span class="ss">:blink-cursor-blinks</span> <span class="mi">10</span>
+     <span class="ss">:blink-cursor-interval</span> <span class="mf">0.2</span>
+     <span class="ss">:blink-cursor-delay</span> <span class="mf">0.2</span><span class="p">))</span>
+  <span class="c1">;; Omitting the doc string for demo purposes...</span>
+  <span class="p">)</span>
+</code></pre></div></div>
+
+<p>In the above sample, we notice both the <code class="language-plaintext highlighter-rouge">:inherit</code> property and the
+default <code class="language-plaintext highlighter-rouge">t</code> preset with all its properties.  Presets beside <code class="language-plaintext highlighter-rouge">t</code> act as
+overrides of the defaults and, as such, need only consist of the
+properties that change from the default.  In the case of an
+<code class="language-plaintext highlighter-rouge">:inherit</code>, properties are first taken from the inherited preset and
+then the default one.</p>
+        
+      

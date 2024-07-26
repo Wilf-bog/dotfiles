@@ -1,0 +1,154 @@
+<p>Update on what happened across the GNOME project in the week from May 03 to May 10.</p>
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> says</p>
+<blockquote>
+<p>As part of the GNOME STF (Sovereign Tech Fund) initiative, a number of community members are working on infrastructure related projects.</p>
+<p>Here are the highlights for the past week</p>
+<p>Andy is making progress on URL handling for apps. We are planning on advancing and using <a href="https://gitlab.freedesktop.org/xdg/xdg-specs/-/merge_requests/45">the freedesktop intent-apps proposal</a> which Andy implemented in <a href="https://github.com/flatpak/xdg-desktop-portal/pull/1313/commits/11c6af7a7a956c596c64fa1e7e19b49f0f86ac55">xdg-desktop-portal</a>.</p>
+<p>Felix completed the work to <a href="https://gitlab.gnome.org/sophie-h/key-rack/-/merge_requests/14">add keyring collections support to Key Rack</a>.</p>
+<p>Adrien worked on <a href="https://gitlab.gnome.org/GNOME/baobab/-/merge_requests/74">replacing deprecated and inaccessible <code>GtkTreeView</code> in Disk Usage Analyzer</a> (Baobab)</p>
+<p>Adrien worked on <a href="https://gitlab.gnome.org/GNOME/nautilus/-/merge_requests/1497">replacing deperecated and inaccessible <code>GtkEntryCompletion</code> in Files</a> (Nautilus)</p>
+<p>Dhanuka <a href="https://github.com/bilelmoussaoui/oo7/pull/73">finalized the Keyring implementation in oo7</a>.</p>
+<p>Dhanuka <a href="https://github.com/bilelmoussaoui/oo7/pull/77">landed rekeying support in oo7</a></p>
+<p>Hubert made good progress on the USB portal and the portal is now able to display a permission dialog.</p>
+<p>Julian <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/4027">added notifications spec v2 support to GLib GNotification</a></p>
+<p>Julian <a href="https://github.com/flatpak/xdg-desktop-portal-gtk/pull/478">created a draft merge request</a> for new notification specs against xdg-desktop-portal-gtk</p>
+<p>Antonio finished preparing nautilus components for reuse in a new FileChooser window. <a href="https://gitlab.gnome.org/GNOME/nautilus/-/merge_requests/1502">Ready for review</a>
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-147/bf770c356fee5516f85426e58405f225e60a84d61789006741359296512.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> announces</p>
+<blockquote>
+<p>A series of fixes for a GDBus security issue with processes accepting spoofed signal senders has landed. Big thanks to Simon McVittie for putting together the fix (and an impressive set of regression tests), to Alicia Boya García for reporting the issue, and Ray Strode for reviews. <a href="https://discourse.gnome.org/t/security-fixes-for-signal-handling-in-gdbus-in-glib/20882">https://discourse.gnome.org/t/security-fixes-for-signal-handling-in-gdbus-in-glib/20882</a></p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="ear-tag">
+<a class="heading-anchor" href="#ear-tag" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Ear Tag <a href="https://gitlab.gnome.org/World/eartag"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Edit audio file tags.</p>
+<p><a href="https://matrix.to/#/@knuxify:cybre.space">knuxify</a> says</p>
+<blockquote>
+<p>Ear Tag <a href="https://gitlab.gnome.org/World/eartag/-/releases/0.6.1">0.6.1</a> has been released, bringing a few minor quality-of-life improvements and a switch to the new AdwDialog widgets. You can get the latest release from <a href="https://flathub.org/apps/app.drey.EarTag">Flathub</a>.</p>
+<p>(Sidenote - I am looking for contributors who would be willing to help with Ear Tag&rsquo;s testing, bug-fixing and further development, with the goal of potentially finding co-maintainers - if you&rsquo;re interested, see <a href="https://gitlab.gnome.org/World/eartag/-/issues/132">issue #132</a> for more details.)
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-147/wLZhaFfOlynCfMrJcNpbRGki.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="letterpress">
+<a class="heading-anchor" href="#letterpress" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Letterpress <a href="https://gitlab.gnome.org/World/Letterpress"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Create beautiful ASCII art</p>
+<p><a href="https://matrix.to/#/@gregorni:gnome.org">Gregor Niehl</a> says</p>
+<blockquote>
+<p>A new minor release of <a href="https://flathub.org/apps/io.gitlab.gregorni.Letterpress">Letterpress</a> is out! No big UI changes in this 2.1 release, mostly small touches here and there:</p>
+<ul>
+<li>Images can now be pasted from the clipboard</li>
+<li>Zoom is now more consistent between different factors</li>
+<li>The Drag-n-Drop overlay was <del>stolen from Loupe</del> redesigned</li>
+<li>The GNOME runtime was updated to version 46, which means the Tips Dialog now uses the new <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.Dialog.html"><code>Adw.Dialog</code></a>, and the About Dialog is now truly an <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.AboutDialog.html"><code>About Dialog</code></a></li>
+</ul>
+<p>The app has also been translated to Simplified Chinese!</p>
+<p>I&rsquo;m happy to announce that, in the meantime, @FineFindus has joined the project as maintainer, so it&rsquo;s no longer maintained by a single person.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@a23_mh:matrix.org">Alain</a> announces</p>
+<blockquote>
+<p><strong>Planify 4.7.2 is here!</strong></p>
+<p>We&rsquo;re excited to announce the release of Planify version 4.7.2, with exciting new features and improvements to help you manage your tasks and projects even more efficiently!</p>
+<p><strong>1. Inbox as Independent Project:</strong> We&rsquo;ve completely rebuilt the functionality of Inbox. Now, it&rsquo;s an independent project with the ability to move your tasks between different synchronized services. The Inbox is the default place to add new tasks, allowing you to quickly get your ideas out of your head and then plan them when you&rsquo;re ready.</p>
+<p><strong>2. Enhanced Task Duplication:</strong> When you duplicate a task now, all subtasks and labels are automatically duplicated, saving you time and effort in managing your projects.</p>
+<p><strong>3. Duplication of Sections and Projects:</strong> You can now easily duplicate entire sections and projects, making it easier to create new projects based on existing structures.</p>
+<p><strong>4. Improvements in Quick Add:</strong> We&rsquo;ve improved the usability of Quick Add. Now, the &ldquo;Create More&rdquo; option is directly displayed in the user interface, making it easier to visualize and configure your new tasks.</p>
+<p><strong>5. Improvements on Small Screens:</strong> For those working on devices with small screens, we&rsquo;ve enhanced the user experience to ensure smooth and efficient navigation.</p>
+<p><strong>6. Project Expiry Date:</strong> Your project&rsquo;s expiry date now clearly shows the remaining days, helping you keep track of your deadlines more effectively.</p>
+<p><strong>7. Enhanced Tag Panel:</strong> The tag panel now shows the number of tasks associated with each tag, rather than just the number of tags, giving you a clearer view of your tagged tasks.</p>
+<p><strong>8. Archiving of Projects and Sections:</strong> You can now archive entire projects and sections! This feature helps you keep your workspace organized and clutter-free.</p>
+<p><strong>9. New Task Preferences View and Task Details Sidebar:</strong> Introducing a new task preferences view! You can now customize your task preferences with ease. Additionally, we&rsquo;ve enabled the option to view task details using the new sidebar view, providing quick access to all the information you need.</p>
+<p><strong>10. Translation Updates:</strong> We thank @Scrambled777 for the Hindi translation update and @twlvnn for the Bulgarian translation update.</p>
+<p>These are just some of the new features and improvements you&rsquo;ll find in Planify version 4.7.2. We hope you enjoy using these new tools to make your task and project management even more efficient and productive.</p>
+<p>Download the <a href="https://flathub.org/apps/io.github.alainm23.planify">update</a> today and take your productivity to the next level with Planify!</p>
+<p>Thank you for being part of the Planify community!
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-147/MoHDeCNbVJvWRmOfTalzSiHe.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/05/twig-147/CtAbRYCHziThspUkmusfyIgL.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/05/twig-147/CtAbRYCHziThspUkmusfyIgL.webm">download it</a> and watch it with your favorite video player!</span>
+</video>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/05/twig-147/WbBOCwkYjILnSMdFwkbsvTWU.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/05/twig-147/WbBOCwkYjILnSMdFwkbsvTWU.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@giantpinkrobots:matrix.org">Giant Pink Robots!</a> says</p>
+<blockquote>
+<p><a href="https://giantpinkrobots.github.io/varia/">Varia</a> download and torrent manager got a pretty big update.</p>
+<ul>
+<li>Powerful download scheduling feature that allows the user to specify what times in a week they would like to start or stop downloading, with an unlimited amount of custom timespans.</li>
+<li>The ability to import a cookies.txt file exported from a browser to support downloads from restricted areas like many cloud storage services.</li>
+<li>Support for remote timestamps if the user wants the downloaded file to have the original timestamp metadata.</li>
+<li>Two new filtering options on the sidebar for seeding torrents and failed downloads.</li>
+<li>An option to automatically quit the application when all downloads are completed.</li>
+<li>An option to start the app in background mode whenever it&rsquo;s started.</li>
+<li>Support for Spanish, Persian and Hindi languages.</li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@MateusRodCosta:matrix.org">Mateus R. Costa</a> announces</p>
+<blockquote>
+<p><a href="https://github.com/MateusRodCosta/bign-handheld-thumbnailer">bign-handheld-thumbnailer</a> (a Nintendo DS and 3DS files thumbnailer) version 0.9.0 was intended to appear on previous week&rsquo;s TWIG but due to performance issues had to be postponed.</p>
+<p>Version 0.9.0 is notable because it finally introduced CXI and CCI (which were deemed too hard to implement for the original 0.1.0 code) and there were a few misc improvements. However it was pointed that the thumbnailer was loading full games to the memory (official 3DS games can weight up to almost 4 GB) even though there were some suggestions on how to improve that I still failed to initiallly make it work.
+At that point <a href="https://copr.fedorainfracloud.org/coprs/mateusrodcosta/bign-handheld-thumbnailer/">a COPR repo</a> also became available to help distributed the compiled RPM.</p>
+<p>Version 1.0.0 was intended to fix the performance issue once for all, but for more details I recommend reading the blog post about this release at my personal blog: <a href="https://www.mateusrodcosta.dev/blog/bign-handheld-thumbnailer-what-i-learned-linux-thumbnailer-rust/">https://www.mateusrodcosta.dev/blog/bign-handheld-thumbnailer-what-i-learned-linux-thumbnailer-rust/</a>
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-147/bUlSMiLdeREtFjkOUxtbSiVH.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gircore">
+<a class="heading-anchor" href="#gircore" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gir.Core <a href="https://gircore.github.io/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Gir.Core is a project which aims to provide C# bindings for different GObject based libraries.</p>
+<p><a href="https://matrix.to/#/@badcel:matrix.org">badcel</a> reports</p>
+<blockquote>
+<p><a href="https://github.com/gircore/gir.core/releases/tag/0.5.0">Gir.Core 0.5.0</a> was released. This is one of the biggest releases since the initial release:</p>
+<ul>
+<li>A lot of of new APIs are supported (especially records)</li>
+<li>Bugs got squashed</li>
+<li>The library versions were updated to GNOME SDK 46 and target .NET 8 in addition to .NET 6 and 7</li>
+<li>New samples were added</li>
+<li>The homepage got updated</li>
+</ul>
+<p>Anyone interested bringing C# / F# back into the Linux ecosystem is welcome to come by and try out the new version.</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@danyeaw:gnome.org">Dan Yeaw</a> says</p>
+<blockquote>
+<p><a href="https://github.com/wingtk/Gvsbuild">Gvsbuild</a>, the GTK stack for Windows, version 2024.5.0 is out. Along with the latest GTK version 4.14.4, we also released for the first time a pre-built version of the binaries. To set up a development environment for a GTK app on Windows, you can unzip the package, set a couple of environmental variables, and start coding.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

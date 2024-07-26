@@ -1,0 +1,202 @@
+<p>Update on what happened across the GNOME project in the week from November 10 to November 17.</p>
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="workbench">
+<a class="heading-anchor" href="#workbench" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Workbench <a href="https://github.com/sonnyp/Workbench/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A sandbox to learn and prototype with GNOME technologies.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> says</p>
+<blockquote>
+<p>Workbench is a code playground and Library to learn, experiment and prototype with GNOME development and technologies. <a href="https://flathub.org/apps/re.sonny.Workbench">Download on Flathub</a></p>
+<p>The highlights of the new 45.3 update are</p>
+<p><strong>Python support!</strong> Thanks to <a href="https://guild.pmdcollab.org/@capypara">Marco Köpcke (Capypara)</a>
+It comes with a whopping 52 Library entries already ported to Python thanks to <a href="https://fosstodon.org/@gregorni">Gregor Niehl (gregorni)</a> and  Urtsi Santsi.</p>
+<p><strong>Blueprint formatting</strong> is now supported and makes working with UI code much nicer, no more manual indentation fixes. Thanks to  <a href="https://fosstodon.org/@gregorni">Gregor Niehl (gregorni)</a> and <a href="https://fosstodon.org/@flyingpimonster">James Westman (flyingpimonster)</a> for the great work on Blueprint.</p>
+<p>The <strong>Library received great QoL improvements</strong>. It will be faster to launch and Workbench won&rsquo;t quit if the Library is still open.
+It now shows which language are supported for each demo and allows you to open a demo in a specific language directly. Thanks to <a href="https://mastodon.social/@dimmednerd">Diego Iván</a></p>
+<p>The <strong>offline documentation viewer</strong> graduated into a standalone application named <strong>Biblioteca</strong> and received a bunch of improvements.
+You can <a href="https://flathub.org/apps/app.drey.Biblioteca">download Biblioteca</a> on Flathub. Thanks <a href="https://floss.social/@akshaywarrier">Akshay Warrier</a> for this great addition to the GNOME development toolbox.</p>
+<p>But also:</p>
+<ul>
+<li>Each Workbench window now has its own title</li>
+<li>JavaScript linter now complains on unused or undeclared variables</li>
+<li>13 Library entries ported to Vala</li>
+<li>2 Library entries ported to Rust</li>
+<li>8 Library entries were improved</li>
+</ul>
+<p>Newcomers are very welcome to join our chatroom <a href="https://matrix.to/#/#workbench:gnome.org">#workbench:gnome.org</a> and get help to port a Library entry. It&rsquo;s fun and a great opportunity to learn about GNOME development, a new programming language or even as first programming experience.</p>
+<p>Last but not least, Tobias Bernard is organizing a Local-First workshop next Monday in Berlin where Workbench will be used together with the <a href="https://p2panda.org/">p2panda</a> Rust SDK. <a href="https://hedgedoc.gnome.org/gnome-p2panda-workshop#">See the announcement</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-122/be5c948482b6669948a4e8923b6797405938a7d11725224152165515264.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/11/twig-122/936a93c4f9076a06815ed4280bb76cd90a50831a1725224127167463424.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/11/twig-122/936a93c4f9076a06815ed4280bb76cd90a50831a1725224127167463424.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="fragments">
+<a class="heading-anchor" href="#fragments" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fragments <a href="https://gitlab.gnome.org/World/Fragments"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Easy to use BitTorrent client.</p>
+<p><a href="https://matrix.to/#/@felix:haecker.io">Felix</a> announces</p>
+<blockquote>
+<p>Fragments now automatically detects <a href="https://gitlab.gnome.org/World/Fragments/-/merge_requests/156">metered networks</a>, and stops down/uploading data. Thanks Philip Withnall for the initial implementation!
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-122/PTlFMXJnFbnleqTLuovRJMMK.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@ranfdev:matrix.org">ranfdev</a> announces</p>
+<blockquote>
+<p><a href="https://flathub.org/apps/details/com.ranfdev.Notify">Notify</a> received various improvements for users which are self hosting ntfy.sh. Support for basic http authentication has been added, so that you can subscribe to private topics and prevent bad actors from trying to snoop your notifications.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@tfuxu:matrix.org">tfuxu</a> says</p>
+<blockquote>
+<p><a href="https://github.com/tfuxu/Halftone">Halftone</a> has received this week a new, refreshed UI based on the new libadwaita 1.4 widgets, as well as a couple of bugfixes and new translations. As always, you can download it from <a href="https://flathub.org/apps/io.github.tfuxu.Halftone">Flathub</a>, or <a href="https://github.com/tfuxu/Halftone#how-to-install-halftone">check</a> the other installation methods if you don&rsquo;t use Flapaks.
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-122/ZTGjvghIqcGsgNJCQUIyQvwb.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@turtle:turtle.garden">paddis 🌻🐢</a> announces</p>
+<blockquote>
+<p>This week I released a new version of Jellybean! It introduces many new helpful features, such as assigning icons to items! You can get Jellybean <a href="https://flathub.org/apps/garden.turtle.Jellybean">from Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-122/bypnRvZ92eLmPGgYBHOwxz46irYLqgXz.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@diegopvlk:mozilla.org">Diego Povliuk</a> reports</p>
+<blockquote>
+<p>Dosage 1.2.0 is out with fixes and a new preference for notification sound - <a href="https://flathub.org/apps/io.github.diegopvlk.Dosage">Download on Flathub</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-122/6d99793a54f0143a5e66b89bcc1b7b62d0ce1adc1724889085291528192.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@akshaywarrier:matrix.org">Akshay Warrier</a> says</p>
+<blockquote>
+<p>Announcing the first release of Biblioteca 🎉</p>
+<p><a href="https://flathub.org/apps/app.drey.Biblioteca">Download on Flathub</a></p>
+<p>Biblioteca is a documentation viewer for GNOME.
+It includes documentation from the GNOME SDK as well as VTE, libportal, libspelling and libshumate.
+Only gi-docgen documentation is supported at the moment.</p>
+<p>We are planning to add support for other sources and formats in the future.</p>
+<p>Happy hacking!
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-122/EcQDCeygnpnKinPxClICegIa.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="parabolic">
+<a class="heading-anchor" href="#parabolic" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Parabolic <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Download web video and audio.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> reports</p>
+<blockquote>
+<p>Parabolic <a href="https://github.com/NickvisionApps/Parabolic/releases/tag/2023.11.0">V2023.11.0</a> is here! This update is HUGE, read about all the changes below :)</p>
+<p>Here&rsquo;s the changelog:</p>
+<ul>
+<li>Parabolic is now available for Windows using Windows App SDK and WinUI 3</li>
+<li>Added support for auto-generated subtitles from English</li>
+<li>Added the ability to turn off downloading auto-generated subtitles</li>
+<li>Added the advanced option to prefer the adv1 codec for video downloads</li>
+<li>Added the &ldquo;Best&rdquo; resolution when downloading videos to allow Parabolic to pick the highest resolution for each video download</li>
+<li>A URL can now be passed to Parabolic via the command-line or the freedesktop application open protocol to trigger its validation of startup</li>
+<li>Improved the design of the Preferences dialog to allow for better searching of options</li>
+<li>The shell notification when a download completes now contains an &ldquo;Open File&rdquo; button to open the download directly</li>
+<li>Fixed an issue where aria&rsquo;s max connections per server preference was allowed to be greater than 16</li>
+<li>Fixed an issue where enabling the &ldquo;Download Specific Timeframe&rdquo; advanced option would cause a crash for certain media downloads</li>
+<li>Fixed an issue where stopping all downloads would cause the app to crash</li>
+<li>Fixed an issue where some videos were not validated correctly</li>
+<li>Updated to GNOME 45 runtime with latest libadwaita design</li>
+<li>Updated to .NET 8.0</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-122/aWjoQjPXuBVgKricODYDRtQg.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="gircore">
+<a class="heading-anchor" href="#gircore" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gir.Core <a href="https://gircore.github.io/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Gir.Core is a project which aims to provide C# bindings for different GObject based libraries.</p>
+<p><a href="https://matrix.to/#/@badcel:matrix.org">badcel</a> reports</p>
+<blockquote>
+<p><a href="https://github.com/gircore/gir.core">Gir.Core</a> 0.5.0-preview.3 got released. It is the next step to the upcoming 0.5.0 release and updates the bindings to GNOME  SDK version 45. See <a href="https://github.com/gircore/gir.core/releases/tag/0.5.0-preview.3">the release notes</a> for further details.</p>
+</blockquote>
+
+
+<h3 id="denaro">
+<a class="heading-anchor" href="#denaro" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Denaro <a href="https://flathub.org/apps/details/org.nickvision.money"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Manage your personal finances.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Denaro <a href="https://github.com/NickvisionApps/Denaro/releases/tag/2023.11.0">V2023.11.0</a> is here!</p>
+<p>Here&rsquo;s the changelog:</p>
+<ul>
+<li>Disallowed whitespace-only group and account names</li>
+<li>Fixed an issue where exported PDF values were incorrect</li>
+<li>Fixed an issue where some system cultures were not read properly</li>
+<li>Fixed an issue where scrolling the sidebar with the mouse over the calendar would scroll the calendar instead</li>
+<li>Fixed an issue where leading or trailing spaces in group/account names aren&rsquo;t discarded</li>
+<li>Updated to GNOME 45 runtime with latest libadwaita design</li>
+<li>Updated and added translations (Thanks to everyone on Weblate)!
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-122/bqniAWafsAaJgmfbsLRbDhpt.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="shell-extensions">
+<a class="heading-anchor" href="#shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Shell Extensions
+</h1><p><a href="https://matrix.to/#/@lucifer_rekt:matrix.org">Aryan Kaushik</a> reports</p>
+<blockquote>
+<p>GNOME Extensions now supports a new metadata key - &ldquo;version-name&rdquo;, which gives extension developers more control over their Extension versioning.
+For more details visit the <a href="https://gjs.guide/extensions/overview/anatomy.html#version-name">GJS Guide</a>.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@oae:matrix.org">oae</a> reports</p>
+<blockquote>
+<p>Pano - Clipboard Manager is updated with new features, bug fixes and Gnome 45 support</p>
+<ul>
+<li>added support for Gnome 45 (A big shout-out to @Totto16 for his fantastic job in bringing the extension over to Gnome 45!)</li>
+<li>added wiggle animation to indicator. When you copy something indicator will wiggle</li>
+<li>added font customization for search and title,</li>
+<li>added window position settings. You can now put Pano at the top, bottom, left, right.</li>
+<li>You can checkout the Pano on <a href="https://github.com/oae/gnome-shell-pano">GitHub</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-122/kSzHCqijAnyraKcqAKzJHEOF.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> announces</p>
+<blockquote>
+<p>We are one step closer to making openQA testing infrastructure available to all GNOME apps, using GNOME OS as a base. Catch up on the latest developments in this <a href="https://discourse.gnome.org/t/openqa-testing-update-2023-11-edition/18078/2">status update</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/11/twig-122/KznpSKkMvgMCtXxupFRQaTEZ.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="events">
+<a class="heading-anchor" href="#events" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Events
+</h1><p><a href="https://matrix.to/#/@kristiprogri:gnome.org">Kristi Progri</a> announces</p>
+<blockquote>
+<p>GNOME Asia is right around the corner and we all ready to kick off another succesful edition. The Local team is organizing the day trip excursion and we are finishing up last minute preparations before everything starts. If you would be interested to know more here&rsquo;s the website: <a href="https://events.gnome.org/event/170/">https://events.gnome.org/event/170/</a></p>
+<p>This week we resumed the DEI meetings. If you would be interested to join please check the discourse for more information or join the engagement team for more details. We are looking for volunteers to help us with meeting notes and other logistic tasks such as adding information on gitlab and create new tickets.
+The next meeting would be on Dec 11th and the meeting link is available here : <a href="https://meet.gnome.org/dee-9kq-sfm-nof">https://meet.gnome.org/dee-9kq-sfm-nof</a>
+You can find the meeting notes and more about the structure of the meeting here: <a href="https://discourse.gnome.org/t/diversity-and-inclusion-meeting-announcement/17936">https://discourse.gnome.org/t/diversity-and-inclusion-meeting-announcement/17936</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

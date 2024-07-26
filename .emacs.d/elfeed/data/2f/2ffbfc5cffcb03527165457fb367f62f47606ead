@@ -1,0 +1,78 @@
+
+         
+         <p>The <code class="language-plaintext highlighter-rouge">consult-denote</code> provides glue code to integrate <code class="language-plaintext highlighter-rouge">denote</code> with
+Daniel Mendler’s <code class="language-plaintext highlighter-rouge">consult</code> package. The idea is to enhance minibuffer
+interactions, such as by providing a preview of the
+file-to-linked/opened and by adding more sources to the
+<code class="language-plaintext highlighter-rouge">consult-buffer</code> command. Interested users can enable the
+<code class="language-plaintext highlighter-rouge">consult-denote-mode</code> to get started.</p>
+
+<h2>Familiar minibuffer prompts</h2>
+
+<p><code class="language-plaintext highlighter-rouge">consult-denote</code> is designed to enhance all relevant Denote prompts
+with whatever extras Consult provides, such as the preview facility.
+These Consult-powered minibuffer prompts will still follow the same
+patterns of interaction as core Denote: they will never use a
+profoundly different presentation.</p>
+
+<h2>Customise what <code class="language-plaintext highlighter-rouge">consult-buffer</code> shows from Denote</h2>
+
+<p>The extra sources added to the <code class="language-plaintext highlighter-rouge">consult-buffer</code> command are controlled
+by the user option <code class="language-plaintext highlighter-rouge">consult-denote-buffer-sources</code>. Its default value
+is the list of sources called <code class="language-plaintext highlighter-rouge">consult-denote-all-buffer-sources</code>.</p>
+
+<h2>Developed in tandem with Denote</h2>
+
+<p>My goal with this package is to keep it as close to Denote as
+possible. If the community wants a new feature, we can discuss whether
+a variant of it makes sense for <code class="language-plaintext highlighter-rouge">denote</code> before considering its
+inclusion in <code class="language-plaintext highlighter-rouge">consult-denote</code>.</p>
+
+<h2>Sources</h2>
+
+<h3>Consult-Denote</h3>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">consult-denote</code></li>
+  <li>Official manual: not available yet.</li>
+  <li>Change log: not available yet.</li>
+  <li>Git repositories:
+    <ul>
+      <li>GitHub: <a href="https://github.com/protesilaos/consult-denote">https://github.com/protesilaos/consult-denote</a></li>
+    </ul>
+  </li>
+  <li>Backronym: Consult-Orchestrated Navigation and Selection of
+Unambiguous Targets…denote.</li>
+</ul>
+
+<h3>Denote</h3>
+
+<p>Denote is a simple note-taking tool for Emacs.  It is based on the idea
+that notes should follow a predictable and descriptive file-naming
+scheme.  The file name must offer a clear indication of what the note is
+about, without reference to any other metadata.  Denote basically
+streamlines the creation of such files while providing facilities to
+link between them.</p>
+
+<p>Denote’s file-naming scheme is not limited to “notes”.  It can be used
+for all types of file, including those that are not editable in Emacs,
+such as videos.  Naming files in a consistent way makes their
+filtering and retrieval considerably easier.  Denote provides relevant
+facilities to rename files, regardless of file type.</p>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">denote</code></li>
+  <li>Official manual: <a href="https://protesilaos.com/emacs/denote">https://protesilaos.com/emacs/denote</a></li>
+  <li>Change log: <a href="https://protesilaos.com/emacs/denote-changelog">https://protesilaos.com/emacs/denote-changelog</a></li>
+  <li>Git repositories:
+    <ul>
+      <li>GitHub: <a href="https://github.com/protesilaos/denote">https://github.com/protesilaos/denote</a></li>
+      <li>GitLab: <a href="https://gitlab.com/protesilaos/denote">https://gitlab.com/protesilaos/denote</a></li>
+    </ul>
+  </li>
+  <li>Video demo: <a href="https://protesilaos.com/codelog/2022-06-18-denote-demo/">https://protesilaos.com/codelog/2022-06-18-denote-demo/</a></li>
+  <li>Backronyms: Denote Everything Neatly; Omit The Excesses.  Don’t Ever
+Note Only The Epiphenomenal.</li>
+</ul>
+        
+      

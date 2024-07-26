@@ -1,0 +1,167 @@
+<p>Update on what happened across the GNOME project in the week from November 19 to November 26.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="characters">
+<a class="heading-anchor" href="#characters" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Characters <a href="https://gitlab.gnome.org/GNOME/gnome-characters"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple utility application to find and insert unusual characters.</p>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> reports</p>
+<blockquote>
+<p>I have landed a GTK 4 / libadwaita port of Characters which includes a refactoring/cleanup of the whole codebase. Along with that Alexander Mikhaylenko ported the accompanying C library from using libunistring which allowed us to update the unicode database to the latest release.
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-20/d96f69cfe2b7d38c577f4dba35f8e4e48eb84d4c.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-20/dfb3b9cedb521a2addd2d74d358bb1739ca3c8d8.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="vala">
+<a class="heading-anchor" href="#vala" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Vala <a href="https://gitlab.gnome.org/GNOME/vala"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An object-oriented programming language with a self-hosting compiler that generates C code and uses the GObject system</p>
+<p><a href="https://matrix.to/#/@lw64:gnome.org">lwildberg</a> announces</p>
+<blockquote>
+<p>With much help from Rico Tzschichholz I fixed multiline errors. Before, the location of errors which stretch over multiple lines were just not printed out. On the way, I also made the output a bit prettier and more useful by adding the line, where the error is located in the source file. Instead of</p>
+<pre tabindex="0"><code>int foo = bar();
+          ^^^
+</code></pre><p>it outputs now</p>
+<pre tabindex="0"><code>    2 | int foo = bar();
+      |           ^~~
+</code></pre><p>As you can see, the underline consists also now out of &ldquo;~&quot;&rsquo;s and starts with a &ldquo;^&rdquo;. This makes it easier to find the beginning of the error especially in multiline errors.</p>
+</blockquote>
+
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@somas95:gnome.org">Manuel Genovés</a> says</p>
+<blockquote>
+<p>The work we&rsquo;ve been doing these past months for the Timed Animation API has landed on libadwaita. I&rsquo;m working to land the Spring Animation API soon
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-20/e4b36e9da4b2a1af895143aec43ee51929acad4e.gif" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@yalter:gnome.org">Ivan Molodetskikh</a> reports</p>
+<blockquote>
+<p>The work-in-progress <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1954">screenshot UI</a> got a bit of polish. I added hotkeys to switch between area, screen and window selection. The window selection now picks the currently focused window by default. The window border radius was increased to remove gaps for windows with rounded corners. Additionally, I made the &ldquo;Screenshot captured&rdquo; notification display the thumbnail with the correct aspect ratio to avoid ugly scaling. Finally, the window selection button is now disabled in screencast mode since it&rsquo;s not implemented yet.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/11/twig-20/def3b1cec44c146493ac4bb5fe442aa06213d0da.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/11/twig-20/def3b1cec44c146493ac4bb5fe442aa06213d0da.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="xdg-desktop-portal">
+<a class="heading-anchor" href="#xdg-desktop-portal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>xdg-desktop-portal
+</h3><p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> says</p>
+<blockquote>
+<p>This week, a fascinating new feature landed in xdg-desktop-portal: restoring screencast sessions. We already implement this feature in the GNOME portal frontend, and together with that, we&rsquo;ve done a round of polish and cleanups to these portal dialogs.
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-20/7e2e60b805d97a802c9fdc69afda4e4413dae3a8.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="libgnome-desktop">
+<a class="heading-anchor" href="#libgnome-desktop" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libgnome-desktop
+</h3><p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> announces</p>
+<blockquote>
+<p>Libgnome-desktop has been split into three separate shared libraries, and two of them (GnomeRR and GnomeBG) have been ported from GTK3 to GTK4. This will unblock the port to GTK4 of various system components. <a href="https://gitlab.gnome.org/GNOME/gnome-desktop/-/merge_requests/123">https://gitlab.gnome.org/GNOME/gnome-desktop/-/merge_requests/123</a></p>
+</blockquote>
+
+
+<h3 id="gweather">
+<a class="heading-anchor" href="#gweather" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GWeather
+</h3><p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> announces</p>
+<blockquote>
+<p>I released the first developers snapshot for GWeather-4.0, which is meant to be used by GTK4 applications showing weather or time zone information. The new API is not yet stable, but it is already useful for porting existing applications. You can find what changed in the <a href="https://gnome.pages.gitlab.gnome.org/libgweather/migrating-3to4.html">migration guide</a>.</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="tangram">
+<a class="heading-anchor" href="#tangram" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tangram <a href="https://github.com/sonnyp/Tangram"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A browser for your pinned tabs.</p>
+<p><a href="https://matrix.to/#/@sonnyp:matrix.org">sonnyp</a> says</p>
+<blockquote>
+<p>Tangram 1.4.0 was released. It comes with</p>
+<ul>
+<li>per-tab notifications priority</li>
+<li>middle-click / Ctrl+Click to open links in the default browser</li>
+<li>a fix for popular websites with external sign-in</li>
+</ul>
+<p><a href="https://apps.gnome.org/app/re.sonny.Tangram/">See Tangram on GNOME Apps.</a></p>
+</blockquote>
+
+
+<h3 id="fragments">
+<a class="heading-anchor" href="#fragments" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fragments <a href="https://gitlab.gnome.org/World/Fragments"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Easy to use BitTorrent client.</p>
+<p><a href="https://matrix.to/#/@felix:haecker.io">Felix</a> says</p>
+<blockquote>
+<p>I added authentication support to Fragments V2. It&rsquo;s possible now to connect to a remote username/password protected Transmission/Fragments session. The credentials are then automatically stored in the keyring so you don&rsquo;t have to enter them again the next time.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/11/twig-20/JqOysMBMhAyBDSmSkiEmpMMt.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/11/twig-20/JqOysMBMhAyBDSmSkiEmpMMt.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1>
+
+<h3 id="mahjongg">
+<a class="heading-anchor" href="#mahjongg" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Mahjongg <a href="https://wiki.gnome.org/Apps/Mahjongg"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A solitaire (one player) version of the classic Eastern tile game. The objective is to select pairs of similar tiles.</p>
+<p><a href="https://matrix.to/#/@gwagner:gnome.org">gwagner</a> says</p>
+<blockquote>
+<p>Reworked GNOME Mahjongg. Initial plan was to help out with the Dark Style Initiative (<a href="https://gitlab.gnome.org/GNOME/Initiatives/-/issues/32">https://gitlab.gnome.org/GNOME/Initiatives/-/issues/32</a>) but i ended up porting to Gtk4 and libadwaita. I also made some refactorings to make the codebase more modern (Composite Templates, more subclasses)
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-20/7e785fab1fc448540dee4b67c15e51d8e03b9f8a.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="flatseal">
+<a class="heading-anchor" href="#flatseal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Flatseal <a href="https://github.com/tchx84/Flatseal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A graphical utility to review and modify permissions of Flatpak applications.</p>
+<p><a href="https://matrix.to/#/@tchx84:matrix.org">Martín Abente Lahaye</a> announces</p>
+<blockquote>
+<p>A new Flatseal release is out 🥳🎉, and it comes with subtle visual improvements, a few bugs fixes, one more permission and a big quality of life improvement. <a href="https://blogs.gnome.org/tchx84/2021/11/20/flatseal-1-7-5/">Check</a> it out!</p>
+</blockquote>
+
+
+<h1 id="gnome-shell-extensions">
+<a class="heading-anchor" href="#gnome-shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell Extensions
+</h1>
+
+<h3 id="just-perfection">
+<a class="heading-anchor" href="#just-perfection" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Just Perfection <a href="https://extensions.gnome.org/extension/3843/just-perfection/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A tweak tool to customize the GNOME Shell and to disable UI elements.</p>
+<p><a href="https://matrix.to/#/@justperfection:gnome.org">Just Perfection</a> says</p>
+<blockquote>
+<p>Just Perfection extension is celebrating one year of active development with version 16:
+<a href="https://extensions.gnome.org/extension/3843/just-perfection/">https://extensions.gnome.org/extension/3843/just-perfection/</a>
+The extension added profile switcher to its prefs window and users can select between default, minimal and super minimal profiles.
+This version added ripple effects visibility, disabling double super key to app grid, panel in overview and more.
+<a href="https://www.youtube.com/watch?v=u8koWhtk5hg">https://www.youtube.com/watch?v=u8koWhtk5hg</a>
+
+<img src="https://thisweek.gnome.org/posts/2021/11/twig-20/54eef694290a19787662416dbb2c064907bf5ca9.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

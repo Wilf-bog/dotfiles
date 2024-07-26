@@ -1,0 +1,127 @@
+
+         
+         <p>Raw link: <a href="https://www.youtube.com/watch?v=Qf_DLPIA9Cs">https://www.youtube.com/watch?v=Qf_DLPIA9Cs</a></p>
+         
+         <p>In this video I show how to customise the Emacs mode line (the
+<code class="language-plaintext highlighter-rouge">mode-line-format</code>) to make it more useful and pretty.</p>
+
+<p>Check my dotemacs/dotfiles for actual code samples.  Both my Emacs and
+Linux environments are highly customised and well maintained.</p>
+
+<ul>
+  <li>Git repo on SourceHut: <a href="https://git.sr.ht/~protesilaos/dotfiles">https://git.sr.ht/~protesilaos/dotfiles</a>
+    <ul>
+      <li>Mirrors:
+        <ul>
+          <li>GitHub: <a href="https://github.com/protesilaos/dotfiles">https://github.com/protesilaos/dotfiles</a></li>
+          <li>GitLab: <a href="https://gitlab.com/protesilaos/dotfiles">https://gitlab.com/protesilaos/dotfiles</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Mailing list: <a href="https://lists.sr.ht/~protesilaos/dotfiles">https://lists.sr.ht/~protesilaos/dotfiles</a></li>
+</ul>
+
+<p>Below is what I included in the <code class="language-plaintext highlighter-rouge">*scratch*</code> buffer during the video:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;; The default mode line 🤨</span>
+<span class="p">(</span><span class="nv">setq-default</span> <span class="nv">mode-line-format</span>
+              <span class="o">'</span><span class="p">(</span><span class="s">"%e"</span> <span class="nv">mode-line-front-space</span>
+                <span class="p">(</span><span class="ss">:propertize</span>
+                 <span class="p">(</span><span class="s">""</span> <span class="nv">mode-line-mule-info</span> <span class="nv">mode-line-client</span> <span class="nv">mode-line-modified</span>
+                  <span class="nv">mode-line-remote</span><span class="p">)</span>
+                 <span class="nv">display</span> <span class="p">(</span><span class="nv">min-width</span> <span class="p">(</span><span class="mf">5.0</span><span class="p">)))</span>
+                <span class="nv">mode-line-frame-identification</span> <span class="nv">mode-line-buffer-identification</span> <span class="s">"   "</span>
+                <span class="nv">mode-line-position</span> <span class="p">(</span><span class="nv">vc-mode</span> <span class="nv">vc-mode</span><span class="p">)</span> <span class="s">"  "</span> <span class="nv">mode-line-modes</span>
+                <span class="nv">mode-line-misc-info</span> <span class="nv">mode-line-end-spaces</span><span class="p">))</span>
+
+<span class="c1">;; My mode line with the `prot-modeline.el' 🤩</span>
+<span class="c1">;; Note that separate to this is my `prot-modeline-subtle-mode'.</span>
+<span class="p">(</span><span class="nv">setq-default</span> <span class="nv">mode-line-format</span>
+              <span class="o">'</span><span class="p">(</span><span class="s">"%e"</span>
+                <span class="nv">prot-modeline-kbd-macro</span>
+                <span class="nv">prot-modeline-narrow</span>
+                <span class="nv">prot-modeline-input-method</span>
+                <span class="nv">prot-modeline-buffer-status</span>
+                <span class="s">" "</span>
+                <span class="nv">prot-modeline-buffer-identification</span>
+                <span class="s">"  "</span>
+                <span class="nv">prot-modeline-major-mode</span>
+                <span class="nv">prot-modeline-process</span>
+                <span class="s">"  "</span>
+                <span class="nv">prot-modeline-vc-branch</span>
+                <span class="s">"  "</span>
+                <span class="nv">prot-modeline-flymake</span>
+                <span class="s">"  "</span>
+                <span class="nv">prot-modeline-align-right</span>
+                <span class="nv">prot-modeline-misc-info</span><span class="p">))</span>
+
+
+<span class="c1">;; Here I explained why `setq' sets a buffer-local value and discussed</span>
+<span class="c1">;; why we need `setq-default' in such cases.</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">mode-line-format</span> <span class="no">nil</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">kill-local-variable</span> <span class="ss">'mode-line-format</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">force-mode-line-update</span><span class="p">)</span>
+
+
+
+
+<span class="p">(</span><span class="nv">setq-default</span> <span class="nv">mode-line-format</span>
+              <span class="o">'</span><span class="p">(</span><span class="s">"%e"</span>
+                <span class="nv">my-modeline-buffer-name</span>
+                <span class="s">"  "</span>
+                <span class="nv">my-modeline-major-mode</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">defface</span> <span class="nv">my-modeline-background</span>
+  <span class="o">'</span><span class="p">((</span><span class="no">t</span> <span class="ss">:background</span> <span class="s">"#3355bb"</span> <span class="ss">:foreground</span> <span class="s">"white"</span> <span class="ss">:inherit</span> <span class="nv">bold</span><span class="p">))</span>
+  <span class="s">"Face with a red background for use on the mode line."</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">my-modeline--buffer-name</span> <span class="p">()</span>
+  <span class="s">"Return `buffer-name' with spaces around it."</span>
+  <span class="p">(</span><span class="nb">format</span> <span class="s">" %s "</span> <span class="p">(</span><span class="nv">buffer-name</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nv">defvar-local</span> <span class="nv">my-modeline-buffer-name</span>
+    <span class="o">'</span><span class="p">(</span><span class="ss">:eval</span>
+      <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">mode-line-window-selected-p</span><span class="p">)</span>
+        <span class="p">(</span><span class="nv">propertize</span> <span class="p">(</span><span class="nv">my-modeline--buffer-name</span><span class="p">)</span> <span class="ss">'face</span> <span class="ss">'my-modeline-background</span><span class="p">)))</span>
+  <span class="s">"Mode line construct to display the buffer name."</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">put</span> <span class="ss">'my-modeline-buffer-name</span> <span class="ss">'risky-local-variable</span> <span class="no">t</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">my-modeline--major-mode-name</span> <span class="p">()</span>
+  <span class="s">"Return capitalized `major-mode' as a string."</span>
+  <span class="p">(</span><span class="nv">capitalize</span> <span class="p">(</span><span class="nb">symbol-name</span> <span class="nv">major-mode</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nv">defvar-local</span> <span class="nv">my-modeline-major-mode</span>
+    <span class="o">'</span><span class="p">(</span><span class="ss">:eval</span>
+      <span class="p">(</span><span class="nb">list</span>
+       <span class="p">(</span><span class="nv">propertize</span> <span class="s">"λ"</span> <span class="ss">'face</span> <span class="ss">'shadow</span><span class="p">)</span>
+       <span class="s">" "</span>
+       <span class="p">(</span><span class="nv">propertize</span> <span class="p">(</span><span class="nv">my-modeline--major-mode-name</span><span class="p">)</span> <span class="ss">'face</span> <span class="ss">'bold</span><span class="p">)))</span>
+  <span class="s">"Mode line construct to display the major mode."</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">put</span> <span class="ss">'my-modeline-major-mode</span> <span class="ss">'risky-local-variable</span> <span class="no">t</span><span class="p">)</span>
+
+
+
+
+
+<span class="c1">;; Emacs 29, check the definition right below</span>
+<span class="p">(</span><span class="nv">mode-line-window-selected-p</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">mode-line-window-selected-p</span> <span class="p">()</span>
+  <span class="s">"Return non-nil if we're updating the mode line for the selected window.
+This function is meant to be called in `:eval' mode line
+constructs to allow altering the look of the mode line depending
+on whether the mode line belongs to the currently selected window
+or not."</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">window</span> <span class="p">(</span><span class="nv">selected-window</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nb">eq</span> <span class="nv">window</span> <span class="p">(</span><span class="nv">old-selected-window</span><span class="p">))</span>
+	<span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nv">minibuffer-window-active-p</span> <span class="p">(</span><span class="nv">minibuffer-window</span><span class="p">))</span>
+	     <span class="p">(</span><span class="nv">with-selected-window</span> <span class="p">(</span><span class="nv">minibuffer-window</span><span class="p">)</span>
+	       <span class="p">(</span><span class="nb">eq</span> <span class="nv">window</span> <span class="p">(</span><span class="nv">minibuffer-selected-window</span><span class="p">)))))))</span>
+</code></pre></div></div>
+        
+      

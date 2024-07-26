@@ -1,0 +1,120 @@
+
+         
+         <p>The <code class="language-plaintext highlighter-rouge">ef-themes</code> is a collection of light and dark themes for GNU Emacs
+whose goal is to provide colourful (“pretty”) yet legible options for
+users who want something with a bit more flair than the <code class="language-plaintext highlighter-rouge">modus-themes</code>
+(also designed by me).</p>
+
+<ul>
+  <li>Package name (GNU ELPA): <code class="language-plaintext highlighter-rouge">ef-themes</code></li>
+  <li>Official manual: <a href="https://protesilaos.com/emacs/ef-themes">https://protesilaos.com/emacs/ef-themes</a></li>
+  <li>Change log: <a href="https://protesilaos.com/emacs/ef-themes-changelog">https://protesilaos.com/emacs/ef-themes-changelog</a></li>
+  <li>Sample pictures: <a href="https://protesilaos.com/emacs/ef-themes-pictures">https://protesilaos.com/emacs/ef-themes-pictures</a></li>
+  <li>Git repo on SourceHut: <a href="https://git.sr.ht/~protesilaos/ef-themes">https://git.sr.ht/~protesilaos/ef-themes</a>
+    <ul>
+      <li>Mirrors:
+        <ul>
+          <li>GitHub: <a href="https://github.com/protesilaos/ef-themes">https://github.com/protesilaos/ef-themes</a></li>
+          <li>GitLab: <a href="https://gitlab.com/protesilaos/ef-themes">https://gitlab.com/protesilaos/ef-themes</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Mailing list: <a href="https://lists.sr.ht/~protesilaos/ef-themes">https://lists.sr.ht/~protesilaos/ef-themes</a></li>
+  <li>Backronym: Eclectic Fashion in Themes Hides Exaggerated Markings,
+Embellishments, and Sparkles.</li>
+</ul>
+
+<p>Below are the release notes.</p>
+
+<hr />
+
+<h2>Enjoy the new “Elea” variants</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">ef-elea-light</code> and <code class="language-plaintext highlighter-rouge">ef-elea-dark</code> take inspiration from olives
+and olive trees.  Their background is noticeably more subdued than
+that of other Ef themes, making Elea optimal for times where
+environmental light is neither too high nor too low.</p>
+
+<p>Blog post that announced the new themes and presented their screen
+shots: <a href="https://protesilaos.com/codelog/2023-06-18-ef-elea-dark-light/">https://protesilaos.com/codelog/2023-06-18-ef-elea-dark-light/</a>.</p>
+
+<p>Those who like primarily green-tinted themes can also try <code class="language-plaintext highlighter-rouge">ef-spring</code>
+(light) and <code class="language-plaintext highlighter-rouge">ef-bio</code> (dark).</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">ef-themes</code> collection now consists of 24 items, covering a broad
+range of preferences and legibility needs.  Each theme is tested
+extensively for stylistic consistency, as well as overall
+effectiveness across the full spectrum of interfaces encountered in
+Emacs.</p>
+
+<h2>Support for the <code class="language-plaintext highlighter-rouge">avy</code> package</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">avy</code> package is now fully supported by the themes.  This was not
+a trivial task, due to Avy’s unique requirement for sufficiently high
+contrast between adjacent coloured background <em>in addition</em> to the
+goal of the themes for comfortably high contrast between each given
+combination of foreground and background.  To make the task even more
+demanding, we have to account for colour deficiency, as in the case of
+the tritanopia-optimised themes: <code class="language-plaintext highlighter-rouge">ef-tritanopia-light</code>,
+<code class="language-plaintext highlighter-rouge">ef-tritanopia-dark</code> (tritanopia is blue-yellow colour deficiency).</p>
+
+<h2>Support for other Avy-like elements</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">corfu</code> and <code class="language-plaintext highlighter-rouge">vertico</code> packages provide Avy-like commands to select
+a candidate in their respective completion interface.  Those are now
+fully supported, benefitting from the aforementioned work.</p>
+
+<h2>Explicit support for <code class="language-plaintext highlighter-rouge">which-key</code></h2>
+
+<p>The popular <code class="language-plaintext highlighter-rouge">which-key</code> package was already implicitly supported by
+the themes.  Its faces inherit from standard font-lock faces.  I
+decided to add explicit support in order to override its overall
+style, as its default is too busy, although it technically works.
+This hints at the unseen, yet non-trivial, effort themes require to
+avoid exaggerations (in short: when everything is emphasised, nothing
+stands out; when something indicates a familiar element of the
+interface, it must have an equally familiar styling to minimise
+friction/uncertainty).</p>
+
+<h2>Support for <code class="language-plaintext highlighter-rouge">csv-mode</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">csv-mode</code> defines the face of a separator character for the
+tabular entries.  Its colour should now be easier to spot.</p>
+
+<h2>Revised the Git summary line</h2>
+
+<p>The colour of the Git commit summary line, both for Magit and VC, is
+now drawn from each theme’s semantic <code class="language-plaintext highlighter-rouge">info</code> colour, whereas before it
+was another accent colour.  The reason for this change is to make the
+summary line always contrast nicely with the overlong summary warning
+(the warning is visible when the length of the summary exceeds the
+specified limit (check each package’s configurations)).</p>
+
+<h2>Miscellaneous</h2>
+
+<ul>
+  <li>
+    <p>Completion annotations are not shown for yet-to-be-loaded Ef themes.
+This avoids errors in <code class="language-plaintext highlighter-rouge">modus-themes-select</code> and related commands
+that use minibuffer completion.  Thanks to Christopher League for
+the patch.  The change is small and falls within the limits of what
+is allowed without assigning copyright to the Free Software
+Foundation.  This case was discussed in issue 22 on the GitHub
+mirror: <a href="https://github.com/protesilaos/ef-themes/issues/22">https://github.com/protesilaos/ef-themes/issues/22</a>.</p>
+  </li>
+  <li>
+    <p>The documentation of <code class="language-plaintext highlighter-rouge">ef-themes-headings</code> uses simpler list
+constructs.  There is no user-facing change.  Thanks to Eshel Yaron
+for the patch, which is within the boundaries of what is possible
+with copyright assignment to the Free Software Foundation:
+<a href="https://lists.sr.ht/~protesilaos/ef-themes/patches/42030">https://lists.sr.ht/~protesilaos/ef-themes/patches/42030</a>.</p>
+  </li>
+  <li>
+    <p>The manual of the themes, as well as the <code class="language-plaintext highlighter-rouge">contrast-ratios.org</code> file
+that is part of the project’s Git repository, are reviewed to
+reflect the current state of the <code class="language-plaintext highlighter-rouge">ef-themes</code>.</p>
+  </li>
+</ul>
+        
+      

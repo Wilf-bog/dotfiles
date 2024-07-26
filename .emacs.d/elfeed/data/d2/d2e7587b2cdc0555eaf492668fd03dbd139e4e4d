@@ -1,0 +1,101 @@
+<p>Update on what happened across the GNOME project in the week from July 21 to July 28.</p>
+<h1 id="guadec-2023">
+<a class="heading-anchor" href="#guadec-2023" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GUADEC 2023
+</h1><p>
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-106/guadec_2023.jpg" alt="" />
+</p>
+<p><a href="https://matrix.to/#/@michael:downey.net">Michael Downey</a> reports</p>
+<blockquote>
+<p>During this year&rsquo;s Annual General Meeting on Friday, the annual Community Appreciation Award (a.k.a. Pants of Thanks) was awarded to someone who cares deeply about GNOME, helps out app developers (almost every single day), plays the guitar (but just one song), holds controversial opinions (some even turn out to be right), and who is a climate advocate and activist &hellip; Tobias Bernard! A standing ovation was offered along with a flattering pair of red and blue plaid pajama pants. Congratulations, Tobias!
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-106/IvZgvjwIRGmUWUpeehtejFtI.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@mwu:gnome.org">mwu</a> reports</p>
+<blockquote>
+<p>Greatings from Riga, Latvia!  GUADEC 2023 is in full swing.  We’ve had great turnout and support and wonderful presentations. Its fantastic to see so many GNOME users in one place. Special thanks to  Kristi Progri, Caroline Henriksen and all the speakers, volunteers and sponsors for their amazing work and sponsorship.   </p>
+<p>For those of you who are not here in person or want to review the presentations, you can see the tracks here: <a href="https://www.youtube.com/@GNOMEDesktop">https://www.youtube.com/@GNOMEDesktop</a></p>
+<p>Excited the AGM is coming up and we will have some exciting announcements coming soon – stay tuned!</p>
+<p>Thank you to our sponsors – Endless, Ubuntu, ARM, Igalia, openSUSE, Redhat, centricular, Codethink, and Woodlyn Travel for helping to make all of this possible!!!</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="cartridges">
+<a class="heading-anchor" href="#cartridges" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Cartridges <a href="https://github.com/kra-mo/cartridges"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Launch all your games</p>
+<p><a href="https://matrix.to/#/@kramo:matrix.org">kramo</a> reports</p>
+<blockquote>
+<p>Cartridges 2.1 is out, with support for Amazon Games in Heroic.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@fsobolev:matrix.org">Fyodor Sobolev</a> reports</p>
+<blockquote>
+<p>It&rsquo;s been half a year since the previous stable release of Cavalier, an audio visualizer based on CAVA — but now it&rsquo;s revived! 🕺 Completely rewritten in C#, it joined Nickvision apps family, and got some new features, including new drawing mode, mirror setting and ability to change drawing direction.
+Download from <a href="https://flathub.org/ru/apps/org.nickvision.cavalier">Flathub</a> or <a href="https://snapcraft.io/cavalier">Snap Store</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-106/IJdxeDonLqwLZgjTXAjnnJaA.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-106/GBFRkETRjuBwNzHxLgNtIDqw.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@jwharm:matrix.org">Jan-Willem</a> reports</p>
+<blockquote>
+<p>During the past year, I have been working on <a href="https://jwharm.github.io/java-gi">Java-GI</a>, a tool to generate Java language bindings for GNOME, GStreamer and other GObject-Introspection-based libraries, based on the new &ldquo;Panama&rdquo; preview API of OpenJDK 20 (JEP-434) for interconnecting the JVM and native code. The goal of Java-GI is to generate a pleasant API in which Java developers feel right at home: camel-case method names, automatic cleanup of resources, and Javadoc-style formatting and cross-references.</p>
+<p>The latest Java-GI release 0.6.1 publishes Java bindings for Gtk4, LibAdwaita, GStreamer, GtkSourceview and WebkitGtk, and custom-developed bindings for Cairo. It is also possible to define your own GObject-derived classes in Java, and to create Gtk composite template classes. Visit the <a href="https://jwharm.github.io/java-gi">Java-GI website</a>, or check out the <a href="https://github.com/jwharm/java-gi-examples">examples</a> for more information.</p>
+<p>Until now, I&rsquo;ve mostly been working on Java-GI on my own. I&rsquo;d very much appreciate if interested Java developers would try it out, send feedback on <a href="https://matrix.to/#/#java-gi:matrix.org">#java-gi:matrix.org</a> or <a href="https://github.com/jwharm/java-gi">github</a>, and become involved in further development.</p>
+</blockquote>
+
+
+<h3 id="tagger">
+<a class="heading-anchor" href="#tagger" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tagger <a href="https://flathub.org/apps/details/org.nickvision.tagger"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Tag your music.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> announces</p>
+<blockquote>
+<p>Tagger <a href="https://github.com/NickvisionApps/Tagger/releases/tag/2023.7.1">V2023.7.1</a> is here! This release comes after a month of hard work, adding many new features, design enchantments, and overall improvements to the experience of the app.</p>
+<p>There are just too many changes to describe here, so please read the full changelog below :)</p>
+<p>A huge thanks to all contributors, translators, feature requesters, and testers ❤️</p>
+<p>Here&rsquo;s the full changelog:</p>
+<ul>
+<li>Replaced taglib backend for tag metadata with atldotnet. This change added support for a lot more file types</li>
+<li>Added support for the following tag properties: Composer, Description, Publisher</li>
+<li>Added support for custom, user-defined properties</li>
+<li>Added support for custom, user-defined format strings for conversion</li>
+<li>Added help documentation with yelp-tools, accessible from the Help menu action</li>
+<li>Added more file sorting options</li>
+<li>Improved album art design and added support for managing back cover art and exporting album art</li>
+<li>Improved advanced search algorithm to use fuzzy searching</li>
+<li>Fixed an issue where corrupted music files would crash the app. Tagger will now display a dialog to warn the user of corrupted files</li>
+<li>Improved UI</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-106/BInssCmnoCYZWvopNehaajjh.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="parabolic">
+<a class="heading-anchor" href="#parabolic" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Parabolic <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Download web video and audio.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> announces</p>
+<blockquote>
+<p>Parabolic <a href="https://github.com/NickvisionApps/Parabolic/releases/tag/2023.7.3">V2023.7.3</a> is here!</p>
+<p>In this release we improved the design of the Keyring dialog making it cleaner and more user friendly. We also added a History dialog that allows users to manage previously downloaded videos!</p>
+<p>Behind the scenes, we upgraded to gir.core V0.4.0 which brings many improvements to using GTK and asynchronous programming in C#. As a result of this update, our code is a lot cleaner and easier to read.
+
+<img src="https://thisweek.gnome.org/posts/2023/07/twig-106/EPaRwNaMRhtxFxEunAzeuEeN.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

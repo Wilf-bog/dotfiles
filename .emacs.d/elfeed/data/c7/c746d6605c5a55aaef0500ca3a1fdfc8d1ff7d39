@@ -1,0 +1,198 @@
+<p>Update on what happened across the GNOME project in the week from April 15 to April 22.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="sushi">
+<a class="heading-anchor" href="#sushi" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sushi <a href="https://gitlab.gnome.org/GNOME/sushi"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A file previewer for the GNOME desktop environment.</p>
+<p><a href="https://matrix.to/#/@felipeborges:gnome.org">feborges</a> announces</p>
+<blockquote>
+<p>I am looking for a new maintainer to take care of Sushi (also known as the NautilusPreviewer, a quick previewer for GNOME Files).  I will be happy to help a new maintainer onboard and make releases. For more information, visit <a href="https://discourse.gnome.org/t/looking-for-a-new-maintainer-for-sushi/9361">https://discourse.gnome.org/t/looking-for-a-new-maintainer-for-sushi/9361</a></p>
+</blockquote>
+
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>I&rsquo;ve finished and landed entry rows originally <a href="https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/194">implemented</a> by Maximiliano. So now we have <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.EntryRow.html"><code>AdwEntryRow</code></a> and <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.PasswordEntryRow.html"><code>AdwPasswordEntryRow</code></a>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2022/04/twig-40/b0f437fab1103d285ff0cb2dfd357a3b78c99c82.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2022/04/twig-40/b0f437fab1103d285ff0cb2dfd357a3b78c99c82.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="pika-backup">
+<a class="heading-anchor" href="#pika-backup" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Pika Backup <a href="https://wiki.gnome.org/Apps/PikaBackup"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Simple backups based on borg.</p>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie Herold</a> announces</p>
+<blockquote>
+<p>When setting up an existing backup repository, Pika Backup now offers the option to infer settings from existing archives in the repository. If you previously used BorgBackup with a different tool or via the command line, this can help you to configure Pika Backup.</p>
+<p>To optimize performance, new repositories are now initialized with the, in this case, faster BLAKE2 hash algorithm, if the current system does not support SHA256 CPU instructions.
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-40/f39258b7005541d48b2b31dda9d0360ea20818ef.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gtk-rs">
+<a class="heading-anchor" href="#gtk-rs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>gtk-rs <a href="https://gtk-rs.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Safe bindings to the Rust language for fundamental libraries from the GNOME stack.</p>
+<p><a href="https://matrix.to/#/@julianhofer:gnome.org">Julian Hofer</a> reports</p>
+<blockquote>
+<p>I&rsquo;ve added the (fast) <a href="https://github.com/rui314/mold"><code>mold</code></a> linker to the <a href="https://github.com/flathub/org.freedesktop.Sdk.Extension.rust-stable"><code>org.freedesktop.Sdk.Extension.rust-stable</code></a> extension.
+This way, Rust based projects using flatpak can easily benefit from decreased build times.
+The time spent on linking is especially noticeable for incremental builds.
+For example, the incremental build of Fragments now only takes 4 instead of 12 seconds.
+The corresponding MR can be found <a href="https://gitlab.gnome.org/World/Fragments/-/merge_requests/136/diffs">here</a>.</p>
+<p>Instructions:</p>
+<ol>
+<li>
+<p>Add the <code>org.freedesktop.Sdk.Extension.llvm13</code> extension along with this extension in order to get <code>clang</code>.</p>
+</li>
+<li>
+<p>Add <code>/usr/lib/sdk/llvm13/bin</code> to <code>append-path</code>.</p>
+</li>
+<li>
+<p>Set environment variables:</p>
+<ul>
+<li><code>CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER</code> to <code>clang</code>, and</li>
+<li><code>CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUSTFLAGS</code> to <code>-C link-arg=-fuse-ld=/usr/lib/sdk/rust-stable/bin/mold</code>.</li>
+</ul>
+</li>
+</ol>
+<p>In total, the changed parts of your flatpak manifest should look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;sdk-extensions&#34;</span>: [
+        <span style="color:#e6db74">&#34;org.freedesktop.Sdk.Extension.rust-stable&#34;</span>,
+        <span style="color:#e6db74">&#34;org.freedesktop.Sdk.Extension.llvm13&#34;</span>
+    ],
+    <span style="color:#f92672">&#34;build-options&#34;</span>: {
+        <span style="color:#f92672">&#34;append-path&#34;</span>: <span style="color:#e6db74">&#34;/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm13/bin&#34;</span>,
+        <span style="color:#f92672">&#34;env&#34;</span>: {
+            <span style="color:#f92672">&#34;CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER&#34;</span>: <span style="color:#e6db74">&#34;clang&#34;</span>,
+            <span style="color:#f92672">&#34;CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUSTFLAGS&#34;</span>: <span style="color:#e6db74">&#34;-C link-arg=-fuse-ld=/usr/lib/sdk/rust-stable/bin/mold&#34;</span>,
+            <span style="color:#f92672">&#34;CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER&#34;</span>: <span style="color:#e6db74">&#34;clang&#34;</span>,
+            <span style="color:#f92672">&#34;CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_RUSTFLAGS&#34;</span>: <span style="color:#e6db74">&#34;-C link-arg=-fuse-ld=/usr/lib/sdk/rust-stable/bin/mold&#34;</span>
+        }
+    }
+}
+</code></pre></div></blockquote>
+
+
+<h3 id="authenticator">
+<a class="heading-anchor" href="#authenticator" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Authenticator <a href="https://gitlab.gnome.org/World/Authenticator"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Simple application for generating Two-Factor Authentication Codes.</p>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> announces</p>
+<blockquote>
+<p>I have finally took the time to make a new release of <a href="https://beta.flathub.org/apps/details/com.belmoussaoui.Authenticator">Authenticator</a> including various fancy features. Here is a quick summary of what we have been working on:</p>
+<ul>
+<li>Port to GTK 4</li>
+<li>Encrypted backup support</li>
+<li>Use the camera portal for scanning QR codes</li>
+<li>GNOME Shell search provider</li>
+<li>Allow editing accounts provider</li>
+<li>Better favicons detection</li>
+<li>Refined user interface</li>
+</ul>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1>
+
+<h3 id="pods">
+<a class="heading-anchor" href="#pods" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Pods <a href="https://github.com/marhkb/pods"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A podman desktop application</p>
+<p><a href="https://matrix.to/#/@marcusb86:matrix.org">marhkb</a> announces</p>
+<blockquote>
+<p>A lot has happened since the initial announcement of Symphony, a desktop application for Podman.</p>
+<p>First, Symphony was renamed to <a href="https://github.com/marhkb/pods">Pods</a>. Thanks to GitHub user <a href="https://github.com/marhkb/pods/issues/99#issuecomment-1080088366">fostertheweb</a> for this suggestion. The name is more concise and avoids associations with a music application.</p>
+<p>Other new features include:</p>
+<ul>
+<li>A manual dark mode, which can be activated independently of the system style</li>
+<li>Image details are now displayed in a separate page within a leaflet instead of in an ExpanderRow</li>
+<li>You can now open a dialog to display basic information about Podman</li>
+<li>Containers can now be renamed easily via a dialog</li>
+<li>The prune dialog has been reworked and now offers more options</li>
+<li>A circular indicator now gives information about a container&rsquo;s CPU and memory status</li>
+<li>Container logs can now be viewed and searched</li>
+<li>A dialog can now be used to create and start new containers from existing images
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-40/PrdZTLLAbiBHoaldzzgZNZWD.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-40/AmVcGSwWfYFOGSfVzylrQpbb.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-40/LbAxHFdjqiBzbMlFodsDGpHT.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-40/HPHpttbqUHrhfVKSSllHaLYI.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-40/FwbIhWrhmzdcWxGIcRSSOAoc.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="furtherance">
+<a class="heading-anchor" href="#furtherance" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Furtherance <a href="https://github.com/lakoliu/Furtherance"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Track your time without being tracked</p>
+<p><a href="https://matrix.to/#/@rickykresslein:matrix.org">rickykresslein</a> says</p>
+<blockquote>
+<p><a href="https://github.com/lakoliu/Furtherance">Furtherance</a>, a time-tracking app for GNOME, version 1.1.2 was released with the ability to add tags! Some smaller improvements: the app icon is now aligned better, the start and delete buttons are now blue and red, respectively, and three more translations were added.
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-40/WCAftxwNEEBkAVXhVpcEkYOx.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="amberol">
+<a class="heading-anchor" href="#amberol" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Amberol <a href="https://gitlab.gnome.org/ebassi/amberol/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Plays music, and nothing else.</p>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> says</p>
+<blockquote>
+<p>It&rsquo;s Friday, and there&rsquo;s a new release of Amberol, the music player with no delusions of grandeur! In this release I&rsquo;ve added a few niceties, like being able to see the position in waveform of the currently playing song; a remove button for modifying the playlist; and a whole new adaptive UI layout that works just as well on the desktop as it does on a mobile device. You can find Amberol 0.4.0 on <a href="https://flathub.org/apps/details/io.bassi.Amberol">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-40/a57c9618e244ec44c98d9d03004110d6c49c6d2f.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-40/b1128c57617332fc234d3c08598a3692647f05ff.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2022/04/twig-40/b0252adc7ef9cf6aa846e1e7ff9f68a666e29989.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@thib:ergaster.org">Thib</a> says</p>
+<blockquote>
+<p>Where is the Foundation even going? Not in the cloud!</p>
+<p>I wrote this post to shed some light on a programme the Foundation wants to conduct, how it will impact the GNOME Project, and how the contributors can help shaping it.</p>
+<p><a href="https://discourse.gnome.org/t/foundation-strategy-funding-decentralised-local-first-applications/">https://discourse.gnome.org/t/foundation-strategy-funding-decentralised-local-first-applications/</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@nmcgovern:matrix.org">Neil McGovern</a> says</p>
+<blockquote>
+<p>Registration is now open for GUADEC (July 20th - 25th) <a href="https://events.gnome.org/event/77/">https://events.gnome.org/event/77/</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@nmcgovern:matrix.org">Neil McGovern</a> reports</p>
+<blockquote>
+<p>Linux App Summit (<a href="https://linuxappsummit.org/">https://linuxappsummit.org/</a>) starts on Friday 29th, check out the schedule at <a href="https://conf.linuxappsummit.org/event/4/timetable/#all">https://conf.linuxappsummit.org/event/4/timetable/#all</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

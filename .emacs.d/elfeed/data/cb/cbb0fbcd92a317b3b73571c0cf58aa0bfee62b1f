@@ -1,0 +1,146 @@
+<p>Update on what happened across the GNOME project in the week from June 28 to July 05.</p>
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie (she/her)</a> says</p>
+<blockquote>
+<p><a href="https://flathub.org/apps/app.drey.KeyRack">Key Rack 0.4</a> has been released. This release contains all the work that Felix has done as part of STF. The version brings a completely overhauled user interface. But the changes go much further than a better look. Key Rack now allows to view all host keyrings as well to change passwords of keyrings. Passwords can now be found more easily via the new search function and new passwords can be added via the interface.</p>
+<p>You can use Key Rack for to lookup password that apps have store or use it as a personal password manager with multiple keyrings.
+
+<img src="https://thisweek.gnome.org/posts/2024/07/twig-155/e74dce609202a9b8aa49869d523c436a19c2d9591809288270232682496.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="webkitgtk">
+<a class="heading-anchor" href="#webkitgtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>WebKitGTK <a href="https://webkitgtk.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>GTK port of the WebKit rendering engine.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> says</p>
+<blockquote>
+<p>WebKit can now be profiled using Sysprof on Linux. This includes both the WebKitGTK and the WPE WebKit ports. WebKit is the first web engine on Linux to integrate with Sysprof!</p>
+<p>For now, this integration exposes all pre-existing tracing points in WebKit. This includes JSC, WebProcess, and more. New tracing points are being considered for addition.</p>
+<p>This is an important step for WebKit on Linux as it open the door for potential performance improvements, reduce resource usage, and more.
+
+<img src="https://thisweek.gnome.org/posts/2024/07/twig-155/3e4cc632a1f604df93e13cb29703a3c5d3910f0d1809314527926288384.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@elvishcraftsman:matrix.org">elvishcraftsman</a> says</p>
+<blockquote>
+<p>I&rsquo;ve created my first GNOME app, Time Tracker, which is now <a href="https://flathub.org/apps/com.lynnmichaelmartin.TimeTracker">available on Flathub</a>.</p>
+<p>Time Tracker is local-first and can sync through cloud storage (saving to a CSV file). This makes it able to load significantly faster than online-first time tracking software.</p>
+<p>Time Tracker supports custom filtering, where it reports on the amount of time spent during a particular date range and by project.
+
+<img src="https://thisweek.gnome.org/posts/2024/07/twig-155/MvVJcgqZgIJSjaVasYCTUFLl.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="phosh">
+<a class="heading-anchor" href="#phosh" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Phosh <a href="https://gitlab.gnome.org/World/Phosh/phosh"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A pure wayland shell for mobile devices.</p>
+<p><a href="https://matrix.to/#/@agx:sigxcpu.org">Guido</a> says</p>
+<blockquote>
+<p>Phosh 0.40.0 is out:</p>
+<p><a href="https://gitlab.gnome.org/World/Phosh/phosh">Phosh</a> got (optional) dark style an mobile data quick toggles. One can suspend from the lock screen now and we have a bunch of bug and UI fixes. <a href="https://gitlab.gnome.org/World/Phosh/phoc">Phoc</a> now supports a fling gesture to make opening and closing the panels a bit nicer.</p>
+<p>There&rsquo;s more. Check the full details <a href="https://phosh.mobi/releases/rel-0.40.0/">here</a>
+
+<img src="https://thisweek.gnome.org/posts/2024/07/twig-155/uMSEBdEhkxOQgEdpGKCRfcXz.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="keypunch">
+<a class="heading-anchor" href="#keypunch" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Keypunch <a href="https://github.com/bragefuglseth/keypunch"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Practice your typing skills</p>
+<p><a href="https://matrix.to/#/@bragefuglseth:gnome.org">Brage Fuglseth</a> reports</p>
+<blockquote>
+<p>Bonjour! Sziasztok! 안녕! This week I released Keypunch 2.0. Get ready to practice typing in many new languages.</p>
+<ul>
+<li>Text generation support for Bulgarian, Hindi, Korean, Nepali, Russian, Swiss German, and Ukranian</li>
+<li>User interface translations for Bulgarian, Czech, Dutch, French, German, Hindi, Hungarian, Spanish and Ukranian</li>
+<li>More accepted ways to type certain characters, such as “oe” for “œ”</li>
+<li>Better handling of scripts using intelligent input engines, like Korean Hangul</li>
+<li>Recognition of Ctrl+Backspace</li>
+<li>Special accomodations for on-screen keyboards and touch screens</li>
+</ul>
+<p>A special thanks to everybody who has contributed orthographic information and tested the text generation and input machinery for their languages. Keypunch’s diverse language support would not be possible without you.
+You can get Keypunch on <a href="https://flathub.org/apps/dev.bragefuglseth.Keypunch">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2024/07/twig-155/d49857117fdd7297f90f8984dae7ffa212d205e61807759613437673472.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gdm-settings">
+<a class="heading-anchor" href="#gdm-settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GDM Settings <a href="https://gdm-settings.github.io"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Customize your login screen.</p>
+<p><a href="https://matrix.to/#/@realmazharhussain:matrix.org">Mazhar Hussain</a> reports</p>
+<blockquote>
+<p>I am calling for contributors for GDM Settings. Lately, I have been busy in my day job, and haven&rsquo;t had much time to work on GDM Settings.</p>
+<p>About 2 months ago, I requested the users for donations for the development of the app. At the time of writing this, we have $179.47 USD in our OpenCollective. I know it is not much, but meaningful contributions may be rewarded with little gifts (payouts) in the range of $30 to $50. If you want to work on something specific for some fixed amount of money, you can do that as well. Just reach out to me in <a href="https://github.com/orgs/gdm-settings/discussions">GitHub Discussions</a>.</p>
+<p>If you have any questions or suggestions, please, don&rsquo;t hesitate to reach out in <a href="https://github.com/orgs/gdm-settings/discussions">GitHub Discussions</a>.</p>
+</blockquote>
+
+
+<h3 id="fractal">
+<a class="heading-anchor" href="#fractal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fractal <a href="https://gitlab.gnome.org/World/fractal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Matrix messaging app for GNOME written in Rust.</p>
+<p><a href="https://matrix.to/#/@zecakeh:tedomum.net">Kévin Commaille</a> reports</p>
+<blockquote>
+<p>It’s been all over the news, so you probably already have heard about what’s happening in France, but in case you haven’t yet: a new Fractal beta just dropped!</p>
+<p>What have we been up to for Fractal 8.beta?</p>
+<ul>
+<li>Mentions are sent intentionally</li>
+<li>Authenticated media are supported</li>
+<li>Draft messages are kept per-room</li>
+<li>The verification and account recovery processes have been polished</li>
+<li>HTML rendering should be more robust, as we switched to the same library already used by the Rust SDK to cleanup tags in messages</li>
+<li>Speaking of HTML rendering, code blocks gained syntax highlighting, lists can be nested, numbered lists can start from an arbitrary number, the details tag is supported, and @room mentions are detected and rendered with a pill</li>
+</ul>
+<p>As usual, this release includes other improvements, fixes and new translations thanks to all our contributors, and our upstream projects.</p>
+<p>It is available to install via Flathub Beta, see the <a href="https://gitlab.gnome.org/World/fractal#installation-instructions">instructions in our README</a>.</p>
+<p>As the version implies, there might be a slight risk of regressions, but it should be mostly stable. If all goes well the next step is the release candidate!</p>
+<p>As always, you can try to fix one of our <a href="https://gitlab.gnome.org/World/fractal/-/issues">issues</a>. Any help is greatly appreciated!
+
+<img src="https://thisweek.gnome.org/posts/2024/07/twig-155/3cddb8d8968e7087f98106b6d764291ea15bf9e81808588065434763264.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="internships">
+<a class="heading-anchor" href="#internships" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Internships
+</h1>
+
+<h3 id="flatsync">
+<a class="heading-anchor" href="#flatsync" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>FlatSync <a href="https://gitlab.gnome.org/Cogitri/flatsync"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Keep your Flatpak apps synchronized between devices</p>
+<p><a href="https://matrix.to/#/@ilchitarrista:matrix.org">IlChitarrista</a> announces</p>
+<blockquote>
+<p>We’ve finally landed the Initial Setup as part of GSoC, now FlatSync is configurable through a nicely designed UI.
+Many thanks for the feedback throughout development from my mentor <a href="https://gitlab.gnome.org/Cogitri">Cogitri</a> and various people in the Design channel.</p>
+<p>Now I’m starting to work on implementing Filtering to bring more granular control over FlatSync’s behaviour.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/07/twig-155/pDHiLwacFWSLYdYyOEUjEZgj.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/07/twig-155/pDHiLwacFWSLYdYyOEUjEZgj.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@aday:gnome.org">Allan Day</a> says</p>
+<blockquote>
+<p>The GNOME Foundation Board of directors has been getting its new members up and running this week. Newly elected directors have been joining the board Matrix channels, and training and briefing sessions have been scheduled for next week. Planning is also underway for the 2024 board annual meeting, which will happen ahead of GUADEC, on 17 July.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

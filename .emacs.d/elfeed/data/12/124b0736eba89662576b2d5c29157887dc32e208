@@ -1,0 +1,284 @@
+<p>Update on what happened across the GNOME project in the week from August 04 to August 11.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="image-viewer-loupe">
+<a class="heading-anchor" href="#image-viewer-loupe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Image Viewer (Loupe) <a href="https://apps.gnome.org/app/org.gnome.Loupe/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Browse through images and inspect their metadata.</p>
+<p><a href="https://matrix.to/#/@brainblasted:gnome.org">Chris 🌱️</a> announces</p>
+<blockquote>
+<p>Loupe has been officially added as part of the GNOME core app set as the new default image viewer.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie (she/her)</a> says</p>
+<blockquote>
+<p>We have landed the two last significant changes for GNOME 45. The image loading via <a href="https://gitlab.gnome.org/sophie-h/glycin">glycin</a> is now fully sandboxed, including SVGs. And the print dialog got updated to a new design by Allan Day.
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/27fed53eb10c4ee142bab1b46667eb3caf69e4ac.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gtk">
+<a class="heading-anchor" href="#gtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GTK <a href="https://gitlab.gnome.org/GNOME/gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Cross-platform widget toolkit for creating graphical user interfaces.</p>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> reports</p>
+<blockquote>
+<p>Early GTK 4.12 release following GUADEC; lots of fixes and long awaited features:</p>
+<ul>
+<li>list views gained support for sections, using a new <a href="https://docs.gtk.org/gtk4/iface.SectionModel.html"><code>GtkSectionModel</code></a> interface; various models in GTK implement this interface</li>
+<li>also in list views: you can now programmatically scroll <a href="https://docs.gtk.org/gtk4/method.ListView.scroll_to.html"><code>GtkListView</code></a>, <a href="https://docs.gtk.org/gtk4/method.GridView.scroll_to.html"><code>GtkGridView</code></a>, and <a href="https://docs.gtk.org/gtk4/method.ColumnView.scroll_to.html"><code>GtkColumnView</code></a> using a fine-grained API</li>
+<li>finally, focusing on list views is more accurate and reliable</li>
+<li>tons of fixes for the accessibility support, with better name and description computation following the ARIA specification; improved handling of composite button widgets; and a whole accessibility overlay in the GTK inspector, showing missing names and descriptions in your UI</li>
+<li>the Vulkan renderer has seen major improvements; Vulkan support is still marked as experimental, but it&rsquo;s definitely less of a science project</li>
+<li>multiple fixes in the GL renderer when it comes to mipmaps and texture filtering</li>
+<li>Wayland, Windows, and macOS improvements and bug fixes</li>
+<li>there are a few new deprecations, mainly related to GdkPixbuf
+The GTK team is already hard at work on the next GTK 4.14 development cycle, so stay tuned!</li>
+</ul>
+</blockquote>
+
+
+<h3 id="maps">
+<a class="heading-anchor" href="#maps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Maps <a href="https://wiki.gnome.org/Apps/Maps"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Maps gives you quick access to maps all across the world.</p>
+<p><a href="https://matrix.to/#/@mlundblad:matrix.org">mlundblad</a> reports</p>
+<blockquote>
+<p>Maps now has an experimental vector layer, using the new vector map support in libshumate. Currently it is using the OSM Liberty style. Longer-term the plan is to develop GNOME style style sheets supporting light and dark variant, using icons for the markers based on the GNOME Icon Library. At this time this showcases horizontally aligned labels (regardless of map rotation) and sharp rendering, also at fractional zoom levels. Some things that are not yet implemented includes being able to directly click on labels and markers, and localized names.
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/tRLSBSMXWSnrrsAjpCQIVfUT.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/heADXJoEASnRTPhgRtDhgyuS.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-contacts">
+<a class="heading-anchor" href="#gnome-contacts" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Contacts <a href="https://gitlab.gnome.org/GNOME/gnome-contacts"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Keep and organize your contacts information.</p>
+<p><a href="https://matrix.to/#/@nielsdg:gnome.org">nielsdg</a> reports</p>
+<blockquote>
+<p>GNOME Contacts 45.beta is out, now powered by the GtkListView/GtkSectionModel APIs. This decreased memory usage of Contacts locally with about 20% and helps save some precious CPU cycles! It should also enable some nice-to-have behaviors like being able to select multiple contacts at once with shift-click.</p>
+</blockquote>
+
+
+<h3 id="gjs">
+<a class="heading-anchor" href="#gjs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GJS <a href="https://gitlab.gnome.org/GNOME/gjs"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Use the GNOME platform libraries in your JavaScript programs. GJS powers GNOME Shell, Polari, GNOME Documents, and many other apps.</p>
+<p><a href="https://matrix.to/#/@ptomato:gnome.org">ptomato</a> says</p>
+<blockquote>
+<p>GJS released a new version for GNOME 45 beta. There are several bug fixes and documentation improvements. Highlights of the release are performance improvements by Marco Trevisan, and the upgrade of the JS engine to SpiderMonkey 115 thanks to Xi Ruoyao.
+New things that you will be able to use in your JS code in GNOME 45 are the new <code>findLast()</code>, <code>findLastIndex()</code>, <code>with()</code>, <code>toReversed()</code>, <code>toSorted()</code>, and <code>toSpliced()</code> array methods, and the ability to create an array from an async iterable with <code>Array.fromAsync()</code>.</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="newsflash-feed-reader">
+<a class="heading-anchor" href="#newsflash-feed-reader" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>NewsFlash feed reader <a href="https://gitlab.com/news-flash/news_flash_gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Follow your favorite blogs &amp; news sites.</p>
+<p><a href="https://matrix.to/#/@jangernert:matrix.org">Jan Lukas</a> reports</p>
+<blockquote>
+<p>NewsFlash got a new application id on flathub. It moved from <code>com.gitlab.newsflash</code> to <code>io.gitlab.news_flash.NewsFlash</code>. The flatpak CLI and Gnome software should ask you if you want to migrate to the new id.
+This was done to be able to verify the app on flathub and in preparation for a big feature update. So stay tuned.</p>
+</blockquote>
+
+
+<h3 id="gaphor">
+<a class="heading-anchor" href="#gaphor" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gaphor <a href="https://gaphor.org"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple UML and SysML modeling tool.</p>
+<p><a href="https://matrix.to/#/@amolenaar:matrix.org">Arjan</a> says</p>
+<blockquote>
+<p>Gaphor development is continuing at full pace. This week Dan Yeaw released Gaphor 2.20.0. Support for SysML modeling has been improved with new elements and the ability to assign types to model elements.
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/xkrsKtcUxCAUlZkgsihXsNQL.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="ashpd">
+<a class="heading-anchor" href="#ashpd" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>ashpd <a href="https://github.com/bilelmoussaoui/ashpd"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Rust wrapper around freedesktop portals.</p>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> announces</p>
+<blockquote>
+<p>finally updated <a href="https://flathub.org/apps/com.belmoussaoui.ashpd.demo">ashpd demo</a> to follow the new libadwaita designs along with a new ashpd release
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/3d260ae04619aef2b62991c3ba752b9a5076e3a7.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1>
+
+<h3 id="tagger">
+<a class="heading-anchor" href="#tagger" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tagger <a href="https://flathub.org/apps/details/org.nickvision.tagger"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Tag your music.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> reports</p>
+<blockquote>
+<p>Tagger <a href="https://github.com/NickvisionApps/Tagger/releases/tag/2023.8.2">V2023.8.2</a> is here! This release is packed with new features and fixes that make Tagger a lot more powerful to use. Read about them below :)</p>
+<p>Changelog:</p>
+<ul>
+<li>Added support for managing a file&rsquo;s lyrics</li>
+<li>Tagger will now provide suggestions while typing a genre</li>
+<li>Fixed an issue where downloading MusicBrainz metadata would fail even if metadata was available</li>
+<li>Fixed an issue where Web Services were disabled even though network connection was available</li>
+<li>Fixed an issue where back album art was not saved correctly</li>
+<li>An Info button will appear when MusicBrainz lookup fails and will provide more information about why the process failed</li>
+<li>Improved tag panel design</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/xurAQmffpMEnAxalulxyQIds.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="phosh">
+<a class="heading-anchor" href="#phosh" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Phosh <a href="https://gitlab.gnome.org/World/Phosh/phosh"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A pure wayland shell for mobile devices.</p>
+<p><a href="https://matrix.to/#/@agx:sigxcpu.org">Guido</a> announces</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/World/Phosh/phosh">Phosh</a> and <a href="https://gitlab.gnome.org/World/Phosh/phoc">phoc</a> have been released a couple of days ago. Besides not downscaling screenshots any longer phosh switched to newer versions of <a href="https://gitlab.gnome.org/GNOME/libgnome-volume-control">libgnome-volume-control</a> and gmobile. The later was updated to support more notches (those of the Fairphone 4 and Poco F1) which were added to the 0.0.2 release of <a href="https://gitlab.gnome.org/guidog/gmobile">gmobile</a> (also tagged last week).</p>
+<p>Phoc got updated to newer wlroots allowing us to add support for newer xdg-shell versions but most importantly it fixes a long standing issues with GTK4 popups and on screen keyboard interaction.</p>
+<p>The screenshot shows phoc reneding the rounded corners and the bounding box of a notch while phosh uses the same information to move the clock out of the center.
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/LqdyzETKgaxUwDcSUySwzcQA.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="parabolic">
+<a class="heading-anchor" href="#parabolic" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Parabolic <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Download web video and audio.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> announces</p>
+<blockquote>
+<p>Parabolic <a href="https://github.com/NickvisionApps/Parabolic/releases/tag/2023.8.1">V2023.8.1</a> is here! This release is packed with new features, improvements, and bug fixes. Read about them below :)</p>
+<p>Changelog:</p>
+<ul>
+<li>Added the option to prevent suspend while using Parabolic</li>
+<li>Added the ability to skip the password dialog when unlocking Keyring</li>
+<li>Added the ability to reset the Keyring when locked</li>
+<li>Improved bitrate used for audio-only downloads with the best quality</li>
+<li>Parabolic will now prefer videos with the h264 codec when downloading in the mp4 format. If space is a concern, users are recommended to download in the webm format which uses the vp9/vp8/av1 codecs</li>
+<li>If overwriting files is off and a download&rsquo;s file name exists, a numbered suffix will be attached to the end of the file name to prevent error</li>
+<li>Fixed an issue where downloads with specific timeframes would download incorrectly</li>
+<li>Fixed an issue where opus downloads would sometimes fail</li>
+<li>Fixed an issue where Parabolic would be unusable on systems without NetworkManager installed</li>
+<li>Fixed an issue where Parabolic would say no active internet connection even though there was a connection established</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/wckLZyoylbznvZgMkEyDKSuV.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="denaro">
+<a class="heading-anchor" href="#denaro" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Denaro <a href="https://flathub.org/apps/details/org.nickvision.money"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Manage your personal finances.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> says</p>
+<blockquote>
+<p>Denaro <a href="https://github.com/NickvisionApps/Denaro/releases/tag/2023.8.0-beta2">V2023.8.0-beta2</a> is here!!</p>
+<p>This is the release that <strong>finally introduces graphs</strong> into the Account view as well as exported PDFs! Check it out now :)</p>
+<p>Here&rsquo;s the full V2023.8.0 changelog so far:</p>
+<ul>
+<li>Added graph visuals to the Account view as well as in exported PDFs</li>
+<li>Added the option to select the entire current month as the date range filter</li>
+<li>Improved the transaction description suggestion algorithm with fuzzy search</li>
+<li>Fixed an issue where the help button in the import toast was not working</li>
+<li>Fixed an issue where Denaro would crash if an account had incorrect formatted metadata</li>
+<li>Fixed an issue where docs were not available when running Denaro via snap</li>
+<li>Updated translations (Thanks to everyone on Weblate)!
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/XRHZIIyjtrMVGzAbBHDxUFPi.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/hIcaSfrTtgcpBDZBPRDnRwgr.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/HJJbfSMfkBMgCBLKqzBsUUZQ.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="daikhan">
+<a class="heading-anchor" href="#daikhan" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Daikhan <a href="https://flathub.org/apps/io.gitlab.daikhan.stable"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Play Videos/Music with style.</p>
+<p><a href="https://matrix.to/#/@realmazharhussain:matrix.org">Mazhar Hussain</a> reports</p>
+<blockquote>
+<p>Last week, I announced <a href="https://flathub.org/apps/io.gitlab.daikhan.stable">Daikhan</a> media player without mentioning any features of the app. Well, one of its features is that it remembers what selections the user has made (e.g. selected audio/subtitle languages, etc.) for each opened file and when the user opens any of those files again, it restores those selections.</p>
+<p>This week, the &ldquo;Remember Selections&rdquo; feature received superpowers. Now, the player can recognize files by their content. So, it can restore selections made by the user even if files have been renamed, moved to a new location or both.</p>
+<p>Additionally,</p>
+<ul>
+<li>Hardware acceleration support was added to the flatpak</li>
+<li>Screenshots were updated</li>
+<li>Access to files is only granted when you open them. Previously, the app had full access to the filesystem.</li>
+</ul>
+<p>NOTE: The app is still in early access. So, expect some bugs and beware that big changes (even backward-incompatible ones) might occur in the app&rsquo;s interface and behavior.
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/mYpgjWogrYTcCNUMrWZzTKJr.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="cavalier">
+<a class="heading-anchor" href="#cavalier" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Cavalier <a href="https://flathub.org/apps/details/org.nickvision.cavalier"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Visualize audio with CAVA.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> announces</p>
+<blockquote>
+<p>Cavalier <a href="https://github.com/NickvisionApps/Cavalier/releases/tag/2023.8.1">V2023.8.1</a> is here! Tired of existing 6 drawing modes? Well, now there are 11, because every mode except Splitter got Circle variant! We also fixed the issue that caused incorrect drawing with display scaling enabled, and added a cute easter egg 👀</p>
+<p>Here&rsquo;s the full changelog:</p>
+<ul>
+<li>All drawing modes except Splitter now have Circle variants</li>
+<li>Added an easter egg (run the program with &ndash;help to find how to activate it)</li>
+<li>Fixed an issue where the app wasn&rsquo;t drawing correctly with &gt;100% display scaling</li>
+<li>Added welcome screen that is shown on start until any sound gets detected</li>
+<li>Added Cairo backend that can be used in case of problems with OpenGL. To activate, run the program with environment variable CAVALIER_RENDERER=cairo</li>
+<li>CAVA was updated to 0.9.0</li>
+<li>Pipewire is now used as default input method, you can still change back to Pulse Audio using environment variable CAVALIER_INPUT_METHOD=pulse</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/IBrrWVOjhwYHJBzdSMHeBWwM.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/sJUiMdPrtEKYAyEnZxZAwViZ.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> reports</p>
+<blockquote>
+<p>I released a new version of all the core design tooling apps, with some very small subtle changes &amp; updates of the rust bindings
+
+<img src="https://thisweek.gnome.org/posts/2023/08/twig-108/f1ca73daf13a2581fbe4b4e4a99ea2999c83db87.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@zana:gnome.org">Rosanna</a> says</p>
+<blockquote>
+<p>August is traditionally a slow month for the Foundation, as staff tends to take a small break after another successful GUADEC. Somehow, this week was chock full of meetings jammed in between folks who just got back from holidays and those about to leave for the same. Of particular note were:</p>
+<ul>
+<li>the first regular Board meeting of the new term — we covered a lot of topics and I am looking forward to working with this new group for the next year</li>
+<li>code of conduct committee meeting — amongst other things, we are working on our processes and transparency reports</li>
+<li>executive director search committee — interviews are ongoing and we met to touch base and make sure there aren&rsquo;t any hiccups</li>
+</ul>
+<p>In addition, I have been catching up on the bills that accumulated on my virtual desk during GUADEC, doing various HR tasks (including digging up paperwork to give references), finishing the filing of our 2022 tax forms, and making sure the staff get the support they need. I see travel committee requests starting to come in… that will be on my todo list next week!</p>
+<p>Do you have a talk about GNOME you want to give in a new location? The CFP for GNOME Asia is open! More information available here — <a href="https://foundation.gnome.org/2023/08/08/gnomeasia-2023-cfp/">https://foundation.gnome.org/2023/08/08/gnomeasia-2023-cfp/</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

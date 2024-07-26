@@ -1,0 +1,138 @@
+<p>Update on what happened across the GNOME project in the week from June 23 to June 30.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alice (she/they)</a> says</p>
+<blockquote>
+<p><code>AdwNavigationView</code> back buttons now support a context menu allowing to pop multiple pages at once. This works with nested navigation views and even with structures like <code>AdwNavigationSplitView</code> containing navigation views in both content and sidebar. Additionally, back button tooltips are now more reliable - they previously didn&rsquo;t work in this situation and required the app to manually sync the sidebar page&rsquo;s title with its navigation view&rsquo;s visible page. Now it&rsquo;s automatic like in other cases
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/06/twig-102/a68bf128669b090e1270e36b28ee72ce2dfd606d.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/06/twig-102/a68bf128669b090e1270e36b28ee72ce2dfd606d.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@a23_mh:matrix.org">Alain</a> reports</p>
+<blockquote>
+<p>Hi, Planify 4.1 is out!</p>
+<ul>
+<li>Planify has a new icon thanks to Tobias Bernard.</li>
+<li>Quick Add is available, quickly add tasks from anywhere on your desktop with a simple keyboard shortcut, set it from Preferences → Quick Add</li>
+<li>Preferences page redesigned.</li>
+<li>The preferences to run in the background and run at startup are available.</li>
+<li>The error that did not allow to see the calendar events was solved.</li>
+<li>Added the preference to create tutorial project.</li>
+<li>Bug fixes and performance improvement.</li>
+</ul>
+<p><a href="https://github.com/alainm23/planify/releases/tag/4.1">https://github.com/alainm23/planify/releases/tag/4.1</a>
+Available on <a href="https://flathub.org/en/apps/io.github.alainm23.planify">Flathub</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@fkinoshita:gnome.org">Felipe Kinoshita</a> says</p>
+<blockquote>
+<p>This week I release Wildcard 0.2.0, it brings a more streamlined layout and a nice dialog for quickly switching expression flags on/off, <a href="https://flathub.org/apps/com.felipekinoshita.Wildcard">check it out</a>! :D
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-102/440fee8e689a64efc0be8621b93869c804a7c571.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="tagger">
+<a class="heading-anchor" href="#tagger" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tagger <a href="https://flathub.org/apps/details/org.nickvision.tagger"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An easy-to-use music tag (metadata) editor.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> reports</p>
+<blockquote>
+<p>Tagger is currently at <a href="https://github.com/NickvisionApps/Tagger/releases/tag/2023.7.0-beta2">V2023.7.0-beta2</a> !</p>
+<p>After months of no updates, we are proud to bring Tagger back and better than ever. Tagger has received the C# treatment and has been completely rewritten from the ground up with a more stable and performant backend. To signify this great release, we even have a new icon thanks to @daudix-UFO ! Besides being written in C#, we also added some new features and fixed pre-existing bugs that you can read about below. Tagger is also now available to translate <a href="https://hosted.weblate.org/engage/nickvision-tagger/">on Weblate</a> !</p>
+<p>We urge everyone who uses Tagger / wants to use Tagger to help us test the beta releases so we can iron out any issues before our stable release this Sunday. We hope you enjoy this release as much as we enjoyed making it :)</p>
+<p>Here&rsquo;s the full changelog:</p>
+<ul>
+<li>Tagger has been completely rewritten in C#! With this new language comes better performance and more stable features. To signify this great change, we also updated the app icon!</li>
+<li>Added a separate option in Preferences for overwriting album art with MusicBrainz metadata independently of the overwriting tag data setting</li>
+<li>Added an option in Preferences for controlling how music files are sorted</li>
+<li>Track values will now be padded into double digits</li>
+<li>Fixed an issue where some file types were not loading album art correctly</li>
+<li>Fixed an issue where applying unapplied changes would sometimes not work</li>
+<li>Improved UI/UX</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-102/bjheizaIAEBKCeEhCXdiyiyC.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="parabolic">
+<a class="heading-anchor" href="#parabolic" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Parabolic <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Download web video and audio.</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> announces</p>
+<blockquote>
+<p>Parabolic <a href="https://github.com/NickvisionApps/Parabolic/releases/tag/2023.6.3">V2023.6.3</a> is here!</p>
+<p>If you haven&rsquo;t noticed, Tube Converter has been renamed to Parabolic! We think this is a much better name for the downloader and thank all that have worked with us to come up with a new name :)</p>
+<p>Here&rsquo;s the full changelog:</p>
+<ul>
+<li>Tube Converter has been renamed. Introducing, Parabolic!</li>
+<li>Fixed a large memory leak caused by not disposing logs correctly</li>
+<li>Updated translations (Thanks everyone on Weblate!)
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-102/uWyhTrNyrtNNaxppZDyszusq.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="iplan">
+<a class="heading-anchor" href="#iplan" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>IPlan <a href="https://github.com/iman-salmani/iplan"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Your plan for improving personal life and workflow</p>
+<p><a href="https://matrix.to/#/@imansalmani:matrix.org">Iman Salmani</a> announces</p>
+<blockquote>
+<p><a href="https://github.com/iman-salmani/iplan">IPlan 1.7.0</a> is now out!
+What&rsquo;s changed:</p>
+<ul>
+<li>Chart of Time spent in last 7 days</li>
+<li>Record delete button moved to record row</li>
+<li>Improve usability for the phone form factor</li>
+<li>Option to disable run in background</li>
+<li>Improve duration format</li>
+<li>Code refactoring, Bug fixes, and UI improvements
+You can get it from <a href="https://flathub.org/apps/ir.imansalmani.IPlan">Flathub</a>.
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-102/zeTnryhTavHYeizuqTxTOiTx.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="gnome-network-displays">
+<a class="heading-anchor" href="#gnome-network-displays" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Network Displays <a href="https://gitlab.gnome.org/GNOME/gnome-network-displays"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Stream the desktop to Wi-Fi Display capable devices</p>
+<p><a href="https://matrix.to/#/@toluene:matrix.org">Pedro Sader Azevedo</a> says</p>
+<blockquote>
+<p>GNOME Network Displays gained a DBus interface, that exposes the list of screencasting devices (also known as &ldquo;sinks&rdquo;) discovered in your network. This is part of the ongoing effort to allow GNOME Network Displays to function as a screencasting backend for other projects (e.g. GNOME Shell, GNOME Settings, xdg-portal, etc).
+
+<img src="https://thisweek.gnome.org/posts/2023/06/twig-102/cVgHlKtBveEutcvkrktNWDUq.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@kristiprogri:gnome.org">Kristi Progri</a> announces</p>
+<blockquote>
+<p>GUADEC 2023 is coming and the team is working hard to make this experience as pleasant as possible.
+On July 31st we are orgaizing a day trip outside of Riga. If you are interested to join please register here:
+<a href="https://events.gnome.org/event/101/page/164-northern-latvia-trip">https://events.gnome.org/event/101/page/164-northern-latvia-trip</a>.
+We have extended the deadline for everyone who couldn&rsquo;t make it on time.</p>
+<p>On another note, GNOME ASIA is taking place in Katmandhu, Nepal from 1st-3rd of December.
+We are starting to put together the plans and conference timeline, if you would be interested to join the organising team please send us an email at: <a href="mailto:asia@gnome.org">asia@gnome.org</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

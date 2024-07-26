@@ -1,0 +1,104 @@
+<p>Update on what happened across the GNOME project in the week from August 27 to September 03.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@jimmac:gnome.org">Jakub Steiner</a> reports</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/GNOME/gnome-tour/-/merge_requests/51">Bilal has merged</a> the fresh new GNOME 41 Tour, giving new users a nice welcome to their OS. Instead of screenshots here&rsquo;s some sketches from the design phase not to spoil the experience. You&rsquo;ll be able to enjoy the Tour when GNOME releases in September.
+
+<img src="https://thisweek.gnome.org/posts/2021/09/twig-8/215eea2866786ff0e66a323d0d678afa49252c1e.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2021/09/twig-8/d9a5febf483ae8f33c43d652a0b3c2bd9dc38fa5.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="tracker">
+<a class="heading-anchor" href="#tracker" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tracker <a href="https://gitlab.gnome.org/GNOME/tracker/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A filesystem indexer, metadata storage system and search tool.</p>
+<p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> announces</p>
+<blockquote>
+<p>Tracker (database and search engine) has adopted Hotdoc for documentation, the new-look reference manual is avaiable <a href="https://gnome.pages.gitlab.gnome.org/tracker/docs/developer/">here</a></p>
+</blockquote>
+
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>libadwaita has seen a few API changes this week, make sure to update your apps if you were using them:</p>
+<ul>
+<li><code>AdwWindow:child</code> and <code>AdwApplicationWindow:child</code> have been renamed  to <code>content</code> to avoid a name clash with <code>GtkWindow:child</code></li>
+<li><code>AdwValueObject</code> has been removed, in most cases it can be replaced with <code>GtkStringList</code></li>
+<li><code>AdwEnumValueObject</code> has been renamed to <code>AdwEnumListItem</code> to better reflect how it&rsquo;s used</li>
+<li><code>AdwViewSwitcherBar:policy</code> and <code>AdwViewSwitcherTitle:policy</code> have been removed.</li>
+<li><code>AdwViewSwitcherPolicy</code> has lost its <code>auto</code> value. <code>AdwViewSwitcherTitle</code> still provides the same behavior, and it can also be achieved using 2 view switchers in an <code>AdwSqueezer</code></li>
+<li><code>AdwViewSwitcher:narrow-ellipsize</code> has been removed, this property should have never been public</li>
+<li><code>AdwSqueezer</code> has gained API to switch children based on their natural size instead of minimum size, mirroring <code>AdwLeaflet</code> and <code>AdwFlap</code></li>
+</ul>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="health">
+<a class="heading-anchor" href="#health" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Health <a href="https://gitlab.gnome.org/World/Health"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Collect, store and visualise metrics about yourself.</p>
+<p><a href="https://matrix.to/#/@cogitri:cogitri.dev">Cogitri</a> announces</p>
+<blockquote>
+<p>I’ve added a new SpinButton-like widget that displays what unit users are entering values in and automatically adjust its value to unit system changes (e.g. metric -&gt; imperial). Also, Health has been added to Damned Lies recently, so I’ve fixed some of Health’s source strings so they work in languages other than English. Health has already been translated to a few languages thanks to the translation team over on <a href="https://l10n.gnome.org/module/health/">https://l10n.gnome.org/module/health/</a></p>
+</blockquote>
+
+
+<h3 id="apostrophe">
+<a class="heading-anchor" href="#apostrophe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Apostrophe <a href="https://gitlab.gnome.org/World/apostrophe"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A distraction free Markdown editor.</p>
+<p><a href="https://matrix.to/#/@somas95:gnome.org">Manuel Genovés</a> says</p>
+<blockquote>
+<p>I&rsquo;ve released Apostrophe 2.5, which features a new Sepia Mode, and the exported HTML is now responsive thanks to a contribution from Martin Abente. Under the hood some dependencies have been updated, the metadata optimized for <a href="https://apps.gnome.org/">Apps for GNOME</a>, and the repository no longer uses master for the principal branch, but main. Get it <a href="https://flathub.org/apps/details/org.gnome.gitlab.somas.Apostrophe">here</a>.
+
+<img src="https://thisweek.gnome.org/posts/2021/09/twig-8/eca28a15fc2b0d4795233e742376f4875d019c23.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@guido.gunther:talk.puri.sm">Guido</a> reports</p>
+<blockquote>
+<p>I&rsquo;ve released version <a href="https://gitlab.gnome.org/World/Phosh/phosh/-/releases/v0.13.1">0.13.1</a> of phosh (a graphical shell for mobile devices). It adds a &ldquo;close all&rdquo; button for notifications, the feedback quick setting cycles through all feedback profiles and we improved encrypted media mounts and fractional scaling support a bit.</p>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1><p><a href="https://matrix.to/#/@julianhofer:gnome.org">Julian 🍃</a> says</p>
+<blockquote>
+<p>I have just published another chapter of <em>GUI development with Rust and GTK 4</em>.
+It explains how to create a simple To-Do app step by step.
+Click <a href="https://gtk-rs.org/gtk4-rs/stable/latest/book/todo_app_1.html">here</a> to read the chapter.
+Thanks a lot to Ivan Molodetskikh , Bilal Elmoussaoui and Sabrina for the reviews.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/09/twig-8/25c659fd79d1ac966076d7b84134a7afe4b5f499.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/09/twig-8/25c659fd79d1ac966076d7b84134a7afe4b5f499.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie Herold</a> reports</p>
+<blockquote>
+<p><a href="https://apps.gnome.org">Apps for GNOME</a> has seen some bug fixes, design updates, and several new translations this week. The most visible change is the new landing page illustration by Jakub Steiner.
+
+<img src="https://thisweek.gnome.org/posts/2021/09/twig-8/1661997cb983bc747ce949ac7af4d2ea22f0a8cf.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

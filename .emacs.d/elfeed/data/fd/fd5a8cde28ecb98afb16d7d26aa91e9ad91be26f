@@ -1,0 +1,217 @@
+<p>Update on what happened across the GNOME project in the week from July 05 to July 12.</p>
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> reports</p>
+<blockquote>
+<p>As part of the <a href="https://foundation.gnome.org/2023/11/09/gnome-recognized-as-public-interest-infrastructure">GNOME STF (Sovereign Tech Fund)</a> initiative, a number of community members are working on infrastructure related projects.</p>
+<p>This week we express special thanks to all the people outside of the team who review our work such as Felipe Borges, Matthias Clasen, Jonas Ådahl, Christopher Davis, Ray Strode, Florian Müllner, Robert Mader, Bilal Elmoussaoui, Daiki Ueno, Jordan Petridis, Carlos Garnacho, Allan Day, Philip Withnall, Emmanuele Bassi, Sebastian Wick, and Lennart Poettering. Thank you!</p>
+<p>Here are the highlights for the past couple of weeks</p>
+
+
+<h4 id="nautilus-file-chooser-portal">
+<a class="heading-anchor" href="#nautilus-file-chooser-portal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Nautilus file chooser portal
+</h4><p>Antonio finished the implementation of using Nautilus as file chooser</p>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/07/twig-156/332ecd4b1be646162c62276bbe480b971c819e0d1811837894101303296.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/07/twig-156/332ecd4b1be646162c62276bbe480b971c819e0d1811837894101303296.mp4">download it</a> and watch it with your favorite video player!</span>
+</video>
+
+
+<h4 id="app-intents">
+<a class="heading-anchor" href="#app-intents" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>App Intents
+</h4><p>Andy revived the xdg-spec proposal for <a href="https://gitlab.freedesktop.org/xdg/xdg-specs/-/merge_requests/81">app intents</a></p>
+<p>Andy drafted an <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/4119">implementation in GLib</a></p>
+
+
+<h4 id="uri-handling">
+<a class="heading-anchor" href="#uri-handling" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>URI handling
+</h4><p>Andy updated the <a href="https://github.com/flatpak/xdg-desktop-portal/pull/1313">URI handling implementation in xdg-desktop-portal</a> to make use of app intents.</p>
+
+
+<h4 id="key-rack">
+<a class="heading-anchor" href="#key-rack" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Key Rack
+</h4><p>Felix implemented <a href="https://gitlab.gnome.org/sophie-h/key-rack/-/merge_requests/23">changing keyring password</a></p>
+<p>Felix improved <a href="https://gitlab.gnome.org/sophie-h/key-rack/-/merge_requests/24">UI / keyboard accessibility</a></p>
+<p>Felix reworked how item attributes are getting displayed, the most common attributes are now getting shown in a more user friendly way and are translatable</p>
+
+
+<h4 id="global-shortcuts">
+<a class="heading-anchor" href="#global-shortcuts" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Global Shortcuts
+</h4><p>Dorota submitted a <a href="https://github.com/bilelmoussaoui/ashpd/pull/214">GlobalShortcuts demo to ASHPD</a></p>
+<p>Dorota helped with the implementation in <a href="https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome/-/tree/wip/matthiasc/global-shortcuts">xdg-desktop-portal-gnome</a> and solved follow up issues</p>
+<p>Dorota <a href="https://github.com/flatpak/libportal/pull/153">drafted an implementation in libportal</a></p>
+
+
+<h4 id="accessibility">
+<a class="heading-anchor" href="#accessibility" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Accessibility
+</h4><p>Adrien landed <a href="https://gitlab.gnome.org/GNOME/baobab/-/merge_requests/74">replacing GtkTreeView in Baobab</a></p>
+<p>Joanie made several improvements to braille support in Orca.</p>
+<p>Joanie worked on using atspi_device_generate_mouse_event in Orca (necessary, but not sufficient, for mouse event synthesis in Wayland).</p>
+<p>Matt recorded a demo of Newton on GNOME OS and published a blog post on the current state of the Newton project <a href="https://blogs.gnome.org/a11y/2024/06/18/update-on-newton-the-wayland-native-accessibility-project/">Update on Newton, the Wayland-native accessibility project</a></p>
+<p>Matt <a href="https://gitlab.gnome.org/mwcampbell/mutter/-/blob/newton/data/dbus-interfaces/org.freedesktop.a11y.xml">documented the Newton D-Bus protocol for ATs</a></p>
+<p>Matt made several improvements and fixes ahead of the <a href="https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/7401">integration of AccessKit in GTK</a> to support accessibility on macOS and Windows</p>
+<p>Adrien worked on the <a href="https://gitlab.gnome.org/GNOME/nautilus/-/merge_requests/1497">accessibility support for the GtkEntryCompletion replacement in Nautilus</a></p>
+
+
+<h4 id="oo7">
+<a class="heading-anchor" href="#oo7" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>oo7
+</h4><p>Dhanuka is close to have keyring unlock prompt fully supported</p>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/07/twig-156/45013af5f2f212c0f56e129ccf6a818d297afbfc1811838063798648832.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/07/twig-156/45013af5f2f212c0f56e129ccf6a818d297afbfc1811838063798648832.webm">download it</a> and watch it with your favorite video player!</span>
+</video>
+
+
+<h4 id="gnome-os">
+<a class="heading-anchor" href="#gnome-os" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME OS
+</h4><p>Adrian made systemd-sysupdate <a href="https://github.com/systemd/systemd/pull/33398">better at dealing with sysexts</a>.</p>
+<p>Martin <a href="https://www.codethink.co.uk/articles/2024/A-new-way-to-develop-on-Linux">published a blog post</a> about the new developer tooling powered by sysexts.</p>
+<p>Martin implemented &ldquo;Build and publish system extensions for CI&rdquo; in <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3390">Shell</a> and <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3843">Mutter</a>.</p>
+
+
+<h4 id="usb-portals">
+<a class="heading-anchor" href="#usb-portals" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>USB Portals
+</h4><p>Hubert is making good progress on usb portal; he added <a href="https://github.com/hfiguiere/libportal/tree/usb-portal">tests</a> and <a href="https://github.com/hfiguiere/flatpak-docs/tree/usb-portals">documentation</a> for it</p>
+
+
+<h4 id="notifications">
+<a class="heading-anchor" href="#notifications" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Notifications
+</h4><p>Julian continued work on the <a href="https://github.com/flatpak/xdg-desktop-portal/pull/1298">notification portal specification v2</a>, working with Georges and Sebastian to get the MR in shape. He also continued working on the various other parts of the new notifications, including the various portal backends and GNOME Shell.</p>
+
+
+<h4 id="gtk-platform-libraries">
+<a class="heading-anchor" href="#gtk-platform-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GTK Platform Libraries
+</h4><p>Alice started a <a href="https://gitlab.gnome.org/GNOME/gtk/-/issues/6821">discussion about a platform library interface</a>.</p>
+
+
+<h4 id="gnome-shell-overview">
+<a class="heading-anchor" href="#gnome-shell-overview" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell Overview
+</h4><p>Jonas opened an MR for a more <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3392">adaptive shell overview on small monitors</a></p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2024/07/twig-156/b655fba78d09ba01a77327654e71ed0e53c712621811842388524531712.png" alt="" />
+</p>
+
+
+<h4 id="guadec">
+<a class="heading-anchor" href="#guadec" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GUADEC
+</h4><p>A lot of the team members will be at GUADEC, we&rsquo;re looking forward to meet everyone. Don&rsquo;t hesitate to reach out.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@tchx84:matrix.org">Martín Abente Lahaye</a> announces</p>
+<blockquote>
+<p>Building and testing system components is challenging, especially on immutable operating systems like GNOME OS.</p>
+<p>To help solve the problem, at Codethink we <a href="https://www.codethink.co.uk/articles/2024/A-new-way-to-develop-on-Linux/">developed</a> a lean collection of tools called <a href="https://gitlab.gnome.org/tchx84/sysext-utils">sysext-utils</a> inspired by Lennart Poettering and Jordan Petridis. These tools streamline the developer workflow via system extensions, making iterating on system components safer and more effective.</p>
+<p>More work is needed to perfect the experience so, if you are working on system components, we invite you to test these tools and <a href="https://gitlab.gnome.org/tchx84/sysext-utils/-/issues">share</a> your feedback.</p>
+<p>This project was developed in collaboration with the GNOME Foundation, through the Sovereign Tech Fund (STF).</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> says</p>
+<blockquote>
+<p>We started a pilot program to reward vulnerability reports and fixes.</p>
+<p><a href="https://yeswehack.com/programs/gnome-bug-bounty-program">https://yeswehack.com/programs/gnome-bug-bounty-program</a></p>
+<p>From €500 to €10,000 depending on criticality.
+For now only GLib and libsoup is in scope but we will expand the list of modules and advertise as the program grows.</p>
+<p>If you are a GNOME or freedesktop module maintainer and would like your module to join the pilot program; please <a href="mailto:stf@gnome.org">get in touch</a>.</p>
+<p>In partnership with <a href="https://yeswehack.com/">YesWeHack</a> and <a href="https://www.sovereigntechfund.de/">Sovereign Tech Fund</a>.</p>
+<p>See <a href="https://www.sovereigntechfund.de/programs/bug-resilience">Bug Resilience Program</a>.</p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alice (she/her)</a> reports</p>
+<blockquote>
+<p>libadwaita now has a new spinner widget, <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.Spinner.html"><code>AdwSpinner</code></a>, as well as a paintable variant, <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.SpinnerPaintable.html"><code>AdwSpinnerPaintable</code></a>. This spinner can be used at larger sizes, still works with animations disabled and the paintable version can be used in contexts like the <code>AdwStatusPage</code> icon
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/07/twig-156/4067bdc35fe1bf7af97eadc464f9b52cfcd8e46b1811437392997908480.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/07/twig-156/4067bdc35fe1bf7af97eadc464f9b52cfcd8e46b1811437392997908480.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@jadahl:matrix.org">jadahl</a> reports</p>
+<blockquote>
+<p>This week support for mixing HDR and regular content landed in <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3433">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3363">GNOME Shell</a>. When the <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/2879">experimental HDR mode</a> is enabled, GNOME Shell itself as well and Wayland and X11 clients connecting via Xwayland will now be displayed correctly instead of appearing too bright. While there is currently no way for clients to tag their windows as HDR, one can for the time being manually do so via <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3433#note_2149277">looking glass</a>, until the Wayland bits are ready.</p>
+</blockquote>
+
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> announces</p>
+<blockquote>
+<p>Support for network monitoring on macOS in GLib has landed, written by Leo Assini: <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3744">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3744</a></p>
+</blockquote>
+
+
+<h1 id="gnome-incubating-apps">
+<a class="heading-anchor" href="#gnome-incubating-apps" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Incubating Apps
+</h1>
+
+<h3 id="showtime">
+<a class="heading-anchor" href="#showtime" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Showtime <a href="https://apps.gnome.org/Showtime/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Watch without distraction</p>
+<p><a href="https://matrix.to/#/@kramo:matrix.org">kramo</a> says</p>
+<blockquote>
+<p>Showtime is now available on Flathub. The app is a modern video player aiming to be the successor to Videos.</p>
+<p>Download the app <a href="https://flathub.org/apps/org.gnome.Showtime">here</a>.
+
+<img src="https://thisweek.gnome.org/posts/2024/07/twig-156/AqxIfdQsqfkDcIJibNwfhGVE.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@bragefuglseth:gnome.org">Brage Fuglseth</a> reports</p>
+<blockquote>
+<p>This week <a href="https://apps.gnome.org/Valuta">Valuta</a> joined GNOME Circle. Valuta lets you quickly convert between currencies. Congratulations!
+
+<img src="https://thisweek.gnome.org/posts/2024/07/twig-156/effbd39951c4708610ef297571cd0062639990431811834399860195328.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gaphor">
+<a class="heading-anchor" href="#gaphor" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gaphor <a href="https://gaphor.org"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple UML and SysML modeling tool.</p>
+<p><a href="https://matrix.to/#/@amolenaar:matrix.org">Arjan</a> reports</p>
+<blockquote>
+<p>Last week Dan Yeaw released Gaphor 2.26.0. Gaphor is a SysML/UML modeling application.</p>
+<p>The main improvements for this release is session recovery. Gaphor is able to restore your session after a crash. Also diagrams can now have stereotypes attached, which allows you to add extra data to a diagram.</p>
+<p>A full list of changes and fixes can be found in the <a href="https://github.com/gaphor/gaphor/blob/main/CHANGELOG.md">Change Log</a>.</p>
+<p>As always you can find the latest release <a href="https://flathub.org/apps/org.gaphor.Gaphor">on Flathub</a> and the Windows/macOS versions can be downloaded from <a href="https://gaphor.org/download/">Gaphor’s download page</a>.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@JumpLink:matrix.org">JumpLink</a> says</p>
+<blockquote>
+<p>This week, I am happy to announce the release of <a href="https://github.com/gjsify/ts-for-gir">ts-for-gir</a> <a href="https://github.com/gjsify/ts-for-gir/releases/tag/v4.0.0-beta.6">v4.0.0-beta.6</a>. The ts-for-gir tool enables the generation of GObject Introspection types for TypeScript, facilitating the development of GJS projects using TypeScript.</p>
+<p>Additionally, we have released the corresponding <a href="https://github.com/gjsify/gnome-shell">handwritten TypeScript types</a> for Gnome Shell extensions, now available in <a href="https://github.com/gjsify/gnome-shell/releases/tag/46.0.0">version 46.0.0</a>.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@caspermeijn:matrix.org">Casper Meijn</a> announces</p>
+<blockquote>
+<p>This week I <a href="https://www.caspermeijn.nl/posts/read-it-later-0.6.0/">released</a> version 0.6.0 of Read It Later. This is a client for <a href="https://www.wallabag.it/en">Wallabag</a>, which allows you to save web articles and read them later. The significant changes are a redesigned “new article” user interface and faster startup times for accounts with numerous articles. Download on <a href="https://flathub.org/apps/details/com.belmoussaoui.ReadItLater">Flathub</a>.</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@chenriksen:gnome.org">Caroline Henriksen</a> reports</p>
+<blockquote>
+<p>Today we’re announcing a significant leadership transition at the GNOME Foundation. Holly Million will be stepping down as Executive Director, with her last day being July 31. An Interim Executive Director, Richard Littauer, has joined the Foundation this week. Richard brings with him a wealth of open source leadership experience and will help ensure a smooth transition as we prepare for a new Executive Director search.</p>
+<p>During the past year Holly achieved remarkable milestones, including drafting a five-year strategic plan, securing crucial fiscal sponsorships, and improving our financial operations. We extend our heartfelt gratitude for her contributions. The Board will begin the search for a permanent Executive Director soon. For more details, read the full announcement here: <a href="https://foundation.gnome.org/2024/07/12/gnome-foundation-announces-transition-of-executive-director/">https://foundation.gnome.org/2024/07/12/gnome-foundation-announces-transition-of-executive-director/</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

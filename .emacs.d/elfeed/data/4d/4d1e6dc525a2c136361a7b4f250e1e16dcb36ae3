@@ -1,0 +1,104 @@
+<p>Update on what happened across the GNOME project in the week from June 10 to June 17.</p>
+<p><a href="https://matrix.to/#/@nmcgovern:matrix.org">Neil McGovern</a> reports</p>
+<blockquote>
+<p>GNOME mourns the loss of Marina Zhurakhinskaya - <a href="https://www.outreachy.org/blog/2022-06-14/remembering-and-honoring-marina-zhurakhinskaya-founder-of-outreachy/">https://www.outreachy.org/blog/2022-06-14/remembering-and-honoring-marina-zhurakhinskaya-founder-of-outreachy/</a></p>
+</blockquote>
+<p>‎‎‎‏‏‎ ‎‏‏‎ ‎</p>
+<hr>
+
+
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="calendar">
+<a class="heading-anchor" href="#calendar" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Calendar <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple calendar application.</p>
+<p><a href="https://matrix.to/#/@adrien.plazas:gnome.org">Adrien Plazas</a> says</p>
+<blockquote>
+<p>Calendar <a href="https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/226">received a new sidebar</a> containing a date chooser and an agenda view, which replaced the year view and the navigation arrows. It is the first step implementing its new adaptive design, but please note the application isn&rsquo;t adaptive yet.
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-48/1a041b94057baa76407222e813d05321ce5e3432.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1><p><a href="https://matrix.to/#/@felinira:matrix.org">Fina</a> announces</p>
+<blockquote>
+<p>Warp 0.2.0 was released: It features many design improvements, lots of new translations, support for mobile devices, improved error handling and much more. Happy file transferring :)
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-48/SmsnteymlTXqIaGadejgBGPn.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="decoder">
+<a class="heading-anchor" href="#decoder" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Decoder <a href="https://gitlab.gnome.org/World/decoder/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Scan and Generate QR Codes.</p>
+<p><a href="https://matrix.to/#/@msandova:gnome.org">Maximiliano</a> reports</p>
+<blockquote>
+<p>Decoder 0.3.0 is out, some highlights:</p>
+<ul>
+<li>QR codes are always black on white for maximum compatibility</li>
+<li>See the text contents of a newly scanned code</li>
+<li>Scanned codes are automatically stored in history
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-48/fceba2762fe4e52bed3fdecf7db990c4e892cc70.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h3 id="amberol">
+<a class="heading-anchor" href="#amberol" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Amberol <a href="https://gitlab.gnome.org/ebassi/amberol/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Plays music, and nothing else.</p>
+<p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> announces</p>
+<blockquote>
+<p>Amberol 0.8.0 is out: you can now search for songs in your playlist just by starting to type, even when in selection mode. Plus: Amberol can now run in the background through the sandbox portal; cover art is shared across songs in the same album, to reduce memory use; and the window size is correctly restored across sessions. Bonus news: if you use macOS, you can now build and run Amberol using dependencies from the Homebrew project.
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-48/2cf9b373101d8afba98d25e66eb6449107064ce3.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@jannvier:matrix.org">noëlle</a> announces</p>
+<blockquote>
+<p>Bottles 2022.6.14 was released, bringing GTK4+Libadwaita, performance enhancements, and many smaller interface improvements.
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-48/CGpcztlSrlAItHeDTjrjTEhi.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@xjuan:gnome.org">xjuan</a> says</p>
+<blockquote>
+<p>Cambalache 0.10.0 is out! - Adwaita, Handy, inline objects, special child types, and <a href="https://blogs.gnome.org/xjuan/2022/06/15/cambalache-0-10-0-is-out/">more&hellip;</a>
+
+<img src="https://thisweek.gnome.org/posts/2022/06/twig-48/d429a6e3898e7416945ecbfbf5186abac25b2e59.gif" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="fractal">
+<a class="heading-anchor" href="#fractal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fractal <a href="https://gitlab.gnome.org/GNOME/fractal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Matrix messaging app for GNOME written in Rust.</p>
+<p><a href="https://matrix.to/#/@melix99:gnome.org">Marco Melorio</a> says</p>
+<blockquote>
+<p>Hi there! I&rsquo;m Marco Melorio and I&rsquo;m participating in this year&rsquo;s Google Summer of Code, under the GNOME Foundation. I&rsquo;m working on Fractal, the GNOME matrix client, with the help of my mentor Julian Sparber. More specifically, I&rsquo;m working on implementing a media history viewer to the app.</p>
+<p>To follow my progress on the project you can check out my blog <a href="https://melix99.wordpress.com/">here</a>. I&rsquo;ve already published a small <a href="https://melix99.wordpress.com/2022/06/07/introduction/">introduction post</a> about me and a first <a href="https://melix99.wordpress.com/2022/06/17/gsoc-update-1-planning/">update post</a> which includes a mockup and milestones about the project.</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@nmcgovern:matrix.org">Neil McGovern</a> reports</p>
+<blockquote>
+<p>Microsoft has awarded GNOME $10,000 for winning its FOSS fund #20 <a href="https://twitter.com/sunnydeveloper/status/1536744475979939841">https://twitter.com/sunnydeveloper/status/1536744475979939841</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

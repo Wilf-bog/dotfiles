@@ -1,0 +1,134 @@
+<h1 id="the-archive-3rd-party-macros">The Archive 3rd Party Macros</h1>
+
+<p><a href="/the-archive/" class="back--link"><img src="/the-archive/img/appicon-sm.png" class="back--image" /><span class="back--text">Back to the Project Page</span></a></p>
+
+<p>This page lists all known macros for Keyboard Maestro, Alfred, and other third-party launchers that can enhance your workflows with The Archive.</p>
+
+<aside class="note">
+  <p><b>How to Contribute:</b></p>
+  <ol>
+    <li>Create a discussion with your macro <a href="https://forum.zettelkasten.de/categories/the-archive">in the &quot;The Archive&quot; category</a> of our forum as a place to discuss the macro.</li>
+    <li>Submit the macro to the <a href="https://forum.zettelkasten.de/discussion/213/the-archive-keyboard-maestro-alfred-macros/p1">overview discussion</a> with a link, and a short description.</li>
+    <li>We then put it here :)</li>
+  </ol>
+  <p>Alternatively, <a href="mailto:&#x68;&#x69;&#x40;&#x63;&#x68;&#x72;&#x69;&#x73;&#x74;&#x69;&#x61;&#x6E;&#x74;&#x69;&#x65;&#x74;&#x7A;&#x65;&#x2E;&#x64;&#x65;" class="">email your macros to  Christian</a>!</p>
+</aside>
+
+<h2 id="bundles">Bundles</h2>
+
+<ul>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/6715/#Comment_6715">Alfred workflow</a> by @pryley: bundle of many different actions to work with your Zettelkasten from anywhere</li>
+  <li><a href="https://github.com/seanakabry/zk-tools">@seanakabry’s KM macro collection</a></li>
+</ul>
+
+<h2 id="writing-and-linking">Writing and linking</h2>
+
+<ul>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/2444/#Comment_2444" title="Automatic completion when adding a link or a tag to zettel.">Link &amp; tag auto-completion bundle by @Will</a></li>
+  <li>Insert link to notes with auto-completion/type-ahead search
+    <ul>
+      <li><a href="https://forum.zettelkasten.de/discussion/comment/2516/#Comment_2516" title="Quick insertion of links to other Zettels with type-ahead search (using Keyboard Maestro)">Variant by @Will</a>, inserting the ID</li>
+      <li><a href="https://forum.zettelkasten.de/discussion/176/quick-insertion-of-links-to-other-zettels-with-type-ahead-search-using-keyboard-maestro">Variant by @kaidoh</a>, inserting the full note title</li>
+      <li><a href="https://forum.zettelkasten.de/discussion/comment/10245/#Comment_10245">Variant by @Vinho</a>, periodically updating a KM variable</li>
+    </ul>
+  </li>
+  <li><a href="https://forum.zettelkasten.de/discussion/179/quick-insertion-of-tags-with-type-ahead-search-using-keyboard-maestro">Tag auto-completion/type-ahead search</a></li>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/13329/#Comment_13329">Extract new note from selected text by @sfast</a></li>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/2297/#Comment_2297" title="Inset Note Link with 80 spacing">Table of Contents link: Inset link with spacing to right-align links</a></li>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/7530/#Comment_7530" title="Note Linking Trifecta">Copy note links in 3 different formats</a> by @Will
+    <ul>
+      <li>For an alternative to one of these formats: <a href="https://forum.zettelkasten.de/discussion/comment/2132/#Comment_2132">Convert The Archive’s copied links from <code>[[YYMMDDHHMM Title]]</code> to <code>[[YYMMDDHHMM]] Title</code></a> also by @Will</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="creating-notes">Creating Notes</h2>
+
+<ul>
+  <li><a href="http://forum.zettelkasten.de/discussion/902/km-macro-create-new-zettel-from-selection">Create new note from selecton</a></li>
+  <li><a href="https://forum.zettelkasten.de/discussion/675/alfred-workflow-for-creating-new-zettels-including-metadata">Create &amp; update Zettel and its metadata</a> (Alfred workflow)</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/6811/#Comment_6811">Create Zettel</a> (Keyboard Maestro)</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/10154/#Comment_10154">Insert note header/template</a></li>
+</ul>
+
+<h2 id="getting-stuff-into-the-archive">Getting Stuff into The Archive</h2>
+
+<ul>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/13212/#Comment_13212">Paste without newlines</a>, e.g. to copy from PDFs.</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/2122/3-quick-ways-to-create-a-markdown-link-from-mail-safari-and-finder">Copy link to mail, media, or website into The Archive</a> by @Will</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/11202/#Comment_11202">Take screenshot and save into The Archive</a>: saves the picture in your media folder and prepares the Markdown to insert an image in your clipboard.
+    <ul>
+      <li>Good news: The Archive since v1.7 supports image pasting from the clipboard directly!</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="maintenance-search-and-replace">Maintenance, Search and Replace</h2>
+
+<ul>
+  <li><a href="https://forum.zettelkasten.de/discussion/1230/km-macro-rename-note-and-update-wikilinks-to-it/">Rename note and update all links</a> by @seanakabry.</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/638/keyboard-maestro-macro-replacing-text-string-in-all-zettel-titles">Global find and replace <strong>for titles</strong></a> in all notes, by @Vinho.</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/641/keyboard-maestro-macro-replacing-text-string-in-all-zettels">Global find and replace <strong>for whole note contents</strong></a> by @Vinho.</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/2504/#Comment_2504" title="Script to print all tags from .txt files (run from archive directory)">Print all tags from .txt files (run from archive directory)</a> by Will, a.k.a. <em>Create a “Tag Cloud” note</em>.</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/7440/#Comment_7440">Create note that adds details to tag</a> by @Will.
+    <ul>
+      <li>Another approach in The Archive could be to create a note with the tag as the filename. When you search for the tag <code>#zettelkasten</code>, the file <code>#zettelkasten.txt</code> will be presented to you automatically as a sort of hub note.</li>
+    </ul>
+  </li>
+  <li><a href="https://forum.zettelkasten.de/discussion/786/zettelkasten-statistics">Generate a statistics dashboard</a> by @Will.</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/670/visualising-links-between-zettels-with-keyboard-maestro-and-graphviz">Visualize network of selected notes via graphviz</a> by @Vinho.</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/630/feature-request-outliner-view-of-a-zettel-and-its-children">Create nested list from connections of selected notes</a> by @Vinho.</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/4413/#Comment_4413">Create &amp; update note backlink back-matter</a> by @piotr. Uses Andy Matuschak’s “note janitor” script <a href="https://forum.zettelkasten.de/discussion/670/visualising-links-between-zettels-with-keyboard-maestro-and-graphviz">we wrote about before</a>.</li>
+</ul>
+
+<h2 id="visualization">Visualization</h2>
+
+<ul>
+  <li><a href="https://forum.zettelkasten.de/discussion/786/zettelkasten-statistics">Generate a statistics dashboard</a></li>
+  <li><a href="https://forum.zettelkasten.de/discussion/670/visualising-links-between-zettels-with-keyboard-maestro-and-graphviz">Visualize network of selected notes via graphviz</a></li>
+  <li><a href="https://forum.zettelkasten.de/discussion/630/feature-request-outliner-view-of-a-zettel-and-its-children">Create nested list from connections of selected notes</a></li>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/4413/#Comment_4413">Create &amp; update note backlink back-matter</a></li>
+</ul>
+
+<p>Reference management:</p>
+
+<ul>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/2533/#Comment_2533">Insert BibDesk citekey, choose from list</a> by @cdguit.</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/417/using-evernote-as-a-pdf-and-article-archive" title="Quick insertion of links to Evernote notes.">Insert links to Evernote notes</a> by @Will, a.k.a. <em>Using Evernote as a PDF and article archive</em>.</li>
+</ul>
+
+<p>Media:</p>
+
+<ul>
+  <li><a href="https://forum.zettelkasten.de/discussion/559/quickly-copy-files-images-to-media-folder-and-create-formatted-media-links-using-keyboard-maestro">Move image to /media and put syntax in clipboard</a>: Select files in Finder and copy to the media directory and create in the system clipboard a formatted link for pasting, e.g. <code>![](media/001.jpg)</code>.</li>
+</ul>
+
+<p>Linking and getting to notes:</p>
+
+<ul>
+  <li><a href="https://forum.zettelkasten.de/discussion/774/keyboard-maestro-macro-search-uid-in-thearchive-from-any-application/">Search for note by ID at cursor position from any application</a> by @Mediapathic.
+    <ul>
+      <li><a href="https://forum.zettelkasten.de/discussion/comment/14923/#Comment_14923">Sascha’s variant</a> skips the clipboard and emulates keystrokes on behalf of the user.</li>
+      <li><a href="https://forum.zettelkasten.de/discussion/1235/km-macro-open-a-file-outside-the-zettelkasten-identified-by-a-uid/">Open note that matches selection from other apps</a> by @seanakabry (like external wiki linking)</li>
+    </ul>
+  </li>
+  <li><a href="https://forum.zettelkasten.de/discussion/comment/7530/#Comment_7530" title="Note Linking Trivecta">Copy note links in format</a> by @Will does:
+    <ul>
+      <li>Insert Inline Note Link (UID only) <code>[[202008011415]]</code></li>
+      <li>Insert Title 1st Note Link - <code>Zettelkasting Dashboard [[202008011415]]</code></li>
+      <li>Insert UID 1st Note Link - <code>[[202008011415]] Zettelkasting Dashboard</code>
+        <ul>
+          <li>Also: <a href="https://forum.zettelkasten.de/discussion/297/convert-the-archives-copied-links-from-yymmddhhmm-title-to-yymmddhhmm-title#latest" title="Convert The Archive's copied links from [[YYMMDDHHMM Title]] to [[YYMMDDHHMM]] Title">Convert The Archive’s copied links from <code>[[YYMMDDHHMM Title]]</code> to <code>[[YYMMDDHHMM]] Title</code></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="miscellaneous">Miscellaneous</h2>
+
+<ul>
+  <li><a href="https://forum.zettelkasten.de/discussion/855/poor-mans-roam-style-contextual-backlinks-keyboard-maestro">Poor Man’s Roam</a>: “Creates a new note with all paragraphs containing search term”</li>
+  <li><a href="https://forum.zettelkasten.de/discussion/191/quick-insertion-of-urls-to-notes-with-type-ahead-search-using-keyboard-maestro">Insert URLs to notes <em>from other apps</em> with auto-completion/type-ahead search</a></li>
+  <li><a href="https://forum.zettelkasten.de/discussion/1235/km-macro-open-a-file-outside-the-zettelkasten-identified-by-a-uid/">Open note that matches selection from other apps</a> (like external wiki linking)</li>
+</ul>

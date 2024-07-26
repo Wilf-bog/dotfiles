@@ -1,0 +1,305 @@
+<p>Update on what happened across the GNOME project in the week from April 26 to May 03.</p>
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@tbernard:gnome.org">Tobias Bernard</a> announces</p>
+<blockquote>
+<p>As part of the <a href="https://foundation.gnome.org/2023/11/09/gnome-recognized-as-public-interest-infrastructure/">GNOME STF (Sovereign Tech Fund)</a> initiative, a number of community members are working on infrastructure related projects.</p>
+<p>Here are the highlights for the past two weeks:</p>
+<p>Dorota <a href="https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/2485">created a standalone dialog in GNOME Control Center</a> to let users choose/approve/reject when an app requests a Global Shortcuts</p>
+<p>Dhanuka landed <a href="https://github.com/bilelmoussaoui/oo7/pull/77">Add rekeying support for oo7::portal::Keyring</a> in oo7.</p>
+<p>Hub <a href="https://github.com/hfiguiere/ashpd/tree/usb-portal">implemented the in-progress USB portal in ashpd</a> to demo and test</p>
+<p>Sophie landed <a href="https://gitlab.gnome.org/sophie-h/glycin/-/merge_requests/68">libglycin: Add C/glib/gir API for glycin crate</a>. This will let language bindings use Glycin. A first version of the C-API is for glycin is available <a href="https://sophie-h.pages.gitlab.gnome.org/glycin/c-api/">https://sophie-h.pages.gitlab.gnome.org/glycin/c-api/</a>. Via GObject introspections (<a href="https://developer.gnome.org/documentation/guidelines/programming/introspection.html">https://developer.gnome.org/documentation/guidelines/programming/introspection.html</a>) it is also usable with GJS, Python, and Vala.</p>
+<p>Antonio is making great progress on <a href="https://gitlab.gnome.org/GNOME/nautilus/-/work_items/3402">using Nautilus as file picker</a>.</p>
+<p>Julian <a href="https://github.com/flatpak/xdg-desktop-portal/pull/1298">finalized the notification portal specs</a>, reviews welcome!</p>
+<p>Jonas landed a fix for a long-standing touch bug</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/2946">https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/2946</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/5782">https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/5782</a></li>
+</ul>
+<p>Jonas <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3278">opened a merge request</a> to improve GNOME Shell layout on smaller displays</p>
+<p>
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/7c67ecc267527fb71ced2e5f44e4df4b7671c2591786457382692323328.png" alt="" />
+</p>
+<p>Adrien opened an MR to <a href="https://gitlab.gnome.org/GNOME/nautilus/-/merge_requests/1497">replace deprecated and inaccessible GtkEntryCompletion</a> in Nautilus.</p>
+<p>The recording for Matt&rsquo;s talk from <a href="https://ossna2024.sched.com/event/1aBO1/modernizing-accessibility-for-desktop-linux-matt-campbell-gnome-foundation">Open Source Summit North America</a> is now available, you can watch it on <a href="https://www.youtube.com/watch?v=w9psDfEFf9c">Youtube</a>.</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="apostrophe">
+<a class="heading-anchor" href="#apostrophe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Apostrophe <a href="https://gitlab.gnome.org/World/apostrophe"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A distraction free Markdown editor.</p>
+<p><a href="https://matrix.to/#/@somas95:gnome.org">Manu</a> says</p>
+<blockquote>
+<p>After two years of development, I&rsquo;m glad to announce that Apostrophe 3.0 is here! Almost every aspect of the application has seen improvements, from the obvious ones like the port to GTK4 and the refined interface, to several improvements under the hood. Among the new features are:</p>
+<ul>
+<li>A new toolbar so you don&rsquo;t have to remember markdown syntax</li>
+<li>A more secure approach when opening and rendering files</li>
+<li>Autoindentation and autocompletion for lists and braces</li>
+<li>An improved Hemingway mode</li>
+<li>The document stats will also show stats for the selected text</li>
+</ul>
+<p>You can download it in <a href="https://flathub.org/apps/org.gnome.gitlab.somas.Apostrophe">Flathub</a>
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/1e116d532e04dc04e3ef8f25d524c15335a3c73b1786047647170166784.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/3bf087de8f76d809c7705f740cc51dd767e97e7d1786047443134054400.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="workbench">
+<a class="heading-anchor" href="#workbench" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Workbench <a href="https://github.com/sonnyp/Workbench/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A sandbox to learn and prototype with GNOME technologies.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> says</p>
+<blockquote>
+<p>Workbench 46.1 is out!</p>
+<p>See what&rsquo;s new and details at <a href="https://blog.sonny.re/workbench-46-1">https://blog.sonny.re/workbench-46-1</a>
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/1e7d8b3c0d7225853a66b6f218fbce386f18b7c31785589596881420288.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/f8298ceed4d7546b492b8d002c4b2271de8b6e211785589616410099712.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="railway">
+<a class="heading-anchor" href="#railway" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Railway <a href="https://gitlab.com/schmiddi-on-mobile/railway"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Travel with all your train information in one place.</p>
+<p><a href="https://matrix.to/#/@schmiddi:matrix.org">schmiddi</a> announces</p>
+<blockquote>
+<p>Railway version 2.5.0 was  released. It contains updates to the GNOME 46 runtime, as well as the addition of the PKP provider (and removal of the INSA provider due to the API failing to search for locations). It furthermore now tries to query the remarks of journeys in the system-language, fixes a crash for the Spanish translation of the app and provides a fix for the RMV provider throwing an error.</p>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="vala">
+<a class="heading-anchor" href="#vala" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Vala <a href="https://gitlab.gnome.org/GNOME/vala"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An object-oriented programming language with a self-hosting compiler that generates C code and uses the GObject system.</p>
+<p><a href="https://matrix.to/#/@lw64:gnome.org">lwildberg</a> reports</p>
+<blockquote>
+<p>Last month Reuben Thomas completed his port of <a href="https://abiword.github.io/enchant/">Enchant</a> to <a href="https://vala.dev">Vala</a>! Enchant is a spellchecking library also used in GNOME. Read the blog post about it and also his experience on porting another project (Zile) to Vala <a href="https://vala.dev/blog/c-off-ramp/">here</a>.</p>
+</blockquote>
+
+
+<h3 id="tracker">
+<a class="heading-anchor" href="#tracker" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tracker <a href="https://gitlab.gnome.org/GNOME/tracker/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A filesystem indexer, metadata storage system and search tool.</p>
+<p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> announces</p>
+<blockquote>
+<p>The Tracker SPARQL developers are very happy to welcome rachle08 and Demigod who will be joining the team as part of Google Summer of Code, working on a project to add a <a href="https://gitlab.gnome.org/GNOME/tracker/-/issues/421">web-based query editor</a> and generally improve the developer experience.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> reports</p>
+<blockquote>
+<p>In Tracker SPARQL, Carlos Garnacho worked around a non-backwards compatible change released in SQLite 3.45.3. This change causes errors that look like <code>ambiguous column name: ROWID (0)</code>. The fix will be in the next stable release - see <a href="https://discourse.gnome.org/t/tracker-sparql-affected-by-behaviour-change-in-sqlite-3-45-3/20772">Discourse</a> for more details.</p>
+</blockquote>
+
+
+<h3 id="software">
+<a class="heading-anchor" href="#software" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Software <a href="https://gitlab.gnome.org/GNOME/gnome-software/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Lets you install and update applications and system extensions.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> reports</p>
+<blockquote>
+<p>Automeris naranja has made headway into porting gnome-software to the shiny new <code>AdwDialog</code> (and other related new libadwaita APIs)</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@halfmexican:matrix.org">José</a> reports</p>
+<blockquote>
+<p>I&rsquo;ve released my first app on Flathub! Mingle is a simple app
+to play with Google&rsquo;s Emoji Kitchen and copy them to your clipboard. It is written in Vala and has been my little pet project these past few months as a learning exercise.
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/OpleAVcALIhGrIMZckXsGudN.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/dBHjQgpKJwQkoxldklORvVkR.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@slomo:matrix.org">slomo</a> reports</p>
+<blockquote>
+<p>The <a href="https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/tree/main/video/gtk4">GStreamer GTK4 video sink</a> got <a href="https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/merge_requests/1547">support</a> for directly importing video frames as dmabufs on Linux when using GStreamer 1.24 / GTK 4.14, in addition to the already existing support for importing OpenGL textures or video frames in normal system memory. This new feature is available in version 0.12.4 of the sink plugin.</p>
+<p>This is especially useful for video players using hardware decoders or applications that display a video stream from a camera (via v4l2 or pipewire), and allows side-stepping the GL/Vulkan rendering of the video frames inside GTK under certain conditions and let the composition be done by the Wayland compositor or even directly pass the dmabufs to the GPU kernel driver. Doing so would reduce GPU utilization and by that frees resources for other tasks and reduces power consumption. See <a href="https://blog.gtk.org/2024/04/17/graphics-offload-revisited/">Matthias' blog post</a> on the GTK blog for more details about the dmabuf and graphics offloading support in GTK.</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@a23_mh:matrix.org">Alain</a> reports</p>
+<blockquote>
+<p>Planify 4.7 is Here! Discover the New Features and Improvements
+We&rsquo;re thrilled to announce the arrival of Planify 4.7! This version brings a host of exciting enhancements and new features that will make your task and project management experience smoother and more efficient than ever. Let&rsquo;s take a look at what we&rsquo;ve added:</p>
+<p><strong>Advanced Filtering Function</strong>
+Now in Planify, you can filter your tasks within a project based on priority, due date, and assigned tags. Take control of your tasks like never before!</p>
+<p><strong>Custom Sorting in Today View</strong>
+Personalize the Today view by sorting your tasks the way you prefer. Make your day more productive by organizing tasks your way!</p>
+<p><strong>Instant Task Details</strong>
+With our new task detail view in the sidebar, you can quickly access all relevant task information while in the Board view. Keep your workflow uninterrupted!</p>
+<p><strong>Efficient Management of Completed Tasks</strong>
+Now, deleting completed tasks is easier than ever. Keep your workspace clean and organized with just a few clicks!</p>
+<p><strong>Attach Files to Your Tasks</strong>
+Never lose track of important files related to your tasks. With the file attachment feature, keep all relevant information in one place.</p>
+<p><strong>Celebrate Achievements with Sound</strong>
+Want a fun way to celebrate your achievements? Now you can play a sound when completing a task. Make every accomplishment even more satisfying!</p>
+<p><strong>Bug Fixes and Performance Improvements</strong>
+We&rsquo;ve addressed a number of errors, from project duplication to issues with animation when adding subtasks. Additionally, we&rsquo;ve updated translations in various languages, including Hindi, Bulgarian, Brazilian Portuguese, and Spanish.</p>
+<p>Download the latest version of Planify on <a href="https://flathub.org/apps/io.github.alainm23.planify">Flathub</a> now and take your task management to the next level!
+For any feedback, suggestions or bug reports, please file an issue at the <a href="https://github.com/alainm23/planify/issues">Github</a> issue tracker.
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/koPhupZHebLuxBZQrTKSCUtG.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/cqwkmxIGCKlYmbwsFNPeueGI.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@subpop:matrix.org">Link Dupont</a> says</p>
+<blockquote>
+<p>Version 0.2.2 of Damask is here. This release has been in the works for a while,
+so contains a lot of bug fixes and UI improvements.</p>
+<ul>
+<li>Wallhaven: correctly set aspect ratio in search query</li>
+<li>Reset the refresh timer after a manual refresh</li>
+<li>Wallhaven: refresh wallpaper when preferences change</li>
+<li>Refresh wallpaper preview only when a preview is available</li>
+<li>Set active source by selecting the row in the source list</li>
+<li>NASA: rename row title to &ldquo;NASA Astronomy&rdquo;</li>
+<li>Sort source list alphabetically</li>
+<li>Add a setting to disable automatic refresh</li>
+<li>Improve support for a default &ldquo;no source&rdquo; application state</li>
+<li>Fix preview image dimensions</li>
+<li>Remove the &ldquo;manual&rdquo; source (disable automatic refresh instead)</li>
+<li>NASA: replace user-defined API key with a value supplied at compilation</li>
+<li>Unsplash: replace user-defined API key with a value supplied at compilation</li>
+<li>Wallhaven: add explanatory text for the API key field</li>
+<li>EarthView: update photo source</li>
+<li>Slideshow: allow any image type when filtering files</li>
+</ul>
+<p>Download it on <a href="https://flathub.org/apps/app.drey.Damask">Flathub</a> today!
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/HvZjITLyXVxrKQRHiFjDfHmC.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/QMcstnECwAmLOegkikDXXvOU.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/CzGRbboScWhbKlLHsIeZfnmS.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@tchx84:matrix.org">Martín Abente Lahaye</a> reports</p>
+<blockquote>
+<p>Gameeky 0.6.4 is now available on <a href="https://flathub.org/apps/dev.tchx84.Gameeky">Flathub</a>. This new release brings minor fixes for running Gameeky on other platforms and it&rsquo;s now fully available in Brazilian Portuguese 🇧🇷, thanks to Rafael Fontenelle. As a result of Rafael efforts, the offline documentation can now be translated using regular gettext-based tools and therefore much easier to do so.
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/voJfDCQRqCUmCZGgjhYwivyq.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/qNRfgRGcwEADhvjuDnIkZMny.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="turtle">
+<a class="heading-anchor" href="#turtle" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Turtle <a href="https://gitlab.gnome.org/philippun1/turtle"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Manage git repositories in Nautilus.</p>
+<p><a href="https://matrix.to/#/@philippun:matrix.org">Philipp</a> reports</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/philippun1/turtle">Turtle</a> 0.8 has been released.</p>
+<p>Retrieving the log commits and calculating the graph is now much faster. Opening up the log for, i.e. the gnome-shell repo, will now only take some seconds, if &ldquo;Show all branches&rdquo; is checked it will take roughly 15 seconds. Before it took roughly 1 minute 40 seconds, depending on your hardware of course.</p>
+<p>There is now also a merge dialog available to merge a branch or commit into the current head. It is also possible to start a merge directly from the log context menu.</p>
+<p>For easier usage, a help output has been added to both the turtle_cli and the turtlevcs python package, a bash completion file has been added and an emblem dialog has been added to the settings dialog.</p>
+<p>And there are many more minor fixes and tweaks, see the <a href="https://gitlab.gnome.org/philippun1/turtle/-/releases/0.8">full changelog</a>.
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/iLjdMEWYfGfDhbWWueuCTbGU.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/cljTRutvCQhUJkpCcgoKgYWQ.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="mahjongg">
+<a class="heading-anchor" href="#mahjongg" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Mahjongg <a href="https://gitlab.gnome.org/GNOME/gnome-mahjongg"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A solitaire version of the classic Eastern tile game.</p>
+<p><a href="https://matrix.to/#/@mat:mathias.is">Mat</a> announces</p>
+<blockquote>
+<p>Mahjongg has received a whole slew of improvements in the last few weeks:</p>
+<ul>
+<li>Complete dark/light mode support with separate backgrounds for each tileset</li>
+<li>Faster loading times (almost instant, compared to the previous ~5 seconds for some tile layouts)</li>
+<li>Moved tile layout switcher to the main menu, for easier access</li>
+<li>Ported to newer GTK/libadwaita widgets, such as Gtk.ColumnView and Adw.Dialog</li>
+<li>All known bugs addressed (issue tracker is empty!)</li>
+</ul>
+<p>These changes are not released yet, but are available for testing in the <a href="https://nightly.gnome.org/">nightly Flatpak package</a>:<br>
+<code>flatpak install gnome-nightly org.gnome.Mahjongg.Devel</code>
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/efkqZJALYZLfdlnFaYtXrleE.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/xcGxzPhbeNDFwuDUozCuvAkf.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="fractal">
+<a class="heading-anchor" href="#fractal" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Fractal <a href="https://gitlab.gnome.org/World/fractal"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Matrix messaging app for GNOME written in Rust.</p>
+<p><a href="https://matrix.to/#/@zecakeh:tedomum.net">Kévin Commaille</a> reports</p>
+<blockquote>
+<p>Here comes <del>the bride</del> Fractal 7, with extended encryption support and improved accessibility. Server-side key backup and account recovery have been added, bringing greater security. Third-party verification has received some bug fixes and improvements. Amongst the many accessibility improvements, navigability has increased, especially in the room history. But that’s not all we’ve been up to in the past three months:</p>
+<ul>
+<li>Messages that failed to send can now be retried or discarded.</li>
+<li>Messages can be reported to server admins for moderation.</li>
+<li>Room details are now considered complete, with the addition of room address management, permissions, and room upgrade.</li>
+<li>A new member menu appears when clicking on an avatar in the room history. It offers a quick way to do many actions related to that person, including opening a direct chat with them and moderating them.</li>
+<li>Pills are clickable and allow to directly go to a room or member profile.</li>
+</ul>
+<p>As usual, this release includes other improvements, fixes and new translations thanks to all our contributors, and our upstream projects.</p>
+<p>We want to address special thanks to the translators who worked on this version. We know this is a huge undertaking and have a deep appreciation for what you’ve done. If you want to help with this effort, head over to <a href="https://l10n.gnome.org/">Damned Lies</a>.</p>
+<p>It is available right now on <a href="https://flathub.org/apps/org.gnome.Fractal">Flathub</a>.</p>
+<p>We are already hard at work for our next release, so if you want to give us a hand you can start by looking at our <a href="https://gitlab.gnome.org/World/fractal/-/issues/?state=opened&amp;label_name%5B%5D=4.%20Newcomers">Newcomer issues</a> or just come say hello in <a href="https://matrix.to/#/#fractal:gnome.org">our Matrix room</a>.
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/81089d6351aa86b14333b74e5e8e07bbc35f06061786319054823227392.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie (she/her)</a> announces</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/sophie-h/glycin">Glycin</a> is gaining support for other programming languages. Glycin is a library that features sandboxed and extendable image loading and is used by Image Viewer. It is written in Rust and so far only provided a <a href="https://docs.rs/glycin/latest/glycin/">Rust API</a>. As part of my work for GNOME STF, it has now gained initial support for being used with other languages. The basis for this is <a href="https://sophie-h.pages.gitlab.gnome.org/glycin/c-api/">the C-API</a>. Via <a href="https://developer.gnome.org/documentation/guidelines/programming/introspection.html">GObject introspections</a> it is now also usable with GJS, Python, and Vala (untested).</p>
+<p>The advantages of Glycin over the well-proven GdkPixbuf are improved security, more reliable and dynamically adjusted memory usage limits, and reliable termination of loading processes. Currently, the drawbacks include a slightly increased overhead and missing support for anything but Linux.</p>
+</blockquote>
+
+
+<h1 id="google-summer-of-code">
+<a class="heading-anchor" href="#google-summer-of-code" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Google Summer of Code
+</h1><p><a href="https://matrix.to/#/@toluene:matrix.org">Pedro Sader Azevedo</a> announces</p>
+<blockquote>
+<p>We are happy to announce that GNOME was assigned eight slots for <a href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC)</a> projects this year!</p>
+<p>GSoC is a program focused on bringing new contributors into open source software development. A number of long term GNOME developers are former GSoC interns, making the program a very valuable entry point for new members in our community.</p>
+<p>In 2024, we will be mentoring the following projects:
+
+<img src="https://thisweek.gnome.org/posts/2024/05/twig-146/tuXkVbKtYjrHyPXSXGtvFVSD.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@chenriksen:gnome.org">Caroline Henriksen</a> announces</p>
+<blockquote>
+<p>The GNOME Asia 2024 Call for Locations is open! If you are interested in hosting this year’s conference in your city make sure to submit an intent to bid by May 15, and a final proposal by June 6. More details about how to submit a proposal can be found here: <a href="https://foundation.gnome.org/2024/04/30/call-for-gnome-asia-2024-location-proposals/">https://foundation.gnome.org/2024/04/30/call-for-gnome-asia-2024-location-proposals/</a></p>
+<p>The GUADEC 2025 Call for Locations is also open! For next year’s conference, we’re accepting bids from anywhere in the world. If you would like to bring GUADEC to your city make sure to submit an intent to bid today (May 3) and your full proposal by May 31. More details can be found here: <a href="https://foundation.gnome.org/2024/04/18/call-for-guadec-2025-location-proposals/">https://foundation.gnome.org/2024/04/18/call-for-guadec-2025-location-proposals/</a></p>
+<p>Registration is open for GUADEC 2024. This year’s conference takes place on July 19-24 in Denver, Colorado, USA. Let us know if you’ll be attending, remotely or in person, by registering on <a href="https://events.gnome.org/event/209/">guadec.org</a>. For anyone attending in person, we’ve organized a social outing to a Colorado Rockies baseball game! You can learn more and register to attend here: <a href="https://events.gnome.org/event/209/page/331-colorado-rockies-baseball-game">https://events.gnome.org/event/209/page/331-colorado-rockies-baseball-game</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

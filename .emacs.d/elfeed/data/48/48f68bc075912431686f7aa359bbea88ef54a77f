@@ -1,0 +1,113 @@
+<p>Update on what happened across the GNOME project in the week from December 10 to December 17.</p>
+<h1 id="core-apps-and-libraries">
+<a class="heading-anchor" href="#core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Core Apps and Libraries
+</h1>
+
+<h3 id="settings">
+<a class="heading-anchor" href="#settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Settings <a href="https://gitlab.gnome.org/GNOME/gnome-control-center"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Configure various aspects of your GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> says</p>
+<blockquote>
+<p>This week, the GTK4 / libadwaita port of GNOME Settings landed. This was a massive port, with more than 330 files rewritten or adjusted to GTK4. All but 3 panels were ported - we&rsquo;ll be porting the remaining panels and their dependencies soon.
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-23/1087c6af75214d1de6c62e70000d312839f7eaeb.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-23/8ceafeee336eea011ac5329d5d027cfa411e5544.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-23/47bddf5d44285be3d869f98c97cbc88a59bea7f4.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-23/ed9efe4e9729481dc90529bc8eac47b9e7e2db3c.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> reports</p>
+<blockquote>
+<p>libadwaita finally documents the <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/style-classes.html">style classes</a> and <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html">named colors</a> its stylesheet provides</p>
+</blockquote>
+
+
+<h3 id="glib">
+<a class="heading-anchor" href="#glib" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GLib <a href="https://gitlab.gnome.org/GNOME/glib"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>The low-level core library that forms the basis for projects such as GTK and GNOME.</p>
+<p><a href="https://matrix.to/#/@pwithnall:matrix.org">Philip Withnall</a> says</p>
+<blockquote>
+<p>Michael Catanzaro has <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/1968">fixed a devious bug with FD remapping</a> in <code>g_spawn_*()</code> in GLib, and included full unit tests for a very satisfying fix</p>
+</blockquote>
+
+
+<h1 id="circle-apps-and-libraries">
+<a class="heading-anchor" href="#circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Circle Apps and Libraries
+</h1>
+
+<h3 id="gtk-rs">
+<a class="heading-anchor" href="#gtk-rs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>gtk-rs <a href="https://gtk-rs.org/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Safe bindings to the Rust language for fundamental libraries from the GNOME stack.</p>
+<p><a href="https://matrix.to/#/@julianhofer:gnome.org">Julian Hofer</a> reports</p>
+<blockquote>
+<p>I have added a new <a href="https://gtk-rs.org/gtk4-rs/stable/latest/book/css.html">chapter</a> in the gtk4-rs book. It explains how to style your application with CSS. The chapter has been reviewed by Ivan Molodetskikh, Bilal Elmoussaoui, Alexander Mikhaylenko and Sabrina.
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-23/5436a3ab24bc9b36d122f45ebe26ed31de1a88f3.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/12/twig-23/865cdaec33c7cc2e730dbe9054489ca4d18640ac.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/12/twig-23/865cdaec33c7cc2e730dbe9054489ca4d18640ac.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1><p><a href="https://matrix.to/#/@ebassi:gnome.org">Emmanuele Bassi</a> announces</p>
+<blockquote>
+<p>The GNOME developer documentation website has a new style guide for writing consistent developer documents like API references and tutorials: <a href="https://developer.gnome.org/documentation/guidelines/devel-docs.html">https://developer.gnome.org/documentation/guidelines/devel-docs.html</a></p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@federicomena:matrix.org">federico</a> reports</p>
+<blockquote>
+<p>at-spi2-core now has a <a href="https://gitlab.gnome.org/GNOME/at-spi2-core/-/merge_requests/63">CI pipeline</a>; expect many updates to the accessibility stack soon.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1>
+
+<h3 id="cawbird">
+<a class="heading-anchor" href="#cawbird" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Cawbird <a href="https://ibboard.co.uk/cawbird/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A native Twitter client for your Linux desktop.</p>
+<p><a href="https://matrix.to/#/@coded_ore:matrix.org">CodedOre</a> announces</p>
+<blockquote>
+<p>The rewrite of Cawbird, a native Twitter Client, has gone one step forward with the inclusion of the user overview display!</p>
+<p>This is another step towards completing the complete rewrite of backend and frontend for GTK4 and libadwaita.</p>
+<p>You can check it out here: <a href="https://github.com/CodedOre/NewCaw">https://github.com/CodedOre/NewCaw</a>
+
+<img src="https://thisweek.gnome.org/posts/2021/12/twig-23/UuUvienfeiDVoeCJjdZfmEHS.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-shell-extensions">
+<a class="heading-anchor" href="#gnome-shell-extensions" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell Extensions
+</h1><p><a href="https://matrix.to/#/@schneegans:matrix.org">Simon Schneegans</a> reports</p>
+<blockquote>
+<p>The new <a href="https://extensions.gnome.org/extension/4679/burn-my-windows">Burn-My-Windows extension</a> lets you disintegrate your apps the old-school way. When I released the <a href="https://extensions.gnome.org/extension/4648/desktop-cube">Desktop Cube Extension</a>, many people requested to revive one of the most useless features of Linux desktop history: Setting windows on fire! Here you go&hellip;
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2021/12/twig-23/ALcnSDcxfvbhnPwywqQdQIlD.mp4" type="video/mp4">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2021/12/twig-23/ALcnSDcxfvbhnPwywqQdQIlD.mp4">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you again on December 30, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects! We wish everyone happy holidays! 🎄</p>

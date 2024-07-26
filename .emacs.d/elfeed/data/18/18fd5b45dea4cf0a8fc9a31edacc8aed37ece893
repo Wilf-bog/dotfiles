@@ -1,0 +1,243 @@
+<p>Update on what happened across the GNOME project in the week from January 05 to January 12.</p>
+<h1 id="sovereign-tech-fund">
+<a class="heading-anchor" href="#sovereign-tech-fund" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Sovereign Tech Fund
+</h1><p><a href="https://matrix.to/#/@tbernard:gnome.org">Tobias Bernard</a> reports</p>
+<blockquote>
+<p>As part of the <a href="https://foundation.gnome.org/2023/11/09/gnome-recognized-as-public-interest-infrastructure/">GNOME STF (Sovereign Tech Fund)</a> project, a number of community members are working on infrastructure related projects.</p>
+<ul>
+<li>Evan worked on adding the gir compiler sources to glib <a href="https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3796#note_1957818">https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3796#note_1957818</a> and investigated updating the gobject-introspection GIR changes for async to be compatible with testsuite changes <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/-/merge_requests/404">https://gitlab.gnome.org/GNOME/gobject-introspection/-/merge_requests/404</a></li>
+<li>Matt&rsquo;s project to prototype a new free desktop accessibility stack is now code-named &ldquo;Newton&rdquo;. The first draft of the Wayland protocol for applications/toolkits is available here: <a href="https://gitlab.freedesktop.org/mwcampbell/wayland-protocols/-/blob/accessibility/staging/accessibility/accessibility-v1.xml?ref_type=heads">https://gitlab.freedesktop.org/mwcampbell/wayland-protocols/-/blob/accessibility/staging/accessibility/accessibility-v1.xml?ref_type=heads</a> and the implementation of the toolkit side in AccessKit is available here: <a href="https://github.com/AccessKit/accesskit/tree/unix2-prototype">https://github.com/AccessKit/accesskit/tree/unix2-prototype</a></li>
+<li>Tobias worked on some initial mockups for URI handling settings <a href="https://gitlab.gnome.org/Teams/Design/settings-mockups/-/blob/master/applications/apps-reset-handlers.png">https://gitlab.gnome.org/Teams/Design/settings-mockups/-/blob/master/applications/apps-reset-handlers.png</a></li>
+<li>Julian worked on notification bubble expanding
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/01/twig-130/notifications.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/01/twig-130/notifications.webm">download it</a> and watch it with your favorite video player!</span>
+</video></li>
+<li>Joanie continued working on improving Orca:
+<ul>
+<li>Clear the cache recursively for table cells</li>
+<li>Code cleanups and fixes specific to the new keyhandling/key grabs</li>
+<li>Set up feature bindings on demand rather than in init</li>
+<li>Various other cleanups and fixes</li>
+</ul>
+</li>
+<li>Sam landed a number of cleanups and improvements to the GNOME Shell stylesheet:
+<ul>
+<li>Cleaned up color definitions and the high contrast conditional so it can be more readily worked on <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3097">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3097</a></li>
+<li>Big refactor of button and entry drawing code so all elements of that type will appropriately inherit focus and high contrast styles <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3109">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3109</a></li>
+<li>Fixed missing focus state visuals in Calendar popover so focus is properly tracked <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3102">https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3102</a></li>
+</ul>
+</li>
+<li>Work and discussions around redesigning the Orca settings are also still ongoing <a href="https://gitlab.gnome.org/Teams/Design/os-mockups/-/issues/240">https://gitlab.gnome.org/Teams/Design/os-mockups/-/issues/240</a></li>
+<li>Jonas resumed working on new GNOME Shell gestures with Carlos <a href="https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/2389">https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/2389</a></li>
+<li>Jonas is looking into optimizing the shell overview for lower resolutions (1366×768 still is the second most popular screen resolution out there)</li>
+<li>Adrian reimagined and reimplemented his approach for adding bulk directories to systemd-homed <a href="https://github.com/systemd/systemd/pull/30840">https://github.com/systemd/systemd/pull/30840</a></li>
+<li>We started working with Eitan Isaacson of libspiel and are excited about the future of TTS <a href="https://blog.monotonous.org/2024/01/10/Introducing-Spiel">https://blog.monotonous.org/2024/01/10/Introducing-Spiel</a></li>
+</ul>
+</blockquote>
+
+
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="mutter">
+<a class="heading-anchor" href="#mutter" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Mutter <a href="https://gitlab.gnome.org/GNOME/mutter/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A Wayland display server and X11 window manager and compositor library.</p>
+<p><a href="https://matrix.to/#/@bilelmoussaoui:gnome.org">Bilal Elmoussaoui</a> reports</p>
+<blockquote>
+<p>Mutter has been receiving some documentation love recently</p>
+<ul>
+<li>A brand new website made by Jakub Steiner <a href="https://mutter.gnome.org/">https://mutter.gnome.org/</a></li>
+<li>Re-organised and improved <a href="https://gitlab.gnome.org/GNOME/mutter/-/tree/main#contributing">contributing guidelines</a> by swick</li>
+</ul>
+<p>Hopefully that will make it easier for you to send your first patch!</p>
+</blockquote>
+
+
+<h3 id="image-viewer-loupe">
+<a class="heading-anchor" href="#image-viewer-loupe" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Image Viewer (Loupe) <a href="https://apps.gnome.org/app/org.gnome.Loupe/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Browse through images and inspect their metadata.</p>
+<p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie (she/her)</a> says</p>
+<blockquote>
+<p>Thanks to the design work by Jakub and Calvin, Loupe has now a new animation for switching images via keyboard and buttons. We got repeated feedback that the previous animation can cause dizziness for some people (including me) on larger screens. Therefore we no longer animate the image moving over the complete screen like on smartphones. Instead, in simplified terms, we only animate the image moving a small and fixed amount of pixels over the old image. On touchscreens and with touchpads the image can still be moved directly as before. Thanks to everyone who helped with feedback and testing.</p>
+</blockquote>
+
+
+<h3 id="gtk">
+<a class="heading-anchor" href="#gtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GTK <a href="https://gitlab.gnome.org/GNOME/gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Cross-platform widget toolkit for creating graphical user interfaces.</p>
+<p><a href="https://matrix.to/#/@matthiasc:gnome.org">Matthias Clasen</a> reports</p>
+<blockquote>
+<p>The GTK 4.13.5 release includes not one, but two new renderers. Their names are vulkan and ngl, and we also call them <strong>unified</strong> renderers, since they are built from the same sources.
+The new renderers can handle many corner cases correctly that the current gl renderer does not handle, and they offer advantages such as antialiasing and supersampled gradients.</p>
+<p>The ngl renderer does not currently support GLES 2.</p>
+<p>The new renderers are still considered experimental, and GTK will only use them if they are explicitly selected using the
+GSK_RENDERER environment variable. The default renderer is still the current gl renderer.</p>
+<p>As part of this work, the GSK include files have been rearranged. It is no longer necessary to include renderer-specific headers for ngl and vulkan (and doing so will trigger deprecation warnings), and their constructors are always available.</p>
+<p>The previously available experimental GdkVulkanContext APIs and the old Vulkan renderer have been removed.</p>
+<p>Vulkan support is now enabled by default, and Linux distributions should build GTK with Vulkan. This requires the glslc shader compiler as a new dependency.</p>
+<p>Vulkan is now also used for dmabuf support.</p>
+</blockquote>
+
+
+<h3 id="gnome-contacts">
+<a class="heading-anchor" href="#gnome-contacts" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Contacts <a href="https://gitlab.gnome.org/GNOME/gnome-contacts"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Keep and organize your contacts information.</p>
+<p><a href="https://matrix.to/#/@nielsdg:gnome.org">nielsdg</a> reports</p>
+<blockquote>
+<p><a href="https://gitlab.gnome.org/GNOME/gnome-contacts">Contacts</a> can now import multiple vCard files at once and preview the contacts you&rsquo;re about to import to avoid any mistakes. Already part of the 46.alpha release, so grab it while it&rsquo;s hot!
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-130/e26b8eb9840bf8f40600c48d6e6c3fda6496ba7f1745863383346839552.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="gnome-circle-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-circle-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Circle Apps and Libraries
+</h1>
+
+<h3 id="gaphor">
+<a class="heading-anchor" href="#gaphor" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Gaphor <a href="https://gaphor.org"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple UML and SysML modeling tool.</p>
+<p><a href="https://matrix.to/#/@Yeaw:matrix.org">Dan Yeaw</a> announces</p>
+<blockquote>
+<p><a href="https://flathub.org/apps/org.gaphor.Gaphor">Gaphor</a>, the simple modeling tool, version 2.23.0 is now out! Thanks to the amazing work by Arjan, this version features the following enhancements for our use of GTK:</p>
+<ul>
+<li>Move from Gtk.TreeView to Gtk.ColumnView and ListView for our Property Editors</li>
+<li>Move from Gtk.FileChooserNative to Gtk.FileDialog</li>
+<li>Move from our own custom Gtk.Revealer to Adw.Toast for our in-app notifications</li>
+<li>Remove the scary filesystem access warning in FlatHub by using the Filesystem Portal for Flatpak</li>
+</ul>
+<p>We also made other feature enhancements:</p>
+<ul>
+<li>Support types for parameters</li>
+<li>Restore windows in maximized and full-screen state</li>
+<li>Fine grained CSS: elements in a presentation item can be changed from CSS (experimental)</li>
+<li>Very long element names are now wrapped
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-130/JGSWyFApskgUQSPlOMPibwhC.png" alt="" />
+</li>
+</ul>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@sophieherold:gnome.org">Sophie (she/her)</a> announces</p>
+<blockquote>
+<p><a href="https://flathub.org/apps/app.drey.KeyRack">Key Rack</a> is an app to view passwords and other secret stored by other apps. With the newly released version 0.3 it not only supports secrets stored in Flatpaks but also global secrets on the host. The new version also bring support for showing binary secrets in hex representation.
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-130/7d5e87c2d1eeb29b0e59c5d596a1cbde1f42ca9f1744110851041787904.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@a23_mh:matrix.org">Alain</a> says</p>
+<blockquote>
+<p>Planify 4.4 is here, design improvements and new features available.</p>
+<p>What’s New:</p>
+<ul>
+<li>Improved drag-and-drop sorting: Added a new animation and a new way of sorting making it cleaner and easier.</li>
+<li>Support for sub-projects: Create a sub-project just by dragging and dropping or by using the magic button and dropping into the parent project.</li>
+<li>Magic Button: Just drag and drop to add tasks wherever you want and in the order you want.</li>
+<li>Board View: Have an overview of your tasks without losing sight of the details.</li>
+<li>Using Adw.OverlaySplitView to have a collapsible sidebar.</li>
+<li>Sections are now created from a Dialog and support color and a description.</li>
+<li>Parent and child tasks: It is now easier to create subtasks, just drag the child task to the parent task and drop it.</li>
+<li>New preference to configure whether to add the task at the beginning or end of the list.</li>
+<li>Quick Add now allows you to select the target section.</li>
+<li>Improved integration with Todoist, now allows you to create tasks with strange character content.</li>
+<li>The description of a project is now editable instead of using a Dialog.</li>
+<li>The design of the reminder creation has been improved.</li>
+</ul>
+<p>Bug Fixed and Translations:</p>
+<ul>
+<li>Portugués translations thanks to @godinhoana54.</li>
+<li>Russian translation update thanks to @hachikoharuno.</li>
+<li>Turkish translation update thanks to @sabriunal.</li>
+<li>Bugs fixed #1089, #1081, #1099, #1087, #1009, #1008, #1007.
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-130/CEQMXQhCUfQeWueZfQCxJGqO.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-130/RXAbCrZXuUGElDkUacaYSoNf.png" alt="" />
+
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/01/twig-130/SrxGAgwCguNAeQjYkbORobbY.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/01/twig-130/SrxGAgwCguNAeQjYkbORobbY.webm">download it</a> and watch it with your favorite video player!</span>
+</video>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/01/twig-130/BqPKccPnyvmBdZVqUWXcBmrX.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/01/twig-130/BqPKccPnyvmBdZVqUWXcBmrX.webm">download it</a> and watch it with your favorite video player!</span>
+</video>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2024/01/twig-130/jrowxFClFCsvhvCJDWrIssOH.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2024/01/twig-130/jrowxFClFCsvhvCJDWrIssOH.webm">download it</a> and watch it with your favorite video player!</span>
+</video></li>
+</ul>
+</blockquote>
+<p><a href="https://matrix.to/#/@fizzyizzy05:matrix.org">Izzy Jackson (she/they)</a> says</p>
+<blockquote>
+<p><a href="https://flathub.org/apps/io.github.fizzyizzy05.binary">Binary</a> is an app to quickly convert between two different number bases, currently between Binary and Decimal. 0.1.3 is the latest release of the app.</p>
+</blockquote>
+
+
+<h3 id="graphs">
+<a class="heading-anchor" href="#graphs" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Graphs <a href="https://graphs.sjoerd.se"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Plot and manipulate data</p>
+<p><a href="https://matrix.to/#/@sjoerdb93:matrix.org">Sjoerd Stendahl</a> says</p>
+<blockquote>
+<p>This week we have finally released Graphs 1.7.0. It&rsquo;s been a long process since the summer, but it&rsquo;s worth the wait. To say this is our biggest release yet would be an understatement, just as reference, at the last release we were at a total of 1474 commits in the repository while this release is at 2653 commits.</p>
+<p>These changes may sound somewhat familiar for those who&rsquo;ve read the beta announcement two weeks ago, but here&rsquo;s just a few of the major highlights of this release:</p>
+<ul>
+<li>A major UI overhaul with a new default theme and new libadwaita widgets from GNOME 45.</li>
+<li>A completely revamped style editor with previews for each style</li>
+<li>Curve fitting functionality</li>
+<li>Touchpad gesture support for navigating the canvas</li>
+<li>Many small quality-of-life improvements, such as persistent settings, better equation handling, and streamlined preferences.</li>
+</ul>
+<p>These are just the major highlights, but a more complete changelog can be found on <a href="https://github.com/Sjoerd1993/Graphs/releases/tag/v1.7.0">GitHub</a>. To install the latest version of Graphs, we recommend you to get it <a href="https://flathub.org/apps/se.sjoerd.Graphs">at Flathub</a>! I&rsquo;d like to thank everyone involved for making this release possible. Particularly my co-developer Christoph Kohnen, as well as Tobias Bernard, and Sophie (she/her)  for all the feedback in the GNOME Circle application.
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-130/SyxskdZoPGeFkvRbptjDlmiz.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-130/RpXTZsGAaiHyaTmpBakgWKHi.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2024/01/twig-130/tMcdawlRReSqDqieikdkXMhI.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="documentation">
+<a class="heading-anchor" href="#documentation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Documentation
+</h1><p><a href="https://matrix.to/#/@msandova:gnome.org">Maximiliano 🥑</a> says</p>
+<blockquote>
+<p>gi-docgen <a href="https://gitlab.gnome.org/GNOME/gi-docgen/-/merge_requests/201">learned</a> how to load favicons, see its <a href="https://gnome.pages.gitlab.gnome.org/gi-docgen/project-configuration.html#the-extra-section">docs</a> for more info.</p>
+<p>I also <a href="https://gitlab.gnome.org/World/design/emblem/-/merge_requests/40">added</a> a way to generate favicons for gi-docgen to Emblem!</p>
+<p>There is a reference pull request at <a href="https://github.com/flatpak/libportal/pull/138">https://github.com/flatpak/libportal/pull/138</a>.</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@eeejay:matrix.org">eeejay</a> says</p>
+<blockquote>
+<p>I wrote an introductory blog post to libspiel, a new xdg speech API and framework <a href="https://blog.monotonous.org/2024/01/10/Introducing-Spiel/">https://blog.monotonous.org/2024/01/10/Introducing-Spiel/</a></p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@chenriksen:gnome.org">Caroline Henriksen</a> says</p>
+<blockquote>
+<p>The GUADEC 2024 Call for Participation is now open! This year&rsquo;s conference will take place in-person Denver, USA from July 19-24 and will be streamed online for remote attendees. We are looking for both remote and in-person submissions, workshop and BoF requests may also be submitted during this call. All submissions are due by Feb 18. <a href="https://foundation.gnome.org/2024/01/10/guadec-2024-call-for-participation-opens/">https://foundation.gnome.org/2024/01/10/guadec-2024-call-for-participation-opens/</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@chenriksen:gnome.org">Caroline Henriksen</a> announces</p>
+<blockquote>
+<p>The GNOME Foundation is looking for volunteers to help staff our booth at <a href="https://fosdem.org/2024/">FOSDEM</a>. If you are attending in Brussels (Feb 3-4) and are interested in helping please take a look at our post on Discourse for more details: <a href="https://discourse.gnome.org/t/call-for-volunteers-gnome-booth-at-fosdem/18931">https://discourse.gnome.org/t/call-for-volunteers-gnome-booth-at-fosdem/18931</a></p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

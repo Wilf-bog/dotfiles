@@ -1,0 +1,221 @@
+
+         
+         <p>Raw link: <a href="https://www.youtube.com/watch?v=RaqtzemHFDU">https://www.youtube.com/watch?v=RaqtzemHFDU</a></p>
+         
+         <p>In this ~35-minute video I demonstrate the main features of the
+‘use-package’ configuration macro that is built into Emacs 29. It is
+the de facto standard for setting up packages and is designed to make
+Emacs faster to start up and more robust overall.</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;;; Install a package, if needed</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">denote</span>
+  <span class="ss">:ensure</span> <span class="no">t</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">dired</span>
+  <span class="ss">:ensure</span> <span class="no">nil</span><span class="p">)</span>
+
+<span class="c1">;;; Evaluate code after a package is loaded</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">ef-themes</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="ss">:config</span>
+  <span class="p">(</span><span class="nv">ef-themes-select</span> <span class="ss">'ef-cyprus</span><span class="p">))</span> <span class="c1">; the theme for this video</span>
+
+<span class="c1">;;; Evaluate code before a package is loaded</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">corfu</span>
+  <span class="ss">:init</span>
+  <span class="p">(</span><span class="k">setq</span> <span class="nv">tab-always-indent</span> <span class="ss">'complete</span><span class="p">)</span>
+  <span class="ss">:config</span>
+  <span class="o">...</span><span class="p">)</span>
+
+<span class="c1">;;; Conditional loading</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">spacious-padding</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="ss">:if</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)</span>
+  <span class="ss">:config</span>
+  <span class="o">...</span><span class="p">)</span>
+
+<span class="c1">;; This is for the sxhkd program, which is used with minimalist tiling</span>
+<span class="c1">;; window managers.</span>
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">sxhkdrc-mode</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="ss">:if</span> <span class="p">(</span><span class="nb">eq</span> <span class="nv">system-type</span> <span class="ss">'gnu/linux</span><span class="p">)</span>
+  <span class="o">...</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">eq</span> <span class="nv">system-type</span> <span class="ss">'gnu/linux</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">use-package</span> <span class="nv">sxhkdrc-mode</span>
+    <span class="ss">:ensure</span> <span class="no">t</span>
+    <span class="o">...</span><span class="p">))</span>
+
+<span class="c1">;;; Defer loading by defining keys</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">denote</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="ss">:bind</span>
+  <span class="p">(</span><span class="s">"C-c n n"</span> <span class="o">.</span> <span class="nv">denote</span><span class="p">)</span>
+  <span class="ss">:config</span>
+  <span class="p">(</span><span class="k">setq</span> <span class="nv">denote-known-keywords</span> <span class="o">'</span><span class="p">(</span><span class="s">"emacs"</span> <span class="s">"philosophy"</span> <span class="s">"politics"</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">denote</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="ss">:bind</span>
+  <span class="p">(</span> <span class="ss">:map</span> <span class="nv">global-map</span> <span class="c1">; same as above</span>
+    <span class="p">(</span><span class="s">"C-c n n"</span> <span class="o">.</span> <span class="nv">denote</span><span class="p">))</span>
+  <span class="ss">:config</span>
+  <span class="p">(</span><span class="k">setq</span> <span class="nv">denote-known-keywords</span> <span class="o">'</span><span class="p">(</span><span class="s">"emacs"</span> <span class="s">"philosophy"</span> <span class="s">"politics"</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">denote</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="ss">:bind</span>
+  <span class="c1">;; For more key bindings, you need a list of such pairs</span>
+  <span class="p">((</span><span class="s">"C-c n n"</span> <span class="o">.</span> <span class="nv">denote</span><span class="p">)</span>
+   <span class="p">(</span><span class="s">"C-c n r"</span> <span class="o">.</span> <span class="nv">denote-rename-file</span><span class="p">))</span>
+  <span class="ss">:config</span>
+  <span class="p">(</span><span class="k">setq</span> <span class="nv">denote-known-keywords</span> <span class="o">'</span><span class="p">(</span><span class="s">"emacs"</span> <span class="s">"philosophy"</span> <span class="s">"politics"</span><span class="p">)))</span>
+
+<span class="c1">;;; Defer loading with a hook</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">nerd-icons-dired</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="ss">:hook</span>
+  <span class="p">(</span><span class="nv">dired-mode</span> <span class="o">.</span> <span class="nv">nerd-icons-dired-mode</span><span class="p">)</span>
+  <span class="ss">:config</span>
+  <span class="c1">;; Evaluated only after I am in Dired.</span>
+  <span class="o">...</span><span class="p">)</span>
+
+<span class="c1">;;; Defer loading until some command is called (usually not needed)</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">bookmark</span>
+  <span class="ss">:ensure</span> <span class="no">nil</span>
+  <span class="ss">:commands</span> <span class="p">(</span><span class="nv">bookmark-set</span> <span class="nv">bookmark-jump</span> <span class="nv">bookmark-bmenu-list</span><span class="p">))</span>
+
+<span class="c1">;;; Defer loading until a file is opened (for major modes)</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">sxhkdrc-mode</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="c1">;; We generally do not need :mode because major modes set this up</span>
+  <span class="c1">;; already.</span>
+  <span class="ss">:mode</span> <span class="s">"sxhkdrc_.*"</span><span class="p">)</span>
+
+<span class="c1">;;; Defer loading indefinitely or for N seconds of idleness</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">server</span>
+  <span class="ss">:ensure</span> <span class="no">nil</span>
+  <span class="ss">:defer</span> <span class="mi">1</span>
+  <span class="ss">:config</span>
+  <span class="p">(</span><span class="k">setq</span> <span class="nv">server-client-instructions</span> <span class="no">nil</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nv">server-running-p</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">server-start</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">markdown-mode</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="ss">:defer</span> <span class="no">t</span>
+  <span class="ss">:config</span>
+  <span class="p">(</span><span class="k">setq</span> <span class="nv">markdown-fontify-code-blocks-natively</span> <span class="no">t</span><span class="p">))</span>
+
+<span class="c1">;;; Force loading when deferring is not desired</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">modus-themes</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="ss">:demand</span> <span class="no">t</span>
+  <span class="ss">:bind</span>
+  <span class="p">((</span><span class="s">"&lt;f5&gt;"</span> <span class="o">.</span> <span class="nv">modus-themes-toggle</span><span class="p">)</span>
+   <span class="p">(</span><span class="s">"C-&lt;f5&gt;"</span> <span class="o">.</span> <span class="nv">modus-themes-select</span><span class="p">))</span>
+  <span class="ss">:config</span>
+  <span class="p">(</span><span class="nv">modus-themes-load-theme</span> <span class="ss">'modus-vivendi-tinted</span><span class="p">))</span>
+
+<span class="c1">;;; Define many keys in many key maps</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">denote</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="ss">:bind</span>
+  <span class="p">(</span> <span class="ss">:map</span> <span class="nv">global-map</span>
+
+    <span class="p">(</span><span class="s">"C-c n n"</span> <span class="o">.</span> <span class="nv">denote</span><span class="p">)</span>
+    <span class="p">(</span><span class="s">"C-c n r"</span> <span class="o">.</span> <span class="nv">denote-rename-file</span><span class="p">)</span>
+
+    <span class="ss">:map</span> <span class="nv">text-mode-map</span>
+
+    <span class="p">(</span><span class="s">"C-c n i"</span> <span class="o">.</span> <span class="nv">denote-link</span><span class="p">)</span> <span class="c1">; "insert" mnemonic</span>
+    <span class="p">(</span><span class="s">"C-c n I"</span> <span class="o">.</span> <span class="nv">denote-add-links</span><span class="p">)</span>
+
+    <span class="ss">:map</span> <span class="nv">dired-mode-map</span>
+
+    <span class="p">(</span><span class="s">"C-c C-d C-i"</span> <span class="o">.</span> <span class="nv">denote-link-dired-marked-notes</span><span class="p">)</span>
+    <span class="p">(</span><span class="s">"C-c C-d C-r"</span> <span class="o">.</span> <span class="nv">denote-dired-rename-marked-files</span><span class="p">)))</span>
+
+<span class="c1">;;; Add the same function to many hooks</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">abbrev</span>
+  <span class="ss">:ensure</span> <span class="no">nil</span>
+  <span class="ss">:hook</span> <span class="p">((</span><span class="nv">text-mode</span> <span class="nv">prog-mode</span> <span class="nv">git-commit-mode</span><span class="p">)</span> <span class="o">.</span> <span class="nv">abbrev-mode</span><span class="p">))</span>
+
+<span class="c1">;; This is the same as above, which has the advantage of being easier</span>
+<span class="c1">;; to make sense of and modify, but is repetitive.</span>
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">abbrev</span>
+  <span class="ss">:ensure</span> <span class="no">nil</span>
+  <span class="ss">:hook</span> <span class="p">((</span><span class="nv">text-mode</span> <span class="o">.</span> <span class="nv">abbrev-mode</span><span class="p">)</span>
+         <span class="p">(</span><span class="nv">prog-mode</span> <span class="o">.</span> <span class="nv">abbrev-mode</span><span class="p">)</span>
+         <span class="p">(</span><span class="nv">git-commit-mode</span> <span class="o">.</span> <span class="nv">abbrev-mode</span><span class="p">)))</span>
+
+<span class="c1">;;; Specify a custom `load-path'</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">notmuch</span>
+  <span class="ss">:ensure</span> <span class="no">nil</span> <span class="c1">; do not install, because I get it from my Linux distro packages</span>
+  <span class="ss">:load-path</span> <span class="s">"/usr/share/emacs/site-lisp/"</span>
+  <span class="ss">:defer</span> <span class="no">t</span>
+  <span class="ss">:commands</span> <span class="p">(</span><span class="nv">notmuch</span> <span class="nv">notmuch-mua-new-mail</span><span class="p">))</span>
+
+<span class="c1">;;; Load a package after another</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">notmuch</span>
+  <span class="ss">:load-path</span> <span class="s">"/usr/share/emacs/site-lisp/"</span>
+  <span class="ss">:defer</span> <span class="no">t</span>
+  <span class="ss">:commands</span> <span class="p">(</span><span class="nv">notmuch</span> <span class="nv">notmuch-mua-new-mail</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">notmuch-indicator</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="ss">:after</span> <span class="nv">notmuch</span>
+  <span class="ss">:config</span>
+  <span class="p">(</span><span class="nv">notmuch-indicator-mode</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1">;;; Do not force dependencies with `:after'</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">register</span>
+  <span class="ss">:ensure</span> <span class="no">nil</span>
+  <span class="ss">:defer</span> <span class="no">t</span> <span class="c1">; its commands are autoloaded, so this will be loaded then</span>
+  <span class="ss">:config</span>
+  <span class="c1">;; Use `with-eval-after-load', name the symbol of the feature, and</span>
+  <span class="c1">;; then write arbitrary code below.</span>
+  <span class="p">(</span><span class="nv">with-eval-after-load</span> <span class="ss">'savehist</span>
+    <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'savehist-additional-variables</span> <span class="ss">'register-alist</span><span class="p">)))</span>
+
+<span class="c1">;;; Avoid never loading the package with `:bind'</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">vertico</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="c1">;; This is WRONG, because it defers the loading of the package until</span>
+  <span class="c1">;; `vertico-directory-delete-char' is invoked.  But this command is</span>
+  <span class="c1">;; only accessible through the `vertico-map' which, in turn, is only</span>
+  <span class="c1">;; available inside the Vertico-powered minibuffer, i.e. after</span>
+  <span class="c1">;; `vertico-mode' is enabled.</span>
+  <span class="ss">:bind</span>
+  <span class="p">(</span> <span class="ss">:map</span> <span class="nv">vertico-map</span>
+    <span class="p">(</span><span class="s">"DEL"</span> <span class="o">.</span> <span class="nv">vertico-directory-delete-char</span><span class="p">))</span>
+  <span class="ss">:config</span>
+  <span class="p">(</span><span class="nv">vertico-mode</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">use-package</span> <span class="nv">vertico</span>
+  <span class="ss">:ensure</span> <span class="no">t</span>
+  <span class="c1">;; This is fine now.</span>
+  <span class="ss">:hook</span>
+  <span class="p">(</span><span class="nv">after-init</span> <span class="o">.</span> <span class="nv">vertico-mode</span><span class="p">)</span>
+  <span class="ss">:bind</span>
+  <span class="p">(</span> <span class="ss">:map</span> <span class="nv">vertico-map</span>
+    <span class="p">(</span><span class="s">"DEL"</span> <span class="o">.</span> <span class="nv">vertico-directory-delete-char</span><span class="p">)))</span>
+</code></pre></div></div>
+        
+      

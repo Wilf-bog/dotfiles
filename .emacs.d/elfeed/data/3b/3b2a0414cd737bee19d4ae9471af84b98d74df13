@@ -1,0 +1,18 @@
+<span class="field field--name-title field--type-string field--label-hidden">Pay the polluter?</span>
+
+  <div class="field field--name-field-channel field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Channel</div>
+              <div class="field__item">Comment</div>
+          </div>
+<span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://theecologist.org/user/4" class="username">brendan</a></span>
+<span class="field field--name-created field--type-created field--label-hidden"><time datetime="2024-07-15T07:00:00+01:00" title="Monday, July 15, 2024 - 07:00" class="datetime">15th July 2024</time>
+</span>
+
+  <div class="field field--name-field-teaser-media field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Teaser Media</div>
+              <div class="field__item"><article class="media media--type-image media--view-mode-square-m">
+  
+      
+  </article>
+</div>
+          </div>

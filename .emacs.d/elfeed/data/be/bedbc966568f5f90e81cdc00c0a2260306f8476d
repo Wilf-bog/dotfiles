@@ -1,0 +1,242 @@
+<p>Update on what happened across the GNOME project in the week from February 10 to February 17.</p>
+<h1 id="gnome-core-apps-and-libraries">
+<a class="heading-anchor" href="#gnome-core-apps-and-libraries" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Core Apps and Libraries
+</h1>
+
+<h3 id="settings">
+<a class="heading-anchor" href="#settings" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Settings <a href="https://gitlab.gnome.org/GNOME/gnome-control-center"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Configure various aspects of your GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> announces</p>
+<blockquote>
+<p>Thanks to the contribution of Hendrik Müller, the Wi-Fi panel is now able to generate QR codes to share the connection.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/0526659d409030c502c0105c9bd8b751c02d84f5.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@feaneron:gnome.org">Georges Stavracas (feaneron)</a> reports</p>
+<blockquote>
+<p>Thanks to the outstanding work of Felipe Borges and Jakub Steiner, the Mouse &amp; Touchpad panel has received a gorgeous facelift, with animations exemplifying what the preferences of the panel do. It also received a redesigned behavior test dialog, and a new &ldquo;Pointer Assistance&rdquo; preference that controls the mouse acceleration profile.
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://thisweek.gnome.org/posts/2023/02/twig-83/b7a233bb8eaf5e6ee31131f5b685d1a89b5f9967.webm" type="video/webm">
+  <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="https://thisweek.gnome.org/posts/2023/02/twig-83/b7a233bb8eaf5e6ee31131f5b685d1a89b5f9967.webm">download it</a> and watch it with your favorite video player!</span>
+</video></p>
+</blockquote>
+
+
+<h3 id="gnome-shell">
+<a class="heading-anchor" href="#gnome-shell" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Shell <a href="https://gitlab.gnome.org/GNOME/gnome-shell"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Core system user interface for things like launching apps, switching windows, system search, and more.</p>
+<p><a href="https://matrix.to/#/@verdre:gnome.org">verdre</a> announces</p>
+<blockquote>
+<p>The GNOME Shell team has been busy finishing up some major changes to quick settings this week: Thanks to @fmuellner and Georges Stavracas (feaneron) GNOME Shell quick settings <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2619">now have subtitles</a>, the bluetooth toggle <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2501">got a submenu</a> to allow for quickly connecting to devices, and we <a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2624">show a list of apps</a> that are running in the background.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/b7259df7a4771c7e130e9fe0a175cf2a0b1931f2.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/6f1340420e4d5ad0793e15768f1b3a5933d82dbb.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/ce67520023b0922bfbe7c6e6fd86330a54cf4244.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="libadwaita">
+<a class="heading-anchor" href="#libadwaita" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Libadwaita <a href="https://gitlab.gnome.org/GNOME/libadwaita"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Building blocks for modern GNOME apps using GTK4.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> says</p>
+<blockquote>
+<p>since GTK has recently <a href="https://docs.gtk.org/gtk4/method.Snapshot.append_scaled_texture.html">added</a> support for better texture filtering, <code>AdwAvatar</code> now looks better with scaled images when using <code>GdkTexture</code> as a custom paintable. Apps using custom paintables will have to update their code separately to get the same result.
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/329a38e5b7a43e5a5e2495ba6cb718c7ce949ed2.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-console">
+<a class="heading-anchor" href="#gnome-console" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Console <a href="https://gitlab.gnome.org/GNOME/console"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A simple user-friendly terminal emulator.</p>
+<p><a href="https://matrix.to/#/@alexm:gnome.org">Alexander Mikhaylenko</a> reports</p>
+<blockquote>
+<p>Console now has a tab overview, replacing the old tab switcher on small sizes but also available on desktop in addition to tab bar
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/8cde9bcc1628e79b7f9663106bad7c168647fbab.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/bab07f8598ccb176f80926a0ca5da850c523123d.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gtk">
+<a class="heading-anchor" href="#gtk" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GTK <a href="https://gitlab.gnome.org/GNOME/gtk"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Cross-platform widget toolkit for creating graphical user interfaces.</p>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> says</p>
+<blockquote>
+<p>Thanks to Jordan Petridis GTK Demo and Widget Factory are now available for aarch64 in the GNOME nightly flatpak repository. <a href="https://wiki.gnome.org/Apps/Nightly">https://wiki.gnome.org/Apps/Nightly</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/4007ed449c4b58914e79f7579c12de1149d83921.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="weather">
+<a class="heading-anchor" href="#weather" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Weather <a href="https://gitlab.gnome.org/GNOME/gnome-weather"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Show weather conditions and forecasts.</p>
+<p><a href="https://matrix.to/#/@brainblasted:gnome.org">Chris 🌱️</a> reports</p>
+<blockquote>
+<p>Weather has received some last-minute UI updates for GNOME 44:</p>
+<ul>
+<li>The details view now has a flat headerbar.</li>
+<li>The temperature line is now a smooth curve.</li>
+</ul>
+<p>Thanks to Cleo Menezes Jr. and Oscar Pritchard, respectively, for their MRs!
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/72c44d3b1dcb9461fb6e67aa36333ff68cbb4d8c.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="gnome-contacts">
+<a class="heading-anchor" href="#gnome-contacts" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Contacts <a href="https://gitlab.gnome.org/GNOME/gnome-contacts"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Keep and organize your contacts information.</p>
+<p><a href="https://matrix.to/#/@nielsdg:gnome.org">nielsdg</a> announces</p>
+<blockquote>
+<p>GNOME Contacts 44.beta has been released! This is an exciting new release with some cool new stuff:</p>
+<ul>
+<li>Contacts can now be shared with a QR code thanks to Hendrik Müller, which allows for a simple and easy way of passing on contact information across devices</li>
+<li>Birthdays on a leap day will now get a birthday reminder on February 28 in non-leap years thanks to Ruben Schmidmeister</li>
+<li>The main menu has been renamed to follow the GNOME HIG (kudos to Hari Rana (TheEvilSkeleton)!) and now contains an action item to export all contacts</li>
+<li>Added support for multiple keyboard shortcut that were previously missing, like  <code>&lt;Ctrl&gt;F</code>, <code>&lt;Ctrl&gt;,</code>, <code>&lt;Ctrl&gt;Enter</code> and more</li>
+<li>It was previously impossible to remove a birthday from a contact, which has now been fixed</li>
+<li>Some translation issues were found and solved with the help of Sabri Ünal</li>
+<li>A bug where some title buttons where shown twice when using left-aligned title buttons has been fixed with the help of Markus Göllnitz</li>
+</ul>
+</blockquote>
+
+
+<h3 id="web">
+<a class="heading-anchor" href="#web" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Web <a href="https://gitlab.gnome.org/GNOME/epiphany"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>Web browser for the GNOME desktop.</p>
+<p><a href="https://matrix.to/#/@itsjamie9494:gnome.org">Jamie</a> announces</p>
+<blockquote>
+<p>Epiphany has a brand new UI for handling permissions, to replace the ageing GtkInfoBar solution
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/8bd9d5064d1c4aee942137614ee9f0b9eb04d766.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/7b10bfda75bf2eb587c19de9e30df735fc81e0ff.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="tracker">
+<a class="heading-anchor" href="#tracker" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tracker <a href="https://gitlab.gnome.org/GNOME/tracker/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A filesystem indexer, metadata storage system and search tool.</p>
+<p><a href="https://matrix.to/#/@ssssam:matrix.org">Sam Thursfield</a> announces</p>
+<blockquote>
+<p>Commandline tagging is back - the Tracker 3.5.0beta release fixes some issues in the <code>tracker3 tag</code> command, and adds test coverage to guard against future regressions.</p>
+</blockquote>
+
+
+<h1 id="third-party-projects">
+<a class="heading-anchor" href="#third-party-projects" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Third Party Projects
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> says</p>
+<blockquote>
+<p>verdre made and released a medication tracker app named &ldquo;Capsule&rdquo; <a href="https://flathub.org/apps/details/nl.v0yd.Capsule">https://flathub.org/apps/details/nl.v0yd.Capsule</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/56785a5434fbadca620895a37b69c791d0e37484.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/84ef05056579692d069200edb6360670c3695061.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/d4733388a00f03c9bd9eb4331c1b8c7391300c37.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@computerbustr:matrix.org">gianniradix</a> says</p>
+<blockquote>
+<p>Aviator 0.2.0 has dropped! This update includes a newer version of SVT-AV1 with defaults that more effectively tune for visual quality &amp; support for film grain synthesis applied as a filter at decode time, a progress bar, a Stop Encode button, support for more buttons in the header bar, a stereo downmixing switch for audio, AdwAboutWindow, and more! You can read more about Aviator <a href="https://github.com/gianni-rosato/aviator#readme">here</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/nzBGahDcewHzOYcLRCeYpYJY.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> announces</p>
+<blockquote>
+<p>I released a new version of Oh My SVG featuring the new icon by Sam Hewitt and several design and quality of life improvements. Get it on Flathub: <a href="https://beta.flathub.org/apps/re.sonny.OhMySVG">https://beta.flathub.org/apps/re.sonny.OhMySVG</a>
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/e8b19d56a39d45d6f8632b2af2a010fdbd95714b.png" alt="" />
+</p>
+</blockquote>
+<p><a href="https://matrix.to/#/@aaron:matrix.aaron-erhardt.de">Aaron Erhardt</a> says</p>
+<blockquote>
+<p><a href="https://github.com/Relm4/Relm4">Relm4</a> 0.5, an idiomatic GUI library based on gtk4-rs, was just released with many improvements.</p>
+<p>Since the first beta release, we have extended the support for asynchronous code, added widget templates, more tooling and a lot of other improvements. You can find more information about the release in the <a href="https://relm4.org/blog/posts/announcing_relm4_v0.5">official blog post</a>.</p>
+</blockquote>
+
+
+<h3 id="tube-converter">
+<a class="heading-anchor" href="#tube-converter" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Tube Converter <a href="https://flathub.org/apps/details/org.nickvision.tubeconverter"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>An easy-to-use video downloader (yt-dlp frontend).</p>
+<p><a href="https://matrix.to/#/@nlogozzo:matrix.org">Nick</a> reports</p>
+<blockquote>
+<p>Tube Converter is in the process of being rewritten in C#. The rewrite brings a more stable backend to Tube Converter with support for download progress and better preformance when running multiple downloads. We hope to have our first beta released on Sunday, once a WinUI version is complete. <a href="https://github.com/nlogozzo/NickvisionTubeConverter/pull/50">Check out the progress here</a> !
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/bwCQbSKJFIqVipOoIELFaebv.png" alt="" />
+</p>
+</blockquote>
+
+
+<h3 id="cawbird">
+<a class="heading-anchor" href="#cawbird" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Cawbird <a href="https://ibboard.co.uk/cawbird/"><svg width='16' height='16'><use xlink:href='https://thisweek.gnome.org/images/icons.svg#link'></use></svg></a>
+</h3><p>A native Twitter client for your Linux desktop.</p>
+<p><a href="https://matrix.to/#/@coded_ore:matrix.org">CodedOre</a> reports</p>
+<blockquote>
+<p>Hello everyone! It&rsquo;s been a while since the last update on our GTK4 rewrite of Cawbird.</p>
+<p>Sadly the biggest news is not the recently completed rework of the session system, which should handle interaction better. Instead it is that Twitter has banned all third-party clients. As a result, we have dropped the backend for the Twitter 2.0 API. Instead being a multi-platform client, the focus is now on Mastodon alone.</p>
+<p>Anyway, apart from the rework done for sessions, there were a few additions lately:</p>
+<ul>
+<li>The user profile page now shows when a link was verified by Mastodons servers.</li>
+<li>Thanks to IBBoard, posts can now be liked and reposted in the client.</li>
+<li>Initial support for hiding sensitive content.</li>
+</ul>
+<p>I know there weren&rsquo;t news about this rewrite in the last months, but I hope I can share more news soon!
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/XovEkKSVGbKZTXkqblgpyskf.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/rvMnYdsoFxLJdkVdLAynQbeh.png" alt="" />
+
+
+<img src="https://thisweek.gnome.org/posts/2023/02/twig-83/PbVyvpHGBQzEPyUIpQHEqMmh.png" alt="" />
+</p>
+</blockquote>
+
+
+<h1 id="miscellaneous">
+<a class="heading-anchor" href="#miscellaneous" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>Miscellaneous
+</h1><p><a href="https://matrix.to/#/@sonny:gnome.org">Sonny</a> reports</p>
+<blockquote>
+<p>Linux App Summit call for proposal closes tomorrow (18/02) - last chance to submit a talk, workshop or bof proposal. <a href="https://linuxappsummit.org/cfp/">https://linuxappsummit.org/cfp/</a></p>
+</blockquote>
+<p><a href="https://matrix.to/#/@flipflop97:matrix.org">Philip Goto</a> reports</p>
+<blockquote>
+<p>Many GNOME projects make use of the internal translation system Damned Lies, but there are also a lot of projects that don&rsquo;t, including GNOME Circle apps. Because these projects can be easily looked over, I made an overview of them with links to their translation systems.</p>
+<p><a href="https://gitlab.gnome.org/philip.goto/external-translations">https://gitlab.gnome.org/philip.goto/external-translations</a></p>
+</blockquote>
+
+
+<h1 id="gnome-foundation">
+<a class="heading-anchor" href="#gnome-foundation" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>GNOME Foundation
+</h1><p><a href="https://matrix.to/#/@zana:gnome.org">Rosanna</a> announces</p>
+<blockquote>
+<p>The GNOME Foundation staff wants to increase communications with the wider GNOME community. The plan is for us to take turns writing updates here to let y&rsquo;all know who we are and what we are doing.</p>
+<p>Greetings! I am the Director of Operations for the GNOME Foundation. After spending last week at FOSDEM and State of Open Con, this has been a catch up week for me: going through the mounds of paper on my desk, working on GNOME&rsquo;s financial records, prepping invoices for the advisory board, handling tax forms, paying bills, and other not-exactly-exciting-but-essential-stuff.</p>
+<p>Volunteer opportunity:
+GNOME will be hosting a booth at SCaLE in Pasadena March 10-12. If you are in the Los Angeles area, we could use your help with staffing our booth. Contact <a href="mailto:info@gnome.org">info@gnome.org</a> or zana on matrix to help.</p>
+</blockquote>
+
+
+<h1 id="thats-all-for-this-week">
+<a class="heading-anchor" href="#thats-all-for-this-week" hidden><svg width="16" height="16"><use xlink:href="https://thisweek.gnome.org/images/icons.svg#anchor"></use></svg></a>That’s all for this week!
+</h1><p>See you next week, and be sure to stop by <a href="https://matrix.to/#/#thisweek:gnome.org">#thisweek:gnome.org</a> with updates on your own projects!</p>

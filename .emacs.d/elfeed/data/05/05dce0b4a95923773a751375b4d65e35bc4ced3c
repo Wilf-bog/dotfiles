@@ -1,0 +1,72 @@
+
+         
+         <p>Raw link: <a href="https://www.youtube.com/watch?v=L_4pLN0gXGI">https://www.youtube.com/watch?v=L_4pLN0gXGI</a></p>
+         
+         <p>Video overview of file navigation in Emacs.  There are lots of
+powerful commands to find files, open directories, and perform
+operations on the contents of the filesystem.  Technically, I talk
+about <code class="language-plaintext highlighter-rouge">find-file</code>, <code class="language-plaintext highlighter-rouge">dired</code> and its numerous accoutrements, the
+minibuffer and its histories, file permissions, keyboard macros, and
+projects.</p>
+
+<p>Same basic configurations based on what I mentioned in the video:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;; Install the `vertico' package to get a vertical view of the</span>
+<span class="c1">;; minibuffer.  Vertico is optimised for performance and is also</span>
+<span class="c1">;; highly configurable.  Here is my minimal setup:</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">vertico-resize</span> <span class="no">nil</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">vertico-mode</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">;; Install the `marginalia' package.  This will display useful</span>
+<span class="c1">;; annotations next to entries in the minibuffer.  For example, when</span>
+<span class="c1">;; using M-x it will show a brief description of the command as well</span>
+<span class="c1">;; as the keybinding associated with it (if any).</span>
+<span class="p">(</span><span class="nv">marginalia-mode</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">;; When you first call `find-file' (C-x C-f by default), you do not</span>
+<span class="c1">;; need to clear the existing file path before adding the new one.</span>
+<span class="c1">;; Just start typing the whole path and Emacs will "shadow" the</span>
+<span class="c1">;; current one.  For example, you are at ~/Documents/notes/file.txt</span>
+<span class="c1">;; and you want to go to ~/.emacs.d/init.el: type the latter directly</span>
+<span class="c1">;; and Emacs will take you there.</span>
+<span class="p">(</span><span class="nv">file-name-shadow-mode</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">;; This works with `file-name-shadow-mode' enabled.  When you are in</span>
+<span class="c1">;; a sub-directory and use, say, `find-file' to go to your home '~/'</span>
+<span class="c1">;; or root '/' directory, Vertico will clear the old path to keep</span>
+<span class="c1">;; only your current input.</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'rfn-eshadow-update-overlay-hook</span> <span class="nf">#'</span><span class="nv">vertico-directory-tidy</span><span class="p">)</span>
+
+<span class="c1">;; Do not outright delete files.  Move them to the system trash</span>
+<span class="c1">;; instead.  The `trashed' package can act on them in a Dired-like</span>
+<span class="c1">;; fashion.  I use it and can recommend it to either restore (R) or</span>
+<span class="c1">;; permanently delete (D) the files.</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">delete-by-moving-to-trash</span> <span class="no">t</span><span class="p">)</span>
+
+<span class="c1">;; When there are two Dired buffers side-by-side make Emacs</span>
+<span class="c1">;; automatically suggest the other one as the target of copy or rename</span>
+<span class="c1">;; operations.  Remember that you can always use M-p and M-n in the</span>
+<span class="c1">;; minibuffer to cycle through the history, regardless of what this</span>
+<span class="c1">;; does.  (The "dwim" stands for "Do What I Mean".)</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">dired-dwim-target</span> <span class="no">t</span><span class="p">)</span>
+
+<span class="c1">;; Automatically hide the detailed listing when visiting a Dired</span>
+<span class="c1">;; buffer.  This can always be toggled on/off by calling the</span>
+<span class="c1">;; `dired-hide-details-mode' interactively with M-x or its keybindings</span>
+<span class="c1">;; (the left parenthesis by default).</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'dired-mode-hook</span> <span class="nf">#'</span><span class="nv">dired-hide-details-mode</span><span class="p">)</span>
+
+<span class="c1">;; Teach Dired to use a specific external program with either the</span>
+<span class="c1">;; `dired-do-shell-command' or `dired-do-async-shell-command' command</span>
+<span class="c1">;; (with the default keys, those are bound to `!' `&amp;', respectively).</span>
+<span class="c1">;; The first string is a pattern match against file names.  The</span>
+<span class="c1">;; remaining strings are external programs that Dired will provide as</span>
+<span class="c1">;; suggestions.  Of course, you can always type an arbitrary program</span>
+<span class="c1">;; despite these defaults.</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">dired-guess-shell-alist-user</span>
+      <span class="o">'</span><span class="p">((</span><span class="s">"\\.\\(png\\|jpe?g\\|tiff\\)"</span> <span class="s">"feh"</span> <span class="s">"xdg-open"</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">"\\.\\(mp[34]\\|m4a\\|ogg\\|flac\\|webm\\|mkv\\)"</span> <span class="s">"mpv"</span> <span class="s">"xdg-open"</span><span class="p">)</span>
+		<span class="p">(</span><span class="s">".*"</span> <span class="s">"xdg-open"</span><span class="p">)))</span>
+</code></pre></div></div>
+        
+      
