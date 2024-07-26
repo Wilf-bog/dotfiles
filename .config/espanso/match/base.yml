@@ -1,0 +1,146 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
+
+  # But matches can also be dynamic:
+
+  # Print the current date
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  # Print the output of a shell command
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
+  - trigger: ";btlm"
+    replace: "Bonjour tout le monde,\n\n"
+  - trigger: ";bfds"
+    replace: "Bonne fin de semaine,\n\n"
+  - trigger: ";atlm"
+    replace: "Allô tout le monde,\n\n"
+  - trigger: ";stlm"
+    replace: "Salut tout le monde!\n\n"
+  - trigger: ";iirc"
+    replace: "if I remember correctly"
+  - trigger: ";Iirc"
+    replace: "if I remember correctly"
+  - trigger: ";Wdym"
+    replace: "What do you mean?"
+  - trigger: ";Hryd"
+    replace: "How are your doing?"
+  - trigger: ";bj"
+    replace: "Bonne journée,\n"
+  - trigger: ";mbj"
+    replace: "Merci et bonne journée,\n"
+  - trigger: ";bm"
+    replace: "Bon matin,\n"
+  - trigger: ";eq"
+    replace: "Ex aequo"
+  - trigger: "fv@"
+    replace: "fvachon@exaequo.net"
+  - trigger: "telex"
+    replace: "514-288-3852 poste 17"
+  - trigger: ";ccr"
+    replace: "Centre Communautaire Radisson"
+  - trigger: ";activité"
+    replace: "Si vous prévoyez y participer, merci de contacter Frédéric, organisateur communautaire, soit par courriel à l'adresse fvachon@exaequo.net ou par téléphone au (514) 288-3852, poste 17."
+  - trigger: ";ta"
+    replace: "transport adapté"
+  - trigger: "ciusss"
+    replace: "CIUSSS"
+  - trigger: "ccv"
+    replace: "Comment ça va?"
+  - trigger: ";edi"
+    replace: "Équité, Diversité et Inclusion"
+  - trigger: ";dcdpsh"
+    replace: "défense collective des droits des personnes en situation de handicap"
+  - trigger: ";dm"
+    replace: "déficience motrice"
+  - trigger: "RM"
+    replace: "Rose-Marie"
+  - trigger: ";lf"
+    replace: "Louis-Fred"
+  - trigger: "LF"
+    replace: "Louis-Frédéric"
+  - trigger: ";cprf"
+    replace: "Carrefour de participation, ressourcement et formation"
+  - trigger: "CSP"
+    replace: "Centre Saint-Pierre"
+  - trigger: "trovep"
+    replace: "TROVEP"
+  - trigger: ;oc"
+    replace: "organisateur communautaire"
+  - trigger: ;Oc"
+    replace: "Organisateur communautaire"
+  - trigger: ";p-e"
+    replace: "peut-être"
+  - trigger: ";odj"
+    replace: "ordre du jour"
+  - trigger: ";Odj"
+    replace: "Ordre du jour"
+  - trigger: ";Z"
+    replace: "ζ"
+  - trigger: ";nha"
+    replace: "non-human animal"
+  - trigger: ";anh"
+    replace: "animal-non humain"
+  - trigger: ";wdym"
+    replace: "what do you mean"
+  - trigger: "ooe"
+    replace: "œ"
+  - trigger: ";ztt"
+    replace: "Zooier Than Thou"
+  - trigger: ";cvm"
+    replace: "Cégep du Vieux-Montréal"
+  - trigger: ";dcd"
+    replace: "défense collective des droits"
+  - trigger: ";pshs"
+    replace: "personnes en situation de handicap"
+  - trigger: ";pshh"
+    replace: "personne en situation de handicap"
+  - trigger: ";good"
+    replace: "✅ Parfait"
+  - trigger: "requestzfu"
+    replace: "Hey there! I am a moderator in ZFU, and thank you for your interest in joining our ZFU community! To enter, you will need to set a profile picture, an @, as well as a bio reflective of our furry/zoo community. Let me know if you have any questions, and as soon as you have done these things, please request to join again. 
+
+https://t.me/zoofursunity"
+
+# FORMS
+  - trigger: ";zfu"
+    form: |
+            Greetings [[Name]]!
+            Welcome to our furry corner of the zoo community! When you can, say hello and head on over to the guidepost to review our rules and other spaces you might want to look at: https://t.me/ZFUGuidepost.
+
+  - trigger: ";nouveaumembre"
+    form: |
+            Bonjour [[Name]],
+            
+            Mon nom est Frédéric Vachon, je suis organisateur communautaire pour l'organisme de défense collective des droits des personnes ayant une déficience motrice. Je vous écris concernant votre intérêt à devenir membre de notre organisme.
+            
+            J'aimerais vous proposer une rencontre prochainement pour votre présenter notre organisme ainsi que pour remplir votre fiche de membre. Si ça vous convient, j'aimerais vous inviter à nos bureaux du 3680 rue Jeanne-Mance bureau 328, mais si vous le préférez, il est aussi possible de faire la rencontre par téléphone ou sur Zoom. Laissez-moi savoir quelles sont vos disponibilités dans les deux prochaines semaines et votre préférence pour le format de la rencontre, et je pourrai vous revenir avec un heure et une date pour le rendez-vous. La rencontre doit durer au plus une heure.
+
+            Je reste disponible si vous avez des questions, au plaisir de faire votre connaissance!
+
+            Bonne journée,
+

@@ -1,0 +1,2 @@
+# espanso
+ espanso config
