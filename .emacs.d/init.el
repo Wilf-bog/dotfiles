@@ -457,8 +457,23 @@
     :kill-buffer t
     :jump-to-captured t)
    ("t" "New task" entry
-    (file+headline org-default-notes-file "Tasks")
-    "* TODO %i%?")))
+    (file+headline "~/gtd/inbox.org" "Tasks")
+    "* TODO %i%? \n %U")
+   ("T" "Tickler" entry
+    (file+headline "~/gtd/tickler.org" "Tickler")
+    "* TODO %i%? \n %U")))
+
+(setq org-agenda-files '("~/gtd/inbox.org"
+                         "~/gtd/gtd.org"
+                         "~/gtd/tickler.org"))
+
+(setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
+                           ("~/gtd/someday.org" :level . 1)
+                           ("~/gtd/tickler.org" :maxlevel . 2)))
+
+;; Inbox location
+
+;; (setq org-default-notes-file (concat org-directory "/notes.org"))
 
 ;; Denote
 
