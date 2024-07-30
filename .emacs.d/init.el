@@ -401,7 +401,7 @@
   (elfeed-org)
   :custom
   (rmh-elfeed-org-files
-   (list (concat (file-name-as-directory (getenv "HOME")) "elfeed.org"))))
+   (list (concat (file-name-as-directory (getenv "HOME")) ".emacs.d/elfeed/elfeed.org"))))
 
 ;; Easy insertion of weblinks
 
