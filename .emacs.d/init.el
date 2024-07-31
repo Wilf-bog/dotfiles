@@ -125,12 +125,14 @@
   (modus-themes-mixed-fonts t)
   (modus-themes-to-toggle
    '(modus-operandi-tinted modus-vivendi-tinted))
-  :init
-  (load-theme 'modus-operandi-tinted :no-confirm)
+;  :init
+;  (load-theme 'modus-operandi-tinted :no-confirm)
   :bind
   (("C-c w t t" . modus-themes-toggle)
    ("C-c w t m" . modus-themes-select)
    ("C-c w t s" . consult-theme)))
+
+(load-theme 'catppuccin :no-confirm)
 
 (use-package mixed-pitch
   :hook
