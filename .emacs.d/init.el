@@ -132,7 +132,8 @@
    ("C-c w t m" . modus-themes-select)
    ("C-c w t s" . consult-theme)))
 
-(load-theme 'catppuccin :no-confirm)
+(use-package catppuccin
+  :init (load-theme 'catppuccin t))
 
 (use-package mixed-pitch
   :hook
