@@ -437,6 +437,9 @@
   :custom
   (openwith-association nil))
 
+(use-package somafm
+  :ensure t)
+
 ;; Fleeting notes
 
 (use-package org
