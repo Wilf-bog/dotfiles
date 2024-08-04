@@ -1,6 +1,6 @@
 ;;; init.el --- Emacs Writing Studio init -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2024 Peter Prevos
+;; Copyright (C) 2024 Pheter Prevos
 
 ;; Author: Peter Prevos <peter@prevos.net>
 ;; Maintainer: Peter Prevos <peter@prevos.net>
@@ -104,9 +104,19 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Icons
+
+(use-package all-the-icons)
+
 ;; Short answers only please
 
 (setq use-short-answers t)
+
+(use-package all-the-icons-completion
+  :after (marginalia all-the-icons)
+  :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
+  :init
+  (all-the-icons-completion-mode))
 
 ;; Spacious padding
 
@@ -115,6 +125,10 @@
   (line-spacing 3)
   :init
   (spacious-padding-mode 1))
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
 
 ;; Modus Themes
 
@@ -132,8 +146,32 @@
    ("C-c w t m" . modus-themes-select)
    ("C-c w t s" . consult-theme)))
 
+;; Cappucin
+
 (use-package catppuccin
-  :init (load-theme 'catppuccin t))
+  :init (load-theme 'catppuccin nil))
+
+;; Doom-themes
+
+(use-package doom-themes
+  :ensure t
+  :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (load-theme 'doom-one t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  ;; Enable custom neotree theme (all-the-icons must be installed!)
+  (doom-themes-neotree-config)
+  ;; or for treemacs users
+  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+  (doom-themes-treemacs-config)
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
+
+;; Mixed-pitch
 
 (use-package mixed-pitch
   :hook
