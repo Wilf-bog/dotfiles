@@ -231,6 +231,7 @@
 (use-package vertico
   :init
   (vertico-mode)
+  :bind (("C-s" . consult-line))
   :custom
   (vertico-sort-function 'vertico-sort-history-alpha))
 
