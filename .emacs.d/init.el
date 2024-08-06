@@ -231,8 +231,15 @@
 (use-package vertico
   :init
   (vertico-mode)
-  :bind (("C-s" . consult-line))
+  :bind (("C-s" . consult-line)
+	 :map vertico-map
+         ("C-j" . vertico-next)
+         ("C-k" . vertico-previous)
+         ("C-f" . vertico-exit)
+         :map minibuffer-local-map
+         ("M-h" . backward-kill-word))
   :custom
+  (vertico-cycle t)
   (vertico-sort-function 'vertico-sort-history-alpha))
 
 ;; Persist history over Emacs restarts.
