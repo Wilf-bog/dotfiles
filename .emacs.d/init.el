@@ -104,6 +104,9 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
+(column-number-mode)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+
 ;; Icons
 
 (use-package all-the-icons)
@@ -394,7 +397,44 @@
 (use-package consult
   :bind
   (("C-c w h" . consult-org-heading)
+   ("C-M-j" . consult-buffer)                ;; orig. switch-to-buffer
+   ("M-g g" . consult-goto-line)             ;; orig. goto-line
+   ("M-g M-g" . consult-goto-line)           ;; orig. goto-line
+   ("M-g o" . consult-outline)               ;; Alternative: consult-org-heading
    ("C-c w g" . consult-grep)))
+
+;; Projectile
+
+(use-package projectile
+  :diminish projectile-mode
+  :config (projectile-mode)
+  :custom ((projectile-completion-system 'ivy))
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :init
+  ;; NOTE: Set this to the folder where you keep your Git repos!
+  (when (file-directory-p "~/Projects/Code")
+    (setq projectile-project-search-path '("~/Projects/Code")))
+  (setq projectile-switch-project-action #'projectile-dired))
+
+(use-package counsel-projectile
+  :after projectile
+  :config (counsel-projectile-mode))
+
+;; Magit
+
+(use-package magit
+  :commands magit-status
+  :custom
+  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+(setq auth-sources '("~/.authinfo")
+
+;; NOTE: Make sure to configure a GitHub token before using this package!
+;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
+;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
+(use-package forge
+  :after magit)
 
 ;; INSPIRATION
 
