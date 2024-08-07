@@ -1049,13 +1049,18 @@ This part of the configuration is borrowed from System Crafters and explained in
       "h" 'dired-up-directory
       "l" 'dired-find-file))
 
+  (autoload 'dired-omit-mode "dired-x")
+
+  (use-package all-the-icons-dired
+    :hook (dired-mode . all-the-icons-dired-mode))
+
   ;; Hide hidden files
 
   (use-package dired-hide-dotfiles
     :hook
     (dired-mode . dired-hide-dotfiles-mode)
-    :bind
-    (:map dired-mode-map ("." . dired-hide-dotfiles-mode)))
+    :config
+    (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
 
   ;; Backup files
 
