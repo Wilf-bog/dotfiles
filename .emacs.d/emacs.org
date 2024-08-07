@@ -1026,7 +1026,11 @@ After that, we load custom settings (for now).
     (dired-dwim-target t)
     (delete-by-moving-to-trash t)
     :init
-    (put 'dired-find-alternate-file 'disabled nil))
+    (put 'dired-find-alternate-file 'disabled nil)
+    :config
+    (evil-collection-define-key 'normal 'dired-mode-map
+      "h" 'dired-up-directory
+      "l" 'dired-find-file))
 
   ;; Hide hidden files
 
