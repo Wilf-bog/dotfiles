@@ -275,8 +275,6 @@
   (("C-c w s s" . ispell)
    ("C-;"       . flyspell-auto-correct-previous-word)))
 
-;;; Ricing Org mode
-
 (use-package org
   :custom
   (org-startup-indented t)
@@ -361,6 +359,16 @@
    ("M-g M-g" . consult-goto-line)           ;; orig. goto-line
    ("M-g o" . consult-outline)               ;; Alternative: consult-org-heading
    ("C-c w g" . consult-grep)))
+
+;; Automatically tangle our Emacs.org config file when we save it
+(defun efs/org-babel-tangle-config ()
+  (when (string-equal (buffer-file-name)
+                      (expand-file-name "~/.dotfiles/.emacs.d/emacs.org"))
+    ;; Dynamic scoping to the rescue
+    (let ((org-confirm-babel-evaluate nil))
+      (org-babel-tangle))))
+
+(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
 
 ;; Doc-View
 
@@ -784,7 +792,11 @@
   (dired-dwim-target t)
   (delete-by-moving-to-trash t)
   :init
-  (put 'dired-find-alternate-file 'disabled nil))
+  (put 'dired-find-alternate-file 'disabled nil)
+  :config
+  (evil-collection-define-key 'normal 'dired-mode-map
+    "h" 'dired-up-directory
+    "l" 'dired-find-file))
 
 ;; Hide hidden files
 

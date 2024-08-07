@@ -337,10 +337,9 @@ After that, we load custom settings (for now).
 #+end_src
 
 * Orgmode
-
+** Ricing Org mode
 #+begin_src emacs-lisp
 
-  ;;; Ricing Org mode
 
   (use-package org
     :custom
@@ -428,6 +427,24 @@ After that, we load custom settings (for now).
      ("C-c w g" . consult-grep)))
 
 #+end_src
+** Auto-tangle Configuration Files
+This part of the configuration is borrowed from System Crafters and explained in 2 places:
+- This video : [[https://youtu.be/kkqVTDbfYp4?list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&t=1437][Emacs From Scratch #7 - Configure Everything with Org Babel - YouTube]]
+- And this article: [[https://systemcrafters.net/emacs-from-scratch/configure-everything-with-org-babel/#tips][Configure Everything with Org Babel - System Crafters]]
+
+  #+begin_src emacs-lisp
+
+    ;; Automatically tangle our Emacs.org config file when we save it
+    (defun efs/org-babel-tangle-config ()
+      (when (string-equal (buffer-file-name)
+                          (expand-file-name "~/.dotfiles/.emacs.d/emacs.org"))
+        ;; Dynamic scoping to the rescue
+        (let ((org-confirm-babel-evaluate nil))
+          (org-babel-tangle))))
+
+    (add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
+
+  #+end_src
 
 * Git and projectile
 
