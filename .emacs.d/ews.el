@@ -65,7 +65,7 @@
   "Minimum level of Org headings to be capitalised.
 'nil implies all levels are capitalised."
   :group 'ews
-  :type  '(choice (const :tag "All headings" nil)
+  :type  '(choice (const :tag "All Headings" nil)
 		  (integer :tag "Highest level" 1)))
 
 ;; Check for missing external software

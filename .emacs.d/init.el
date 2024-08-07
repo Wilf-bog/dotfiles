@@ -1,37 +1,3 @@
-;;; init.el --- Emacs Writing Studio init -*- lexical-binding: t; -*-
-
-;; Copyright (C) 2024 Pheter Prevos
-
-;; Author: Peter Prevos <peter@prevos.net>
-;; Maintainer: Peter Prevos <peter@prevos.net>
-
-;; This file is NOT part of GNU Emacs.
-;;
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
-;;
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-;; GNU General Public License for more details.
-;;
-;; You should have received a copy of the GNU General Public License
-;; along with this program. If not, see <https://www.gnu.org/licenses/>.
-;;
-;;; Commentary:
-;;
-;; Emacs Writing Studio init file
-;; https://lucidmanager.org/tags/emacs
-;;
-;; This init file is tangled from the Org mode source:
-;; documents/ews-book/99-appendix.org
-;;
-;;; Code:
-
-;; Emacs 29? EWS leverages functionality from the latest Emacs version.
-
 (when (< emacs-major-version 29)
   (error "Emacs Writing Studio requires Emacs version 29 or later"))
 
@@ -97,7 +63,6 @@
    ("mpg321" "ogg123" "mplayer" "mpv" "vlc")
    "git"))
 
-;;; LOOK AND FEEL
 ;; Keyboard-centric user interface removing tool, menu and scroll bars
 
 (tool-bar-mode -1)
@@ -227,8 +192,6 @@
   :config
   (evil-collection-init))
 
-;; MINIBUFFER COMPLETION
-
 ;; Enable vertico
 
 (use-package vertico
@@ -285,8 +248,6 @@
    ("C-h k" . helpful-key)
    ("C-h v" . helpful-variable)))
 
-;;; Text mode settings
-
 (use-package text-mode
   :ensure
   nil
@@ -298,8 +259,6 @@
   (sentence-end-double-space nil)
   (scroll-error-top-bottom t)
   (save-interprogram-paste-before-kill t))
-
-;; Check spelling with flyspell and hunspell
 
 (use-package flyspell
   :custom
@@ -333,24 +292,24 @@
 
 (setq org-tag-alist
       '(;; Places
-	("@home" . ?H)
-	("@work" . ?W)
+        ("@home" . ?H)
+        ("@work" . ?W)
 
-	;; Devices
-	("@computer" . ?C)
-	("@phone" . ?P)
+        ;; Devices
+        ("@computer" . ?C)
+        ("@phone" . ?P)
 
-	;; Activities
-	("@ménage" . ?m)
-	("@lecture" . ?l)
-	("@planning" . ?n)
-	("@writing" . ?w)
-	("@creative" . ?c)
-	("@écouter" . ?é)
-	("@visionner" . ?v)
-	("@email" . ?e)
-	("@calls" . ?a)
-	("@errands" . ?r)))
+        ;; Activities
+        ("@ménage" . ?m)
+        ("@lecture" . ?l)
+        ("@planning" . ?n)
+        ("@writing" . ?w)
+        ("@creative" . ?c)
+        ("@écouter" . ?é)
+        ("@visionner" . ?v)
+        ("@email" . ?e)
+        ("@calls" . ?a)
+        ("@errands" . ?r)))
 
 ;; More TODO states
 (setq org-todo-keywords
@@ -403,41 +362,6 @@
    ("M-g o" . consult-outline)               ;; Alternative: consult-org-heading
    ("C-c w g" . consult-grep)))
 
-;; Projectile
-
-(use-package projectile
-  :diminish projectile-mode
-  :config (projectile-mode)
-  :custom ((projectile-completion-system 'ivy))
-  :bind-keymap
-  ("C-c p" . projectile-command-map)
-  :init
-  ;; NOTE: Set this to the folder where you keep your Git repos!
-  (when (file-directory-p "~/Projects/Code")
-    (setq projectile-project-search-path '("~/Projects/Code")))
-  (setq projectile-switch-project-action #'projectile-dired))
-
-(use-package counsel-projectile
-  :after projectile
-  :config (counsel-projectile-mode))
-
-;; Magit
-
-(use-package magit
-  :commands magit-status
-  :custom
-  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
-
-(setq auth-sources '("~/.authinfo")
-
-;; NOTE: Make sure to configure a GitHub token before using this package!
-;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
-;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
-(use-package forge
-  :after magit)
-
-;; INSPIRATION
-
 ;; Doc-View
 
 (use-package doc-view
@@ -461,8 +385,6 @@
   (add-to-list 'auto-mode-alist
                '("\\.\\(?:OD[CFIGPST]\\|od[cfigpst]\\)\\'"
                  . doc-view-mode-maybe)))
-
-;; Managing Bibliographies
 
 (use-package bibtex
   :custom
@@ -581,13 +503,19 @@
     (file+headline "~/gtd/tickler.org" "Tickler")
     "* TODO %i%? \n %U")))
 
-(setq org-agenda-files '("~/gtd/inbox.org"
-                         "~/gtd/gtd.org"
-                         "~/gtd/tickler.org"))
+(require 'org-tempo)
 
-(setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
-                           ("~/gtd/someday.org" :level . 1)
-                           ("~/gtd/tickler.org" :maxlevel . 2)))
+(add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+(add-to-list 'org-structure-template-alist '("py" . "src python"))
+
+(setq org-agenda-files '("~/gtd/inbox.org"
+                           "~/gtd/gtd.org"
+                           "~/gtd/tickler.org"))
+
+  (setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
+                             ("~/gtd/someday.org" :level . 1)
+                             ("~/gtd/tickler.org" :maxlevel . 2)))
 
 ;; Inbox location
 
@@ -668,8 +596,6 @@
    ("C-c w x v" . denote-explore-network-regenerate)
    ("C-c w x D" . denote-explore-degree-barchart)))
 
-;; Set some Org mode shortcuts
-
 (use-package org
   :bind
   (:map org-mode-map
@@ -677,14 +603,10 @@
         ("C-c w p" . ews-org-insert-screenshot)
         ("C-c w c" . ews-org-count-words)))
 
-;; Distraction-free writing
-
 (use-package olivetti
   :demand t
   :bind
   (("C-c w o" . ews-olivetti)))
-
-;; Undo Tree
 
 (use-package undo-tree
   :config
@@ -694,8 +616,6 @@
   :bind
   (("C-c w u" . undo-tree-visualize)))
 
-;; Export citations with Org Mode
-
 (require 'oc-natbib)
 (require 'oc-csl)
 
@@ -703,8 +623,6 @@
       org-cite-insert-processor 'citar
       org-cite-follow-processor 'citar
       org-cite-activate-processor 'citar)
-
-;; Lookup words in online dictionary
 
 (use-package dictionary
   :custom
@@ -716,19 +634,13 @@
 :bind
 (("C-c w s p" . powerthesaurus-transient)))
 
-;; Writegood-Mode for buzzwords, passive writing and repeated word detection
-
 (use-package writegood-mode
   :bind
   (("C-c w s r" . writegood-reading-ease))
   :hook
   (text-mode . writegood-mode))
 
-;; Abbreviations
-
 (add-hook 'text-mode-hook 'abbrev-mode)
-
-;; Lorem Ipsum generator
 
 (use-package lorem-ipsum
   :custom
@@ -739,8 +651,6 @@
   (("C-c w i s" . lorem-ipsum-insert-sentences)
    ("C-c w i p" . lorem-ipsum-insert-paragraphs)
    ("C-c w i l" . lorem-ipsum-insert-list)))
-
-;; ediff
 
 (use-package ediff
   :ensure nil
@@ -753,8 +663,6 @@
 
 (use-package markdown-mode)
 
-;; Generic Org Export Settings
-
 (use-package org
   :custom
   (org-export-with-drawers nil)
@@ -763,9 +671,6 @@
   (org-export-with-toc nil)
   (org-export-with-smart-quotes t)
   (org-export-date-timestamp-format "%e %B %Y"))
-
-
-;; pdf-tools
 
 (use-package pdf-tools
    :defer t
@@ -853,14 +758,10 @@
 (use-package ox-epub
   :demand t)
 
-;; ADVANCED NDOCUMENTED EXPORT SETTINGS FOR EWS
-
 ;; Use GraphViz for flow diagrams
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((dot . t))) ; this line activates dot
-
-;;; ADMINISTRATION
 
 ;; Bind org agenda command
 
