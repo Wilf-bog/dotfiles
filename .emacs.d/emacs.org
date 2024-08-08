@@ -1,5 +1,6 @@
 #+title: Wilf's config
 #+PROPERTY: header-args:emacs-lisp :tangle ./init.el :mkdirp yes
+#+auto_tangle: t
 
 * Welcome!
 
@@ -48,6 +49,27 @@ After that, we load custom settings (for now).
     (use-package-always-ensure t)
     (package-native-compile t)
     (warning-minimum-level :emergency))
+
+#+end_src
+
+** Updates
+:PROPERTIES:
+:ID:       5bd31e25-8c2a-4cc5-85c3-9c465aa1a160
+:END:
+To get notified about incoming updates so you don't have to look for them with the command =list-package=. Based on these two sources:
+- [[https://www.youtube.com/watch?v=dtjq68F2dXw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&index=11][Keeping Your Emacs Packages Up To Date - Emacs From Scratch #11 - YouTube]]
+- [[https://github.com/daviwil/emacs-from-scratch/blob/master/show-notes/Emacs-Scratch-11.org][emacs-from-scratch/show-notes/Emacs-Scratch-11.org at master · daviwil/emacs-from-scratch · GitHub]]
+
+#+begin_src emacs-lisp
+
+(use-package auto-package-update
+  :custom
+  (auto-package-update-interval 7)
+  (auto-package-update-prompt-before-update t)
+  (auto-package-update-hide-results t)
+  :config
+  (auto-package-update-maybe)
+  (auto-package-update-at-time "09:00"))
 
 #+end_src
 
@@ -207,32 +229,44 @@ After that, we load custom settings (for now).
 
 #+begin_src emacs-lisp
 
-;; Make ESC quit prompts
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+  ;; Make ESC quit prompts
+  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-(use-package evil
-  :init
-  (setq evil-want-integration t)
-  (setq evil-want-keybinding nil)
-  (setq evil-want-C-u-scroll t)
-  (setq evil-want-C-i-jump nil)
-  :config
-  (evil-mode 1)
-  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
+  (use-package general
+    :after evil
+    :config
+    (general-create-definer efs/leader-keys
+      :keymaps '(normal insert visual emacs)
+      :prefix "SPC"
+      :global-prefix "C-SPC")
+    (efs/leader-keys
+     "t" '(:ignore t :which-key "toggles")
+     "tt" '(consult-theme :which-key "choose theme")
+     "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
 
-  ;; Use visual line motions even outside of visual-line-mode buffers
-  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
-  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
+  (use-package evil
+    :init
+    (setq evil-want-integration t)
+    (setq evil-want-keybinding nil)
+    (setq evil-want-C-u-scroll t)
+    (setq evil-want-C-i-jump nil)
+    :config
+    (evil-mode 1)
+    (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+    (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
 
-  (evil-set-initial-state 'messages-buffer-mode 'normal)
-  (evil-set-initial-state 'dashboard-mode 'normal))
+    ;; Use visual line motions even outside of visual-line-mode buffers
+    (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+    (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
 
-(use-package evil-collection
-  :after evil
-  :config
-  (evil-collection-init))
-  
+    (evil-set-initial-state 'messages-buffer-mode 'normal)
+    (evil-set-initial-state 'dashboard-mode 'normal))
+
+  (use-package evil-collection
+    :after evil
+    :config
+    (evil-collection-init))
+
 #+end_src
 
 * Minibuffer
@@ -337,11 +371,12 @@ After that, we load custom settings (for now).
 #+end_src
 
 * Orgmode
+
 ** Ricing Org mode
 #+begin_src emacs-lisp
 
-
   (use-package org
+    (message "Org Mode Loaded!")
     :custom
     (org-startup-indented t)
     (org-hide-emphasis-markers t)
@@ -427,22 +462,33 @@ After that, we load custom settings (for now).
      ("C-c w g" . consult-grep)))
 
 #+end_src
+
 ** Auto-tangle Configuration Files
 This part of the configuration is borrowed from System Crafters and explained in 2 places:
 - This video : [[https://youtu.be/kkqVTDbfYp4?list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&t=1437][Emacs From Scratch #7 - Configure Everything with Org Babel - YouTube]]
 - And this article: [[https://systemcrafters.net/emacs-from-scratch/configure-everything-with-org-babel/#tips][Configure Everything with Org Babel - System Crafters]]
 
+  # #+begin_src emacs-lisp
+
+  #   ;; Automatically tangle our Emacs.org config file when we save it
+  #   (defun efs/org-babel-tangle-config ()
+  #     (when (string-equal (buffer-file-name)
+  #                         (expand-file-name "~/.dotfiles/.emacs.d/emacs.org"))
+  #       ;; Dynamic scoping to the rescue
+  #       (let ((org-confirm-babel-evaluate nil))
+  #         (org-babel-tangle))))
+
+  #   (add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
+
+  # #+end_src
+
+  EFS config didn't work for me, so I rely on org-auto-tangle for my needs.
+  
   #+begin_src emacs-lisp
 
-    ;; Automatically tangle our Emacs.org config file when we save it
-    (defun efs/org-babel-tangle-config ()
-      (when (string-equal (buffer-file-name)
-                          (expand-file-name "~/.dotfiles/.emacs.d/emacs.org"))
-        ;; Dynamic scoping to the rescue
-        (let ((org-confirm-babel-evaluate nil))
-          (org-babel-tangle))))
-
-    (add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
+    (use-package org-auto-tangle
+      :defer t
+      :hook (org-mode . org-auto-tangle-mode))
 
   #+end_src
 
@@ -666,11 +712,12 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 #+begin_src emacs-lisp
 
-  (require 'org-tempo)
+  (with-eval-after-load 'org
+    (require 'org-tempo)
 
-  (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
-  (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-  (add-to-list 'org-structure-template-alist '("py" . "src python"))
+    (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+    (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+    (add-to-list 'org-structure-template-alist '("py" . "src python")))
 
 #+end_src
 
@@ -1011,10 +1058,11 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 #+begin_src emacs-lisp
 
-;; Use GraphViz for flow diagrams
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((dot . t))) ; this line activates dot
+  ;; Use GraphViz for flow diagrams
+  (with-eval-after-load 'org
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '((dot . t)))) ; this line activates dot
 
 #+end_src
 
@@ -1030,7 +1078,12 @@ This part of the configuration is borrowed from System Crafters and explained in
     :bind
     (("C-c a" . org-agenda)))
 
-  ;; FILE MANAGEMENT
+#+end_src
+
+* Dired
+The following settings offer a few options, notably better sorting (placing directories first) and less destructive file deletions options. Based on EFS configuration, dired is also evilified and a few more options are now offered for filtering with the help of dired-x.
+
+#+begin_src emacs-lisp
 
   (use-package dired
     :ensure

@@ -26,6 +26,15 @@
   (package-native-compile t)
   (warning-minimum-level :emergency))
 
+(use-package auto-package-update
+  :custom
+  (auto-package-update-interval 7)
+  (auto-package-update-prompt-before-update t)
+  (auto-package-update-hide-results t)
+  :config
+  (auto-package-update-maybe)
+  (auto-package-update-at-time "09:00"))
+
 ;; Load EWS functions
 
 (load-file (concat (file-name-as-directory user-emacs-directory) "ews.el"))
@@ -169,6 +178,18 @@
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
+(use-package general
+  :after evil
+  :config
+  (general-create-definer efs/leader-keys
+    :keymaps '(normal insert visual emacs)
+    :prefix "SPC"
+    :global-prefix "C-SPC")
+  (efs/leader-keys
+   "t" '(:ignore t :which-key "toggles")
+   "tt" '(consult-theme :which-key "choose theme")
+   "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
+
 (use-package evil
   :init
   (setq evil-want-integration t)
@@ -276,6 +297,7 @@
    ("C-;"       . flyspell-auto-correct-previous-word)))
 
 (use-package org
+  (message "Org Mode Loaded!")
   :custom
   (org-startup-indented t)
   (org-hide-emphasis-markers t)
@@ -360,15 +382,9 @@
    ("M-g o" . consult-outline)               ;; Alternative: consult-org-heading
    ("C-c w g" . consult-grep)))
 
-;; Automatically tangle our Emacs.org config file when we save it
-(defun efs/org-babel-tangle-config ()
-  (when (string-equal (buffer-file-name)
-                      (expand-file-name "~/.dotfiles/.emacs.d/emacs.org"))
-    ;; Dynamic scoping to the rescue
-    (let ((org-confirm-babel-evaluate nil))
-      (org-babel-tangle))))
-
-(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
+(use-package org-auto-tangle
+  :defer t
+  :hook (org-mode . org-auto-tangle-mode))
 
 ;; Doc-View
 
@@ -511,11 +527,12 @@
     (file+headline "~/gtd/tickler.org" "Tickler")
     "* TODO %i%? \n %U")))
 
-(require 'org-tempo)
+(with-eval-after-load 'org
+  (require 'org-tempo)
 
-(add-to-list 'org-structure-template-alist '("sh" . "src shell"))
-(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-(add-to-list 'org-structure-template-alist '("py" . "src python"))
+  (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+  (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+  (add-to-list 'org-structure-template-alist '("py" . "src python")))
 
 (setq org-agenda-files '("~/gtd/inbox.org"
                            "~/gtd/gtd.org"
@@ -767,9 +784,10 @@
   :demand t)
 
 ;; Use GraphViz for flow diagrams
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((dot . t))) ; this line activates dot
+(with-eval-after-load 'org
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((dot . t)))) ; this line activates dot
 
 ;; Bind org agenda command
 
@@ -778,8 +796,6 @@
   (org-log-into-drawer t)
   :bind
   (("C-c a" . org-agenda)))
-
-;; FILE MANAGEMENT
 
 (use-package dired
   :ensure
@@ -798,13 +814,18 @@
     "h" 'dired-up-directory
     "l" 'dired-find-file))
 
+(autoload 'dired-omit-mode "dired-x")
+
+(use-package all-the-icons-dired
+  :hook (dired-mode . all-the-icons-dired-mode))
+
 ;; Hide hidden files
 
 (use-package dired-hide-dotfiles
   :hook
   (dired-mode . dired-hide-dotfiles-mode)
-  :bind
-  (:map dired-mode-map ("." . dired-hide-dotfiles-mode)))
+  :config
+  (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
 
 ;; Backup files
 
