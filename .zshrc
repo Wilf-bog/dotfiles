@@ -15,3 +15,18 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Set up fzf key bindings and fuzzy completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+ 
+# Aliases
+
+# Terminal
+alias c="clear"
+alias x="exit"
+alias e="code -n ~/ ~/.zshrc ~/.aliases ~/.colors ~/.hooks"
+alias r="source ~/.zshrc"
+
+# APT
+alias ai="sudo apt install"
+alias au="sudo apt update"
+alias aug="sudo apt upgrade"
+alias alu="sudo apt list --upgradable"
+alias adu="sudo apt dist-upgrade"

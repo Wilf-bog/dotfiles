@@ -639,6 +639,14 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 #+end_src
 
+* EWW
+
+#+begin_src emacs-lisp
+
+(setq browse-url-browser-function 'eww-browse-url)
+  
+#+end_src
+
 * Multimédia
 
 #+begin_src emacs-lisp
@@ -671,6 +679,16 @@ This part of the configuration is borrowed from System Crafters and explained in
 
   (use-package somafm
     :ensure t)
+
+#+end_src
+
+* Telega (Telegram)
+
+#+begin_src emacs-lisp
+
+  (use-package telega)
+
+  (setq telega-server-libs-prefix "/home/frdrcv/bin/td/build/tdtl")
 
 #+end_src
 

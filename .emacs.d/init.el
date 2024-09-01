@@ -470,6 +470,8 @@
   :bind
   (("C-c w w" . org-web-tools-insert-link-for-url)))
 
+(setq browse-url-browser-function 'eww-browse-url)
+
 ;; Emacs Multimedia System
 
 (use-package emms
@@ -498,6 +500,10 @@
 
 (use-package somafm
   :ensure t)
+
+(use-package telega)
+
+(setq telega-server-libs-prefix "/home/frdrcv/bin/td/build/tdtl")
 
 ;; Fleeting notes
 
