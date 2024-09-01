@@ -160,7 +160,7 @@
 		    :height 120
 		    :weight 'semilight)
 ;; (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Motion Duo")
-(set-face-attribute 'variable-pitch nil :family "Open Serif Book")
+(set-face-attribute 'variable-pitch nil :family "Noto Serif")
 (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy")
 
 ;; Window management
