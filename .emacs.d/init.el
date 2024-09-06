@@ -308,28 +308,33 @@
   (org-pretty-entities t)
   (org-use-sub-superscripts "{}")
   (org-id-link-to-org-use-id t))
+
+;; Make navigation easier between org titles
+
+(add-hook 'org-tab-first-hook 'org-end-of-line)
+
 ;; Org tags
 
 (setq org-tag-alist
       '(;; Places
-        ("@home" . ?H)
-        ("@work" . ?W)
+	("@home" . ?H)
+	("@work" . ?W)
 
-        ;; Devices
-        ("@computer" . ?C)
-        ("@phone" . ?P)
+	;; Devices
+	("@computer" . ?C)
+	("@phone" . ?P)
 
-        ;; Activities
-        ("@ménage" . ?m)
-        ("@lecture" . ?l)
-        ("@planning" . ?n)
-        ("@writing" . ?w)
-        ("@creative" . ?c)
-        ("@écouter" . ?é)
-        ("@visionner" . ?v)
-        ("@email" . ?e)
-        ("@calls" . ?a)
-        ("@errands" . ?r)))
+	;; Activities
+	("@ménage" . ?m)
+	("@lecture" . ?l)
+	("@planning" . ?n)
+	("@writing" . ?w)
+	("@creative" . ?c)
+	("@écouter" . ?é)
+	("@visionner" . ?v)
+	("@email" . ?e)
+	("@calls" . ?a)
+	("@errands" . ?r)))
 
 ;; More TODO states
 (setq org-todo-keywords
@@ -558,6 +563,7 @@
   :defer t
   :custom
   (denote-sort-keywords t)
+  (denote-rename-buffer-mode 1)
   :hook
   (dired-mode . denote-dired-mode)
   :custom-face
