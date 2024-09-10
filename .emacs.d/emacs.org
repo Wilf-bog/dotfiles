@@ -403,43 +403,22 @@ To get notified about incoming updates so you don't have to look for them with t
 	  ("@computer" . ?C)
 	  ("@phone" . ?P)
 
-<<<<<<< Updated upstream
 	  ;; Activities
-	  ("@mÃ©nage" . ?m)
+	  ("@ménage" . ?m)
 	  ("@lecture" . ?l)
 	  ("@planning" . ?n)
 	  ("@writing" . ?w)
 	  ("@creative" . ?c)
-	  ("@Ã©couter" . ?Ã©)
+	  ("@écouter" . ?é)
 	  ("@visionner" . ?v)
 	  ("@email" . ?e)
 	  ("@calls" . ?a)
 	  ("@errands" . ?r)))
 
-  ;; More TODO states
-  (setq org-todo-keywords
-<<<<<<< HEAD
-        '((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w)" "|" "DONE(d@/@)" "DELEGATED(ï¿½@/@)" "CANCELED(c@/@)")))
-=======
-	'((sequence "TODO" "NEXT" "WAITING" "|" "DONE" "DELEGATED" "CANCELED")))
->>>>>>> 14b46ce5326ac9262f66b78d6fb23a4a5e5d25ec
-=======
-          ;; Activities
-          ("@ménage" . ?m)
-          ("@lecture" . ?l)
-          ("@planning" . ?n)
-          ("@writing" . ?w)
-          ("@creative" . ?c)
-          ("@écouter" . ?é)
-          ("@visionner" . ?v)
-          ("@email" . ?e)
-          ("@calls" . ?a)
-          ("@errands" . ?r)))
 
   ;; More TODO states
   (setq org-todo-keywords
         '((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w)" "|" "DONE(d@/@)" "DELEGATED(é@/@)" "CANCELED(c@/@)")))
->>>>>>> Stashed changes
 
   ;; Show hidden emphasis markers
 

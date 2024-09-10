@@ -336,6 +336,7 @@
 	("@calls" . ?a)
 	("@errands" . ?r)))
 
+
 ;; More TODO states
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w)" "|" "DONE(d@/@)" "DELEGATED(é@/@)" "CANCELED(c@/@)")))
