@@ -333,7 +333,7 @@
 
 ;; More TODO states
 (setq org-todo-keywords
-      '((sequence "TODO" "NEXT" "WAITING" "|" "DONE" "DELEGATED" "CANCELED")))
+      '((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w)" "|" "DONE(d@/@)" "DELEGATED(é@/@)" "CANCELED(c@/@)")))
 
 ;; Show hidden emphasis markers
 
