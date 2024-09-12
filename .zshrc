@@ -15,7 +15,10 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Set up fzf key bindings and fuzzy completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
- 
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # Aliases
 
 # Terminal

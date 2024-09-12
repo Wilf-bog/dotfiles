@@ -346,9 +346,10 @@
 	("@calls" . ?a)
 	("@errands" . ?r)))
 
+
 ;; More TODO states
 (setq org-todo-keywords
-      '((sequence "TODO" "NEXT" "WAITING" "|" "DONE" "DELEGATED" "CANCELED")))
+      '((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w)" "|" "DONE(d@/@)" "DELEGATED(é@/@)" "CANCELED(c@/@)")))
 
 ;; Show hidden emphasis markers
 
@@ -557,10 +558,12 @@
 
 (setq org-agenda-files '("~/gtd/inbox.org"
                            "~/gtd/gtd.org"
+                           "~/gtd/projets.org"
                            "~/gtd/tickler.org"))
 
   (setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
                              ("~/gtd/someday.org" :level . 1)
+                             ("~/gtd/projets.org" :maxlevel . 5)
                              ("~/gtd/tickler.org" :maxlevel . 2)))
 
 ;; Inbox location
