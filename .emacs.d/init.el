@@ -133,29 +133,29 @@
 
 ;; Cappucin
 
-(use-package catppuccin
-  :ensure t
-  :defer t)
+					;(use-package catppuccin
+					;:ensure t
+					;:defer t)
 
 ;; Doom-themes
 
-(use-package doom-themes
-  :ensure t
-  :config
-  ;; Global settings (defaults)
-  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-	doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  ;; (load-theme 'doom-one t)
-
-  ;; Enable flashing mode-line on errors
-  (doom-themes-visual-bell-config)
-  ;; Enable custom neotree theme (all-the-icons must be installed!)
-  (doom-themes-neotree-config)
-  ;; or for treemacs users
-  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
-  (doom-themes-treemacs-config)
-  ;; Corrects (and improves) org-mode's native fontification.
-  (doom-themes-org-config))
+					;(use-package doom-themes
+					;:ensure t
+					;:config
+    ;;; Global settings (defaults)
+					;(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+					;doom-themes-enable-italic t) ; if nil, italics is universally disabled
+    ;;; (load-theme 'doom-one t)
+					;
+    ;;; Enable flashing mode-line on errors
+					;(doom-themes-visual-bell-config)
+    ;;; Enable custom neotree theme (all-the-icons must be installed!)
+					;(doom-themes-neotree-config)
+    ;;; or for treemacs users
+					;(setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+					;(doom-themes-treemacs-config)
+    ;;; Corrects (and improves) org-mode's native fontification.
+					;(doom-themes-org-config))
 
 ;; Mixed-pitch
 
@@ -168,8 +168,10 @@
 		    :family "Iosevka Comfy Motion"
 		    :height 120
 		    :weight 'semilight)
-;; (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Motion Duo")
-(set-face-attribute 'variable-pitch nil :family "Noto Serif")
+(when (eq system-type 'windows-nt)
+  (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Motion Duo"))
+(when (eq system-type 'gnu/linux)
+  (set-face-attribute 'variable-pitch nil :family "Noto Serif"))
 (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy")
 
 ;; Window management
@@ -211,17 +213,17 @@
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-(use-package general
-  :after evil
-  :config
-  (general-create-definer efs/leader-keys
-    :keymaps '(normal insert visual emacs)
-    :prefix "SPC"
-    :global-prefix "C-SPC")
-  (efs/leader-keys
-   "t" '(:ignore t :which-key "toggles")
-   "tt" '(consult-theme :which-key "choose theme")
-   "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
+;(use-package general
+  ;:after evil
+  ;:config
+  ;(general-create-definer efs/leader-keys
+    ;:keymaps '(normal insert visual emacs)
+    ;:prefix "SPC"
+    ;:global-prefix "C-SPC")
+  ;(efs/leader-keys
+   ;"t" '(:ignore t :which-key "toggles")
+   ;"tt" '(consult-theme :which-key "choose theme")
+   ;"fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
 
 (use-package evil
   :init
@@ -828,33 +830,34 @@
   (org-export-with-smart-quotes t)
   (org-export-date-timestamp-format "%e %B %Y"))
 
-(use-package pdf-tools
-   :config
-       (pdf-tools-install)
-       (setq-default pdf-view-display-size 'fit-page)
-   :bind (:map pdf-view-mode-map
-         ("\\" . hydra-pdftools/body)
-         ("<s-spc>" .  pdf-view-scroll-down-or-next-page)
-         ("g"  . pdf-view-first-page)
-         ("G"  . pdf-view-last-page)
-         ("l"  . image-forward-hscroll)
-         ("h"  . image-backward-hscroll)
-         ("j"  . pdf-view-next-page)
-         ("k"  . pdf-view-previous-page)
-         ("e"  . pdf-view-goto-page)
-         ("u"  . pdf-view-revert-buffer)
-         ("al" . pdf-annot-list-annotations)
-         ("ad" . pdf-annot-delete)
-         ("aa" . pdf-annot-attachment-dired)
-         ("am" . pdf-annot-add-markup-annotation)
-         ("at" . pdf-annot-add-text-annotation)
-         ("y"  . pdf-view-kill-ring-save)
-         ("i"  . pdf-misc-display-metadata)
-         ("s"  . pdf-occur)
-         ("b"  . pdf-view-set-slice-from-bounding-box)
-         ("r"  . pdf-view-reset-slice)))
+(when (eq system-type 'gnu/linux)	;For now, pdf-tools can't be installed on Windows
+  (use-package pdf-tools
+    :config
+    (pdf-tools-install)
+    (setq-default pdf-view-display-size 'fit-page)
+    :bind (:map pdf-view-mode-map
+		("\\" . hydra-pdftools/body)
+		("<s-spc>" .  pdf-view-scroll-down-or-next-page)
+		("g"  . pdf-view-first-page)
+		("G"  . pdf-view-last-page)
+		("l"  . image-forward-hscroll)
+		("h"  . image-backward-hscroll)
+		("j"  . pdf-view-next-page)
+		("k"  . pdf-view-previous-page)
+		("e"  . pdf-view-goto-page)
+		("u"  . pdf-view-revert-buffer)
+		("al" . pdf-annot-list-annotations)
+		("ad" . pdf-annot-delete)
+		("aa" . pdf-annot-attachment-dired)
+		("am" . pdf-annot-add-markup-annotation)
+		("at" . pdf-annot-add-text-annotation)
+		("y"  . pdf-view-kill-ring-save)
+		("i"  . pdf-misc-display-metadata)
+		("s"  . pdf-occur)
+		("b"  . pdf-view-set-slice-from-bounding-box)
+		("r"  . pdf-view-reset-slice)))
 
-(pdf-tools-install)
+  (pdf-tools-install))
 
 ;; LaTeX PDF Export settings
 
