@@ -30,6 +30,19 @@ After that, we load custom settings (for now).
 
 #+end_src
 
+* Multiple sessions management
+
+#+begin_src emacs-lisp
+
+  ;; Revert buffers when the underlying file has changed
+  (global-auto-revert-mode 1)
+
+  ;; Revert Dired and other buffers
+  (setq global-auto-revert-non-file-buffers t)
+
+#+end_src
+
+
 * Package management
 
 #+begin_src emacs-lisp
@@ -312,62 +325,66 @@ To get notified about incoming updates so you don't have to look for them with t
 
 #+begin_src emacs-lisp
 
-;; Enable vertico
+  ;; Enable vertico
 
-(use-package vertico
-  :init
-  (vertico-mode)
-  :bind (("C-s" . consult-line)
-	 :map vertico-map
-         ("C-j" . vertico-next)
-         ("C-k" . vertico-previous)
-         ("C-f" . vertico-exit)
-         :map minibuffer-local-map
-         ("M-h" . backward-kill-word))
-  :custom
-  (vertico-cycle t)
-  (vertico-sort-function 'vertico-sort-history-alpha))
+  (use-package vertico
+    :init
+    (vertico-mode)
+    :bind (("C-s" . consult-line)
+	   :map vertico-map
+	   ("C-j" . vertico-next)
+	   ("C-k" . vertico-previous)
+	   ("C-f" . vertico-exit)
+	   :map minibuffer-local-map
+	   ("M-h" . backward-kill-word))
+    :custom
+    (vertico-cycle t)
+    (vertico-sort-function 'vertico-sort-history-alpha))
 
-;; Persist history over Emacs restarts.
+  ;; Persist history over Emacs restarts.
 
-(use-package savehist
-  :init
-  (savehist-mode))
+  (use-package savehist
+    :init
+    (savehist-mode 1))
 
-;; Search for partial matches in any order
+  ;; Save last place in file after closing it
 
-(use-package orderless
-  :custom
-  (completion-styles '(orderless basic))
-  (completion-category-defaults nil)
-  (completion-category-overrides
-   '((file (styles partial-completion)))))
+  (add-hook 'org-tab-first-hook 'org-end-of-line)
 
-;; Enable richer annotations using the Marginalia package
+  ;; Search for partial matches in any order
 
-(use-package marginalia
-  :init
-  (marginalia-mode))
+  (use-package orderless
+    :custom
+    (completion-styles '(orderless basic))
+    (completion-category-defaults nil)
+    (completion-category-overrides
+     '((file (styles partial-completion)))))
 
-;; Improve keyboard shortcut discoverability
+  ;; Enable richer annotations using the Marginalia package
 
-(use-package which-key
-  :config
-  (which-key-mode)
-  :custom
-  (which-key-max-description-length 40)
-  (which-key-lighter nil)
-  (which-key-sort-order 'which-key-description-order))
+  (use-package marginalia
+    :init
+    (marginalia-mode))
 
-;; Improved help buffers
+  ;; Improve keyboard shortcut discoverability
 
-(use-package helpful
-  :bind
-  (("C-h f" . helpful-function)
-   ("C-h x" . helpful-command)
-   ("C-h k" . helpful-key)
-   ("C-h v" . helpful-variable)))
-  
+  (use-package which-key
+    :config
+    (which-key-mode)
+    :custom
+    (which-key-max-description-length 40)
+    (which-key-lighter nil)
+    (which-key-sort-order 'which-key-description-order))
+
+  ;; Improved help buffers
+
+  (use-package helpful
+    :bind
+    (("C-h f" . helpful-function)
+     ("C-h x" . helpful-command)
+     ("C-h k" . helpful-key)
+     ("C-h v" . helpful-variable)))
+
 #+end_src
 
 * Text mode

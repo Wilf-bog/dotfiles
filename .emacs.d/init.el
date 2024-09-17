@@ -10,6 +10,12 @@
 
 (keymap-global-set "C-c w v" 'customize-variable)
 
+;; Revert buffers when the underlying file has changed
+(global-auto-revert-mode 1)
+
+;; Revert Dired and other buffers
+(setq global-auto-revert-non-file-buffers t)
+
 ;; Set package archives
 
 (use-package package
@@ -253,11 +259,11 @@
   (vertico-mode)
   :bind (("C-s" . consult-line)
 	 :map vertico-map
-         ("C-j" . vertico-next)
-         ("C-k" . vertico-previous)
-         ("C-f" . vertico-exit)
-         :map minibuffer-local-map
-         ("M-h" . backward-kill-word))
+	 ("C-j" . vertico-next)
+	 ("C-k" . vertico-previous)
+	 ("C-f" . vertico-exit)
+	 :map minibuffer-local-map
+	 ("M-h" . backward-kill-word))
   :custom
   (vertico-cycle t)
   (vertico-sort-function 'vertico-sort-history-alpha))
@@ -266,7 +272,11 @@
 
 (use-package savehist
   :init
-  (savehist-mode))
+  (savehist-mode 1))
+
+;; Save last place in file after closing it
+
+(add-hook 'org-tab-first-hook 'org-end-of-line)
 
 ;; Search for partial matches in any order
 
