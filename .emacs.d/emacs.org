@@ -709,7 +709,7 @@ This part of the configuration is borrowed from System Crafters and explained in
   
 #+end_src
 
-* MultimÃ©dia
+* Multimédia
 
 #+begin_src emacs-lisp
 
