@@ -124,8 +124,8 @@
   (modus-themes-mixed-fonts t)
   (modus-themes-to-toggle
    '(modus-operandi-tinted modus-vivendi-tinted))
-;  :init
-;  (load-theme 'modus-operandi-tinted :no-confirm)
+  :init
+  (load-theme 'modus-operandi-tinted :no-confirm)
   :bind
   (("C-c w t t" . modus-themes-toggle)
    ("C-c w t m" . modus-themes-select)
@@ -134,7 +134,8 @@
 ;; Cappucin
 
 (use-package catppuccin
-  :init (load-theme 'catppuccin nil))
+  :ensure t
+  :defer t)
 
 ;; Doom-themes
 
@@ -144,7 +145,7 @@
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
 	doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-one t)
+  ;; (load-theme 'doom-one t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
@@ -425,7 +426,6 @@
    ("C-c w g" . consult-grep)))
 
 (use-package org-auto-tangle
-  :defer t
   :hook (org-mode . org-auto-tangle-mode))
 
 ;; Doc-View
@@ -473,7 +473,6 @@
 ;; Citar to access bibliographies
 
 (use-package citar
-  :defer t
   :custom
   (citar-bibliography ews-bibtex-files)
   :bind
@@ -681,7 +680,6 @@
 ;; Denote
 
 (use-package denote
-  :defer t
   :custom
   (denote-sort-keywords t)
   (denote-rename-buffer-mode 1)
@@ -831,7 +829,6 @@
   (org-export-date-timestamp-format "%e %B %Y"))
 
 (use-package pdf-tools
-   :defer t
    :config
        (pdf-tools-install)
        (setq-default pdf-view-display-size 'fit-page)
