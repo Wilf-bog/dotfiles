@@ -1142,32 +1142,34 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+begin_src emacs-lisp
 
-     :config
-         (pdf-tools-install)
-         (setq-default pdf-view-display-size 'fit-page)
-     :bind (:map pdf-view-mode-map
-           ("\\" . hydra-pdftools/body)
-           ("<s-spc>" .  pdf-view-scroll-down-or-next-page)
-           ("g"  . pdf-view-first-page)
-           ("G"  . pdf-view-last-page)
-           ("l"  . image-forward-hscroll)
-           ("h"  . image-backward-hscroll)
-           ("j"  . pdf-view-next-page)
-           ("k"  . pdf-view-previous-page)
-           ("e"  . pdf-view-goto-page)
-           ("u"  . pdf-view-revert-buffer)
-           ("al" . pdf-annot-list-annotations)
-           ("ad" . pdf-annot-delete)
-           ("aa" . pdf-annot-attachment-dired)
-           ("am" . pdf-annot-add-markup-annotation)
-           ("at" . pdf-annot-add-text-annotation)
-           ("y"  . pdf-view-kill-ring-save)
-           ("i"  . pdf-misc-display-metadata)
-           ("s"  . pdf-occur)
-           ("b"  . pdf-view-set-slice-from-bounding-box)
-           ("r"  . pdf-view-reset-slice)))
+  (when (eq system-type 'gnu/linux)	;For now, pdf-tools can't be installed on Windows
+    (use-package pdf-tools
+      :config
+      (pdf-tools-install)
+      (setq-default pdf-view-display-size 'fit-page)
+      :bind (:map pdf-view-mode-map
+		  ("\\" . hydra-pdftools/body)
+		  ("<s-spc>" .  pdf-view-scroll-down-or-next-page)
+		  ("g"  . pdf-view-first-page)
+		  ("G"  . pdf-view-last-page)
+		  ("l"  . image-forward-hscroll)
+		  ("h"  . image-backward-hscroll)
+		  ("j"  . pdf-view-next-page)
+		  ("k"  . pdf-view-previous-page)
+		  ("e"  . pdf-view-goto-page)
+		  ("u"  . pdf-view-revert-buffer)
+		  ("al" . pdf-annot-list-annotations)
+		  ("ad" . pdf-annot-delete)
+		  ("aa" . pdf-annot-attachment-dired)
+		  ("am" . pdf-annot-add-markup-annotation)
+		  ("at" . pdf-annot-add-text-annotation)
+		  ("y"  . pdf-view-kill-ring-save)
+		  ("i"  . pdf-misc-display-metadata)
+		  ("s"  . pdf-occur)
+		  ("b"  . pdf-view-set-slice-from-bounding-box)
+		  ("r"  . pdf-view-reset-slice)))
 
-  (pdf-tools-install)
+    (pdf-tools-install))
 
 #+end_src
 
