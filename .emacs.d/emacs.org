@@ -288,17 +288,17 @@ Based on Prot's config.
   ;; Make ESC quit prompts
   (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-  (use-package general
-    :after evil
-    :config
-    (general-create-definer efs/leader-keys
-      :keymaps '(normal insert visual emacs)
-      :prefix "SPC"
-      :global-prefix "C-SPC")
-    (efs/leader-keys
-     "t" '(:ignore t :which-key "toggles")
-     "tt" '(consult-theme :which-key "choose theme")
-     "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
+  ;(use-package general
+    ;:after evil
+    ;:config
+    ;(general-create-definer efs/leader-keys
+      ;:keymaps '(normal insert visual emacs)
+      ;:prefix "SPC"
+      ;:global-prefix "C-SPC")
+    ;(efs/leader-keys
+     ;"t" '(:ignore t :which-key "toggles")
+     ;"tt" '(consult-theme :which-key "choose theme")
+     ;"fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
 
   (use-package evil
     :init
