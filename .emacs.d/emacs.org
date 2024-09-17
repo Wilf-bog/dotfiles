@@ -1142,7 +1142,6 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+begin_src emacs-lisp
 
-  (use-package pdf-tools
      :config
          (pdf-tools-install)
          (setq-default pdf-view-display-size 'fit-page)
