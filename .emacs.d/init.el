@@ -79,6 +79,7 @@
    "git"))
 
 ;;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
+(add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
 
 ;; Keyboard-centric user interface removing tool, menu and scroll bars
 
