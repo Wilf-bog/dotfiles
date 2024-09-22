@@ -79,6 +79,7 @@
    "git"))
 
 ;;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
+(add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
 
 ;; Keyboard-centric user interface removing tool, menu and scroll bars
 
@@ -183,6 +184,10 @@
 (use-package balanced-windows
   :config
   (balanced-windows-mode))
+
+;; Switch quickly between windows
+
+(global-set-key (kbd "M-o") 'other-window)
 
 ;; Read the pulsar manual: <https://protesilaos.com/emacs/pulsar>.
 (use-package pulsar
@@ -627,6 +632,12 @@
 (use-package telega)
 
 (setq telega-server-libs-prefix "/home/frdrcv/bin/td/build/tdtl")
+
+(use-package mastodon
+  :ensure t
+  :config
+  (setq mastodon-instance-url "https://eldritch.cafe"
+	mastodon-active-user "bogdanoviste"))
 
 ;; Fleeting notes
 
