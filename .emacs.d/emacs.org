@@ -907,6 +907,10 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
       (file+headline "~/gtd/tickler.org" "Tickler")
       "* TODO %i%? \n %U")))
 
+  ;; Start writing immediately after triggering org-capture
+
+  (add-hook 'org-capture-mode-hook 'evil-insert-state)
+
 #+end_src
 
 * Structure templates

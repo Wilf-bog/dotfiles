@@ -669,6 +669,10 @@
     (file+headline "~/gtd/tickler.org" "Tickler")
     "* TODO %i%? \n %U")))
 
+;; Start writing immediately after triggering org-capture
+
+(add-hook 'org-capture-mode-hook 'evil-insert-state)
+
 (with-eval-after-load 'org
   (require 'org-tempo)
 
