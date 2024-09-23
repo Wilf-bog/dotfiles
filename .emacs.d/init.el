@@ -11,10 +11,18 @@
 (keymap-global-set "C-c w v" 'customize-variable)
 
 ;; Revert buffers when the underlying file has changed
+
 (global-auto-revert-mode 1)
 
 ;; Revert Dired and other buffers
+
 (setq global-auto-revert-non-file-buffers t)
+
+;; Auto-save mode for org files
+
+(auto-save-visited-mode +1)
+(setq auto-save-visited-predicate
+      (lambda () (eq major-mode 'org-mode)))
 
 ;; Set package archives
 
