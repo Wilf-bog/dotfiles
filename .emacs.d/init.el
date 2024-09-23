@@ -187,6 +187,10 @@
   :config
   (balanced-windows-mode))
 
+;; Switch quickly between windows
+
+(global-set-key (kbd "M-o") 'other-window)
+
 ;; Read the pulsar manual: <https://protesilaos.com/emacs/pulsar>.
 (use-package pulsar
   :ensure t
@@ -630,6 +634,12 @@
 (use-package telega)
 
 (setq telega-server-libs-prefix "/home/frdrcv/bin/td/build/tdtl")
+
+(use-package mastodon
+  :ensure t
+  :config
+  (setq mastodon-instance-url "https://eldritch.cafe"
+	mastodon-active-user "bogdanoviste"))
 
 ;; Fleeting notes
 

@@ -248,6 +248,10 @@ To get notified about incoming updates so you don't have to look for them with t
     :config
     (balanced-windows-mode))
 
+  ;; Switch quickly between windows
+
+  (global-set-key (kbd "M-o") 'other-window)
+
 #+end_src
 
 ** Pulsar
@@ -847,13 +851,27 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+end_src
 
-* Telega (Telegram)
+* Social media and chat
+
+** Telegram
 
 #+begin_src emacs-lisp
 
   (use-package telega)
 
   (setq telega-server-libs-prefix "/home/frdrcv/bin/td/build/tdtl")
+
+  #+end_src
+
+** Mastodon
+
+#+begin_src emacs-lisp
+
+  (use-package mastodon
+    :ensure t
+    :config
+    (setq mastodon-instance-url "https://eldritch.cafe"
+	  mastodon-active-user "bogdanoviste"))
 
 #+end_src
 
