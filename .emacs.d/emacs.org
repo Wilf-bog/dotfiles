@@ -744,6 +744,26 @@ This part of the configuration is borrowed from System Crafters and explained in
     (rmh-elfeed-org-files
      (list (concat (file-name-as-directory (getenv "HOME")) ".emacs.d/elfeed/elfeed.org"))))
 
+  ;; Allow better synchronization
+  ;; See http://babbagefiles.blogspot.com/2017/03/take-elfeed-everywhere-mobile-rss.html
+
+  ;;functions to support syncing .elfeed between machines
+  ;;makes sure elfeed reads index from disk before launching
+  (defun bjm/elfeed-load-db-and-open ()
+    "Wrapper to load the elfeed db from disk before opening"
+    (interactive)
+    (elfeed-db-load)
+    (elfeed)
+    (elfeed-search-update--force)
+    (elfeed-update))
+
+  ;;write to disk when quiting
+  (defun bjm/elfeed-save-db-and-bury ()
+    "Wrapper to save the elfeed db to disk before burying buffer"
+    (interactive)
+    (elfeed-db-save)
+    (quit-window))
+
 #+end_src
 
 * Weblinks
@@ -953,6 +973,9 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
      ("t" "New task" entry
       (file+headline "~/gtd/inbox.org" "Tasks")
       "* TODO %i%? \n %U")
+     ("r" "Read article" entry
+      (file+headline "~/gtd/inbox.org" "Tasks")
+      "* %i%? \n %U")
      ("T" "Tickler" entry
       (file+headline "~/gtd/tickler.org" "Tickler")
       "* TODO %i%? \n %U")))
