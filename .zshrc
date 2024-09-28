@@ -33,3 +33,10 @@ alias au="sudo apt update"
 alias aug="sudo apt upgrade"
 alias alu="sudo apt list --upgradable"
 alias adu="sudo apt dist-upgrade"
+
+# DNF
+alias ai="sudo dnf install"
+alias au="sudo dnf update"
+
+# Vim mode
+bindkey -v
