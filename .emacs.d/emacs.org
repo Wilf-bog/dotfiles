@@ -927,9 +927,10 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+begin_src emacs-lisp
 
-  (use-package telega)
-
-  (setq telega-server-libs-prefix "/home/frdrcv/bin/td/build/tdtl")
+  (use-package telega
+    :ensure t
+    :config
+    (setq telega-use-docker t))
 
   #+end_src
 
@@ -1020,7 +1021,16 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 #+end_src
 
 * Email
+My current email workflow relies on isync in the background and mu4e on Emacs.
 
+Sources:
+- https://shom.dev/posts/20220108_setting-up-protonmail-in-emacs/
+- [[https://github.com/daviwil/emacs-from-scratch/blob/master/show-notes/Emacs-Mail-03.org][emacs-from-scratch/show-notes/Emacs-Mail-03.org at master · daviwil/emacs-from-scratch · GitHub]]
+- [[https://github.com/daviwil/emacs-from-scratch/blob/629aec3dbdffe99e2c361ffd10bd6727555a3bd3/show-notes/Emacs-Mail-01.org][emacs-from-scratch/show-notes/Emacs-Mail-01.org at 629aec3dbdffe99e2c361ffd10bd6727555a3bd3 · daviwil/emacs-from-scratch · GitHub]]
+- [[https://doubleloop.net/2019/09/06/emacs-mu4e-mbsync-and-protonmail/][emacs, mu4e, mbsync and ProtonMail - doubleloop]]
+- [[https://gist.github.com/ceblan/59064db5c68a84d15a5fff1a23808ad3][mbsync+mu4e+protonmail · GitHub]]
+- [[https://www.reddit.com/r/ProtonMail/comments/roxql7/making_protonmail_work_100_with_mbsyncmu4e/][Reddit - Dive into anything]]
+- [[https://f-santos.gitlab.io/2020-04-24-mu4e.html][Reading and sending mails from within Emacs: a tutorial for mu4e]]
 #+begin_src emacs-lisp
 
   (use-package mu4e
@@ -1061,6 +1071,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
     (mu4e t))
 
 #+end_src
+
 
 * Zettelkasten and Denote
 
