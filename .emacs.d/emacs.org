@@ -332,8 +332,9 @@ Based on Prot's config.
     (evil-set-initial-state 'dashboard-mode 'normal))
 
   (use-package evil-collection
+    :ensure t
     :after evil
-    :config
+    :init
     (evil-collection-init))
 
 #+end_src
