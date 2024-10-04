@@ -598,6 +598,16 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
 
 #+end_src
 
+** Saving PDFs annotations with Org
+#+begin_src elisp
+
+  (use-package org-noter
+  :ensure t
+  :demand t)
+
+#+end_src
+
+
 ** Auto-tangle Configuration Files
 This part of the configuration is borrowed from System Crafters and explained in 2 places:
 - This video : [[https://youtu.be/kkqVTDbfYp4?list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&t=1437][Emacs From Scratch #7 - Configure Everything with Org Babel - YouTube]]
