@@ -257,9 +257,9 @@
   (evil-set-initial-state 'dashboard-mode 'normal))
 
 (use-package evil-collection
-  :ensure t
   :after evil
-  :init
+  :ensure t
+  :config
   (evil-collection-init))
 
 ;; Enable vertico
