@@ -238,6 +238,11 @@
    ;"tt" '(consult-theme :which-key "choose theme")
    ;"fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
 
+;; Dependency for evil
+
+(use-package goto-chg
+  :ensure t)
+
 (use-package evil
   :init
   (setq evil-want-integration t)
@@ -255,6 +260,13 @@
 
   (evil-set-initial-state 'messages-buffer-mode 'normal)
   (evil-set-initial-state 'dashboard-mode 'normal))
+
+;; Dependency for evil-collection
+
+(use-package annalist
+  :ensure t
+  :config
+  (setq annalist-record nil))
 
 (use-package evil-collection
   :after evil
