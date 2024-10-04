@@ -241,7 +241,8 @@ To get notified about incoming updates so you don't have to look for them with t
   (when (eq system-type 'windows-nt)
     (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Motion Duo"))
   (when (eq system-type 'gnu/linux)
-    (set-face-attribute 'variable-pitch nil :family "Noto Serif"))
+    ;; (set-face-attribute 'variable-pitch nil :family "Noto Serif"))
+    (set-face-attribute 'variable-pitch nil :family "Atkinson Hyperlegible"))
   (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy")
 
   ;; Window management
@@ -313,6 +314,11 @@ Based on Prot's config.
      ;"tt" '(consult-theme :which-key "choose theme")
      ;"fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
 
+  ;; Dependency for evil
+
+  (use-package goto-chg
+    :ensure t)
+
   (use-package evil
     :init
     (setq evil-want-integration t)
@@ -330,6 +336,13 @@ Based on Prot's config.
 
     (evil-set-initial-state 'messages-buffer-mode 'normal)
     (evil-set-initial-state 'dashboard-mode 'normal))
+
+  ;; Dependency for evil-collection
+
+  (use-package annalist
+    :ensure t
+    :config
+    (setq annalist-record nil))
 
   (use-package evil-collection
     :after evil
