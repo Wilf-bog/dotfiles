@@ -45,3 +45,6 @@ alias au="sudo dnf update"
 
 # Vim mode
 bindkey -v
+
+# Variable for hledger
+export LEDGER_FILE=~/Documents/Finances/2024.journal
