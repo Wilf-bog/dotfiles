@@ -178,8 +178,7 @@
 		    :height 120
 		    :weight 'semilight)
 (when (eq system-type 'windows-nt)
-  (set-face-attribute 'variable-pitch nil :family "Atkinson Hyperlegible"))
-  ;; (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Motion Duo"))
+  (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Motion Duo"))
 (when (eq system-type 'gnu/linux)
   ;; (set-face-attribute 'variable-pitch nil :family "Noto Serif"))
   (set-face-attribute 'variable-pitch nil :family "Atkinson Hyperlegible"))
