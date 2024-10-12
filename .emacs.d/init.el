@@ -88,6 +88,7 @@
 
 ;;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
 (add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
+(load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
 
 ;; Keyboard-centric user interface removing tool, menu and scroll bars
 
@@ -612,6 +613,23 @@
   (interactive)
   (elfeed-db-save)
   (quit-window))
+
+(load-file (concat (file-name-as-directory user-emacs-directory) "prot-elfeed.el"))
+
+(use-package prot-elfeed
+:ensure nil
+:after elfeed
+:bind
+( :map elfeed-search-mode-map
+  ("s" . prot-elfeed-search-tag-filter)
+  ("+" . prot-elfeed-toggle-tag)
+  :map elfeed-show-mode-map
+  ("+" . prot-elfeed-toggle-tag))
+:hook
+(elfeed-search-mode . prot-elfeed-load-feeds)
+:config
+(setq prot-elfeed-tag-faces t)
+(prot-elfeed-fontify-tags))
 
 ;; Easy insertion of weblinks
 

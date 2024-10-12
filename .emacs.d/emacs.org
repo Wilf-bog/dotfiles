@@ -793,6 +793,29 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 #+end_src
 
+** Prot-elfeed
+
+#+begin_src emacs-lisp
+
+  (load-file (concat (file-name-as-directory user-emacs-directory) "prot-elfeed.el"))
+
+  (use-package prot-elfeed
+  :ensure nil
+  :after elfeed
+  :bind
+  ( :map elfeed-search-mode-map
+    ("s" . prot-elfeed-search-tag-filter)
+    ("+" . prot-elfeed-toggle-tag)
+    :map elfeed-show-mode-map
+    ("+" . prot-elfeed-toggle-tag))
+  :hook
+  (elfeed-search-mode . prot-elfeed-load-feeds)
+  :config
+  (setq prot-elfeed-tag-faces t)
+  (prot-elfeed-fontify-tags))
+
+#+end_src
+
 * Weblinks
 
 #+begin_src emacs-lisp
