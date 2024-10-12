@@ -120,6 +120,13 @@
   :init
   (spacious-padding-mode 1))
 
+;; Adding the ability to hide the modeline
+
+(use-package hide-mode-line
+  :ensure t)
+
+;; Better modeline
+
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1))
