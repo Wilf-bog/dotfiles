@@ -491,38 +491,41 @@
 
 ; ;; Projectile
 
-; (use-package projectile
-;   :diminish projectile-mode
-;   :config (projectile-mode)
-;   :custom ((projectile-completion-system 'ivy))
-;   :bind-keymap
-;   ("C-c p" . projectile-command-map)
-;   :init
-;   ;; NOTE: Set this to the folder where you keep your Git repos!
-;   (when (file-directory-p "~/Projects/Code")
-;     (setq projectile-project-search-path '("~/Projects/Code")))
-;   (setq projectile-switch-project-action #'projectile-dired))
+   ; (use-package projectile
+   ;   :diminish projectile-mode
+   ;   :config (projectile-mode)
+   ;   :custom ((projectile-completion-system 'ivy))
+   ;   :bind-keymap
+   ;   ("C-c p" . projectile-command-map)
+   ;   :init
+   ;   ;; NOTE: Set this to the folder where you keep your Git repos!
+   ;   (when (file-directory-p "~/Projects/Code")
+   ;     (setq projectile-project-search-path '("~/Projects/Code")))
+   ;   (setq projectile-switch-project-action #'projectile-dired))
 
-; (use-package counsel-projectile
-;   :after projectile
-;   :config (counsel-projectile-mode))
+   ; (use-package counsel-projectile
+   ;   :after projectile
+   ;   :config (counsel-projectile-mode))
 
-;; Magit
+   ;; Magit
 
-(use-package magit
-  :ensure t)
+   (use-package magit
+     :ensure t)
 
-;   :commands magit-status
-;   :custom
-;   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+(add-hook 'magit-process-find-password-functions
+	    'magit-process-password-auth-source)
 
-; (setq auth-sources '("~/.authinfo")
+   ;   :commands magit-status
+   ;   :custom
+   ;   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
-; ;; NOTE: Make sure to configure a GitHub token before using this package!
-; ;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
-; ;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
-; (use-package forge
-;   :after magit)
+   ; (setq auth-sources '("~/.authinfo")
+
+   ; ;; NOTE: Make sure to configure a GitHub token before using this package!
+   ; ;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
+   ; ;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
+   ; (use-package forge
+   ;   :after magit)
 
 ;; Doc-View
 
