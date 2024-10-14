@@ -1095,7 +1095,7 @@ Sources:
   (use-package mu4e
     :ensure nil
     :load-path "/usr/share/emacs/site-lisp/mu4e/"
-    :defer 20 ; Wait until 20 seconds after startup
+    :defer 10 ; Wait until 10 seconds after startup
     :config
 
     (setq mu4e-change-filenames-when-moving t ; avoid sync conflicts
