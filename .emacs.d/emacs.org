@@ -607,6 +607,8 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
 #+end_src
 
 ** Saving PDFs annotations with Org
+
+To explore more in the future.
 #+begin_src elisp
 
   (use-package org-noter
