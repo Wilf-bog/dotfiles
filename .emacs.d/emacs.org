@@ -1085,6 +1085,8 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 * Email
 My current email workflow relies on isync in the background and mu4e on Emacs.
 
+Update: <2024-10-14 Mon> Giving a try to [[https://github.com/danielfleischer/mu4easy][GitHub - danielfleischer/mu4easy: mu4e + mbsync configuration for multiple email accounts.]] To be installed from git.
+
 Sources:
 - https://shom.dev/posts/20220108_setting-up-protonmail-in-emacs/
 - [[https://github.com/daviwil/emacs-from-scratch/blob/master/show-notes/Emacs-Mail-03.org][emacs-from-scratch/show-notes/Emacs-Mail-03.org at master · daviwil/emacs-from-scratch · GitHub]]
@@ -1131,6 +1133,12 @@ Sources:
 
     ;; Run mu4e in the background to sync mail periodically
     (mu4e t))
+
+  ;; Don't forget to install mu4easy from Github. See emacs.org for reference.
+  (use-package mu4easy
+    :load-path "~/Git/mu4easy"
+    :bind ("C-c u" . mu4e)
+    :config (mu4easy-mode))
 
 #+end_src
 

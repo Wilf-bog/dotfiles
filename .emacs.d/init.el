@@ -864,6 +864,12 @@
   ;; Run mu4e in the background to sync mail periodically
   (mu4e t))
 
+;; Don't forget to install mu4easy from Github. See emacs.org for reference.
+(use-package mu4easy
+  :load-path "~/Git/mu4easy"
+  :bind ("C-c u" . mu4e)
+  :config (mu4easy-mode))
+
 (use-package hledger-mode
   :pin manual
   :after htmlize
