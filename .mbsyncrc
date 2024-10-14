@@ -1,0 +1,33 @@
+IMAPAccount protonmail
+Host 127.0.0.1
+Port 1143
+User vachonfrederic@proton.me
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine 127.0.0.1/ {print $NF}'"
+SSLType STARTTLS
+CertificateFile ~/.protoncert/cert.pem
+
+IMAPStore pm-remote
+Account protonmail
+
+MaildirStore pm-local
+Path ~/Mail/Proton/
+Inbox ~/Mail/Proton/INBOX/
+
+Channel pm-inbox
+Far :pm-remote:
+Near :pm-local:
+Patterns "INBOX" "Archive" "Spam" "Sent" "Trash" "All Mail" "Drafts"
+Create Both
+Expunge Both
+SyncState *
+
+Channel pm-sent
+Far :pm-remote:"Sent"
+Near :pm-local:"sent"
+Create Both
+Expunge Both
+SyncState *
+
+Group protonmail
+Channel pm-inbox
+Channel pm-sent
