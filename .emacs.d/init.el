@@ -866,9 +866,19 @@
 
 ;; Don't forget to install mu4easy from Github. See emacs.org for reference.
 (use-package mu4easy
-  :load-path "~/Git/mu4easy"
+  :demand
+  :load-path "/home/frdrcv/Git/mu4easy"
   :bind ("C-c u" . mu4e)
-  :config (mu4easy-mode))
+  :config (mu4easy-mode)
+  :custom
+  (mu4easy-contexts '((mu4easy-context
+		       :c-name  "Proton"
+		       :maildir "Proton"
+		       :mail    "vachonfrederic@proton.me"
+		       :smtp    "127.0.0.1"
+		       :smtp-type starttls
+		       :smtp-port 1025
+		       :sent-action delete))))
 
 (use-package hledger-mode
   :pin manual
