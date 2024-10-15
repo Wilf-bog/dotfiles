@@ -143,7 +143,7 @@ To get notified about incoming updates so you don't have to look for them with t
 
   ;;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
   (add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
-  (load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
+  ;; (load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
 
 #+end_src
 
@@ -802,26 +802,26 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 ** Prot-elfeed
 
-#+begin_src emacs-lisp
-
-  (load-file (concat (file-name-as-directory user-emacs-directory) "prot-elfeed.el"))
-
-  (use-package prot-elfeed
-  :ensure nil
-  :after elfeed
-  :bind
-  ( :map elfeed-search-mode-map
-    ("s" . prot-elfeed-search-tag-filter)
-    ("+" . prot-elfeed-toggle-tag)
-    :map elfeed-show-mode-map
-    ("+" . prot-elfeed-toggle-tag))
-  :hook
-  (elfeed-search-mode . prot-elfeed-load-feeds)
-  :config
-  (setq prot-elfeed-tag-faces t)
-  (prot-elfeed-fontify-tags))
-
-#+end_src
+;; #+begin_src emacs-lisp
+;; 
+;;   (load-file (concat (file-name-as-directory user-emacs-directory) "prot-elfeed.el"))
+;; 
+;;   (use-package prot-elfeed
+;;   :ensure nil
+;;   :after elfeed
+;;   :bind
+;;   ( :map elfeed-search-mode-map
+;;     ("s" . prot-elfeed-search-tag-filter)
+;;     ("+" . prot-elfeed-toggle-tag)
+;;     :map elfeed-show-mode-map
+;;     ("+" . prot-elfeed-toggle-tag))
+;;   :hook
+;;   (elfeed-search-mode . prot-elfeed-load-feeds)
+;;   :config
+;;   (setq prot-elfeed-tag-faces t)
+;;   (prot-elfeed-fontify-tags))
+;; 
+;; #+end_src
 
 * Weblinks
 
