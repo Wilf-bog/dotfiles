@@ -142,7 +142,7 @@
   (modus-themes-to-toggle
    '(modus-operandi-tinted modus-vivendi-tinted))
   :init
-  (load-theme 'modus-operandi-tinted :no-confirm)
+  (load-theme 'modus-vivendi-tinted :no-confirm)
   :bind
   (("C-c w t t" . modus-themes-toggle)
    ("C-c w t m" . modus-themes-select)
@@ -491,38 +491,41 @@
 
 ; ;; Projectile
 
-; (use-package projectile
-;   :diminish projectile-mode
-;   :config (projectile-mode)
-;   :custom ((projectile-completion-system 'ivy))
-;   :bind-keymap
-;   ("C-c p" . projectile-command-map)
-;   :init
-;   ;; NOTE: Set this to the folder where you keep your Git repos!
-;   (when (file-directory-p "~/Projects/Code")
-;     (setq projectile-project-search-path '("~/Projects/Code")))
-;   (setq projectile-switch-project-action #'projectile-dired))
+   ; (use-package projectile
+   ;   :diminish projectile-mode
+   ;   :config (projectile-mode)
+   ;   :custom ((projectile-completion-system 'ivy))
+   ;   :bind-keymap
+   ;   ("C-c p" . projectile-command-map)
+   ;   :init
+   ;   ;; NOTE: Set this to the folder where you keep your Git repos!
+   ;   (when (file-directory-p "~/Projects/Code")
+   ;     (setq projectile-project-search-path '("~/Projects/Code")))
+   ;   (setq projectile-switch-project-action #'projectile-dired))
 
-; (use-package counsel-projectile
-;   :after projectile
-;   :config (counsel-projectile-mode))
+   ; (use-package counsel-projectile
+   ;   :after projectile
+   ;   :config (counsel-projectile-mode))
 
-;; Magit
+   ;; Magit
 
-(use-package magit
-  :ensure t)
+   (use-package magit
+     :ensure t)
 
-;   :commands magit-status
-;   :custom
-;   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+(add-hook 'magit-process-find-password-functions
+	    'magit-process-password-auth-source)
 
-; (setq auth-sources '("~/.authinfo")
+   ;   :commands magit-status
+   ;   :custom
+   ;   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
-; ;; NOTE: Make sure to configure a GitHub token before using this package!
-; ;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
-; ;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
-; (use-package forge
-;   :after magit)
+   ; (setq auth-sources '("~/.authinfo")
+
+   ; ;; NOTE: Make sure to configure a GitHub token before using this package!
+   ; ;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
+   ; ;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
+   ; (use-package forge
+   ;   :after magit)
 
 ;; Doc-View
 
@@ -810,7 +813,7 @@
 (use-package mu4e
   :ensure nil
   :load-path "/usr/share/emacs/site-lisp/mu4e/"
-  :defer 20 ; Wait until 20 seconds after startup
+  :defer 10 ; Wait until 10 seconds after startup
   :config
 
   (setq mu4e-change-filenames-when-moving t ; avoid sync conflicts
@@ -836,13 +839,29 @@
 	user-full-name  "Frédéric Vachon")
 
   (setq message-send-mail-function 'smtpmail-send-it
-	auth-sources '("~/.authinfo") ;need to use gpg version but only local smtp stored for now
+	auth-sources '("~/.authinfo.gpg") ;need to use gpg version but only local smtp stored for now
 	smtpmail-smtp-server "127.0.0.1"
 	smtpmail-smtp-service 1025
 	smtpmail-stream-type  'starttls)
 
   ;; Run mu4e in the background to sync mail periodically
   (mu4e t))
+
+;; Don't forget to install mu4easy from Github. See emacs.org for reference.
+(use-package mu4easy
+  :demand
+  :load-path "/home/frdrcv/Git/mu4easy"
+  :bind ("C-c u" . mu4e)
+  :config (mu4easy-mode)
+  :custom
+  (mu4easy-contexts '((mu4easy-context
+		       :c-name  "Proton"
+		       :maildir "Proton"
+		       :mail    "vachonfrederic@proton.me"
+		       :smtp    "127.0.0.1"
+		       :smtp-type starttls
+		       :smtp-port 1025
+		       :sent-action delete))))
 
 (use-package hledger-mode
   :pin manual

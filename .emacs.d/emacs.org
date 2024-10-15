@@ -203,7 +203,7 @@ To get notified about incoming updates so you don't have to look for them with t
     (modus-themes-to-toggle
      '(modus-operandi-tinted modus-vivendi-tinted))
     :init
-    (load-theme 'modus-operandi-tinted :no-confirm)
+    (load-theme 'modus-vivendi-tinted :no-confirm)
     :bind
     (("C-c w t t" . modus-themes-toggle)
      ("C-c w t m" . modus-themes-select)
@@ -607,6 +607,8 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
 #+end_src
 
 ** Saving PDFs annotations with Org
+
+To explore more in the future.
 #+begin_src elisp
 
   (use-package org-noter
@@ -648,40 +650,43 @@ This part of the configuration is borrowed from System Crafters and explained in
 
  #+begin_src emacs-lisp
 
-   ; ;; Projectile
+      ; ;; Projectile
 
-   ; (use-package projectile
-   ;   :diminish projectile-mode
-   ;   :config (projectile-mode)
-   ;   :custom ((projectile-completion-system 'ivy))
-   ;   :bind-keymap
-   ;   ("C-c p" . projectile-command-map)
-   ;   :init
-   ;   ;; NOTE: Set this to the folder where you keep your Git repos!
-   ;   (when (file-directory-p "~/Projects/Code")
-   ;     (setq projectile-project-search-path '("~/Projects/Code")))
-   ;   (setq projectile-switch-project-action #'projectile-dired))
+      ; (use-package projectile
+      ;   :diminish projectile-mode
+      ;   :config (projectile-mode)
+      ;   :custom ((projectile-completion-system 'ivy))
+      ;   :bind-keymap
+      ;   ("C-c p" . projectile-command-map)
+      ;   :init
+      ;   ;; NOTE: Set this to the folder where you keep your Git repos!
+      ;   (when (file-directory-p "~/Projects/Code")
+      ;     (setq projectile-project-search-path '("~/Projects/Code")))
+      ;   (setq projectile-switch-project-action #'projectile-dired))
 
-   ; (use-package counsel-projectile
-   ;   :after projectile
-   ;   :config (counsel-projectile-mode))
+      ; (use-package counsel-projectile
+      ;   :after projectile
+      ;   :config (counsel-projectile-mode))
 
-   ;; Magit
+      ;; Magit
 
-   (use-package magit
-     :ensure t)
+      (use-package magit
+	:ensure t)
 
-   ;   :commands magit-status
-   ;   :custom
-   ;   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+   (add-hook 'magit-process-find-password-functions
+	       'magit-process-password-auth-source)
+   
+      ;   :commands magit-status
+      ;   :custom
+      ;   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
-   ; (setq auth-sources '("~/.authinfo")
+      ; (setq auth-sources '("~/.authinfo")
 
-   ; ;; NOTE: Make sure to configure a GitHub token before using this package!
-   ; ;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
-   ; ;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
-   ; (use-package forge
-   ;   :after magit)
+      ; ;; NOTE: Make sure to configure a GitHub token before using this package!
+      ; ;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
+      ; ;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
+      ; (use-package forge
+      ;   :after magit)
 
  #+end_src
 
@@ -1080,6 +1085,8 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 * Email
 My current email workflow relies on isync in the background and mu4e on Emacs.
 
+Update: <2024-10-14 Mon> Giving a try to [[https://github.com/danielfleischer/mu4easy][GitHub - danielfleischer/mu4easy: mu4e + mbsync configuration for multiple email accounts.]] To be installed from git.
+
 Sources:
 - https://shom.dev/posts/20220108_setting-up-protonmail-in-emacs/
 - [[https://github.com/daviwil/emacs-from-scratch/blob/master/show-notes/Emacs-Mail-03.org][emacs-from-scratch/show-notes/Emacs-Mail-03.org at master · daviwil/emacs-from-scratch · GitHub]]
@@ -1093,7 +1100,7 @@ Sources:
   (use-package mu4e
     :ensure nil
     :load-path "/usr/share/emacs/site-lisp/mu4e/"
-    :defer 20 ; Wait until 20 seconds after startup
+    :defer 10 ; Wait until 10 seconds after startup
     :config
 
     (setq mu4e-change-filenames-when-moving t ; avoid sync conflicts
@@ -1119,13 +1126,29 @@ Sources:
 	  user-full-name  "Frédéric Vachon")
 
     (setq message-send-mail-function 'smtpmail-send-it
-	  auth-sources '("~/.authinfo") ;need to use gpg version but only local smtp stored for now
+	  auth-sources '("~/.authinfo.gpg") ;need to use gpg version but only local smtp stored for now
 	  smtpmail-smtp-server "127.0.0.1"
 	  smtpmail-smtp-service 1025
 	  smtpmail-stream-type  'starttls)
 
     ;; Run mu4e in the background to sync mail periodically
     (mu4e t))
+
+  ;; Don't forget to install mu4easy from Github. See emacs.org for reference.
+  (use-package mu4easy
+    :demand
+    :load-path "/home/frdrcv/Git/mu4easy"
+    :bind ("C-c u" . mu4e)
+    :config (mu4easy-mode)
+    :custom
+    (mu4easy-contexts '((mu4easy-context
+			 :c-name  "Proton"
+			 :maildir "Proton"
+			 :mail    "vachonfrederic@proton.me"
+			 :smtp    "127.0.0.1"
+			 :smtp-type starttls
+			 :smtp-port 1025
+			 :sent-action delete))))
 
 #+end_src
 
