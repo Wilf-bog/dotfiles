@@ -53,6 +53,8 @@ After that, we load custom settings (for now).
 
 * Package management
 
+Eventually, will want to try another package manager.
+
 #+begin_src emacs-lisp
 
   ;; Set package archives
