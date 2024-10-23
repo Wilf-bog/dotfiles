@@ -646,6 +646,36 @@ This part of the configuration is borrowed from System Crafters and explained in
 
   #+end_src
 
+** Randomize todos
+
+#+begin_src emacs-lisp
+
+  (defun my-org-ql-shuffle-todo ()
+    (interactive)
+    (org-ql-search (org-agenda-files)
+      '(and
+	(todo "TODO" "STARTED")
+	(not (done))
+	(not (scheduled))
+	(not (deadline))
+	(not (ts-active))
+	(not (tags "cooking")))
+      :sort 'random))
+
+  (defun my-org-ql-shuffle-someday ()
+    (interactive)
+    (org-ql-search (~/gtd/someday.org)
+      '(and
+	(todo "SOMEDAY")
+	(not (done))
+	(not (scheduled))
+	(not (deadline))
+	(not (ts-active))
+	(not (tags "cooking")))
+      :sort 'random))
+
+#+end_src
+
 * Git and projectile
 
  #+begin_src emacs-lisp

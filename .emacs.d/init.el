@@ -489,6 +489,30 @@
 (use-package org-auto-tangle
   :hook (org-mode . org-auto-tangle-mode))
 
+(defun my-org-ql-shuffle-todo ()
+  (interactive)
+  (org-ql-search (org-agenda-files)
+    '(and
+      (todo "TODO" "STARTED")
+      (not (done))
+      (not (scheduled))
+      (not (deadline))
+      (not (ts-active))
+      (not (tags "cooking")))
+    :sort 'random))
+
+(defun my-org-ql-shuffle-someday ()
+  (interactive)
+  (org-ql-search (~/gtd/someday.org)
+    '(and
+      (todo "SOMEDAY")
+      (not (done))
+      (not (scheduled))
+      (not (deadline))
+      (not (ts-active))
+      (not (tags "cooking")))
+    :sort 'random))
+
 ; ;; Projectile
 
    ; (use-package projectile
