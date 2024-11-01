@@ -185,6 +185,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Flameshot to take screenshots
+bindsym Print exec flameshot gui
 
 # Configure 5px of space between windows and to the screen edges.
 gaps inner 5px
