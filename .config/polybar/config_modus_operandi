@@ -1,0 +1,38 @@
+; Based on Modus themes for Emacs:
+; <https://protesilaos.com/modus-themes>.
+
+[colors]
+bg-main         = #ffffff
+bg-dim          = #f2f2f2
+fg-main         = #000000
+fg-dim          = #595959
+red             = #a60000
+red-warmer      = #972500
+red-cooler      = #a0132f
+red-faint       = #7f0000
+red-intense     = #d00000
+green           = #006800
+green-warmer    = #316500
+green-cooler    = #00663f
+green-faint     = #2a5045
+green-intense   = #008900
+yellow          = #6f5500
+yellow-warmer   = #884900
+yellow-cooler   = #7a4f2f
+yellow-faint    = #624416
+yellow-intense  = #808000
+blue            = #0031a9
+blue-warmer     = #3548cf
+blue-cooler     = #0000b0
+blue-faint      = #003497
+blue-intense    = #0000ff
+magenta         = #721045
+magenta-warmer  = #8f0075
+magenta-cooler  = #531ab6
+magenta-faint   = #7c318f
+magenta-intense = #dd22dd
+cyan            = #005e8b
+cyan-warmer     = #3f578f
+cyan-cooler     = #005f5f
+cyan-faint      = #005077
+cyan-intense    = #008899
