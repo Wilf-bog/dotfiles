@@ -211,3 +211,7 @@ bar {
 }
 
 include i3-theme
+
+# Additional apps
+
+exec_always picom
