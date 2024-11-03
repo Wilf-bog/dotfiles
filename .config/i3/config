@@ -218,3 +218,4 @@ include i3-theme
 # Additional apps
 
 exec_always picom
+exec --no-startup-id redshift -l 45:-73
