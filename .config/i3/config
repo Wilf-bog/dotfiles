@@ -207,11 +207,14 @@ gaps inner 10px
 # for a total gap of 10px to the screen edges, and 5px between windows.
 gaps outer 0px
 
+# Titlebars
+default_border pixel
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+#bar {
+#status_command i3status
+#}
 
 include i3-theme
 
