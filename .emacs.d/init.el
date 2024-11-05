@@ -182,7 +182,7 @@
 
 ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
 (set-face-attribute 'default nil
-		    :family "Iosevka Comfy Motion"
+		    :family "Iosevka Comfy Motion Duo"
 		    :height 120
 		    :weight 'semilight)
 (when (eq system-type 'windows-nt)
@@ -191,7 +191,7 @@
   (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Motion Duo"))
   ;;(set-face-attribute 'variable-pitch nil :family "Atkinson Hyperlegible"))
   ;; (set-face-attribute 'variable-pitch nil :family "Noto Serif"))
-(set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy")
+(set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Motion Duo")
 
 ;; Window management
 ;; Split windows sensibly
