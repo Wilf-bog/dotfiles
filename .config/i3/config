@@ -223,4 +223,4 @@ include i3-theme
 exec_always picom
 exec --no-startup-id redshift -l 45:-73
 exec --no-startup-id dunst
-exec_always --no-startup-id polybar i3
+exec_always --no-startup-id polybar i3exec --no-startup-id polybar -r i3
