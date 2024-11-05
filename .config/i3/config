@@ -223,4 +223,6 @@ include i3-theme
 exec_always picom
 exec --no-startup-id redshift -l 45:-73
 exec --no-startup-id dunst
-exec_always --no-startup-id polybar i3exec --no-startup-id polybar -r i3
+exec --no-startup-id XFCE4-power-manager
+exec --no-startup-id caffeine-indicator
+exec --no-startup-id polybar -r i3
