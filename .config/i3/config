@@ -23,7 +23,12 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -c 000000
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -c 000000
+# set desktop background with custom effect
+exec --no-startup-id betterlockscreen -w dim
+
+bindsym $mod+shift+x exec betterlockscreen -l dim
+
 # Clearing notifications
 #dunstctl close all
 bindsym $mod + semicolon exec dunstctl close-all
@@ -232,3 +237,6 @@ exec --no-startup-id dunst
 #exec --no-startup-id XFCE4-power-manager
 exec --no-startup-id caffeine-indicator
 exec --no-startup-id polybar -r i3
+
+# Setting the wallpaper
+exec betterlockscreen -w
