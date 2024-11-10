@@ -245,16 +245,16 @@ To get notified about incoming updates so you don't have to look for them with t
 
   ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
   (set-face-attribute 'default nil
-		      :family "Iosevka Comfy Motion Duo"
-		      :height 120
-		      :weight 'semilight)
+		      :family "Iosevka Comfy Duo"
+		      :height 140
+		      :weight 'Regular)
   (when (eq system-type 'windows-nt)
-    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Motion Duo"))
+    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
   (when (eq system-type 'gnu/linux)
-    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Motion Duo"))
+    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
     ;;(set-face-attribute 'variable-pitch nil :family "Atkinson Hyperlegible"))
     ;; (set-face-attribute 'variable-pitch nil :family "Noto Serif"))
-  (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Motion Duo")
+  (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Duo")
 
   ;; Window management
   ;; Split windows sensibly

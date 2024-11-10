@@ -3,11 +3,11 @@ general.import = [
 ]
 
 [font]
-size = 10.0
+size = 11.0
 
 [font.normal]
-family = "Iosevka Comfy Motion Fixed"
-style = "semilight"
+family = "Iosevka Comfy Fixed"
+style = "Regular"
 
 [window]
 opacity = 1
