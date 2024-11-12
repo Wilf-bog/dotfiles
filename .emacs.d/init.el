@@ -1302,3 +1302,6 @@
   ("C-x r D" . bookmark-delete))
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+
+(use-package w32-browser
+  :after (dired))

@@ -1673,7 +1673,9 @@ The following settings offer a few options, notably better sorting (placing dire
     (dired-mode . dired-hide-dotfiles-mode)
     :config
     (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
+#+end_src
 
+#+begin_src emacs-lisp
   ;; Backup files
 
   (setq-default backup-directory-alist
@@ -1681,7 +1683,9 @@ The following settings offer a few options, notably better sorting (placing dire
                 version-control t
                 delete-old-versions t
                 create-lockfiles nil)
+#+end_src
 
+#+begin_src emacs-lisp
   ;; Recent files
 
   (use-package recentf
@@ -1694,7 +1698,9 @@ The following settings offer a few options, notably better sorting (placing dire
     (recentf-max-saved-items 50)
     :bind
     (("C-c w r" . recentf-open)))
+#+end_src
 
+#+begin_src emacs-lisp
   ;; Bookmarks
 
   (use-package bookmark
@@ -1705,4 +1711,10 @@ The following settings offer a few options, notably better sorting (placing dire
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
 
+#+end_src
+
+** TODO Windows Integration
+#+begin_src emacs-lisp
+  (use-package w32-browser
+    :after (dired))
 #+end_src
