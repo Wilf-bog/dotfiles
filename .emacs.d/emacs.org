@@ -266,6 +266,7 @@ To install this font on a new system, we must start by cloning the repository fr
 
 For future reference, this is a table referencing the different variants of this font, excluding those based on weigth.
 
+#+CAPTION: Iosevka Comfy variants
 | Family                          | Shapes | Spacing | Style      | Ligatures |
 |---------------------------------+--------+---------+------------+-----------|
 | Iosevka Comfy                   | Sans   | Compact | Monospaced | Yes       |
@@ -286,6 +287,7 @@ For future reference, this is a table referencing the different variants of this
 
 For the weight, we can refer to this table:
 
+#+CAPTION: Iosevka Comfy weights
 | Name      | Code |
 |-----------+------|
 | light     |  300 |
