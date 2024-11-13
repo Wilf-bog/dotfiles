@@ -28,6 +28,9 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 # set desktop background with custom effect
 exec --no-startup-id betterlockscreen -w dim
 
+# Pour mettre l'ordinateur automatiquement en veille (source: https://forum.endeavouros.com/t/how-to-setup-automatic-suspend-battery-settings-in-i3wm/13056)
+exec --no-startup-id xautolock -time 60 -locker "systemctl suspend" 
+
 bindsym $mod+shift+x exec betterlockscreen -l dim
 
 # Clearing notifications
