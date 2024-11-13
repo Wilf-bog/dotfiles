@@ -1,4 +1,5 @@
-#+title: Wilf's config
+#+TITLE: Wilf's config
+#+AUTHOR: Frédéric Vachon
 #+PROPERTY: header-args:emacs-lisp :tangle ./init.el :mkdirp yes
 #+auto_tangle: t
 
