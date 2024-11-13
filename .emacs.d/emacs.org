@@ -43,7 +43,7 @@ After that, we load custom settings (for now).
 
 #+end_src
 
-* Multiple sessions management
+** Multiple sessions management
 
 #+begin_src emacs-lisp
 
@@ -64,7 +64,7 @@ After that, we load custom settings (for now).
 #+end_src
 
 
-* Package management
+** Package management
 
 Eventually, will want to try another package manager.
 
@@ -88,7 +88,7 @@ Eventually, will want to try another package manager.
 
 #+end_src
 
-** Updates
+*** Updates
 :PROPERTIES:
 :ID:       5bd31e25-8c2a-4cc5-85c3-9c465aa1a160
 :END:
@@ -109,7 +109,7 @@ To get notified about incoming updates so you don't have to look for them with t
 
 #+end_src
 
-* Configuration de EWS
+** Configuration de EWS
 
 #+begin_src emacs-lisp
 
@@ -152,7 +152,7 @@ To get notified about incoming updates so you don't have to look for them with t
 
 #+end_src
 
-* Other modules and librairies
+** Other modules and librairies
 
 #+begin_src emacs-lisp
 
@@ -162,7 +162,7 @@ To get notified about incoming updates so you don't have to look for them with t
 
 #+end_src
 
-* Look and feel
+** Look and feel
 
 #+begin_src emacs-lisp
 
@@ -253,7 +253,7 @@ To get notified about incoming updates so you don't have to look for them with t
   ;; Mixed-pitch
 #+end_src
 
-** Fonts and faces
+*** Fonts and faces
 
 For the moment, my font of choice is Iosevka, the version patched Protesilaos. It can be found on the [[https://github.com/protesilaos/iosevka-comfy][GitHub's page.]]
 
@@ -333,7 +333,7 @@ For the weight, we can refer to this table:
 
 #+end_src
 
-** Pulsar
+*** Pulsar
 
 Based on Prot's config.
 
@@ -365,7 +365,7 @@ Based on Prot's config.
 
 #+end_src
 
-* Evil settings
+** Evil settings
 
 #+begin_src emacs-lisp
 
@@ -422,7 +422,7 @@ Based on Prot's config.
 
 #+end_src
 
-* Minibuffer
+** Minibuffer
 
 #+begin_src emacs-lisp
 
@@ -488,7 +488,7 @@ Based on Prot's config.
 
 #+end_src
 
-* Text mode
+** Text mode
 
 #+begin_src emacs-lisp
 
@@ -506,7 +506,7 @@ Based on Prot's config.
   
 #+end_src
 
-* Snippets
+** Snippets
 
 # #+begin_src emacs-lisp
 
@@ -516,7 +516,7 @@ Based on Prot's config.
 
 # #+end_src
 
-* Autocomplete
+** Autocomplete
 
 To setup some auto-complete when working on code, corfu is the solution. Read more here: [[https://github.com/minad/corfu][GitHub - minad/corfu: :desert_island: corfu.el - COmpletion in Region FUnction.]]
 
@@ -548,7 +548,7 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
 
 #+end_src
 
-* Flyspell and hunspell
+** Flyspell and hunspell
 
 #+begin_src emacs-lisp
 
@@ -569,9 +569,9 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
 
 #+end_src
 
-* Orgmode
+** Orgmode
 
-** Ricing Org mode
+*** Ricing Org mode
 #+begin_src emacs-lisp
 
   (use-package org
@@ -668,7 +668,7 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
 
 #+end_src
 
-** Saving PDFs annotations with Org
+*** Saving PDFs annotations with Org
 
 To explore more in the future.
 #+begin_src elisp
@@ -680,7 +680,7 @@ To explore more in the future.
 #+end_src
 
 
-** Auto-tangle Configuration Files
+*** Auto-tangle Configuration Files
 This part of the configuration is borrowed from System Crafters and explained in 2 places:
 - This video : [[https://youtu.be/kkqVTDbfYp4?list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&t=1437][Emacs From Scratch #7 - Configure Everything with Org Babel - YouTube]]
 - And this article: [[https://systemcrafters.net/emacs-from-scratch/configure-everything-with-org-babel/#tips][Configure Everything with Org Babel - System Crafters]]
@@ -708,7 +708,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
   #+end_src
 
-** Randomize todos
+*** Randomize todos
 
 #+begin_src emacs-lisp
 
@@ -738,7 +738,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 #+end_src
 
-* Git and projectile
+** Git and projectile
 
  #+begin_src emacs-lisp
 
@@ -782,7 +782,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
  #+end_src
 
-* Inspiration
+** Inspiration
 
 #+begin_src emacs-lisp
 
@@ -812,7 +812,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 #+end_src
 
-* Bibtex
+** Bibtex
 
 #+begin_src emacs-lisp
 
@@ -852,7 +852,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 #+end_src
 
-* RSS and Elfeed
+** RSS and Elfeed
 
 #+begin_src emacs-lisp
 
@@ -897,7 +897,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 #+end_src
 
-** Prot-elfeed
+*** Prot-elfeed
 
 ;; #+begin_src emacs-lisp
 ;; 
@@ -920,7 +920,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 ;; 
 ;; #+end_src
 
-* Weblinks
+** Weblinks
 
 #+begin_src emacs-lisp
 
@@ -932,11 +932,11 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 #+end_src
 
-* EWW
+** EWW
 
 My config is heavily inspired by Protesilaos configuration, starting here: [[https://protesilaos.com/emacs/dotemacs#h:f23d9cef-ab7b-4486-a070-9c7ae664eadf][GNU Emacs configuration | Protesilaos Stavrou]]
 
-** Browse-url
+*** Browse-url
 
 #+begin_src emacs-lisp
 
@@ -951,7 +951,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+end_src
 
-** General EWW config
+*** General EWW config
 
 #+begin_src emacs-lisp
 
@@ -1001,7 +1001,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+end_src
 
-** Prot-EWW utilities
+*** Prot-EWW utilities
 
 #+begin_src emacs-lisp
 
@@ -1039,8 +1039,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+end_src
 
-
-* Multimédia
+** Multimédia
 
 #+begin_src emacs-lisp
 
@@ -1075,9 +1074,9 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+end_src
 
-* Social media and chat
+** Social media and chat
 
-** Telegram
+*** Telegram
 
 #+begin_src emacs-lisp
 
@@ -1088,7 +1087,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
   #+end_src
 
-** Mastodon
+*** Mastodon
 
 #+begin_src emacs-lisp
 
@@ -1100,7 +1099,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+end_src
 
-* Capture
+** Capture
 
 #+begin_src emacs-lisp
 
@@ -1141,7 +1140,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+end_src
 
-* Structure templates
+** Structure templates
 
 #+begin_src emacs-lisp
 
@@ -1154,7 +1153,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+end_src
 
-* Org-agenda and GTD setup
+** Org-agenda and GTD setup
 
 #+begin_src emacs-lisp
 
@@ -1174,7 +1173,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+end_src
 
-* Email
+** Email
 My current email workflow relies on isync in the background and mu4e on Emacs.
 
 Update: <2024-10-14 Mon> Giving a try to [[https://github.com/danielfleischer/mu4easy][GitHub - danielfleischer/mu4easy: mu4e + mbsync configuration for multiple email accounts.]] To be installed from git.
@@ -1244,8 +1243,7 @@ Sources:
 
 #+end_src
 
-
-* Accounting
+** Accounting
 
 This configuration was taken from the official GitHub page that can be found here: [[https://github.com/narendraj9/hledger-mode][GitHub - narendraj9/hledger-mode: An Emacs major mode for Hledger]]
 
@@ -1357,7 +1355,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Zettelkasten and Denote
+** Zettelkasten and Denote
 
 #+begin_src emacs-lisp
 
@@ -1438,7 +1436,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Some Org mode shortcuts
+** Some Org mode shortcuts
 
 #+begin_src emacs-lisp
 
@@ -1451,7 +1449,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Distraction-free writing
+** Distraction-free writing
 
 #+begin_src emacs-lisp
 
@@ -1462,7 +1460,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Undo tree
+** Undo tree
 
 #+begin_src emacs-lisp
 
@@ -1476,7 +1474,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Citations with Org Mode
+** Citations with Org Mode
 
 #+begin_src emacs-lisp
   
@@ -1490,7 +1488,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Lookup words in online dictionary
+** Lookup words in online dictionary
 
 #+begin_src emacs-lisp
 
@@ -1506,7 +1504,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Writegood-Mode for passive writing and repeated word detection
+** Writegood-Mode for passive writing and repeated word detection
 
 #+begin_src emacs-lisp
 
@@ -1518,7 +1516,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Abbreviations
+** Abbreviations
 
 #+begin_src emacs-lisp
 
@@ -1526,7 +1524,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Lorem Ipsum generator
+** Lorem Ipsum generator
 
 #+begin_src emacs-lisp
 
@@ -1542,7 +1540,7 @@ This configuration was taken from the official GitHub page that can be found her
   
 #+end_src
 
-* Ediff
+** Ediff
 
 #+begin_src emacs-lisp
 
@@ -1559,7 +1557,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Org Export settings
+** Org Export settings
 
 #+begin_src emacs-lisp
 
@@ -1574,7 +1572,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* pdf-tools
+** pdf-tools
 
 #+begin_src emacs-lisp
 
@@ -1609,7 +1607,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Latex
+** Latex
 
 #+begin_src emacs-lisp
 
@@ -1672,7 +1670,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Other exports
+** Other exports
 
 #+begin_src emacs-lisp
 
@@ -1684,7 +1682,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Administration
+** Administration
 
 #+begin_src emacs-lisp
 
@@ -1698,7 +1696,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 #+end_src
 
-* Dired
+** Dired
 The following settings offer a few options, notably better sorting (placing directories first) and less destructive file deletions options. Based on EFS configuration, dired is also evilified and a few more options are now offered for filtering with the help of dired-x.
 
 #+begin_src emacs-lisp
@@ -1772,7 +1770,7 @@ The following settings offer a few options, notably better sorting (placing dire
 
 #+end_src
 
-** TODO Windows Integration
+*** TODO Windows Integration
 #+begin_src emacs-lisp
   (use-package w32-browser
     :after (dired))
