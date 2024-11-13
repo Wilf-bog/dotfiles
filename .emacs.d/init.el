@@ -177,56 +177,38 @@
 ;; Mixed-pitch
 
 (use-package mixed-pitch
-    :hook
-    (text-mode . mixed-pitch-mode))
+  :hook
+  (text-mode . mixed-pitch-mode))
 
-  ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
+;; Fonts 'default, 'fixed-pitch and 'variable-pitch
 
-;; | Family                          | Shapes | Spacing | Style      | Ligatures |
-;; |---------------------------------+--------+---------+------------+-----------|
-;; | Iosevka Comfy                   | Sans   | Compact | Monospaced | Yes       |
-;; | Iosevka Comfy Duo               | Sans   | Compact | Duospaced  | Yes       |
-;; | Iosevka Comfy Fixed             | Sans   | Compact | Monospaced | No        |
-;; |---------------------------------+--------+---------+------------+-----------|
-;; | Iosevka Comfy Motion            | Slab   | Compact | Monospaced | Yes       |
-;; | Iosevka Comfy Motion Duo        | Slab   | Compact | Duospaced  | Yes       |
-;; | Iosevka Comfy Motion Fixed      | Slab   | Compact | Monospaced | No        |
-;; |---------------------------------+--------+---------+------------+-----------|
-;; | Iosevka Comfy Wide              | Sans   | Wide    | Monospaced | Yes       |
-;; | Iosevka Comfy Wide Duo          | Sans   | Wide    | Duospaced  | Yes       |
-;; | Iosevka Comfy Wide Fixed        | Sans   | Wide    | Monospaced | No        |
-;; |---------------------------------+--------+---------+------------+-----------|
-;; | Iosevka Comfy Wide Motion       | Slab   | Wide    | Monospaced | Yes       |
-;; | Iosevka Comfy Wide Motion Duo   | Slab   | Wide    | Duospaced  | Yes       |
-;; | Iosevka Comfy Wide Motion Fixed | Slab   | Wide    | Monospaced | No        |
+(set-face-attribute 'default nil
+		    :family "Iosevka Comfy Fixed"
+		    :height 140
+		    :weight 'Regular)
+(when (eq system-type 'windows-nt)
+  (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
+(when (eq system-type 'gnu/linux)
+  (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
+  ;;(set-face-attribute 'variable-pitch nil :family "Atkinson Hyperlegible"))
+  ;; (set-face-attribute 'variable-pitch nil :family "Noto Serif"))
+(set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Duo")
 
-  (set-face-attribute 'default nil
-		      :family "Iosevka Comfy Fixed"
-		      :height 140
-		      :weight 'Regular)
-  (when (eq system-type 'windows-nt)
-    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
-  (when (eq system-type 'gnu/linux)
-    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
-    ;;(set-face-attribute 'variable-pitch nil :family "Atkinson Hyperlegible"))
-    ;; (set-face-attribute 'variable-pitch nil :family "Noto Serif"))
-  (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Duo")
+;; Window management
+;; Split windows sensibly
 
-  ;; Window management
-  ;; Split windows sensibly
+(setq split-width-threshold 120
+      split-height-threshold nil)
 
-  (setq split-width-threshold 120
-	split-height-threshold nil)
+;; Keep window sizes balanced
 
-  ;; Keep window sizes balanced
+(use-package balanced-windows
+  :config
+  (balanced-windows-mode))
 
-  (use-package balanced-windows
-    :config
-    (balanced-windows-mode))
+;; Switch quickly between windows
 
-  ;; Switch quickly between windows
-
-  (global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "M-o") 'other-window)
 
 ;; Read the pulsar manual: <https://protesilaos.com/emacs/pulsar>.
 (use-package pulsar

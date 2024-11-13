@@ -242,7 +242,39 @@ To get notified about incoming updates so you don't have to look for them with t
 
 ** Fonts and faces
 
+For the moment, my font of choice is Iosevka, the version patched Protesilaos. It can be found on the [[https://github.com/protesilaos/iosevka-comfy][GitHub's page.]]
 
+For future reference, this is a table referencing the different variants of this font, excluding those based on weigth.
+
+| Family                          | Shapes | Spacing | Style      | Ligatures |
+|---------------------------------+--------+---------+------------+-----------|
+| Iosevka Comfy                   | Sans   | Compact | Monospaced | Yes       |
+| Iosevka Comfy Duo               | Sans   | Compact | Duospaced  | Yes       |
+| Iosevka Comfy Fixed             | Sans   | Compact | Monospaced | No        |
+|---------------------------------+--------+---------+------------+-----------|
+| Iosevka Comfy Motion            | Slab   | Compact | Monospaced | Yes       |
+| Iosevka Comfy Motion Duo        | Slab   | Compact | Duospaced  | Yes       |
+| Iosevka Comfy Motion Fixed      | Slab   | Compact | Monospaced | No        |
+|---------------------------------+--------+---------+------------+-----------|
+| Iosevka Comfy Wide              | Sans   | Wide    | Monospaced | Yes       |
+| Iosevka Comfy Wide Duo          | Sans   | Wide    | Duospaced  | Yes       |
+| Iosevka Comfy Wide Fixed        | Sans   | Wide    | Monospaced | No        |
+|---------------------------------+--------+---------+------------+-----------|
+| Iosevka Comfy Wide Motion       | Slab   | Wide    | Monospaced | Yes       |
+| Iosevka Comfy Wide Motion Duo   | Slab   | Wide    | Duospaced  | Yes       |
+| Iosevka Comfy Wide Motion Fixed | Slab   | Wide    | Monospaced | No        |
+
+For the weight, we can refer to this table:
+
+| Name      | Code |
+|-----------+------|
+| light     |  300 |
+| semilight |  350 |
+| regular   |  400 |
+| medium    |  500 |
+| semibold  |  600 |
+| bold      |  700 |
+| extrabold |  800 |
 
 #+begin_src emacs-lisp
     (use-package mixed-pitch
@@ -251,24 +283,6 @@ To get notified about incoming updates so you don't have to look for them with t
 
     ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
 
-  ;; | Family                          | Shapes | Spacing | Style      | Ligatures |
-  ;; |---------------------------------+--------+---------+------------+-----------|
-  ;; | Iosevka Comfy                   | Sans   | Compact | Monospaced | Yes       |
-  ;; | Iosevka Comfy Duo               | Sans   | Compact | Duospaced  | Yes       |
-  ;; | Iosevka Comfy Fixed             | Sans   | Compact | Monospaced | No        |
-  ;; |---------------------------------+--------+---------+------------+-----------|
-  ;; | Iosevka Comfy Motion            | Slab   | Compact | Monospaced | Yes       |
-  ;; | Iosevka Comfy Motion Duo        | Slab   | Compact | Duospaced  | Yes       |
-  ;; | Iosevka Comfy Motion Fixed      | Slab   | Compact | Monospaced | No        |
-  ;; |---------------------------------+--------+---------+------------+-----------|
-  ;; | Iosevka Comfy Wide              | Sans   | Wide    | Monospaced | Yes       |
-  ;; | Iosevka Comfy Wide Duo          | Sans   | Wide    | Duospaced  | Yes       |
-  ;; | Iosevka Comfy Wide Fixed        | Sans   | Wide    | Monospaced | No        |
-  ;; |---------------------------------+--------+---------+------------+-----------|
-  ;; | Iosevka Comfy Wide Motion       | Slab   | Wide    | Monospaced | Yes       |
-  ;; | Iosevka Comfy Wide Motion Duo   | Slab   | Wide    | Duospaced  | Yes       |
-  ;; | Iosevka Comfy Wide Motion Fixed | Slab   | Wide    | Monospaced | No        |
-    
     (set-face-attribute 'default nil
 			:family "Iosevka Comfy Fixed"
 			:height 140
