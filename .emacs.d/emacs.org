@@ -1811,27 +1811,21 @@ Il faut d'abord installer i3lock-color. En date du 20241110, ce paquet n'est pas
 
 Il faut commencer par l'installation des dépendances:
 #+begin_src shell :tangle no
-
   sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
-
 #+end_src
 
 Ensuite, il on peut procéder au build. Il faut d'abord clôner le dépôt:
 
 #+begin_src shell :tangle no
-
   cd Git/
   git clone https://github.com/Raymo111/i3lock-color.git
   cd i3lock-color
-
 #+end_src
 
 Et commencer le build et l'installation de i3lock-color:
 
 #+begin_src shell :tangle no
-
   ./install-i3lock-color.sh
-  
 #+end_src
 
 Pour plus d'informations, voir [[https://github.com/Raymo111/i3lock-color][GitHub - Raymo111/i3lock-color: The world's most popular non-default computer lockscreen.]].
@@ -1839,43 +1833,33 @@ Pour plus d'informations, voir [[https://github.com/Raymo111/i3lock-color][GitHu
 En plus de i3lock-color, il est nécessaire d'avoir les dépendances suivantes:
 
 #+begin_src shell :tangle no
-
   sudo apt install imagemagick bc feh
-
 #+end_src
 
 **** Installation
 Les développeurs de betterlockscreen ont développé un script pour l'installation. Il suffit d'entrer la commande suivante pour une installation sur tout le système:
 
 #+begin_src shell :tangle no
-
   wget https://raw.githubusercontent.com/betterlockscreen/betterlockscreen/main/install.sh -O - -q | sudo bash -s system
-
 #+end_src
 
 Pour s'assurer que betterlockscreen soit activé lorsque l'ordinateur tombe en veille, il est nécessaire d'ajouter un service avec systemd. D'abord, il faut télécharger le fichier de github et le déplacer dans le bon dossier:
 
 #+begin_src shell :tangle no
-
   wget https://raw.githubusercontent.com/betterlockscreen/betterlockscreen/refs/heads/next/system/betterlockscreen%40.service
   sudo mv betterlockscreen@.service /usr/lib/systemd/system/
-
 #+end_src
 
 Ensuite, il est possible d'activer le service:
 
 #+begin_src shell :tangle no
-
   systemctl enable betterlockscreen@$USER
-
 #+end_src
 
 Enfin, pour permettre à l'ordinateur de se mettre en veille automatiquement, il est nécessaire d'utiliser xautolock (sur Xorg):
 
 #+begin_src shell :tangle no
-
   sudo apt install xautolock
-
 #+end_src
 
 La prise en charge de xautolock est prise en charge dans la configuration de i3.
@@ -1884,25 +1868,19 @@ La prise en charge de xautolock est prise en charge dans la configuration de i3.
 Pour sélectionner une image précise pour l'arrière plan avec un effet de dim:
 
 #+begin_src shell :tangle no
-
   betterlockscreen -u ~/Wallpapers/image.png --fx dim
-
 #+end_src
 
 Pour mettre le jour le fond d'écran avec l'image du lockscreen:
 
 #+begin_src shell :tangle no
-
   betterlockscreen -w
-
 #+end_src
 
 Pour sélectionner une image aléatoire dans mon dossier de fonds d'écran:
 
 #+begin_src shell :tangle no
-
   betterlockscreen -u Pictures/Wallpapers
-
 #+end_src
 
 Pour plus d'informations, voir [[https://github.com/betterlockscreen/betterlockscreen?tab=readme-ov-file][GitHub - betterlockscreen/betterlockscreen: 🍀 sweet looking lockscreen for linux system]].
@@ -1911,10 +1889,9 @@ Pour plus d'informations, voir [[https://github.com/betterlockscreen/betterlocks
 Utilisé pour gérer l'apparence des applications GUI, à défaut de maintenir une configutation en fichier texte pour GTK 2, 3 et 4.
 
 #+begin_src shell :tangle no
-
   sudo apt install lxappearance
-
 #+end_src
+
 ***** TODO Voir si je peux me départir de lxappearance
 
 *** TODO Alacritty
@@ -1924,9 +1901,7 @@ Mon choix de terminal avec i3 et sur Windows. J'utilise une version compilée.
 Logiciel utilisé pour la gestion du presse-papier en-dehors de Emacs. Voir si une meilleure intégration est possible.
 
 #+begin_src shell :tangle no
-
   sudo apt install copyq
-
 #+end_src
 
 ** TODO Sway
