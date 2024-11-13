@@ -6,7 +6,7 @@
 So, if this file was at first to create a literate configuration (without really knowing what it means), I now want to turn this file into something bigger like my whole system configuration.
 
 ** Goals
-Why would want to do that?
+Why would I want to do that?
 
 After almost 20 years of using Linux, I noticed I lost configurations I did develop for myself. Things I took the time to learn, at least somewhat, by reading blog posts, looking on forums, but mainly, youtube videos. I don't regret the current situation, but still, now that I am getting older and that time is a precious thing, I would like that my time be well invested and means building something solid.
 
