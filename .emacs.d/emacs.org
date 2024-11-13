@@ -3,16 +3,29 @@
 #+auto_tangle: t
 
 * Welcome!
+So, if this file was at first to create a literate configuration (without really knowing what it means), I now want to turn this file into something bigger like my whole system configuration.
 
+** Goals
+Why would want to do that?
+
+After almost 20 years of using Linux, I noticed I lost configurations I did develop for myself. Things I took the time to learn, at least somewhat, by reading blog posts, looking on forums, but mainly, youtube videos. I don't regret the current situation, but still, now that I am getting older and that time is a precious thing, I would like that my time be well invested and means building something solid.
+
+I think that a literate configuration could be a key toward that goal, as well as something different to write about than blog posts and zettelkasten notes.
+
+** Literate configurations
+To learn more on the matter, here are examples I looked into before making the move and diving into that project.
+- [[https://www.youtube.com/watch?v=Ex9zI4Fcirs&t=5896s][Literate Configuration: A Direct Approach - System Crafters Live! - YouTube]]
+- [[https://www.youtube.com/watch?v=ycyxytk1NAQ][Emacs: advanced Org literate configuration - YouTube]]
+ 
+
+* Emacs configuration
 This configuration is borrowing a lot of things from 2 majors sources: [[https://github.com/daviwil/emacs-from-scratch/][Emacs from scratch]] and [[https://github.com/pprevos/emacs-writing-studio][Emacs Writing Studio]]. Where EWS offered a solid basis to cover my basic needs, which was to have a solid alternative to Obsidian as well as a learning platform for Emacs in general, EFS offered me generalist and powerful tools that helped me dive deeper into Emacs configuration. I also have to thank specifically [[https://github.com/protesilaos][Protesilaos Stavrou]] for his work on [[https://github.com/protesilaos/denote][Denote]] that is the tool that made the switch to Emacs possible.
 
 First step: making sure we are running a recent enough version of Emacs.
 
 #+begin_src emacs-lisp
-
   (when (< emacs-major-version 29)
     (error "Emacs Writing Studio requires Emacs version 29 or later"))
-
 #+end_src
 
 After that, we load custom settings (for now).
