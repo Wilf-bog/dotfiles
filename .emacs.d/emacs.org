@@ -244,6 +244,13 @@ To get notified about incoming updates so you don't have to look for them with t
 
 For the moment, my font of choice is Iosevka, the version patched Protesilaos. It can be found on the [[https://github.com/protesilaos/iosevka-comfy][GitHub's page.]]
 
+To install this font on a new system, we must start by cloning the repository from Github:
+
+#+begin_src shell :tangle no
+  git clone --depth 1 https://github.com/protesilaos/iosevka-comfy
+#+end_src
+
+
 For future reference, this is a table referencing the different variants of this font, excluding those based on weigth.
 
 | Family                          | Shapes | Spacing | Style      | Ligatures |
