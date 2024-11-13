@@ -1950,5 +1950,52 @@ Une fois une police ajoutée, il faut mettre à jour le cache:
 Recommandé pour [[https://github.com/romkatv/powerlevel10k][GitHub - romkatv/powerlevel10k: A Zsh theme]].
 
 * Outils
+** Git
 
+Pour configurer les autres logiciels, il convient de commencer par obtenir Git.
+
+#+begin_src shell :tangle no
+
+  sudo apt install git
+
+#+end_src
+
+Ensuite, il vaut mieux configurer tout de suite les comptes pour github:
+
+#+begin_src shell :tangle no
+
+  git config --global user.name "user_name"
+  git config --global user.email "email_id"
+
+#+end_src
+
+Il faut également importer la clé privée. Pour l'exporter d'un de mes ordinateurs:
+
+#+begin_src shell :tangle no
+
+  gpg --list-secret-keys
+  gpg --export-secret-keys -a <key-ID> > myprivkey.gpg
+
+#+end_src
+
+Une fois la clé transférée sur le bon ordinateur, il suffit de l'importer.
+
+#+begin_src shell :tangle no
+
+  gpg --import <privkey.gpg> 
+   gpg --list-secret-keys
+
+#+end_src
+
+Si jamais j'ai besoin d'envoyer ma clé publique à quelqu'un, voici comment procéder:
+
+#+begin_src shell :tangle no
+
+  gpg --list-keys
+  gpg --export -a <key-ID> > mypubkey.gpg
+
+#+end_src
+
+
+Pour plus d'informations, voir [[https://thelinuxcode.com/export-import-keys-with-gpg/][How to Export and Import Keys with GPG: An Expert’s In-Depth Guide – TheLinuxCode]]
 ** Flameshot
