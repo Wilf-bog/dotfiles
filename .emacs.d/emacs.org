@@ -3,16 +3,29 @@
 #+auto_tangle: t
 
 * Welcome!
+So, if this file was at first to create a literate configuration (without really knowing what it means), I now want to turn this file into something bigger like my whole system configuration.
 
+** Goals
+Why would want to do that?
+
+After almost 20 years of using Linux, I noticed I lost configurations I did develop for myself. Things I took the time to learn, at least somewhat, by reading blog posts, looking on forums, but mainly, youtube videos. I don't regret the current situation, but still, now that I am getting older and that time is a precious thing, I would like that my time be well invested and means building something solid.
+
+I think that a literate configuration could be a key toward that goal, as well as something different to write about than blog posts and zettelkasten notes.
+
+** Literate configurations
+To learn more on the matter, here are examples I looked into before making the move and diving into that project.
+- [[https://www.youtube.com/watch?v=Ex9zI4Fcirs&t=5896s][Literate Configuration: A Direct Approach - System Crafters Live! - YouTube]]
+- [[https://www.youtube.com/watch?v=ycyxytk1NAQ][Emacs: advanced Org literate configuration - YouTube]]
+ 
+
+* Emacs configuration
 This configuration is borrowing a lot of things from 2 majors sources: [[https://github.com/daviwil/emacs-from-scratch/][Emacs from scratch]] and [[https://github.com/pprevos/emacs-writing-studio][Emacs Writing Studio]]. Where EWS offered a solid basis to cover my basic needs, which was to have a solid alternative to Obsidian as well as a learning platform for Emacs in general, EFS offered me generalist and powerful tools that helped me dive deeper into Emacs configuration. I also have to thank specifically [[https://github.com/protesilaos][Protesilaos Stavrou]] for his work on [[https://github.com/protesilaos/denote][Denote]] that is the tool that made the switch to Emacs possible.
 
 First step: making sure we are running a recent enough version of Emacs.
 
 #+begin_src emacs-lisp
-
   (when (< emacs-major-version 29)
     (error "Emacs Writing Studio requires Emacs version 29 or later"))
-
 #+end_src
 
 After that, we load custom settings (for now).
@@ -238,39 +251,85 @@ To get notified about incoming updates so you don't have to look for them with t
 					  ;(doom-themes-org-config))
 
   ;; Mixed-pitch
+#+end_src
 
-  (use-package mixed-pitch
-    :hook
-    (text-mode . mixed-pitch-mode))
+** Fonts and faces
 
-  ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
-  (set-face-attribute 'default nil
-		      :family "Iosevka Comfy Duo"
-		      :height 140
-		      :weight 'Regular)
-  (when (eq system-type 'windows-nt)
-    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
-  (when (eq system-type 'gnu/linux)
-    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
-    ;;(set-face-attribute 'variable-pitch nil :family "Atkinson Hyperlegible"))
-    ;; (set-face-attribute 'variable-pitch nil :family "Noto Serif"))
-  (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Duo")
+For the moment, my font of choice is Iosevka, the version patched Protesilaos. It can be found on the [[https://github.com/protesilaos/iosevka-comfy][GitHub's page.]]
 
-  ;; Window management
-  ;; Split windows sensibly
+To install this font on a new system, we must start by cloning the repository from Github:
 
-  (setq split-width-threshold 120
-	split-height-threshold nil)
+#+begin_src shell :tangle no
+  git clone --depth 1 https://github.com/protesilaos/iosevka-comfy
+#+end_src
 
-  ;; Keep window sizes balanced
 
-  (use-package balanced-windows
-    :config
-    (balanced-windows-mode))
+For future reference, this is a table referencing the different variants of this font, excluding those based on weigth.
 
-  ;; Switch quickly between windows
+| Family                          | Shapes | Spacing | Style      | Ligatures |
+|---------------------------------+--------+---------+------------+-----------|
+| Iosevka Comfy                   | Sans   | Compact | Monospaced | Yes       |
+| Iosevka Comfy Duo               | Sans   | Compact | Duospaced  | Yes       |
+| Iosevka Comfy Fixed             | Sans   | Compact | Monospaced | No        |
+|---------------------------------+--------+---------+------------+-----------|
+| Iosevka Comfy Motion            | Slab   | Compact | Monospaced | Yes       |
+| Iosevka Comfy Motion Duo        | Slab   | Compact | Duospaced  | Yes       |
+| Iosevka Comfy Motion Fixed      | Slab   | Compact | Monospaced | No        |
+|---------------------------------+--------+---------+------------+-----------|
+| Iosevka Comfy Wide              | Sans   | Wide    | Monospaced | Yes       |
+| Iosevka Comfy Wide Duo          | Sans   | Wide    | Duospaced  | Yes       |
+| Iosevka Comfy Wide Fixed        | Sans   | Wide    | Monospaced | No        |
+|---------------------------------+--------+---------+------------+-----------|
+| Iosevka Comfy Wide Motion       | Slab   | Wide    | Monospaced | Yes       |
+| Iosevka Comfy Wide Motion Duo   | Slab   | Wide    | Duospaced  | Yes       |
+| Iosevka Comfy Wide Motion Fixed | Slab   | Wide    | Monospaced | No        |
 
-  (global-set-key (kbd "M-o") 'other-window)
+For the weight, we can refer to this table:
+
+| Name      | Code |
+|-----------+------|
+| light     |  300 |
+| semilight |  350 |
+| regular   |  400 |
+| medium    |  500 |
+| semibold  |  600 |
+| bold      |  700 |
+| extrabold |  800 |
+
+#+begin_src emacs-lisp
+    (use-package mixed-pitch
+      :hook
+      (text-mode . mixed-pitch-mode))
+
+    ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
+
+    (set-face-attribute 'default nil
+			:family "Iosevka Comfy Fixed"
+			:height 140
+			:weight 'Regular)
+    (when (eq system-type 'windows-nt)
+      (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
+    (when (eq system-type 'gnu/linux)
+      (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Motion Duo"))
+      ;;(set-face-attribute 'variable-pitch nil :family "Atkinson Hyperlegible"))
+      ;; (set-face-attribute 'variable-pitch nil :family "Noto Serif"))
+    (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Duo")
+
+    ;; Window management
+    ;; Split windows sensibly
+
+    (setq split-width-threshold 120
+	  split-height-threshold nil)
+
+    ;; Keep window sizes balanced
+
+    (use-package balanced-windows
+      :config
+      (balanced-windows-mode))
+
+    ;; Switch quickly between windows
+
+    (global-set-key (kbd "M-o") 'other-window)
 
 #+end_src
 
@@ -667,7 +726,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
   (defun my-org-ql-shuffle-someday ()
     (interactive)
-    (org-ql-search (~/gtd/someday.org)
+    (org-ql-search (~/Documents/gtd/someday.org)
       '(and
 	(todo "SOMEDAY")
 	(not (done))
@@ -1067,13 +1126,13 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
       :kill-buffer t
       :jump-to-captured t)
      ("t" "New task" entry
-      (file+headline "~/gtd/inbox.org" "Tasks")
+      (file+headline "~/Documents/gtd/inbox.org" "Tasks")
       "* TODO %i%? \n %U")
      ("r" "Read article" entry
-      (file+headline "~/gtd/inbox.org" "Tasks")
+      (file+headline "~/Documents/gtd/inbox.org" "Tasks")
       "* %i%? \n %U")
      ("T" "Tickler" entry
-      (file+headline "~/gtd/tickler.org" "Tickler")
+      (file+headline "~/Documents/gtd/tickler.org" "Tickler")
       "* TODO %i%? \n %U")))
 
   ;; Start writing immediately after triggering org-capture
@@ -1099,15 +1158,15 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+begin_src emacs-lisp
 
-    (setq org-agenda-files '("~/gtd/inbox.org"
-                             "~/gtd/gtd.org"
-                             "~/gtd/projets.org"
-                             "~/gtd/tickler.org"))
+    (setq org-agenda-files '("~/Documents/gtd/inbox.org"
+                             "~/Documents/gtd/gtd.org"
+                             "~/Documents/gtd/projets.org"
+                             "~/Documents/gtd/tickler.org"))
 
-    (setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
-                               ("~/gtd/someday.org" :level . 1)
-                               ("~/gtd/projets.org" :maxlevel . 5)
-                               ("~/gtd/tickler.org" :maxlevel . 2)))
+    (setq org-refile-targets '(("~/Documents/gtd/gtd.org" :maxlevel . 3)
+                               ("~/Documents/gtd/someday.org" :level . 1)
+                               ("~/Documents/gtd/projets.org" :maxlevel . 5)
+                               ("~/Documents/gtd/tickler.org" :maxlevel . 2)))
 
   ;; Inbox location
 
@@ -1673,7 +1732,9 @@ The following settings offer a few options, notably better sorting (placing dire
     (dired-mode . dired-hide-dotfiles-mode)
     :config
     (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
+#+end_src
 
+#+begin_src emacs-lisp
   ;; Backup files
 
   (setq-default backup-directory-alist
@@ -1681,7 +1742,9 @@ The following settings offer a few options, notably better sorting (placing dire
                 version-control t
                 delete-old-versions t
                 create-lockfiles nil)
+#+end_src
 
+#+begin_src emacs-lisp
   ;; Recent files
 
   (use-package recentf
@@ -1694,7 +1757,9 @@ The following settings offer a few options, notably better sorting (placing dire
     (recentf-max-saved-items 50)
     :bind
     (("C-c w r" . recentf-open)))
+#+end_src
 
+#+begin_src emacs-lisp
   ;; Bookmarks
 
   (use-package bookmark
@@ -1705,4 +1770,10 @@ The following settings offer a few options, notably better sorting (placing dire
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
 
+#+end_src
+
+** TODO Windows Integration
+#+begin_src emacs-lisp
+  (use-package w32-browser
+    :after (dired))
 #+end_src
