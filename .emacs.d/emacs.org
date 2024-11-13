@@ -1937,6 +1937,42 @@ Logiciel utilisé pour la gestion du presse-papier en-dehors de Emacs. Voir si u
 Logiciel par défaut qui semble être proposé avec Sway. À voir s'il s'agit d'une alternative intéressante à Alacritty.
 
 ** TODO Gnome
-
 ** XFCE4
+* Services
+Logiciels qui fonctionnent en backgroup, peu importe l'environnement que j'utilise.
 
+** Syncthing
+J'utilise la version qui vient par défaut des les dépôt de Debian comme elle offre tout ce que j'ai de besoin. Je n'ai pas besoin de la version GTK.
+
+#+begin_src shell :tangle no
+  sudo apt install syncthing
+#+end_src
+
+Après l'installation il est nécessaire d'activer un service avec systemd.
+
+#+begin_src shell :tangle no
+  systemctl enable syncthing@frdrcv.service
+  systemctl start syncthing@frdrcv.service
+#+end_src
+
+Syncthing peut être accédé par la suite par http://127.0.0.1:8384.
+
+* Polices
+En plus des polices par défaut de Linux, j'utilise certaines polices supplémentaires.
+
+Une fois une police ajoutée, il faut mettre à jour le cache:
+
+#+begin_src shell :tangle no
+  fc-cache -f -v
+#+end_src
+
+** TODO Iosevka
+
+** TODO Atkinson Hyperlegible
+
+** TODO Meslo
+Recommandé pour [[https://github.com/romkatv/powerlevel10k][GitHub - romkatv/powerlevel10k: A Zsh theme]].
+
+* Outils
+
+** Flameshot
