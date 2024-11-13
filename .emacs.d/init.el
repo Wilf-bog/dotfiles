@@ -504,7 +504,7 @@
 
 (defun my-org-ql-shuffle-someday ()
   (interactive)
-  (org-ql-search (~/gtd/someday.org)
+  (org-ql-search (~/Documents/gtd/someday.org)
     '(and
       (todo "SOMEDAY")
       (not (done))
@@ -801,13 +801,13 @@
     :kill-buffer t
     :jump-to-captured t)
    ("t" "New task" entry
-    (file+headline "~/gtd/inbox.org" "Tasks")
+    (file+headline "~/Documents/gtd/inbox.org" "Tasks")
     "* TODO %i%? \n %U")
    ("r" "Read article" entry
-    (file+headline "~/gtd/inbox.org" "Tasks")
+    (file+headline "~/Documents/gtd/inbox.org" "Tasks")
     "* %i%? \n %U")
    ("T" "Tickler" entry
-    (file+headline "~/gtd/tickler.org" "Tickler")
+    (file+headline "~/Documents/gtd/tickler.org" "Tickler")
     "* TODO %i%? \n %U")))
 
 ;; Start writing immediately after triggering org-capture
@@ -821,15 +821,15 @@
   (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
   (add-to-list 'org-structure-template-alist '("py" . "src python")))
 
-(setq org-agenda-files '("~/gtd/inbox.org"
-                           "~/gtd/gtd.org"
-                           "~/gtd/projets.org"
-                           "~/gtd/tickler.org"))
+(setq org-agenda-files '("~/Documents/gtd/inbox.org"
+                           "~/Documents/gtd/gtd.org"
+                           "~/Documents/gtd/projets.org"
+                           "~/Documents/gtd/tickler.org"))
 
-  (setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
-                             ("~/gtd/someday.org" :level . 1)
-                             ("~/gtd/projets.org" :maxlevel . 5)
-                             ("~/gtd/tickler.org" :maxlevel . 2)))
+  (setq org-refile-targets '(("~/Documents/gtd/gtd.org" :maxlevel . 3)
+                             ("~/Documents/gtd/someday.org" :level . 1)
+                             ("~/Documents/gtd/projets.org" :maxlevel . 5)
+                             ("~/Documents/gtd/tickler.org" :maxlevel . 2)))
 
 ;; Inbox location
 
