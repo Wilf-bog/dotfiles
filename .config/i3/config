@@ -246,3 +246,6 @@ exec --no-startup-id polybar -r i3
 
 # Setting the wallpaper
 exec betterlockscreen -w
+
+# Setting the monitors
+exec_always --no-startup-id xrandr --output DP-5 --auto --right-of HDMI-0 &
