@@ -18,7 +18,7 @@
     frame_width = 2
     frame_color = "#FFFFFF"
     transparency = 5
-    font = Iosevka Comfy Motion Duo 11
+    font = Iosevka Comfy Duo 11
     line_height = 0
     corner_radius = 5
     icon_corner_radius = 5
