@@ -2063,6 +2063,10 @@ Voir [[https://github.com/polybar/polybar/wiki/Compiling][Compiling · polybar/p
 **** Configuration
 
 *** Rofi
+:LOGBOOK:
+- Note taken on [2024-11-14 Thu 14:20] \\
+  Eventually, implement a modus like theme to Rofi.
+:END:
 Pour le momen
 
 *** betterlockscreen
