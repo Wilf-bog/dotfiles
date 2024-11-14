@@ -2159,6 +2159,29 @@ Utilisé pour gérer l'apparence des applications GUI, à défaut de maintenir u
 *** TODO Alacritty
 Mon choix de terminal avec i3 et sur Windows. J'utilise une version compilée.
 
+#+begin_src conf :tangle .config/alacritty/alacritty.toml
+general.import = [
+    "~/.config/alacritty/themes/themes/catppuccin.toml"
+]
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "Iosevka Comfy Fixed"
+style = "Regular"
+
+[window]
+opacity = 1
+
+[window.padding]
+x = 15
+y = 15
+
+[selection]
+save_to_clipboard = true
+#+end_src
+
 *** TODO Copyq
 Logiciel utilisé pour la gestion du presse-papier en-dehors de Emacs. Voir si une meilleure intégration est possible.
 
