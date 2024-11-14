@@ -26,7 +26,7 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -c 000000
 # set desktop background with custom effect
-exec --no-startup-id betterlockscreen -w dim
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
 
 # Pour mettre l'ordinateur automatiquement en veille (source: https://forum.endeavouros.com/t/how-to-setup-automatic-suspend-battery-settings-in-i3wm/13056)
 exec --no-startup-id xautolock -time 60 -locker "systemctl suspend" 
