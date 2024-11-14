@@ -31,7 +31,7 @@ First step: making sure we are running a recent enough version of Emacs.
 
 After that, we load custom settings (for now).
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Custom settings in a separate file and load the custom settings
 
@@ -46,7 +46,7 @@ After that, we load custom settings (for now).
 
 ** Multiple sessions management
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Revert buffers when the underlying file has changed
 
@@ -69,7 +69,7 @@ After that, we load custom settings (for now).
 
 Eventually, will want to try another package manager.
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Set package archives
 
@@ -97,7 +97,7 @@ To get notified about incoming updates so you don't have to look for them with t
 - [[https://www.youtube.com/watch?v=dtjq68F2dXw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&index=11][Keeping Your Emacs Packages Up To Date - Emacs From Scratch #11 - YouTube]]
 - [[https://github.com/daviwil/emacs-from-scratch/blob/master/show-notes/Emacs-Scratch-11.org][emacs-from-scratch/show-notes/Emacs-Scratch-11.org at master · daviwil/emacs-from-scratch · GitHub]]
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
 (use-package auto-package-update
   :custom
@@ -112,7 +112,7 @@ To get notified about incoming updates so you don't have to look for them with t
 
 ** Configuration de EWS
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Load EWS functions
 
@@ -155,7 +155,7 @@ To get notified about incoming updates so you don't have to look for them with t
 
 ** Other modules and librairies
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
   (add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
@@ -165,7 +165,7 @@ To get notified about incoming updates so you don't have to look for them with t
 
 ** Look and feel
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Keyboard-centric user interface removing tool, menu and scroll bars
 
@@ -299,7 +299,7 @@ For the weight, we can refer to this table:
 | bold      |  700 |
 | extrabold |  800 |
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
     (use-package mixed-pitch
       :hook
       (text-mode . mixed-pitch-mode))
@@ -340,7 +340,7 @@ For the weight, we can refer to this table:
 
 Based on Prot's config.
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Read the pulsar manual: <https://protesilaos.com/emacs/pulsar>.
   (use-package pulsar
@@ -370,7 +370,7 @@ Based on Prot's config.
 
 ** Evil settings
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Make ESC quit prompts
   (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
@@ -427,7 +427,7 @@ Based on Prot's config.
 
 ** Minibuffer
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Enable vertico
 
@@ -493,7 +493,7 @@ Based on Prot's config.
 
 ** Text mode
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
 (use-package text-mode
   :ensure
@@ -511,7 +511,7 @@ Based on Prot's config.
 
 ** Snippets
 
-# #+begin_src emacs-lisp :tangle .emacs/init.el
+# #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
 #   (use-package yasnippet
 #     :custom
@@ -523,7 +523,7 @@ Based on Prot's config.
 
 To setup some auto-complete when working on code, corfu is the solution. Read more here: [[https://github.com/minad/corfu][GitHub - minad/corfu: :desert_island: corfu.el - COmpletion in Region FUnction.]]
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package corfu
     ;; Optional customizations
@@ -553,7 +553,7 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
 
 ** Flyspell and hunspell
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package flyspell
     :custom
@@ -575,7 +575,7 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
 ** Orgmode
 
 *** Ricing Org mode
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package org
     (message "Org Mode Loaded!")
@@ -688,7 +688,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 - This video : [[https://youtu.be/kkqVTDbfYp4?list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&t=1437][Emacs From Scratch #7 - Configure Everything with Org Babel - YouTube]]
 - And this article: [[https://systemcrafters.net/emacs-from-scratch/configure-everything-with-org-babel/#tips][Configure Everything with Org Babel - System Crafters]]
 
-  # #+begin_src emacs-lisp :tangle .emacs/init.el
+  # #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   #   ;; Automatically tangle our Emacs.org config file when we save it
   #   (defun efs/org-babel-tangle-config ()
@@ -704,7 +704,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
   EFS config didn't work for me, so I rely on org-auto-tangle for my needs.
   
-  #+begin_src emacs-lisp :tangle .emacs/init.el
+  #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
     (use-package org-auto-tangle
       :hook (org-mode . org-auto-tangle-mode))
@@ -713,7 +713,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 *** Randomize todos
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (defun my-org-ql-shuffle-todo ()
     (interactive)
@@ -743,7 +743,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 ** Git and projectile
 
- #+begin_src emacs-lisp :tangle .emacs/init.el
+ #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
       ; ;; Projectile
 
@@ -787,7 +787,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 ** Inspiration
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Doc-View
 
@@ -817,7 +817,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 ** Bibtex
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
 (use-package bibtex
   :custom
@@ -857,7 +857,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 ** RSS and Elfeed
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Read RSS feeds with Elfeed
 
@@ -902,7 +902,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 *** Prot-elfeed
 
-;; #+begin_src emacs-lisp :tangle .emacs/init.el
+;; #+begin_src emacs-lisp :tangle .emacs.d/init.el
 ;; 
 ;;   (load-file (concat (file-name-as-directory user-emacs-directory) "prot-elfeed.el"))
 ;; 
@@ -925,7 +925,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 ** Weblinks
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Easy insertion of weblinks
 
@@ -941,7 +941,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 *** Browse-url
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; `browse-url'
 
@@ -956,7 +956,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 *** General EWW config
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;;;; `eww' (Emacs Web Wowser)
 (use-package eww
@@ -1006,7 +1006,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 *** Prot-EWW utilities
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
     ;;;; `prot-eww' extras
   ;; (use-package prot-eww
@@ -1044,7 +1044,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 ** Multimédia
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Emacs Multimedia System
 
@@ -1081,7 +1081,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 *** Telegram
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package telega
     :ensure t
@@ -1092,7 +1092,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 *** Mastodon
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package mastodon
     :ensure t
@@ -1104,7 +1104,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 ** Capture
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Fleeting notes
 
@@ -1145,7 +1145,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 ** Structure templates
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (with-eval-after-load 'org
     (require 'org-tempo)
@@ -1158,7 +1158,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 ** Org-agenda and GTD setup
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
     (setq org-agenda-files '("~/Documents/gtd/inbox.org"
                              "~/Documents/gtd/gtd.org"
@@ -1189,11 +1189,11 @@ Sources:
 - [[https://gist.github.com/ceblan/59064db5c68a84d15a5fff1a23808ad3][mbsync+mu4e+protonmail · GitHub]]
 - [[https://www.reddit.com/r/ProtonMail/comments/roxql7/making_protonmail_work_100_with_mbsyncmu4e/][Reddit - Dive into anything]]
 - [[https://f-santos.gitlab.io/2020-04-24-mu4e.html][Reading and sending mails from within Emacs: a tutorial for mu4e]]
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package mu4e
     :ensure nil
-    :load-path "/usr/share/emacs/site-lisp/mu4e/"
+    :load-path "/usr/share.emacs.d/site-lisp/mu4e/"
     :defer 10 ; Wait until 10 seconds after startup
     :config
 
@@ -1250,7 +1250,7 @@ Sources:
 
 This configuration was taken from the official GitHub page that can be found here: [[https://github.com/narendraj9/hledger-mode][GitHub - narendraj9/hledger-mode: An Emacs major mode for Hledger]]
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
 					  ; (use-package hledger-mode
 					  ; :pin manual
@@ -1360,7 +1360,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Zettelkasten and Denote
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Denote
 
@@ -1441,7 +1441,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Some Org mode shortcuts
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package org
     :bind
@@ -1454,7 +1454,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Distraction-free writing
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
 (use-package olivetti
   :demand t
@@ -1465,7 +1465,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Undo tree
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package undo-tree
     :config
@@ -1479,7 +1479,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Citations with Org Mode
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
   
 (require 'oc-natbib)
 (require 'oc-csl)
@@ -1493,7 +1493,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Lookup words in online dictionary
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
 (use-package dictionary
   :custom
@@ -1509,7 +1509,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Writegood-Mode for passive writing and repeated word detection
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
 (use-package writegood-mode
   :bind
@@ -1521,7 +1521,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Abbreviations
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (add-hook 'text-mode-hook 'abbrev-mode)
 
@@ -1529,7 +1529,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Lorem Ipsum generator
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package lorem-ipsum
     :custom
@@ -1545,7 +1545,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Ediff
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package ediff
     :ensure nil
@@ -1562,7 +1562,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Org Export settings
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package org
     :custom
@@ -1577,7 +1577,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** pdf-tools
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (when (eq system-type 'gnu/linux)	;For now, pdf-tools can't be installed on Windows
     (use-package pdf-tools
@@ -1612,7 +1612,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Latex
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; LaTeX PDF Export settings
 
@@ -1675,7 +1675,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Other exports
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Use GraphViz for flow diagrams
   (with-eval-after-load 'org
@@ -1687,7 +1687,7 @@ This configuration was taken from the official GitHub page that can be found her
 
 ** Administration
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Bind org agenda command
 
@@ -1702,7 +1702,7 @@ This configuration was taken from the official GitHub page that can be found her
 ** Dired
 The following settings offer a few options, notably better sorting (placing directories first) and less destructive file deletions options. Based on EFS configuration, dired is also evilified and a few more options are now offered for filtering with the help of dired-x.
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package dired
     :ensure
@@ -1735,7 +1735,7 @@ The following settings offer a few options, notably better sorting (placing dire
     (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
 #+end_src
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
   ;; Backup files
 
   (setq-default backup-directory-alist
@@ -1745,7 +1745,7 @@ The following settings offer a few options, notably better sorting (placing dire
                 create-lockfiles nil)
 #+end_src
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
   ;; Recent files
 
   (use-package recentf
@@ -1760,7 +1760,7 @@ The following settings offer a few options, notably better sorting (placing dire
     (("C-c w r" . recentf-open)))
 #+end_src
 
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
   ;; Bookmarks
 
   (use-package bookmark
@@ -1774,7 +1774,7 @@ The following settings offer a few options, notably better sorting (placing dire
 #+end_src
 
 *** TODO Windows Integration
-#+begin_src emacs-lisp :tangle .emacs/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package w32-browser
     :after (dired))
 #+end_src
@@ -1787,7 +1787,7 @@ The following settings offer a few options, notably better sorting (placing dire
 * Desktop environement
 ** TODO i3
 *** Configuration de i3wm
-#+begin_src conf :tangle no
+#+begin_src conf :tangle .config/i3/config
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
