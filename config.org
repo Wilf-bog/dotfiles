@@ -2287,3 +2287,23 @@ Si jamais j'ai besoin d'envoyer ma clé publique à quelqu'un, voici comment pro
 
 Pour plus d'informations, voir [[https://thelinuxcode.com/export-import-keys-with-gpg/][How to Export and Import Keys with GPG: An Expert’s In-Depth Guide – TheLinuxCode]]
 ** Flameshot
+** VPN
+For work I am using a vpn connection to get access to my remote desktop computer. We use openvpn to do so, which requires a few extra steps on Debian (see [[https://bbs.archlinux.org/viewtopic.php?pid=1550578#p1550578][[SOLVED] 'org.freedesktop.NetworkManager.openvpn' not installed / Networking, Server, and Protection / Arch Linux Forums]]). First, we need to install a plugin for NetworkManager:
+
+#+begin_src shell
+sudo apt install network-manager-openvpn
+#+end_src
+
+Even if this plugin is installed, the configuration screen of NetworkManager Applet won't give any options to import a ovpn file nor will it allow me to edit a pre-existing ovpn configuration if it was imported from the terminal. The only solution that seems to work at the moment is to install a gnome plugin according to this page: [[https://forums.linuxmint.com/viewtopic.php?t=175270][Solution to VPN [no valid VPN secrets] problem (LM 17) - Linux Mint Forums]]. Let's install it:
+
+#+begin_src shell
+sudo apt install network-manager-openvpn-gnome
+#+end_src
+** Zoom
+#+begin_src shell
+flatpak install us.zoom.Zoom
+#+end_src
+** Bottles
+#+begin_src shell
+flatpak install com.usebottles.bottles
+#+end_src
