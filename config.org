@@ -1143,17 +1143,27 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+end_src
 
-** Structure templates
+** WAITING Structure templates
+Originally, EWS doesn't rely on use-package to load org-tempo and a templates. For better uniformity and to eventually add more customization options to this package, I switched to the use-package way of doing things there. I copied David's config showcased here, in one of his video on literate configuration : [[https://youtu.be/Ex9zI4Fcirs?t=2878][Literate Configuration: A Direct Approach - System Crafters Live! - YouTube]].
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; (with-eval-after-load 'org
+  ;;   (require 'org-tempo)
 
-  (with-eval-after-load 'org
-    (require 'org-tempo)
+  ;;   (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+  ;;   (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+  ;;   (add-to-list 'org-structure-template-alist '("py" . "src python")))
 
-    (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
-    (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-    (add-to-list 'org-structure-template-alist '("py" . "src python")))
-
+  (use-package org-tempo
+    :ensure nil
+    :after org
+    :config
+    (dolist (item '(("sh" . "src shell")
+		    ("el" . "src emacs-lisp")
+		    ("cel" . "src emacs-lisp :tangle .emacs.d/init.el")
+		    ("cco" . "src conf :tangle DIR")
+		    ("py" . "src python")))
+      (add-to-list 'org-structure-template-alist item)))
 #+end_src
 
 ** Org-agenda and GTD setup

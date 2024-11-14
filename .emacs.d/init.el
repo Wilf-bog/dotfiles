@@ -815,12 +815,23 @@
 
 (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
-(with-eval-after-load 'org
-  (require 'org-tempo)
+;; (with-eval-after-load 'org
+;;   (require 'org-tempo)
 
-  (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
-  (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-  (add-to-list 'org-structure-template-alist '("py" . "src python")))
+;;   (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+;;   (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+;;   (add-to-list 'org-structure-template-alist '("py" . "src python")))
+
+(use-package org-tempo
+  :ensure nil
+  :after org
+  :config
+  (dolist (item '(("sh" . "src shell")
+		  ("el" . "src emacs-lisp")
+		  ("cel" . "src emacs-lisp :tangle .emacs.d/init.el")
+		  ("cco" . "src conf :tangle DIR")
+		  ("py" . "src python")))
+    (add-to-list 'org-structure-template-alist item)))
 
 (setq org-agenda-files '("~/Documents/gtd/inbox.org"
                            "~/Documents/gtd/gtd.org"
