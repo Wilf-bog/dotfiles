@@ -1,6 +1,5 @@
-general.import = [
-    "~/.config/alacritty/themes/themes/catppuccin.toml"
-]
+[general]
+import = ["/home/frdrcv/.config/alacritty/themes/modus-vivendi.toml"]
 
 [font]
 size = 11.0
