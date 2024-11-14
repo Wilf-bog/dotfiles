@@ -35,7 +35,8 @@ bindsym $mod+shift+x exec betterlockscreen -l dim
 
 # Clearing notifications
 #dunstctl close all
-bindsym $mod + semicolon exec dunstctl close-all
+bindsym $mod + shift + semicolon exec dunstctl close-all
+bindsym $mod + semicolon exec dunstctl set-paused toggle
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
