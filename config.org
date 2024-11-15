@@ -3213,6 +3213,16 @@ Si jamais j'ai besoin d'envoyer ma clé publique à quelqu'un, voici comment pro
 
 
 Pour plus d'informations, voir [[https://thelinuxcode.com/export-import-keys-with-gpg/][How to Export and Import Keys with GPG: An Expert’s In-Depth Guide – TheLinuxCode]]
+
+** Python
+:PROPERTIES:
+:ID:       f0102501-dcfe-4beb-b381-9fab14757911
+:END:
+Some software requires Pip for installation. To install it, we simply need to use apt since it is in the official repositories. More recent versions are also available, see [[https://phoenixnap.com/kb/install-pip-debian-12][How to Install Pip on Debian 12]].
+#+begin_src shell
+  sudo apt install python3-pip -y
+#+end_src
+
 ** Flameshot
 ** VPN
 For work I am using a vpn connection to get access to my remote desktop computer. We use openvpn to do so, which requires a few extra steps on Debian (see [[https://bbs.archlinux.org/viewtopic.php?pid=1550578#p1550578][[SOLVED] 'org.freedesktop.NetworkManager.openvpn' not installed / Networking, Server, and Protection / Arch Linux Forums]]). First, we need to install a plugin for NetworkManager:
