@@ -3164,7 +3164,7 @@ Une fois une police ajoutée, il faut mettre à jour le cache:
 ** TODO Meslo
 Recommandé pour [[https://github.com/romkatv/powerlevel10k][GitHub - romkatv/powerlevel10k: A Zsh theme]].
 
-* Outils
+* Other tools
 ** Git
 
 Pour configurer les autres logiciels, il convient de commencer par obtenir Git.
