@@ -2815,3 +2815,36 @@ flatpak install us.zoom.Zoom
 #+begin_src shell
 flatpak install com.usebottles.bottles
 #+end_src
+** Espanso
+**** Installation
+Espanso could be installed on Debian with a home-made deb file provided from espanso's website, here : [[https://espanso.org/docs/install/linux/#deb-x11][Install on Linux | Espanso]].
+
+Sadly, those instructions don't work on Debian 12.
+
+#+begin_src sh
+  wget https://github.com/espanso/espanso/releases/download/v2.2.1/espanso-debian-x11-amd64.deb &&
+  sudo apt install ./espanso-debian-x11-amd64.deb
+#+end_src
+
+Instead, the working solution is to use the appimage by following these instructions:
+
+#+begin_src shell
+  # Create the $HOME/opt destination folder
+  mkdir -p ~/opt
+  # Download the AppImage inside it
+  wget -O ~/opt/Espanso.AppImage 'https://github.com/espanso/espanso/releases/download/v2.2.1/Espanso-X11.AppImage'
+  # Make it executable
+  chmod u+x ~/opt/Espanso.AppImage
+  # Create the "espanso" command alias
+  sudo ~/opt/Espanso.AppImage env-path register
+#+end_src
+
+Once installed, the service has to be registered.
+
+#+begin_src shell
+  # Register espanso as a systemd service (required only once)
+  espanso service register
+
+  # Start espanso
+  espanso start
+#+end_src
