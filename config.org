@@ -3203,14 +3203,12 @@ Une fois la clé transférée sur le bon ordinateur, il suffit de l'importer.
 #+end_src
 
 Si jamais j'ai besoin d'envoyer ma clé publique à quelqu'un, voici comment procéder:
-
 #+begin_src shell :tangle no
 
   gpg --list-keys
   gpg --export -a <key-ID> > mypubkey.gpg
 
 #+end_src
-
 
 Pour plus d'informations, voir [[https://thelinuxcode.com/export-import-keys-with-gpg/][How to Export and Import Keys with GPG: An Expert’s In-Depth Guide – TheLinuxCode]]
 
