@@ -38,6 +38,7 @@ alias r="source ~/.zshrc"
 # APT
 alias ai="sudo apt install"
 alias au="sudo apt update"
+alias ass="sudo apt search"
 alias aug="sudo apt upgrade"
 alias alu="sudo apt list --upgradable"
 alias adu="sudo apt dist-upgrade"
