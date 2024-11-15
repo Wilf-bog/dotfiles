@@ -1203,7 +1203,7 @@ Sources:
 
   (use-package mu4e
     :ensure nil
-    :load-path "/usr/share.emacs.d/site-lisp/mu4e/"
+    :load-path "/usr/share/emacs/site-lisp/mu4e/"
     :defer 10 ; Wait until 10 seconds after startup
     :config
 
