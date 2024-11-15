@@ -2525,7 +2525,10 @@ Voir [[https://github.com/polybar/polybar/wiki/Compiling][Compiling · polybar/p
 :END:
 Pour le momen
 
-*** betterlockscreen
+*** STARTED betterlockscreen
+:LOGBOOK:
+- State "STARTED"    from              [2024-11-14 Thu 21:22]
+:END:
 Version amélioré de i3lock basée sur i3lock-color. Peut difficilement être configurée mais la version par défaut est parfaite.
 
 **** Dépendances
