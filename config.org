@@ -1186,74 +1186,6 @@ Originally, EWS doesn't rely on use-package to load org-tempo and a templates. F
 #+end_src
 
 ** Email
-My current email workflow relies on isync in the background and mu4e on Emacs.
-
-Update: <2024-10-14 Mon> Giving a try to [[https://github.com/danielfleischer/mu4easy][GitHub - danielfleischer/mu4easy: mu4e + mbsync configuration for multiple email accounts.]] To be installed from git.
-
-Sources:
-- https://shom.dev/posts/20220108_setting-up-protonmail-in-emacs/
-- [[https://github.com/daviwil/emacs-from-scratch/blob/master/show-notes/Emacs-Mail-03.org][emacs-from-scratch/show-notes/Emacs-Mail-03.org at master · daviwil/emacs-from-scratch · GitHub]]
-- [[https://github.com/daviwil/emacs-from-scratch/blob/629aec3dbdffe99e2c361ffd10bd6727555a3bd3/show-notes/Emacs-Mail-01.org][emacs-from-scratch/show-notes/Emacs-Mail-01.org at 629aec3dbdffe99e2c361ffd10bd6727555a3bd3 · daviwil/emacs-from-scratch · GitHub]]
-- [[https://doubleloop.net/2019/09/06/emacs-mu4e-mbsync-and-protonmail/][emacs, mu4e, mbsync and ProtonMail - doubleloop]]
-- [[https://gist.github.com/ceblan/59064db5c68a84d15a5fff1a23808ad3][mbsync+mu4e+protonmail · GitHub]]
-- [[https://www.reddit.com/r/ProtonMail/comments/roxql7/making_protonmail_work_100_with_mbsyncmu4e/][Reddit - Dive into anything]]
-- [[https://f-santos.gitlab.io/2020-04-24-mu4e.html][Reading and sending mails from within Emacs: a tutorial for mu4e]]
-#+begin_src emacs-lisp :tangle .emacs.d/init.el
-
-  (use-package mu4e
-    :ensure nil
-    :load-path "/usr/share/emacs/site-lisp/mu4e/"
-    :defer 10 ; Wait until 10 seconds after startup
-    :config
-
-    (setq mu4e-change-filenames-when-moving t ; avoid sync conflicts
-	  mu4e-update-interval (* 10 60) ; check mail 10 minutes
-	  mu4e-compose-format-flowed t ; re-flow mail so it's not hard wrapped
-	  mu4e-get-mail-command "mbsync -a"
-	  mu4e-maildir "~/Mail"
-	  mu4e-attachment-dir "~/Downloads")
-
-    (setq mu4e-drafts-folder "/Drafts"
-	  mu4e-sent-folder   "/Sent"
-	  mu4e-refile-folder "/All Mail"
-	  mu4e-trash-folder  "/Trash")
-
-    (setq mu4e-maildir-shortcuts
-	  '((:maildir "/INBOX"     :key ?i)
-	    (:maildir "/sent"      :key ?s)
-	    (:maildir "/Trash"     :key ?t)
-	    (:maildir "/Drafts"    :key ?d)
-	    (:maildir "/All Mail"  :key ?a)))
-
-    (setq user-mail-address "vachonfrederic@proton.me"
-	  user-full-name  "Frédéric Vachon")
-
-    (setq message-send-mail-function 'smtpmail-send-it
-	  auth-sources '("~/.authinfo.gpg") ;need to use gpg version but only local smtp stored for now
-	  smtpmail-smtp-server "127.0.0.1"
-	  smtpmail-smtp-service 1025
-	  smtpmail-stream-type  'starttls)
-
-    ;; Run mu4e in the background to sync mail periodically
-    (mu4e t))
-
-  ;; Don't forget to install mu4easy from Github. See emacs.org for reference.
-  (use-package mu4easy
-    :demand
-    :load-path "/home/frdrcv/Git/mu4easy"
-    :bind ("C-c u" . mu4e)
-    :config (mu4easy-mode)
-    :custom
-    (mu4easy-contexts '((mu4easy-context
-			 :c-name  "Proton"
-			 :maildir "Proton"
-			 :mail    "vachonfrederic@proton.me"
-			 :smtp    "127.0.0.1"
-			 :smtp-type starttls
-			 :smtp-port 1025
-			 :sent-action delete))))
-
-#+end_src
 
 ** Accounting
 
@@ -2108,8 +2040,56 @@ Customise `titlecase-style' for styling."
 #+end_src
 
 * TODO Email configuration
-** TODO Proton
+My current email workflow relies on isync in the background and mu4e on Emacs.
+
+Update: <2024-10-14 Mon> Giving a try to [[https://github.com/danielfleischer/mu4easy][GitHub - danielfleischer/mu4easy: mu4e + mbsync configuration for multiple email accounts.]] To be installed from git.
+
+Sources:
+- https://shom.dev/posts/20220108_setting-up-protonmail-in-emacs/
+- [[https://github.com/daviwil/emacs-from-scratch/blob/master/show-notes/Emacs-Mail-03.org][emacs-from-scratch/show-notes/Emacs-Mail-03.org at master · daviwil/emacs-from-scratch · GitHub]]
+- [[https://github.com/daviwil/emacs-from-scratch/blob/629aec3dbdffe99e2c361ffd10bd6727555a3bd3/show-notes/Emacs-Mail-01.org][emacs-from-scratch/show-notes/Emacs-Mail-01.org at 629aec3dbdffe99e2c361ffd10bd6727555a3bd3 · daviwil/emacs-from-scratch · GitHub]]
+- [[https://doubleloop.net/2019/09/06/emacs-mu4e-mbsync-and-protonmail/][emacs, mu4e, mbsync and ProtonMail - doubleloop]]
+- [[https://gist.github.com/ceblan/59064db5c68a84d15a5fff1a23808ad3][mbsync+mu4e+protonmail · GitHub]]
+- [[https://www.reddit.com/r/ProtonMail/comments/roxql7/making_protonmail_work_100_with_mbsyncmu4e/][Reddit - Dive into anything]]
+- [[https://f-santos.gitlab.io/2020-04-24-mu4e.html][Reading and sending mails from within Emacs: a tutorial for mu4e]]
+** Proton
+Compared to other email providers, Proton rely on a finicky encryption system to work. Normally this is transparent if one uses the official ProtonMail apps but with other apps, like Isync or Thunderbird, it is necessary to use a specific software to have it working.
+
+The deb package must be manually downloaded from this page: [[https://proton.me/mail/download][Download the Proton Mail App for iOS, Android & Desktop | Proton]].
+
+Once it is downloaded we can start the install with =apt=.
+#+begin_src shell
+  cd Downloads/
+  sudo apt install ./protonmail*.deb -y
+#+end_src
+
+Once installed, Proton Mail Bridge has to be configured manually with the gui.
+
 ** TODO Mbsync / Isync
+First we need to install it:
+#+begin_src shell
+  sudo apt install isync -y
+#+end_src
+
+And create a directory for emails.
+#+begin_src shell
+  mkdir ~/Documents/Mail/Proton
+#+end_src
+
+After that, we must create the certificate that will be used by isync. This command will output information that countain the certificate we need.
+
+#+begin_src shell
+  openssl s_client -starttls imap -connect 127.0.0.1:1143 -showcerts
+#+end_src
+
+We need copy the lines that begin with =-----BEGIN CERTIFICATE-----= and end with =-----END CERTIFICATE-----= and put them in a new file named =~/.config/protonmail/bridge-v3/cert.pem=.
+
+Once this is done, we can start syncing emails with the following command:
+#+begin_src shell
+  mbsync -a
+#+end_src
+
+And then the needed configuration:
 #+begin_src conf :tangle .mbsyncrc
 IMAPAccount Proton
 Host 127.0.0.1
@@ -2118,7 +2098,7 @@ User vachonfrederic@proton.me
 PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine 127.0.0.1/ {print $NF}'"
 AuthMechs LOGIN
 SSLType STARTTLS
-CertificateFile ~/.protoncert/cert.pem
+CertificateFile ~/.config/protonmail/bridge-v3/cert.pem
 
 IMAPStore Proton-remote
 Account Proton
@@ -2147,8 +2127,93 @@ Group Proton
 Channel Proton-inbox
 Channel Proton-sent
 #+end_src
-** Mu
-** Mu4e
+
+** =Mu=
+Instead of installing a thing at a time, we can install =mu= (named =maildir-utils= in Debian's repos) as a dependancy to =mu4e=. See [[https://systemcrafters.net/emacs-mail/streamline-your-email-with-mu4e/#setting-up-mu-to-index-the-mailbox][Streamline Your E-mail Management with mu4e - System Crafters]].
+#+begin_src shell
+  sudo apt install mu4e -y
+#+end_src
+
+Once installed, we can proceed with our first indexing.
+#+begin_src shell
+  mu init --maildir=~/Documents/Mail --my-address=vachonfrederic@proton.me
+  mu index
+#+end_src
+
+** =mu4e=
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package mu4e
+    :ensure nil
+    :load-path "/usr/share/emacs/site-lisp/mu4e/"
+    :defer 10 ; Wait until 10 seconds after startup
+    :config
+
+    (setq mu4e-change-filenames-when-moving t ; avoid sync conflicts
+	  mu4e-update-interval (* 10 60) ; check mail 10 minutes
+	  mu4e-compose-format-flowed t ; re-flow mail so it's not hard wrapped
+	  mu4e-get-mail-command "mbsync -a"
+	  mu4e-maildir "~/Mail"
+	  mu4e-attachment-dir "~/Downloads")
+
+    (setq mu4e-drafts-folder "/Drafts"
+	  mu4e-sent-folder   "/Sent"
+	  mu4e-refile-folder "/All Mail"
+	  mu4e-trash-folder  "/Trash")
+
+    (setq mu4e-maildir-shortcuts
+	  '((:maildir "/INBOX"     :key ?i)
+	    (:maildir "/sent"      :key ?s)
+	    (:maildir "/Trash"     :key ?t)
+	    (:maildir "/Drafts"    :key ?d)
+	    (:maildir "/All Mail"  :key ?a)))
+
+    (setq user-mail-address "vachonfrederic@proton.me"
+	  user-full-name  "Frédéric Vachon")
+
+    (setq message-send-mail-function 'smtpmail-send-it
+	  auth-sources '("~/.authinfo.gpg")
+	  smtpmail-smtp-server "127.0.0.1"
+	  smtpmail-smtp-service 1025
+	  smtpmail-stream-type  'starttls)
+
+    ;; Run mu4e in the background to sync mail periodically
+    (mu4e t))
+#+end_src
+
+By default, =mu4e= will display rich text or html. We can change this with the following settings
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (with-eval-after-load "mm-decode"
+    (add-to-list 'mm-discouraged-alternatives "text/html")
+    (add-to-list 'mm-discouraged-alternatives "text/richtext"))
+#+end_src
+
+** Mu4easy
+Mu4easy is a package that aims to simplify the configuration of Mu4e. It is available from Melpa as well as Github. I prefered to clone the package at first and for now that's how I entend to continue using it.
+
+It is important to have it cloned locally othewise it won't install by itself like other packages.
+#+begin_src shell
+  cd ~/Git
+  git clone https://github.com/danielfleischer/mu4easy.git
+#+end_src
+
+The following configuration should be working now. I am only setting my proton email address, but this may change on the future.
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package mu4easy
+    :demand
+    :load-path "/home/frdrcv/Git/mu4easy"
+    :bind ("C-c u" . mu4e)
+    :config (mu4easy-mode)
+    :custom
+    (mu4easy-contexts '((mu4easy-context
+			 :c-name  "Proton"
+			 :maildir "Proton"
+			 :mail    "vachonfrederic@proton.me"
+			 :smtp    "127.0.0.1"
+			 :smtp-type starttls
+			 :smtp-port 1025
+			 :sent-action delete))))
+#+end_src
+
 * Desktop environement
 ** TODO i3
 *** Configuration de i3wm

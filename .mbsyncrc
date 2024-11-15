@@ -5,7 +5,7 @@ User vachonfrederic@proton.me
 PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine 127.0.0.1/ {print $NF}'"
 AuthMechs LOGIN
 SSLType STARTTLS
-CertificateFile ~/.protoncert/cert.pem
+CertificateFile ~/.config/protonmail/bridge-v3/cert.pem
 
 IMAPStore Proton-remote
 Account Proton

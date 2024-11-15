@@ -847,59 +847,6 @@
 
 ;; (setq org-default-notes-file (concat org-directory "/notes.org"))
 
-(use-package mu4e
-  :ensure nil
-  :load-path "/usr/share/emacs/site-lisp/mu4e/"
-  :defer 10 ; Wait until 10 seconds after startup
-  :config
-
-  (setq mu4e-change-filenames-when-moving t ; avoid sync conflicts
-	mu4e-update-interval (* 10 60) ; check mail 10 minutes
-	mu4e-compose-format-flowed t ; re-flow mail so it's not hard wrapped
-	mu4e-get-mail-command "mbsync -a"
-	mu4e-maildir "~/Mail"
-	mu4e-attachment-dir "~/Downloads")
-
-  (setq mu4e-drafts-folder "/Drafts"
-	mu4e-sent-folder   "/Sent"
-	mu4e-refile-folder "/All Mail"
-	mu4e-trash-folder  "/Trash")
-
-  (setq mu4e-maildir-shortcuts
-	'((:maildir "/INBOX"     :key ?i)
-	  (:maildir "/sent"      :key ?s)
-	  (:maildir "/Trash"     :key ?t)
-	  (:maildir "/Drafts"    :key ?d)
-	  (:maildir "/All Mail"  :key ?a)))
-
-  (setq user-mail-address "vachonfrederic@proton.me"
-	user-full-name  "Frédéric Vachon")
-
-  (setq message-send-mail-function 'smtpmail-send-it
-	auth-sources '("~/.authinfo.gpg") ;need to use gpg version but only local smtp stored for now
-	smtpmail-smtp-server "127.0.0.1"
-	smtpmail-smtp-service 1025
-	smtpmail-stream-type  'starttls)
-
-  ;; Run mu4e in the background to sync mail periodically
-  (mu4e t))
-
-;; Don't forget to install mu4easy from Github. See emacs.org for reference.
-(use-package mu4easy
-  :demand
-  :load-path "/home/frdrcv/Git/mu4easy"
-  :bind ("C-c u" . mu4e)
-  :config (mu4easy-mode)
-  :custom
-  (mu4easy-contexts '((mu4easy-context
-		       :c-name  "Proton"
-		       :maildir "Proton"
-		       :mail    "vachonfrederic@proton.me"
-		       :smtp    "127.0.0.1"
-		       :smtp-type starttls
-		       :smtp-port 1025
-		       :sent-action delete))))
-
 ; (use-package hledger-mode
 					; :pin manual
 					; :after htmlize
@@ -1317,3 +1264,59 @@
 
 (use-package w32-browser
   :after (dired))
+
+(use-package mu4e
+  :ensure nil
+  :load-path "/usr/share/emacs/site-lisp/mu4e/"
+  :defer 10 ; Wait until 10 seconds after startup
+  :config
+
+  (setq mu4e-change-filenames-when-moving t ; avoid sync conflicts
+	mu4e-update-interval (* 10 60) ; check mail 10 minutes
+	mu4e-compose-format-flowed t ; re-flow mail so it's not hard wrapped
+	mu4e-get-mail-command "mbsync -a"
+	mu4e-maildir "~/Mail"
+	mu4e-attachment-dir "~/Downloads")
+
+  (setq mu4e-drafts-folder "/Drafts"
+	mu4e-sent-folder   "/Sent"
+	mu4e-refile-folder "/All Mail"
+	mu4e-trash-folder  "/Trash")
+
+  (setq mu4e-maildir-shortcuts
+	'((:maildir "/INBOX"     :key ?i)
+	  (:maildir "/sent"      :key ?s)
+	  (:maildir "/Trash"     :key ?t)
+	  (:maildir "/Drafts"    :key ?d)
+	  (:maildir "/All Mail"  :key ?a)))
+
+  (setq user-mail-address "vachonfrederic@proton.me"
+	user-full-name  "Frédéric Vachon")
+
+  (setq message-send-mail-function 'smtpmail-send-it
+	auth-sources '("~/.authinfo.gpg")
+	smtpmail-smtp-server "127.0.0.1"
+	smtpmail-smtp-service 1025
+	smtpmail-stream-type  'starttls)
+
+  ;; Run mu4e in the background to sync mail periodically
+  (mu4e t))
+
+(with-eval-after-load "mm-decode"
+  (add-to-list 'mm-discouraged-alternatives "text/html")
+  (add-to-list 'mm-discouraged-alternatives "text/richtext"))
+
+(use-package mu4easy
+  :demand
+  :load-path "/home/frdrcv/Git/mu4easy"
+  :bind ("C-c u" . mu4e)
+  :config (mu4easy-mode)
+  :custom
+  (mu4easy-contexts '((mu4easy-context
+		       :c-name  "Proton"
+		       :maildir "Proton"
+		       :mail    "vachonfrederic@proton.me"
+		       :smtp    "127.0.0.1"
+		       :smtp-type starttls
+		       :smtp-port 1025
+		       :sent-action delete))))
