@@ -3221,6 +3221,17 @@ Some software requires Pip for installation. To install it, we simply need to us
   sudo apt install python3-pip -y
 #+end_src
 
+** Latex
+It is probably overkill, but since space nor time are not issues for me, I prefer to install a full texlive environment. It can be installed from Debian's repos.
+#+begin_src shell
+  sudo apt install texlive-full
+#+end_src
+
+A Latex package I entend on using, =minted=, requires =Pygments= to work. Once Python and Pip are functionnal, we can install it with Pip.
+#+begin_src shell
+  sudo apt install python3-pygments
+#+end_src
+
 ** Flameshot
 ** VPN
 For work I am using a vpn connection to get access to my remote desktop computer. We use openvpn to do so, which requires a few extra steps on Debian (see [[https://bbs.archlinux.org/viewtopic.php?pid=1550578#p1550578][[SOLVED] 'org.freedesktop.NetworkManager.openvpn' not installed / Networking, Server, and Protection / Arch Linux Forums]]). First, we need to install a plugin for NetworkManager:
