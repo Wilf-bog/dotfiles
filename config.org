@@ -2645,6 +2645,22 @@ Mon choix de terminal avec i3 et sur Windows. J'utilise une version compilée.
 #+end_src
 
 *** TODO zsh
+
+**** Installation
+
+Installating powerlevel10k (see [[https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#for-new-users][GitHub - romkatv/powerlevel10k: A Zsh theme]])
+
+#+begin_src shell
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+#+end_src
+
+Once installed, we have to switch from bash:
+
+#+begin_src shell
+chsh -s /bin/zsh
+#+end_src
+
+
 #+begin_src conf :tangle .zshrc
   # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
   # Initialization code that may require console input (password prompts, [y/n]
