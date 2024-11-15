@@ -2413,6 +2413,9 @@ Channel Proton-sent
   exec_always --no-startup-id xrandr --output DP-5 --auto --right-of HDMI-0 &
 #+end_src
 
+*** Autostart
+
+
 *** Dunst
 La version des dépôts officiels est convenable.
 
