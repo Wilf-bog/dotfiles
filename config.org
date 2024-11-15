@@ -18,7 +18,6 @@ To learn more on the matter, here are examples I looked into before making the m
 - [[https://www.youtube.com/watch?v=Ex9zI4Fcirs&t=5896s][Literate Configuration: A Direct Approach - System Crafters Live! - YouTube]]
 - [[https://www.youtube.com/watch?v=ycyxytk1NAQ][Emacs: advanced Org literate configuration - YouTube]]
  
-
 * Emacs configuration
 This configuration is borrowing a lot of things from 2 majors sources: [[https://github.com/daviwil/emacs-from-scratch/][Emacs from scratch]] and [[https://github.com/pprevos/emacs-writing-studio][Emacs Writing Studio]]. Where EWS offered a solid basis to cover my basic needs, which was to have a solid alternative to Obsidian as well as a learning platform for Emacs in general, EFS offered me generalist and powerful tools that helped me dive deeper into Emacs configuration. I also have to thank specifically [[https://github.com/protesilaos][Protesilaos Stavrou]] for his work on [[https://github.com/protesilaos/denote][Denote]] that is the tool that made the switch to Emacs possible.
 
@@ -2872,4 +2871,28 @@ Once installed, the service has to be registered.
 
   # Start espanso
   espanso start
+#+end_src
+
+* Post-install things
+After a clean reinstall of Debian (or if I decide to try another distribution) here are additional things that need to be done.
+
+** Auto-mounting additional drives
+As of late 2024, my desktop computer has 2 drives, once used for Data storage, mostly games. To make sure this drive is available for Steam, here are the steps to follow.
+
+First, we need to get the UUID of the drive.
+
+#+begin_src shell
+  sudo blkid
+#+end_src
+
+And then create the mountpoint for the drive.
+
+#+begin_src shell
+  sudo mkdir /mnt/data
+#+end_src
+
+And updating the =/etc/fstab= file with the information from =blkid= and the mountpoint we just created.
+
+#+begin_src shell
+  UUID=20bdfff4-b615-4f23-93c7-dcc3b5825548       /mnt/data       ext4    defaults        0       2
 #+end_src
