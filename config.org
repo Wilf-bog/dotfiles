@@ -2653,7 +2653,7 @@ Mon choix de terminal avec i3 et sur Windows. J'utilise une version compilée.
 
 **** Installation
 
-Installating powerlevel10k (see [[https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#for-new-users][GitHub - romkatv/powerlevel10k: A Zsh theme]])
+Installing powerlevel10k (see [[https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#for-new-users][GitHub - romkatv/powerlevel10k: A Zsh theme]])
 
 #+begin_src shell
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
