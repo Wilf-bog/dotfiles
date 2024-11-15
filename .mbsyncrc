@@ -11,8 +11,8 @@ IMAPStore Proton-remote
 Account Proton
 
 MaildirStore Proton-local
-Path ~/Mail/Proton/
-Inbox ~/Mail/Proton/INBOX/
+Path ~/Documents/Mail/Proton/
+Inbox ~/Documents/Mail/Proton/INBOX/
 
 Channel Proton
 Far :Proton-remote:
