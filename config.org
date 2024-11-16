@@ -3301,6 +3301,15 @@ Once installed, the service has to be registered.
   espanso start
 #+end_src
 
+** Librewolf
+Even though I find that the ESR version of Firefox offered by default on Debian is doing a fine job and that I could use it perfectly well, I would prefer to use the more privacy inclined Librewolf as my main browser. Both browser are set up in the same way, so ESR can be a good fallback if I encounter problem with the less stable experience offered by Librewolf.
+
+To install it with flatpak and set it as default:
+#+begin_src shell
+  flatpak install flathub io.gitlab.librewolf-community
+  xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop
+#+end_src
+
 * Post-install things
 After a clean reinstall of Debian (or if I decide to try another distribution) here are additional things that need to be done.
 
