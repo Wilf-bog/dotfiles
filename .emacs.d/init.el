@@ -1320,3 +1320,12 @@
 		       :smtp-type starttls
 		       :smtp-port 1025
 		       :sent-action delete))))
+
+(setq org-latex-listings 'minted
+      org-latex-packages-alist '(("" "minted"))
+      org-latex-pdf-process
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+	"pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+(setq org-latex-minted-options '(("breaklines" "true")
+				 ("breakanywhere" "true")))

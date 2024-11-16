@@ -3294,11 +3294,9 @@ Instead, the working solution is to use the appimage by following these instruct
 #+end_src
 
 Once installed, the service has to be registered.
-
 #+begin_src shell
   # Register espanso as a systemd service (required only once)
   espanso service register
-
   # Start espanso
   espanso start
 #+end_src
@@ -3310,19 +3308,16 @@ After a clean reinstall of Debian (or if I decide to try another distribution) h
 As of late 2024, my desktop computer has 2 drives, once used for Data storage, mostly games. To make sure this drive is available for Steam, here are the steps to follow.
 
 First, we need to get the UUID of the drive.
-
 #+begin_src shell
   sudo blkid
 #+end_src
 
 And then create the mountpoint for the drive.
-
 #+begin_src shell
   sudo mkdir /mnt/data
 #+end_src
 
 And updating the =/etc/fstab= file with the information from =blkid= and the mountpoint we just created.
-
 #+begin_src shell
   UUID=20bdfff4-b615-4f23-93c7-dcc3b5825548       /mnt/data       ext4    defaults        0       2
 #+end_src
