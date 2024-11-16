@@ -24,9 +24,6 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
 # Aliases
 
 # Terminal
@@ -48,3 +45,6 @@ bindkey -v
 
 # Variable for hledger
 export LEDGER_FILE=~/Documents/Finances/2024.journal
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh

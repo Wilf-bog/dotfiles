@@ -3088,9 +3088,6 @@ chsh -s /bin/zsh
 
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-  # Set up fzf key bindings and fuzzy completion
-  source <(fzf --zsh)
-
   # Aliases
 
   # Terminal
@@ -3113,6 +3110,25 @@ chsh -s /bin/zsh
   # Variable for hledger
   export LEDGER_FILE=~/Documents/Finances/2024.journal
 #+end_src
+
+**** =fzf=
+I often use =fzf= in conjunction with =zsh= outside emacs. It is available in Debian repositories.
+#+begin_src shell
+  sudo apt install fzf
+#+end_src
+
+Once installed, the following lines in .zshrc should enable =fzf= with =zsh=. This is for older versions of =fzf= and will probably have to chance in Debian 13.
+#+begin_src conf :tangle .zshrc
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  source /usr/share/doc/fzf/examples/completion.zsh
+#+end_src
+
+This is the code that is used for more recent versions of =fzf=. It will be useful in the future.
+#+begin_src conf :tangle nil
+  # Set up fzf key bindings and fuzzy completion
+  source <(fzf --zsh)
+#+end_src
+
 *** TODO Copyq
 Logiciel utilisé pour la gestion du presse-papier en-dehors de Emacs. Voir si une meilleure intégration est possible.
 
