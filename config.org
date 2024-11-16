@@ -3221,51 +3221,67 @@ Some software requires Pip for installation. To install it, we simply need to us
   sudo apt install python3-pip -y
 #+end_src
 
-** Latex
+** WAITING Latex
+:LOGBOOK:
+- Note taken on [2024-11-16 Sat 12:07] \\
+  It seems that the minted package now works but causes some problem with this file's exports with Latex. I will have to look into it eventually.
+:END:
 It is probably overkill, but since space nor time are not issues for me, I prefer to install a full texlive environment. It can be installed from Debian's repos.
 #+begin_src shell
   sudo apt install texlive-full
 #+end_src
 
-A Latex package I entend on using, =minted=, requires =Pygments= to work. Once Python and Pip are functionnal, we can install it with Pip.
+By default, Org will use the =verbatim= environement for source blocks, which doesn't break lines. Instead, we can use the =minted= package to fix this issue and add syntax highlighting (see [[https://emacs.stackexchange.com/a/33018][org mode - How to word wrap within code blocks - Emacs Stack Exchange]]). =minted= depends on =Pygments= to work (see [[https://pygments.org/][Welcome! — Pygments]]), so we have to install it first. 
 #+begin_src shell
   sudo apt install python3-pygments
+#+end_src
+
+Here are the =org= settings to use =minted= instead of =verbatim= (see [[https://emacs.stackexchange.com/a/27984][syntax highlighting - Export code blocks in org-mode with minted environment - Emacs Stack Exchange]]).
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq org-latex-listings 'minted
+	org-latex-packages-alist '(("" "minted"))
+	org-latex-pdf-process
+	'("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+	  "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+#+end_src
+
+To enable breaklines, we can use these settings:
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq org-latex-minted-options '(("breaklines" "true")
+				   ("breakanywhere" "true")))
 #+end_src
 
 ** Flameshot
 ** VPN
 For work I am using a vpn connection to get access to my remote desktop computer. We use openvpn to do so, which requires a few extra steps on Debian (see [[https://bbs.archlinux.org/viewtopic.php?pid=1550578#p1550578][[SOLVED] 'org.freedesktop.NetworkManager.openvpn' not installed / Networking, Server, and Protection / Arch Linux Forums]]). First, we need to install a plugin for NetworkManager:
-
 #+begin_src shell
 sudo apt install network-manager-openvpn
 #+end_src
 
 Even if this plugin is installed, the configuration screen of NetworkManager Applet won't give any options to import a ovpn file nor will it allow me to edit a pre-existing ovpn configuration if it was imported from the terminal. The only solution that seems to work at the moment is to install a gnome plugin according to this page: [[https://forums.linuxmint.com/viewtopic.php?t=175270][Solution to VPN [no valid VPN secrets] problem (LM 17) - Linux Mint Forums]]. Let's install it:
-
 #+begin_src shell
 sudo apt install network-manager-openvpn-gnome
 #+end_src
+
 ** Zoom
 #+begin_src shell
 flatpak install us.zoom.Zoom
 #+end_src
+
 ** Bottles
 #+begin_src shell
 flatpak install com.usebottles.bottles
 #+end_src
+
 ** Espanso
 **** Installation
-Espanso could be installed on Debian with a home-made deb file provided from espanso's website, here : [[https://espanso.org/docs/install/linux/#deb-x11][Install on Linux | Espanso]].
-
-Sadly, those instructions don't work on Debian 12.
-
+Espanso could be installed on Debian with a home-made deb file provided from espanso's website, here : [[https://espanso.org/docs/install/linux/#deb-x11][Install on Linux | Espanso]]. Sadly, those instructions don't work on Debian 12.
 #+begin_src sh
   wget https://github.com/espanso/espanso/releases/download/v2.2.1/espanso-debian-x11-amd64.deb &&
   sudo apt install ./espanso-debian-x11-amd64.deb
 #+end_src
 
 Instead, the working solution is to use the appimage by following these instructions:
-
 #+begin_src shell
   # Create the $HOME/opt destination folder
   mkdir -p ~/opt
