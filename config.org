@@ -3347,3 +3347,22 @@ And updating the =/etc/fstab= file with the information from =blkid= and the mou
 #+begin_src shell
   UUID=20bdfff4-b615-4f23-93c7-dcc3b5825548       /mnt/data       ext4    defaults        0       2
 #+end_src
+
+** Making a =udev= rule to make my keyboard usable with VIA
+To install VIA to set up the keyboard, we have to install the latest version from here, a deb file is available here: [[https://github.com/the-via/releases/releases][Releases · the-via/releases · GitHub]].
+
+Once installed, we have to create a =udev= rule. First edit this file:
+#+begin_src shell
+  sudo vi /etc/udev/rules.d/99-vial.rules
+#+end_src
+
+And then paste this content:
+#+begin_src shell
+  # Keebio Iris Rev. 8
+  KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="cb10", ATTRS{idProduct}=="8256", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+#+end_src
+
+Once the rule is created, we can reload the rules.
+#+begin_src shell
+  sudo udevadm control --reload-rules && udevadm trigger
+#+end_src
