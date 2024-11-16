@@ -2580,6 +2580,8 @@ La version des dépôts officiels est convenable.
       foreground = "#ffffff"
       timeout = 0
 #+end_src
+**** TODO Volume control with =dunst=
+See [[https://wiki.archlinux.org/title/Dunst#Using_dunstify_as_volume/brightness_level_indicator][Dunst - ArchWiki]].
 
 *** =Picom= Compositor, effects, and screen-tearing
 To avoid screen tearing and add some nice effets, I am using the basic version of picom from Debian's repos.
