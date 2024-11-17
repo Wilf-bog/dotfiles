@@ -2354,7 +2354,7 @@ The following configuration should be working now. I am only setting my proton e
   #bindsym $mod+d focus child
 #+end_src
 
-*** Worspaces
+*** Workspaces
 #+begin_src conf :tangle .config/i3/config
   # Define names for default workspaces for which we configure key bindings later on.
   # We use variables to avoid repeating the names in multiple places.
