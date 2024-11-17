@@ -3010,15 +3010,6 @@ Pour sélectionner une image aléatoire dans mon dossier de fonds d'écran:
 
 Pour plus d'informations, voir [[https://github.com/betterlockscreen/betterlockscreen?tab=readme-ov-file][GitHub - betterlockscreen/betterlockscreen: 🍀 sweet looking lockscreen for linux system]].
 
-*** lxappearance
-Utilisé pour gérer l'apparence des applications GUI, à défaut de maintenir une configutation en fichier texte pour GTK 2, 3 et 4.
-
-#+begin_src shell :tangle no
-  sudo apt install lxappearance
-#+end_src
-
-***** TODO Voir si je peux me départir de lxappearance
-
 *** TODO Alacritty
 Mon choix de terminal avec i3 et sur Windows. J'utilise une version compilée.
 
@@ -3145,7 +3136,18 @@ Logiciel utilisé pour la gestion du presse-papier en-dehors de Emacs. Voir si u
 Logiciel par défaut qui semble être proposé avec Sway. À voir s'il s'agit d'une alternative intéressante à Alacritty.
 
 ** TODO Gnome
-** XFCE4
+** TODO XFCE4
+** TODO GTK
+*** lxappearance
+Utilisé pour gérer l'apparence des applications GUI, à défaut de maintenir une configutation en fichier texte pour GTK 2, 3 et 4.
+
+#+begin_src shell :tangle no
+  sudo apt install lxappearance
+#+end_src
+
+***** TODO Voir si je peux me départir de lxappearance
+
+** TODO QT
 * Services
 Logiciels qui fonctionnent en backgroup, peu importe l'environnement que j'utilise.
 
