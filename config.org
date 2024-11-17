@@ -2413,6 +2413,12 @@ The following configuration should be working now. I am only setting my proton e
 
   # move workspace to other monitor
   bindsym $mod+bracketleft move workspace to output next
+
+  # assign apps to specific workspace (xprop to find class name)
+  assign [class="^TelegramDesktop$"] → number $ws2
+  assign [class="^Emacs-gtk$"] → number $ws3
+  assign [class="^steam$"] → number $ws9
+  assign [class="^Proton Mail Bridge$"] → number $ws10
 #+end_src
 
 *** Scratchpad
