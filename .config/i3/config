@@ -146,6 +146,18 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# assign workspaces to specific monitors
+workspace $ws1 output HDMI-0 eDP-1
+workspace $ws2 output HDMI-0 eDP-1
+workspace $ws3 output HDMI-0 eDP-1
+workspace $ws4 output HDMI-0 eDP-1
+workspace $ws5 output HDMI-0 eDP-1
+workspace $ws6 output DP-5 eDP-1
+workspace $ws7 output DP-5 eDP-1
+workspace $ws8 output DP-5 eDP-1
+workspace $ws9 output DP-5 eDP-1
+workspace $ws10 output DP-5 eDP-1
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -173,17 +185,23 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # jump to last workspace
 workspace_auto_back_and_forth yes
 
-# Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the first scratchpad window
-bindsym $mod+minus scratchpad show
-
 # jump to "urgent" workspace
 bindsym $mod+x [urgent=latest] focus
 
 # move workspace to other monitor
 bindsym $mod+bracketleft move workspace to output next
+
+# assign apps to specific workspace (xprop to find class name)
+assign [class="^TelegramDesktop$"] → number $ws2
+assign [class="^Emacs-gtk$"] → number $ws3
+assign [class="^steam$"] → number $ws9
+assign [class="^Proton Mail Bridge$"] → number $ws10
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
