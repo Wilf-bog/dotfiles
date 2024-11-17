@@ -2408,17 +2408,20 @@ The following configuration should be working now. I am only setting my proton e
   # jump to last workspace
   workspace_auto_back_and_forth yes
 
-  # Make the currently focused window a scratchpad
-  bindsym $mod+Shift+minus move scratchpad
-
-  # Show the first scratchpad window
-  bindsym $mod+minus scratchpad show
-
   # jump to "urgent" workspace
   bindsym $mod+x [urgent=latest] focus
 
   # move workspace to other monitor
   bindsym $mod+bracketleft move workspace to output next
+#+end_src
+
+*** Scratchpad
+#+begin_src conf :tangle .config/i3/config
+  # Make the currently focused window a scratchpad
+  bindsym $mod+Shift+minus move scratchpad
+
+  # Show the first scratchpad window
+  bindsym $mod+minus scratchpad show
 
   # reload the configuration file
   bindsym $mod+Shift+c reload
