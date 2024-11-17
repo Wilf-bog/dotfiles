@@ -2369,6 +2369,18 @@ The following configuration should be working now. I am only setting my proton e
   set $ws9 "9"
   set $ws10 "10"
 
+  # assign workspaces to specific monitors
+  workspace $ws1 output HDMI-0
+  workspace $ws2 output HDMI-0
+  workspace $ws3 output HDMI-0
+  workspace $ws4 output HDMI-0
+  workspace $ws5 output HDMI-0
+  workspace $ws6 output DP-5
+  workspace $ws7 output DP-5
+  workspace $ws8 output DP-5
+  workspace $ws9 output DP-5
+  workspace $ws10 output DP-5
+
   # switch to workspace
   bindsym $mod+1 workspace number $ws1
   bindsym $mod+2 workspace number $ws2
