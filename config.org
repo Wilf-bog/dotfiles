@@ -3099,10 +3099,6 @@ chsh -s /bin/zsh
 
   typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
-  # Set up fzf key bindings and fuzzy completion
-
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
   # Aliases
 
   # Terminal
@@ -3140,8 +3136,9 @@ Once installed, the following lines in .zshrc should enable =fzf= with =zsh=. Th
 
 This is the code that is used for more recent versions of =fzf=. It will be useful in the future.
 #+begin_src conf :tangle nil
-  # Set up fzf key bindings and fuzzy completion
   source <(fzf --zsh)
+  # Set up fzf key bindings and fuzzy completion
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #+end_src
 
 *** TODO Copyq
