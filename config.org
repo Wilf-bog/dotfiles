@@ -3389,3 +3389,6 @@ Once the rule is created, we can reload the rules.
 #+begin_src shell
   sudo udevadm control --reload-rules && udevadm trigger
 #+end_src
+
+** TODO Automatically start ssh agent
+See [[https://www.getrichordevtryin.com/demarrer-ssh-agent-automatiquement.html][Démarrer ssh-agent automatiquement - Get Rich or Dev Tryin']].
