@@ -3189,7 +3189,7 @@ Logiciel utilisé pour la gestion du presse-papier en-dehors de Emacs. Voir si u
 #+end_src
 
 ** TODO Sway
-À utiliser éventuellement avec le Yoga.
+À utiliser éventuellement avec le Yoga. Voir [[https://www.getrichordevtryin.com/sway.html][Sway - Get Rich or Dev Tryin']].
 
 *** Configuration
 
