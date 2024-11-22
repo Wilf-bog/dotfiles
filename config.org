@@ -3435,3 +3435,17 @@ Once the rule is created, we can reload the rules.
 
 ** TODO Automatically start ssh agent
 See [[https://www.getrichordevtryin.com/demarrer-ssh-agent-automatiquement.html][Démarrer ssh-agent automatiquement - Get Rich or Dev Tryin']].
+#+begin_src conf :tangle .config/systemd/user/ssh-agent.service
+  [Unit]
+  Description=SSH key agent
+
+  [Service]
+  Type=forking
+  Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+  ExecStart=/usr/bin/ssh-agent -a $SSH_AUTH_SOCK
+
+  [Install]
+  WantedBy=default.target
+#+end_src
+
+Ensuite, il faut exporter la variable pour le service:
