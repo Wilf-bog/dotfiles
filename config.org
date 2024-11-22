@@ -3449,3 +3449,19 @@ See [[https://www.getrichordevtryin.com/demarrer-ssh-agent-automatiquement.html]
 #+end_src
 
 Ensuite, il faut exporter la variable pour le service:
+#+begin_src conf :tangle .zprofile
+  export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
+#+end_src
+
+Et ensuite on peut démarrer et activer le service:
+#+begin_src shell
+  systemctl --user start ssh-agent.service
+  systemctl --user enable ssh-agent.service
+#+end_src
+
+Enfin, il faut ajouter ceci à la configuration de SSH:
+#+begin_src conf :tangle .ssh/config
+  Host *
+      AddKeysToAgent yes
+      IdentityFile ~/.ssh/id_rsa
+#+end_src
