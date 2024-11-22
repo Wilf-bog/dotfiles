@@ -1231,6 +1231,25 @@
   :config
   (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
 
+(use-package dired-preview
+  :hook (dired . dired-preview)
+  :config
+  (setq dired-preview-delay 0.7
+	dired-preview-max-size (expt 6 20)
+	dired-preview-ignored-extensions-regexp (concat "\\."
+							"\\(gz\\|"
+							"zst\\|"
+							"tar\\|"
+							"xz\\|"
+							"rar\\|"
+							"zip\\|"
+							"iso\\|"
+							"epub"
+							"\\)"))
+
+  ;; Enable `dired-preview-mode' in a given Dired buffer or do it ;; globally:
+  (dired-preview-global-mode 1))
+
 ;; Backup files
 
 (setq-default backup-directory-alist

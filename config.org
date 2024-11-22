@@ -1676,6 +1676,28 @@ The following settings offer a few options, notably better sorting (placing dire
     (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
 #+end_src
 
+*** Dired-preview
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package dired-preview
+    :hook (dired . dired-preview)
+    :config
+    (setq dired-preview-delay 0.7
+	  dired-preview-max-size (expt 6 20)
+	  dired-preview-ignored-extensions-regexp (concat "\\."
+							  "\\(gz\\|"
+							  "zst\\|"
+							  "tar\\|"
+							  "xz\\|"
+							  "rar\\|"
+							  "zip\\|"
+							  "iso\\|"
+							  "epub"
+							  "\\)"))
+
+    ;; Enable `dired-preview-mode' in a given Dired buffer or do it ;; globally:
+    (dired-preview-global-mode 1))
+#+end_src
+
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   ;; Backup files
 
@@ -2904,17 +2926,33 @@ To avoid screen tearing and add some nice effets, I am using the basic version o
   rules: ({
     match = "window_type = 'tooltip'";
     fade = false;
-    shadow = true;
+    shadow = false;
     opacity = 0.75;
     full-shadow = false;
   }, {
     match = "window_type = 'dock'    || "
 	    "window_type = 'desktop' || "
 	    "_GTK_FRAME_EXTENTS@";
+    shadow = false;
+    clip-shadow-above = true;
     blur-background = false;
   }, {
     match = "window_type != 'dock'";
     # shader = "my_shader.frag";
+  }, {
+    match = "window_type = 'dnd'";
+    shadow = false;
+  }, {
+    match = "window_type = 'menu'";
+    shadow = false;
+  }, {
+    match = "window_type = 'popup_menu'";
+    shadow = false;
+    opacity = 0.8;
+  }, {
+    match = "window_type = 'dropdown_menu'";
+    shadow = false;
+    opacity = 0.8;
   }, {
     match = "window_type = 'dock' || "
 	    "window_type = 'desktop'";
@@ -2924,6 +2962,8 @@ To avoid screen tearing and add some nice effets, I am using the basic version o
 	    "class_g = 'Conky'       || "
 	    "class_g ?= 'Notify-osd' || "
 	    "class_g = 'Cairo-clock' || "
+	    "class_g = 'Librewolf' || "
+	    "class_g = 'firefox-esr' || "
 	    "_GTK_FRAME_EXTENTS@";
     shadow = false;
   }, {
@@ -3349,6 +3389,9 @@ To install it with flatpak and set it as default:
   flatpak install flathub io.gitlab.librewolf-community
   xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop
 #+end_src
+
+** Virtualbox
+As far as it goes, on 11/20/2024, the normal installation process doesn't work. I managed to make virtualbox work with these instructions : [[https://linuxiac.com/how-to-install-virtualbox-on-debian-12-bookworm/][How to Install VirtualBox on Debian 12 (Bookworm)]].
 
 * Post-install things
 After a clean reinstall of Debian (or if I decide to try another distribution) here are additional things that need to be done.
