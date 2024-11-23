@@ -1037,6 +1037,37 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 #+end_src
 
 ** Multimédia
+Sur i3, pour contrôler la musique, nous devrions utiliser =playerctl=. Celui-ci est disponible dans les dépôt de Debian.
+#+begin_src shell
+sudo apt install playerctl
+#+end_src
+
+Et crér un service pour qu'il fonctionne en arrière-plan.
+#+begin_src conf :tangle .config/systemd/user/playerctld.service
+  [Unit]
+  Description=Keep track of media player activity
+
+  [Service]
+  Type=oneshot
+  ExecStart=/usr/bin/playerctld daemon
+
+  [Install]
+  WantedBy=default.target
+#+end_src
+
+Et ensuite l'activer:
+#+begin_src shell
+  systemctl --user enable playerctld
+#+end_src
+
+Un autre paquer utile est =ready-player-mode=. Pour l'installer et le configurer:
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package ready-player
+    :ensure t
+    :config
+    (ready-player-mode +1))
+  (setq ready-player-my-media-collection-location "/mnt/data/Music/")
+#+end_src
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
@@ -2287,10 +2318,10 @@ The following configuration should be working now. I am only setting my proton e
   bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
   # Multimedia control
-  bindsym XF86AudioPlay exec playerctl play
-  bindsym XF86AudioPause exec playerctl pause
+  bindsym XF86AudioPlay exec playerctl play-pause
   bindsym XF86AudioNext exec playerctl next
   bindsym XF86AudioPrev exec playerctl previous
+  bindsym $mod + y exec playerctld shift
 
   bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
   bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
