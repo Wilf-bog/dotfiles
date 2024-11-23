@@ -1669,9 +1669,27 @@ This configuration was taken from the official GitHub page that can be found her
 ** Dired
 The following settings offer a few options, notably better sorting (placing directories first) and less destructive file deletions options. Based on EFS configuration, dired is also evilified and a few more options are now offered for filtering with the help of dired-x.
 
+Avant de commencer la configuration de =dired=, je définie une nouvelle variable qui va bonifier le mode =dired-hide-details=:
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (defun hide-dired-details-include-all-subdir-paths ()
+    (save-excursion
+      (goto-char (point-min))
+      (while (re-search-forward dired-subdir-regexp nil t)
+	(let* ((match-bounds (cons (match-beginning 1) (match-end 1)))
+	       (path (file-name-directory (buffer-substring (car match-bounds)
+							    (cdr match-bounds))))
+	       (path-start (car match-bounds))
+	       (path-end (+ (car match-bounds) (length path)))
+	       (inhibit-read-only t))
+	  (put-text-property path-start path-end
+			     'invisible 'dired-hide-details-information)))))
+#+end_src
 
+On peut poursuivre avec la configuration de =dired=:
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package dired
+    :hook ((dired-mode . dired-hide-details-mode)
+	   (dired-after-readin . hide-dired-details-include-all-subdir-paths))
     :ensure
     nil
     :commands
@@ -1689,15 +1707,31 @@ The following settings offer a few options, notably better sorting (placing dire
       "l" 'dired-find-file))
 
   (autoload 'dired-omit-mode "dired-x")
+#+end_src
 
+*** Look and feel
+Pour rendre l'expérience plus attrayante avec Dired, quelques plugins peuvent ajouter des couleurs et icônes, cacher les informations qui ne sont nécessaires ou encore ajouter les informations en lien avec des dépôts Git. À ce sujet, voir:
+- https://xenodium.com/showhide-emacs-dired-details-in-style/
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; Adding icons
   (use-package all-the-icons-dired
-    :hook (dired-mode . all-the-icons-dired-mode))
+    :hook (dired-mode))
+
+  ;; Adding colors
+  (use-package diredfl
+    :hook (dired-mode))
+    ;;:hook (dired-mode . diredfl-global-mode))
+
+  ;; Adding git infos
+  (use-package dired-git-info
+    :ensure t
+    :bind (:map dired-mode-map
+		(")" . dired-git-info-mode)))
 
   ;; Hide hidden files
-
   (use-package dired-hide-dotfiles
     :hook
-    (dired-mode . dired-hide-dotfiles-mode)
+    (dired-mode)
     :config
     (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
 #+end_src

@@ -1203,7 +1203,22 @@
   :bind
   (("C-c a" . org-agenda)))
 
+(defun hide-dired-details-include-all-subdir-paths ()
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward dired-subdir-regexp nil t)
+      (let* ((match-bounds (cons (match-beginning 1) (match-end 1)))
+	     (path (file-name-directory (buffer-substring (car match-bounds)
+							  (cdr match-bounds))))
+	     (path-start (car match-bounds))
+	     (path-end (+ (car match-bounds) (length path)))
+	     (inhibit-read-only t))
+	(put-text-property path-start path-end
+			   'invisible 'dired-hide-details-information)))))
+
 (use-package dired
+  :hook ((dired-mode . dired-hide-details-mode)
+	 (dired-after-readin . hide-dired-details-include-all-subdir-paths))
   :ensure
   nil
   :commands
@@ -1222,14 +1237,25 @@
 
 (autoload 'dired-omit-mode "dired-x")
 
+;; Adding icons
 (use-package all-the-icons-dired
-  :hook (dired-mode . all-the-icons-dired-mode))
+  :hook (dired-mode))
+
+;; Adding colors
+(use-package diredfl
+  :hook (dired-mode))
+  ;;:hook (dired-mode . diredfl-global-mode))
+
+;; Adding git infos
+(use-package dired-git-info
+  :ensure t
+  :bind (:map dired-mode-map
+	      (")" . dired-git-info-mode)))
 
 ;; Hide hidden files
-
 (use-package dired-hide-dotfiles
   :hook
-  (dired-mode . dired-hide-dotfiles-mode)
+  (dired-mode)
   :config
   (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
 
