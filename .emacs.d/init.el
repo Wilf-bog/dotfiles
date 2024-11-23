@@ -736,6 +736,12 @@
 			;; "R" #'prot-eww-readable
 			;; "Q" #'prot-eww-quit))
 
+(use-package ready-player
+  :ensure t
+  :config
+  (ready-player-mode +1))
+(setq ready-player-my-media-collection-location "/mnt/data/Music/")
+
 ;; Emacs Multimedia System
 
 (use-package emms
