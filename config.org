@@ -328,11 +328,6 @@ For the weight, we can refer to this table:
     (use-package balanced-windows
       :config
       (balanced-windows-mode))
-
-    ;; Switch quickly between windows
-
-    (global-set-key (kbd "M-o") 'other-window)
-
 #+end_src
 
 *** Pulsar

@@ -206,10 +206,6 @@
   :config
   (balanced-windows-mode))
 
-;; Switch quickly between windows
-
-(global-set-key (kbd "M-o") 'other-window)
-
 ;; Read the pulsar manual: <https://protesilaos.com/emacs/pulsar>.
 (use-package pulsar
   :ensure t
