@@ -1261,10 +1261,11 @@
 (use-package all-the-icons-dired
   :hook (dired-mode))
 
-;; Adding colors
-(use-package diredfl
-  :hook (dired-mode))
-  ;;:hook (dired-mode . diredfl-global-mode))
+;; Adding colors (retiré car en conflit avec Denote-dired)
+;; (use-package diredfl
+;;   :hook (dired-mode))
+;;   ;;
+;; :hook (dired-mode . diredfl-global-mode))
 
 ;; Adding git infos
 (use-package dired-git-info
