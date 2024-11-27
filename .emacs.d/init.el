@@ -1273,6 +1273,11 @@
   :bind (:map dired-mode-map
 	      (")" . dired-git-info-mode)))
 
+;; Adding Dirvish-mode
+(use-package dirvish
+  :hook (dired-mode))
+(dirvish-override-dired-mode)
+
 ;; Hide hidden files
 (use-package dired-hide-dotfiles
   :hook
