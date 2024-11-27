@@ -2568,7 +2568,7 @@ The following configuration should be working now. I am only setting my proton e
 
   # Additional apps
 
-  exec_always picom
+  exec_always picom --experimental-backends
   exec --no-startup-id redshift -l 45:-73
   exec --no-startup-id dunst
   exec --no-startup-id copyq
@@ -2802,12 +2802,12 @@ To avoid screen tearing and add some nice effets, I am using the basic version o
   #################################
 
   # Parameters for background blurring, see BLUR section in the man page for more information.
-  # blur-method =
-  # blur-size = 12
+  blur-method = "gaussian"
+  blur-size = 12
   #
-  # blur-deviation = false
+  blur-deviation = 5
   #
-  # blur-strength = 5
+  blur-strength = 9
 
   # Blur background of semi-transparent / ARGB windows.
   # Can be set per-window using rules.
@@ -3119,8 +3119,7 @@ Pour sélectionner une image précise pour l'arrière plan avec un effet de dim:
 #+begin_src shell :tangle no
   betterlockscreen -u ~/Wallpapers/image.png --fx dim
 #+end_src
-
-Pour mettre le jour le fond d'écran avec l'image du lockscreen:
+ mettre le jour le fond d'écran avec l'image du lockscreen:
 
 #+begin_src shell :tangle no
   betterlockscreen -w
@@ -3149,7 +3148,7 @@ Mon choix de terminal avec i3 et sur Windows. J'utilise une version compilée.
   style = "Regular"
 
   [window]
-  opacity = 0.8
+  opacity = 0.5
 
   [window.padding]
   x = 15

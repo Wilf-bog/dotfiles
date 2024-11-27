@@ -260,7 +260,7 @@ include i3-theme
 
 # Additional apps
 
-exec_always picom
+exec_always picom --experimental-backends
 exec --no-startup-id redshift -l 45:-73
 exec --no-startup-id dunst
 exec --no-startup-id copyq
