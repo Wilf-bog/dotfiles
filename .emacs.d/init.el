@@ -736,6 +736,26 @@
 			;; "R" #'prot-eww-readable
 			;; "Q" #'prot-eww-quit))
 
+;; Image viewer
+(use-package emacs
+  :bind
+  ((:map image-mode-map
+	      ("K" . image-kill-buffer)
+	      ("<right>" . image-next-file)
+	      ("<left>"  . image-previous-file))
+   (:map dired-mode-map
+    ("C-<return>" . image-dired-dired-display-external))))
+
+(use-package image-dired
+  :custom
+  (image-dired-external-viewer "gimp")
+  (image-dired-thumb-margin 10)
+  :bind
+  (("C-c w I" . image-dired))
+   (:map image-dired-thumbnail-mode-map
+    ("C-<right>" . image-dired-display-next)
+    ("C-<left>" . image-dired-display-previous)))
+
 (use-package ready-player
   :ensure t
   :config
