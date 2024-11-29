@@ -3198,8 +3198,17 @@ Installing powerlevel10k (see [[https://github.com/romkatv/powerlevel10k?tab=rea
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 #+end_src
 
-Once installed, we have to switch from bash:
+Installing zoxide
+#+begin_src shell
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+#+end_src
 
+Il peut être nécessaire de faire cette commande pour activer zoxide sur un nouvel ordinateur après l'avoir installé.
+#+begin_src shell
+rm ~/.zcompdump*; compinit
+#+end_src
+
+Once installed, we have to switch from bash:
 #+begin_src shell
 chsh -s /bin/zsh
 #+end_src
@@ -3222,6 +3231,8 @@ chsh -s /bin/zsh
   setopt appendhistory
 
   source ~/powerlevel10k/powerlevel10k.zsh-theme
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  source /usr/share/doc/fzf/examples/completion.zsh
 
   # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -3249,6 +3260,9 @@ chsh -s /bin/zsh
 
   # Variable for hledger
   export LEDGER_FILE=~/Documents/Finances/2024.journal
+
+  # Enabling zoxide
+  eval "$(zoxide init zsh)"
 #+end_src
 
 **** =fzf=
