@@ -109,8 +109,18 @@ To get notified about incoming updates so you don't have to look for them with t
 
 #+end_src
 
-** Configuration de EWS
+** Other modules and librairies
 
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
+  (add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
+  ;; (load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
+
+#+end_src
+
+** Configuration de EWS
+EWS fait appel à plusieurs logiciels externes pour fonctionner. Dans la configuration par défaut, une fonction s'assure que tous les logiciels sont installés et dans le cas contraire, retourne un message d'erreur. 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   ;; Load EWS functions
@@ -151,15 +161,9 @@ To get notified about incoming updates so you don't have to look for them with t
      "git"))
 
 #+end_src
-
-** Other modules and librairies
-
-#+begin_src emacs-lisp :tangle .emacs.d/init.el
-
-  ;;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
-  (add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
-  ;; (load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
-
+La plupart de ces logiciels sont automatiquement installés comme dépendance à d'autres logiciels qui n'ont rien à voir avec =emacs=. Pour les autres, nous pouvons les installer avec la commande suivante:
+#+begin_src shell
+  sudo apt install -y djvulibre-bin hunspell-en
 #+end_src
 
 ** Look and feel
@@ -3206,6 +3210,13 @@ curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh 
 Il peut être nécessaire de faire cette commande pour activer zoxide sur un nouvel ordinateur après l'avoir installé.
 #+begin_src shell
 rm ~/.zcompdump*; compinit
+#+end_src
+
+Pour l'intégration avec =emacs=, on peut installer le paquet suivant:
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package zoxide
+    :ensure t)
+  (define-key evil-normal-state-map "gz" 'zoxide-find-file)
 #+end_src
 
 Once installed, we have to switch from bash:

@@ -49,6 +49,10 @@
   (auto-package-update-maybe)
   (auto-package-update-at-time "09:00"))
 
+;;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
+(add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
+;; (load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
+
 ;; Load EWS functions
 
 (load-file (concat (file-name-as-directory user-emacs-directory) "ews.el"))
@@ -85,10 +89,6 @@
    ("gs" "mutool")
    ("mpg321" "ogg123" "mplayer" "mpv" "vlc")
    "git"))
-
-;;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
-(add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
-;; (load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
 
 ;; Keyboard-centric user interface removing tool, menu and scroll bars
 
@@ -1391,6 +1391,10 @@
 		       :smtp-type starttls
 		       :smtp-port 1025
 		       :sent-action delete))))
+
+(use-package zoxide
+  :ensure t)
+(define-key evil-normal-state-map "gz" 'zoxide-find-file)
 
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted"))

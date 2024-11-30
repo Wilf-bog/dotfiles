@@ -3,7 +3,7 @@
 # confirmations, etc.) must go above this block; everything else may go below.
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 export PATH=$HOME/bin:/usr/local/bin:/home/frdrcv/.local/bin:$PATH
@@ -46,3 +46,6 @@ export LEDGER_FILE=~/Documents/Finances/2024.journal
 
 # Enabling zoxide
 eval "$(zoxide init zsh)"
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
