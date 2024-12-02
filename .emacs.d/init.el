@@ -14,6 +14,10 @@
 
 (global-auto-revert-mode 1)
 
+;; Use ibuffer by default instead of the stock buffer list
+
+(global-set-key [remap list-buffers] 'ibuffer)
+
 ;; Revert Dired and other buffers
 
 (setq global-auto-revert-non-file-buffers t)
