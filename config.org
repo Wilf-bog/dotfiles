@@ -3528,6 +3528,40 @@ Once the rule is created, we can reload the rules.
   sudo udevadm control --reload-rules && udevadm trigger
 #+end_src
 
+** Changing some keybinds with =keyd=
+#+begin_src emacs-lisp
+  [ids]
+
+  *
+
+  [main]
+
+  shift = oneshot(shift)
+  meta = meta
+  control = oneshot(control)
+  rightcontrol = layer(nav)
+  leftcontrol = layer(nav)
+
+  leftalt = oneshot(alt)
+  rightalt = oneshot(altgr)
+
+  # capslock = overload(control, esc)
+  capslock = oneshot(control)
+  insert = S-insert
+
+  [control]
+
+  capslock = toggle(control)
+
+  [nav]
+  h = left
+  j = down
+  k = up
+  l = right
+  o = pageup
+  p = pagedown
+#+end_src
+
 ** TODO Automatically start ssh agent
 See [[https://www.getrichordevtryin.com/demarrer-ssh-agent-automatiquement.html][Démarrer ssh-agent automatiquement - Get Rich or Dev Tryin']].
 #+begin_src conf :tangle .config/systemd/user/ssh-agent.service
