@@ -343,7 +343,6 @@
    ("C-;"       . flyspell-auto-correct-previous-word)))
 
 (use-package org
-  (message "Org Mode Loaded!")
   :custom
   (org-startup-indented t)
   (org-hide-emphasis-markers t)
@@ -356,11 +355,9 @@
   (org-id-link-to-org-use-id t))
 
 ;; Make navigation easier between org titles
-
 ;; (add-hook 'org-tab-first-hook 'org-end-of-line)
 
 ;; Org tags
-
 (setq org-tag-alist
       '(;; Places
 	("@home" . ?H)
@@ -409,21 +406,21 @@
 
 (use-package org-modern
   :hook
-  (org-mode . org-modern-mode)
-  :custom
-  (org-modern-table nil)
-  (org-modern-keyword nil)
-  (org-modern-timestamp nil)
-  (org-modern-priority nil)
-  (org-modern-checkbox nil)
-  (org-modern-tag nil)
-  (org-modern-block-name nil)
-  (org-modern-keyword nil)
-  (org-modern-footnote nil)
-  (org-modern-internal-target nil)
-  (org-modern-radio-target nil)
-  (org-modern-statistics nil)
-  (org-modern-progress nil))
+  (org-mode . org-modern-mode))
+  ;; :custom
+  ;; (org-modern-table nil)
+  ;; (org-modern-keyword nil)
+  ;; (org-modern-timestamp nil)
+  ;; (org-modern-priority nil)
+  ;; (org-modern-checkbox nil)
+  ;; (org-modern-tag nil)
+  ;; (org-modern-block-name nil)
+  ;; (org-modern-keyword nil)
+  ;; (org-modern-footnote nil)
+  ;; (org-modern-internal-target nil)
+  ;; (org-modern-radio-target nil)
+  ;; (org-modern-statistics nil)
+  ;; (org-modern-progress nil))
 
 (use-package consult
   :bind

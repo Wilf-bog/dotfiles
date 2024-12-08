@@ -575,9 +575,7 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
 
 *** Ricing Org mode
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
-
   (use-package org
-    (message "Org Mode Loaded!")
     :custom
     (org-startup-indented t)
     (org-hide-emphasis-markers t)
@@ -590,11 +588,9 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
     (org-id-link-to-org-use-id t))
 
   ;; Make navigation easier between org titles
-
   ;; (add-hook 'org-tab-first-hook 'org-end-of-line)
 
   ;; Org tags
-
   (setq org-tag-alist
 	'(;; Places
 	  ("@home" . ?H)
@@ -619,7 +615,7 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
 
   ;; More TODO states
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w)" "|" "DONE(d@/@)" "DELEGATED(é@/@)" "CANCELED(c@/@)")))
+	'((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w)" "|" "DONE(d@/@)" "DELEGATED(é@/@)" "CANCELED(c@/@)")))
 
   ;; Show hidden emphasis markers
 
@@ -643,21 +639,21 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
 
   (use-package org-modern
     :hook
-    (org-mode . org-modern-mode)
-    :custom
-    (org-modern-table nil)
-    (org-modern-keyword nil)
-    (org-modern-timestamp nil)
-    (org-modern-priority nil)
-    (org-modern-checkbox nil)
-    (org-modern-tag nil)
-    (org-modern-block-name nil)
-    (org-modern-keyword nil)
-    (org-modern-footnote nil)
-    (org-modern-internal-target nil)
-    (org-modern-radio-target nil)
-    (org-modern-statistics nil)
-    (org-modern-progress nil))
+    (org-mode . org-modern-mode))
+    ;; :custom
+    ;; (org-modern-table nil)
+    ;; (org-modern-keyword nil)
+    ;; (org-modern-timestamp nil)
+    ;; (org-modern-priority nil)
+    ;; (org-modern-checkbox nil)
+    ;; (org-modern-tag nil)
+    ;; (org-modern-block-name nil)
+    ;; (org-modern-keyword nil)
+    ;; (org-modern-footnote nil)
+    ;; (org-modern-internal-target nil)
+    ;; (org-modern-radio-target nil)
+    ;; (org-modern-statistics nil)
+    ;; (org-modern-progress nil))
 
   (use-package consult
     :bind
@@ -667,7 +663,6 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
      ("M-g M-g" . consult-goto-line)           ;; orig. goto-line
      ("M-g o" . consult-outline)               ;; Alternative: consult-org-heading
      ("C-c w g" . consult-grep)))
-
 #+end_src
 
 *** Saving PDFs annotations with Org
