@@ -357,7 +357,7 @@
 
 ;; Make navigation easier between org titles
 
-(add-hook 'org-tab-first-hook 'org-end-of-line)
+;; (add-hook 'org-tab-first-hook 'org-end-of-line)
 
 ;; Org tags
 
@@ -1347,7 +1347,7 @@
 
 (use-package zoxide
   :ensure t)
-(define-key evil-normal-state-map "gz" 'zoxide-find-file)
+;  (define-key evil-normal-state-map "gz" 'zoxide-find-file)
 
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted"))

@@ -591,7 +591,7 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
 
   ;; Make navigation easier between org titles
 
-  (add-hook 'org-tab-first-hook 'org-end-of-line)
+  ;; (add-hook 'org-tab-first-hook 'org-end-of-line)
 
   ;; Org tags
 
@@ -3220,7 +3220,7 @@ Pour l'intégration avec =emacs=, on peut installer le paquet suivant:
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package zoxide
     :ensure t)
-  (define-key evil-normal-state-map "gz" 'zoxide-find-file)
+  ;  (define-key evil-normal-state-map "gz" 'zoxide-find-file)
 #+end_src
 
 Once installed, we have to switch from bash:
