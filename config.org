@@ -367,7 +367,7 @@ Based on Prot's config.
 
 #+end_src
 
-** Evil settings
+** COMMENT Evil settings
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
@@ -433,13 +433,13 @@ Based on Prot's config.
   (use-package vertico
     :init
     (vertico-mode)
-    :bind (("C-s" . consult-line)
+    :bind (("C-c w l" . consult-line)
 	   :map vertico-map
-	   ("C-j" . vertico-next)
-	   ("C-k" . vertico-previous)
-	   ("C-f" . vertico-exit)
+	   ("C-n" . vertico-next)
+	   ("C-b" . vertico-previous)
+	   ("C-h" . vertico-exit)
 	   :map minibuffer-local-map
-	   ("M-h" . backward-kill-word))
+	   ("M-DEL" . backward-kill-word))
     :custom
     (vertico-cycle t)
     (vertico-sort-function 'vertico-sort-history-alpha))
@@ -1731,11 +1731,12 @@ On peut poursuivre avec la configuration de =dired=:
     (dired-dwim-target t)
     (delete-by-moving-to-trash t)
     :init
-    (put 'dired-find-alternate-file 'disabled nil)
-    :config
-    (evil-collection-define-key 'normal 'dired-mode-map
-      "h" 'dired-up-directory
-      "l" 'dired-find-file))
+    (put 'dired-find-alternate-file 'disabled nil))
+    ;; Additional configuration usefuL with evil
+    ;; :config
+    ;; (evil-collection-define-key 'normal 'dired-mode-map
+    ;;   "h" 'dired-up-directory
+    ;;   "l" 'dired-find-file))
 
   (autoload 'dired-omit-mode "dired-x")
 #+end_src
@@ -1766,11 +1767,11 @@ Pour rendre l'expérience plus attrayante avec Dired, quelques plugins peuvent a
   ;; (dirvish-override-dired-mode)
 
   ;; Hide hidden files
-  (use-package dired-hide-dotfiles
-    :hook
-    (dired-mode)
-    :config
-    (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
+  ;; (use-package dired-hide-dotfiles
+  ;;   :hook
+  ;;   (dired-mode)
+  ;;   :config
+  ;;   (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
 #+end_src
 
 *** Dired-preview
@@ -3270,7 +3271,7 @@ chsh -s /bin/zsh
   alias adu="sudo apt dist-upgrade"
 
   # Vim mode
-  bindkey -v
+  # bindkey -v
 
   # Variable for hledger
   export LEDGER_FILE=~/Documents/Finances/2024.journal

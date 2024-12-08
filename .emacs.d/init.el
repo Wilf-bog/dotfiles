@@ -231,69 +231,18 @@
   (("C-x l" . pulsar-pulse-line) ; override `count-lines-page'
    ("C-x L" . pulsar-highlight-dwim))) ; or use `pulsar-highlight-line'
 
-;; Make ESC quit prompts
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
-;(use-package general
-  ;:after evil
-  ;:config
-  ;(general-create-definer efs/leader-keys
-    ;:keymaps '(normal insert visual emacs)
-    ;:prefix "SPC"
-    ;:global-prefix "C-SPC")
-  ;(efs/leader-keys
-   ;"t" '(:ignore t :which-key "toggles")
-   ;"tt" '(consult-theme :which-key "choose theme")
-   ;"fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
-
-;; Dependency for evil
-
-(use-package goto-chg
-  :ensure t)
-
-(use-package evil
-  :init
-  (setq evil-want-integration t)
-  (setq evil-want-keybinding nil)
-  (setq evil-want-C-u-scroll t)
-  (setq evil-want-C-i-jump nil)
-  :config
-  (evil-mode 1)
-  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
-
-  ;; Use visual line motions even outside of visual-line-mode buffers
-  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
-  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
-
-  (evil-set-initial-state 'messages-buffer-mode 'normal)
-  (evil-set-initial-state 'dashboard-mode 'normal))
-
-;; Dependency for evil-collection
-
-(use-package annalist
-  :ensure t
-  :config
-  (setq annalist-record nil))
-
-(use-package evil-collection
-  :after evil
-  :ensure t
-  :config
-  (evil-collection-init))
-
 ;; Enable vertico
 
 (use-package vertico
   :init
   (vertico-mode)
-  :bind (("C-s" . consult-line)
+  :bind (("C-c w l" . consult-line)
 	 :map vertico-map
-	 ("C-j" . vertico-next)
-	 ("C-k" . vertico-previous)
-	 ("C-f" . vertico-exit)
+	 ("C-n" . vertico-next)
+	 ("C-b" . vertico-previous)
+	 ("C-h" . vertico-exit)
 	 :map minibuffer-local-map
-	 ("M-h" . backward-kill-word))
+	 ("M-DEL" . backward-kill-word))
   :custom
   (vertico-cycle t)
   (vertico-sort-function 'vertico-sort-history-alpha))
@@ -1250,11 +1199,12 @@
   (dired-dwim-target t)
   (delete-by-moving-to-trash t)
   :init
-  (put 'dired-find-alternate-file 'disabled nil)
-  :config
-  (evil-collection-define-key 'normal 'dired-mode-map
-    "h" 'dired-up-directory
-    "l" 'dired-find-file))
+  (put 'dired-find-alternate-file 'disabled nil))
+  ;; Additional configuration usefuL with evil
+  ;; :config
+  ;; (evil-collection-define-key 'normal 'dired-mode-map
+  ;;   "h" 'dired-up-directory
+  ;;   "l" 'dired-find-file))
 
 (autoload 'dired-omit-mode "dired-x")
 
@@ -1280,11 +1230,11 @@
 ;; (dirvish-override-dired-mode)
 
 ;; Hide hidden files
-(use-package dired-hide-dotfiles
-  :hook
-  (dired-mode)
-  :config
-  (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
+;; (use-package dired-hide-dotfiles
+;;   :hook
+;;   (dired-mode)
+;;   :config
+;;   (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
 
 (use-package dired-preview
   :hook (dired . dired-preview)
