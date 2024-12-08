@@ -255,7 +255,7 @@
 
 ;; Save last place in file after closing it
 
-(add-hook 'org-tab-first-hook 'org-end-of-line)
+(add-hook 'org-cycle-tab-first-hook 'org-end-of-line)
 
 ;; Search for partial matches in any order
 
