@@ -189,7 +189,7 @@ workspace_auto_back_and_forth yes
 bindsym $mod+x [urgent=latest] focus
 
 # move workspace to other monitor
-bindsym $mod+bracketleft move workspace to output next
+bindsym $mod+BackSpace move workspace to output next
 
 # assign apps to specific workspace (xprop to find class name)
 assign [class="^TelegramDesktop$"] → number $ws2
