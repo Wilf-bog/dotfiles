@@ -39,7 +39,7 @@ alias alu="sudo apt list --upgradable"
 alias adu="sudo apt dist-upgrade"
 
 # Vim mode
-bindkey -v
+# bindkey -v
 
 # Variable for hledger
 export LEDGER_FILE=~/Documents/Finances/2024.journal
