@@ -14,6 +14,8 @@ SAVEHIST=10000
 setopt appendhistory
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -37,10 +39,13 @@ alias alu="sudo apt list --upgradable"
 alias adu="sudo apt dist-upgrade"
 
 # Vim mode
-bindkey -v
+# bindkey -v
 
 # Variable for hledger
 export LEDGER_FILE=~/Documents/Finances/2024.journal
+
+# Enabling zoxide
+eval "$(zoxide init zsh)"
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh

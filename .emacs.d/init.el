@@ -53,6 +53,10 @@
   (auto-package-update-maybe)
   (auto-package-update-at-time "09:00"))
 
+;;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
+(add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
+;; (load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
+
 ;; Load EWS functions
 
 (load-file (concat (file-name-as-directory user-emacs-directory) "ews.el"))
@@ -89,10 +93,6 @@
    ("gs" "mutool")
    ("mpg321" "ogg123" "mplayer" "mpv" "vlc")
    "git"))
-
-;;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
-(add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
-;; (load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
 
 ;; Keyboard-centric user interface removing tool, menu and scroll bars
 
@@ -181,34 +181,35 @@
 ;; Mixed-pitch
 
 (use-package mixed-pitch
-  :hook
-  (text-mode . mixed-pitch-mode))
+    :hook
+    (text-mode . mixed-pitch-mode))
 
-;; Fonts 'default, 'fixed-pitch and 'variable-pitch
+  ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
 
-(set-face-attribute 'default nil
-		    :family "Iosevka Comfy Fixed"
-		    :height 140
-		    :weight 'Regular)
-(when (eq system-type 'windows-nt)
-  (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
-(when (eq system-type 'gnu/linux)
-  (set-face-attribute 'variable-pitch nil :family "Luciole"))
-  ;;(set-face-attribute 'variable-pitch nil :family "Atkinson Hyperlegible"))
-  ;; (set-face-attribute 'variable-pitch nil :family "Noto Serif"))
-(set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Duo")
+  (set-face-attribute 'default nil
+		      :family "Iosevka Comfy Fixed"
+		      :height 140
+		      :weight 'Regular)
+  (when (eq system-type 'windows-nt)
+    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
+  (when (eq system-type 'gnu/linux)
+    (set-face-attribute 'variable-pitch nil :family "Luciole"))
+  (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Duo")
 
-;; Window management
-;; Split windows sensibly
+  ;; Window management
+  ;; Split windows sensibly
 
-(setq split-width-threshold 120
-      split-height-threshold nil)
+  (setq split-width-threshold 120
+	split-height-threshold nil)
 
-;; Keep window sizes balanced
+  ;; Keep window sizes balanced
 
-(use-package balanced-windows
-  :config
-  (balanced-windows-mode))
+  (use-package balanced-windows
+    :config
+    (balanced-windows-mode))
+
+;; Switching window quickly
+(global-set-key (kbd "M-o") 'other-window)
 
 ;; Read the pulsar manual: <https://protesilaos.com/emacs/pulsar>.
 (use-package pulsar
@@ -234,69 +235,18 @@
   (("C-x l" . pulsar-pulse-line) ; override `count-lines-page'
    ("C-x L" . pulsar-highlight-dwim))) ; or use `pulsar-highlight-line'
 
-;; Make ESC quit prompts
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
-;(use-package general
-  ;:after evil
-  ;:config
-  ;(general-create-definer efs/leader-keys
-    ;:keymaps '(normal insert visual emacs)
-    ;:prefix "SPC"
-    ;:global-prefix "C-SPC")
-  ;(efs/leader-keys
-   ;"t" '(:ignore t :which-key "toggles")
-   ;"tt" '(consult-theme :which-key "choose theme")
-   ;"fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
-
-;; Dependency for evil
-
-(use-package goto-chg
-  :ensure t)
-
-(use-package evil
-  :init
-  (setq evil-want-integration t)
-  (setq evil-want-keybinding nil)
-  (setq evil-want-C-u-scroll t)
-  (setq evil-want-C-i-jump nil)
-  :config
-  (evil-mode 1)
-  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
-
-  ;; Use visual line motions even outside of visual-line-mode buffers
-  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
-  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
-
-  (evil-set-initial-state 'messages-buffer-mode 'normal)
-  (evil-set-initial-state 'dashboard-mode 'normal))
-
-;; Dependency for evil-collection
-
-(use-package annalist
-  :ensure t
-  :config
-  (setq annalist-record nil))
-
-(use-package evil-collection
-  :after evil
-  :ensure t
-  :config
-  (evil-collection-init))
-
 ;; Enable vertico
 
 (use-package vertico
   :init
   (vertico-mode)
-  :bind (("C-s" . consult-line)
+  :bind (("C-c w l" . consult-line)
 	 :map vertico-map
-	 ("C-j" . vertico-next)
-	 ("C-k" . vertico-previous)
-	 ("C-f" . vertico-exit)
+	 ("C-n" . vertico-next)
+	 ("C-b" . vertico-previous)
+	 ("C-h" . vertico-exit)
 	 :map minibuffer-local-map
-	 ("M-h" . backward-kill-word))
+	 ("M-DEL" . backward-kill-word))
   :custom
   (vertico-cycle t)
   (vertico-sort-function 'vertico-sort-history-alpha))
@@ -309,7 +259,7 @@
 
 ;; Save last place in file after closing it
 
-(add-hook 'org-tab-first-hook 'org-end-of-line)
+(add-hook 'org-cycle-tab-first-hook 'org-end-of-line)
 
 ;; Search for partial matches in any order
 
@@ -397,7 +347,6 @@
    ("C-;"       . flyspell-auto-correct-previous-word)))
 
 (use-package org
-  (message "Org Mode Loaded!")
   :custom
   (org-startup-indented t)
   (org-hide-emphasis-markers t)
@@ -410,11 +359,9 @@
   (org-id-link-to-org-use-id t))
 
 ;; Make navigation easier between org titles
-
-(add-hook 'org-tab-first-hook 'org-end-of-line)
+;; (add-hook 'org-tab-first-hook 'org-end-of-line)
 
 ;; Org tags
-
 (setq org-tag-alist
       '(;; Places
 	("@home" . ?H)
@@ -463,21 +410,21 @@
 
 (use-package org-modern
   :hook
-  (org-mode . org-modern-mode)
-  :custom
-  (org-modern-table nil)
-  (org-modern-keyword nil)
-  (org-modern-timestamp nil)
-  (org-modern-priority nil)
-  (org-modern-checkbox nil)
-  (org-modern-tag nil)
-  (org-modern-block-name nil)
-  (org-modern-keyword nil)
-  (org-modern-footnote nil)
-  (org-modern-internal-target nil)
-  (org-modern-radio-target nil)
-  (org-modern-statistics nil)
-  (org-modern-progress nil))
+  (org-mode . org-modern-mode))
+  ;; :custom
+  ;; (org-modern-table nil)
+  ;; (org-modern-keyword nil)
+  ;; (org-modern-timestamp nil)
+  ;; (org-modern-priority nil)
+  ;; (org-modern-checkbox nil)
+  ;; (org-modern-tag nil)
+  ;; (org-modern-block-name nil)
+  ;; (org-modern-keyword nil)
+  ;; (org-modern-footnote nil)
+  ;; (org-modern-internal-target nil)
+  ;; (org-modern-radio-target nil)
+  ;; (org-modern-statistics nil)
+  ;; (org-modern-progress nil))
 
 (use-package consult
   :bind
@@ -874,107 +821,108 @@
 ;; (setq org-default-notes-file (concat org-directory "/notes.org"))
 
 ; (use-package hledger-mode
-					; :pin manual
-					; :after htmlize
-					; :load-path "packages/rest/hledger-mode/"
-					; :mode ("\\.journal\\'" "\\.hledger\\'")
-					; :commands hledger-enable-reporting
-					; :preface
-					; (defun hledger/next-entry ()
-					; "Move to next entry and pulse."
-					; (interactive)
-					; (hledger-next-or-new-entry)
-					; (hledger-pulse-momentary-current-entry))
-					; 
-					; (defface hledger-warning-face
-					; '((((background dark))
-					; :background "Red" :foreground "White")
-					; (((background light))
-					; :background "Red" :foreground "White")
-					; (t :inverse-video t))
-					; "Face for warning"
-					; :group 'hledger)
-					; 
-					; (defun hledger/prev-entry ()
-					; "Move to last entry and pulse."
-					; (interactive)
-					; (hledger-backward-entry)
-					; (hledger-pulse-momentary-current-entry))
-					; 
-					; :bind (("C-c j" . hledger-run-command)
-					; :map hledger-mode-map
-					; ("C-c e" . hledger-jentry)
-					; ("M-p" . hledger/prev-entry)
-					; ("M-n" . hledger/next-entry))
-					; :init
-					; (setq hledger-jfile
-					; (expand-file-name "~/miscellany/personal/finance/accounting.journal")
-					; hledger-email-secrets-file (expand-file-name "secrets.el"
-					; emacs-assets-directory))
-					; ;; Expanded account balances in the overall monthly report are
-					; ;; mostly noise for me and do not convey any meaningful information.
-					; (setq hledger-show-expanded-report nil)
-					; 
-					; (when (boundp 'my-hledger-service-fetch-url)
-					; (setq hledger-service-fetch-url
-					; my-hledger-service-fetch-url))
-					; 
-					; :config
-					; (add-hook 'hledger-view-mode-hook #'hl-line-mode)
-					; (add-hook 'hledger-view-mode-hook #'center-text-for-reading)
-					; 
-					; (add-hook 'hledger-view-mode-hook
-					; (lambda ()
-					; (run-with-timer 1
-					; nil
-					; (lambda ()
-					; (when (equal hledger-last-run-command
-					; "balancesheet")
-					; ;; highlight frequently changing accounts
-					; (highlight-regexp "^.*\\(savings\\|cash\\).*$")
-					; (highlight-regexp "^.*credit-card.*$"
-					; 'hledger-warning-face))))))
-					; 
-					; (add-hook 'hledger-mode-hook
-					; (lambda ()
-					; (make-local-variable 'company-backends)
-					; (add-to-list 'company-backends 'hledger-company))))
-					; 
-					; (use-package hledger-input
-					; :pin manual
-					; :load-path "packages/rest/hledger-mode/"
-					; :bind (("C-c e" . hledger-capture)
-					; :map hledger-input-mode-map
-					; ("C-c C-b" . popup-balance-at-point))
-					; :preface
-					; (defun popup-balance-at-point ()
-					; "Show balance for account at point in a popup."
-					; (interactive)
-					; (if-let ((account (thing-at-point 'hledger-account)))
-					; (message (hledger-shell-command-to-string (format " balance -N %s "
-					; account)))
-					; (message "No account at point")))
-					; 
-					; :config
-					; (setq hledger-input-buffer-height 20)
-					; (add-hook 'hledger-input-post-commit-hook #'hledger-show-new-balances)
-					; (add-hook 'hledger-input-mode-hook #'auto-fill-mode)
-					; (add-hook 'hledger-input-mode-hook
-					; (lambda ()
-					; (make-local-variable 'company-idle-delay)
-					; (setq-local company-idle-delay 0.1)))) 
+                                        ; :pin manual
+                                        ; :after htmlize
+                                        ; :load-path "packages/rest/hledger-mode/"
+                                        ; :mode ("\\.journal\\'" "\\.hledger\\'")
+                                        ; :commands hledger-enable-reporting
+                                        ; :preface
+                                        ; (defun hledger/next-entry ()
+                                        ; "Move to next entry and pulse."
+                                        ; (interactive)
+                                        ; (hledger-next-or-new-entry)
+                                        ; (hledger-pulse-momentary-current-entry))
+                                        ; 
+                                        ; (defface hledger-warning-face
+                                        ; '((((background dark))
+                                        ; :background "Red" :foreground "White")
+                                        ; (((background light))
+                                        ; :background "Red" :foreground "White")
+                                        ; (t :inverse-video t))
+                                        ; "Face for warning"
+                                        ; :group 'hledger)
+                                        ; 
+                                        ; (defun hledger/prev-entry ()
+                                        ; "Move to last entry and pulse."
+                                        ; (interactive)
+                                        ; (hledger-backward-entry)
+                                        ; (hledger-pulse-momentary-current-entry))
+                                        ; 
+                                        ; :bind (("C-c j" . hledger-run-command)
+                                        ; :map hledger-mode-map
+                                        ; ("C-c e" . hledger-jentry)
+                                        ; ("M-p" . hledger/prev-entry)
+                                        ; ("M-n" . hledger/next-entry))
+                                        ; :init
+                                        ; (setq hledger-jfile
+                                        ; (expand-file-name "~/miscellany/personal/finance/accounting.journal")
+                                        ; hledger-email-secrets-file (expand-file-name "secrets.el"
+                                        ; emacs-assets-directory))
+                                        ; ;; Expanded account balances in the overall monthly report are
+                                        ; ;; mostly noise for me and do not convey any meaningful information.
+                                        ; (setq hledger-show-expanded-report nil)
+                                        ; 
+                                        ; (when (boundp 'my-hledger-service-fetch-url)
+                                        ; (setq hledger-service-fetch-url
+                                        ; my-hledger-service-fetch-url))
+                                        ; 
+                                        ; :config
+                                        ; (add-hook 'hledger-view-mode-hook #'hl-line-mode)
+                                        ; (add-hook 'hledger-view-mode-hook #'center-text-for-reading)
+                                        ; 
+                                        ; (add-hook 'hledger-view-mode-hook
+                                        ; (lambda ()
+                                        ; (run-with-timer 1
+                                        ; nil
+                                        ; (lambda ()
+                                        ; (when (equal hledger-last-run-command
+                                        ; "balancesheet")
+                                        ; ;; highlight frequently changing accounts
+                                        ; (highlight-regexp "^.*\\(savings\\|cash\\).*$")
+                                        ; (highlight-regexp "^.*credit-card.*$"
+                                        ; 'hledger-warning-face))))))
+                                        ; 
+                                        ; (add-hook 'hledger-mode-hook
+                                        ; (lambda ()
+                                        ; (make-local-variable 'company-backends)
+                                        ; (add-to-list 'company-backends 'hledger-company))))
+                                        ; 
+                                        ; (use-package hledger-input
+                                        ; :pin manual
+                                        ; :load-path "packages/rest/hledger-mode/"
+                                        ; :bind (("C-c e" . hledger-capture)
+                                        ; :map hledger-input-mode-map
+                                        ; ("C-c C-b" . popup-balance-at-point))
+                                        ; :preface
+                                        ; (defun popup-balance-at-point ()
+                                        ; "Show balance for account at point in a popup."
+                                        ; (interactive)
+                                        ; (if-let ((account (thing-at-point 'hledger-account)))
+                                        ; (message (hledger-shell-command-to-string (format " balance -N %s "
+                                        ; account)))
+                                        ; (message "No account at point")))
+                                        ; 
+                                        ; :config
+                                        ; (setq hledger-input-buffer-height 20)
+                                        ; (add-hook 'hledger-input-post-commit-hook #'hledger-show-new-balances)
+                                        ; (add-hook 'hledger-input-mode-hook #'auto-fill-mode)
+                                        ; (add-hook 'hledger-input-mode-hook
+                                        ; (lambda ()
+                                        ; (make-local-variable 'company-idle-delay)
+                                        ; (setq-local company-idle-delay 0.1)))) 
 
 (use-package ledger-mode
   :ensure t
   :init
   (add-to-list 'auto-mode-alist '("\\.\\(h?ledger\\|journal\\|j\\)$" . ledger-mode))
   (setq ledger-binary-path "~/.emacs.d/ledger.sh"
-	ledger-mode-should-check-version nil
-	ledger-report-links-in-register nil
-	ledger-report-auto-width nil
-	ledger-report-native-highlighting-arguments '("--color=always")
-	ledger-highlight-xact-under-point nil
-	ledger-default-date-format ledger-iso-date-format))
+        ledger-mode-should-check-version nil
+        ledger-report-links-in-register nil
+        ledger-report-auto-width nil
+        ledger-report-native-highlighting-arguments '("--color=always")
+        ledger-highlight-xact-under-point nil
+        ledger-use-iso-dates t))
+        ;; ledger-default-date-format ledger-iso-date-format))
 
 ;; Denote
 
@@ -1253,11 +1201,12 @@
   (dired-dwim-target t)
   (delete-by-moving-to-trash t)
   :init
-  (put 'dired-find-alternate-file 'disabled nil)
-  :config
-  (evil-collection-define-key 'normal 'dired-mode-map
-    "h" 'dired-up-directory
-    "l" 'dired-find-file))
+  (put 'dired-find-alternate-file 'disabled nil))
+  ;; Additional configuration usefuL with evil
+  ;; :config
+  ;; (evil-collection-define-key 'normal 'dired-mode-map
+  ;;   "h" 'dired-up-directory
+  ;;   "l" 'dired-find-file))
 
 (autoload 'dired-omit-mode "dired-x")
 
@@ -1283,11 +1232,11 @@
 ;;   :config (dirvish-override-dired-mode))
 
 ;; Hide hidden files
-(use-package dired-hide-dotfiles
-  :hook
-  (dired-mode)
-  :config
-  (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
+;; (use-package dired-hide-dotfiles
+;;   :hook
+;;   (dired-mode)
+;;   :config
+;;   (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
 
 (use-package dired-preview
   :hook (dired . dired-preview)
@@ -1384,19 +1333,24 @@
   (add-to-list 'mm-discouraged-alternatives "text/richtext"))
 
 (use-package mu4easy
-  :demand
-  :load-path "/home/frdrcv/Git/mu4easy"
+  ;; :demand
+  ;; :load-path "/home/frdrcv/Git/mu4easy"
+  :ensure t
   :bind ("C-c u" . mu4e)
   :config (mu4easy-mode)
   :custom
   (mu4easy-contexts '((mu4easy-context
-		       :c-name  "Proton"
-		       :maildir "Proton"
-		       :mail    "vachonfrederic@proton.me"
-		       :smtp    "127.0.0.1"
-		       :smtp-type starttls
-		       :smtp-port 1025
-		       :sent-action delete))))
+                       :c-name  "Proton"
+                       :maildir "Proton"
+                       :mail    "vachonfrederic@proton.me"
+                       :smtp    "127.0.0.1"
+                       :smtp-type starttls
+                       :smtp-port 1025
+                       :sent-action delete))))
+
+(use-package zoxide
+  :ensure t)
+;  (define-key evil-normal-state-map "gz" 'zoxide-find-file)
 
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted"))
