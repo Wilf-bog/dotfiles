@@ -487,7 +487,7 @@ Based on Prot's config.
     (which-key-lighter nil)
     (which-key-sort-order 'which-key-description-order))
 
-  ;; Improved help buffers
+  ;; Improved help buffers
 
   (use-package helpful
     :bind
