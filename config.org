@@ -1198,7 +1198,7 @@ Un autre paquer utile est =ready-player-mode=. Pour l'installer et le configurer
 
   ;; Start writing immediately after triggering org-capture
 
-  (add-hook 'org-capture-mode-hook 'evil-insert-state)
+  ;; (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
 #+end_src
 

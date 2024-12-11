@@ -790,7 +790,7 @@
 
 ;; Start writing immediately after triggering org-capture
 
-(add-hook 'org-capture-mode-hook 'evil-insert-state)
+;; (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
 ;; (with-eval-after-load 'org
 ;;   (require 'org-tempo)
