@@ -18,6 +18,10 @@
 
 (global-set-key [remap list-buffers] 'ibuffer)
 
+;; Easier access to imenu
+
+(global-set-key (kbd "M-i") 'imenu)
+
 ;; Revert Dired and other buffers
 
 (setq global-auto-revert-non-file-buffers t)

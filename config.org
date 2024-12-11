@@ -54,6 +54,10 @@ After that, we load custom settings (for now).
   ;; Use ibuffer by default instead of the stock buffer list
 
   (global-set-key [remap list-buffers] 'ibuffer)
+
+  ;; Easier access to imenu
+
+  (global-set-key (kbd "M-i") 'imenu)
   
   ;; Revert Dired and other buffers
 
