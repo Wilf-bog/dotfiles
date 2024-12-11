@@ -198,10 +198,10 @@ assign [class="^steam$"] → number $ws9
 assign [class="^Proton Mail Bridge$"] → number $ws10
 
 # Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+Tab move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym $mod+Tab scratchpad show
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
