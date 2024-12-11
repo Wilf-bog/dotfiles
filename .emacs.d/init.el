@@ -350,6 +350,30 @@
   (("C-c w s s" . ispell)
    ("C-;"       . flyspell-auto-correct-previous-word)))
 
+(use-package plz
+  :ensure t)
+(use-package go-translate
+  :ensure t
+  :defer t
+  :custom
+  (setq gt-langs '(en fr))
+  (setq gt-default-translator (gt-translator :engines (gt-google-engine))))
+  ;; (setq gt-default-translator
+  ;;       (gt-translator
+  ;;        :taker   (gt-taker :text 'buffer :pick 'paragraph)  ; config the Taker
+  ;;        :engines (list (gt-bing-engine) (gt-google-engine)) ; specify the Engines
+  ;;        :render  (gt-buffer-render))))                       ; config the Render
+
+;; (setq gt-preset-translators
+;;   `((ts-1 . ,(gt-translator
+;;               :taker (gt-taker :langs '(es fr) :text 'word)
+;;               :engines (gt-bing-engine)
+;;               :render (gt-overlay-render)))
+;;     (ts-2 . ,(gt-translator
+;;               :taker (gt-taker :langs '(es fr) :text 'sentence)
+;;               :engines (gt-google-engine)
+;;               :render (gt-insert-render))))))
+
 (use-package org
   :custom
   (org-startup-indented t)
