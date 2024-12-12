@@ -197,7 +197,7 @@
   (when (eq system-type 'windows-nt)
     (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
   (when (eq system-type 'gnu/linux)
-    (set-face-attribute 'variable-pitch nil :family "Luciole"))
+    (set-face-attribute 'variable-pitch nil :family "Atkinson Hyperlegible"))
   (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Duo")
 
   ;; Window management
