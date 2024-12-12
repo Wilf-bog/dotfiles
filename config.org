@@ -531,12 +531,13 @@ Based on Prot's config.
 To setup some auto-complete when working on code, corfu is the solution. Read more here: [[https://github.com/minad/corfu][GitHub - minad/corfu: :desert_island: corfu.el - COmpletion in Region FUnction.]]
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
-
-  (use-package corfu
+   (use-package corfu
+    :ensure t
+    :bind (:map corfu-map ("<tab>" . corfu-complete))
     ;; Optional customizations
-    ;; :custom
-    ;; (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
-    ;; (corfu-auto t)                 ;; Enable auto completion
+    :custom
+    (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
+    (corfu-auto t)                 ;; Enable auto completion
     ;; (corfu-separator ?\s)          ;; Orderless field separator
     ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
     ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
@@ -554,8 +555,10 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
     ;; be used globally (M-/).  See also the customization variable
     ;; `global-corfu-modes' to exclude certain modes.
     :init
-    (global-corfu-mode))
-
+    (global-corfu-mode)
+    (with-eval-after-load 'savehist
+      (corfu-history-mode 1)
+      (add-to-list 'savehist-additional-variables 'corfu-history)))
 #+end_src
 
 ** Flyspell and hunspell
