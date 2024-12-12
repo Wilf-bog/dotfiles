@@ -1324,6 +1324,10 @@
 (use-package w32-browser
   :after (dired))
 
+(setq isearch-lazy-count t)
+(setq lazy-count-prefix-format "(%s/%s) ")
+(setq search-whitespace-regexp ".*?")
+
 (use-package mu4e
   :ensure nil
   :load-path "/usr/share/emacs/site-lisp/mu4e/"

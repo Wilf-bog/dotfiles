@@ -1872,6 +1872,14 @@ Pour rendre l'expérience plus attrayante avec Dired, quelques plugins peuvent a
     :after (dired))
 #+end_src
 
+** Isearch
+Certains des ajouts proviennent de la vidéo de Protesilaos disponible ici: [[https://www.youtube.com/watch?v=f2mQXNnChwc][Emacs: search and replace basics - YouTube]].
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq isearch-lazy-count t)
+  (setq lazy-count-prefix-format "(%s/%s) ")
+  (setq search-whitespace-regexp ".*?")
+#+end_src
+
 * Emacs packages
 ** Emacs Writing Studio
 #+begin_src emacs-lisp
