@@ -355,6 +355,13 @@
   (("C-c w s s" . ispell)
    ("C-;"       . flyspell-auto-correct-previous-word)))
 
+(use-package jinx
+  :hook (emacs-startup . global-jinx-mode)
+  :bind (("M-$" . jinx-correct)
+         ("C-M-$" . jinx-languages))
+  :config
+  (setq jinx-languages "fr_CA en_CA"))
+
 (use-package plz
   :ensure t)
 (use-package go-translate

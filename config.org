@@ -561,8 +561,9 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
       (add-to-list 'savehist-additional-variables 'corfu-history)))
 #+end_src
 
-** Flyspell and hunspell
-
+** Révision de l'orthographe
+*** Flyspell and hunspell
+Il s'agit de la configuration de base adoptée par Emacs Writing Studio. Je n'ai pas fait de modifications jusqu'à maintenant.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package flyspell
@@ -580,6 +581,23 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
     (("C-c w s s" . ispell)
      ("C-;"       . flyspell-auto-correct-previous-word)))
 
+#+end_src
+*** =Jinx=
+Il s'agit d'une alternative plus puissante et simple à utiliser, supposément. Je tente son utilisation et on verra si ça en vaut la peine.
+
+Avant de pouvoir installer et utiliser Jinx, il est nécessaire d'installer les paquets suivants sur Debian:
+#+begin_src shell
+  sudo apt install -y libenchant-2-dev pkgconf
+#+end_src
+
+Une fois installée, voici la configuration de =jinx= sur emacs.
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package jinx
+    :hook (emacs-startup . global-jinx-mode)
+    :bind (("M-$" . jinx-correct)
+           ("C-M-$" . jinx-languages))
+    :config
+    (setq jinx-languages "fr_CA en_CA"))
 #+end_src
 
 ** Traduction
