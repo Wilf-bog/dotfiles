@@ -590,7 +590,7 @@ Avant de pouvoir installer et utiliser Jinx, il est nécessaire d'installer les 
   sudo apt install -y libenchant-2-dev pkgconf
 #+end_src
 
-Une fois installée, voici la configuration de =jinx= sur emacs.
+Il est possible qu'il soit nécessaire de redémarrer l'ordinateur une fois ces paquets installés, surtout =libenchant-2-dev=. Une fois installée, voici la configuration de =jinx= sur emacs.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package jinx
     :hook (emacs-startup . global-jinx-mode)
