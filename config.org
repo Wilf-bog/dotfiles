@@ -1866,6 +1866,22 @@ Pour rendre l'expérience plus attrayante avec Dired, quelques plugins peuvent a
 
 #+end_src
 
+*** =dired-subtree=
+J'ai repris l'idée d'implanter ce paquet de Protesilaos. Il l'explique dans l'une de ses vidéos sur =dired= et propose une configuration simple sur son article offrant une bonne configuration de base pour les nouveaux utilisateur.trice.s. L'article en question est disponible ici: [[https://protesilaos.com/codelog/2024-11-28-basic-emacs-configuration/#h:e5e7b781-4b04-4c53-bf23-5e81789549ce][Emacs: a basic and capable configuration | Protesilaos Stavrou]].
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package dired-subtree
+    :ensure t
+    :after dired
+    :bind
+    ( :map dired-mode-map
+      ("<tab>" . dired-subtree-toggle)
+      ("TAB" . dired-subtree-toggle)
+      ("<backtab>" . dired-subtree-remove)
+      ("S-TAB" . dired-subtree-remove))
+    :config
+    (setq dired-subtree-use-backgrounds nil))
+#+end_src
+
 *** TODO Windows Integration
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package w32-browser
