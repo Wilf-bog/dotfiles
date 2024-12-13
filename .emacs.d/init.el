@@ -191,20 +191,20 @@
   ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
 
   (set-face-attribute 'default nil
-		      :family "Iosevka Comfy Fixed"
-		      :height 140
-		      :weight 'Regular)
+                      :family "Iosevka Comfy"
+                      :height 140
+                      :weight 'Regular)
   (when (eq system-type 'windows-nt)
     (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
   (when (eq system-type 'gnu/linux)
-    (set-face-attribute 'variable-pitch nil :family "Atkinson Hyperlegible"))
+    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Motion Duo"))
   (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Duo")
 
   ;; Window management
   ;; Split windows sensibly
 
   (setq split-width-threshold 120
-	split-height-threshold nil)
+        split-height-threshold nil)
 
   ;; Keep window sizes balanced
 
