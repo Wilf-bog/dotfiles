@@ -3587,6 +3587,39 @@ To install it with flatpak and set it as default:
 ** Virtualbox
 As far as it goes, on 11/20/2024, the normal installation process doesn't work. I managed to make virtualbox work with these instructions : [[https://linuxiac.com/how-to-install-virtualbox-on-debian-12-bookworm/][How to Install VirtualBox on Debian 12 (Bookworm)]].
 
+** Zotero
+Il n'y a malheureusement pas de paquets /backports/ disponible sur Debian Bookworm pour Zotero et il ne semble pas exister de paquets dans les dépôts réguliers. Il est donc nécessaire d'installer Zotero manuellement ou d'utiliser Flatpak. J'ai choisi cette deuxième option.
+#+begin_src shell
+  flatpak install flathub org.zotero.Zotero
+#+end_src
+
+Comme j'ai une quantité très importante d'articles et d'autres références en format =.pdf= et que l'espace offert gratuitement par Zotero est très limité, je m'occupe moi-même de la gestion des pièces jointes. J'ai quand même un compte Zotero mais ce dernier ne sert qu'à synchroniser les entrées bibliographiques, qui sont elles-mêmes exportées automatiquement en fichier =.bib=. Avant de pouvoir aller trop loin, il est nécessaire de se connecter pour récupérer la liste de références.
+
+Pour que ce système fonctionne, il est nécessaire d'installer certains plugins. Notamment, pour la gestion des pièces jointes, j'utilise =zotmoov= qui remplace =zotfile= des anciennes versions de Zotero.
+
+*** =zotmoov=
+:PROPERTIES:
+:ID:       47bd99d2-7cff-4706-97e3-0e9ed67f18f5
+:END:
+Le plugin est disponible ici: [[https://github.com/wileyyugioh/zotmoov][GitHub - wileyyugioh/zotmoov: Zotero plugin to automatically move attachments and link them]]. Une fois installé, il est nécessaire de cocher toutes les options dans le menu de configuration, choisir le bon dossier pour déplacer les fichiers, et choisir comme patron pour les noms des sous-dossiers ={%A}=.
+
+*** =Better BibTeX=
+:PROPERTIES:
+:ID:       263bcff2-32ad-4aa3-9b32-dab4b7b47b02
+:END:
+Le plugin peut être récupéré à la page suivante: [[https://github.com/retorquere/zotero-better-bibtex][GitHub - retorquere/zotero-better-bibtex: Make Zotero effective for us LaTeX holdouts]].
+Une fois celui-ci installé, un export des préférences peut être importé de mon dossier =Sync=, synchronisé par =Syncthing=. Les options sont nombreuses et pour éviter les erreur il vaut vraiment mieux importer et exporter les préférence. Aussi, avant que le plugin puisse faire l'exportation automatique de la bibliographie, il faut faire une première exportation manuelle.
+
+** STARTED Calibre
+:LOGBOOK:
+- State "STARTED"    from              [2024-12-13 Fri 15:09]
+:END:
+Bien qu'il existe des paquets pour installer Calibre dans les dépôts de la plupart des distributions Linux, les développeurs de Calibre ne considèrent que la dernière version disponible sur le site internet comme version fonctionnelle. Pour l'installer et la mettre à jour, il suffit d'utiliser la commande suivante:
+#+begin_src shell
+  sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+#+end_src
+
+J'utilise également quelques plugins pour m'assurer que les fichiers epubs soient automatiquement transférés en tant que fichiers kepub qui sont mieux supportés par les liseuses Kobo, ainsi que le plugin =annotations= pour pouvoir importer les annotations de ma tablette.
 * Post-install things
 After a clean reinstall of Debian (or if I decide to try another distribution) here are additional things that need to be done.
 
