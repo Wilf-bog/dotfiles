@@ -869,39 +869,39 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
-(use-package bibtex
-  :custom
-  (bibtex-user-optional-fields
-   '(("keywords" "Keywords to describe the entry" "")
-     ("file"     "Relative or absolute path to attachments" "" )))
-  (bibtex-align-at-equal-sign t)
-  (bibtex-set-dialect 'biblatex)
-  :config
-  (ews-bibtex-register)
-  :bind
-  (("C-c w b r" . ews-bibtex-register)))
+  (use-package bibtex
+    :custom
+    (bibtex-user-optional-fields
+     '(("keywords" "Keywords to describe the entry" "")
+       ("file"     "Relative or absolute path to attachments" "" )))
+    (bibtex-align-at-equal-sign t)
+    (bibtex-set-dialect 'biblatex)
+    :config
+    (ews-bibtex-register)
+    :bind
+    (("C-c w b r" . ews-bibtex-register)))
 
-;; Biblio package for adding BibTeX records
+  ;; Biblio package for adding BibTeX records
 
-(use-package biblio
-  :bind
-  (("C-c w b b" . ews-bibtex-biblio-lookup)))
+  (use-package biblio
+    :bind
+    (("C-c w b b" . ews-bibtex-biblio-lookup)))
 
-;; Citar to access bibliographies
+  ;; Citar to access bibliographies
 
-(use-package citar
-  :custom
-  (citar-bibliography ews-bibtex-files)
-  :bind
-  (("C-c w b o" . citar-open)))
+  (use-package citar
+    :custom
+    (citar-bibliography ews-bibtex-files)
+    :bind
+    (("C-c w b o" . citar-open)))
 
-(use-package citar-embark
-:after citar embark
-:no-require
-:config (citar-embark-mode)
-:bind (("C-M-." . embark-act)
-       :map citar-embark-citation-map
-       ("c" . citar-denote-find-citation)))
+  (use-package citar-embark
+  :after citar embark
+  :no-require
+  :config (citar-embark-mode)
+  :bind (("C-M-." . embark-act)
+         :map citar-embark-citation-map
+         ("c" . citar-denote-find-citation)))
 
 #+end_src
 
@@ -1959,7 +1959,7 @@ Certains des ajouts proviennent de la vidéo de Protesilaos disponible ici: [[ht
   :link '(url-link :tag "Homepage" "https://lucidmanager.org/tags/emacs/"))
 
 (defcustom ews-bibtex-directory
-  (concat (file-name-as-directory (getenv "HOME")) "library")
+  (concat (file-name-as-directory (getenv "HOME")) "Documents/library")
   "Location of BibTeX files and attachments."
   :group 'ews
   :type 'directory)
@@ -3726,3 +3726,7 @@ Enfin, il faut ajouter ceci à la configuration de SSH:
       AddKeysToAgent yes
       IdentityFile ~/.ssh/id_rsa
 #+end_src
+
+# Local Variables:
+# jinx-local-words: "backports"
+# End:
