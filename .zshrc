@@ -41,6 +41,10 @@ alias adu="sudo apt dist-upgrade"
 # Vim mode
 # bindkey -v
 
+# Eat integration
+[ -n "$EAT_SHELL_INTEGRATION_DIR" ] && \
+  source "$EAT_SHELL_INTEGRATION_DIR/zsh"
+
 # Variable for hledger
 export LEDGER_FILE=~/Documents/Finances/2024.journal
 
