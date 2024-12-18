@@ -782,11 +782,6 @@
 (use-package somafm
   :ensure t)
 
-(use-package telega
-  :ensure t
-  :config
-  (setq telega-use-docker t))
-
 (use-package mastodon
   :ensure t
   :config

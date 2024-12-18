@@ -1191,7 +1191,7 @@ Un autre paquer utile est =ready-player-mode=. Pour l'installer et le configurer
 
 ** Social media and chat
 
-*** Telegram
+*** COMMENT Telegram
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
