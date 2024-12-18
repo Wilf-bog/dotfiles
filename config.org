@@ -627,7 +627,12 @@ Pour pouvoir traduire des textes simplement dans Emacs, je fait appel au paquet 
   ;;               :engines (gt-google-engine)
   ;;               :render (gt-insert-render))))))
 #+end_src
+
 ** Orgmode
+Il semble que la version /backports/ de Debian 12 n'inclut par le manuel d'=emacs= par défaut et d'après les licenses, cette situation risque de ne pas changer. Il convient donc d'installer un plugin supplémentaire des dépôts =non-free= pour y avoir accès (voir [[https://stackoverflow.com/questions/22620774/getting-the-org-mode-manual-in-emacs][Getting the org-mode manual in emacs - Stack Overflow]]):
+#+begin_src shell
+  sudo apt install -y emacs-common-non-dfsg
+#+end_src
 
 *** Ricing Org mode
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
