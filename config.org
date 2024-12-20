@@ -1508,12 +1508,12 @@ This configuration was taken from the official GitHub page that can be found her
 ** Distraction-free writing
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
-
-(use-package olivetti
-  :demand t
-  :bind
-  (("C-c w o" . ews-olivetti)))
-
+  (use-package olivetti
+    :demand t
+    :bind
+    (("C-c w o" . ews-olivetti))
+    :custom
+    (olivetti-style 'fancy))
 #+end_src
 
 ** Undo tree

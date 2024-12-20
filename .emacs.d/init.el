@@ -1044,7 +1044,9 @@
 (use-package olivetti
   :demand t
   :bind
-  (("C-c w o" . ews-olivetti)))
+  (("C-c w o" . ews-olivetti))
+  :custom
+  (olivetti-style 'fancy))
 
 (use-package undo-tree
   :config
