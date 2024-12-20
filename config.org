@@ -2414,6 +2414,16 @@ The following configuration should be working now. I am only setting my proton e
                          :sent-action delete))))
 #+end_src
 
+** =messages-are-flowing=
+Étrangement les courriels envoyés à partir d'Emacs ont des saut de lignes problématiques. Un paquet semble régler ce problème.
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package messages-are-flowing
+    :ensure t)
+
+  (with-eval-after-load "message"
+    (add-hook 'message-mode-hook 'messages-are-flowing-use-and-mark-hard-newlines))
+#+end_src
+
 * Desktop environement
 ** TODO i3
 *** Configuration de i3wm
