@@ -47,6 +47,20 @@ matches:
 # 	    params:
 # 		cmd: "echo '{{form1.tags}}' | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]'"
 
+# Reverse
+  - trigger: ":rev"
+    replace: "{{reversed}}"
+    vars:
+    - name: form1
+      type: form
+      params:
+        layout: |
+          Reverse [[name]]
+    - name: reversed
+      type: shell
+      params:
+       cmd: "echo '{{form1.name}}' | rev"
+
   # Print the current date
   - trigger: ":date"
     replace: "{{mydate}}"
