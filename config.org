@@ -561,6 +561,35 @@ To setup some auto-complete when working on code, corfu is the solution. Read mo
       (add-to-list 'savehist-additional-variables 'corfu-history)))
 #+end_src
 
+** Suivi du défilement
+Ce code développé par Prot permet d'activer un mode mineur de suivi du curseur, particulièrement utile pour écrire de la prose. Pour plus de détail, voir la page [[https://protesilaos.com/codelog/2020-07-16-emacs-focused-editing/][“Focused editing” tools for Emacs | Protesilaos Stavrou]].
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package emacs
+    :config
+    (setq-default scroll-preserve-screen-position t)
+    (setq-default scroll-conservatively 1) ; affects `scroll-step'
+    (setq-default scroll-margin 0)
+
+    (define-minor-mode prot/scroll-centre-cursor-mode
+      "Toggle centred cursor scrolling behaviour."
+      :init-value nil
+      :lighter " S="
+      :global nil
+      (if prot/scroll-centre-cursor-mode
+          (setq-local scroll-margin (* (frame-height) 2)
+                      scroll-conservatively 0
+                      maximum-scroll-margin 0.5)
+        (dolist (local '(scroll-preserve-screen-position
+                         scroll-conservatively
+                         maximum-scroll-margin
+                         scroll-margin))
+          (kill-local-variable `,local))))
+
+    ;; C-c l is used for `org-store-link'.  The mnemonic for this is to
+    ;; focus the Line and also works as a variant of C-l.
+    :bind ("C-c L" . prot/scroll-centre-cursor-mode))
+#+end_src
+
 ** Révision de l'orthographe
 *** Flyspell and hunspell
 Il s'agit de la configuration de base adoptée par Emacs Writing Studio. Je n'ai pas fait de modifications jusqu'à maintenant.
