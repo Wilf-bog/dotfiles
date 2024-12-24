@@ -61,6 +61,20 @@ matches:
       params:
        cmd: "echo '{{form1.name}}' | rev"
 
+# Slug
+  - trigger: ":slug"
+    replace: "{{sluggify}}"
+    vars:
+    - name: form1
+      type: form
+      params:
+        layout: |
+          Sluggify [[name]]
+    - name: sluggify
+      type: shell
+      params:
+       cmd: "echo '{{form1.name}}' | sed -E -e 's/[^[:alnum:]]+/_/g' -e 's/^-+|-+$//g'"
+
   # Print the current date
   - trigger: ":date"
     replace: "{{mydate}}"
