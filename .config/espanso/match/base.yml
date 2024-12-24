@@ -30,6 +30,23 @@ matches:
     form: |
       {{isodate}}--[[nom]]__[[tags]]
 
+#   # Print a complete denote prompt
+#   - trigger: ":dnc"
+#     replace: "{{isodate}}--{{sluggedname}}__{{sluggedtags}}"
+#     vars:
+#       - name: "form1"
+#         type: form
+# 	params:
+# 	  layout: "Name: [[name]] \nTag(s): [[tags]]"
+# - name: sluggedname
+# 	    type: shell
+# 	    params:
+# 		cmd: "echo '{{form1.name}}' | sed -E -e 's/[^[:alnum:]]+/_/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]'"
+# 	  - name: sluggedtags
+# 	    type: shell
+# 	    params:
+# 		cmd: "echo '{{form1.tags}}' | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]'"
+
   # Print the current date
   - trigger: ":date"
     replace: "{{mydate}}"
