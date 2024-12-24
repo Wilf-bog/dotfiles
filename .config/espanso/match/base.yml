@@ -25,6 +25,11 @@ matches:
   - trigger: ":idate"
     replace: "{{isodate}}"
 
+  # Print a simple denote prompt
+  - trigger: ":dns"
+    form: |
+      {{isodate}}--[[nom]]__[[tags]]
+
   # Print the current date
   - trigger: ":date"
     replace: "{{mydate}}"
