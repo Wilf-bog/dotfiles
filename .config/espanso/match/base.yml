@@ -22,6 +22,10 @@ matches:
   # But matches can also be dynamic:
 
   # Print the current date
+  - trigger: ":idate"
+    replace: "{{isodate}}"
+
+  # Print the current date
   - trigger: ":date"
     replace: "{{mydate}}"
     vars:
