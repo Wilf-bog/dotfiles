@@ -19,7 +19,7 @@ To learn more on the matter, here are examples I looked into before making the m
 - [[https://www.youtube.com/watch?v=ycyxytk1NAQ][Emacs: advanced Org literate configuration - YouTube]]
  
 * =emacs= configuration
-This configuration is borrowing a lot of things from 2 majors sources: [[https://github.com/daviwil/emacs-from-scratch/][Emacs from scratch]] and [[https://github.com/pprevos/emacs-writing-studio][Emacs Writing Studio]]. Where EWS offered a solid basis to cover my basic needs, which was to have a solid alternative to Obsidian as well as a learning platform for =emacs= in general, EFS offered me generalist and powerful tools that helped me dive deeper into =emacs= configuration. I also have to thank specifically [[https://github.com/protesilaos][Protesilaos Stavrou]] for his work on [[https://github.com/protesilaos/denote][Denote]] that is the tool that made the switch to =emacs= possible.
+This configuration is borrowing a lot of things from 2 majors sources: [[https://github.com/daviwil/emacs-from-scratch/][Emacs from scratch]] and [[https://github.com/pprevos/emacs-writing-studio][/Emacs Writing Studio/]]. Where EWS offered a solid basis to cover my basic needs, which was to have a solid alternative to Obsidian as well as a learning platform for =emacs= in general, EFS offered me generalist and powerful tools that helped me dive deeper into =emacs= configuration. I also have to thank specifically [[https://github.com/protesilaos][Protesilaos Stavrou]] for his work on [[https://github.com/protesilaos/denote][Denote]] that is the tool that made the switch to =emacs= possible.
 
 First step: making sure we are running a recent enough version of =emacs=.
 
@@ -592,7 +592,7 @@ Ce code développé par Prot permet d'activer un mode mineur de suivi du curseur
 
 ** Révision de l'orthographe
 *** Flyspell and hunspell
-Il s'agit de la configuration de base adoptée par Emacs Writing Studio. Je n'ai pas fait de modifications jusqu'à maintenant.
+Il s'agit de la configuration de base adoptée par /Emacs Writing Studio/. Je n'ai pas fait de modifications jusqu'à maintenant.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
   (use-package flyspell
@@ -1039,7 +1039,7 @@ Il s'agit d'un mode qui semble être inclus dans =emacs= depuis quelques version
 
 #+end_src
 
-** EWW
+** Emacs Web Wowser (=eww=)
 
 My config is heavily inspired by Protesilaos configuration, starting here: [[https://protesilaos.com/emacs/dotemacs#h:f23d9cef-ab7b-4486-a070-9c7ae664eadf][GNU Emacs configuration | Protesilaos Stavrou]]
 
@@ -1979,7 +1979,7 @@ Certains des ajouts proviennent de la vidéo de Protesilaos disponible ici: [[ht
 #+end_src
 
 * =emacs= packages
-** Emacs Writing Studio
+** /Emacs Writing Studio/
 #+begin_src emacs-lisp
 ;;; ews.el --- Convenience functions for authors  -*- lexical-binding: t; -*-
 
