@@ -531,6 +531,12 @@
       (not (tags "cooking")))
     :sort 'random))
 
+(use-package yaml-mode
+  :ensure nil
+  :defer t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+
 ; ;; Projectile
 
    ; (use-package projectile

@@ -834,6 +834,17 @@ This part of the configuration is borrowed from System Crafters and explained in
 
 #+end_src
 
+** yaml-mode
+Il s'agit d'un mode qui semble être inclus dans =emacs= depuis quelques versions, au plus tard la version 29. Étrangement, il ne s'active pas automatiquement, donc je dois ajouter la configuration suivante pour corriger la situation.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package yaml-mode
+    :ensure nil
+    :defer t
+    :config
+    (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+#+end_src
+
 ** Git and projectile
 
  #+begin_src emacs-lisp :tangle .emacs.d/init.el
