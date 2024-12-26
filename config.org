@@ -755,6 +755,15 @@ Il semble que la version /backports/ de Debian 12 n'inclut par le manuel d'=emac
      ("C-c w g" . consult-grep)))
 #+end_src
 
+*** Voir les todos par buffer
+En m'inspirant de la configuration disponible ici [[https://github.com/kenda/.emacs.d/blob/master/config.org#4-global-functions][.emacs.d/config.org at master · kenda/.emacs.d · GitHub]], j'ai  ajouté la fonction suivante pour faire une liste des todos d'un buffer avec =occur=.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (defun wilf-show-todos ()
+    (interactive)
+    (occur "* TODO\\|* NEXT\\|* STARTED\\|* WAITING"))
+#+end_src
+
 *** Saving PDFs annotations with Org
 
 To explore more in the future.

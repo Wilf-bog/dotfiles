@@ -500,6 +500,10 @@
    ("M-g o" . consult-outline)               ;; Alternative: consult-org-heading
    ("C-c w g" . consult-grep)))
 
+(defun wilf-show-todos ()
+  (interactive)
+  (occur "* TODO\\|* NEXT\\|* STARTED\\|* WAITING"))
+
 (use-package org-auto-tangle
   :hook (org-mode . org-auto-tangle-mode))
 
