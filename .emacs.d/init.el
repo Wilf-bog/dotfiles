@@ -245,21 +245,31 @@
   :init
   (vertico-mode)
   :bind (("C-c w l" . consult-line)
-	 :map vertico-map
-	 ("C-n" . vertico-next)
-	 ("C-b" . vertico-previous)
-	 ("C-h" . vertico-exit)
-	 :map minibuffer-local-map
-	 ("M-DEL" . backward-kill-word))
+         :map vertico-map
+         ("C-n" . vertico-next)
+         ("C-b" . vertico-previous)
+         ("C-h" . vertico-exit)
+         :map minibuffer-local-map
+         ("M-DEL" . backward-kill-word))
   :custom
   (vertico-cycle t)
   (vertico-sort-function 'vertico-sort-history-alpha))
 
 ;; Persist history over =emacs= restarts.
 
+;; By default, the built-in `savehist-mode' only keeps a record of
+;; minibuffer histories.  This is helpful as it surfaces the most
+;; recently selected items to the top, allowing you to access them again
+;; very quickly.  With the variable `savehist-additional-variables' we
+;; can make `savehist-mode' keep a record of any variable we want, so
+;; that it persists between Emacs sessions.  I do this to store the
+;; `kill-ring' and the `register-alist'.
+
 (use-package savehist
   :init
   (savehist-mode 1))
+(setq savehist-additional-variables '(register-alist kill-ring))
+
 
 ;; Save last place in file after closing it
 
@@ -1369,6 +1379,9 @@
   ("C-x r D" . bookmark-delete))
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+
+(setq register-preview-delay 0.8
+      register-preview-function #'consult-register-format)
 
 (use-package dired-subtree
   :ensure t
