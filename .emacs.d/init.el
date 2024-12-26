@@ -633,6 +633,16 @@
        :map citar-embark-citation-map
        ("c" . citar-denote-find-citation)))
 
+(use-package calibredb
+  :defer t
+  :config
+  (setq calibredb-root-dir "~/Documents/Calibre")
+  (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir)))
+  ;; (setq calibredb-library-alist '(("~/OneDrive/Org/Doc/Calibre")
+  ;;                                 ("~/Documents/Books Library")
+  ;;                                 ("~/Documents/LIB1")
+  ;;                                 ("/Volumes/ShareDrive/Documents/Library/"))))
+
 ;; Read RSS feeds with Elfeed
 
 (use-package elfeed
