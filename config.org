@@ -18,10 +18,10 @@ To learn more on the matter, here are examples I looked into before making the m
 - [[https://www.youtube.com/watch?v=Ex9zI4Fcirs&t=5896s][Literate Configuration: A Direct Approach - System Crafters Live! - YouTube]]
 - [[https://www.youtube.com/watch?v=ycyxytk1NAQ][Emacs: advanced Org literate configuration - YouTube]]
  
-* Emacs configuration
-This configuration is borrowing a lot of things from 2 majors sources: [[https://github.com/daviwil/emacs-from-scratch/][Emacs from scratch]] and [[https://github.com/pprevos/emacs-writing-studio][Emacs Writing Studio]]. Where EWS offered a solid basis to cover my basic needs, which was to have a solid alternative to Obsidian as well as a learning platform for Emacs in general, EFS offered me generalist and powerful tools that helped me dive deeper into Emacs configuration. I also have to thank specifically [[https://github.com/protesilaos][Protesilaos Stavrou]] for his work on [[https://github.com/protesilaos/denote][Denote]] that is the tool that made the switch to Emacs possible.
+* =emacs= configuration
+This configuration is borrowing a lot of things from 2 majors sources: [[https://github.com/daviwil/emacs-from-scratch/][Emacs from scratch]] and [[https://github.com/pprevos/emacs-writing-studio][Emacs Writing Studio]]. Where EWS offered a solid basis to cover my basic needs, which was to have a solid alternative to Obsidian as well as a learning platform for =emacs= in general, EFS offered me generalist and powerful tools that helped me dive deeper into =emacs= configuration. I also have to thank specifically [[https://github.com/protesilaos][Protesilaos Stavrou]] for his work on [[https://github.com/protesilaos/denote][Denote]] that is the tool that made the switch to =emacs= possible.
 
-First step: making sure we are running a recent enough version of Emacs.
+First step: making sure we are running a recent enough version of =emacs=.
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el 
   (when (< emacs-major-version 29)
@@ -452,7 +452,7 @@ Based on Prot's config.
     (vertico-cycle t)
     (vertico-sort-function 'vertico-sort-history-alpha))
 
-  ;; Persist history over Emacs restarts.
+  ;; Persist history over =emacs= restarts.
 
   (use-package savehist
     :init
@@ -619,7 +619,7 @@ Avant de pouvoir installer et utiliser Jinx, il est nécessaire d'installer les 
   sudo apt install -y libenchant-2-dev pkgconf
 #+end_src
 
-Il est possible qu'il soit nécessaire de redémarrer l'ordinateur une fois ces paquets installés, surtout =libenchant-2-dev=. Une fois installée, voici la configuration de =jinx= sur emacs.
+Il est possible qu'il soit nécessaire de redémarrer l'ordinateur une fois ces paquets installés, surtout =libenchant-2-dev=. Une fois installée, voici la configuration de =jinx= sur =emacs=.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package jinx
     :hook (emacs-startup . global-jinx-mode)
@@ -630,7 +630,7 @@ Il est possible qu'il soit nécessaire de redémarrer l'ordinateur une fois ces 
 #+end_src
 
 ** Traduction
-Pour pouvoir traduire des textes simplement dans Emacs, je fait appel au paquet =go-translate=. Pour améliorer ses performances, il convient d'installer le paquet =plz= qui permet à =emacs= d'utiliser =curl= plutôt que la librairie =url.el= qui est plus lente. =plz= n'est pas essentiel mais recommandé.
+Pour pouvoir traduire des textes simplement dans emacs, je fait appel au paquet =go-translate=. Pour améliorer ses performances, il convient d'installer le paquet =plz= qui permet à =emacs= d'utiliser =curl= plutôt que la librairie =url.el= qui est plus lente. =plz= n'est pas essentiel mais recommandé.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package plz
     :ensure t)
@@ -960,7 +960,7 @@ This part of the configuration is borrowed from System Crafters and explained in
     (elfeed-org)
     :custom
     (rmh-elfeed-org-files
-     (list (concat (file-name-as-directory (getenv "HOME")) ".emacs.d/elfeed/elfeed.org"))))
+     (list (concat (file-name-as-directory (getenv "HOME")) ".emacs.d/elfeed/elfeed.gpg"))))
 
   ;; Allow better synchronization
   ;; See http://babbagefiles.blogspot.com/2017/03/take-elfeed-everywhere-mobile-rss.html
@@ -1126,7 +1126,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+end_src
 ** Images
-Emacs est équipé par défaut pour visionner des images. Par contre quelques ajustements sont utiles pour faciliter l'expériences, notamment en ajoutant des raccourcis précis pour se déplacer parmi les images, quitter  =image-mode= et ouvrir une image avec Gimp par défaut.
+=Emacs= est équipé par défaut pour visionner des images. Par contre quelques ajustements sont utiles pour faciliter l'expériences, notamment en ajoutant des raccourcis précis pour se déplacer parmi les images, quitter  =image-mode= et ouvrir une image avec Gimp par défaut.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   ;; Image viewer
   (use-package emacs
@@ -1915,7 +1915,6 @@ Pour rendre l'expérience plus attrayante avec Dired, quelques plugins peuvent a
     ("C-x r D" . bookmark-delete))
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
-
 #+end_src
 
 *** =dired-subtree=
@@ -1948,7 +1947,7 @@ Certains des ajouts proviennent de la vidéo de Protesilaos disponible ici: [[ht
   (setq search-whitespace-regexp ".*?")
 #+end_src
 
-* Emacs packages
+* =emacs= packages
 ** Emacs Writing Studio
 #+begin_src emacs-lisp
 ;;; ews.el --- Convenience functions for authors  -*- lexical-binding: t; -*-
@@ -2268,7 +2267,7 @@ Customise `titlecase-style' for styling."
 #+end_src
 
 * TODO Email configuration
-My current email workflow relies on isync in the background and mu4e on Emacs.
+My current email workflow relies on isync in the background and mu4e on =emacs=.
 
 Update: <2024-10-14 Mon> Giving a try to [[https://github.com/danielfleischer/mu4easy][GitHub - danielfleischer/mu4easy: mu4e + mbsync configuration for multiple email accounts.]] To be installed from git.
 
@@ -2444,7 +2443,7 @@ The following configuration should be working now. I am only setting my proton e
 #+end_src
 
 ** =messages-are-flowing=
-Étrangement les courriels envoyés à partir d'Emacs ont des saut de lignes problématiques. Un paquet semble régler ce problème.
+Étrangement les courriels envoyés à partir d'=emacs= ont des saut de lignes problématiques. Un paquet semble régler ce problème.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package messages-are-flowing
     :ensure t)
@@ -3405,7 +3404,7 @@ chsh -s /bin/zsh
 #+end_src
 
 **** =fzf=
-I often use =fzf= in conjunction with =zsh= outside emacs. It is available in Debian repositories.
+I often use =fzf= in conjunction with =zsh= outside =emacs=. It is available in Debian repositories.
 #+begin_src shell
   sudo apt install fzf
 #+end_src
@@ -3424,7 +3423,7 @@ This is the code that is used for more recent versions of =fzf=. It will be usef
 #+end_src
 
 *** TODO Copyq
-Logiciel utilisé pour la gestion du presse-papier en-dehors de Emacs. Voir si une meilleure intégration est possible.
+Logiciel utilisé pour la gestion du presse-papier en-dehors de =emacs=. Voir si une meilleure intégration est possible.
 
 #+begin_src shell :tangle no
   sudo apt install copyq

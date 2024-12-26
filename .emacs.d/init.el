@@ -255,7 +255,7 @@
   (vertico-cycle t)
   (vertico-sort-function 'vertico-sort-history-alpha))
 
-;; Persist history over Emacs restarts.
+;; Persist history over =emacs= restarts.
 
 (use-package savehist
   :init
@@ -640,7 +640,7 @@
   (elfeed-org)
   :custom
   (rmh-elfeed-org-files
-   (list (concat (file-name-as-directory (getenv "HOME")) ".emacs.d/elfeed/elfeed.org"))))
+   (list (concat (file-name-as-directory (getenv "HOME")) ".emacs.d/elfeed/elfeed.gpg"))))
 
 ;; Allow better synchronization
 ;; See http://babbagefiles.blogspot.com/2017/03/take-elfeed-everywhere-mobile-rss.html
