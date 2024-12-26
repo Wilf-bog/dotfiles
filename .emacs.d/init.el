@@ -1344,8 +1344,6 @@
   :bind
   (("C-c w r" . recentf-open)))
 
-;; Bookmarks
-
 (use-package bookmark
   :custom
   (bookmark-save-flag 1)

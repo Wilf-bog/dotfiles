@@ -1914,9 +1914,12 @@ Pour rendre l'expérience plus attrayante avec Dired, quelques plugins peuvent a
     (("C-c w r" . recentf-open)))
 #+end_src
 
-#+begin_src emacs-lisp :tangle .emacs.d/init.el
-  ;; Bookmarks
+*** Bookmarks
+Les marque-pages dans =emacs= sur une manière simple d'accéder à des buffer ou des dossiers rapidement à l'intérieur de =emacs=. Il semble qu'il soit difficile de synchroniser le fichier de bookmarks (=~/.emacs.d/bookmarks=) étant donné que celui-ci n'est pas relu automatiquement par défaut par =emacs=. Il semble quand même qu'il existe des manières de le faire (voir [[https://emacs.stackexchange.com/questions/79075/how-can-bookmarks-file-be-synced-if-its-not-constantly-reloaded][load - How can bookmarks file be synced if it's not constantly reloaded? - Emacs Stack Exchange]]) mais comme un même fichier ou dossier peut être disponible sur un ordinateur et non sur un autre, je ne suis pas certain de la nécessité de synchroniser ce fichier. Si j'utilise plus les marques-pages dans le futur je pourrai reconsidérer ma décision.
 
+Le code suivant charge le paquet =bookmark= mais celui-ci vient avec =emacs= par défaut.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package bookmark
     :custom
     (bookmark-save-flag 1)
