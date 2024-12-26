@@ -687,6 +687,8 @@
   (setq browse-url-browser-function 'eww-browse-url)
   (setq browse-url-secondary-browser-function 'browse-url-default-browser))
 
+(setq shr-color-visible-luminance-min 100)
+
 ;;;; `eww' (Emacs Web Wowser)
 (use-package eww
   :ensure nil

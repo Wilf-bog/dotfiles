@@ -1058,6 +1058,14 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 #+end_src
 
+*** =shr=
+=shr= est le paquet dont se sert =eww= pour afficher le code html. En date du 2024-12-25, il semble y avoir un bug qui rend le fond des pages gris. J'ai trouvé le code suivant qui permet de corriger la situation pour les thèmes sombres seulement.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq shr-color-visible-luminance-min 100)
+#+end_src
+
+**** TODO Trouver une manière de changer la configuration de shr pour eww reste lisible avec les thèmes clairs.
 *** General EWW config
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
