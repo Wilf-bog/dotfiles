@@ -105,6 +105,12 @@ Il s'agit du premier paquet =casual= que j'ai décidé d'installer et probableme
 (keymap-set org-agenda-mode-map "J" #'bookmark-jump) ; optional
 #+end_src
 
+*** =casual-info=
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (require 'casual-info) ; optional if using autoloaded menu
+  (keymap-set Info-mode-map "C-o" #'casual-info-tmenu)
+#+end_src
 ** Package management
 
 Eventually, will want to try another package manager.

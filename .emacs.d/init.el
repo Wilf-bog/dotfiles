@@ -48,6 +48,9 @@
 (keymap-set org-agenda-mode-map "M-j" #'org-agenda-clock-goto) ; optional
 (keymap-set org-agenda-mode-map "J" #'bookmark-jump) ; optional
 
+(require 'casual-info) ; optional if using autoloaded menu
+(keymap-set Info-mode-map "C-o" #'casual-info-tmenu)
+
 ;; Set package archives
 
 (use-package package
