@@ -32,6 +32,22 @@
 (setq auto-save-visited-predicate
       (lambda () (eq major-mode 'org-mode)))
 
+(use-package casual
+  :ensure t
+  :defer t)
+
+(require 'casual-dired) ; optional if using autoloaded menu
+(keymap-set dired-mode-map "M-c" #'casual-dired-tmenu)
+(keymap-set dired-mode-map "s" #'casual-dired-sort-by-tmenu) ; optional
+(keymap-set dired-mode-map "/" #'casual-dired-search-replace-tmenu) ; optional
+
+(require 'casual-agenda) ; optional if using autoloaded menu
+(keymap-set org-agenda-mode-map "M-c" #'casual-agenda-tmenu)
+
+; Bindings to make jumping consistent between Org Agenda and Casual Agenda
+(keymap-set org-agenda-mode-map "M-j" #'org-agenda-clock-goto) ; optional
+(keymap-set org-agenda-mode-map "J" #'bookmark-jump) ; optional
+
 ;; Set package archives
 
 (use-package package

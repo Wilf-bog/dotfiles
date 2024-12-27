@@ -72,6 +72,39 @@ After that, we load custom settings (for now).
 #+end_src
 
 
+** =casual=
+=casual= est un paquet qui permet de faciliter la découvrabilité de certains fonctions d'=emacs= en faisant appel à =transient=, l'outil de menu qui sert au fonctionnement de =magit=. Pour l'instant je suis spécifiquement les instructions d'installation fournies ([[https://github.com/kickingvegas/casual/blob/main/docs/dired.org#install][casual/docs/dired.org at main · kickingvegas/casual · GitHub]]), mais éventuellement je voudrais que le tout soit configuré par =use-package=.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package casual
+    :ensure t
+    :defer t)
+#+end_src
+
+*** =casual-dired=
+Il s'agit du premier paquet =casual= que j'ai décidé d'installer et probablement celui qui serait le plus utile à long terme considérant la centralité de =dired=. Voici les instructions fournies par le développeur pour l'installation, avec un raccourci modifié pour mes propres besoins.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (require 'casual-dired) ; optional if using autoloaded menu
+  (keymap-set dired-mode-map "M-c" #'casual-dired-tmenu)
+  (keymap-set dired-mode-map "s" #'casual-dired-sort-by-tmenu) ; optional
+  (keymap-set dired-mode-map "/" #'casual-dired-search-replace-tmenu) ; optional
+#+end_src
+
+*** =casual-agenda=
+:PROPERTIES:
+:ID:       43ee67fb-1433-4b6e-804d-63e7d4a74520
+:END:
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+(require 'casual-agenda) ; optional if using autoloaded menu
+(keymap-set org-agenda-mode-map "M-c" #'casual-agenda-tmenu)
+
+; Bindings to make jumping consistent between Org Agenda and Casual Agenda
+(keymap-set org-agenda-mode-map "M-j" #'org-agenda-clock-goto) ; optional
+(keymap-set org-agenda-mode-map "J" #'bookmark-jump) ; optional
+#+end_src
+
 ** Package management
 
 Eventually, will want to try another package manager.
