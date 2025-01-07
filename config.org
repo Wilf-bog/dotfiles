@@ -3490,9 +3490,9 @@ rm ~/.zcompdump*; compinit
 
 Pour l'intégration avec =emacs=, on peut installer le paquet suivant:
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
-  (use-package zoxide
-    :ensure t)
-  ;  (define-key evil-normal-state-map "gz" 'zoxide-find-file)
+  ;; (use-package zoxide
+  ;;   :ensure t)
+  ;; ;  (define-key evil-normal-state-map "gz" 'zoxide-find-file)
 #+end_src
 
 Once installed, we have to switch from bash:

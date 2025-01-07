@@ -1501,9 +1501,9 @@
 (with-eval-after-load "message"
   (add-hook 'message-mode-hook 'messages-are-flowing-use-and-mark-hard-newlines))
 
-(use-package zoxide
-  :ensure t)
-;  (define-key evil-normal-state-map "gz" 'zoxide-find-file)
+;; (use-package zoxide
+;;   :ensure t)
+;; ;  (define-key evil-normal-state-map "gz" 'zoxide-find-file)
 
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted"))
