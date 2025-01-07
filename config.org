@@ -1010,15 +1010,17 @@ Il s'agit d'un mode qui semble être inclus dans =emacs= depuis quelques version
 
 ** TODO Calibre
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
-  (use-package calibredb
-    :defer t
-    :config
-    (setq calibredb-root-dir "~/Documents/Calibre")
-    (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir)))
-    ;; (setq calibredb-library-alist '(("~/OneDrive/Org/Doc/Calibre")
-    ;;                                 ("~/Documents/Books Library")
-    ;;                                 ("~/Documents/LIB1")
-    ;;                                 ("/Volumes/ShareDrive/Documents/Library/"))))
+      (use-package calibredb
+        :defer t
+        :config
+        (setq calibredb-root-dir "~/Documents/Calibre")
+        (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir))
+        :bind
+        (("C-c w b l" . calibredb)))
+        ;; (setq calibredb-library-alist '(("~/OneDrive/Org/Doc/Calibre")
+        ;;                                 ("~/Documents/Books Library")
+        ;;                                 ("~/Documents/LIB1")
+        ;;                                 ("/Volumes/ShareDrive/Documents/Library/"))))
 #+end_src
 ** RSS and Elfeed
 

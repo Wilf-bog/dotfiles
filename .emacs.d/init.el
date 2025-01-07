@@ -666,7 +666,9 @@
   :defer t
   :config
   (setq calibredb-root-dir "~/Documents/Calibre")
-  (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir)))
+  (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir))
+  :bind
+  (("C-c w b l" . calibredb)))
   ;; (setq calibredb-library-alist '(("~/OneDrive/Org/Doc/Calibre")
   ;;                                 ("~/Documents/Books Library")
   ;;                                 ("~/Documents/LIB1")
