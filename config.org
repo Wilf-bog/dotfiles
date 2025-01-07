@@ -1322,6 +1322,62 @@ Un autre paquer utile est =ready-player-mode=. Pour l'installer et le configurer
 
   #+end_src
 
+*** =erc=
+La base de ce contenu provient de SystemCrafter, voir:
+- [[https://systemcrafters.net/chatting-with-emacs/irc-basics-with-erc/][Chat Like the 90’s in Emacs with ERC - System Crafters]]
+- [[https://systemcrafters.net/live-streams/june-04-2021/][Improving the IRC Experience in ERC - System Crafters]]
+
+**** Configuration de base
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq erc-server "irc.libera.chat"
+        erc-nick "wilf"
+        erc-user-full-name "Frédéric Vachon"
+        erc-track-shorten-start 8
+        erc-autojoin-channels-alist '(("irc.libera.chat" "#systemcrafters" "#emacs"))
+        erc-kill-buffer-on-part t
+        erc-auto-query 'bury
+        erc-prompt-for-password nil)
+
+  (add-to-list 'erc-modules 'notifications)
+#+end_src
+
+**** Apparence des messages
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq erc-fill-column 120
+        erc-fill-function 'erc-fill-static
+        erc-fill-static-center 20)
+#+end_src
+
+**** Réduire le nombre de notifications provenant d'=erc=
+
+#+begin_src emacs-lisp
+  (setq erc-track-exclude '("#emacs")
+        erc-track-exclude-types '("JOIN" "NICK" "QUIT" "MODE" "AWAY")
+        erc-hide-list '("JOIN" "NICK" "PART" "QUIT" "MODE" "AWAY")
+        erc-track-exclude-server-buffer t)
+#+end_src
+
+**** Mettre de la couleur sur les nicks des participantEs
+
+#+begin_src emacs-lisp
+  (use-package erc-hl-nicks
+    :ensure t
+    :after erc
+    :config
+    (add-to-list 'erc-modules 'hl-nicks))
+#+end_src
+
+**** Ajouter l'affichage des images
+#+begin_src emacs-lisp
+  (use-package erc-image
+    :ensure t
+    :after erc
+    :config
+    (setq erc-image-inline-rescale 300)
+    (add-to-list 'erc-modules 'image))
+#+end_src
 *** Mastodon
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el

@@ -860,6 +860,21 @@
 (use-package somafm
   :ensure t)
 
+(setq erc-server "irc.libera.chat"
+      erc-nick "wilf"
+      erc-user-full-name "Frédéric Vachon"
+      erc-track-shorten-start 8
+      erc-autojoin-channels-alist '(("irc.libera.chat" "#systemcrafters" "#emacs"))
+      erc-kill-buffer-on-part t
+      erc-auto-query 'bury
+      erc-prompt-for-password nil)
+
+(add-to-list 'erc-modules 'notifications)
+
+(setq erc-fill-column 120
+      erc-fill-function 'erc-fill-static
+      erc-fill-static-center 20)
+
 (use-package mastodon
   :ensure t
   :config
