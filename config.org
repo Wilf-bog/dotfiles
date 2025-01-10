@@ -3,22 +3,22 @@
 #+PROPERTY: header-args:emacs-lisp :mkdirp yes
 #+auto_tangle: t
 
-* Welcome!
+* TODO Welcome!
 So, if this file was at first to create a literate configuration (without really knowing what it means), I now want to turn this file into something bigger like my whole system configuration.
 
-** Goals
+** TODO Goals
 Why would I want to do that?
 
 After almost 20 years of using Linux, I noticed I lost configurations I did develop for myself. Things I took the time to learn, at least somewhat, by reading blog posts, looking on forums, but mainly, youtube videos. I don't regret the current situation, but still, now that I am getting older and that time is a precious thing, I would like that my time be well invested and means building something solid.
 
 I think that a literate configuration could be a key toward that goal, as well as something different to write about than blog posts and zettelkasten notes.
 
-** Literate configurations
+** TODO Literate configurations
 To learn more on the matter, here are examples I looked into before making the move and diving into that project.
 - [[https://www.youtube.com/watch?v=Ex9zI4Fcirs&t=5896s][Literate Configuration: A Direct Approach - System Crafters Live! - YouTube]]
 - [[https://www.youtube.com/watch?v=ycyxytk1NAQ][Emacs: advanced Org literate configuration - YouTube]]
  
-* =emacs= configuration
+* TODO =emacs= configuration
 This configuration is borrowing a lot of things from 2 majors sources: [[https://github.com/daviwil/emacs-from-scratch/][Emacs from scratch]] and [[https://github.com/pprevos/emacs-writing-studio][/Emacs Writing Studio/]]. Where EWS offered a solid basis to cover my basic needs, which was to have a solid alternative to Obsidian as well as a learning platform for =emacs= in general, EFS offered me generalist and powerful tools that helped me dive deeper into =emacs= configuration. I also have to thank specifically [[https://github.com/protesilaos][Protesilaos Stavrou]] for his work on [[https://github.com/protesilaos/denote][Denote]] that is the tool that made the switch to =emacs= possible.
 
 First step: making sure we are running a recent enough version of =emacs=.
@@ -43,7 +43,7 @@ After that, we load custom settings (for now).
 
 #+end_src
 
-** Multiple sessions management
+** TODO Multiple sessions management
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
@@ -72,7 +72,10 @@ After that, we load custom settings (for now).
 #+end_src
 
 
-** =casual=
+** STARTED =casual=
+:LOGBOOK:
+- State "STARTED"    from              [2025-01-10 Fri 15:26]
+:END:
 =casual= est un paquet qui permet de faciliter la découvrabilité de certains fonctions d'=emacs= en faisant appel à =transient=, l'outil de menu qui sert au fonctionnement de =magit=. Pour l'instant je suis spécifiquement les instructions d'installation fournies ([[https://github.com/kickingvegas/casual/blob/main/docs/dired.org#install][casual/docs/dired.org at main · kickingvegas/casual · GitHub]]), mais éventuellement je voudrais que le tout soit configuré par =use-package=.
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
@@ -105,13 +108,14 @@ Il s'agit du premier paquet =casual= que j'ai décidé d'installer et probableme
 (keymap-set org-agenda-mode-map "J" #'bookmark-jump) ; optional
 #+end_src
 
-*** =casual-info=
+*** TODO =casual-info=
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (require 'casual-info) ; optional if using autoloaded menu
   (keymap-set Info-mode-map "C-o" #'casual-info-tmenu)
 #+end_src
-** Package management
+
+** TODO Package management
 
 Eventually, will want to try another package manager.
 
@@ -135,7 +139,7 @@ Eventually, will want to try another package manager.
 
 #+end_src
 
-*** COMMENT Updates
+*** TODO COMMENT Updates
 :PROPERTIES:
 :ID:       5bd31e25-8c2a-4cc5-85c3-9c465aa1a160
 :END:
@@ -156,7 +160,7 @@ To get notified about incoming updates so you don't have to look for them with t
 
 #+end_src
 
-** Other modules and librairies
+** TODO Other modules and librairies
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
@@ -166,7 +170,10 @@ To get notified about incoming updates so you don't have to look for them with t
 
 #+end_src
 
-** Configuration de EWS
+** STARTED Configuration de EWS
+:LOGBOOK:
+- State "STARTED"    from              [2025-01-10 Fri 15:27]
+:END:
 EWS fait appel à plusieurs logiciels externes pour fonctionner. Dans la configuration par défaut, une fonction s'assure que tous les logiciels sont installés et dans le cas contraire, retourne un message d'erreur. 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
@@ -213,7 +220,7 @@ La plupart de ces logiciels sont automatiquement installés comme dépendance à
   sudo apt install -y djvulibre-bin hunspell-en
 #+end_src
 
-** Look and feel
+** TODO Look and feel
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
@@ -304,7 +311,7 @@ La plupart de ces logiciels sont automatiquement installés comme dépendance à
   ;; Mixed-pitch
 #+end_src
 
-*** Fonts and faces
+*** TODO Fonts and faces
 
 For the moment, my font of choice is Iosevka, the version patched Protesilaos. It can be found on the [[https://github.com/protesilaos/iosevka-comfy][GitHub's page.]]
 
@@ -382,7 +389,7 @@ For the weight, we can refer to this table:
   (global-set-key (kbd "M-o") 'other-window)
 #+end_src
 
-*** Pulsar
+*** TODO Pulsar
 
 Based on Prot's config.
 
@@ -414,7 +421,7 @@ Based on Prot's config.
 
 #+end_src
 
-** COMMENT Evil settings
+** TODO COMMENT Evil settings
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
@@ -471,7 +478,7 @@ Based on Prot's config.
 
 #+end_src
 
-** Minibuffer
+** TODO Minibuffer
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
