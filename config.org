@@ -2126,6 +2126,15 @@ Certains des ajouts proviennent de la vidéo de Protesilaos disponible ici: [[ht
   (setq search-whitespace-regexp ".*?")
 #+end_src
 
+** COMMENT =Info=
+Un paquet permet facilement de renommer les buffer =info= ce qui permet d'en avoir plusieurs en même temps.
+#+begin_src emacs-lisp
+  (use-package info-rename-buffer
+    :ensure t
+    :defer t
+    :custom
+    (info-rename-buffer-mode))
+#+end_src
 * =emacs= packages
 ** /Emacs Writing Studio/
 #+begin_src emacs-lisp
