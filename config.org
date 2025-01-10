@@ -1337,15 +1337,15 @@ Un autre paquer utile est =ready-player-mode=. Pour l'installer et le configurer
 #+end_src
 ** Social media and chat
 
-*** COMMENT Telegram
+*** Telegram
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
-
   (use-package telega
-    :ensure t
-    :config
-    (setq telega-use-docker t))
+    :ensure t)
 
+  (add-hook 'telega-load-hook
+            (lambda ()
+              (define-key global-map (kbd "C-c t") telega-prefix-map)))
   #+end_src
 
 *** =erc=
