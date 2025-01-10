@@ -739,7 +739,6 @@
         ;shr-fill-text nil              ; Emacs 31
         shr-cookie-policy nil))
 
-;;;; `eww' (Emacs Web Wowser)
 (use-package eww
   :ensure nil
   :commands (eww)
@@ -755,32 +754,30 @@
     :map eww-bookmark-mode-map
     ("d" . eww-bookmark-kill)) ; same
   :config
-  (setq eww-restore-desktop t)
-  (setq eww-desktop-remove-duplicates t)
-  (setq eww-header-line-format nil)
-  (setq eww-search-prefix "https://duckduckgo.com/html/?q=")
-  (setq eww-download-directory (expand-file-name "~/Documents/eww-downloads"))
-  (setq eww-suggest-uris
-        '(eww-links-at-point
-          thing-at-point-url-at-point))
-  (setq eww-bookmarks-directory (locate-user-emacs-file "eww-bookmarks/"))
-  (setq eww-history-limit 150)
-  (setq eww-use-external-browser-for-content-type
-        "\\`\\(video/\\|audio\\)") ; On GNU/Linux check your mimeapps.list
-  (setq eww-browse-url-new-window-is-tab nil)
-  (setq eww-form-checkbox-selected-symbol "[X]")
-  (setq eww-form-checkbox-symbol "[ ]")
-  ;; NOTE `eww-retrieve-command' is for Emacs28.  I tried the following
-  ;; two values.  The first would not render properly some plain text
-  ;; pages, such as by messing up the spacing between paragraphs.  The
-  ;; second is more reliable but feels slower.  So I just use the
-  ;; default (nil), though I find wget to be a bit faster.  In that case
-  ;; one could live with the occasional errors by using `eww-download'
-  ;; on the offending page, but I prefer consistency.
-  ;;
-  ;; '("wget" "--quiet" "--output-document=-")
-  ;; '("chromium" "--headless" "--dump-dom")
-  (setq eww-retrieve-command nil))
+  (setq eww-restore-desktop t
+        eww-desktop-remove-duplicates t
+        eww-header-line-format "%t: %u"	; défaut: %t: %u
+        eww-search-prefix "https://duckduckgo.com/html/?q="
+        eww-download-directory (expand-file-name "~/Documents/eww-downloads")
+        eww-suggest-uris '(eww-links-at-point thing-at-point-url-at-point)
+        eww-bookmarks-directory (locate-user-emacs-file "eww-bookmarks/")
+        eww-history-limit 150
+        eww-use-external-browser-for-content-type
+        "\\`\\(video/\\|audio\\)" ; On GNU/Linux check your mimeapps.list
+        eww-browse-url-new-window-is-tab nil
+        eww-form-checkbox-selected-symbol "[X]"
+        xeww-form-checkbox-symbol "[ ]"
+        ;; NOTE `eww-retrieve-command' is for Emacs28.  I tried the following
+        ;; two values.  The first would not render properly some plain text
+        ;; pages, such as by messing up the spacing between paragraphs.  The
+        ;; second is more reliable but feels slower.  So I just use the
+        ;; default (nil), though I find wget to be a bit faster.  In that case
+        ;; one could live with the occasional errors by using `eww-download'
+        ;; on the offending page, but I prefer consistency.
+        ;;
+        ;; '("wget" "--quiet" "--output-document=-")
+        ;; '("chromium" "--headless" "--dump-dom")
+        eww-retrieve-command nil)
 
 ;;;; `prot-eww' extras
   ;; (use-package prot-eww
