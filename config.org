@@ -1110,7 +1110,7 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 Cette configuration proviens de =ews= (il me semble, à vérifier) mais est également la même utilisée par Protesilaos. J'ai fait du ménage pour "bien"utiliser =setq=.
 
-Avec la variable =browse-url-browser-function= on peut déterminer le navigateur par défaut, et un navigateur alternative avec =browse-url-secondary-browser-function=, dans mon cas, Firefox. Il semblerait que ce soit utilisé par =dired= au minimum (voir [[https://www.masteringemacs.org/article/whats-new-in-emacs-29-1][What's New in Emacs 29.1? - Mastering Emacs]]) mais ça rester à tester.
+Avec la variable =browse-url-browser-function= on peut déterminer le navigateur par défaut, et un navigateur alternative avec =browse-url-secondary-browser-function=, dans mon cas, Firefox. Il semblerait que ce soit utilisé par =dired= au minimum (voir [[https://www.masteringemacs.org/article/whats-new-in-emacs-29-1][What's New in Emacs 29.1? - Mastering Emacs]]) ainsi que lorsque la touche '=&=' est utilisée dans =eww=.
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package browse-url
@@ -1121,7 +1121,7 @@ Avec la variable =browse-url-browser-function= on peut déterminer le navigateur
           browse-url-secondary-browser-function 'browse-url-firefox))
 #+end_src
 
-*** =shr=
+*** Simple HTML Renderer (=shr=)
 
 =shr= est le paquet dont se sert =eww= pour afficher le code html. +En date du 2024-12-25, il semble y avoir un bug qui rend le fond des pages gris. J'ai trouvé le code suivant qui permet de corriger la situation pour les thèmes sombres seulement+. Finalement la valeur =shr-color-visible-luminance-min= ne règle pas réellement le problème, comparativement à désactiver =shr-use-colors=.
 
@@ -1152,12 +1152,12 @@ En complément à =shr-cookie-policy nil=:
     (setq url-cookie-untrusted-urls '(".*"))) ; Pour tous les cookies
   #+end_src
 
-**** TODO Trouver une manière de changer la configuration de shr pour eww reste lisible avec les thèmes clairs.
 
 *** Configuration générale de =eww=
 Plusieurs options intéressantes restent à explorer.
 
-Je n'ai pas encore essayer de restorer le 'desktop', mais il semble que =eww= le prend en charge. À voir éventuellement.
+- Je n'ai pas encore essayer de restorer le 'desktop', mais il semble que =eww= le prend en charge. À voir éventuellement.
+- Bien qu'il soit possible de désigner un dossier qui va contenir le fichier de marque-pages (voir la variable =eww-bookmarks-directory=), il n'est pas possible pour le moment de spécifier un fichier précis. Ceci est limitant comme il n'est pas possible de sélectionner un fichier encrypté pour ce faire. Pour le moment j'utilise syncthing pour synchroniser le dossier de marque-page entre mes machines, mais il pourrait bien d'encrypter le fichier directement et le joindre à mes dotfiles.
 - Depuis Emacs 29.1, la nouvelle variable =eww-auto-rename-buffer= permet de renommer automatiquement les pages sur eww. En date du 2025-01-10 j'ai activité cette option. À garder en tête pour utiliser les autres configuration de =prot-eww.el= qui implantait cette fonction manuellement.
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
