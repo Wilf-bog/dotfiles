@@ -160,9 +160,9 @@ To get notified about incoming updates so you don't have to look for them with t
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
-  ;;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
+  ;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
+  ;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
   (add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
-  ;; (load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
 
 #+end_src
 
@@ -1205,6 +1205,7 @@ Plusieurs options intéressantes restent à explorer.
 
 *** Prot-EWW utilities
 
+En date du 2025-01-10 je commence à utiliser les modifications proposées par Protesilaos dans son paquet =prot-eww=. 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
     ;;;; `prot-eww' extras
