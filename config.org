@@ -1189,7 +1189,7 @@ Je n'ai pas encore essayer de restorer le 'desktop', mais il semble que =eww= le
           "\\`\\(video/\\|audio\\)" ; On GNU/Linux check your mimeapps.list
           eww-browse-url-new-window-is-tab nil
           eww-form-checkbox-selected-symbol "[X]"
-          xeww-form-checkbox-symbol "[ ]"
+          eww-form-checkbox-symbol "[ ]"
           ;; NOTE `eww-retrieve-command' is for Emacs28.  I tried the following
           ;; two values.  The first would not render properly some plain text
           ;; pages, such as by messing up the spacing between paragraphs.  The
