@@ -726,7 +726,18 @@
   (setq browse-url-browser-function 'eww-browse-url
         browse-url-secondary-browser-function 'browse-url-firefox))
 
-(setq shr-color-visible-luminance-min 100)
+(use-package shr
+  :ensure nil
+  :defer t
+  :config
+  (setq shr-use-colors nil             ; pour un meilleur contraste
+        shr-use-fonts t
+        shr-max-image-proportion 0.9	; 0.9 par défaut
+        ;shr-width fill-column          ; check `prot-eww-readable'
+        shr-max-width 120		; 120 par défaut
+        shr-discard-aria-hidden t	; nil par défaut
+        ;shr-fill-text nil              ; Emacs 31
+        shr-cookie-policy nil))
 
 ;;;; `eww' (Emacs Web Wowser)
 (use-package eww

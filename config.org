@@ -1122,16 +1122,35 @@ Avec la variable =browse-url-browser-function= on peut déterminer le navigateur
 #+end_src
 
 *** =shr=
-=shr= est le paquet dont se sert =eww= pour afficher le code html. En date du 2024-12-25, il semble y avoir un bug qui rend le fond des pages gris. J'ai trouvé le code suivant qui permet de corriger la situation pour les thèmes sombres seulement.
+
+=shr= est le paquet dont se sert =eww= pour afficher le code html. +En date du 2024-12-25, il semble y avoir un bug qui rend le fond des pages gris. J'ai trouvé le code suivant qui permet de corriger la situation pour les thèmes sombres seulement+. Finalement la valeur =shr-color-visible-luminance-min= ne règle pas réellement le problème, comparativement à désactiver =shr-use-colors=.
+
+J'ai décidé de reprendre la configuration de Protesilaos comme base pour =shr= après avoir corrigé mon problème. Bien que je garde plusieurs des options par défaut, j'ai décidé en date du 2025-01-09 d'essayer de désactiver des éléments aria pour améliorer l'accessibilité (voir [[https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-hidden][aria-hidden - Accessibility | MDN]])? J'ai aussi décidé de désactiver les cookies comme ils ne me sont pas utiles sur =eww= jusqu'à preuve du contraire.
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
-  (setq shr-color-visible-luminance-min 100)
+  (use-package shr
+    :ensure nil
+    :defer t
+    :config
+    (setq shr-use-colors nil             ; pour un meilleur contraste
+          shr-use-fonts t
+          shr-max-image-proportion 0.9	; 0.9 par défaut
+          ;shr-width fill-column          ; check `prot-eww-readable'
+          shr-max-width 120		; 120 par défaut
+          shr-discard-aria-hidden t	; nil par défaut
+          ;shr-fill-text nil              ; Emacs 31
+          shr-cookie-policy nil))
 #+end_src
 
-**** TODO Trouver une manière de changer la configuration de shr pour eww reste lisible avec les thèmes clairs.
-*** General EWW config
+En complément à =shr-cookie-policy nil=:
 
-#+begin_src emacs-lisp :tangle .emacs.d/init.el
+#+begin_src emacs-lisp
+  (use-package url-cookie
+    :ensure nil
+    :defer t
+    :config
+    (setq url-cookie-untrusted-urls '(".*"))) ; Pour tous les cookies
+  #+end_src
 
   ;;;; `eww' (Emacs Web Wowser)
 (use-package eww
