@@ -873,7 +873,7 @@
       erc-auto-query 'bury
       erc-prompt-for-password nil)
 
-(add-to-list 'erc-modules 'notifications)
+;; (add-to-list 'erc-modules 'notifications)
 
 (setq erc-fill-column 120
       erc-fill-function 'erc-fill-static

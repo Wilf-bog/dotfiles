@@ -1365,7 +1365,7 @@ La base de ce contenu provient de SystemCrafter, voir:
         erc-auto-query 'bury
         erc-prompt-for-password nil)
 
-  (add-to-list 'erc-modules 'notifications)
+  ;; (add-to-list 'erc-modules 'notifications)
 #+end_src
 
 **** Apparence des messages
