@@ -1331,6 +1331,10 @@ Un autre paquer utile est =ready-player-mode=. Pour l'installer et le configurer
 
 #+end_src
 
+*** EMPV
+#+begin_src emacs-lisp
+  (with-eval-after-load 'embark (empv-embark-initialize-extra-actions))
+#+end_src
 ** Social media and chat
 
 *** COMMENT Telegram
