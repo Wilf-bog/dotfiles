@@ -67,8 +67,8 @@
   (package-native-compile t)
   (warning-minimum-level :emergency))
 
-;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
-;(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
+(load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
+(load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
 (add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
 
 ;; Load EWS functions
