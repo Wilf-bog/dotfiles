@@ -1108,17 +1108,17 @@ My config is heavily inspired by Protesilaos configuration, starting here: [[htt
 
 *** Browse-url
 
+Cette configuration proviens de =ews= (il me semble, à vérifier) mais est également la même utilisée par Protesilaos. J'ai fait du ménage pour "bien"utiliser =setq=.
+
+Avec la variable =browse-url-browser-function= on peut déterminer le navigateur par défaut, et un navigateur alternative avec =browse-url-secondary-browser-function=, dans mon cas, Firefox. Il semblerait que ce soit utilisé par =dired= au minimum (voir [[https://www.masteringemacs.org/article/whats-new-in-emacs-29-1][What's New in Emacs 29.1? - Mastering Emacs]]) mais ça rester à tester.
+
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
-
-  ;; `browse-url'
-
   (use-package browse-url
     :ensure nil
     :defer t
     :config
-    (setq browse-url-browser-function 'eww-browse-url)
-    (setq browse-url-secondary-browser-function 'browse-url-default-browser))
-
+    (setq browse-url-browser-function 'eww-browse-url
+          browse-url-secondary-browser-function 'browse-url-firefox))
 #+end_src
 
 *** =shr=

@@ -719,14 +719,12 @@
   :bind
   (("C-c w w" . org-web-tools-insert-link-for-url)))
 
-;; `browse-url'
-
 (use-package browse-url
   :ensure nil
   :defer t
   :config
-  (setq browse-url-browser-function 'eww-browse-url)
-  (setq browse-url-secondary-browser-function 'browse-url-default-browser))
+  (setq browse-url-browser-function 'eww-browse-url
+        browse-url-secondary-browser-function 'browse-url-firefox))
 
 (setq shr-color-visible-luminance-min 100)
 
