@@ -1158,6 +1158,7 @@ En complément à =shr-cookie-policy nil=:
 Plusieurs options intéressantes restent à explorer.
 
 Je n'ai pas encore essayer de restorer le 'desktop', mais il semble que =eww= le prend en charge. À voir éventuellement.
+- Depuis Emacs 29.1, la nouvelle variable =eww-auto-rename-buffer= permet de renommer automatiquement les pages sur eww. En date du 2025-01-10 j'ai activité cette option. À garder en tête pour utiliser les autres configuration de =prot-eww.el= qui implantait cette fonction manuellement.
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package eww
@@ -1176,6 +1177,7 @@ Je n'ai pas encore essayer de restorer le 'desktop', mais il semble que =eww= le
       ("d" . eww-bookmark-kill)) ; same
     :config
     (setq eww-restore-desktop t
+          eww-auto-rename-buffer "title"
           eww-desktop-remove-duplicates t
           eww-header-line-format "%t: %u"	; défaut: %t: %u
           eww-search-prefix "https://duckduckgo.com/html/?q="

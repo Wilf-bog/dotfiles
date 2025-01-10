@@ -746,6 +746,7 @@
     ("d" . eww-bookmark-kill)) ; same
   :config
   (setq eww-restore-desktop t
+        eww-auto-rename-buffer "title"
         eww-desktop-remove-duplicates t
         eww-header-line-format "%t: %u"	; défaut: %t: %u
         eww-search-prefix "https://duckduckgo.com/html/?q="
