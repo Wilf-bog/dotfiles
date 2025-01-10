@@ -1069,7 +1069,7 @@ Il s'agit d'un mode qui semble être inclus dans =emacs= depuis quelques version
 
 *** Prot-elfeed
 
-;; #+begin_src emacs-lisp :tangle .emacs.d/init.el
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
 ;; 
 ;;   (load-file (concat (file-name-as-directory user-emacs-directory) "prot-elfeed.el"))
 ;; 
@@ -1088,7 +1088,7 @@ Il s'agit d'un mode qui semble être inclus dans =emacs= depuis quelques version
 ;;   (setq prot-elfeed-tag-faces t)
 ;;   (prot-elfeed-fontify-tags))
 ;; 
-;; #+end_src
+#+end_src
 
 ** Weblinks
 
@@ -1200,7 +1200,7 @@ Plusieurs options intéressantes restent à explorer.
           ;;
           ;; '("wget" "--quiet" "--output-document=-")
           ;; '("chromium" "--headless" "--dump-dom")
-          eww-retrieve-command nil)
+          eww-retrieve-command nil))
 #+end_src
 
 *** Prot-EWW utilities

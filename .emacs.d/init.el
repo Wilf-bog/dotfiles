@@ -704,6 +704,25 @@
   (elfeed-db-save)
   (quit-window))
 
+;; 
+;;   (load-file (concat (file-name-as-directory user-emacs-directory) "prot-elfeed.el"))
+;; 
+;;   (use-package prot-elfeed
+;;   :ensure nil
+;;   :after elfeed
+;;   :bind
+;;   ( :map elfeed-search-mode-map
+;;     ("s" . prot-elfeed-search-tag-filter)
+;;     ("+" . prot-elfeed-toggle-tag)
+;;     :map elfeed-show-mode-map
+;;     ("+" . prot-elfeed-toggle-tag))
+;;   :hook
+;;   (elfeed-search-mode . prot-elfeed-load-feeds)
+;;   :config
+;;   (setq prot-elfeed-tag-faces t)
+;;   (prot-elfeed-fontify-tags))
+;;
+
 ;; Easy insertion of weblinks
 
 (use-package org-web-tools
@@ -769,7 +788,7 @@
         ;;
         ;; '("wget" "--quiet" "--output-document=-")
         ;; '("chromium" "--headless" "--dump-dom")
-        eww-retrieve-command nil)
+        eww-retrieve-command nil))
 
 ;;;; `prot-eww' extras
   ;; (use-package prot-eww
