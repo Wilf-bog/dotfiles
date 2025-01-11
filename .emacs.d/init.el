@@ -767,7 +767,7 @@
   (setq eww-restore-desktop t
         eww-auto-rename-buffer "title"
         eww-desktop-remove-duplicates t
-        eww-header-line-format "%t: %u"	; défaut: %t: %u
+        eww-header-line-format nil	; défaut: %t: %u
         eww-search-prefix "https://duckduckgo.com/html/?q="
         eww-download-directory (expand-file-name "~/Documents/eww-downloads")
         eww-suggest-uris '(eww-links-at-point thing-at-point-url-at-point)
