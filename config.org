@@ -1210,7 +1210,7 @@ Plusieurs options intéressantes restent à explorer.
           eww-retrieve-command nil))
 #+end_src
 
-*** COMMENT Prot-EWW utilities
+*** Prot-EWW utilities
 :PROPERTIES:
 :ID:       b11f7f7d-d1e6-46fc-973f-e15fae798dd8
 :END:
@@ -1239,29 +1239,16 @@ En date du 2025-01-10 je commence à utiliser les modifications proposées par P
                 ("E" . prot-eww-visit-url-on-page)
                 ("J" . prot-eww-jump-to-url-on-page)
                 ("R" . prot-eww-readable)
-                ("Q" . prot-eww-quit))
-    )
-
-  (keymap-set global-map "C-c e" prot-eww-map)
-
+                ("Q" . prot-eww-quit)))
 
   (defvar-keymap prot-eww-map
     :doc "Prefix map to call prot-eww functions"
     "b" #'prot-eww-visit-bookmark
     "e" #'prot-eww-browse-dwim
     "s" #'prot-eww-search-engine)
-  ;; (prot-emacs-keybind eww-mode-map
-  ;;                     "B" #'prot-eww-bookmark-page
-  ;;                     "D" #'prot-eww-download-html
-  ;;                     "F" #'prot-eww-find-feed
-  ;;                     "H" #'prot-eww-list-history
-  ;;                     "b" #'prot-eww-visit-bookmark
-  ;;                     "e" #'prot-eww-browse-dwim
-  ;;                     "o" #'prot-eww-open-in-other-window
-  ;;                     "E" #'prot-eww-visit-url-on-page
-  ;;                     "J" #'prot-eww-jump-to-url-on-page
-  ;;                     "R" #'prot-eww-readable
-  ;;                     "Q" #'prot-eww-quit))
+
+  (keymap-set global-map "C-c e" prot-eww-map)
+
 #+end_src
 ** Images
 =Emacs= est équipé par défaut pour visionner des images. Par contre quelques ajustements sont utiles pour faciliter l'expériences, notamment en ajoutant des raccourcis précis pour se déplacer parmi les images, quitter  =image-mode= et ouvrir une image avec Gimp par défaut.
