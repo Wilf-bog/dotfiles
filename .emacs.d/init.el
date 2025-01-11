@@ -790,38 +790,6 @@
         ;; '("chromium" "--headless" "--dump-dom")
         eww-retrieve-command nil))
 
-;;;; `prot-eww' extras
-  ;; (use-package prot-eww
-    ;; :ensure nil
-    ;; :after eww
-    ;; :config
-    ;; (setq prot-eww-save-history-file
-	  ;; (locate-user-emacs-file "prot-eww-visited-history"))
-    ;; (setq prot-eww-save-visited-history t)
-    ;; (setq prot-eww-bookmark-link nil)
-;; 
-    ;; (add-hook 'prot-eww-history-mode-hook #'hl-line-mode)
-;; 
-    ;; (define-prefix-command 'prot-eww-map)
-    ;; (define-key global-map (kbd "C-c w") 'prot-eww-map)
-;; 
-    ;; (prot-emacs-keybind prot-eww-map
-			;; "b" #'prot-eww-visit-bookmark
-			;; "e" #'prot-eww-browse-dwim
-			;; "s" #'prot-eww-search-engine)
-    ;; (prot-emacs-keybind eww-mode-map
-			;; "B" #'prot-eww-bookmark-page
-			;; "D" #'prot-eww-download-html
-			;; "F" #'prot-eww-find-feed
-			;; "H" #'prot-eww-list-history
-			;; "b" #'prot-eww-visit-bookmark
-			;; "e" #'prot-eww-browse-dwim
-			;; "o" #'prot-eww-open-in-other-window
-			;; "E" #'prot-eww-visit-url-on-page
-			;; "J" #'prot-eww-jump-to-url-on-page
-			;; "R" #'prot-eww-readable
-			;; "Q" #'prot-eww-quit))
-
 ;; Image viewer
 (use-package emacs
   :bind
