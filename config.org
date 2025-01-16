@@ -1250,8 +1250,17 @@ En date du 2025-01-10 je commence à utiliser les modifications proposées par P
   (keymap-set global-map "C-c e" prot-eww-map)
 
 #+end_src
+
+** Elpher
+Elpher est un navigateur pour les protocoles =gopher= et =gemini=.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package elpher
+    :ensure t)
+#+end_src
+
 ** Images
-=Emacs= est équipé par défaut pour visionner des images. Par contre quelques ajustements sont utiles pour faciliter l’expérience, notamment en ajoutant des raccourcis précis pour se déplacer parmi les images, quitter  =image-mode= et ouvrir une image avec Gimp par défaut.
+Emacs est équipé par défaut pour visionner des images. Par contre quelques ajustements sont utiles pour faciliter l’expérience, notamment en ajoutant des raccourcis précis pour se déplacer parmi les images, quitter  =image-mode= et ouvrir une image avec Gimp par défaut.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   ;; Image viewer
   (use-package emacs

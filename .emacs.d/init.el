@@ -821,6 +821,9 @@
 
 (keymap-set global-map "C-c e" prot-eww-map)
 
+(use-package elpher
+  :ensure t)
+
 ;; Image viewer
 (use-package emacs
   :bind
