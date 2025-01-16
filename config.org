@@ -18,10 +18,10 @@ To learn more on the matter, here are examples I looked into before making the m
 - [[https://www.youtube.com/watch?v=Ex9zI4Fcirs&t=5896s][Literate Configuration: A Direct Approach - System Crafters Live! - YouTube]]
 - [[https://www.youtube.com/watch?v=ycyxytk1NAQ][Emacs: advanced Org literate configuration - YouTube]]
  
-* TODO =emacs= configuration
-This configuration is borrowing a lot of things from 2 majors sources: [[https://github.com/daviwil/emacs-from-scratch/][Emacs from scratch]] and [[https://github.com/pprevos/emacs-writing-studio][/Emacs Writing Studio/]]. Where EWS offered a solid basis to cover my basic needs, which was to have a solid alternative to Obsidian as well as a learning platform for =emacs= in general, EFS offered me generalist and powerful tools that helped me dive deeper into =emacs= configuration. I also have to thank specifically [[https://github.com/protesilaos][Protesilaos Stavrou]] for his work on [[https://github.com/protesilaos/denote][Denote]] that is the tool that made the switch to =emacs= possible.
+* TODO Emacs configuration
+This configuration is borrowing a lot of things from 2 majors sources: [[https://github.com/daviwil/emacs-from-scratch/][Emacs from scratch]] and [[https://github.com/pprevos/emacs-writing-studio][/Emacs Writing Studio/]]. Where EWS offered a solid basis to cover my basic needs, which was to have a solid alternative to Obsidian as well as a learning platform for Emacs in general, EFS offered me generalist and powerful tools that helped me dive deeper into Emacs configuration. I also have to thank specifically [[https://github.com/protesilaos][Protesilaos Stavrou]] for his work on [[https://github.com/protesilaos/denote][Denote]] that is the tool that made the switch to Emacs possible.
 
-First step: making sure we are running a recent enough version of =emacs=.
+First step: making sure we are running a recent enough version of Emacs.
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el 
   (when (< emacs-major-version 29)
@@ -76,7 +76,7 @@ After that, we load custom settings (for now).
 :LOGBOOK:
 - State "STARTED"    from              [2025-01-10 Fri 15:26]
 :END:
-=casual= est un paquet qui permet de faciliter la découvrabilité de certains fonctions d'=emacs= en faisant appel à =transient=, l'outil de menu qui sert au fonctionnement de =magit=. Pour l'instant je suis spécifiquement les instructions d'installation fournies ([[https://github.com/kickingvegas/casual/blob/main/docs/dired.org#install][casual/docs/dired.org at main · kickingvegas/casual · GitHub]]), mais éventuellement je voudrais que le tout soit configuré par =use-package=.
+=casual= est un paquet qui permet de faciliter la découvrabilité de certains fonctions d'Emacs en faisant appel à =transient=, l'outil de menu qui sert au fonctionnement de =magit=. Pour l'instant je suis spécifiquement les instructions d'installation fournies ([[https://github.com/kickingvegas/casual/blob/main/docs/dired.org#install][casual/docs/dired.org at main · kickingvegas/casual · GitHub]]), mais éventuellement je voudrais que le tout soit configuré par =use-package=.
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package casual
@@ -215,7 +215,7 @@ EWS fait appel à plusieurs logiciels externes pour fonctionner. Dans la configu
      "git"))
 
 #+end_src
-La plupart de ces logiciels sont automatiquement installés comme dépendance à d'autres logiciels qui n'ont rien à voir avec =emacs=. Pour les autres, nous pouvons les installer avec la commande suivante:
+La plupart de ces logiciels sont automatiquement installés comme dépendance à d'autres logiciels qui n'ont rien à voir avec Emacs. Pour les autres, nous pouvons les installer avec la commande suivante:
 #+begin_src shell
   sudo apt install -y djvulibre-bin hunspell-en
 #+end_src
@@ -498,7 +498,7 @@ Based on Prot's config.
     (vertico-cycle t)
     (vertico-sort-function 'vertico-sort-history-alpha))
 
-  ;; Persist history over =emacs= restarts.
+  ;; Persist history over Emacs restarts.
 
   ;; By default, the built-in `savehist-mode' only keeps a record of
   ;; minibuffer histories.  This is helpful as it surfaces the most
@@ -675,7 +675,7 @@ Avant de pouvoir installer et utiliser Jinx, il est nécessaire d'installer les 
   sudo apt install -y libenchant-2-dev pkgconf
 #+end_src
 
-Il est possible qu'il soit nécessaire de redémarrer l'ordinateur une fois ces paquets installés, surtout =libenchant-2-dev=. Une fois installée, voici la configuration de =jinx= sur =emacs=.
+Il est possible qu'il soit nécessaire de redémarrer l'ordinateur une fois ces paquets installés, surtout =libenchant-2-dev=. Une fois installée, voici la configuration de =jinx= sur Emacs.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package jinx
     :hook (emacs-startup . global-jinx-mode)
@@ -686,7 +686,7 @@ Il est possible qu'il soit nécessaire de redémarrer l'ordinateur une fois ces 
 #+end_src
 
 ** Traduction
-Pour pouvoir traduire des textes simplement dans emacs, je fait appel au paquet =go-translate=. Pour améliorer ses performances, il convient d'installer le paquet =plz= qui permet à =emacs= d'utiliser =curl= plutôt que la librairie =url.el= qui est plus lente. =plz= n'est pas essentiel mais recommandé.
+Pour pouvoir traduire des textes simplement dans emacs, je fait appel au paquet =go-translate=. Pour améliorer ses performances, il convient d'installer le paquet =plz= qui permet à Emacs d'utiliser =curl= plutôt que la librairie =url.el= qui est plus lente. =plz= n'est pas essentiel mais recommandé.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package plz
     :ensure t)
@@ -714,7 +714,7 @@ Pour pouvoir traduire des textes simplement dans emacs, je fait appel au paquet 
 #+end_src
 
 ** Orgmode
-Il semble que la version /backports/ de Debian 12 n'inclut par le manuel d'=emacs= par défaut et d'après les licenses, cette situation risque de ne pas changer. Il convient donc d'installer un plugin supplémentaire des dépôts =non-free= pour y avoir accès (voir [[https://stackoverflow.com/questions/22620774/getting-the-org-mode-manual-in-emacs][Getting the org-mode manual in emacs - Stack Overflow]]):
+Il semble que la version /backports/ de Debian 12 n'inclut par le manuel d'Emacs par défaut et d'après les licenses, cette situation risque de ne pas changer. Il convient donc d'installer un plugin supplémentaire des dépôts =non-free= pour y avoir accès (voir [[https://stackoverflow.com/questions/22620774/getting-the-org-mode-manual-in-emacs][Getting the org-mode manual in emacs - Stack Overflow]]):
 #+begin_src shell
   sudo apt install -y emacs-common-non-dfsg
 #+end_src
@@ -891,7 +891,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 #+end_src
 
 ** yaml-mode
-Il s'agit d'un mode qui semble être inclus dans =emacs= depuis quelques versions, au plus tard la version 29. Étrangement, il ne s'active pas automatiquement, donc je dois ajouter la configuration suivante pour corriger la situation.
+Il s'agit d'un mode qui semble être inclus dans Emacs depuis quelques versions, au plus tard la version 29. Étrangement, il ne s'active pas automatiquement, donc je dois ajouter la configuration suivante pour corriger la situation.
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package yaml-mode
@@ -2100,9 +2100,9 @@ Pour rendre l'expérience plus attrayante avec Dired, quelques plugins peuvent a
 #+end_src
 
 *** Bookmarks
-Les marque-pages dans =emacs= sur une manière simple d'accéder à des buffer ou des dossiers rapidement à l'intérieur de =emacs=. Il semble qu'il soit difficile de synchroniser le fichier de bookmarks (=~/.emacs.d/bookmarks=) étant donné que celui-ci n'est pas relu automatiquement par défaut par =emacs=. Il semble quand même qu'il existe des manières de le faire (voir [[https://emacs.stackexchange.com/questions/79075/how-can-bookmarks-file-be-synced-if-its-not-constantly-reloaded][load - How can bookmarks file be synced if it's not constantly reloaded? - Emacs Stack Exchange]]) mais comme un même fichier ou dossier peut être disponible sur un ordinateur et non sur un autre, je ne suis pas certain de la nécessité de synchroniser ce fichier. Si j'utilise plus les marques-pages dans le futur je pourrai reconsidérer ma décision.
+Les marque-pages dans Emacs sur une manière simple d'accéder à des buffer ou des dossiers rapidement à l'intérieur de Emacs. Il semble qu'il soit difficile de synchroniser le fichier de bookmarks (=~/.emacs.d/bookmarks=) étant donné que celui-ci n'est pas relu automatiquement par défaut par Emacs. Il semble quand même qu'il existe des manières de le faire (voir [[https://emacs.stackexchange.com/questions/79075/how-can-bookmarks-file-be-synced-if-its-not-constantly-reloaded][load - How can bookmarks file be synced if it's not constantly reloaded? - Emacs Stack Exchange]]) mais comme un même fichier ou dossier peut être disponible sur un ordinateur et non sur un autre, je ne suis pas certain de la nécessité de synchroniser ce fichier. Si j'utilise plus les marques-pages dans le futur je pourrai reconsidérer ma décision.
 
-Le code suivant charge le paquet =bookmark= mais celui-ci vient avec =emacs= par défaut.
+Le code suivant charge le paquet =bookmark= mais celui-ci vient avec Emacs par défaut.
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package bookmark
@@ -2156,7 +2156,7 @@ Un paquet permet facilement de renommer les buffer =info= ce qui permet d'en avo
   (info-rename-buffer-mode 1)
 #+end_src
 
-* =emacs= packages
+* Emacs packages
 ** /Emacs Writing Studio/
 #+begin_src emacs-lisp
 ;;; ews.el --- Convenience functions for authors  -*- lexical-binding: t; -*-
@@ -2476,7 +2476,7 @@ Customise `titlecase-style' for styling."
 #+end_src
 
 * TODO Email configuration
-My current email workflow relies on isync in the background and mu4e on =emacs=.
+My current email workflow relies on isync in the background and mu4e on Emacs.
 
 Update: <2024-10-14 Mon> Giving a try to [[https://github.com/danielfleischer/mu4easy][GitHub - danielfleischer/mu4easy: mu4e + mbsync configuration for multiple email accounts.]] To be installed from git.
 
@@ -2653,7 +2653,7 @@ The following configuration should be working now. I am only setting my proton e
 #+end_src
 
 ** =messages-are-flowing=
-Étrangement les courriels envoyés à partir d'=emacs= ont des saut de lignes problématiques. Un paquet semble régler ce problème.
+Étrangement les courriels envoyés à partir d'Emacs ont des saut de lignes problématiques. Un paquet semble régler ce problème.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package messages-are-flowing
     :ensure t)
@@ -3545,7 +3545,7 @@ Il peut être nécessaire de faire cette commande pour activer zoxide sur un nou
 rm ~/.zcompdump*; compinit
 #+end_src
 
-Pour l'intégration avec =emacs=, on peut installer le paquet suivant:
+Pour l'intégration avec Emacs, on peut installer le paquet suivant:
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   ;; (use-package zoxide
   ;;   :ensure t)
@@ -3614,7 +3614,7 @@ chsh -s /bin/zsh
 #+end_src
 
 **** =fzf=
-I often use =fzf= in conjunction with =zsh= outside =emacs=. It is available in Debian repositories.
+I often use =fzf= in conjunction with =zsh= outside Emacs. It is available in Debian repositories.
 #+begin_src shell
   sudo apt install fzf
 #+end_src
@@ -3633,7 +3633,7 @@ This is the code that is used for more recent versions of =fzf=. It will be usef
 #+end_src
 
 *** TODO Copyq
-Logiciel utilisé pour la gestion du presse-papier en-dehors de =emacs=. Voir si une meilleure intégration est possible.
+Logiciel utilisé pour la gestion du presse-papier en-dehors de Emacs. Voir si une meilleure intégration est possible.
 
 #+begin_src shell :tangle no
   sudo apt install copyq

@@ -265,7 +265,7 @@
   (vertico-cycle t)
   (vertico-sort-function 'vertico-sort-history-alpha))
 
-;; Persist history over =emacs= restarts.
+;; Persist history over Emacs restarts.
 
 ;; By default, the built-in `savehist-mode' only keeps a record of
 ;; minibuffer histories.  This is helpful as it surfaces the most
