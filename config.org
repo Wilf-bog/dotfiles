@@ -680,11 +680,9 @@ Il est possible qu'il soit nécessaire de redémarrer l'ordinateur une fois ces 
 #+end_src
 
 ** Traduction
-<<<<<<< HEAD
-Pour pouvoir traduire des textes simplement dans emacs, je fait appel au paquet =go-translate=. Pour améliorer ses performances, il convient d'installer le paquet =plz= qui permet à Emacs d'utiliser =curl= plutôt que la librairie =url.el= qui est plus lente. =plz= n'est pas essentiel mais recommandé.
-=======
+
 Pour pouvoir traduire des textes simplement dans Emacs, je fait appel au paquet =go-translate=. Pour améliorer ses performances, il convient d'installer le paquet =plz= qui permet à =emacs= d'utiliser =curl= plutôt que la librairie =url.el= qui est plus lente. =plz= n'est pas essentiel mais recommandé.
->>>>>>> 1bfb4ca (Emacs: typos)
+
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package plz
     :ensure t)
@@ -711,13 +709,10 @@ Pour pouvoir traduire des textes simplement dans Emacs, je fait appel au paquet 
   ;;               :render (gt-insert-render))))))
 #+end_src
 
-<<<<<<< HEAD
-** Orgmode
-Il semble que la version /backports/ de Debian 12 n'inclut par le manuel d'Emacs par défaut et d'après les licenses, cette situation risque de ne pas changer. Il convient donc d'installer un plugin supplémentaire des dépôts =non-free= pour y avoir accès (voir [[https://stackoverflow.com/questions/22620774/getting-the-org-mode-manual-in-emacs][Getting the org-mode manual in emacs - Stack Overflow]]):
-=======
+
 ** Org mode
-Il semble que la version /backports/ de Debian 12 n'inclut par le manuel d'=emacs= par défaut et d'après les licenses, cette situation risque de ne pas changer. Il convient donc d'installer un plugin supplémentaire des dépôts =non-free= pour y avoir accès (voir [[https://stackoverflow.com/questions/22620774/getting-the-org-mode-manual-in-emacs][Getting the org-mode manual in emacs - Stack Overflow]]):
->>>>>>> 1bfb4ca (Emacs: typos)
+Il semble que la version /backports/ de Debian 12 n'inclut par le manuel d'Emacs par défaut et d'après les licenses, cette situation risque de ne pas changer. Il convient donc d'installer un plugin supplémentaire des dépôts =non-free= pour y avoir accès (voir [[https://stackoverflow.com/questions/22620774/getting-the-org-mode-manual-in-emacs][Getting the org-mode manual in emacs - Stack Overflow]]):
+
 #+begin_src shell
   sudo apt install -y emacs-common-non-dfsg
 #+end_src
