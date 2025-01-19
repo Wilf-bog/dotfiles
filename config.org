@@ -31,7 +31,6 @@ First step: making sure we are running a recent enough version of Emacs.
 After that, we load custom settings (for now).
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
-
   ;; Custom settings in a separate file and load the custom settings
 
   (setq-default custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -232,6 +231,7 @@ La plupart de ces logiciels sont automatiquement installés comme dépendance à
   (setq visible-bell 1)
   (column-number-mode)
   (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+  (setq use-dialog-box nil)
 
   ;; Icons
 
@@ -281,35 +281,8 @@ La plupart de ces logiciels sont automatiquement installés comme dépendance à
     (("C-c w t t" . modus-themes-toggle)
      ("C-c w t m" . modus-themes-select)
      ("C-c w t s" . consult-theme)))
-
-  ;; Cappucin
-
-					  ;(use-package catppuccin
-					  ;:ensure t
-					  ;:defer t)
-
-  ;; Doom-themes
-
-					  ;(use-package doom-themes
-					  ;:ensure t
-					  ;:config
-      ;;; Global settings (defaults)
-					  ;(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-					  ;doom-themes-enable-italic t) ; if nil, italics is universally disabled
-      ;;; (load-theme 'doom-one t)
-					  ;
-      ;;; Enable flashing mode-line on errors
-					  ;(doom-themes-visual-bell-config)
-      ;;; Enable custom neotree theme (all-the-icons must be installed!)
-					  ;(doom-themes-neotree-config)
-      ;;; or for treemacs users
-					  ;(setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
-					  ;(doom-themes-treemacs-config)
-      ;;; Corrects (and improves) org-mode's native fontification.
-					  ;(doom-themes-org-config))
-
-  ;; Mixed-pitch
-#+end_src
+ 
+ #+end_src
 
 *** TODO Fonts and faces
 
@@ -357,36 +330,57 @@ For the weight, we can refer to this table:
 | extrabold |  800 |
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
-    (use-package mixed-pitch
-      :hook
-      (text-mode . mixed-pitch-mode))
+  ;; Mixed-pitch
 
-    ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
+  (use-package mixed-pitch
+    :hook
+    (text-mode . mixed-pitch-mode))
 
-    (set-face-attribute 'default nil
-                        :family "Iosevka Comfy Fixed"
-                        :height 140
-                        :weight 'Regular)
-    (when (eq system-type 'windows-nt)
-      (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
-    (when (eq system-type 'gnu/linux)
-      (set-face-attribute 'variable-pitch nil :family "Merriweather"))
-    (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Fixed")
+  ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
 
-    ;; Window management
-    ;; Split windows sensibly
+  (set-face-attribute 'default nil
+                      :family "Iosevka Comfy Fixed"
+                      :height 140
+                      :weight 'Regular)
+  (when (eq system-type 'windows-nt)
+    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
+  (when (eq system-type 'gnu/linux)
+    (set-face-attribute 'variable-pitch nil :family "Merriweather"))
+  (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Fixed")
+#+end_src
 
-    (setq split-width-threshold 120
-          split-height-threshold nil)
+***   TODO Window management
 
-    ;; Keep window sizes balanced
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; Split windows sensibly
 
-    (use-package balanced-windows
-      :config
-      (balanced-windows-mode))
+  (setq split-width-threshold 120
+        split-height-threshold nil)
+
+  ;; Keep window sizes balanced
+
+  (use-package balanced-windows
+    :config
+    (balanced-windows-mode))
 
   ;; Switching window quickly
   (global-set-key (kbd "M-o") 'other-window)
+#+end_src
+
+*** TODO COMMENT Ultra-scroll
+
+Paquet qui permet un défilement /smooth/ sur Emacs.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (package-vc-install '(ultra-scroll :vc-backend Git :url  "https://github.com/jdtsmith/ultra-scroll"))
+
+  (use-package ultra-scroll
+    ;:load-path "~/code/emacs/ultra-scroll" ; if you git clone'd instead of package-vc-install
+    :init
+    (setq scroll-conservatively 101 ; important!
+          scroll-margin 0) 
+    :config
+    (ultra-scroll-mode 1))
 #+end_src
 
 *** TODO Pulsar

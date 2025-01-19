@@ -116,6 +116,7 @@
 (setq visible-bell 1)
 (column-number-mode)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(setq use-dialog-box nil)
 
 ;; Icons
 
@@ -166,61 +167,34 @@
    ("C-c w t m" . modus-themes-select)
    ("C-c w t s" . consult-theme)))
 
-;; Cappucin
-
-					;(use-package catppuccin
-					;:ensure t
-					;:defer t)
-
-;; Doom-themes
-
-					;(use-package doom-themes
-					;:ensure t
-					;:config
-    ;;; Global settings (defaults)
-					;(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-					;doom-themes-enable-italic t) ; if nil, italics is universally disabled
-    ;;; (load-theme 'doom-one t)
-					;
-    ;;; Enable flashing mode-line on errors
-					;(doom-themes-visual-bell-config)
-    ;;; Enable custom neotree theme (all-the-icons must be installed!)
-					;(doom-themes-neotree-config)
-    ;;; or for treemacs users
-					;(setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
-					;(doom-themes-treemacs-config)
-    ;;; Corrects (and improves) org-mode's native fontification.
-					;(doom-themes-org-config))
-
 ;; Mixed-pitch
 
 (use-package mixed-pitch
-    :hook
-    (text-mode . mixed-pitch-mode))
+  :hook
+  (text-mode . mixed-pitch-mode))
 
-  ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
+;; Fonts 'default, 'fixed-pitch and 'variable-pitch
 
-  (set-face-attribute 'default nil
-                      :family "Iosevka Comfy Fixed"
-                      :height 140
-                      :weight 'Regular)
-  (when (eq system-type 'windows-nt)
-    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
-  (when (eq system-type 'gnu/linux)
-    (set-face-attribute 'variable-pitch nil :family "Merriweather"))
-  (set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Fixed")
+(set-face-attribute 'default nil
+                    :family "Iosevka Comfy Fixed"
+                    :height 140
+                    :weight 'Regular)
+(when (eq system-type 'windows-nt)
+  (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
+(when (eq system-type 'gnu/linux)
+  (set-face-attribute 'variable-pitch nil :family "Merriweather"))
+(set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Fixed")
 
-  ;; Window management
-  ;; Split windows sensibly
+;; Split windows sensibly
 
-  (setq split-width-threshold 120
-        split-height-threshold nil)
+(setq split-width-threshold 120
+      split-height-threshold nil)
 
-  ;; Keep window sizes balanced
+;; Keep window sizes balanced
 
-  (use-package balanced-windows
-    :config
-    (balanced-windows-mode))
+(use-package balanced-windows
+  :config
+  (balanced-windows-mode))
 
 ;; Switching window quickly
 (global-set-key (kbd "M-o") 'other-window)
