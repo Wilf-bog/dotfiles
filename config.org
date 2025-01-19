@@ -369,11 +369,13 @@ For the weight, we can refer to this table:
 
 *** TODO COMMENT Ultra-scroll
 
-Paquet qui permet un défilement /smooth/ sur Emacs.
+Paquet qui permet un défilement /smooth/ sur Emacs. En attendant l'intégration de l'installation de paquets sur Git avec =use-package= à la prochaine version de Emacs, il faut installer manuellement le paquet avec la commande suivante.
+
+#+begin_src emacs-lisp
+  (package-vc-install '(ultra-scroll :vc-backend Git :url  "https://github.com/jdtsmith/ultra-scroll"))
+#+end_src
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
-  (package-vc-install '(ultra-scroll :vc-backend Git :url  "https://github.com/jdtsmith/ultra-scroll"))
-
   (use-package ultra-scroll
     ;:load-path "~/code/emacs/ultra-scroll" ; if you git clone'd instead of package-vc-install
     :init
