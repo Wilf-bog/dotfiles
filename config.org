@@ -2604,9 +2604,8 @@ And then the needed configuration:
   SSLType STARTTLS
 
   MaildirStore mailbox-local
-  Path ~/Documents/Mail/Mailbox
+  Path ~/Documents/Mail/Mailbox/
   Inbox ~/Documents/Mail/Mailbox/Inbox
-  Trash ~/Documents/Mail/Mailbox/Trash
   Subfolders Verbatim
 
   Channel mailbox
@@ -2670,7 +2669,8 @@ Once installed, we can proceed with our first indexing.
                     (mu4e-trash-folder  . "/Mailbox/Trash")
                     (mu4e-compose-signature . "Frédéric Vachon")
                     (mu4e-maildir-shortcuts .
-                                            (("/Mailbox/All Mail"     . ?a)
+                                            (("/Mailbox/Inbox"     . ?i)
+                                             ("/Mailbox/Archive"     . ?a)
                                              ("/Mailbox/Sent"       . ?s)
                                              ("/Mailbox/Drafts"       . ?d)
                                              ("/Mailbox/Trash"       . ?t)))
@@ -2694,7 +2694,8 @@ Once installed, we can proceed with our first indexing.
                     (mu4e-trash-folder  . "/Mailbox/Trash")
                     (mu4e-compose-signature . "Wilf")
                     (mu4e-maildir-shortcuts .
-                                            (("/Mailbox/All Mail"     . ?a)
+                                            (("/Mailbox/Inbox"     . ?i)
+                                             ("/Mailbox/Archive"     . ?a)
                                              ("/Mailbox/Sent"       . ?s)
                                              ("/Mailbox/Drafts"       . ?d)
                                              ("/Mailbox/Trash"       . ?t)))
@@ -2718,7 +2719,8 @@ Once installed, we can proceed with our first indexing.
                     (mu4e-trash-folder  . "/Mailbox/Trash")
                     (mu4e-compose-signature . "Frédéric Vachon")
                     (mu4e-maildir-shortcuts .
-                                            (("/Mailbox/All Mail"     . ?a)
+                                            (("/Mailbox/Inbox"     . ?i)
+                                             ("/Mailbox/Archive"     . ?a)
                                              ("/Mailbox/Sent"       . ?s)
                                              ("/Mailbox/Drafts"       . ?d)
                                              ("/Mailbox/Trash"       . ?t)))

@@ -1496,7 +1496,8 @@
                   (mu4e-trash-folder  . "/Mailbox/Trash")
                   (mu4e-compose-signature . "Frédéric Vachon")
                   (mu4e-maildir-shortcuts .
-                                          (("/Mailbox/All Mail"     . ?a)
+                                          (("/Mailbox/Inbox"     . ?i)
+                                           ("/Mailbox/Archive"     . ?a)
                                            ("/Mailbox/Sent"       . ?s)
                                            ("/Mailbox/Drafts"       . ?d)
                                            ("/Mailbox/Trash"       . ?t)))
@@ -1520,7 +1521,8 @@
                   (mu4e-trash-folder  . "/Mailbox/Trash")
                   (mu4e-compose-signature . "Wilf")
                   (mu4e-maildir-shortcuts .
-                                          (("/Mailbox/All Mail"     . ?a)
+                                          (("/Mailbox/Inbox"     . ?i)
+                                           ("/Mailbox/Archive"     . ?a)
                                            ("/Mailbox/Sent"       . ?s)
                                            ("/Mailbox/Drafts"       . ?d)
                                            ("/Mailbox/Trash"       . ?t)))
@@ -1544,7 +1546,8 @@
                   (mu4e-trash-folder  . "/Mailbox/Trash")
                   (mu4e-compose-signature . "Frédéric Vachon")
                   (mu4e-maildir-shortcuts .
-                                          (("/Mailbox/All Mail"     . ?a)
+                                          (("/Mailbox/Inbox"     . ?i)
+                                           ("/Mailbox/Archive"     . ?a)
                                            ("/Mailbox/Sent"       . ?s)
                                            ("/Mailbox/Drafts"       . ?d)
                                            ("/Mailbox/Trash"       . ?t)))

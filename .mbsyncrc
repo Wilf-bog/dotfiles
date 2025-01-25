@@ -45,9 +45,8 @@ PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine
 SSLType STARTTLS
 
 MaildirStore mailbox-local
-Path ~/Documents/Mail/Mailbox
+Path ~/Documents/Mail/Mailbox/
 Inbox ~/Documents/Mail/Mailbox/Inbox
-Trash ~/Documents/Mail/Mailbox/Trash
 Subfolders Verbatim
 
 Channel mailbox
