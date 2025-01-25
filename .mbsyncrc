@@ -1,3 +1,4 @@
+# Proton
 IMAPAccount Proton
 Host 127.0.0.1
 Port 1143
@@ -13,6 +14,8 @@ Account Proton
 MaildirStore Proton-local
 Path ~/Documents/Mail/Proton/
 Inbox ~/Documents/Mail/Proton/INBOX/
+Trash ~/Documents/Mail/Proton/Trash/
+Subfolders Verbatim
 
 Channel Proton
 Far :Proton-remote:
@@ -33,3 +36,26 @@ SyncState *
 Group Proton
 Channel Proton-inbox
 Channel Proton-sent
+
+# Mailbox
+IMAPStore mailbox-remote
+Host imap.mailbox.org
+User tamiaso@mailbox.org
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine smtp.mailbox.org/ {print $NF}'"
+SSLType STARTTLS
+
+MaildirStore mailbox-local
+Path ~/Documents/Mail/Mailbox
+Inbox ~/Documents/Mail/Mailbox/Inbox
+Trash ~/Documents/Mail/Mailbox/Trash
+Subfolders Verbatim
+
+Channel mailbox
+Far :mailbox-remote:
+Near :mailbox-local:
+Sync All
+Patterns *
+SyncState *
+Create Both
+Expunge None
+CopyArrivalDate yes

@@ -1443,35 +1443,117 @@
   ;; :load-path "/usr/share/emacs/site-lisp/mu4e/"
   :load-path "/usr/share/emacs/site-lisp/elpa-src/mu4e-1.8.14/"
   :defer 10 ; Wait until 10 seconds after startup
+  :bind (("C-c u" . mu4e))
   :config
 
   (setq mu4e-change-filenames-when-moving t ; avoid sync conflicts
         mu4e-update-interval (* 10 60) ; check mail 10 minutes
         mu4e-compose-format-flowed t ; re-flow mail so it's not hard wrapped
         mu4e-get-mail-command "mbsync -a"
-        mu4e-maildir "~/Mail"
+        mu4e-maildir "~/Documents/Mail"
         mu4e-attachment-dir "~/Downloads")
 
-  (setq mu4e-drafts-folder "/Drafts"
-        mu4e-sent-folder   "/Sent"
-        mu4e-refile-folder "/All Mail"
-        mu4e-trash-folder  "/Trash")
+  (setq mu4e-contexts
+        (list
 
-  (setq mu4e-maildir-shortcuts
-        '((:maildir "/INBOX"     :key ?i)
-          (:maildir "/sent"      :key ?s)
-          (:maildir "/Trash"     :key ?t)
-          (:maildir "/Drafts"    :key ?d)
-          (:maildir "/All Mail"  :key ?a)))
+         ;; Compte principal
+         (make-mu4e-context
+          :name "Fred"
+          :match-func
+          (lambda (msg)
+            (when msg
+              (string-match-p "/Mailbox" (mu4e-message-field msg :maildir))))
+          :vars '((user-mail-address . "fvachon@tamiaso.com")
+                  (user-full-name    . "Frédéric Vachon")
+                  (smtpmail-smtp-server  . "smtp.mailbox.org")
+                  (smtpmail-smtp-service . 587)
+                  (smtpmail-stream-type  . starttls)
+                  (mu4e-refile-folder  . "/Mailbox/Archive")
+                  (mu4e-sent-folder  . "/Mailbox/Sent")
+                  (mu4e-drafts-folder  . "/Mailbox/Drafts")
+                  (mu4e-trash-folder  . "/Mailbox/Trash")
+                  (mu4e-compose-signature . "Frédéric Vachon")
+                  (mu4e-maildir-shortcuts .
+                                          (("/Mailbox/All Mail"     . ?a)
+                                           ("/Mailbox/Sent"       . ?s)
+                                           ("/Mailbox/Drafts"       . ?d)
+                                           ("/Mailbox/Trash"       . ?t)))
+         ))
 
-  (setq user-mail-address "vachonfrederic@proton.me"
-        user-full-name  "Frédéric Vachon")
+         ;; Compte alternatif
+         (make-mu4e-context
+          :name "Wilf"
+          :match-func
+          (lambda (msg)
+            (when msg
+              (mu4e-message-contact-field-matches msg :to "wilf@tamiaso.com")))
+          :vars '((user-mail-address . "wilf@tamiaso.com")
+                  (user-full-name    . "Wilf")
+                  (smtpmail-smtp-server  . "smtp.mailbox.org")
+                  (smtpmail-smtp-service . 587)
+                  (smtpmail-stream-type  . starttls)
+                  (mu4e-refile-folder  . "/Mailbox/Archive")
+                  (mu4e-sent-folder  . "/Mailbox/Sent")
+                  (mu4e-drafts-folder  . "/Mailbox/Drafts")
+                  (mu4e-trash-folder  . "/Mailbox/Trash")
+                  (mu4e-compose-signature . "Wilf")
+                  (mu4e-maildir-shortcuts .
+                                          (("/Mailbox/All Mail"     . ?a)
+                                           ("/Mailbox/Sent"       . ?s)
+                                           ("/Mailbox/Drafts"       . ?d)
+                                           ("/Mailbox/Trash"       . ?t)))
+         ))
 
-  (setq message-send-mail-function 'smtpmail-send-it
-        auth-sources '("~/.authinfo.gpg")
-        smtpmail-smtp-server "127.0.0.1"
-        smtpmail-smtp-service 1025
-        smtpmail-stream-type  'starttls)
+         ;; Compte principal mailbox
+         (make-mu4e-context
+          :name "Mailbox"
+          :match-func
+          (lambda (msg)
+            (when msg
+              (mu4e-message-contact-field-matches msg :to "tamiaso@mailbox.org")))
+          :vars '((user-mail-address . "tamiaso@mailbox.org")
+                  (user-full-name    . "Frédéric Vachon")
+                  (smtpmail-smtp-server  . "smtp.mailbox.org")
+                  (smtpmail-smtp-service . 587)
+                  (smtpmail-stream-type  . starttls)
+                  (mu4e-refile-folder  . "/Mailbox/Archive")
+                  (mu4e-sent-folder  . "/Mailbox/Sent")
+                  (mu4e-drafts-folder  . "/Mailbox/Drafts")
+                  (mu4e-trash-folder  . "/Mailbox/Trash")
+                  (mu4e-compose-signature . "Frédéric Vachon")
+                  (mu4e-maildir-shortcuts .
+                                          (("/Mailbox/All Mail"     . ?a)
+                                           ("/Mailbox/Sent"       . ?s)
+                                           ("/Mailbox/Drafts"       . ?d)
+                                           ("/Mailbox/Trash"       . ?t)))
+         ))
+
+         ;; Compte Proton
+         (make-mu4e-context
+          :name "Proton"
+          :match-func
+          (lambda (msg)
+            (when msg
+              ;; (mu4e-message-contact-field-matches msg :to "vachonfrederic@proton.me")))
+              (string-match-p "/Mailbox" (mu4e-message-field msg :maildir))))
+          :vars '((user-mail-address . "vachonfrederic@proton.me")
+                  (user-full-name    . "Frédéric Vachon")
+                  (auth-source  .  ("~/.authinfo.gpg"))
+                  (smtpmail-smtp-server  . "127.0.0.1")
+                  (smtpmail-smtp-service . 1025)
+                  (smtpmail-stream-type  . starttls)
+                  (mu4e-refile-folder  . "/Proton/Archive")
+                  (mu4e-sent-folder  . "/Proton/Sent")
+                  (mu4e-drafts-folder  . "/Proton/Drafts")
+                  (mu4e-trash-folder  . "/Proton/Trash")
+                  (mu4e-compose-signature . "Frédéric Vachon")
+                  (mu4e-maildir-shortcuts .
+                                          (("/Proton/All Mail"     . ?a)
+                                           ("/Proton/Sent"       . ?s)
+                                           ("/Proton/Drafts"       . ?d)
+                                           ("/Proton/Trash"       . ?t)))
+                  ))))
+
 
   ;; Run mu4e in the background to sync mail periodically
   (mu4e t))
@@ -1480,27 +1562,14 @@
   (add-to-list 'mm-discouraged-alternatives "text/html")
   (add-to-list 'mm-discouraged-alternatives "text/richtext"))
 
-(use-package mu4easy
-  ;; :demand
-  ;; :load-path "/home/frdrcv/Git/mu4easy"
-  :ensure t
-  :bind ("C-c u" . mu4e)
-  :config (mu4easy-mode)
-  :custom
-  (mu4easy-contexts '((mu4easy-context
-                       :c-name  "Proton"
-                       :maildir "Proton"
-                       :mail    "vachonfrederic@proton.me"
-                       :smtp    "127.0.0.1"
-                       :smtp-type starttls
-                       :smtp-port 1025
-                       :sent-action delete))))
-
-(use-package messages-are-flowing
+(use-package org-mime
   :ensure t)
 
-(with-eval-after-load "message"
-  (add-hook 'message-mode-hook 'messages-are-flowing-use-and-mark-hard-newlines))
+(setq org-mime-export-options '(:section-numbers nil
+                                :with-author nil
+                                :with-toc nil))
+
+(add-hook 'message-send-hook 'org-mime-htmlize)
 
 ;; (use-package zoxide
 ;;   :ensure t)

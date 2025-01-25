@@ -2527,41 +2527,67 @@ Once this is done, we can start syncing emails with the following command:
 
 And then the needed configuration:
 #+begin_src conf :tangle .mbsyncrc
-IMAPAccount Proton
-Host 127.0.0.1
-Port 1143
-User vachonfrederic@proton.me
-PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine 127.0.0.1/ {print $NF}'"
-AuthMechs LOGIN
-SSLType STARTTLS
-CertificateFile ~/.config/protonmail/bridge-v3/cert.pem
+  # Proton
+  IMAPAccount Proton
+  Host 127.0.0.1
+  Port 1143
+  User vachonfrederic@proton.me
+  PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine 127.0.0.1/ {print $NF}'"
+  AuthMechs LOGIN
+  SSLType STARTTLS
+  CertificateFile ~/.config/protonmail/bridge-v3/cert.pem
 
-IMAPStore Proton-remote
-Account Proton
+  IMAPStore Proton-remote
+  Account Proton
 
-MaildirStore Proton-local
-Path ~/Documents/Mail/Proton/
-Inbox ~/Documents/Mail/Proton/INBOX/
+  MaildirStore Proton-local
+  Path ~/Documents/Mail/Proton/
+  Inbox ~/Documents/Mail/Proton/INBOX/
+  Trash ~/Documents/Mail/Proton/Trash/
+  Subfolders Verbatim
 
-Channel Proton
-Far :Proton-remote:
-Near :Proton-local:
-Patterns "INBOX" "Archive" "Spam" "Sent" "Trash" "All Mail" "Drafts"
-CopyArrivalDate yes
-Create Both
-Expunge Both
-SyncState *
+  Channel Proton
+  Far :Proton-remote:
+  Near :Proton-local:
+  Patterns "INBOX" "Archive" "Spam" "Sent" "Trash" "All Mail" "Drafts"
+  CopyArrivalDate yes
+  Create Both
+  Expunge Both
+  SyncState *
 
-Channel Proton-sent
-Far :Proton-remote:"Sent"
-Near :Proton-local:"Sent"
-Create Both
-Expunge Both
-SyncState *
+  Channel Proton-sent
+  Far :Proton-remote:"Sent"
+  Near :Proton-local:"Sent"
+  Create Both
+  Expunge Both
+  SyncState *
 
-Group Proton
-Channel Proton-inbox
-Channel Proton-sent
+  Group Proton
+  Channel Proton-inbox
+  Channel Proton-sent
+
+  # Mailbox
+  IMAPStore mailbox-remote
+  Host imap.mailbox.org
+  User tamiaso@mailbox.org
+  PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine smtp.mailbox.org/ {print $NF}'"
+  SSLType STARTTLS
+
+  MaildirStore mailbox-local
+  Path ~/Documents/Mail/Mailbox
+  Inbox ~/Documents/Mail/Mailbox/Inbox
+  Trash ~/Documents/Mail/Mailbox/Trash
+  Subfolders Verbatim
+
+  Channel mailbox
+  Far :mailbox-remote:
+  Near :mailbox-local:
+  Sync All
+  Patterns *
+  SyncState *
+  Create Both
+  Expunge None
+  CopyArrivalDate yes
 #+end_src
 
 ** =Mu=
@@ -2572,7 +2598,7 @@ Instead of installing a thing at a time, we can install =mu= (named =maildir-uti
 
 Once installed, we can proceed with our first indexing.
 #+begin_src shell
-  mu init --maildir=~/Documents/Mail --my-address=vachonfrederic@proton.me
+  mu init --maildir=~/Documents/Mail --my-address=tamiaso@mailbox.org --my-address=vachonfrederic@proton.me --my-address=fvachon@tamiaso.com --my-address=wilf@tamiaso.com
   mu index
 #+end_src
 
@@ -2583,35 +2609,117 @@ Once installed, we can proceed with our first indexing.
     ;; :load-path "/usr/share/emacs/site-lisp/mu4e/"
     :load-path "/usr/share/emacs/site-lisp/elpa-src/mu4e-1.8.14/"
     :defer 10 ; Wait until 10 seconds after startup
+    :bind (("C-c u" . mu4e))
     :config
 
     (setq mu4e-change-filenames-when-moving t ; avoid sync conflicts
           mu4e-update-interval (* 10 60) ; check mail 10 minutes
           mu4e-compose-format-flowed t ; re-flow mail so it's not hard wrapped
           mu4e-get-mail-command "mbsync -a"
-          mu4e-maildir "~/Mail"
+          mu4e-maildir "~/Documents/Mail"
           mu4e-attachment-dir "~/Downloads")
 
-    (setq mu4e-drafts-folder "/Drafts"
-          mu4e-sent-folder   "/Sent"
-          mu4e-refile-folder "/All Mail"
-          mu4e-trash-folder  "/Trash")
+    (setq mu4e-contexts
+          (list
 
-    (setq mu4e-maildir-shortcuts
-          '((:maildir "/INBOX"     :key ?i)
-            (:maildir "/sent"      :key ?s)
-            (:maildir "/Trash"     :key ?t)
-            (:maildir "/Drafts"    :key ?d)
-            (:maildir "/All Mail"  :key ?a)))
+           ;; Compte principal
+           (make-mu4e-context
+            :name "Fred"
+            :match-func
+            (lambda (msg)
+              (when msg
+                (string-match-p "/Mailbox" (mu4e-message-field msg :maildir))))
+            :vars '((user-mail-address . "fvachon@tamiaso.com")
+                    (user-full-name    . "Frédéric Vachon")
+                    (smtpmail-smtp-server  . "smtp.mailbox.org")
+                    (smtpmail-smtp-service . 587)
+                    (smtpmail-stream-type  . starttls)
+                    (mu4e-refile-folder  . "/Mailbox/Archive")
+                    (mu4e-sent-folder  . "/Mailbox/Sent")
+                    (mu4e-drafts-folder  . "/Mailbox/Drafts")
+                    (mu4e-trash-folder  . "/Mailbox/Trash")
+                    (mu4e-compose-signature . "Frédéric Vachon")
+                    (mu4e-maildir-shortcuts .
+                                            (("/Mailbox/All Mail"     . ?a)
+                                             ("/Mailbox/Sent"       . ?s)
+                                             ("/Mailbox/Drafts"       . ?d)
+                                             ("/Mailbox/Trash"       . ?t)))
+           ))
 
-    (setq user-mail-address "vachonfrederic@proton.me"
-          user-full-name  "Frédéric Vachon")
+           ;; Compte alternatif
+           (make-mu4e-context
+            :name "Wilf"
+            :match-func
+            (lambda (msg)
+              (when msg
+                (mu4e-message-contact-field-matches msg :to "wilf@tamiaso.com")))
+            :vars '((user-mail-address . "wilf@tamiaso.com")
+                    (user-full-name    . "Wilf")
+                    (smtpmail-smtp-server  . "smtp.mailbox.org")
+                    (smtpmail-smtp-service . 587)
+                    (smtpmail-stream-type  . starttls)
+                    (mu4e-refile-folder  . "/Mailbox/Archive")
+                    (mu4e-sent-folder  . "/Mailbox/Sent")
+                    (mu4e-drafts-folder  . "/Mailbox/Drafts")
+                    (mu4e-trash-folder  . "/Mailbox/Trash")
+                    (mu4e-compose-signature . "Wilf")
+                    (mu4e-maildir-shortcuts .
+                                            (("/Mailbox/All Mail"     . ?a)
+                                             ("/Mailbox/Sent"       . ?s)
+                                             ("/Mailbox/Drafts"       . ?d)
+                                             ("/Mailbox/Trash"       . ?t)))
+           ))
 
-    (setq message-send-mail-function 'smtpmail-send-it
-          auth-sources '("~/.authinfo.gpg")
-          smtpmail-smtp-server "127.0.0.1"
-          smtpmail-smtp-service 1025
-          smtpmail-stream-type  'starttls)
+           ;; Compte principal mailbox
+           (make-mu4e-context
+            :name "Mailbox"
+            :match-func
+            (lambda (msg)
+              (when msg
+                (mu4e-message-contact-field-matches msg :to "tamiaso@mailbox.org")))
+            :vars '((user-mail-address . "tamiaso@mailbox.org")
+                    (user-full-name    . "Frédéric Vachon")
+                    (smtpmail-smtp-server  . "smtp.mailbox.org")
+                    (smtpmail-smtp-service . 587)
+                    (smtpmail-stream-type  . starttls)
+                    (mu4e-refile-folder  . "/Mailbox/Archive")
+                    (mu4e-sent-folder  . "/Mailbox/Sent")
+                    (mu4e-drafts-folder  . "/Mailbox/Drafts")
+                    (mu4e-trash-folder  . "/Mailbox/Trash")
+                    (mu4e-compose-signature . "Frédéric Vachon")
+                    (mu4e-maildir-shortcuts .
+                                            (("/Mailbox/All Mail"     . ?a)
+                                             ("/Mailbox/Sent"       . ?s)
+                                             ("/Mailbox/Drafts"       . ?d)
+                                             ("/Mailbox/Trash"       . ?t)))
+           ))
+
+           ;; Compte Proton
+           (make-mu4e-context
+            :name "Proton"
+            :match-func
+            (lambda (msg)
+              (when msg
+                ;; (mu4e-message-contact-field-matches msg :to "vachonfrederic@proton.me")))
+                (string-match-p "/Mailbox" (mu4e-message-field msg :maildir))))
+            :vars '((user-mail-address . "vachonfrederic@proton.me")
+                    (user-full-name    . "Frédéric Vachon")
+                    (auth-source  .  ("~/.authinfo.gpg"))
+                    (smtpmail-smtp-server  . "127.0.0.1")
+                    (smtpmail-smtp-service . 1025)
+                    (smtpmail-stream-type  . starttls)
+                    (mu4e-refile-folder  . "/Proton/Archive")
+                    (mu4e-sent-folder  . "/Proton/Sent")
+                    (mu4e-drafts-folder  . "/Proton/Drafts")
+                    (mu4e-trash-folder  . "/Proton/Trash")
+                    (mu4e-compose-signature . "Frédéric Vachon")
+                    (mu4e-maildir-shortcuts .
+                                            (("/Proton/All Mail"     . ?a)
+                                             ("/Proton/Sent"       . ?s)
+                                             ("/Proton/Drafts"       . ?d)
+                                             ("/Proton/Trash"       . ?t)))
+                    ))))
+
 
     ;; Run mu4e in the background to sync mail periodically
     (mu4e t))
@@ -2624,7 +2732,7 @@ By default, =mu4e= will display rich text or html. We can change this with the f
     (add-to-list 'mm-discouraged-alternatives "text/richtext"))
 #+end_src
 
-** Mu4easy
+** COMMENT Mu4easy
 Mu4easy is a package that aims to simplify the configuration of Mu4e. It is available from Melpa as well as Github. I prefered to clone the package at first and for now that's how I entend to continue using it.
 
 It is important to have it cloned locally othewise it won't install by itself like other packages.
@@ -2652,7 +2760,7 @@ The following configuration should be working now. I am only setting my proton e
                          :sent-action delete))))
 #+end_src
 
-** =messages-are-flowing=
+** COMMENT =messages-are-flowing=
 Étrangement les courriels envoyés à partir d'Emacs ont des saut de lignes problématiques. Un paquet semble régler ce problème.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package messages-are-flowing
