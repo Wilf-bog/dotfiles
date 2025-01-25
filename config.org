@@ -2770,6 +2770,21 @@ The following configuration should be working now. I am only setting my proton e
     (add-hook 'message-mode-hook 'messages-are-flowing-use-and-mark-hard-newlines))
 #+end_src
 
+** Courriels HTML
+En suivant [[https://systemcrafters.net/emacs-mail/enhance-email-with-org-mode/][cet article de SystemCrafters]], il est possible d'utiliser =org= pour rédiger des courriels en HTML, à l'aide du paquet =org-mime=. D'abord, il faut installer ce paquet.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package org-mime
+    :ensure t)
+
+  (setq org-mime-export-options '(:section-numbers nil
+                                  :with-author nil
+                                  :with-toc nil))
+  
+  (add-hook 'message-send-hook 'org-mime-htmlize)
+#+end_src
+
+Avec ce dernier, il devient possible d'écrire directement au format =org= et de l'exporter en HTML avec le commande =M-x org-mime-htmlize=. Pour que le buffer utilise =org-mode=, on peut utiliser la commande =M-x org-mime-edit-mail-in-org-mode=.
 * Desktop environement
 ** TODO i3
 *** Configuration de i3wm
