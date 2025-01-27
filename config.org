@@ -2600,7 +2600,7 @@ And then the needed configuration:
   IMAPStore mailbox-remote
   Host imap.mailbox.org
   User tamiaso@mailbox.org
-  PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine smtp.mailbox.org/ {print $NF}'"
+  PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine smtp.mailbox.org/ {print $NF}'"				
   SSLType STARTTLS
 
   MaildirStore mailbox-local
@@ -2615,7 +2615,7 @@ And then the needed configuration:
   Patterns *
   SyncState *
   Create Both
-  Expunge None
+  Expunge Both
   CopyArrivalDate yes
 #+end_src
 
