@@ -1611,3 +1611,6 @@
 
 (setq org-latex-minted-options '(("breaklines" "true")
 				 ("breakanywhere" "true")))
+
+(package-vc-install
+ '(anki-editor . (:url "https://github.com/anki-editor/anki-editor")))

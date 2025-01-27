@@ -4039,6 +4039,11 @@ Bien qu'il existe des paquets pour installer Calibre dans les dépôts de la plu
 
 J'utilise également quelques plugins pour m'assurer que les fichiers epubs soient automatiquement transférés en tant que fichiers kepub qui sont mieux supportés par les liseuses Kobo, ainsi que le plugin =annotations= pour pouvoir importer les annotations de ma tablette. Voir l'article [[https://theaccountabilityblog.com/how-to-export-highlights-annotations-from-a-kobo-device/][How to Export Highlights & Annotations from a Kobo Device - the accountability blog]].
 
+** TODO Anki
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (package-vc-install
+   '(anki-editor . (:url "https://github.com/anki-editor/anki-editor")))
+#+end_src
 * Post-install things
 After a clean reinstall of Debian (or if I decide to try another distribution) here are additional things that need to be done.
 
