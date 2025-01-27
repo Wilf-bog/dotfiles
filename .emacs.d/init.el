@@ -1573,8 +1573,11 @@
                   (mu4e-trash-folder  . "/Proton/Trash")
                   (mu4e-compose-signature . "Frédéric Vachon")
                   (mu4e-maildir-shortcuts .
-                                          (("/Proton/All Mail"     . ?a)
+                                          (("/Proton/INBOX"     . ?i)
+                                           ("/Proton/All Mail"     . ?a)
+                                           ("/Proton/Archive"     . ?A)
                                            ("/Proton/Sent"       . ?s)
+                                           ("/Proton/Spam"       . ?S)
                                            ("/Proton/Drafts"       . ?d)
                                            ("/Proton/Trash"       . ?t)))
                   ))))
