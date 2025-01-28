@@ -3237,7 +3237,7 @@ To avoid screen tearing and add some nice effets, I am using the basic version o
   # Can be set per-window using rules.
   #
   # Default: false
-  shadow = true;
+  shadow = false;
 
   # The blur radius for shadows, in pixels.
   #
@@ -3340,14 +3340,14 @@ To avoid screen tearing and add some nice effets, I am using the basic version o
   # Can be set per-window using rules.
   #
   # Default: false
-  # blur-background = false
+  blur-background = true
 
   # Blur background of windows when the window frame is not opaque.
   # Implies:
   #    blur-background
   #
   # Default: false
-  # blur-background-frame = false
+  blur-background-frame = true
 
   # Use fixed blur strength rather than adjusting according to window opacity.
   #
@@ -3518,8 +3518,8 @@ To avoid screen tearing and add some nice effets, I am using the basic version o
     full-shadow = false;
   }, {
     match = "window_type = 'dock'    || "
-	    "window_type = 'desktop' || "
-	    "_GTK_FRAME_EXTENTS@";
+            "window_type = 'desktop' || "
+            "_GTK_FRAME_EXTENTS@";
     shadow = false;
     clip-shadow-above = true;
     blur-background = false;
@@ -3542,16 +3542,16 @@ To avoid screen tearing and add some nice effets, I am using the basic version o
     opacity = 0.8;
   }, {
     match = "window_type = 'dock' || "
-	    "window_type = 'desktop'";
+            "window_type = 'desktop'";
     corner-radius = 0;
   }, {
     match = "name = 'Notification'   || "
-	    "class_g = 'Conky'       || "
-	    "class_g ?= 'Notify-osd' || "
-	    "class_g = 'Cairo-clock' || "
-	    "class_g = 'Librewolf' || "
-	    "class_g = 'firefox-esr' || "
-	    "_GTK_FRAME_EXTENTS@";
+            "class_g = 'Conky'       || "
+            "class_g ?= 'Notify-osd' || "
+            "class_g = 'Cairo-clock' || "
+            "class_g = 'Librewolf' || "
+            "class_g = 'firefox-esr' || "
+            "_GTK_FRAME_EXTENTS@";
     shadow = false;
   }, {
     match =  "0:_NET_WM_STATE@[*]:a = '_NET_WM_STATE_HIDDEN'";
