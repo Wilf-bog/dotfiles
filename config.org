@@ -1,6 +1,7 @@
 #+TITLE: Wilf's config
 #+AUTHOR: Frédéric Vachon
 #+PROPERTY: header-args:emacs-lisp :mkdirp yes
+#+startup: content indent
 #+auto_tangle: t
 
 * TODO Welcome!
