@@ -3218,6 +3218,9 @@ La version des dépôts officiels est convenable.
 See [[https://wiki.archlinux.org/title/Dunst#Using_dunstify_as_volume/brightness_level_indicator][Dunst - ArchWiki]].
 
 *** =Picom= Compositor, effects, and screen-tearing
+:PROPERTIES:
+:ID:       a0755527-942a-4311-9be2-6f4e07868387
+:END:
 To avoid screen tearing and add some nice effets, I am using the basic version of picom from Debian's repos.
 
 #+begin_src shell
