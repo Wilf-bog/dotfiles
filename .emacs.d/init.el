@@ -176,14 +176,14 @@
 ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
 
 (set-face-attribute 'default nil
-                    :family "Iosevka Comfy Fixed"
+                    :family "Aporetic Sans Mono"
                     :height 140
                     :weight 'Regular)
 (when (eq system-type 'windows-nt)
   (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
 (when (eq system-type 'gnu/linux)
-  (set-face-attribute 'variable-pitch nil :family "Merriweather"))
-(set-face-attribute 'fixed-pitch nil :family "Iosevka Comfy Fixed")
+  (set-face-attribute 'variable-pitch nil :family "Aporetic Serif"))
+(set-face-attribute 'fixed-pitch nil :family "Aporetic Sans Mono")
 
 ;; Split windows sensibly
 
