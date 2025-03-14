@@ -30,7 +30,7 @@
 
 (auto-save-visited-mode +1)
 (setq auto-save-visited-predicate
-      (lambda () (eq major-mode 'org-mode)))
+	(lambda () (eq major-mode 'org-mode)))
 
 (use-package casual
   :ensure t
@@ -204,10 +204,10 @@
   :ensure t
   :config
   (setopt pulsar-pulse t
-	  pulsar-delay 0.055
-	  pulsar-iterations 10
-	  pulsar-face 'pulsar-cyan
-	  pulsar-highlight-face 'pulsar-magenta)
+	    pulsar-delay 0.055
+	    pulsar-iterations 10
+	    pulsar-face 'pulsar-cyan
+	    pulsar-highlight-face 'pulsar-magenta)
 
   (pulsar-global-mode 1)
   :hook
@@ -422,30 +422,30 @@
 
 ;; Org tags
 (setq org-tag-alist
-      '(;; Places
-	("@home" . ?H)
-	("@work" . ?W)
+	'(;; Places
+	  ("@home" . ?H)
+	  ("@work" . ?W)
 
-	;; Devices
-	("@computer" . ?C)
-	("@phone" . ?P)
+	  ;; Devices
+	  ("@computer" . ?C)
+	  ("@phone" . ?P)
 
-	;; Activities
-	("@ménage" . ?m)
-	("@lecture" . ?l)
-	("@planning" . ?n)
-	("@writing" . ?w)
-	("@creative" . ?c)
-	("@écouter" . ?é)
-	("@visionner" . ?v)
-	("@email" . ?e)
-	("@calls" . ?a)
-	("@errands" . ?r)))
+	  ;; Activities
+	  ("@ménage" . ?m)
+	  ("@lecture" . ?l)
+	  ("@planning" . ?n)
+	  ("@writing" . ?w)
+	  ("@creative" . ?c)
+	  ("@écouter" . ?é)
+	  ("@visionner" . ?v)
+	  ("@email" . ?e)
+	  ("@calls" . ?a)
+	  ("@errands" . ?r)))
 
 
 ;; More TODO states
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w!)" "|" "DONE(d!)" "DELEGATED(é!)" "CANCELED(c!)")))
+	'((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w!)" "|" "DONE(d!)" "DELEGATED(é!)" "CANCELED(c!)")))
 
 ;; Show hidden emphasis markers
 
@@ -505,24 +505,24 @@
   (interactive)
   (org-ql-search (org-agenda-files)
     '(and
-      (todo "TODO" "STARTED")
-      (not (done))
-      (not (scheduled))
-      (not (deadline))
-      (not (ts-active))
-      (not (tags "cooking")))
+	(todo "TODO" "STARTED")
+	(not (done))
+	(not (scheduled))
+	(not (deadline))
+	(not (ts-active))
+	(not (tags "cooking")))
     :sort 'random))
 
 (defun my-org-ql-shuffle-someday ()
   (interactive)
   (org-ql-search (~/Documents/gtd/someday.org)
     '(and
-      (todo "SOMEDAY")
-      (not (done))
-      (not (scheduled))
-      (not (deadline))
-      (not (ts-active))
-      (not (tags "cooking")))
+	(todo "SOMEDAY")
+	(not (done))
+	(not (scheduled))
+	(not (deadline))
+	(not (ts-active))
+	(not (tags "cooking")))
     :sort 'random))
 
 (use-package yaml-mode
@@ -552,10 +552,10 @@
    ;; Magit
 
    (use-package magit
-     :ensure t)
+	:ensure t)
 
 (add-hook 'magit-process-find-password-functions
-	    'magit-process-password-auth-source)
+	       'magit-process-password-auth-source)
 
    ;   :commands magit-status
    ;   :custom
@@ -824,9 +824,9 @@
 (use-package emacs
   :bind
   ((:map image-mode-map
-	      ("K" . image-kill-buffer)
-	      ("<right>" . image-next-file)
-	      ("<left>"  . image-previous-file))
+		("K" . image-kill-buffer)
+		("<right>" . image-next-file)
+		("<left>"  . image-previous-file))
    (:map dired-mode-map
     ("C-<return>" . image-dired-dired-display-external))))
 
@@ -901,7 +901,7 @@
   :ensure t
   :config
   (setq mastodon-instance-url "https://eldritch.cafe"
-	mastodon-active-user "bogdanoviste"))
+	  mastodon-active-user "bogdanoviste"))
 
 ;; Fleeting notes
 
@@ -950,10 +950,10 @@
   :after org
   :config
   (dolist (item '(("sh" . "src shell")
-		  ("el" . "src emacs-lisp")
-		  ("cel" . "src emacs-lisp :tangle .emacs.d/init.el")
-		  ("cco" . "src conf :tangle DIR")
-		  ("py" . "src python")))
+		    ("el" . "src emacs-lisp")
+		    ("cel" . "src emacs-lisp :tangle .emacs.d/init.el")
+		    ("cco" . "src conf :tangle DIR")
+		    ("py" . "src python")))
     (add-to-list 'org-structure-template-alist item)))
 
 (setq org-agenda-files '("~/Documents/gtd/inbox.org"
@@ -1233,26 +1233,26 @@
     (pdf-tools-install)
     (setq-default pdf-view-display-size 'fit-page)
     :bind (:map pdf-view-mode-map
-		("\\" . hydra-pdftools/body)
-		("<s-spc>" .  pdf-view-scroll-down-or-next-page)
-		("g"  . pdf-view-first-page)
-		("G"  . pdf-view-last-page)
-		("l"  . image-forward-hscroll)
-		("h"  . image-backward-hscroll)
-		("j"  . pdf-view-next-page)
-		("k"  . pdf-view-previous-page)
-		("e"  . pdf-view-goto-page)
-		("u"  . pdf-view-revert-buffer)
-		("al" . pdf-annot-list-annotations)
-		("ad" . pdf-annot-delete)
-		("aa" . pdf-annot-attachment-dired)
-		("am" . pdf-annot-add-markup-annotation)
-		("at" . pdf-annot-add-text-annotation)
-		("y"  . pdf-view-kill-ring-save)
-		("i"  . pdf-misc-display-metadata)
-		("s"  . pdf-occur)
-		("b"  . pdf-view-set-slice-from-bounding-box)
-		("r"  . pdf-view-reset-slice)))
+		  ("\\" . hydra-pdftools/body)
+		  ("<s-spc>" .  pdf-view-scroll-down-or-next-page)
+		  ("g"  . pdf-view-first-page)
+		  ("G"  . pdf-view-last-page)
+		  ("l"  . image-forward-hscroll)
+		  ("h"  . image-backward-hscroll)
+		  ("j"  . pdf-view-next-page)
+		  ("k"  . pdf-view-previous-page)
+		  ("e"  . pdf-view-goto-page)
+		  ("u"  . pdf-view-revert-buffer)
+		  ("al" . pdf-annot-list-annotations)
+		  ("ad" . pdf-annot-delete)
+		  ("aa" . pdf-annot-attachment-dired)
+		  ("am" . pdf-annot-add-markup-annotation)
+		  ("at" . pdf-annot-add-text-annotation)
+		  ("y"  . pdf-view-kill-ring-save)
+		  ("i"  . pdf-misc-display-metadata)
+		  ("s"  . pdf-occur)
+		  ("b"  . pdf-view-set-slice-from-bounding-box)
+		  ("r"  . pdf-view-reset-slice)))
 
   (pdf-tools-install))
 
@@ -1331,18 +1331,18 @@
   (save-excursion
     (goto-char (point-min))
     (while (re-search-forward dired-subdir-regexp nil t)
-      (let* ((match-bounds (cons (match-beginning 1) (match-end 1)))
-	     (path (file-name-directory (buffer-substring (car match-bounds)
-							  (cdr match-bounds))))
-	     (path-start (car match-bounds))
-	     (path-end (+ (car match-bounds) (length path)))
-	     (inhibit-read-only t))
-	(put-text-property path-start path-end
-			   'invisible 'dired-hide-details-information)))))
+	(let* ((match-bounds (cons (match-beginning 1) (match-end 1)))
+	       (path (file-name-directory (buffer-substring (car match-bounds)
+							    (cdr match-bounds))))
+	       (path-start (car match-bounds))
+	       (path-end (+ (car match-bounds) (length path)))
+	       (inhibit-read-only t))
+	  (put-text-property path-start path-end
+			     'invisible 'dired-hide-details-information)))))
 
 (use-package dired
   :hook ((dired-mode . dired-hide-details-mode)
-	 (dired-after-readin . hide-dired-details-include-all-subdir-paths))
+	   (dired-after-readin . hide-dired-details-include-all-subdir-paths))
   :ensure
   nil
   :commands
@@ -1376,7 +1376,7 @@
 (use-package dired-git-info
   :ensure t
   :bind (:map dired-mode-map
-	      (")" . dired-git-info-mode)))
+		(")" . dired-git-info-mode)))
 
 ;; Adding Dirvish-mode
 ;; (use-package dirvish
@@ -1394,17 +1394,17 @@
   :hook (dired . dired-preview)
   :config
   (setq dired-preview-delay 0.7
-	dired-preview-max-size (expt 6 20)
-	dired-preview-ignored-extensions-regexp (concat "\\."
-							"\\(gz\\|"
-							"zst\\|"
-							"tar\\|"
-							"xz\\|"
-							"rar\\|"
-							"zip\\|"
-							"iso\\|"
-							"epub"
-							"\\)"))
+	  dired-preview-max-size (expt 6 20)
+	  dired-preview-ignored-extensions-regexp (concat "\\."
+							  "\\(gz\\|"
+							  "zst\\|"
+							  "tar\\|"
+							  "xz\\|"
+							  "rar\\|"
+							  "zip\\|"
+							  "iso\\|"
+							  "epub"
+							  "\\)"))
 
   ;; Enable `dired-preview-mode' in a given Dired buffer or do it ;; globally:
   (dired-preview-global-mode 1))
@@ -1604,13 +1604,13 @@
 ;; ;  (define-key evil-normal-state-map "gz" 'zoxide-find-file)
 
 (setq org-latex-listings 'minted
-      org-latex-packages-alist '(("" "minted"))
-      org-latex-pdf-process
-      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-	"pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+	org-latex-packages-alist '(("" "minted"))
+	org-latex-pdf-process
+	'("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+	  "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
 (setq org-latex-minted-options '(("breaklines" "true")
-				 ("breakanywhere" "true")))
+				   ("breakanywhere" "true")))
 
 (use-package anki-editor
   :after org
