@@ -1016,6 +1016,20 @@ Il s'agit d'un mode qui semble être inclus dans Emacs depuis quelques versions,
 
 #+end_src
 
+** =ebib= comme alternative à =zotero=
+J'envisage passer de =zotero= à un /worlflow/ entièrement fonctionnel sur Emacs, et =ebib= semble être la meilleure option pour se faire.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package ebib
+    :ensure t
+    :defer t
+    :config
+    (setq ebib-bibtex-dialect biblatex
+  	ebib-preload-bib-files "~/Documents/library/library.bib")
+    :bind
+    (("C-c b" . ebib)))
+#+end_src
+
 ** TODO Calibre
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
       (use-package calibredb

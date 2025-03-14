@@ -627,6 +627,15 @@
        :map citar-embark-citation-map
        ("c" . citar-denote-find-citation)))
 
+(use-package ebib
+  :ensure t
+  :defer t
+  :config
+  (setq ebib-bibtex-dialect biblatex
+	ebib-preload-bib-files "~/Documents/library/library.bib")
+  :bind
+  (("C-c b" . ebib)))
+
 (use-package calibredb
   :defer t
   :config
