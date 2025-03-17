@@ -631,8 +631,9 @@
   :ensure t
   :defer t
   :config
-  (setq ebib-bibtex-dialect biblatex
-	ebib-preload-bib-files "~/Documents/library/library.bib")
+  (setq ebib-bibtex-dialect "biblatex"
+	ebib-preload-bib-files "~/Documents/library/library.bib"
+	ebib-file-associations `(("ps" . "gv")))
   :bind
   (("C-c b" . ebib)))
 
