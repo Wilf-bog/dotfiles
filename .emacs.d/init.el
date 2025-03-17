@@ -1134,6 +1134,8 @@
    ("C-c w b d" . citar-denote-dwim)
    ("C-c w b e" . citar-denote-open-reference-entry)))
 
+(setq xref-search-program #'ripgrep)
+
 ;; Explore and manage your Denote collection
 
 (use-package denote-explore
