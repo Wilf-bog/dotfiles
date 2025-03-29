@@ -174,11 +174,15 @@
   (text-mode . mixed-pitch-mode))
 
 ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
-
-(set-face-attribute 'default nil
-                    :family "Aporetic Sans Mono"
-                    :height 140
-                    :weight 'Regular)
+(if (eq system-name 'effondrement)
+    (set-face-attribute 'default nil
+			:family "Aporetic Sans Mono"
+			:height 140
+			:weight 'Regular)
+  (set-face-attribute 'default nil
+                      :family "Aporetic Sans Mono"
+                      :height 120
+                      :weight 'Regular))
 (when (eq system-type 'windows-nt)
   (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
 (when (eq system-type 'gnu/linux)
