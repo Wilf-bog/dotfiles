@@ -889,13 +889,6 @@
 (use-package somafm
   :ensure t)
 
-(use-package telega
-  :ensure t)
-
-(add-hook 'telega-load-hook
-          (lambda ()
-            (define-key global-map (kbd "C-c t") telega-prefix-map)))
-
 (setq erc-server "irc.libera.chat"
       erc-nick "wilf"
       erc-user-full-name "Frédéric Vachon"
