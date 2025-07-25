@@ -167,6 +167,26 @@
    ("C-c w t m" . modus-themes-select)
    ("C-c w t s" . consult-theme)))
 
+;; Auto-dark-theme
+
+(use-package auto-dark
+:ensure t
+:custom
+(auto-dark-themes '((modus-vivendi-tinted) (modus-operandi-tinted)))
+(auto-dark-polling-interval-seconds 5)
+(auto-dark-allow-powershell nil)
+;; (auto-dark-detection-method nil) ;; dangerous to be set manually
+:hook
+(auto-dark-dark-mode
+ . (lambda ()
+      ;; something to execute when dark mode is detected
+      ))
+(auto-dark-light-mode
+ . (lambda ()
+      ;; something to execute when light mode is detected
+      ))
+:init (auto-dark-mode))
+
 ;; Mixed-pitch
 
 (use-package mixed-pitch
