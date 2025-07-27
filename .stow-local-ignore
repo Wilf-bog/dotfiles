@@ -2,3 +2,6 @@
 misc
 #LICENSE
 ^/.*\.org
+\.zprofile
+\.zshrc
+\.config/systemd
