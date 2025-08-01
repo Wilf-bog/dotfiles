@@ -916,7 +916,7 @@ This part of the configuration is borrowed from System Crafters and explained in
 
   (defun my-org-ql-shuffle-someday ()
     (interactive)
-    (org-ql-search (~/Documents/gtd/someday.org)
+    (org-ql-search (~/Documentos/gtd/someday.org)
       '(and
 	(todo "SOMEDAY")
 	(not (done))
@@ -1062,7 +1062,7 @@ J'envisage passer de =zotero= à un /worlflow/ entièrement fonctionnel sur Emac
     :defer t
     :config
     (setq ebib-bibtex-dialect "biblatex"
-  	ebib-preload-bib-files "~/Documents/library/library.bib"
+  	ebib-preload-bib-files "~/Documentos/library/library.bib"
   	ebib-file-associations `(("ps" . "gv")))
     :bind
     (("C-c b" . ebib)))
@@ -1073,13 +1073,13 @@ J'envisage passer de =zotero= à un /worlflow/ entièrement fonctionnel sur Emac
       (use-package calibredb
         :defer t
         :config
-        (setq calibredb-root-dir "~/Documents/Calibre")
+        (setq calibredb-root-dir "~/Documentos/calibre")
         (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir))
         :bind
         (("C-c w b l" . calibredb)))
         ;; (setq calibredb-library-alist '(("~/OneDrive/Org/Doc/Calibre")
-        ;;                                 ("~/Documents/Books Library")
-        ;;                                 ("~/Documents/LIB1")
+        ;;                                 ("~/Documentos/Books Library")
+        ;;                                 ("~/Documentos/LIB1")
         ;;                                 ("/Volumes/ShareDrive/Documents/Library/"))))
 #+end_src
 ** RSS and Elfeed
@@ -1271,7 +1271,7 @@ Plusieurs options intéressantes restent à explorer.
           eww-desktop-remove-duplicates t
           eww-header-line-format nil	; défaut: %t: %u
           eww-search-prefix "https://duckduckgo.com/html/?q="
-          eww-download-directory (expand-file-name "~/Documents/eww-downloads")
+          eww-download-directory (expand-file-name "~/Documentos/eww-downloads")
           eww-suggest-uris '(eww-links-at-point thing-at-point-url-at-point)
           eww-bookmarks-directory (locate-user-emacs-file "eww-bookmarks/")
           eww-history-limit 150
@@ -1546,13 +1546,13 @@ La base de ce contenu provient de SystemCrafter, voir:
       :kill-buffer t
       :jump-to-captured t)
      ("t" "New task" entry
-      (file+headline "~/Documents/gtd/inbox.org" "Tasks")
+      (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
       "* TODO %i%? \n %U")
      ("r" "Read article" entry
-      (file+headline "~/Documents/gtd/inbox.org" "Tasks")
+      (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
       "* %i%? \n %U")
      ("T" "Tickler" entry
-      (file+headline "~/Documents/gtd/tickler.org" "Tickler")
+      (file+headline "~/Documentos/gtd/tickler.org" "Tickler")
       "* TODO %i%? \n %U")))
 
   ;; Start writing immediately after triggering org-capture
@@ -1588,15 +1588,15 @@ Originally, EWS doesn't rely on use-package to load org-tempo and a templates. F
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
 
-    (setq org-agenda-files '("~/Documents/gtd/inbox.org"
-                             "~/Documents/gtd/gtd.org"
-                             "~/Documents/gtd/projets.org"
-                             "~/Documents/gtd/tickler.org"))
+    (setq org-agenda-files '("~/Documentos/gtd/inbox.org"
+                             "~/Documentos/gtd/gtd.org"
+                             "~/Documentos/gtd/projets.org"
+                             "~/Documentos/gtd/tickler.org"))
 
-    (setq org-refile-targets '(("~/Documents/gtd/gtd.org" :maxlevel . 3)
-                               ("~/Documents/gtd/someday.org" :level . 1)
-                               ("~/Documents/gtd/projets.org" :maxlevel . 5)
-                               ("~/Documents/gtd/tickler.org" :maxlevel . 2)))
+    (setq org-refile-targets '(("~/Documentos/gtd/gtd.org" :maxlevel . 3)
+                               ("~/Documentos/gtd/someday.org" :level . 1)
+                               ("~/Documentos/gtd/projets.org" :maxlevel . 5)
+                               ("~/Documentos/gtd/tickler.org" :maxlevel . 2)))
 
   ;; Inbox location
 
@@ -2292,7 +2292,7 @@ Un paquet permet facilement de renommer les buffer =info= ce qui permet d'en avo
   :link '(url-link :tag "Homepage" "https://lucidmanager.org/tags/emacs/"))
 
 (defcustom ews-bibtex-directory
-  (concat (file-name-as-directory (getenv "HOME")) "Documents/library")
+  (concat (file-name-as-directory (getenv "HOME")) "Documentos/library")
   "Location of BibTeX files and attachments."
   :group 'ews
   :type 'directory)
@@ -2600,7 +2600,7 @@ First we need to install it:
 
 And create a directory for emails.
 #+begin_src shell
-  mkdir ~/Documents/Mail/Proton
+  mkdir ~/Documentos/Mail/Proton
 #+end_src
 
 After that, we must create the certificate that will be used by isync. This command will output information that countain the certificate we need.
@@ -2632,9 +2632,9 @@ And then the needed configuration:
   Account Proton
 
   MaildirStore Proton-local
-  Path ~/Documents/Mail/Proton/
-  Inbox ~/Documents/Mail/Proton/INBOX/
-  Trash ~/Documents/Mail/Proton/Trash/
+  Path ~/Documentos/Mail/Proton/
+  Inbox ~/Documentos/Mail/Proton/INBOX/
+  Trash ~/Documentos/Mail/Proton/Trash/
   Subfolders Verbatim
 
   Channel Proton
@@ -2665,8 +2665,8 @@ And then the needed configuration:
   SSLType STARTTLS
 
   MaildirStore mailbox-local
-  Path ~/Documents/Mail/Mailbox/
-  Inbox ~/Documents/Mail/Mailbox/Inbox
+  Path ~/Documentos/Mail/Mailbox/
+  Inbox ~/Documentos/Mail/Mailbox/Inbox
   Subfolders Verbatim
 
   Channel mailbox
@@ -2688,7 +2688,7 @@ Instead of installing a thing at a time, we can install =mu= (named =maildir-uti
 
 Once installed, we can proceed with our first indexing.
 #+begin_src shell
-  mu init --maildir=~/Documents/Mail --my-address=tamiaso@mailbox.org --my-address=vachonfrederic@proton.me --my-address=fvachon@tamiaso.com --my-address=wilf@tamiaso.com
+  mu init --maildir=~/Documentos/Mail --my-address=tamiaso@mailbox.org --my-address=vachonfrederic@proton.me --my-address=fvachon@tamiaso.com --my-address=wilf@tamiaso.com
   mu index
 #+end_src
 
@@ -2706,7 +2706,7 @@ Once installed, we can proceed with our first indexing.
           mu4e-update-interval (* 10 60) ; check mail 10 minutes
           mu4e-compose-format-flowed t ; re-flow mail so it's not hard wrapped
           mu4e-get-mail-command "mbsync -a"
-          mu4e-maildir "~/Documents/Mail"
+          mu4e-maildir "~/Documentos/Mail"
           mu4e-attachment-dir "~/Downloads")
 
     (setq mu4e-contexts
@@ -3831,7 +3831,7 @@ chsh -s /bin/zsh
     source "$EAT_SHELL_INTEGRATION_DIR/zsh"
 
   # Variable for hledger
-  export LEDGER_FILE=~/Documents/Finances/2024.journal
+  export LEDGER_FILE=~/Documentos/finances/2024.journal
 
   # Enabling zoxide
   eval "$(zoxide init zsh)"

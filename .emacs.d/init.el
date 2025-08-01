@@ -545,7 +545,7 @@
 
 (defun my-org-ql-shuffle-someday ()
   (interactive)
-  (org-ql-search (~/Documents/gtd/someday.org)
+  (org-ql-search (~/Documentos/gtd/someday.org)
     '(and
 	(todo "SOMEDAY")
 	(not (done))
@@ -662,7 +662,7 @@
   :defer t
   :config
   (setq ebib-bibtex-dialect "biblatex"
-	ebib-preload-bib-files "~/Documents/library/library.bib"
+	ebib-preload-bib-files "~/Documentos/library/library.bib"
 	ebib-file-associations `(("ps" . "gv")))
   :bind
   (("C-c b" . ebib)))
@@ -670,13 +670,13 @@
 (use-package calibredb
   :defer t
   :config
-  (setq calibredb-root-dir "~/Documents/Calibre")
+  (setq calibredb-root-dir "~/Documentos/calibre")
   (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir))
   :bind
   (("C-c w b l" . calibredb)))
   ;; (setq calibredb-library-alist '(("~/OneDrive/Org/Doc/Calibre")
-  ;;                                 ("~/Documents/Books Library")
-  ;;                                 ("~/Documents/LIB1")
+  ;;                                 ("~/Documentos/Books Library")
+  ;;                                 ("~/Documentos/LIB1")
   ;;                                 ("/Volumes/ShareDrive/Documents/Library/"))))
 
 ;; Read RSS feeds with Elfeed
@@ -805,7 +805,7 @@
         eww-desktop-remove-duplicates t
         eww-header-line-format nil	; défaut: %t: %u
         eww-search-prefix "https://duckduckgo.com/html/?q="
-        eww-download-directory (expand-file-name "~/Documents/eww-downloads")
+        eww-download-directory (expand-file-name "~/Documentos/eww-downloads")
         eww-suggest-uris '(eww-links-at-point thing-at-point-url-at-point)
         eww-bookmarks-directory (locate-user-emacs-file "eww-bookmarks/")
         eww-history-limit 150
@@ -958,13 +958,13 @@
     :kill-buffer t
     :jump-to-captured t)
    ("t" "New task" entry
-    (file+headline "~/Documents/gtd/inbox.org" "Tasks")
+    (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
     "* TODO %i%? \n %U")
    ("r" "Read article" entry
-    (file+headline "~/Documents/gtd/inbox.org" "Tasks")
+    (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
     "* %i%? \n %U")
    ("T" "Tickler" entry
-    (file+headline "~/Documents/gtd/tickler.org" "Tickler")
+    (file+headline "~/Documentos/gtd/tickler.org" "Tickler")
     "* TODO %i%? \n %U")))
 
 ;; Start writing immediately after triggering org-capture
@@ -989,15 +989,15 @@
 		    ("py" . "src python")))
     (add-to-list 'org-structure-template-alist item)))
 
-(setq org-agenda-files '("~/Documents/gtd/inbox.org"
-                           "~/Documents/gtd/gtd.org"
-                           "~/Documents/gtd/projets.org"
-                           "~/Documents/gtd/tickler.org"))
+(setq org-agenda-files '("~/Documentos/gtd/inbox.org"
+                           "~/Documentos/gtd/gtd.org"
+                           "~/Documentos/gtd/projets.org"
+                           "~/Documentos/gtd/tickler.org"))
 
-  (setq org-refile-targets '(("~/Documents/gtd/gtd.org" :maxlevel . 3)
-                             ("~/Documents/gtd/someday.org" :level . 1)
-                             ("~/Documents/gtd/projets.org" :maxlevel . 5)
-                             ("~/Documents/gtd/tickler.org" :maxlevel . 2)))
+  (setq org-refile-targets '(("~/Documentos/gtd/gtd.org" :maxlevel . 3)
+                             ("~/Documentos/gtd/someday.org" :level . 1)
+                             ("~/Documentos/gtd/projets.org" :maxlevel . 5)
+                             ("~/Documentos/gtd/tickler.org" :maxlevel . 2)))
 
 ;; Inbox location
 
@@ -1507,7 +1507,7 @@
         mu4e-update-interval (* 10 60) ; check mail 10 minutes
         mu4e-compose-format-flowed t ; re-flow mail so it's not hard wrapped
         mu4e-get-mail-command "mbsync -a"
-        mu4e-maildir "~/Documents/Mail"
+        mu4e-maildir "~/Documentos/Mail"
         mu4e-attachment-dir "~/Downloads")
 
   (setq mu4e-contexts

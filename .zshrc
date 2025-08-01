@@ -46,7 +46,7 @@ alias adu="sudo apt dist-upgrade"
   source "$EAT_SHELL_INTEGRATION_DIR/zsh"
 
 # Variable for hledger
-export LEDGER_FILE=~/Documents/Finances/2024.journal
+export LEDGER_FILE=~/Documentos/finances/2024.journal
 
 # Enabling zoxide
 eval "$(zoxide init zsh)"

@@ -12,9 +12,9 @@ IMAPStore Proton-remote
 Account Proton
 
 MaildirStore Proton-local
-Path ~/Documents/Mail/Proton/
-Inbox ~/Documents/Mail/Proton/INBOX/
-Trash ~/Documents/Mail/Proton/Trash/
+Path ~/Documentos/Mail/Proton/
+Inbox ~/Documentos/Mail/Proton/INBOX/
+Trash ~/Documentos/Mail/Proton/Trash/
 Subfolders Verbatim
 
 Channel Proton
@@ -45,8 +45,8 @@ PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine
 SSLType STARTTLS
 
 MaildirStore mailbox-local
-Path ~/Documents/Mail/Mailbox/
-Inbox ~/Documents/Mail/Mailbox/Inbox
+Path ~/Documentos/Mail/Mailbox/
+Inbox ~/Documentos/Mail/Mailbox/Inbox
 Subfolders Verbatim
 
 Channel mailbox
