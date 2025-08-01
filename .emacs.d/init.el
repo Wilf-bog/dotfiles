@@ -32,25 +32,6 @@
 (setq auto-save-visited-predicate
 	(lambda () (eq major-mode 'org-mode)))
 
-(use-package casual
-  :ensure t
-  :defer t)
-
-(require 'casual-dired) ; optional if using autoloaded menu
-(keymap-set dired-mode-map "M-c" #'casual-dired-tmenu)
-(keymap-set dired-mode-map "s" #'casual-dired-sort-by-tmenu) ; optional
-(keymap-set dired-mode-map "/" #'casual-dired-search-replace-tmenu) ; optional
-
-(require 'casual-agenda) ; optional if using autoloaded menu
-(keymap-set org-agenda-mode-map "M-c" #'casual-agenda-tmenu)
-
-; Bindings to make jumping consistent between Org Agenda and Casual Agenda
-(keymap-set org-agenda-mode-map "M-j" #'org-agenda-clock-goto) ; optional
-(keymap-set org-agenda-mode-map "J" #'bookmark-jump) ; optional
-
-(require 'casual-info) ; optional if using autoloaded menu
-(keymap-set Info-mode-map "C-o" #'casual-info-tmenu)
-
 ;; Set package archives
 
 (use-package package
@@ -316,6 +297,25 @@
    ("C-h x" . helpful-command)
    ("C-h k" . helpful-key)
    ("C-h v" . helpful-variable)))
+
+(use-package casual
+  :ensure t
+  :defer t)
+
+(require 'casual-dired) ; optional if using autoloaded menu
+(keymap-set dired-mode-map "M-c" #'casual-dired-tmenu)
+(keymap-set dired-mode-map "s" #'casual-dired-sort-by-tmenu) ; optional
+(keymap-set dired-mode-map "/" #'casual-dired-search-replace-tmenu) ; optional
+
+(require 'casual-agenda) ; optional if using autoloaded menu
+(keymap-set org-agenda-mode-map "M-c" #'casual-agenda-tmenu)
+
+; Bindings to make jumping consistent between Org Agenda and Casual Agenda
+(keymap-set org-agenda-mode-map "M-j" #'org-agenda-clock-goto) ; optional
+(keymap-set org-agenda-mode-map "J" #'bookmark-jump) ; optional
+
+(require 'casual-info) ; optional if using autoloaded menu
+(keymap-set Info-mode-map "C-o" #'casual-info-tmenu)
 
 (use-package text-mode
   :ensure
