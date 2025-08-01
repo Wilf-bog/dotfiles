@@ -332,6 +332,7 @@ For the weight, we can refer to this table:
 #+end_src
 
 *** TODO Colorschemes
+Bien que j'apprécie particulièrement les thèmes Modus, ceux-ci offrent une alternative intéressante quand je sens le besoin d'utiliser autre chose.
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
   (use-package ef-themes
     :ensure t)
