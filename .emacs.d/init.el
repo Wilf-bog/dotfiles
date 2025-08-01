@@ -190,6 +190,12 @@
   (set-face-attribute 'variable-pitch nil :family "Aporetic Serif"))
 (set-face-attribute 'fixed-pitch nil :family "Aporetic Sans Mono")
 
+(use-package ef-themes
+  :ensure t)
+
+(use-package doric-themes
+  :ensure t)
+
 ;; Split windows sensibly
 
 (setq split-width-threshold 120

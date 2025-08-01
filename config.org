@@ -331,6 +331,15 @@ For the weight, we can refer to this table:
   (set-face-attribute 'fixed-pitch nil :family "Aporetic Sans Mono")
 #+end_src
 
+*** TODO Colorschemes
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package ef-themes
+    :ensure t)
+
+  (use-package doric-themes
+    :ensure t)
+#+end_src
+
 ***   TODO Window management
 
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
