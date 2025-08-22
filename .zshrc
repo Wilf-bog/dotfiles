@@ -2,6 +2,9 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 
+# To make sure tramp can work correctly, we need to simplify the prompt to reduce delays when tramp attemps a remote connection. See : https://blog.karssen.org/2016/03/02/fixing-emacs-tramp-mode-when-using-zsh/.
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
