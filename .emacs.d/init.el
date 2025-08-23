@@ -1184,6 +1184,50 @@
    ("C-c w x v" . denote-explore-network-regenerate)
    ("C-c w x D" . denote-explore-degree-barchart)))
 
+(defun my/denote-dired-same-title-add-keywords (title keywords)
+  "Dans Dired, renommer tous les fichiers marqués avec TITLE commun.
+Ajoute KEYWORDS aux mots-clés existants, conserve la SIGNATURE et l’ID."
+  (interactive
+   (list
+    (denote-title-prompt nil "Titre commun pour les fichiers marqués: ")
+    (denote-keywords-prompt))) ;; Demande mots-clés supplémentaires
+  (require 'dired)
+  (require 'denote)
+  (let ((denote-rename-confirmations nil)
+        (files (dired-get-marked-files)))
+    (dolist (f files)
+      (when (file-regular-p f)
+        (ignore-errors
+          (let* ((components (denote-extract-keywords-from-path f))
+                 (current-keywords components)
+                 (all-keywords (seq-uniq (append current-keywords keywords) #'string=)))
+            (denote-rename-file
+             f title all-keywords 'keep-current 'keep-current))))))
+  (revert-buffer)
+  (message "Renommage terminé avec ajout de keywords."))
+
+;; Donnez-lui un nom qui vous plaît, p. ex. my/denote-dired-same-title
+(defun my/denote-dired-same-title (title)
+  "Dans Dired, renommer tous les fichiers marqués pour leur donner le même TITLE.
+Conserve les KEYWORDS, la SIGNATURE et la DATE/ID existants.  Si un
+fichier n'a pas d'identifiant, Denote en créera un de manière unique."
+  (interactive
+   (list (denote-title-prompt nil "Titre commun pour les fichiers marqués: ")))
+  (require 'dired)
+  (require 'denote)
+  ;; Pas de demande de confirmation à chaque fichier
+  (let ((denote-rename-confirmations nil)
+        (files (dired-get-marked-files)))
+    (dolist (f files)
+      (when (file-regular-p f)
+        (ignore-errors
+          ;; TITLE = celui que vous saisissez
+          ;; KEYWORDS, SIGNATURE, DATE = 'keep-current
+          (denote-rename-file f title 'keep-current 'keep-current 'keep-current)))))
+  ;; Rafraîchir l’affichage Dired
+  (revert-buffer)
+  (message "Renommage terminé."))
+
 (use-package org
   :bind
   (:map org-mode-map
