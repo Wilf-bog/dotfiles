@@ -96,25 +96,8 @@ Eventually, will want to try another package manager.
 
 #+end_src
 
-*** TODO COMMENT Updates
-:PROPERTIES:
-:ID:       5bd31e25-8c2a-4cc5-85c3-9c465aa1a160
-:END:
-To get notified about incoming updates so you don't have to look for them with the command =list-package=. Based on these two sources:
-- [[https://www.youtube.com/watch?v=dtjq68F2dXw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&index=11][Keeping Your Emacs Packages Up To Date - Emacs From Scratch #11 - YouTube]]
-- [[https://github.com/daviwil/emacs-from-scratch/blob/master/show-notes/Emacs-Scratch-11.org][emacs-from-scratch/show-notes/Emacs-Scratch-11.org at master · daviwil/emacs-from-scratch · GitHub]]
-
+*** TODO Benchmarking
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
-
-(use-package auto-package-update
-  :custom
-  (auto-package-update-interval 7)
-  (auto-package-update-prompt-before-update t)
-  (auto-package-update-hide-results t)
-  :config
-  (auto-package-update-maybe)
-  (auto-package-update-at-time "09:00"))
-
 #+end_src
 
 ** TODO Other modules and librairies
