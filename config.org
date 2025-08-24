@@ -19,6 +19,94 @@ To learn more on the matter, here are examples I looked into before making the m
 - [[https://www.youtube.com/watch?v=Ex9zI4Fcirs&t=5896s][Literate Configuration: A Direct Approach - System Crafters Live! - YouTube]]
 - [[https://www.youtube.com/watch?v=ycyxytk1NAQ][Emacs: advanced Org literate configuration - YouTube]]
  
+* TODO Installer Emacs
+Comme en date de août 2025 j'utilise les distributions immutables de ublue, que les version paquetées manquent les bonnes dépendances, je dois compiler moi-même =emacs= pour mon utilisateur local. Voici les étapes pour ce faire, inspiré du tutoriel de la page https://www.rahuljuliato.com/posts/compiling_emacs_30_1:
+
+Il faut d'abord créer le dossier qui va servir aux futures compilations de Emacs. Personellement, je préfère avoir un dossier spécifiquement pour ce type de tâche, je crée donc un dossier =~/Src= pour toutes mes compilations, et dans celui-ci, un dossier spécifiquement pour Emacs. On peut faire le tout en une commande:
+
+#+begin_src shell
+  mkdir -R ~/Src/emacs_build/
+#+end_src
+
+Ensuite, nous pouvons télécharger les sources les plus récentes dans le dossier.
+
+#+begin_src shell
+  cd ~/Src/emacs_build/
+  wget -c  https://ftpmirror.gnu.org/emacs/emacs-30.2.tar.gz # à adapter selon la version la plus récente lors de la compilation
+#+end_src
+
+Ensuite, il faut vérifier le /checksum/ de l'archive.
+
+#+begin_src shell
+  sha256sum emacs-30.2.tar.gz
+#+end_src
+
+Et si tout est beau, décompresser l'archive.
+
+#+begin_src shell
+  tar xvfz emacs-30.2.tar.gz
+#+end_src
+
+On peut ensuite aller dans le dossier décompressé.
+
+#+begin_src shell
+  cd emacs-30.2
+#+end_src
+
+# TODO À vérifier si je dois installer des trucs supplémentaires dans le conteneur Arch Linux.
+
+Il convient de s'assurer d'avoir les bons dossiers localement pour l'installation finale. Sur Bazzite en août 2025, il était notamment nécessaire de créer le dossier =~/.local/opt/=. =~/.local/bin/= existait déjà et était dans le =PATH=.
+
+#+begin_src shell
+  mkdir ~/.local/opt/
+#+end_src
+
+Au moment de la configuration, utiliser les options suivantes:
+#+begin_src shell
+  ./configure --prefix="$HOME/.local/opt/emacs/" \
+  	    --bindir="$HOME/.local/bin"\
+  	    --with-native-compilation=aot\
+              --with-tree-sitter\
+              --with-gif\
+              --with-png\
+              --with-jpeg\
+              --with-rsvg\
+              --with-tiff\
+              --with-imagemagick\
+              --with-pgtk\
+              --with-mailutils
+#+end_src
+
+Après la configuration, on peut nettoyer le dossier avant la compilation s'il ne s'agit pas de la première:
+
+#+begin_src shell
+  make clean
+#+end_src
+
+En ensuite, débuter la compilation.
+
+#+begin_src shell
+  make -j8
+#+end_src
+
+Avant de terminer l'installation, on peut optionnellement tester l'exécutable pour confirmer que Emacs fonctionne.
+
+#+begin_src shell
+  ./emacs --version
+#+end_src
+
+Si tout est beau, on peut compléter l'installation.
+
+#+begin_src shell
+  make install
+#+end_src
+
+Pour le désinstaller, il faut revenir dans le dossier et faire la commande suivante:
+
+#+begin_src shell
+  make uninstall
+#+end_src
+
 * TODO Emacs configuration
 This configuration is borrowing a lot of things from 2 majors sources: [[https://github.com/daviwil/emacs-from-scratch/][Emacs from scratch]] and [[https://github.com/pprevos/emacs-writing-studio][/Emacs Writing Studio/]]. Where EWS offered a solid basis to cover my basic needs, which was to have a solid alternative to Obsidian as well as a learning platform for Emacs in general, EFS offered me generalist and powerful tools that helped me dive deeper into Emacs configuration. I also have to thank specifically [[https://github.com/protesilaos][Protesilaos Stavrou]] for his work on [[https://github.com/protesilaos/denote][Denote]] that is the tool that made the switch to Emacs possible.
 
