@@ -1,0 +1,4418 @@
+#+TITLE: Wilf's config
+#+AUTHOR: Frédéric Vachon
+#+PROPERTY: header-args:emacs-lisp :mkdirp yes
+#+startup: content indent
+#+auto_tangle: t
+
+* TODO Welcome!
+So, if this file was at first to create a literate configuration (without really knowing what it means), I now want to turn this file into something bigger like my whole system configuration.
+
+** TODO Goals
+Why would I want to do that?
+
+After almost 20 years of using Linux, I noticed I lost configurations I did develop for myself. Things I took the time to learn, at least somewhat, by reading blog posts, looking on forums, but mainly, youtube videos. I don't regret the current situation, but still, now that I am getting older and that time is a precious thing, I would like that my time be well invested and means building something solid.
+
+I think that a literate configuration could be a key toward that goal, as well as something different to write about than blog posts and zettelkasten notes.
+
+** TODO Literate configurations
+To learn more on the matter, here are examples I looked into before making the move and diving into that project.
+- [[https://www.youtube.com/watch?v=Ex9zI4Fcirs&t=5896s][Literate Configuration: A Direct Approach - System Crafters Live! - YouTube]]
+- [[https://www.youtube.com/watch?v=ycyxytk1NAQ][Emacs: advanced Org literate configuration - YouTube]]
+ 
+* TODO Installer Emacs
+Comme en date de août 2025 j'utilise les distributions immutables de ublue, que les version paquetées manquent les bonnes dépendances, je dois compiler moi-même =emacs= pour mon utilisateur local. Voici les étapes pour ce faire, inspiré du tutoriel de la page https://www.rahuljuliato.com/posts/compiling_emacs_30_1:
+
+Il faut d'abord créer le dossier qui va servir aux futures compilations de Emacs. Personellement, je préfère avoir un dossier spécifiquement pour ce type de tâche, je crée donc un dossier =~/Src= pour toutes mes compilations, et dans celui-ci, un dossier spécifiquement pour Emacs. On peut faire le tout en une commande:
+
+#+begin_src shell
+  mkdir -R ~/Src/emacs_build/
+#+end_src
+
+Ensuite, nous pouvons télécharger les sources les plus récentes dans le dossier.
+
+#+begin_src shell
+  cd ~/Src/emacs_build/
+  wget -c  https://ftpmirror.gnu.org/emacs/emacs-30.2.tar.gz # à adapter selon la version la plus récente lors de la compilation
+#+end_src
+
+Ensuite, il faut vérifier le /checksum/ de l'archive.
+
+#+begin_src shell
+  sha256sum emacs-30.2.tar.gz
+#+end_src
+
+Et si tout est beau, décompresser l'archive.
+
+#+begin_src shell
+  tar xvfz emacs-30.2.tar.gz
+#+end_src
+
+On peut ensuite aller dans le dossier décompressé.
+
+#+begin_src shell
+  cd emacs-30.2
+#+end_src
+
+# TODO À vérifier si je dois installer des trucs supplémentaires dans le conteneur Arch Linux.
+
+Il convient de s'assurer d'avoir les bons dossiers localement pour l'installation finale. Sur Bazzite en août 2025, il était notamment nécessaire de créer le dossier =~/.local/opt/=. =~/.local/bin/= existait déjà et était dans le =PATH=.
+
+#+begin_src shell
+  mkdir ~/.local/opt/
+#+end_src
+
+Au moment de la configuration, utiliser les options suivantes:
+#+begin_src shell
+  ./configure --prefix="$HOME/.local/opt/emacs/" \
+  	    --bindir="$HOME/.local/bin"\
+  	    --with-native-compilation=aot\
+              --with-tree-sitter\
+              --with-gif\
+              --with-png\
+              --with-jpeg\
+              --with-rsvg\
+              --with-tiff\
+              --with-imagemagick\
+              --with-pgtk\
+              --with-mailutils
+#+end_src
+
+Après la configuration, on peut nettoyer le dossier avant la compilation s'il ne s'agit pas de la première:
+
+#+begin_src shell
+  make clean
+#+end_src
+
+En ensuite, débuter la compilation.
+
+#+begin_src shell
+  make -j8
+#+end_src
+
+Avant de terminer l'installation, on peut optionnellement tester l'exécutable pour confirmer que Emacs fonctionne.
+
+#+begin_src shell
+  ./emacs --version
+#+end_src
+
+Si tout est beau, on peut compléter l'installation.
+
+#+begin_src shell
+  make install
+#+end_src
+
+Pour le désinstaller, il faut revenir dans le dossier et faire la commande suivante:
+
+#+begin_src shell
+  make uninstall
+#+end_src
+
+* TODO Emacs configuration
+This configuration is borrowing a lot of things from 2 majors sources: [[https://github.com/daviwil/emacs-from-scratch/][Emacs from scratch]] and [[https://github.com/pprevos/emacs-writing-studio][/Emacs Writing Studio/]]. Where EWS offered a solid basis to cover my basic needs, which was to have a solid alternative to Obsidian as well as a learning platform for Emacs in general, EFS offered me generalist and powerful tools that helped me dive deeper into Emacs configuration. I also have to thank specifically [[https://github.com/protesilaos][Protesilaos Stavrou]] for his work on [[https://github.com/protesilaos/denote][Denote]] that is the tool that made the switch to Emacs possible.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; Custom settings in a separate file and load the custom settings
+
+  (setq-default custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+  (when (file-exists-p custom-file)
+    (load custom-file))
+
+  (keymap-global-set "C-c w v" 'customize-variable)
+
+#+end_src
+
+** TODO Multiple sessions management
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Revert buffers when the underlying file has changed
+
+  (global-auto-revert-mode 1)
+
+  ;; Use ibuffer by default instead of the stock buffer list
+
+  (global-set-key [remap list-buffers] 'ibuffer)
+
+  ;; Easier access to imenu
+
+  (global-set-key (kbd "M-i") 'imenu)
+  
+  ;; Revert Dired and other buffers
+
+  (setq global-auto-revert-non-file-buffers t)
+
+  ;; Auto-save mode for org files
+
+  (auto-save-visited-mode +1)
+  (setq auto-save-visited-predicate
+	(lambda () (eq major-mode 'org-mode)))
+
+#+end_src
+
+
+** TODO Package management
+
+Eventually, will want to try another package manager.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Set package archives
+
+  (use-package package
+    :config
+    (add-to-list 'package-archives
+                 '("melpa" . "https://melpa.org/packages/"))
+    (package-initialize))
+
+  ;; Package Management
+
+  (use-package use-package
+    :custom
+    (use-package-always-ensure t)
+    (package-native-compile t)
+    (warning-minimum-level :emergency))
+
+#+end_src
+
+*** TODO Benchmarking
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+#+end_src
+
+** TODO Other modules and librairies
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  (load-file (concat (file-name-as-directory user-emacs-directory) "prot-common.el"))
+  (load-file (concat (file-name-as-directory user-emacs-directory) "prot-eww.el"))
+  (add-to-list 'load-path "~/.emacs.d/manual-packages/denote")
+
+#+end_src
+
+** STARTED Configuration de EWS
+:LOGBOOK:
+- State "STARTED"    from              [2025-01-10 Fri 15:27]
+:END:
+EWS fait appel à plusieurs logiciels externes pour fonctionner. Dans la configuration par défaut, une fonction s'assure que tous les logiciels sont installés et dans le cas contraire, retourne un message d'erreur. 
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Load EWS functions
+
+  (load-file (concat (file-name-as-directory user-emacs-directory) "ews.el"))
+
+  ;; Check for missing external software
+  ;;
+  ;; - soffice (LibreOffice): View and create office documents
+  ;; - zip: Unpack ePub documents
+  ;; - pdftotext (poppler-utils): Convert PDF to text
+  ;; - djvu (DjVuLibre): View DjVu files
+  ;; - curl: Reading RSS feeds
+  ;; - divpng: Part of LaTeX
+  ;; - dot (GraphViz): Create note network diagrams
+  ;; - convert (ImageMagick): Convert image files 
+  ;; - gm (GraphicsMagick): Convert image files
+  ;; - latex (TexLive, MacTex or MikTeX): Preview LaTex and export Org to PDF
+  ;; - hunspell: Spellcheck. Also requires a hunspell dictionary
+  ;; - grep: Search inside files
+  ;; - ripgrep: Faster alternative for grep
+  ;; - gs (GhostScript): View PDF files
+  ;; - mutool (MuPDF): View PDF files
+  ;; - mpg321, ogg123 (vorbis-tools), mplayer, mpv, vlc: Media players
+  ;; - git: Version control
+
+  (ews-missing-executables
+   '("soffice" "zip" "pdftotext" "ddjvu"
+     "curl"
+     "dvipng"
+     "dot"
+     ("convert" "gm")
+     "latex"
+     "hunspell"
+     ("grep" "ripgrep")
+     ("gs" "mutool")
+     ("mpg321" "ogg123" "mplayer" "mpv" "vlc")
+     "git"))
+
+#+end_src
+La plupart de ces logiciels sont automatiquement installés comme dépendance à d'autres logiciels qui n'ont rien à voir avec Emacs. Pour les autres, nous pouvons les installer avec la commande suivante:
+#+begin_src shell
+  sudo apt install -y djvulibre-bin hunspell-en
+#+end_src
+
+** TODO Look and feel
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Keyboard-centric user interface removing tool, menu and scroll bars
+
+  (tool-bar-mode -1)
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (setq visible-bell 1)
+  (column-number-mode)
+  (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+  (setq use-dialog-box nil)
+
+  ;; Icons
+
+  (use-package all-the-icons)
+
+  ;; Short answers only please
+
+  (setq use-short-answers t)
+
+  (use-package all-the-icons-completion
+    :after (marginalia all-the-icons)
+    :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
+    :init
+    (all-the-icons-completion-mode))
+
+  ;; Spacious padding
+
+  (use-package spacious-padding
+    :custom
+    (line-spacing 3)
+    :init
+    (spacious-padding-mode 1))
+
+  ;; Adding the ability to hide the modeline
+
+  (use-package hide-mode-line
+    :ensure t)
+
+  ;; Better modeline
+
+  (use-package doom-modeline
+    :ensure t
+    :init (doom-modeline-mode 1))
+
+  ;; Modus Themes
+
+  (use-package modus-themes
+    :custom
+    (modus-themes-italic-constructs t)
+    (modus-themes-bold-constructs t)
+    (modus-themes-mixed-fonts t)
+    (modus-themes-to-toggle
+     '(modus-operandi-tinted modus-vivendi-tinted))
+    :init
+    (load-theme 'modus-vivendi-tinted :no-confirm)
+    :bind
+    (("C-c w t t" . modus-themes-toggle)
+     ("C-c w t m" . modus-themes-select)
+     ("C-c w t s" . consult-theme)))
+
+  ;; Auto-dark-theme
+
+  (use-package auto-dark
+  :ensure t
+  :custom
+  (auto-dark-themes '((modus-vivendi-tinted) (modus-operandi-tinted)))
+  (auto-dark-polling-interval-seconds 5)
+  (auto-dark-allow-powershell nil)
+  ;; (auto-dark-detection-method nil) ;; dangerous to be set manually
+  :hook
+  (auto-dark-dark-mode
+   . (lambda ()
+        ;; something to execute when dark mode is detected
+        ))
+  (auto-dark-light-mode
+   . (lambda ()
+        ;; something to execute when light mode is detected
+        ))
+  :init (auto-dark-mode))
+
+ #+end_src
+
+*** TODO Fonts and faces
+
+For the moment, my font of choice is Iosevka, the version patched Protesilaos. It can be found on the [[https://github.com/protesilaos/iosevka-comfy][GitHub's page.]]
+
+To install this font on a new system, we must start by cloning the repository from Github:
+
+#+begin_src shell :tangle no
+  git clone --depth 1 https://github.com/protesilaos/iosevka-comfy
+#+end_src
+
+
+For future reference, this is a table referencing the different variants of this font, excluding those based on weigth.
+
+#+CAPTION: Iosevka Comfy variants
+| Family                          | Shapes | Spacing | Style      | Ligatures |
+|---------------------------------+--------+---------+------------+-----------|
+| Iosevka Comfy                   | Sans   | Compact | Monospaced | Yes       |
+| Iosevka Comfy Duo               | Sans   | Compact | Duospaced  | Yes       |
+| Iosevka Comfy Fixed             | Sans   | Compact | Monospaced | No        |
+|---------------------------------+--------+---------+------------+-----------|
+| Iosevka Comfy Motion            | Slab   | Compact | Monospaced | Yes       |
+| Iosevka Comfy Motion Duo        | Slab   | Compact | Duospaced  | Yes       |
+| Iosevka Comfy Motion Fixed      | Slab   | Compact | Monospaced | No        |
+|---------------------------------+--------+---------+------------+-----------|
+| Iosevka Comfy Wide              | Sans   | Wide    | Monospaced | Yes       |
+| Iosevka Comfy Wide Duo          | Sans   | Wide    | Duospaced  | Yes       |
+| Iosevka Comfy Wide Fixed        | Sans   | Wide    | Monospaced | No        |
+|---------------------------------+--------+---------+------------+-----------|
+| Iosevka Comfy Wide Motion       | Slab   | Wide    | Monospaced | Yes       |
+| Iosevka Comfy Wide Motion Duo   | Slab   | Wide    | Duospaced  | Yes       |
+| Iosevka Comfy Wide Motion Fixed | Slab   | Wide    | Monospaced | No        |
+
+For the weight, we can refer to this table:
+
+#+CAPTION: Iosevka Comfy weights
+| Name      | Code |
+|-----------+------|
+| light     |  300 |
+| semilight |  350 |
+| regular   |  400 |
+| medium    |  500 |
+| semibold  |  600 |
+| bold      |  700 |
+| extrabold |  800 |
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; Mixed-pitch
+
+  (use-package mixed-pitch
+    :hook
+    (text-mode . mixed-pitch-mode))
+
+  ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
+  (if (eq system-name 'effondrement)
+      (set-face-attribute 'default nil
+  			:family "Aporetic Sans Mono"
+  			:height 140
+  			:weight 'Regular)
+    (set-face-attribute 'default nil
+                        :family "Aporetic Sans Mono"
+                        :height 120
+                        :weight 'Regular))
+  (when (eq system-type 'windows-nt)
+    (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
+  (when (eq system-type 'gnu/linux)
+    (set-face-attribute 'variable-pitch nil :family "Aporetic Serif"))
+  (set-face-attribute 'fixed-pitch nil :family "Aporetic Sans Mono")
+#+end_src
+
+*** TODO Colorschemes
+Bien que j'apprécie particulièrement les thèmes Modus, ceux-ci offrent une alternative intéressante quand je sens le besoin d'utiliser autre chose.
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package ef-themes
+    :ensure t)
+
+  (use-package doric-themes
+    :ensure t)
+#+end_src
+
+***   TODO Window management
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; Split windows sensibly
+
+  (setq split-width-threshold 120
+        split-height-threshold nil)
+
+  ;; Keep window sizes balanced
+
+  (use-package balanced-windows
+    :config
+    (balanced-windows-mode))
+
+  ;; Switching window quickly
+  (global-set-key (kbd "M-o") 'other-window)
+#+end_src
+
+*** TODO COMMENT Ultra-scroll
+
+Paquet qui permet un défilement /smooth/ sur Emacs. En attendant l'intégration de l'installation de paquets sur Git avec =use-package= à la prochaine version de Emacs, il faut installer manuellement le paquet avec la commande suivante.
+
+#+begin_src emacs-lisp
+  (package-vc-install '(ultra-scroll :vc-backend Git :url  "https://github.com/jdtsmith/ultra-scroll"))
+#+end_src
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package ultra-scroll
+    ;:load-path "~/code/emacs/ultra-scroll" ; if you git clone'd instead of package-vc-install
+    :init
+    (setq scroll-conservatively 101 ; important!
+          scroll-margin 0) 
+    :config
+    (ultra-scroll-mode 1))
+#+end_src
+
+*** TODO Pulsar
+
+Based on Prot's config.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Read the pulsar manual: <https://protesilaos.com/emacs/pulsar>.
+  (use-package pulsar
+    :ensure t
+    :config
+    (setopt pulsar-pulse t
+	    pulsar-delay 0.055
+	    pulsar-iterations 10
+	    pulsar-face 'pulsar-cyan
+	    pulsar-highlight-face 'pulsar-magenta)
+
+    (pulsar-global-mode 1)
+    :hook
+    ;; There are convenience functions/commands which pulse the line using
+    ;; a specific colour: `pulsar-pulse-line-red' is one of them.
+    ((next-error . (pulsar-pulse-line-red pulsar-recenter-top pulsar-reveal-entry))
+     (minibuffer-setup . pulsar-pulse-line-red))
+    :bind
+    ;; pulsar does not define any key bindings.  This is just my personal
+    ;; preference.  Remember to read the manual on the matter.  Evaluate:
+    ;;
+    ;; (info "(elisp) Key Binding Conventions")
+    (("C-x l" . pulsar-pulse-line) ; override `count-lines-page'
+     ("C-x L" . pulsar-highlight-dwim))) ; or use `pulsar-highlight-line'
+
+#+end_src
+
+** TODO COMMENT Evil settings
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Make ESC quit prompts
+  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+  ;(use-package general
+    ;:after evil
+    ;:config
+    ;(general-create-definer efs/leader-keys
+      ;:keymaps '(normal insert visual emacs)
+      ;:prefix "SPC"
+      ;:global-prefix "C-SPC")
+    ;(efs/leader-keys
+     ;"t" '(:ignore t :which-key "toggles")
+     ;"tt" '(consult-theme :which-key "choose theme")
+     ;"fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
+
+  ;; Dependency for evil
+
+  (use-package goto-chg
+    :ensure t)
+
+  (use-package evil
+    :init
+    (setq evil-want-integration t)
+    (setq evil-want-keybinding nil)
+    (setq evil-want-C-u-scroll t)
+    (setq evil-want-C-i-jump nil)
+    :config
+    (evil-mode 1)
+    (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+    (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
+
+    ;; Use visual line motions even outside of visual-line-mode buffers
+    (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+    (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
+
+    (evil-set-initial-state 'messages-buffer-mode 'normal)
+    (evil-set-initial-state 'dashboard-mode 'normal))
+
+  ;; Dependency for evil-collection
+
+  (use-package annalist
+    :ensure t
+    :config
+    (setq annalist-record nil))
+
+  (use-package evil-collection
+    :after evil
+    :ensure t
+    :config
+    (evil-collection-init))
+
+#+end_src
+
+** TODO Minibuffer
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Enable vertico
+
+  (use-package vertico
+    :init
+    (vertico-mode)
+    :bind (("C-c w l" . consult-line)
+           :map vertico-map
+           ("C-n" . vertico-next)
+           ("C-b" . vertico-previous)
+           ("C-h" . vertico-exit)
+           :map minibuffer-local-map
+           ("M-DEL" . backward-kill-word))
+    :custom
+    (vertico-cycle t)
+    (vertico-sort-function 'vertico-sort-history-alpha))
+
+  ;; Persist history over Emacs restarts.
+
+  ;; By default, the built-in `savehist-mode' only keeps a record of
+  ;; minibuffer histories.  This is helpful as it surfaces the most
+  ;; recently selected items to the top, allowing you to access them again
+  ;; very quickly.  With the variable `savehist-additional-variables' we
+  ;; can make `savehist-mode' keep a record of any variable we want, so
+  ;; that it persists between Emacs sessions.  I do this to store the
+  ;; `kill-ring' and the `register-alist'.
+
+  (use-package savehist
+    :init
+    (savehist-mode 1))
+  (setq savehist-additional-variables '(register-alist kill-ring))
+
+
+  ;; Save last place in file after closing it
+
+  (add-hook 'org-cycle-tab-first-hook 'org-end-of-line)
+
+  ;; Search for partial matches in any order
+
+  (use-package orderless
+    :custom
+    (completion-styles '(orderless basic))
+    (completion-category-defaults nil)
+    (completion-category-overrides
+     '((file (styles partial-completion)))))
+
+  ;; Enable richer annotations using the Marginalia package
+
+  (use-package marginalia
+    :init
+    (marginalia-mode))
+
+  ;; Improve keyboard shortcut discoverability
+
+  (use-package which-key
+    :config
+    (which-key-mode)
+    :custom
+    (which-key-max-description-length 40)
+    (which-key-lighter nil)
+    (which-key-sort-order 'which-key-description-order))
+
+  ;; Improved help buffers
+
+  (use-package helpful
+    :bind
+    (("C-h f" . helpful-function)
+     ("C-h x" . helpful-command)
+     ("C-h k" . helpful-key)
+     ("C-h v" . helpful-variable)))
+
+#+end_src
+
+** STARTED =casual=
+:PROPERTIES:
+:ID:       e5e258c7-5f90-4e9f-ae5f-0aa2c18ede84
+:END:
+:LOGBOOK:
+- State "STARTED"    from              [2025-01-10 Fri 15:26]
+:END:
+=casual= est un paquet qui permet de faciliter la découvrabilité de certains fonctions d'Emacs en faisant appel à =transient=, l'outil de menu qui sert au fonctionnement de =magit=. Pour l'instant je suis spécifiquement les instructions d'installation fournies ([[https://github.com/kickingvegas/casual/blob/main/docs/dired.org#install][casual/docs/dired.org at main · kickingvegas/casual · GitHub]]), mais éventuellement je voudrais que le tout soit configuré par =use-package=.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package casual
+    :ensure t
+    :defer t)
+#+end_src
+
+*** =casual-dired=
+Il s'agit du premier paquet =casual= que j'ai décidé d'installer et probablement celui qui serait le plus utile à long terme considérant la centralité de =dired=. Voici les instructions fournies par le développeur pour l'installation, avec un raccourci modifié pour mes propres besoins.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (require 'casual-dired) ; optional if using autoloaded menu
+  (keymap-set dired-mode-map "M-c" #'casual-dired-tmenu)
+  (keymap-set dired-mode-map "s" #'casual-dired-sort-by-tmenu) ; optional
+  (keymap-set dired-mode-map "/" #'casual-dired-search-replace-tmenu) ; optional
+#+end_src
+
+*** =casual-agenda=
+:PROPERTIES:
+:ID:       43ee67fb-1433-4b6e-804d-63e7d4a74520
+:END:
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+(require 'casual-agenda) ; optional if using autoloaded menu
+(keymap-set org-agenda-mode-map "M-c" #'casual-agenda-tmenu)
+
+; Bindings to make jumping consistent between Org Agenda and Casual Agenda
+(keymap-set org-agenda-mode-map "M-j" #'org-agenda-clock-goto) ; optional
+(keymap-set org-agenda-mode-map "J" #'bookmark-jump) ; optional
+#+end_src
+
+*** TODO =casual-info=
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (require 'casual-info) ; optional if using autoloaded menu
+  (keymap-set Info-mode-map "C-o" #'casual-info-tmenu)
+#+end_src
+
+** Text mode
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+(use-package text-mode
+  :ensure
+  nil
+  :hook
+  (text-mode . visual-line-mode)
+  :init
+  (delete-selection-mode t)
+  :custom
+  (sentence-end-double-space nil)
+  (scroll-error-top-bottom t)
+  (save-interprogram-paste-before-kill t))
+  
+#+end_src
+
+** Snippets
+
+# #+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+#   (use-package yasnippet
+#     :custom
+#     (yas-global-mode 1))
+
+# #+end_src
+
+** Autocomplete
+
+To setup some auto-complete when working on code, corfu is the solution. Read more here: [[https://github.com/minad/corfu][GitHub - minad/corfu: :desert_island: corfu.el - COmpletion in Region FUnction.]]
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+   (use-package corfu
+    :ensure t
+    :bind (:map corfu-map ("<tab>" . corfu-complete))
+    ;; Optional customizations
+    :custom
+    (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
+    (corfu-auto t)                 ;; Enable auto completion
+    ;; (corfu-separator ?\s)          ;; Orderless field separator
+    ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
+    ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
+    ;; (corfu-preview-current nil)    ;; Disable current candidate preview
+    ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
+    ;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches
+    ;; (corfu-scroll-margin 5)        ;; Use scroll margin
+
+    ;; Enable Corfu only for certain modes. See also `global-corfu-modes'.
+    ;; :hook ((prog-mode . corfu-mode)
+    ;;        (shell-mode . corfu-mode)
+    ;;        (eshell-mode . corfu-mode))
+
+    ;; Recommended: Enable Corfu globally.  This is recommended since Dabbrev can
+    ;; be used globally (M-/).  See also the customization variable
+    ;; `global-corfu-modes' to exclude certain modes.
+    :init
+    (global-corfu-mode)
+    (with-eval-after-load 'savehist
+      (corfu-history-mode 1)
+      (add-to-list 'savehist-additional-variables 'corfu-history)))
+#+end_src
+
+** Suivi du défilement
+Ce code développé par Prot permet d'activer un mode mineur de suivi du curseur, particulièrement utile pour écrire de la prose. Pour plus de détail, voir la page [[https://protesilaos.com/codelog/2020-07-16-emacs-focused-editing/][“Focused editing” tools for Emacs | Protesilaos Stavrou]].
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package emacs
+    :config
+    (setq-default scroll-preserve-screen-position t)
+    (setq-default scroll-conservatively 1) ; affects `scroll-step'
+    (setq-default scroll-margin 0)
+
+    (define-minor-mode prot/scroll-centre-cursor-mode
+      "Toggle centred cursor scrolling behaviour."
+      :init-value nil
+      :lighter " S="
+      :global nil
+      (if prot/scroll-centre-cursor-mode
+          (setq-local scroll-margin (* (frame-height) 2)
+                      scroll-conservatively 0
+                      maximum-scroll-margin 0.5)
+        (dolist (local '(scroll-preserve-screen-position
+                         scroll-conservatively
+                         maximum-scroll-margin
+                         scroll-margin))
+          (kill-local-variable `,local))))
+
+    ;; C-c l is used for `org-store-link'.  The mnemonic for this is to
+    ;; focus the Line and also works as a variant of C-l.
+    :bind ("C-c L" . prot/scroll-centre-cursor-mode))
+#+end_src
+
+** Révision de l'orthographe
+*** Flyspell and Hunspell
+Il s'agit de la configuration de base adoptée par /Emacs Writing Studio/. Je n'ai pas fait de modifications jusqu'à maintenant.
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  (use-package flyspell
+    :custom
+    (ispell-program-name "hunspell")
+    (ispell-dictionary ews-hunspell-dictionaries)
+    (flyspell-mark-duplications-flag nil) ;; Writegood mode does this
+    (org-fold-core-style 'overlays) ;; Fix Org mode bug
+    :config
+    (ispell-set-spellchecker-params)
+    (ispell-hunspell-add-multi-dic ews-hunspell-dictionaries)
+    :hook
+    (text-mode . flyspell-mode)
+    :bind
+    (("C-c w s s" . ispell)
+     ("C-;"       . flyspell-auto-correct-previous-word)))
+
+#+end_src
+*** =Jinx=
+Il s'agit d'une alternative plus puissante et simple à utiliser, supposément. Je tente son utilisation et on verra si ça en vaut la peine.
+
+Avant de pouvoir installer et utiliser Jinx, il est nécessaire d'installer les paquets suivants sur Debian:
+#+begin_src shell
+  sudo apt install -y libenchant-2-dev pkgconf
+#+end_src
+
+Il est possible qu'il soit nécessaire de redémarrer l'ordinateur une fois ces paquets installés, surtout =libenchant-2-dev=. Une fois installée, voici la configuration de =jinx= sur Emacs.
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package jinx
+    :hook (emacs-startup . global-jinx-mode)
+    :bind (("M-$" . jinx-correct)
+           ("C-M-$" . jinx-languages))
+    :config
+    (setq jinx-languages "fr_CA en_CA"))
+#+end_src
+
+** Traduction
+
+Pour pouvoir traduire des textes simplement dans Emacs, je fait appel au paquet =go-translate=. Pour améliorer ses performances, il convient d'installer le paquet =plz= qui permet à =emacs= d'utiliser =curl= plutôt que la librairie =url.el= qui est plus lente. =plz= n'est pas essentiel mais recommandé.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package plz
+    :ensure t)
+  (use-package go-translate
+    :ensure t
+    :defer t
+    :custom
+    (setq gt-langs '(en fr))
+    (setq gt-default-translator (gt-translator :engines (gt-google-engine))))
+    ;; (setq gt-default-translator
+    ;;       (gt-translator
+    ;;        :taker   (gt-taker :text 'buffer :pick 'paragraph)  ; config the Taker
+    ;;        :engines (list (gt-bing-engine) (gt-google-engine)) ; specify the Engines
+    ;;        :render  (gt-buffer-render))))                       ; config the Render
+
+  ;; (setq gt-preset-translators
+  ;;   `((ts-1 . ,(gt-translator
+  ;;               :taker (gt-taker :langs '(es fr) :text 'word)
+  ;;               :engines (gt-bing-engine)
+  ;;               :render (gt-overlay-render)))
+  ;;     (ts-2 . ,(gt-translator
+  ;;               :taker (gt-taker :langs '(es fr) :text 'sentence)
+  ;;               :engines (gt-google-engine)
+  ;;               :render (gt-insert-render))))))
+#+end_src
+
+
+** Org mode
+Il semble que la version /backports/ de Debian 12 n'inclut par le manuel d'Emacs par défaut et d'après les licenses, cette situation risque de ne pas changer. Il convient donc d'installer un plugin supplémentaire des dépôts =non-free= pour y avoir accès (voir [[https://stackoverflow.com/questions/22620774/getting-the-org-mode-manual-in-emacs][Getting the org-mode manual in emacs - Stack Overflow]]):
+
+#+begin_src shell
+  sudo apt install -y emacs-common-non-dfsg
+#+end_src
+
+*** Ricing Org mode
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package org
+    :custom
+    (org-startup-indented t)
+    (org-hide-emphasis-markers t)
+    (org-startup-with-inline-images t)
+    (org-image-actual-width '(450))
+    (org-fold-catch-invisible-edits 'error)
+    (org-startup-with-latex-preview t)
+    (org-pretty-entities t)
+    (org-use-sub-superscripts "{}")
+    (org-id-link-to-org-use-id t))
+
+  ;; Make navigation easier between org titles
+  ;; (add-hook 'org-tab-first-hook 'org-end-of-line)
+
+  ;; Org tags
+  (setq org-tag-alist
+	'(;; Places
+	  ("@home" . ?H)
+	  ("@work" . ?W)
+
+	  ;; Devices
+	  ("@computer" . ?C)
+	  ("@phone" . ?P)
+
+	  ;; Activities
+	  ("@ménage" . ?m)
+	  ("@lecture" . ?l)
+	  ("@planning" . ?n)
+	  ("@writing" . ?w)
+	  ("@creative" . ?c)
+	  ("@écouter" . ?é)
+	  ("@visionner" . ?v)
+	  ("@email" . ?e)
+	  ("@calls" . ?a)
+	  ("@errands" . ?r)))
+
+
+  ;; More TODO states
+  (setq org-todo-keywords
+	'((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w!)" "|" "DONE(d!)" "DELEGATED(é!)" "CANCELED(c!)")))
+
+  ;; Show hidden emphasis markers
+
+  (use-package org-appear
+    :hook
+    (org-mode . org-appear-mode))
+
+  ;; LaTeX previews
+
+  (use-package org-fragtog
+    :after org
+    :hook
+    (org-mode . org-fragtog-mode)
+    :custom
+    (org-format-latex-options
+     (plist-put org-format-latex-options :scale 2)
+     (plist-put org-format-latex-options :foreground 'auto)
+     (plist-put org-format-latex-options :background 'auto)))
+
+  ;; Org modern: Most features disables for beginnng users
+
+  (use-package org-modern
+    :hook
+    (org-mode . org-modern-mode))
+    ;; :custom
+    ;; (org-modern-table nil)
+    ;; (org-modern-keyword nil)
+    ;; (org-modern-timestamp nil)
+    ;; (org-modern-priority nil)
+    ;; (org-modern-checkbox nil)
+    ;; (org-modern-tag nil)
+    ;; (org-modern-block-name nil)
+    ;; (org-modern-keyword nil)
+    ;; (org-modern-footnote nil)
+    ;; (org-modern-internal-target nil)
+    ;; (org-modern-radio-target nil)
+    ;; (org-modern-statistics nil)
+    ;; (org-modern-progress nil))
+
+  (use-package consult
+    :bind
+    (("C-c w h" . consult-org-heading)
+     ("C-M-j" . consult-buffer)                ;; orig. switch-to-buffer
+     ("M-g g" . consult-goto-line)             ;; orig. goto-line
+     ("M-g M-g" . consult-goto-line)           ;; orig. goto-line
+     ("M-g o" . consult-outline)               ;; Alternative: consult-org-heading
+     ("C-c w g" . consult-grep)))
+#+end_src
+
+*** Voir les todos par buffer
+En m'inspirant de la configuration disponible ici [[https://github.com/kenda/.emacs.d/blob/master/config.org#4-global-functions][.emacs.d/config.org at master · kenda/.emacs.d · GitHub]], j'ai  ajouté la fonction suivante pour faire une liste des todos d'un buffer avec =occur=.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (defun wilf-show-todos ()
+    (interactive)
+    (occur "* TODO\\|* NEXT\\|* STARTED\\|* WAITING"))
+#+end_src
+
+*** Saving PDFs annotations with Org
+
+To explore more in the future.
+#+begin_src elisp
+
+  (use-package org-noter
+  :ensure t
+  :demand t)
+
+#+end_src
+
+
+*** Auto-tangle Configuration Files
+This part of the configuration is borrowed from System Crafters and explained in 2 places:
+- This video : [[https://youtu.be/kkqVTDbfYp4?list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&t=1437][Emacs From Scratch #7 - Configure Everything with Org Babel - YouTube]]
+- And this article: [[https://systemcrafters.net/emacs-from-scratch/configure-everything-with-org-babel/#tips][Configure Everything with Org Babel - System Crafters]]
+
+  # #+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  #   ;; Automatically tangle our Emacs.org config file when we save it
+  #   (defun efs/org-babel-tangle-config ()
+  #     (when (string-equal (buffer-file-name)
+  #                         (expand-file-name "~/.dotfiles/.emacs.d/emacs.org"))
+  #       ;; Dynamic scoping to the rescue
+  #       (let ((org-confirm-babel-evaluate nil))
+  #         (org-babel-tangle))))
+
+  #   (add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
+
+  # #+end_src
+
+  EFS config didn't work for me, so I rely on org-auto-tangle for my needs.
+  
+  #+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+    (use-package org-auto-tangle
+      :hook (org-mode . org-auto-tangle-mode))
+
+  #+end_src
+
+*** Randomize todos
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  (defun my-org-ql-shuffle-todo ()
+    (interactive)
+    (org-ql-search (org-agenda-files)
+      '(and
+	(todo "TODO" "STARTED")
+	(not (done))
+	(not (scheduled))
+	(not (deadline))
+	(not (ts-active))
+	(not (tags "cooking")))
+      :sort 'random))
+
+  (defun my-org-ql-shuffle-someday ()
+    (interactive)
+    (org-ql-search (~/Documentos/gtd/someday.org)
+      '(and
+	(todo "SOMEDAY")
+	(not (done))
+	(not (scheduled))
+	(not (deadline))
+	(not (ts-active))
+	(not (tags "cooking")))
+      :sort 'random))
+
+#+end_src
+
+** yaml-mode
+Il s'agit d'un mode qui semble être inclus dans Emacs depuis quelques versions, au plus tard la version 29. Étrangement, il ne s'active pas automatiquement, donc je dois ajouter la configuration suivante pour corriger la situation.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package yaml-mode
+    :ensure nil
+    :defer t
+    :config
+    (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+#+end_src
+
+** Git and projectile
+
+ #+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+      ; ;; Projectile
+
+      ; (use-package projectile
+      ;   :diminish projectile-mode
+      ;   :config (projectile-mode)
+      ;   :custom ((projectile-completion-system 'ivy))
+      ;   :bind-keymap
+      ;   ("C-c p" . projectile-command-map)
+      ;   :init
+      ;   ;; NOTE: Set this to the folder where you keep your Git repos!
+      ;   (when (file-directory-p "~/Projects/Code")
+      ;     (setq projectile-project-search-path '("~/Projects/Code")))
+      ;   (setq projectile-switch-project-action #'projectile-dired))
+
+      ; (use-package counsel-projectile
+      ;   :after projectile
+      ;   :config (counsel-projectile-mode))
+
+      ;; Magit
+
+      (use-package magit
+	:ensure t)
+
+   (add-hook 'magit-process-find-password-functions
+	       'magit-process-password-auth-source)
+   
+      ;   :commands magit-status
+      ;   :custom
+      ;   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+      ; (setq auth-sources '("~/.authinfo")
+
+      ; ;; NOTE: Make sure to configure a GitHub token before using this package!
+      ; ;; - https://magit.vc/manual/forge/Token-Creation.html#Token-Creation
+      ; ;; - https://magit.vc/manual/ghub/Getting-Started.html#Getting-Started
+      ; (use-package forge
+      ;   :after magit)
+
+ #+end_src
+
+** Inspiration
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Doc-View
+
+  (use-package doc-view
+    :custom
+    (doc-view-resolution 300)
+    (large-file-warning-threshold (* 50 (expt 2 20))))
+
+  ;; Read ePub files
+
+  (use-package nov
+    :init
+    (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
+
+  ;; Reading LibreOffice files
+  ;; Fixing a bug in Org Mode pre 9.7
+  ;; Org mode clobbers associations with office documents
+
+  (use-package ox-odt
+    :ensure nil
+    :config
+    (add-to-list 'auto-mode-alist
+                 '("\\.\\(?:OD[CFIGPST]\\|od[cfigpst]\\)\\'"
+                   . doc-view-mode-maybe)))
+
+#+end_src
+
+** Bibtex
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  (use-package bibtex
+    :custom
+    (bibtex-user-optional-fields
+     '(("keywords" "Keywords to describe the entry" "")
+       ("file"     "Relative or absolute path to attachments" "" )))
+    (bibtex-align-at-equal-sign t)
+    (bibtex-set-dialect 'biblatex)
+    :config
+    (ews-bibtex-register)
+    :bind
+    (("C-c w b r" . ews-bibtex-register)))
+
+  ;; Biblio package for adding BibTeX records
+
+  (use-package biblio
+    :bind
+    (("C-c w b b" . ews-bibtex-biblio-lookup)))
+
+  ;; Citar to access bibliographies
+
+  (use-package citar
+    :custom
+    (citar-bibliography ews-bibtex-files)
+    :bind
+    (("C-c w b o" . citar-open)))
+
+  (use-package citar-embark
+  :after citar embark
+  :no-require
+  :config (citar-embark-mode)
+  :bind (("C-M-." . embark-act)
+         :map citar-embark-citation-map
+         ("c" . citar-denote-find-citation)))
+
+#+end_src
+
+** =ebib= comme alternative à =zotero=
+J'envisage passer de =zotero= à un /worlflow/ entièrement fonctionnel sur Emacs, et =ebib= semble être la meilleure option pour se faire.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package ebib
+    :ensure t
+    :defer t
+    :config
+    (setq ebib-bibtex-dialect "biblatex"
+  	ebib-preload-bib-files "~/Documentos/library/library.bib"
+  	ebib-file-associations `(("ps" . "gv")))
+    :bind
+    (("C-c b" . ebib)))
+#+end_src
+
+** TODO Calibre
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+      (use-package calibredb
+        :defer t
+        :config
+        (setq calibredb-root-dir "~/Documentos/calibre")
+        (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir))
+        :bind
+        (("C-c w b l" . calibredb)))
+        ;; (setq calibredb-library-alist '(("~/OneDrive/Org/Doc/Calibre")
+        ;;                                 ("~/Documentos/Books Library")
+        ;;                                 ("~/Documentos/LIB1")
+        ;;                                 ("/Volumes/ShareDrive/Documents/Library/"))))
+#+end_src
+** RSS and Elfeed
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Read RSS feeds with Elfeed
+
+  (use-package elfeed
+    :custom
+    (elfeed-db-directory
+     (expand-file-name "elfeed" user-emacs-directory))
+    (elfeed-show-entry-switch 'display-buffer)
+    :bind
+    ("C-c w e" . elfeed))
+
+  ;; Configure Elfeed with org mode
+
+  (use-package elfeed-org
+    :config
+    (elfeed-org)
+    :custom
+    (rmh-elfeed-org-files
+     (list (concat (file-name-as-directory (getenv "HOME")) "/.emacs.d/elfeed/elfeed.org"))))
+
+  ;; Allow better synchronization
+  ;; See http://babbagefiles.blogspot.com/2017/03/take-elfeed-everywhere-mobile-rss.html
+
+  ;;functions to support syncing .elfeed between machines
+  ;;makes sure elfeed reads index from disk before launching
+  (defun bjm/elfeed-load-db-and-open ()
+    "Wrapper to load the elfeed db from disk before opening"
+    (interactive)
+    (elfeed-db-load)
+    (elfeed)
+    (elfeed-search-update--force)
+    (elfeed-update))
+
+  ;;write to disk when quiting
+  (defun bjm/elfeed-save-db-and-bury ()
+    "Wrapper to save the elfeed db to disk before burying buffer"
+    (interactive)
+    (elfeed-db-save)
+    (quit-window))
+
+#+end_src
+
+*** Prot-elfeed
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+;; 
+;;   (load-file (concat (file-name-as-directory user-emacs-directory) "prot-elfeed.el"))
+;; 
+;;   (use-package prot-elfeed
+;;   :ensure nil
+;;   :after elfeed
+;;   :bind
+;;   ( :map elfeed-search-mode-map
+;;     ("s" . prot-elfeed-search-tag-filter)
+;;     ("+" . prot-elfeed-toggle-tag)
+;;     :map elfeed-show-mode-map
+;;     ("+" . prot-elfeed-toggle-tag))
+;;   :hook
+;;   (elfeed-search-mode . prot-elfeed-load-feeds)
+;;   :config
+;;   (setq prot-elfeed-tag-faces t)
+;;   (prot-elfeed-fontify-tags))
+;; 
+#+end_src
+
+*** Elfeed tube
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package elfeed-tube
+    :ensure t ;; or :straight t
+    :after elfeed
+    :demand t
+    :config
+    ;; (setq elfeed-tube-auto-save-p nil) ; default value
+    ;; (setq elfeed-tube-auto-fetch-p t)  ; default value
+    (elfeed-tube-setup)
+
+    :bind (:map elfeed-show-mode-map
+           ("F" . elfeed-tube-fetch)
+           ([remap save-buffer] . elfeed-tube-save)
+           :map elfeed-search-mode-map
+           ("F" . elfeed-tube-fetch)
+           ([remap save-buffer] . elfeed-tube-save)))
+#+end_src
+
+*** Elfeed-tube-mpv
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package elfeed-tube-mpv
+    :ensure t ;; or :straight t
+    :bind (:map elfeed-show-mode-map
+                ("C-c C-f" . elfeed-tube-mpv-follow-mode)
+                ("C-c C-w" . elfeed-tube-mpv-where)))
+#+end_src
+
+** Weblinks
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Easy insertion of weblinks
+
+  (use-package org-web-tools
+    :bind
+    (("C-c w w" . org-web-tools-insert-link-for-url)))
+
+#+end_src
+
+** Emacs Web Wowser (=eww=)
+
+My config is heavily inspired by Protesilaos configuration, starting here: [[https://protesilaos.com/emacs/dotemacs#h:f23d9cef-ab7b-4486-a070-9c7ae664eadf][GNU Emacs configuration | Protesilaos Stavrou]]
+
+*** Browse-url
+
+Cette configuration proviens de =ews= (il me semble, à vérifier) mais est également la même utilisée par Protesilaos. J'ai fait du ménage pour "bien"utiliser =setq=.
+
+Avec la variable =browse-url-browser-function= on peut déterminer le navigateur par défaut, et un navigateur alternative avec =browse-url-secondary-browser-function=, dans mon cas, Firefox. Il semblerait que ce soit utilisé par =dired= au minimum (voir [[https://www.masteringemacs.org/article/whats-new-in-emacs-29-1][What's New in Emacs 29.1? - Mastering Emacs]]) ainsi que lorsque la touche '=&=' est utilisée dans =eww=.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package browse-url
+    :ensure nil
+    :defer t
+    :config
+    (setq browse-url-browser-function 'eww-browse-url
+          browse-url-secondary-browser-function 'browse-url-firefox))
+#+end_src
+
+*** Simple HTML Renderer (=shr=)
+
+=shr= est le paquet dont se sert =eww= pour afficher le code html. +En date du 2024-12-25, il semble y avoir un bug qui rend le fond des pages gris. J'ai trouvé le code suivant qui permet de corriger la situation pour les thèmes sombres seulement+. Finalement la valeur =shr-color-visible-luminance-min= ne règle pas réellement le problème, comparativement à désactiver =shr-use-colors=.
+
+J'ai décidé de reprendre la configuration de Protesilaos comme base pour =shr= après avoir corrigé mon problème. Bien que je garde plusieurs des options par défaut, j'ai décidé en date du 2025-01-09 d'essayer de désactiver des éléments aria pour améliorer l'accessibilité (voir [[https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-hidden][aria-hidden - Accessibility | MDN]])? J'ai aussi décidé de désactiver les cookies comme ils ne me sont pas utiles sur =eww= jusqu'à preuve du contraire.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package shr
+    :ensure nil
+    :defer t
+    :config
+    (setq shr-use-colors nil             ; pour un meilleur contraste
+          shr-use-fonts t
+          shr-max-image-proportion 0.9	; 0.9 par défaut
+          ;shr-width fill-column          ; check `prot-eww-readable'
+          shr-max-width 120		; 120 par défaut
+          shr-discard-aria-hidden t	; nil par défaut
+          ;shr-fill-text nil              ; Emacs 31
+          shr-cookie-policy nil))
+#+end_src
+
+En complément à =shr-cookie-policy nil=:
+
+#+begin_src emacs-lisp
+  (use-package url-cookie
+    :ensure nil
+    :defer t
+    :config
+    (setq url-cookie-untrusted-urls '(".*"))) ; Pour tous les cookies
+  #+end_src
+
+
+*** Configuration générale de =eww=
+Plusieurs options intéressantes restent à explorer.
+
+- Je n'ai pas encore essayer de restorer le 'desktop', mais il semble que =eww= le prend en charge. À voir éventuellement.
+- Bien qu'il soit possible de désigner un dossier qui va contenir le fichier de marque-pages (voir la variable =eww-bookmarks-directory=), il n'est pas possible pour le moment de spécifier un fichier précis. Ceci est limitant comme il n'est pas possible de sélectionner un fichier encrypté pour ce faire. Pour le moment j'utilise syncthing pour synchroniser le dossier de marque-page entre mes machines, mais il pourrait bien d'encrypter le fichier directement et le joindre à mes dotfiles.
+- Depuis Emacs 29.1, la nouvelle variable =eww-auto-rename-buffer= permet de renommer automatiquement les pages sur eww. En date du 2025-01-10 j'ai activité cette option. À garder en tête pour utiliser les autres configuration de =prot-eww.el= qui implantait cette fonction manuellement.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package eww
+    :ensure nil
+    :commands (eww)
+    :bind
+    ( :map eww-link-keymap
+      ("v" . nil) ; stop overriding `eww-view-source'
+      :map eww-mode-map
+      ("L" . eww-list-bookmarks)
+      :map dired-mode-map
+      ("E" . eww-open-file) ; to render local HTML files
+      :map eww-buffers-mode-map
+      ("d" . eww-bookmark-kill)   ; it actually deletes
+      :map eww-bookmark-mode-map
+      ("d" . eww-bookmark-kill)) ; same
+    :config
+    (setq eww-restore-desktop t
+          eww-auto-rename-buffer "title"
+          eww-desktop-remove-duplicates t
+          eww-header-line-format nil	; défaut: %t: %u
+          eww-search-prefix "https://duckduckgo.com/html/?q="
+          eww-download-directory (expand-file-name "~/Documentos/eww-downloads")
+          eww-suggest-uris '(eww-links-at-point thing-at-point-url-at-point)
+          eww-bookmarks-directory (locate-user-emacs-file "eww-bookmarks/")
+          eww-history-limit 150
+          eww-use-external-browser-for-content-type
+          "\\`\\(video/\\|audio\\)" ; On GNU/Linux check your mimeapps.list
+          eww-browse-url-new-window-is-tab nil
+          eww-form-checkbox-selected-symbol "[X]"
+          eww-form-checkbox-symbol "[ ]"
+          ;; NOTE `eww-retrieve-command' is for Emacs28.  I tried the following
+          ;; two values.  The first would not render properly some plain text
+          ;; pages, such as by messing up the spacing between paragraphs.  The
+          ;; second is more reliable but feels slower.  So I just use the
+          ;; default (nil), though I find wget to be a bit faster.  In that case
+          ;; one could live with the occasional errors by using `eww-download'
+          ;; on the offending page, but I prefer consistency.
+          ;;
+          ;; '("wget" "--quiet" "--output-document=-")
+          ;; '("chromium" "--headless" "--dump-dom")
+          eww-retrieve-command nil))
+#+end_src
+
+*** Prot-EWW utilities
+:PROPERTIES:
+:ID:       b11f7f7d-d1e6-46fc-973f-e15fae798dd8
+:END:
+
+En date du 2025-01-10 je commence à utiliser les modifications proposées par Protesilaos dans son paquet =prot-eww=.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package prot-eww
+    :ensure nil
+    :after eww
+    :config
+    (setq prot-eww-save-history-file
+          (locate-user-emacs-file "prot-eww-visited-history")
+          prot-eww-save-visited-history t
+          prot-eww-bookmark-link nil)
+
+    (add-hook 'prot-eww-history-mode-hook #'hl-line-mode)
+    :bind (:map eww-mode-map
+                ("B" . prot-eww-bookmark-page)
+                ("D" . prot-eww-download-html)
+                ("F" . prot-eww-find-feed)
+                ("H" . prot-eww-list-history)
+                ("b" . prot-eww-visit-bookmark)
+                ("e" . prot-eww-browse-dwim)
+                ("o" . prot-eww-open-in-other-window)
+                ("E" . prot-eww-visit-url-on-page)
+                ("J" . prot-eww-jump-to-url-on-page)
+                ("R" . prot-eww-readable)
+                ("Q" . prot-eww-quit)))
+
+  (defvar-keymap prot-eww-map
+    :doc "Prefix map to call prot-eww functions"
+    "b" #'prot-eww-visit-bookmark
+    "e" #'prot-eww-browse-dwim
+    "s" #'prot-eww-search-engine)
+
+  (keymap-set global-map "C-c e" prot-eww-map)
+
+#+end_src
+
+** Elpher
+Elpher est un navigateur pour les protocoles =gopher= et =gemini=.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package elpher
+    :ensure t)
+#+end_src
+
+** Images
+Emacs est équipé par défaut pour visionner des images. Par contre quelques ajustements sont utiles pour faciliter l’expérience, notamment en ajoutant des raccourcis précis pour se déplacer parmi les images, quitter  =image-mode= et ouvrir une image avec Gimp par défaut.
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; Image viewer
+  (use-package emacs
+    :bind
+    ((:map image-mode-map
+		("K" . image-kill-buffer)
+		("<right>" . image-next-file)
+		("<left>"  . image-previous-file))
+     (:map dired-mode-map
+      ("C-<return>" . image-dired-dired-display-external))))
+#+end_src
+
+Le paquet =image-dired= ajoute quelques outils supplémentaires, dont la possibilité de voir une mosaïque d'images et d'intégrer des images directement à l'intérieur de =dired=.
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package image-dired
+    :custom
+    (image-dired-external-viewer "gimp")
+    (image-dired-thumb-margin 10)
+    :bind
+    (("C-c w I" . image-dired))
+     (:map image-dired-thumbnail-mode-map
+      ("C-<right>" . image-dired-display-next)
+      ("C-<left>" . image-dired-display-previous)))
+#+end_src
+
+** Multimédia
+Sur i3, pour contrôler la musique, nous devrions utiliser =playerctl=. Celui-ci est disponible dans les dépôt de Debian.
+#+begin_src shell
+sudo apt install playerctl
+#+end_src
+
+Et crér un service pour qu'il fonctionne en arrière-plan.
+#+begin_src conf :tangle .config/systemd/user/playerctld.service
+  [Unit]
+  Description=Keep track of media player activity
+
+  [Service]
+  Type=oneshot
+  ExecStart=/usr/bin/playerctld daemon
+
+  [Install]
+  WantedBy=default.target
+#+end_src
+
+Et ensuite l'activer:
+#+begin_src shell
+  systemctl --user enable playerctld
+#+end_src
+
+Un autre paquer utile est =ready-player-mode=. Pour l'installer et le configurer:
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package ready-player
+    :ensure t
+    :config
+    (ready-player-mode +1))
+  (setq ready-player-my-media-collection-location "/mnt/data/Music/")
+#+end_src
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Emacs Multimedia System
+
+  (use-package emms
+    :init
+    (require 'emms-setup)
+    (require 'emms-mpris)
+    (emms-all)
+    (emms-default-players)
+    (emms-mpris-enable)
+    :custom
+    (emms-browser-covers #'emms-browser-cache-thumbnail-async)
+    :bind
+    (("C-c w m b" . emms-browser)
+     ("C-c w m e" . emms)
+     ("C-c w m p" . emms-play-playlist )
+     ("<XF86AudioPrev>" . emms-previous)
+     ("<XF86AudioNext>" . emms-next)
+     ("<XF86AudioPlay>" . emms-pause)))
+
+  (use-package openwith
+    :disabled t
+    :config
+    (openwith-mode nil)
+    :custom
+    (openwith-association nil))
+
+  (use-package somafm
+    :ensure t)
+
+#+end_src
+
+*** EMPV
+#+begin_src emacs-lisp
+  (with-eval-after-load 'embark (empv-embark-initialize-extra-actions))
+#+end_src
+** Social media and chat
+
+*** COMMENT Telegram
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package telega
+    :ensure t)
+
+  (add-hook 'telega-load-hook
+            (lambda ()
+              (define-key global-map (kbd "C-c t") telega-prefix-map)))
+  #+end_src
+
+*** =erc=
+La base de ce contenu provient de SystemCrafter, voir:
+- [[https://systemcrafters.net/chatting-with-emacs/irc-basics-with-erc/][Chat Like the 90’s in Emacs with ERC - System Crafters]]
+- [[https://systemcrafters.net/live-streams/june-04-2021/][Improving the IRC Experience in ERC - System Crafters]]
+
+**** Configuration de base
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq erc-server "irc.libera.chat"
+        erc-nick "wilf"
+        erc-user-full-name "Frédéric Vachon"
+        erc-track-shorten-start 8
+        erc-autojoin-channels-alist '(("irc.libera.chat" "#systemcrafters" "#emacs"))
+        erc-kill-buffer-on-part t
+        erc-auto-query 'bury
+        erc-prompt-for-password nil)
+
+  ;; (add-to-list 'erc-modules 'notifications)
+#+end_src
+
+**** Apparence des messages
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq erc-fill-column 120
+        erc-fill-function 'erc-fill-static
+        erc-fill-static-center 20)
+#+end_src
+
+**** Réduire le nombre de notifications provenant d'=erc=
+
+#+begin_src emacs-lisp
+  (setq erc-track-exclude '("#emacs")
+        erc-track-exclude-types '("JOIN" "NICK" "QUIT" "MODE" "AWAY")
+        erc-hide-list '("JOIN" "NICK" "PART" "QUIT" "MODE" "AWAY")
+        erc-track-exclude-server-buffer t)
+#+end_src
+
+**** Mettre de la couleur sur les nicks des participantEs
+
+#+begin_src emacs-lisp
+  (use-package erc-hl-nicks
+    :ensure t
+    :after erc
+    :config
+    (add-to-list 'erc-modules 'hl-nicks))
+#+end_src
+
+**** Ajouter l'affichage des images
+#+begin_src emacs-lisp
+  (use-package erc-image
+    :ensure t
+    :after erc
+    :config
+    (setq erc-image-inline-rescale 300)
+    (add-to-list 'erc-modules 'image))
+#+end_src
+*** Mastodon
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  (use-package mastodon
+    :ensure t
+    :config
+    (setq mastodon-instance-url "https://eldritch.cafe"
+	  mastodon-active-user "bogdanoviste"))
+
+#+end_src
+
+** Capture
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Fleeting notes
+
+  (use-package org
+    :bind
+    (("C-c c" . org-capture)
+     ("C-c l" . org-store-link)))
+
+  ;; Capture templates
+
+  (setq org-capture-templates
+   '(("f" "Fleeting note"
+      item
+      (file+headline org-default-notes-file "Notes")
+      "- %?")
+     ("p" "Permanent note" plain
+      (file denote-last-path)
+      #'denote-org-capture
+      :no-save t
+      :immediate-finish nil
+      :kill-buffer t
+      :jump-to-captured t)
+     ("t" "New task" entry
+      (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
+      "* TODO %i%? \n %U")
+     ("r" "Read article" entry
+      (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
+      "* %i%? \n %U")
+     ("T" "Tickler" entry
+      (file+headline "~/Documentos/gtd/tickler.org" "Tickler")
+      "* TODO %i%? \n %U")))
+
+  ;; Start writing immediately after triggering org-capture
+
+  ;; (add-hook 'org-capture-mode-hook 'evil-insert-state)
+
+#+end_src
+
+** WAITING Structure templates
+Originally, EWS doesn't rely on use-package to load org-tempo and a templates. For better uniformity and to eventually add more customization options to this package, I switched to the use-package way of doing things there. I copied David's config showcased here, in one of his video on literate configuration : [[https://youtu.be/Ex9zI4Fcirs?t=2878][Literate Configuration: A Direct Approach - System Crafters Live! - YouTube]].
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; (with-eval-after-load 'org
+  ;;   (require 'org-tempo)
+
+  ;;   (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+  ;;   (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+  ;;   (add-to-list 'org-structure-template-alist '("py" . "src python")))
+
+  (use-package org-tempo
+    :ensure nil
+    :after org
+    :config
+    (dolist (item '(("sh" . "src shell")
+		    ("el" . "src emacs-lisp")
+		    ("cel" . "src emacs-lisp :tangle .emacs.d/init.el")
+		    ("cco" . "src conf :tangle DIR")
+		    ("py" . "src python")))
+      (add-to-list 'org-structure-template-alist item)))
+#+end_src
+
+** Org-agenda and GTD setup
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+    (setq org-agenda-files '("~/Documentos/gtd/inbox.org"
+                             "~/Documentos/gtd/gtd.org"
+                             "~/Documentos/gtd/projets.org"
+                             "~/Documentos/gtd/tickler.org"))
+
+    (setq org-refile-targets '(("~/Documentos/gtd/gtd.org" :maxlevel . 3)
+                               ("~/Documentos/gtd/someday.org" :level . 1)
+                               ("~/Documentos/gtd/projets.org" :maxlevel . 5)
+                               ("~/Documentos/gtd/tickler.org" :maxlevel . 2)))
+
+  ;; Inbox location
+
+  ;; (setq org-default-notes-file (concat org-directory "/notes.org"))
+
+#+end_src
+
+** Email
+
+** Accounting
+
+This configuration was taken from the official GitHub page that can be found here: [[https://github.com/narendraj9/hledger-mode][GitHub - narendraj9/hledger-mode: An Emacs major mode for Hledger]]
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+                                          ; (use-package hledger-mode
+                                          ; :pin manual
+                                          ; :after htmlize
+                                          ; :load-path "packages/rest/hledger-mode/"
+                                          ; :mode ("\\.journal\\'" "\\.hledger\\'")
+                                          ; :commands hledger-enable-reporting
+                                          ; :preface
+                                          ; (defun hledger/next-entry ()
+                                          ; "Move to next entry and pulse."
+                                          ; (interactive)
+                                          ; (hledger-next-or-new-entry)
+                                          ; (hledger-pulse-momentary-current-entry))
+                                          ; 
+                                          ; (defface hledger-warning-face
+                                          ; '((((background dark))
+                                          ; :background "Red" :foreground "White")
+                                          ; (((background light))
+                                          ; :background "Red" :foreground "White")
+                                          ; (t :inverse-video t))
+                                          ; "Face for warning"
+                                          ; :group 'hledger)
+                                          ; 
+                                          ; (defun hledger/prev-entry ()
+                                          ; "Move to last entry and pulse."
+                                          ; (interactive)
+                                          ; (hledger-backward-entry)
+                                          ; (hledger-pulse-momentary-current-entry))
+                                          ; 
+                                          ; :bind (("C-c j" . hledger-run-command)
+                                          ; :map hledger-mode-map
+                                          ; ("C-c e" . hledger-jentry)
+                                          ; ("M-p" . hledger/prev-entry)
+                                          ; ("M-n" . hledger/next-entry))
+                                          ; :init
+                                          ; (setq hledger-jfile
+                                          ; (expand-file-name "~/miscellany/personal/finance/accounting.journal")
+                                          ; hledger-email-secrets-file (expand-file-name "secrets.el"
+                                          ; emacs-assets-directory))
+                                          ; ;; Expanded account balances in the overall monthly report are
+                                          ; ;; mostly noise for me and do not convey any meaningful information.
+                                          ; (setq hledger-show-expanded-report nil)
+                                          ; 
+                                          ; (when (boundp 'my-hledger-service-fetch-url)
+                                          ; (setq hledger-service-fetch-url
+                                          ; my-hledger-service-fetch-url))
+                                          ; 
+                                          ; :config
+                                          ; (add-hook 'hledger-view-mode-hook #'hl-line-mode)
+                                          ; (add-hook 'hledger-view-mode-hook #'center-text-for-reading)
+                                          ; 
+                                          ; (add-hook 'hledger-view-mode-hook
+                                          ; (lambda ()
+                                          ; (run-with-timer 1
+                                          ; nil
+                                          ; (lambda ()
+                                          ; (when (equal hledger-last-run-command
+                                          ; "balancesheet")
+                                          ; ;; highlight frequently changing accounts
+                                          ; (highlight-regexp "^.*\\(savings\\|cash\\).*$")
+                                          ; (highlight-regexp "^.*credit-card.*$"
+                                          ; 'hledger-warning-face))))))
+                                          ; 
+                                          ; (add-hook 'hledger-mode-hook
+                                          ; (lambda ()
+                                          ; (make-local-variable 'company-backends)
+                                          ; (add-to-list 'company-backends 'hledger-company))))
+                                          ; 
+                                          ; (use-package hledger-input
+                                          ; :pin manual
+                                          ; :load-path "packages/rest/hledger-mode/"
+                                          ; :bind (("C-c e" . hledger-capture)
+                                          ; :map hledger-input-mode-map
+                                          ; ("C-c C-b" . popup-balance-at-point))
+                                          ; :preface
+                                          ; (defun popup-balance-at-point ()
+                                          ; "Show balance for account at point in a popup."
+                                          ; (interactive)
+                                          ; (if-let ((account (thing-at-point 'hledger-account)))
+                                          ; (message (hledger-shell-command-to-string (format " balance -N %s "
+                                          ; account)))
+                                          ; (message "No account at point")))
+                                          ; 
+                                          ; :config
+                                          ; (setq hledger-input-buffer-height 20)
+                                          ; (add-hook 'hledger-input-post-commit-hook #'hledger-show-new-balances)
+                                          ; (add-hook 'hledger-input-mode-hook #'auto-fill-mode)
+                                          ; (add-hook 'hledger-input-mode-hook
+                                          ; (lambda ()
+                                          ; (make-local-variable 'company-idle-delay)
+                                          ; (setq-local company-idle-delay 0.1)))) 
+
+  (use-package ledger-mode
+    :ensure t
+    :init
+    (add-to-list 'auto-mode-alist '("\\.\\(h?ledger\\|journal\\|j\\)$" . ledger-mode))
+    (setq ledger-binary-path "~/.emacs.d/ledger.sh"
+          ledger-mode-should-check-version nil
+          ledger-report-links-in-register nil
+          ledger-report-auto-width nil
+          ledger-report-native-highlighting-arguments '("--color=always")
+          ledger-highlight-xact-under-point nil
+          ledger-use-iso-dates t))
+          ;; ledger-default-date-format ledger-iso-date-format))
+#+end_src
+
+** Zettelkasten and Denote
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Denote
+
+  (use-package denote
+    :custom
+    (denote-sort-keywords t)
+    (denote-rename-buffer-mode 1)
+    :hook
+    (dired-mode . denote-dired-mode)
+    :custom-face
+    (denote-faces-link ((t (:slant italic))))
+    :init
+    (require 'denote-org-extras)
+    :bind
+    (("C-c w d b" . denote-find-backlink)
+     ("C-c w d d" . denote-date)
+     ("C-c w d f" . denote-find-link)
+     ("C-c w d h" . denote-org-extras-link-to-heading)
+     ("C-c w d i" . denote-link-or-create)
+     ("C-c w d I" . denote-org-extras-dblock-insert-links)
+     ("C-c w d k" . denote-rename-file-keywords)
+     ("C-c w d l" . denote-link-find-file)
+     ("C-c w d n" . denote)
+     ("C-c w d r" . denote-rename-file)
+     ("C-c w d R" . denote-rename-file-using-front-matter)))
+
+  ;; Consult-Notes for easy access to notes
+
+  (use-package consult-notes
+    :bind
+    (("C-c w f"   . consult-notes)
+     ("C-c w d g" . consult-notes-search-in-all-notes))
+    :init
+    (consult-notes-denote-mode))
+
+  ;; Citar-Denote to manage literature notes
+
+  (use-package citar-denote
+    :custom
+    (citar-open-always-create-notes t)
+    :init
+    (citar-denote-mode)
+    :bind
+    (("C-c w b c" . citar-create-note)
+     ("C-c w b n" . citar-denote-open-note)
+     ("C-c w b x" . citar-denote-nocite)
+     :map org-mode-map
+     ("C-c w b k" . citar-denote-add-citekey)
+     ("C-c w b K" . citar-denote-remove-citekey)
+     ("C-c w b d" . citar-denote-dwim)
+     ("C-c w b e" . citar-denote-open-reference-entry)))
+#+end_src
+
+Pour améliorer les performances de =citar-denote=, il est possible d'utiliser =ripgrep= avec les références =xref=.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq xref-search-program #'ripgrep)
+#+end_src
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Explore and manage your Denote collection
+
+  (use-package denote-explore
+    :bind
+    (;; Statistics
+     ("C-c w x c" . denote-explore-count-notes)
+     ("C-c w x C" . denote-explore-count-keywords)
+     ("C-c w x b" . denote-explore-keywords-barchart)
+     ("C-c w x x" . denote-explore-extensions-barchart)
+     ;; Random walks
+     ("C-c w x r" . denote-explore-random-note)
+     ("C-c w x l" . denote-explore-random-link)
+     ("C-c w x k" . denote-explore-random-keyword)
+     ;; Denote Janitor
+     ("C-c w x d" . denote-explore-identify-duplicate-notes)
+     ("C-c w x z" . denote-explore-zero-keywords)
+     ("C-c w x s" . denote-explore-single-keywords)
+     ("C-c w x o" . denote-explore-sort-keywords)
+     ("C-c w x w" . denote-explore-rename-keyword)
+     ;; Visualise denote
+     ("C-c w x n" . denote-explore-network)
+     ("C-c w x v" . denote-explore-network-regenerate)
+     ("C-c w x D" . denote-explore-degree-barchart)))
+#+end_src
+
+*** Scripts Denote personnels
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (defun my/denote-dired-same-title-add-keywords (title keywords)
+    "Dans Dired, renommer tous les fichiers marqués avec TITLE commun.
+  Ajoute KEYWORDS aux mots-clés existants, conserve la SIGNATURE et l’ID."
+    (interactive
+     (list
+      (denote-title-prompt nil "Titre commun pour les fichiers marqués: ")
+      (denote-keywords-prompt))) ;; Demande mots-clés supplémentaires
+    (require 'dired)
+    (require 'denote)
+    (let ((denote-rename-confirmations nil)
+          (files (dired-get-marked-files)))
+      (dolist (f files)
+        (when (file-regular-p f)
+          (ignore-errors
+            (let* ((components (denote-extract-keywords-from-path f))
+                   (current-keywords components)
+                   (all-keywords (seq-uniq (append current-keywords keywords) #'string=)))
+              (denote-rename-file
+               f title all-keywords 'keep-current 'keep-current))))))
+    (revert-buffer)
+    (message "Renommage terminé avec ajout de keywords."))
+
+  ;; Donnez-lui un nom qui vous plaît, p. ex. my/denote-dired-same-title
+  (defun my/denote-dired-same-title (title)
+    "Dans Dired, renommer tous les fichiers marqués pour leur donner le même TITLE.
+  Conserve les KEYWORDS, la SIGNATURE et la DATE/ID existants.  Si un
+  fichier n'a pas d'identifiant, Denote en créera un de manière unique."
+    (interactive
+     (list (denote-title-prompt nil "Titre commun pour les fichiers marqués: ")))
+    (require 'dired)
+    (require 'denote)
+    ;; Pas de demande de confirmation à chaque fichier
+    (let ((denote-rename-confirmations nil)
+          (files (dired-get-marked-files)))
+      (dolist (f files)
+        (when (file-regular-p f)
+          (ignore-errors
+            ;; TITLE = celui que vous saisissez
+            ;; KEYWORDS, SIGNATURE, DATE = 'keep-current
+            (denote-rename-file f title 'keep-current 'keep-current 'keep-current)))))
+    ;; Rafraîchir l’affichage Dired
+    (revert-buffer)
+    (message "Renommage terminé."))
+#+end_src
+
+** Some Org mode shortcuts
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  (use-package org
+    :bind
+    (:map org-mode-map
+          ("C-c w n" . ews-org-insert-notes-drawer)
+          ("C-c w p" . ews-org-insert-screenshot)
+          ("C-c w c" . ews-org-count-words)))
+
+#+end_src
+
+** Distraction-free writing
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package olivetti
+    :demand t
+    :bind
+    (("C-c w o" . ews-olivetti))
+    :custom
+    (olivetti-style 'fancy))
+#+end_src
+
+** Undo tree
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  (use-package undo-tree
+    :config
+    (global-undo-tree-mode)
+    :custom
+    (undo-tree-auto-save-history nil)
+    :bind
+    (("C-c w u" . undo-tree-visualize)))
+
+#+end_src
+
+** Citations with Org Mode
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  
+(require 'oc-natbib)
+(require 'oc-csl)
+
+(setq org-cite-global-bibliography ews-bibtex-files
+      org-cite-insert-processor 'citar
+      org-cite-follow-processor 'citar
+      org-cite-activate-processor 'citar)
+
+#+end_src
+
+** Lookup words in online dictionary
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+(use-package dictionary
+  :custom
+  (dictionary-server "dict.org")
+  :bind
+  (("C-c w s d" . dictionary-lookup-definition)))
+
+(use-package powerthesaurus
+:bind
+(("C-c w s p" . powerthesaurus-transient)))
+
+#+end_src
+
+** Writegood-Mode for passive writing and repeated word detection
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+(use-package writegood-mode
+  :bind
+  (("C-c w s r" . writegood-reading-ease))
+  :hook
+  (text-mode . writegood-mode))
+
+#+end_src
+
+** Abbreviations
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  (add-hook 'text-mode-hook 'abbrev-mode)
+
+#+end_src
+
+** Lorem Ipsum generator
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  (use-package lorem-ipsum
+    :custom
+    (lorem-ipsum-list-bullet "- ") ;; Org mode bullets
+    :init
+    (setq lorem-ipsum-sentence-separator (if sentence-end-double-space "  " " "))
+    :bind
+    (("C-c w i s" . lorem-ipsum-insert-sentences)
+     ("C-c w i p" . lorem-ipsum-insert-paragraphs)
+     ("C-c w i l" . lorem-ipsum-insert-list)))
+  
+#+end_src
+
+** Ediff
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  (use-package ediff
+    :ensure nil
+    :custom
+    (ediff-keep-variants nil)
+    (ediff-split-window-function 'split-window-horizontally)
+    (ediff-window-setup-function 'ediff-setup-windows-plain))
+
+  (use-package fountain-mode)
+
+  (use-package markdown-mode)
+
+#+end_src
+
+** Org Export settings
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  (use-package org
+    :custom
+    (org-export-with-drawers nil)
+    (org-export-with-todo-keywords nil)
+    (org-export-with-broken-links t)
+    (org-export-with-toc nil)
+    (org-export-with-smart-quotes t)
+    (org-export-date-timestamp-format "%e %B %Y"))
+
+#+end_src
+
+** pdf-tools
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  (when (eq system-type 'gnu/linux)	;For now, pdf-tools can't be installed on Windows
+    (use-package pdf-tools
+      :config
+      (pdf-tools-install)
+      (setq-default pdf-view-display-size 'fit-page)
+      :bind (:map pdf-view-mode-map
+		  ("\\" . hydra-pdftools/body)
+		  ("<s-spc>" .  pdf-view-scroll-down-or-next-page)
+		  ("g"  . pdf-view-first-page)
+		  ("G"  . pdf-view-last-page)
+		  ("l"  . image-forward-hscroll)
+		  ("h"  . image-backward-hscroll)
+		  ("j"  . pdf-view-next-page)
+		  ("k"  . pdf-view-previous-page)
+		  ("e"  . pdf-view-goto-page)
+		  ("u"  . pdf-view-revert-buffer)
+		  ("al" . pdf-annot-list-annotations)
+		  ("ad" . pdf-annot-delete)
+		  ("aa" . pdf-annot-attachment-dired)
+		  ("am" . pdf-annot-add-markup-annotation)
+		  ("at" . pdf-annot-add-text-annotation)
+		  ("y"  . pdf-view-kill-ring-save)
+		  ("i"  . pdf-misc-display-metadata)
+		  ("s"  . pdf-occur)
+		  ("b"  . pdf-view-set-slice-from-bounding-box)
+		  ("r"  . pdf-view-reset-slice)))
+
+    (pdf-tools-install))
+
+#+end_src
+
+** Latex
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; LaTeX PDF Export settings
+
+  (use-package ox-latex
+    :ensure nil
+    :demand t
+    :custom
+    ;; Multiple LaTeX passes for bibliographies
+    (org-latex-pdf-process
+     '("pdflatex -interaction nonstopmode -output-directory %o %f"
+       "bibtex %b"
+       "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+       "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+    ;; Clean temporary files after export
+    (org-latex-logfiles-extensions
+     (quote ("lof" "lot" "tex~" "aux" "idx" "log" "out"
+             "toc" "nav" "snm" "vrb" "dvi" "fdb_latexmk"
+             "blg" "brf" "fls" "entoc" "ps" "spl" "bbl"
+             "tex" "bcf"))))
+
+  ;; LaTeX templates
+
+  (with-eval-after-load 'ox-latex
+    (add-to-list
+     'org-latex-classes
+     '("crc"
+       "\\documentclass[krantz2]{krantz}
+          \\usepackage{lmodern}
+          \\usepackage[authoryear]{natbib}
+          \\usepackage{nicefrac}
+          \\usepackage[bf,singlelinecheck=off]{caption}
+          \\captionsetup[table]{labelsep=space}
+          \\captionsetup[figure]{labelsep=space}
+          \\usepackage{Alegreya}
+          \\usepackage[scale=.8]{sourcecodepro}
+          \\usepackage[breaklines=true]{minted}
+          \\usepackage{rotating}
+          \\usepackage[notbib, nottoc,notlot,notlof]{tocbibind}
+          \\usepackage{amsfonts, tikz, tikz-layers}
+          \\usetikzlibrary{fadings, quotes, shapes, calc, decorations.markings}
+          \\usetikzlibrary{patterns, shadows.blur}
+          \\usetikzlibrary{shapes,shapes.geometric,positioning}
+          \\usetikzlibrary{arrows, arrows.meta, backgrounds}
+          \\usepackage{imakeidx} \\makeindex[intoc]
+          \\renewcommand{\\textfraction}{0.05}
+          \\renewcommand{\\topfraction}{0.8}
+          \\renewcommand{\\bottomfraction}{0.8}
+          \\renewcommand{\\floatpagefraction}{0.75}
+          \\renewcommand{\\eqref}[1]{(Equation \\ref{#1})}
+          \\renewcommand{\\LaTeX}{LaTeX}"
+       ("\\chapter{%s}" . "\\chapter*{%s}")
+       ("\\section{%s}" . "\\section*{%s}")
+       ("\\subsection{%s}" . "\\subsection*{%s}")
+       ("\\subsubsection{%s}" . "\\paragraph*{%s}"))))
+
+  (use-package ox-epub
+    :demand t)
+
+#+end_src
+
+** Other exports
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Use GraphViz for flow diagrams
+  (with-eval-after-load 'org
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '((dot . t)))) ; this line activates dot
+
+#+end_src
+
+** Administration
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+
+  ;; Bind org agenda command
+
+  (use-package org
+    :custom
+    (org-log-into-drawer t)
+    :bind
+    (("C-c a" . org-agenda)))
+
+#+end_src
+
+** Dired
+The following settings offer a few options, notably better sorting (placing directories first) and less destructive file deletions options. Based on EFS configuration, dired is also evilified and a few more options are now offered for filtering with the help of dired-x.
+
+Avant de commencer la configuration de =dired=, je définie une nouvelle variable qui va bonifier le mode =dired-hide-details=:
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (defun hide-dired-details-include-all-subdir-paths ()
+    (save-excursion
+      (goto-char (point-min))
+      (while (re-search-forward dired-subdir-regexp nil t)
+	(let* ((match-bounds (cons (match-beginning 1) (match-end 1)))
+	       (path (file-name-directory (buffer-substring (car match-bounds)
+							    (cdr match-bounds))))
+	       (path-start (car match-bounds))
+	       (path-end (+ (car match-bounds) (length path)))
+	       (inhibit-read-only t))
+	  (put-text-property path-start path-end
+			     'invisible 'dired-hide-details-information)))))
+#+end_src
+
+On peut poursuivre avec la configuration de =dired=:
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package dired
+    :hook ((dired-mode . dired-hide-details-mode)
+	   (dired-after-readin . hide-dired-details-include-all-subdir-paths))
+    :ensure
+    nil
+    :commands
+    (dired dired-jump)
+    :custom
+    (dired-listing-switches
+     "-goah --group-directories-first --time-style=long-iso")
+    (dired-dwim-target t)
+    (delete-by-moving-to-trash t)
+    :init
+    (put 'dired-find-alternate-file 'disabled nil))
+    ;; Additional configuration usefuL with evil
+    ;; :config
+    ;; (evil-collection-define-key 'normal 'dired-mode-map
+    ;;   "h" 'dired-up-directory
+    ;;   "l" 'dired-find-file))
+
+  (autoload 'dired-omit-mode "dired-x")
+#+end_src
+
+*** Look and feel
+Pour rendre l'expérience plus attrayante avec Dired, quelques plugins peuvent ajouter des couleurs et icônes, cacher les informations qui ne sont nécessaires ou encore ajouter les informations en lien avec des dépôts Git. À ce sujet, voir:
+- https://xenodium.com/showhide-emacs-dired-details-in-style/
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; Adding icons
+  (use-package all-the-icons-dired
+    :hook (dired-mode))
+
+  ;; Adding colors (retiré car en conflit avec Denote-dired)
+  ;; (use-package diredfl
+  ;;   :hook (dired-mode))
+  ;;   ;;
+  ;; :hook (dired-mode . diredfl-global-mode))
+
+  ;; Adding git infos
+  (use-package dired-git-info
+    :ensure t
+    :bind (:map dired-mode-map
+		(")" . dired-git-info-mode)))
+
+  ;; Adding Dirvish-mode
+  ;; (use-package dirvish
+  ;;   :hook (dired-mode)
+  ;;   :config (dirvish-override-dired-mode))
+
+  ;; Hide hidden files
+  ;; (use-package dired-hide-dotfiles
+  ;;   :hook
+  ;;   (dired-mode)
+  ;;   :config
+  ;;   (evil-collection-define-key 'normal 'dired-mode-map "H" 'dired-hide-dotfiles-mode))
+#+end_src
+
+*** Dired-preview
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package dired-preview
+    :hook (dired . dired-preview)
+    :config
+    (setq dired-preview-delay 0.7
+	  dired-preview-max-size (expt 6 20)
+	  dired-preview-ignored-extensions-regexp (concat "\\."
+							  "\\(gz\\|"
+							  "zst\\|"
+							  "tar\\|"
+							  "xz\\|"
+							  "rar\\|"
+							  "zip\\|"
+							  "iso\\|"
+							  "epub"
+							  "\\)"))
+
+    ;; Enable `dired-preview-mode' in a given Dired buffer or do it ;; globally:
+    (dired-preview-global-mode 1))
+#+end_src
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; Backup files
+
+  (setq-default backup-directory-alist
+                `(("." . ,(expand-file-name "backups/" user-emacs-directory)))
+                version-control t
+                delete-old-versions t
+                create-lockfiles nil)
+#+end_src
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; Recent files
+
+  (use-package recentf
+    :config
+    (recentf-mode t)
+    (run-at-time nil (* 5 60)
+                 (lambda () (let ((save-silently t))
+                              (recentf-save-list))))
+    :custom
+    (recentf-max-saved-items 50)
+    :bind
+    (("C-c w r" . recentf-open)))
+#+end_src
+
+*** Bookmarks
+Les marque-pages dans Emacs sur une manière simple d'accéder à des buffer ou des dossiers rapidement à l'intérieur de Emacs. Il semble qu'il soit difficile de synchroniser le fichier de bookmarks (=~/.emacs.d/bookmarks=) étant donné que celui-ci n'est pas relu automatiquement par défaut par Emacs. Il semble quand même qu'il existe des manières de le faire (voir [[https://emacs.stackexchange.com/questions/79075/how-can-bookmarks-file-be-synced-if-its-not-constantly-reloaded][load - How can bookmarks file be synced if it's not constantly reloaded? - Emacs Stack Exchange]]) mais comme un même fichier ou dossier peut être disponible sur un ordinateur et non sur un autre, je ne suis pas certain de la nécessité de synchroniser ce fichier. Si j'utilise plus les marques-pages dans le futur je pourrai reconsidérer ma décision.
+
+Le code suivant charge le paquet =bookmark= mais celui-ci vient avec Emacs par défaut.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package bookmark
+    :custom
+    (bookmark-save-flag 1)
+    :bind
+    ("C-x r D" . bookmark-delete))
+  (put 'upcase-region 'disabled nil)
+  (put 'downcase-region 'disabled nil)
+
+  (setq register-preview-delay 0.8
+        register-preview-function #'consult-register-format)
+#+end_src
+
+*** =dired-subtree=
+J'ai repris l'idée d'implanter ce paquet de Protesilaos. Il l'explique dans l'une de ses vidéos sur =dired= et propose une configuration simple sur son article offrant une bonne configuration de base pour les nouveaux utilisateur.trice.s. L'article en question est disponible ici: [[https://protesilaos.com/codelog/2024-11-28-basic-emacs-configuration/#h:e5e7b781-4b04-4c53-bf23-5e81789549ce][Emacs: a basic and capable configuration | Protesilaos Stavrou]].
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package dired-subtree
+    :ensure t
+    :after dired
+    :bind
+    ( :map dired-mode-map
+      ("<tab>" . dired-subtree-toggle)
+      ("TAB" . dired-subtree-toggle)
+      ("<backtab>" . dired-subtree-remove)
+      ("S-TAB" . dired-subtree-remove))
+    :config
+    (setq dired-subtree-use-backgrounds nil))
+#+end_src
+
+*** TODO Windows Integration
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package w32-browser
+    :after (dired))
+#+end_src
+
+** Isearch
+Certains des ajouts proviennent de la vidéo de Protesilaos disponible ici: [[https://www.youtube.com/watch?v=f2mQXNnChwc][Emacs: search and replace basics - YouTube]].
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq isearch-lazy-count t)
+  (setq lazy-count-prefix-format "(%s/%s) ")
+  (setq search-whitespace-regexp ".*?")
+#+end_src
+
+** =Info=
+Un paquet permet facilement de renommer les buffer =info= ce qui permet d'en avoir plusieurs en même temps.
+#+begin_src emacs-lisp
+  (use-package info-rename-buffer
+    :ensure t)
+
+  (info-rename-buffer-mode 1)
+#+end_src
+
+* Emacs packages
+** /Emacs Writing Studio/
+#+begin_src emacs-lisp
+;;; ews.el --- Convenience functions for authors  -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2024 Peter Prevos
+
+;; Author: Peter Prevos <peter@prevos.net>
+;; Maintainer: Peter Prevos <peter@prevos.net>
+;; Created: 1 January 2024
+;; Version: 1.2
+;; Keywords: convenience
+;; Homepage: https://lucidmanager.org/tags/emacs/
+;; URL: https://github.com/pprevos/emacs-writing-studio
+
+;; This file is NOT part of GNU Emacs.
+;;
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program. If not, see <https://www.gnu.org/licenses/>.
+;;
+;;; Commentary:
+;;
+;; Series of convenience functions for Emacs Writing Studio
+;; https://lucidmanager.org/tags/emacs
+;;
+;;; Code:
+
+;; Emacs Writing Studio Customisation
+
+(defgroup ews ()
+  "Emacs Writing Studio."
+  :group 'files
+  :link '(url-link :tag "Homepage" "https://lucidmanager.org/tags/emacs/"))
+
+(defcustom ews-bibtex-directory
+  (concat (file-name-as-directory (getenv "HOME")) "Documentos/library")
+  "Location of BibTeX files and attachments."
+  :group 'ews
+  :type 'directory)
+
+(defcustom ews-denote-para-keywords
+  '("projects" "areas" "resources" "archives")
+  "List of keywords to use for implementing the PARA method with Denote."
+  :group 'ews
+  :type 'list)
+
+(defcustom ews-hunspell-dictionaries "fr_CA,en_CA"
+  "Comma-separated list of Hunspell dictionaries."
+  :group 'ews
+  :type 'list)
+
+(defcustom ews-org-completed-action "DONE"
+  "Completed action that triggers resetting checkboxes for recurring tasks."
+  :group 'ews
+  :type 'string)
+
+(defcustom ews-org-heading-level-capitalise nil
+  "Minimum level of Org headings to be capitalised.
+'nil implies all levels are capitalised."
+  :group 'ews
+  :type  '(choice (const :tag "All Headings" nil)
+		  (integer :tag "Highest level" 1)))
+
+;; Check for missing external software
+;;;###autoload
+(defun ews-missing-executables (prog-list)
+  "Identified missing executables in PROG-LIST.
+Sublists indicate that one of the entries is required."
+  (let ((missing '()))
+    (dolist (exec prog-list)
+      (if (listp exec)
+          (unless (cl-some #'executable-find exec)
+            (push (format "(%s)" (mapconcat 'identity exec " or ")) missing))
+        (unless (executable-find exec)
+          (push exec missing))))
+    (if missing
+        (message "Missing executable files(s): %s"
+                 (mapconcat 'identity missing ", ")))))
+
+;;; BIBLIOGRAPHY
+(defvar ews-bibtex-files
+  (when (file-exists-p ews-bibtex-directory)
+    (directory-files ews-bibtex-directory t "^[A-Z|a-z|0-9].+.bib$"))
+  "List of BibTeX files. Use `ews-bibtex-register-files` to configure.")
+
+;;;###autoload
+(defun ews-bibtex-register ()
+  "Register the contents of the `ews-bibtex-directory` with `ews-bibtex-files`.
+Use when adding or removing a BibTeX file from or to `ews-bibtex-directory`."
+  (interactive)
+  (when (file-exists-p ews-bibtex-directory)
+    (let ((bib-files (directory-files ews-bibtex-directory t
+				      "^[A-Z|a-z|0-9].+.bib$")))
+      (setq ews-bibtex-files bib-files
+  	    org-cite-global-bibliography bib-files
+	    citar-bibliography bib-files)))
+  (message "Registered:\n%s" (mapconcat #'identity ews-bibtex-files "\n")))
+
+(defun ews--bibtex-combined-biblio-lookup ()
+  "Combines biblio-lookup and biblio-doi-insert-bibtex."
+  (let* ((dbs (biblio--named-backends))
+         (db-list (append dbs '(("DOI" . biblio-doi-backend))))
+         (db-selected (biblio-completing-read-alist
+                       "Backend:"
+                       db-list)))
+    (if (eq db-selected 'biblio-doi-backend)
+        (let ((doi (read-string "DOI: ")))
+          (biblio-doi-insert-bibtex doi))
+      (biblio-lookup db-selected))))
+
+;;;###autoload
+(defun ews-bibtex-biblio-lookup ()
+  "Use curent buffer or Select BibTeX file, lookup with Biblio and insert entry."
+  (interactive)
+  (if-let ((current-mode major-mode)
+	   ews-bibtex-files
+	   (bibfiles (length ews-bibtex-files))
+	   (bibfile (cond ((eq bibfiles 1) (car ews-bibtex-files))
+			  ((equal major-mode 'bibtex-mode)
+			   (buffer-file-name))
+			  (t (completing-read
+			      "Select BibTeX file:" ews-bibtex-files)))))
+      (progn (find-file bibfile)
+	     (goto-char (point-max))
+	     (ews--bibtex-combined-biblio-lookup)
+	     (save-buffer))
+    (message "No BibTeX file(s) defined.")))
+
+;; Search for missing BibTeX attachments and filenames
+(defun ews--bibtex-extract-filenames ()
+  "Extract attachment file names from BibTeX files in `ews-bibtex-directory'."
+  (ews-bibtex-register)
+  (let ((attachments '()))
+    (dolist (bibtex-file ews-bibtex-files)
+      (with-temp-buffer
+        (insert-file-contents bibtex-file)
+        (goto-char (point-min))
+        (while (re-search-forward "file.*=.*{\\([^}]+\\)}" nil t)
+          (let ((file-paths (split-string (match-string 1)
+                                          "[[:space:]]*;[[:space:]]*")))
+            (dolist (file-path file-paths)
+              (push (expand-file-name (string-trim file-path)
+                                      ews-bibtex-directory)
+                    attachments))))))
+    attachments))
+
+(defun ews--bibtex-extract-files ()
+  "List files recursively in `ews-bibtex-directory'.  Excludes `.bib` and `.csl`."
+  (seq-remove (lambda (file)
+                (or (string-suffix-p ".bib" file)
+                    (string-suffix-p ".csl" file)))
+              (directory-files-recursively ews-bibtex-directory "")))
+
+(defun ews-bibtex-missing-files ()
+  "List BibTeX attachments not listed in BibTeX files."
+  (interactive)
+  (let* ((files (ews--bibtex-extract-files))
+         (attachments (ews--bibtex-extract-filenames))
+         (missing (cl-remove-if
+                   (lambda (f) (member f attachments)) files)))
+    (message "%s files not registered in bibliography" (length missing))
+    (dolist (file missing)
+      (message "Missing file: %s" file))))
+
+(defun ews-bibtex-missing-attachments ()
+  "List BibTeX files without matching attachment."
+  (interactive)
+  (let* ((files (ews--bibtex-extract-files))
+         (attachments (ews--bibtex-extract-filenames))
+         (missing (cl-remove-if
+                   (lambda (f) (member f files)) attachments)))
+    (message "%s BibTeX files without matching attachment." (length missing))
+    (dolist (file missing)
+      (message "Missing file: %s" file))))
+
+;; Denote
+(defun ews-denote-assign-para ()
+  "Move your note to either Project, Area, Reource or Archive (PARA)."
+  (interactive)
+  (if-let* ((file (buffer-file-name))
+            ((denote-filename-is-note-p file))
+            (all-keywords (string-split (denote-retrieve-filename-keywords file) "_"))
+            (keywords (seq-remove (lambda (keyword)
+                                    (member keyword ews-denote-para-keywords))
+                                  all-keywords))
+            (para (completing-read "Select category: " ews-denote-para-keywords))
+            (new-keywords (push para keywords)))
+      (denote-rename-file
+       file
+       (denote-retrieve-title-or-filename file (denote-filetype-heuristics file))
+       new-keywords
+       (denote-retrieve-filename-signature file))
+    (message "Current buffer is not a Denote file.")))
+
+;; Narrow Dired to Regular Expression
+(defun ews-dired-narrow (selection)
+  "Mark files in denote-firectory using a regular expression."
+  (interactive "sMark files (regexp):")
+  (when (not (eq major-mode 'dired-mode))
+    (dired denote-directory))
+  (dired-mark-files-regexp selection)
+  (dired-toggle-marks)
+  (dired-do-kill-lines))
+
+;; Distraction-free writing
+(defvar ews-olivetti-point nil
+  "Stores the point position before enabling Olivetti mode.")
+
+;;;###autoload
+(defun ews-olivetti ()
+  "Distraction-free writing environment enhancing Olivetti mode.
+
+Stores the window configuration when enabling Olivetti mode.
+Restores the previous configuration when existing Olivetti mode
+and moves point to the last location."
+  (interactive)
+  (if olivetti-mode
+      (progn
+        (if (eq (length (window-list)) 1)
+            (progn
+              (jump-to-register 1)
+              (goto-char ews-olivetti-point)))
+        (olivetti-mode 0)
+        (text-scale-set 0))
+    (progn
+      (setq ews-olivetti-point (point))
+      (window-configuration-to-register 1)
+      (delete-other-windows)
+      (text-scale-set 1)
+      (olivetti-mode t))))
+
+;;;###autoload
+(defun ews-org-insert-notes-drawer ()
+  "Generate or open a NOTES drawer under the current heading.
+If a drawer exists for this section, a new line is created at the end of the
+current note."
+  (interactive)
+  (push-mark)
+  (org-previous-visible-heading 1)
+  (forward-line)
+  (if (looking-at-p "^[ \t]*:NOTES:")
+      (progn
+        (org-fold-hide-drawer-toggle 'off)
+        (re-search-forward "^[ \t]*:END:" nil t)
+        (forward-line -1)
+        (org-end-of-line)
+        (org-return))
+    (org-insert-drawer nil "NOTES"))
+  (org-unlogged-message "Press <C-u C-SPACE> to return to the previous position."))
+
+;;;###autoload
+(defun ews-org-count-words ()
+  "Add word count to each heading property drawer in an Org mode buffer."
+  (interactive)
+  (org-map-entries
+   (lambda ()
+     (let* ((start (point))
+            (end (save-excursion (org-end-of-subtree)))
+            (word-count (count-words start end)))
+       (org-set-property "WORDCOUNT" (number-to-string word-count))))))
+
+;;;###autoload
+(defun ews-org-insert-screenshot ()
+  "Take a screenshot with ImageMagick and insert as an Org mode link."
+  (interactive)
+  (let ((filename (read-file-name "Enter filename for screenshot: " default-directory)))
+    (unless (string-equal "png" (file-name-extension filename))
+      (setq filename (concat (file-name-sans-extension filename) ".png")))
+    (call-process-shell-command (format "maim --select %s" filename))
+    (insert (format "#+caption: %s\n" (read-from-minibuffer "Caption: ")))
+    (insert (format "[[file:%s]]" filename))
+    (org-redisplay-inline-images)))
+
+;;; Org mode todo enhancements
+(defun ews--org-recurring-action-p ()
+  "Returns non-nil when the action under point is recurring."
+  (let ((timestamp (or (org-entry-get nil "SCHEDULED" t)
+                       (org-entry-get nil "DEADLINE" t))))
+    (if timestamp (string-match-p "\\+" timestamp))))
+
+;;;###autoload
+(defun ews-org-reset-checkboxes-when-done ()
+  "Reset all checkboxes in the subtree when status changes."
+  (when (and (ews--org-recurring-action-p)
+             (equal ews-org-completed-action
+                    (substring-no-properties (org-get-todo-state))))
+    (org-reset-checkbox-state-subtree)))
+
+(add-hook #'org-after-todo-state-change-hook
+          #'ews-org-reset-checkboxes-when-done)
+
+;;;###autoload
+(defun ews-org-headings-titlecase (&optional arg)
+  "Cycle through all headings in an Org buffer and convert them to title case.
+When used with universal argument converts to sentence case.
+Customise `titlecase-style' for styling."
+  (interactive "P")
+  (let ((style (if arg 'sentence titlecase-style)))
+    (message "Converting headings to '%s' style" style)
+    (org-map-entries
+     (lambda ()
+       (let* ((heading (substring-no-properties (org-get-heading t t t t)))
+	      (level (org-current-level))
+	      (heading-lower (downcase heading))
+              (new-heading (titlecase--string heading-lower style)))
+	 (when (<= level (or ews-org-heading-level-capitalise 999))
+	   (org-edit-headline new-heading)))))))
+#+end_src
+
+* TODO Email configuration
+My current email workflow relies on isync in the background and mu4e on Emacs.
+
+Update: <2024-10-14 Mon> Giving a try to [[https://github.com/danielfleischer/mu4easy][GitHub - danielfleischer/mu4easy: mu4e + mbsync configuration for multiple email accounts.]] To be installed from git.
+
+Sources:
+- https://shom.dev/posts/20220108_setting-up-protonmail-in-emacs/
+- [[https://github.com/daviwil/emacs-from-scratch/blob/master/show-notes/Emacs-Mail-03.org][emacs-from-scratch/show-notes/Emacs-Mail-03.org at master · daviwil/emacs-from-scratch · GitHub]]
+- [[https://github.com/daviwil/emacs-from-scratch/blob/629aec3dbdffe99e2c361ffd10bd6727555a3bd3/show-notes/Emacs-Mail-01.org][emacs-from-scratch/show-notes/Emacs-Mail-01.org at 629aec3dbdffe99e2c361ffd10bd6727555a3bd3 · daviwil/emacs-from-scratch · GitHub]]
+- [[https://doubleloop.net/2019/09/06/emacs-mu4e-mbsync-and-protonmail/][emacs, mu4e, mbsync and ProtonMail - doubleloop]]
+- [[https://gist.github.com/ceblan/59064db5c68a84d15a5fff1a23808ad3][mbsync+mu4e+protonmail · GitHub]]
+- [[https://www.reddit.com/r/ProtonMail/comments/roxql7/making_protonmail_work_100_with_mbsyncmu4e/][Reddit - Dive into anything]]
+- [[https://f-santos.gitlab.io/2020-04-24-mu4e.html][Reading and sending mails from within Emacs: a tutorial for mu4e]]
+** Proton
+Compared to other email providers, Proton rely on a finicky encryption system to work. Normally this is transparent if one uses the official ProtonMail apps but with other apps, like Isync or Thunderbird, it is necessary to use a specific software to have it working.
+
+The deb package must be manually downloaded from this page: [[https://proton.me/mail/download][Download the Proton Mail App for iOS, Android & Desktop | Proton]].
+
+Once it is downloaded we can start the install with =apt=.
+#+begin_src shell
+  cd Downloads/
+  sudo apt install ./protonmail*.deb -y
+#+end_src
+
+Once installed, Proton Mail Bridge has to be configured manually with the gui.
+
+** TODO Mbsync / Isync
+First we need to install it:
+#+begin_src shell
+  sudo apt install isync -y
+#+end_src
+
+And create a directory for emails.
+#+begin_src shell
+  mkdir ~/Documentos/Mail/Proton
+#+end_src
+
+After that, we must create the certificate that will be used by isync. This command will output information that countain the certificate we need.
+
+#+begin_src shell
+  openssl s_client -starttls imap -connect 127.0.0.1:1143 -showcerts
+#+end_src
+
+We need copy the lines that begin with =-----BEGIN CERTIFICATE-----= and end with =-----END CERTIFICATE-----= and put them in a new file named =~/.config/protonmail/bridge-v3/cert.pem=.
+
+Once this is done, we can start syncing emails with the following command:
+#+begin_src shell
+  mbsync -a
+#+end_src
+
+And then the needed configuration:
+#+begin_src conf :tangle .mbsyncrc
+  # Proton
+  IMAPAccount Proton
+  Host 127.0.0.1
+  Port 1143
+  User vachonfrederic@proton.me
+  PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine 127.0.0.1/ {print $NF}'"
+  AuthMechs LOGIN
+  SSLType STARTTLS
+  CertificateFile ~/.config/protonmail/bridge-v3/cert.pem
+
+  IMAPStore Proton-remote
+  Account Proton
+
+  MaildirStore Proton-local
+  Path ~/Documentos/Mail/Proton/
+  Inbox ~/Documentos/Mail/Proton/INBOX/
+  Trash ~/Documentos/Mail/Proton/Trash/
+  Subfolders Verbatim
+
+  Channel Proton
+  Far :Proton-remote:
+  Near :Proton-local:
+  Patterns "INBOX" "Archive" "Spam" "Sent" "Trash" "All Mail" "Drafts"
+  CopyArrivalDate yes
+  Create Both
+  Expunge Both
+  SyncState *
+
+  Channel Proton-sent
+  Far :Proton-remote:"Sent"
+  Near :Proton-local:"Sent"
+  Create Both
+  Expunge Both
+  SyncState *
+
+  Group Proton
+  Channel Proton-inbox
+  Channel Proton-sent
+
+  # Mailbox
+  IMAPStore mailbox-remote
+  Host imap.mailbox.org
+  User tamiaso@mailbox.org
+  PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine smtp.mailbox.org/ {print $NF}'"				
+  SSLType STARTTLS
+
+  MaildirStore mailbox-local
+  Path ~/Documentos/Mail/Mailbox/
+  Inbox ~/Documentos/Mail/Mailbox/Inbox
+  Subfolders Verbatim
+
+  Channel mailbox
+  Far :mailbox-remote:
+  Near :mailbox-local:
+  Sync All
+  Patterns *
+  SyncState *
+  Create Both
+  Expunge Both
+  CopyArrivalDate yes
+#+end_src
+
+** =Mu=
+Instead of installing a thing at a time, we can install =mu= (named =maildir-utils= in Debian's repos) as a dependancy to =mu4e=. See [[https://systemcrafters.net/emacs-mail/streamline-your-email-with-mu4e/#setting-up-mu-to-index-the-mailbox][Streamline Your E-mail Management with mu4e - System Crafters]].
+#+begin_src shell
+  sudo apt install mu4e -y
+#+end_src
+
+Once installed, we can proceed with our first indexing.
+#+begin_src shell
+  mu init --maildir=~/Documentos/Mail --my-address=tamiaso@mailbox.org --my-address=vachonfrederic@proton.me --my-address=fvachon@tamiaso.com --my-address=wilf@tamiaso.com
+  mu index
+#+end_src
+
+** =mu4e=
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package mu4e
+    :ensure nil
+    ;; :load-path "/usr/share/emacs/site-lisp/mu4e/"
+    :load-path "/usr/share/emacs/site-lisp/elpa-src/mu4e-1.8.14/"
+    :defer 10 ; Wait until 10 seconds after startup
+    :bind (("C-c u" . mu4e))
+    :config
+
+    (setq mu4e-change-filenames-when-moving t ; avoid sync conflicts
+          mu4e-update-interval (* 10 60) ; check mail 10 minutes
+          mu4e-compose-format-flowed t ; re-flow mail so it's not hard wrapped
+          mu4e-get-mail-command "mbsync -a"
+          mu4e-maildir "~/Documentos/Mail"
+          mu4e-attachment-dir "~/Downloads")
+
+    (setq mu4e-contexts
+          (list
+
+           ;; Compte principal
+           (make-mu4e-context
+            :name "Fred"
+            :match-func
+            (lambda (msg)
+              (when msg
+                (string-match-p "/Mailbox" (mu4e-message-field msg :maildir))))
+            :vars '((user-mail-address . "fvachon@tamiaso.com")
+                    (user-full-name    . "Frédéric Vachon")
+                    (smtpmail-smtp-server  . "smtp.mailbox.org")
+                    (smtpmail-smtp-service . 587)
+                    (smtpmail-stream-type  . starttls)
+                    (mu4e-refile-folder  . "/Mailbox/Archive")
+                    (mu4e-sent-folder  . "/Mailbox/Sent")
+                    (mu4e-drafts-folder  . "/Mailbox/Drafts")
+                    (mu4e-trash-folder  . "/Mailbox/Trash")
+                    (mu4e-compose-signature . "Frédéric Vachon")
+                    (mu4e-maildir-shortcuts .
+                                            (("/Mailbox/Inbox"     . ?i)
+                                             ("/Mailbox/Archive"     . ?a)
+                                             ("/Mailbox/Sent"       . ?s)
+                                             ("/Mailbox/Drafts"       . ?d)
+                                             ("/Mailbox/Trash"       . ?t)))
+           ))
+
+           ;; Compte alternatif
+           (make-mu4e-context
+            :name "Wilf"
+            :match-func
+            (lambda (msg)
+              (when msg
+                (mu4e-message-contact-field-matches msg :to "wilf@tamiaso.com")))
+            :vars '((user-mail-address . "wilf@tamiaso.com")
+                    (user-full-name    . "Wilf")
+                    (smtpmail-smtp-server  . "smtp.mailbox.org")
+                    (smtpmail-smtp-service . 587)
+                    (smtpmail-stream-type  . starttls)
+                    (mu4e-refile-folder  . "/Mailbox/Archive")
+                    (mu4e-sent-folder  . "/Mailbox/Sent")
+                    (mu4e-drafts-folder  . "/Mailbox/Drafts")
+                    (mu4e-trash-folder  . "/Mailbox/Trash")
+                    (mu4e-compose-signature . "Wilf")
+                    (mu4e-maildir-shortcuts .
+                                            (("/Mailbox/Inbox"     . ?i)
+                                             ("/Mailbox/Archive"     . ?a)
+                                             ("/Mailbox/Sent"       . ?s)
+                                             ("/Mailbox/Drafts"       . ?d)
+                                             ("/Mailbox/Trash"       . ?t)))
+           ))
+
+           ;; Compte principal mailbox
+           (make-mu4e-context
+            :name "Mailbox"
+            :match-func
+            (lambda (msg)
+              (when msg
+                (mu4e-message-contact-field-matches msg :to "tamiaso@mailbox.org")))
+            :vars '((user-mail-address . "tamiaso@mailbox.org")
+                    (user-full-name    . "Frédéric Vachon")
+                    (smtpmail-smtp-server  . "smtp.mailbox.org")
+                    (smtpmail-smtp-service . 587)
+                    (smtpmail-stream-type  . starttls)
+                    (mu4e-refile-folder  . "/Mailbox/Archive")
+                    (mu4e-sent-folder  . "/Mailbox/Sent")
+                    (mu4e-drafts-folder  . "/Mailbox/Drafts")
+                    (mu4e-trash-folder  . "/Mailbox/Trash")
+                    (mu4e-compose-signature . "Frédéric Vachon")
+                    (mu4e-maildir-shortcuts .
+                                            (("/Mailbox/Inbox"     . ?i)
+                                             ("/Mailbox/Archive"     . ?a)
+                                             ("/Mailbox/Sent"       . ?s)
+                                             ("/Mailbox/Drafts"       . ?d)
+                                             ("/Mailbox/Trash"       . ?t)))
+           ))
+
+           ;; Compte Proton
+           (make-mu4e-context
+            :name "Proton"
+            :match-func
+            (lambda (msg)
+              (when msg
+                ;; (mu4e-message-contact-field-matches msg :to "vachonfrederic@proton.me")))
+                (string-match-p "/Mailbox" (mu4e-message-field msg :maildir))))
+            :vars '((user-mail-address . "vachonfrederic@proton.me")
+                    (user-full-name    . "Frédéric Vachon")
+                    (auth-source  .  ("~/.authinfo.gpg"))
+                    (smtpmail-smtp-server  . "127.0.0.1")
+                    (smtpmail-smtp-service . 1025)
+                    (smtpmail-stream-type  . starttls)
+                    (mu4e-refile-folder  . "/Proton/Archive")
+                    (mu4e-sent-folder  . "/Proton/Sent")
+                    (mu4e-drafts-folder  . "/Proton/Drafts")
+                    (mu4e-trash-folder  . "/Proton/Trash")
+                    (mu4e-compose-signature . "Frédéric Vachon")
+                    (mu4e-maildir-shortcuts .
+                                            (("/Proton/INBOX"     . ?i)
+                                             ("/Proton/All Mail"     . ?a)
+                                             ("/Proton/Archive"     . ?A)
+                                             ("/Proton/Sent"       . ?s)
+                                             ("/Proton/Spam"       . ?S)
+                                             ("/Proton/Drafts"       . ?d)
+                                             ("/Proton/Trash"       . ?t)))
+                    ))))
+
+
+    ;; Run mu4e in the background to sync mail periodically
+    (mu4e t))
+#+end_src
+
+By default, =mu4e= will display rich text or html. We can change this with the following settings
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (with-eval-after-load "mm-decode"
+    (add-to-list 'mm-discouraged-alternatives "text/html")
+    (add-to-list 'mm-discouraged-alternatives "text/richtext"))
+#+end_src
+
+** COMMENT Mu4easy
+Mu4easy is a package that aims to simplify the configuration of Mu4e. It is available from Melpa as well as Github. I prefered to clone the package at first and for now that's how I entend to continue using it.
+
+It is important to have it cloned locally othewise it won't install by itself like other packages.
+#+begin_src shell
+  cd ~/Git
+  git clone https://github.com/danielfleischer/mu4easy.git
+#+end_src
+
+The following configuration should be working now. I am only setting my proton email address, but this may change on the future.
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package mu4easy
+    ;; :demand
+    ;; :load-path "/home/frdrcv/Git/mu4easy"
+    :ensure t
+    :bind ("C-c u" . mu4e)
+    :config (mu4easy-mode)
+    :custom
+    (mu4easy-contexts '((mu4easy-context
+                         :c-name  "Proton"
+                         :maildir "Proton"
+                         :mail    "vachonfrederic@proton.me"
+                         :smtp    "127.0.0.1"
+                         :smtp-type starttls
+                         :smtp-port 1025
+                         :sent-action delete))))
+#+end_src
+
+** COMMENT =messages-are-flowing=
+Étrangement les courriels envoyés à partir d'Emacs ont des saut de lignes problématiques. Un paquet semble régler ce problème.
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package messages-are-flowing
+    :ensure t)
+
+  (with-eval-after-load "message"
+    (add-hook 'message-mode-hook 'messages-are-flowing-use-and-mark-hard-newlines))
+#+end_src
+
+** Courriels HTML
+En suivant [[https://systemcrafters.net/emacs-mail/enhance-email-with-org-mode/][cet article de SystemCrafters]], il est possible d'utiliser =org= pour rédiger des courriels en HTML, à l'aide du paquet =org-mime=. D'abord, il faut installer ce paquet.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package org-mime
+    :ensure t)
+
+  (setq org-mime-export-options '(:section-numbers nil
+                                  :with-author nil
+                                  :with-toc nil))
+  
+  (add-hook 'message-send-hook 'org-mime-htmlize)
+#+end_src
+
+Avec ce dernier, il devient possible d'écrire directement au format =org= et de l'exporter en HTML avec le commande =M-x org-mime-htmlize=. Pour que le buffer utilise =org-mode=, on peut utiliser la commande =M-x org-mime-edit-mail-in-org-mode=.
+* Desktop environement
+** TODO i3
+*** Configuration de i3wm
+#+begin_src conf :tangle .config/i3/config
+  # i3 config file (v4)
+  #
+  # Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+  set $mod Mod4
+
+  exec setxkbmap -layout "us(alt-intl)"
+
+  # Font for window titles. Will also be used by the bar unless a different font
+  # is used in the bar {} block below.
+  #font pango:Iosevka Comfy Motion Duo 10
+  font pango: Atkinson Hyperlegible 12
+
+  # This font is widely installed, provides lots of unicode glyphs, right-to-left
+  # text rendering and scalability on retina/hidpi displays (thanks to pango).
+  #font pango:DejaVu Sans Mono 8
+
+  # Start XDG autostart .desktop files using dex. See also
+  # https://wiki.archlinux.org/index.php/XDG_Autostart
+  exec --no-startup-id dex-autostart --autostart --environment i3
+
+  # The combination of xss-lock, nm-applet and pactl is a popular choice, so
+  # they are included here as an example. Modify as you see fit.
+
+  # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+  # screen before suspend. Use loginctl lock-session to lock your screen.
+  # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -c 000000
+  # set desktop background with custom effect
+  exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
+
+  # Pour mettre l'ordinateur automatiquement en veille (source: https://forum.endeavouros.com/t/how-to-setup-automatic-suspend-battery-settings-in-i3wm/13056)
+  exec --no-startup-id xautolock -time 60 -locker "systemctl suspend" 
+
+  bindsym $mod+shift+x exec betterlockscreen -l dim
+
+  # Clearing notifications
+  #dunstctl close all
+  bindsym $mod + shift + semicolon exec dunstctl close-all
+  bindsym $mod + semicolon exec dunstctl set-paused toggle
+
+  # NetworkManager is the most popular way to manage wireless networks on Linux,
+  # and nm-applet is a desktop environment-independent system tray GUI for it.
+  exec --no-startup-id nm-applet
+
+  # Use pactl to adjust volume in PulseAudio.
+  set $refresh_i3status killall -SIGUSR1 i3status
+  bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+  bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+  bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+  bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+  # Multimedia control
+  bindsym XF86AudioPlay exec playerctl play-pause
+  bindsym XF86AudioNext exec playerctl next
+  bindsym XF86AudioPrev exec playerctl previous
+  bindsym $mod + y exec playerctld shift
+
+  bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+  bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+  # Use Mouse+$mod to drag floating windows to their wanted position
+  floating_modifier $mod
+
+  # move tiling windows via drag & drop by left-clicking into the title bar,
+  # or left-clicking anywhere into the window while holding the floating modifier.
+  tiling_drag modifier titlebar
+
+  # start a terminal
+  bindsym $mod+Return exec alacritty
+
+  # kill focused window
+  bindsym $mod+Shift+q kill
+
+  # make a window sticky
+  bindsym $mod+p sticky toggle
+
+  # start dmenu (a program launcher)
+  # bindsym $mod+d exec --no-startup-id dmenu_run
+  # A more modern dmenu replacement is rofi:
+  bindcode $mod+40 exec "rofi -modi drun,window,run -show drun"
+  # There also is i3-dmenu-desktop which only displays applications shipping a
+  # .desktop file. It is a wrapper around dmenu, so you need that installed.
+  # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+  # bindcode $mod+40 exec "rofi -show combi -modes combi -combi-modes 'window,drun,run'"
+
+  # change focus
+  bindsym $mod+h focus left
+  bindsym $mod+j focus down
+  bindsym $mod+k focus up
+  bindsym $mod+l focus right
+
+  # alternatively, you can use the cursor keys:
+  bindsym $mod+Left focus left
+  bindsym $mod+Down focus down
+  bindsym $mod+Up focus up
+  bindsym $mod+Right focus right
+
+  # move focused window
+  bindsym $mod+Shift+h move left
+  bindsym $mod+Shift+j move down
+  bindsym $mod+Shift+k move up
+  bindsym $mod+Shift+l move right
+
+  # alternatively, you can use the cursor keys:
+  bindsym $mod+Shift+Left move left
+  bindsym $mod+Shift+Down move down
+  bindsym $mod+Shift+Up move up
+  bindsym $mod+Shift+Right move right
+
+  # split in horizontal orientation
+  bindsym $mod+b split h
+
+  # split in vertical orientation
+  bindsym $mod+v split v
+
+  # enter fullscreen mode for the focused container
+  bindsym $mod+f fullscreen toggle
+
+  # change container layout (stacked, tabbed, toggle split)
+  bindsym $mod+s layout stacking
+  bindsym $mod+w layout tabbed
+  bindsym $mod+e layout toggle split
+
+  # toggle tiling / floating
+  bindsym $mod+Shift+space floating toggle
+
+  # change focus between tiling / floating windows
+  bindsym $mod+space focus mode_toggle
+
+  # focus the parent container
+  bindsym $mod+a focus parent
+
+  # focus the child container
+  #bindsym $mod+d focus child
+#+end_src
+
+*** Workspaces
+#+begin_src conf :tangle .config/i3/config
+  # Define names for default workspaces for which we configure key bindings later on.
+  # We use variables to avoid repeating the names in multiple places.
+  set $ws1 "1"
+  set $ws2 "2"
+  set $ws3 "3"
+  set $ws4 "4"
+  set $ws5 "5"
+  set $ws6 "6"
+  set $ws7 "7"
+  set $ws8 "8"
+  set $ws9 "9"
+  set $ws10 "10"
+
+  # assign workspaces to specific monitors
+  workspace $ws1 output HDMI-0 eDP-1
+  workspace $ws2 output HDMI-0 eDP-1
+  workspace $ws3 output HDMI-0 eDP-1
+  workspace $ws4 output HDMI-0 eDP-1
+  workspace $ws5 output HDMI-0 eDP-1
+  workspace $ws6 output DP-5 eDP-1
+  workspace $ws7 output DP-5 eDP-1
+  workspace $ws8 output DP-5 eDP-1
+  workspace $ws9 output DP-5 eDP-1
+  workspace $ws10 output DP-5 eDP-1
+
+  # switch to workspace
+  bindsym $mod+1 workspace number $ws1
+  bindsym $mod+2 workspace number $ws2
+  bindsym $mod+3 workspace number $ws3
+  bindsym $mod+4 workspace number $ws4
+  bindsym $mod+5 workspace number $ws5
+  bindsym $mod+6 workspace number $ws6
+  bindsym $mod+7 workspace number $ws7
+  bindsym $mod+8 workspace number $ws8
+  bindsym $mod+9 workspace number $ws9
+  bindsym $mod+0 workspace number $ws10
+
+  # move focused container to workspace
+  bindsym $mod+Shift+1 move container to workspace number $ws1
+  bindsym $mod+Shift+2 move container to workspace number $ws2
+  bindsym $mod+Shift+3 move container to workspace number $ws3
+  bindsym $mod+Shift+4 move container to workspace number $ws4
+  bindsym $mod+Shift+5 move container to workspace number $ws5
+  bindsym $mod+Shift+6 move container to workspace number $ws6
+  bindsym $mod+Shift+7 move container to workspace number $ws7
+  bindsym $mod+Shift+8 move container to workspace number $ws8
+  bindsym $mod+Shift+9 move container to workspace number $ws9
+  bindsym $mod+Shift+0 move container to workspace number $ws10
+
+  # jump to last workspace
+  workspace_auto_back_and_forth yes
+
+  # jump to "urgent" workspace
+  bindsym $mod+x [urgent=latest] focus
+
+  # move workspace to other monitor
+  bindsym $mod+BackSpace move workspace to output next
+
+  # assign apps to specific workspace (xprop to find class name)
+  assign [class="^TelegramDesktop$"] → number $ws2
+  assign [class="^Emacs-gtk$"] → number $ws3
+  assign [class="^steam$"] → number $ws9
+  assign [class="^Proton Mail Bridge$"] → number $ws10
+#+end_src
+
+*** Scratchpad
+#+begin_src conf :tangle .config/i3/config
+  # Make the currently focused window a scratchpad
+  bindsym $mod+Shift+Tab move scratchpad
+
+  # Show the first scratchpad window
+  bindsym $mod+Tab scratchpad show
+
+  # reload the configuration file
+  bindsym $mod+Shift+c reload
+  # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+  bindsym $mod+Shift+r restart
+  # exit i3 (logs you out of your X session)
+  bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+  # resize window (you can also use the mouse for that)
+  mode "resize" {
+  # These bindings trigger as soon as you enter the resize mode
+
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
+
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+
+  # back to normal: Enter or Escape or $mod+r
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
+  }
+
+  bindsym $mod+r mode "resize"
+
+  # Flameshot to take screenshots
+  bindsym Print exec flameshot gui
+
+  # Configure 5px of space between windows and to the screen edges.
+  # gaps inner 10px
+  gaps inner 0px
+
+  # Configure an additional 5px of extra space to the screen edges,
+  # for a total gap of 10px to the screen edges, and 5px between windows.
+  gaps outer 0px
+
+  # Titlebars
+  default_border pixel 3
+
+  # Start i3bar to display a workspace bar (plus the system information i3status
+  # finds out, if available)
+  #bar {
+  #status_command i3status
+  #}
+
+  include i3-theme
+
+  # Additional apps
+
+  exec_always picom --experimental-backends
+  exec --no-startup-id redshift -l 45:-73
+  exec --no-startup-id dunst
+  exec --no-startup-id i3-battery-popup -n
+  exec --no-startup-id copyq
+  #exec --no-startup-id XFCE4-power-manager
+  exec --no-startup-id caffeine-indicator
+  exec --no-startup-id polybar -r i3
+  exec steam --silent
+  exec protonmail-bridge
+
+  # Setting the wallpaper
+  exec betterlockscreen -w
+
+  # Setting the monitors
+  exec_always --no-startup-id xrandr --output DP-5 --auto --right-of HDMI-0 &
+#+end_src
+
+*** Autostart
+
+
+*** Dunst
+La version des dépôts officiels est convenable.
+#+begin_src conf :tangle .config/dunst/dunstrc
+  [global]
+      # Display on first monitor
+      monitor = 0
+      follow = none
+
+      # Appearance
+      width = 400
+      offset = 5x28
+      origin = top-right
+      indicate_hidden = yes
+      shrink = no
+      notification_limit = 6
+      separator_height = 2
+      separator_color = frame
+      padding = 8
+      horizontal_padding = 8
+      text_icon_padding = 8
+      frame_width = 2
+      frame_color = "#FFFFFF"
+      transparency = 5
+      font = Atkinson Hyperlegible 12
+      line_height = 0
+      corner_radius = 5
+      icon_corner_radius = 5
+
+      # Put urgent notifications on top
+      sort = yes
+
+      # Don't remove messages, if the user is idle (no mouse or keyboard input)
+      idle_threshold = 60
+      # Don't show age of old messages
+      show_age_threshold = -1
+
+      # The format of the message.  Possible variables are:
+      #   %a  appname
+      #   %s  summary
+      #   %b  body
+      #   %i  iconname (including its path)
+      #   %I  iconname (without its path)
+      #   %p  progress value if set ([  0%] to [100%]) or nothing
+      #   %n  progress value if set without any extra characters
+      #   %%  Literal %
+      # Markup is allowed
+      format = "<b>%s</b>\n%b"
+      markup = full
+      alignment = left
+      vertical_alignment = top
+      word_wrap = no
+      ellipsize = end
+      ignore_newline = no
+      stack_duplicates = true
+      hide_duplicate_count = true
+      show_indicators = no
+
+      # Progress bar
+      progress_bar = true
+
+      # Icons
+      icon_position = left
+      min_icon_size = 32
+      max_icon_size = 32
+      #  echo /usr/share/icons/{Adwaita,gnome}/{512x512,256x256,48x48}/{devices,status}(N) | tr ' ' ':'
+      icon_path = /usr/share/icons/Adwaita/512x512/devices:/usr/share/icons/Adwaita/512x512/status:/usr/share/icons/Adwaita/256x256/status:/usr/share/icons/Adwaita/48x48/devices:/usr/share/icons/Adwaita/48x48/status:/usr/share/icons/gnome/256x256/devices:/usr/share/icons/gnome/256x256/status:/usr/share/icons/gnome/48x48/devices:/usr/share/icons/gnome/48x48/status:/home/bernat/.nix-profile/share/icons/hicolor/64x64/apps
+
+      # History
+      sticky_history = yes
+      history_length = 20
+
+      # Misc
+      dmenu = rofi -dmenu -p dunst
+      browser = /usr/bin/xdg-open
+      always_run_script = true
+      title = Dunst
+      class = Dunst
+      ignore_dbusclose = false
+
+      # Mouse
+      mouse_left_click = do_action
+      mouse_middle_click = close_current
+      mouse_right_click = close_current
+
+  [urgency_low]
+      background = "#222222"
+      foreground = "#888888"
+      timeout = 10
+
+  [urgency_normal]
+      background = "#222222"
+      foreground = "#ffffff"
+      timeout = 10
+
+  [urgency_critical]
+      background = "#900000"
+      foreground = "#ffffff"
+      timeout = 0
+#+end_src
+**** TODO Volume control with =dunst=
+See [[https://wiki.archlinux.org/title/Dunst#Using_dunstify_as_volume/brightness_level_indicator][Dunst - ArchWiki]].
+
+*** =Picom= Compositor, effects, and screen-tearing
+:PROPERTIES:
+:ID:       a0755527-942a-4311-9be2-6f4e07868387
+:END:
+To avoid screen tearing and add some nice effets, I am using the basic version of picom from Debian's repos.
+
+#+begin_src shell
+  sudo apt install picom
+#+end_src
+
+#+begin_src conf :tangle .config/picom/picom.conf
+  # Based on https://github.com/yshui/picom/blob/next/picom.sample.conf
+
+  #################################
+  #             Shadows           #
+  #################################
+
+  # Enabled client-side shadows on windows. Note desktop windows
+  # (windows with '_NET_WM_WINDOW_TYPE_DESKTOP') never get shadow,
+  # unless explicitly requested using the wintypes option.
+  #
+  # Can be set per-window using rules.
+  #
+  # Default: false
+  shadow = false;
+
+  # The blur radius for shadows, in pixels.
+  #
+  # Default: 12
+  shadow-radius = 7;
+
+  # The opacity of shadows.
+  #
+  # Range: 0.0 - 1.0
+  # Default: 0.75
+  # shadow-opacity = .75
+
+  # The left offset for shadows, in pixels.
+  #
+  # Default: -15
+  shadow-offset-x = -7;
+
+  # The top offset for shadows, in pixels.
+  #
+  # Default: -15
+  shadow-offset-y = -7;
+
+  # Hex string color value of shadow. Formatted like "#RRGGBB", e.g. "#C0FFEE".
+  #
+  # Default: #000000
+  # shadow-color = "#000000"
+
+  # Crop shadow of a window fully on a particular monitor to that monitor. This is
+  # currently implemented using the X RandR extension.
+  #
+  # Default: false
+  # crop-shadow-to-monitor = false
+
+
+  #################################
+  #           Fading              #
+  #################################
+
+  # Fade windows in/out when opening/closing and when opacity changes,
+  # unless no-fading-openclose is used. Can be set per-window using rules.
+  #
+  # Default: false
+  fading = true;
+
+  # Opacity change between steps while fading in. (0.01 - 1.0, defaults to 0.028)
+  fade-in-step = 0.03;
+
+  # Opacity change between steps while fading out. (0.01 - 1.0, defaults to 0.03)
+  fade-out-step = 0.03;
+
+  # The time between steps in fade step, in milliseconds. (> 0, defaults to 10)
+  fade-delta = 3
+
+  # Do not fade on window open/close.
+  # no-fading-openclose = false
+
+  # Do not fade destroyed ARGB windows with WM frame. Workaround of bugs in Openbox, Fluxbox, etc.
+  # no-fading-destroyed-argb = false
+
+
+  #################################
+  #   Transparency / Opacity      #
+  #################################
+
+  # Opacity of window titlebars and borders.
+  #
+  # Range: 0.1 - 1.0
+  # Default: 1.0 (disabled)
+  frame-opacity = 1;
+
+  # Use fixed inactive dim value, instead of adjusting according to window opacity.
+  #
+  # Default: false
+  # inactive-dim-fixed = true
+
+  #################################
+  #           Corners             #
+  #################################
+
+  # Sets the radius of rounded window corners. When > 0, the compositor will
+  # round the corners of windows. Does not interact well with
+  # `transparent-clipping`.
+  #
+  # Default: 0 (disabled)
+  corner-radius = 0
+
+  #################################
+  #            Blur               #
+  #################################
+
+  # Parameters for background blurring, see BLUR section in the man page for more information.
+  blur-method = "gaussian"
+  blur-size = 10
+  #
+  blur-deviation = 5
+  #
+  blur-strength = 9
+
+  # Blur background of semi-transparent / ARGB windows.
+  # Can be set per-window using rules.
+  #
+  # Default: false
+  blur-background = true
+
+  # Blur background of windows when the window frame is not opaque.
+  # Implies:
+  #    blur-background
+  #
+  # Default: false
+  blur-background-frame = true
+
+  # Use fixed blur strength rather than adjusting according to window opacity.
+  #
+  # Default: false
+  # blur-background-fixed = false
+
+
+  # Specify the blur convolution kernel, with the following format:
+  # example:
+  #   blur-kern = "5,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1";
+  # Can also be a pre-defined kernel, see the man page.
+  #
+  # Default: ""
+  blur-kern = "11x11gaussian";
+
+  #################################
+  #       General Settings        #
+  #################################
+
+  # Enable remote control via D-Bus. See the man page for more details.
+  #
+  # Default: false
+  # dbus = true
+
+  # Daemonize process. Fork to background after initialization. Causes issues with certain (badly-written) drivers.
+  # daemon = false
+
+  # Specify the backend to use: `xrender`, `glx`, or `egl`.
+  #
+  # Default: "xrender"
+  backend = "glx"
+
+  # Use higher precision during rendering, and apply dither when presenting the
+  # rendered screen. Reduces banding artifacts, but may cause performance
+  # degradation. Only works with OpenGL.
+  dithered-present = false;
+
+  # Enable/disable VSync.
+  #
+  # Default: false
+  vsync = true;
+
+  # Try to detect windows with rounded corners and don't consider them
+  # shaped windows. The accuracy is not very high, unfortunately.
+  #
+  # Has nothing to do with `corner-radius`.
+  #
+  # Default: false
+  detect-rounded-corners = true;
+
+  # Detect '_NET_WM_WINDOW_OPACITY' on client windows, useful for window managers
+  # not passing '_NET_WM_WINDOW_OPACITY' of client windows to frame windows.
+  #
+  # Default: false
+  detect-client-opacity = true;
+
+  # Use EWMH '_NET_ACTIVE_WINDOW' to determine currently focused window,
+  # rather than listening to 'FocusIn'/'FocusOut' event. May be more accurate,
+  # provided that the WM supports it.
+  #
+  # Default: false
+  # use-ewmh-active-win = false
+
+  # Unredirect all windows if a full-screen opaque window is detected,
+  # to maximize performance for full-screen windows. Known to cause flickering
+  # when redirecting/unredirecting windows.
+  #
+  # Default: false
+  # unredir-if-possible = false
+
+  # Delay before unredirecting the window, in milliseconds.
+  #
+  # Default: 0.
+  # unredir-if-possible-delay = 0
+
+  # Use 'WM_TRANSIENT_FOR' to group windows, and consider windows
+  # in the same group focused at the same time.
+  #
+  # Default: false
+  detect-transient = true;
+
+  # Use 'WM_CLIENT_LEADER' to group windows, and consider windows in the same
+  # group focused at the same time. This usually means windows from the same application
+  # will be considered focused or unfocused at the same time.
+  # 'WM_TRANSIENT_FOR' has higher priority if detect-transient is enabled, too.
+  #
+  # Default: false
+  # detect-client-leader = false
+
+  # Use of damage information for rendering. This cause the only the part of the
+  # screen that has actually changed to be redrawn, instead of the whole screen
+  # every time. Should improve performance.
+  #
+  # Default: false
+  use-damage = true;
+
+  # Use X Sync fence to wait for the completion of rendering of other windows,
+  # before using their content to render the current screen.
+  #
+  # Required for explicit sync drivers, such as nvidia.
+  #
+  # Default: false
+  # xrender-sync-fence = false
+
+  # GLX backend: Use specified GLSL fragment shader for rendering window
+  # contents. Read the man page for a detailed explanation of the interface.
+  #
+  # Can be set per-window using rules.
+  #
+  # window-shader-fg = "default"
+
+  # Force all windows to be painted with blending. Useful if you
+  # have a `window-shader-fg` that could turn opaque pixels transparent.
+  #
+  # Default: false
+  # force-win-blend = false
+
+  # Do not use EWMH to detect fullscreen windows.
+  # Reverts to checking if a window is fullscreen based only on its size and coordinates.
+  #
+  # Default: false
+  # no-ewmh-fullscreen = false
+
+  # Dimming bright windows so their brightness doesn't exceed this set value.
+  # Brightness of a window is estimated by averaging all pixels in the window,
+  # so this could comes with a performance hit.
+  # Setting this to 1.0 disables this behaviour. Requires --use-damage to be disabled.
+  #
+  # Default: 1.0 (disabled)
+  # max-brightness = 1.0
+
+  # Make transparent windows clip other windows like non-transparent windows do,
+  # instead of blending on top of them. e.g. placing a transparent window on top
+  # of another window will cut a "hole" in that window, and show the desktop background
+  # underneath.
+  #
+  # Default: false
+  # transparent-clipping = false
+
+  # Set the log level. Possible values are:
+  #  "trace", "debug", "info", "warn", "error"
+  # in increasing level of importance. Case insensitive.
+  # If using the "TRACE" log level, it's better to log into a file
+  # using *--log-file*, since it can generate a huge stream of logs.
+  #
+  # Default: "warn"
+  # log-level = "warn";
+
+  # Set the log file.
+  # If *--log-file* is never specified, logs will be written to stderr.
+  # Otherwise, logs will to written to the given file, though some of the early
+  # logs might still be written to the stderr.
+  # When setting this option from the config file, it is recommended to use an absolute path.
+  #
+  # log-file = "/path/to/your/log/file"
+
+  # Write process ID to a file.
+  # write-pid-path = "/path/to/your/log/file"
+
+  # Rule-based per-window options.
+  #
+  # See WINDOW RULES section in the man page for how these work.
+  rules: ({
+    match = "window_type = 'tooltip'";
+    fade = false;
+    shadow = false;
+    opacity = 0.75;
+    full-shadow = false;
+  }, {
+    match = "window_type = 'dock'    || "
+            "window_type = 'desktop' || "
+            "_GTK_FRAME_EXTENTS@";
+    shadow = false;
+    clip-shadow-above = true;
+    blur-background = false;
+  }, {
+    match = "window_type != 'dock'";
+    # shader = "my_shader.frag";
+  }, {
+    match = "window_type = 'dnd'";
+    shadow = false;
+  }, {
+    match = "window_type = 'menu'";
+    shadow = false;
+  }, {
+    match = "window_type = 'popup_menu'";
+    shadow = false;
+    opacity = 0.8;
+  }, {
+    match = "window_type = 'dropdown_menu'";
+    shadow = false;
+    opacity = 0.8;
+  }, {
+    match = "window_type = 'dock' || "
+            "window_type = 'desktop'";
+    corner-radius = 0;
+  }, {
+    match = "name = 'Notification'   || "
+            "class_g = 'Conky'       || "
+            "class_g ?= 'Notify-osd' || "
+            "class_g = 'Cairo-clock' || "
+            "class_g = 'Librewolf' || "
+            "class_g = 'firefox-esr' || "
+            "_GTK_FRAME_EXTENTS@";
+    shadow = false;
+  }, {
+    match =  "0:_NET_WM_STATE@[*]:a = '_NET_WM_STATE_HIDDEN'";
+    opacity = 1;
+  })
+#+end_src
+
+*** Polybar
+Sert à afficher une barre contenant les numéros de bureau, l'heure, la date, le systemtray. Celui qui vient de base avec i3 fait très bien le travail et est très stable, mais les options de personnalisation sont plutôt limitées.
+
+À cause de certain problèmes avec les versions des dépôts de bookworm, notamment en ce qui a trait à la gestion du systemtray, j'utilise une version que je compile manuellement.
+
+**** Installation
+Voir [[https://github.com/polybar/polybar/wiki/Compiling][Compiling · polybar/polybar Wiki · GitHub]].
+
+**** Configuration
+
+*** Rofi
+:LOGBOOK:
+- Note taken on [2024-11-14 Thu 14:20] \\
+  Eventually, implement a modus like theme to Rofi.
+:END:
+Pour le momen
+
+*** STARTED betterlockscreen
+:LOGBOOK:
+- State "STARTED"    from              [2024-11-14 Thu 21:22]
+:END:
+Version amélioré de i3lock basée sur i3lock-color. Peut difficilement être configurée mais la version par défaut est parfaite.
+
+**** Dépendances
+Il faut d'abord installer i3lock-color. En date du 20241110, ce paquet n'est pas disponible dans les dépôts de bookworm et il faut le compiler manuellement.
+
+Il faut commencer par l'installation des dépendances:
+#+begin_src shell :tangle no
+  sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
+#+end_src
+
+Ensuite, il on peut procéder au build. Il faut d'abord clôner le dépôt:
+
+#+begin_src shell :tangle no
+  cd Git/
+  git clone https://github.com/Raymo111/i3lock-color.git
+  cd i3lock-color
+#+end_src
+
+Et commencer le build et l'installation de i3lock-color:
+
+#+begin_src shell :tangle no
+  ./install-i3lock-color.sh
+#+end_src
+
+Pour plus d'informations, voir [[https://github.com/Raymo111/i3lock-color][GitHub - Raymo111/i3lock-color: The world's most popular non-default computer lockscreen.]].
+
+En plus de i3lock-color, il est nécessaire d'avoir les dépendances suivantes:
+
+#+begin_src shell :tangle no
+  sudo apt install imagemagick bc feh
+#+end_src
+
+**** Installation
+Les développeurs de betterlockscreen ont développé un script pour l'installation. Il suffit d'entrer la commande suivante pour une installation sur tout le système:
+
+#+begin_src shell :tangle no
+  wget https://raw.githubusercontent.com/betterlockscreen/betterlockscreen/main/install.sh -O - -q | sudo bash -s system
+#+end_src
+
+Pour s'assurer que betterlockscreen soit activé lorsque l'ordinateur tombe en veille, il est nécessaire d'ajouter un service avec systemd. D'abord, il faut télécharger le fichier de github et le déplacer dans le bon dossier:
+
+#+begin_src shell :tangle no
+  wget https://raw.githubusercontent.com/betterlockscreen/betterlockscreen/refs/heads/next/system/betterlockscreen%40.service
+  sudo mv betterlockscreen@.service /usr/lib/systemd/system/
+#+end_src
+
+Ensuite, il est possible d'activer le service:
+
+#+begin_src shell :tangle no
+  systemctl enable betterlockscreen@$USER
+#+end_src
+
+Enfin, pour permettre à l'ordinateur de se mettre en veille automatiquement, il est nécessaire d'utiliser xautolock (sur Xorg):
+
+#+begin_src shell :tangle no
+  sudo apt install xautolock
+#+end_src
+
+La prise en charge de xautolock est prise en charge dans la configuration de i3.
+
+**** Utilisation
+Pour sélectionner une image précise pour l'arrière plan avec un effet de dim:
+
+#+begin_src shell :tangle no
+  betterlockscreen -u ~/Wallpapers/image.png --fx dim
+#+end_src
+ mettre le jour le fond d'écran avec l'image du lockscreen:
+
+#+begin_src shell :tangle no
+  betterlockscreen -w
+#+end_src
+
+Pour sélectionner une image aléatoire dans mon dossier de fonds d'écran:
+
+#+begin_src shell :tangle no
+  betterlockscreen -u Pictures/Wallpapers
+#+end_src
+
+Pour plus d'informations, voir [[https://github.com/betterlockscreen/betterlockscreen?tab=readme-ov-file][GitHub - betterlockscreen/betterlockscreen: 🍀 sweet looking lockscreen for linux system]].
+
+*** TODO Alacritty
+Mon choix de terminal avec i3 et sur Windows. J'utilise une version compilée.
+
+#+begin_src conf :tangle .config/alacritty/alacritty.toml
+  [general]
+  import = ["/home/frdrcv/.config/alacritty/themes/modus-vivendi.toml"]
+
+  [font]
+  size = 11.0
+
+  [font.normal]
+  family = "Iosevka Comfy Fixed"
+  style = "Regular"
+
+  [window]
+  opacity = 0.5
+
+  [window.padding]
+  x = 15
+  y = 15
+
+  [selection]
+  save_to_clipboard = true
+#+end_src
+
+*** TODO zsh
+
+**** Installation
+
+Installing powerlevel10k (see [[https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#for-new-users][GitHub - romkatv/powerlevel10k: A Zsh theme]])
+
+#+begin_src shell
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+#+end_src
+
+Installing zoxide
+#+begin_src shell
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+#+end_src
+
+Il peut être nécessaire de faire cette commande pour activer zoxide sur un nouvel ordinateur après l'avoir installé.
+#+begin_src shell
+rm ~/.zcompdump*; compinit
+#+end_src
+
+Pour l'intégration avec Emacs, on peut installer le paquet suivant:
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; (use-package zoxide
+  ;;   :ensure t)
+  ;; ;  (define-key evil-normal-state-map "gz" 'zoxide-find-file)
+#+end_src
+
+Once installed, we have to switch from bash:
+#+begin_src shell
+chsh -s /bin/zsh
+#+end_src
+
+
+#+begin_src conf :tangle .zshrc
+  # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+  # Initialization code that may require console input (password prompts, [y/n]
+  # confirmations, etc.) must go above this block; everything else may go below.
+
+  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  fi
+
+  export PATH=$HOME/bin:/usr/local/bin:/home/frdrcv/.local/bin:$PATH
+
+  HISTFILE=~/.zsh_history
+  HISTSIZE=10000
+  SAVEHIST=10000
+  setopt appendhistory
+
+  source ~/powerlevel10k/powerlevel10k.zsh-theme
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  source /usr/share/doc/fzf/examples/completion.zsh
+
+  # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+  typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+  # Aliases
+
+  # Terminal
+  alias c="clear"
+  alias x="exit"
+  alias e="code -n ~/ ~/.zshrc ~/.aliases ~/.colors ~/.hooks"
+  alias r="source ~/.zshrc"
+
+  # APT
+  alias ai="sudo apt install"
+  alias au="sudo apt update"
+  alias ass="sudo apt search"
+  alias aug="sudo apt upgrade"
+  alias alu="sudo apt list --upgradable"
+  alias adu="sudo apt dist-upgrade"
+
+  # Vim mode
+  # bindkey -v
+
+  # Eat integration
+  [ -n "$EAT_SHELL_INTEGRATION_DIR" ] && \
+    source "$EAT_SHELL_INTEGRATION_DIR/zsh"
+
+  # Variable for hledger
+  export LEDGER_FILE=~/Documentos/finances/2024.journal
+
+  # Enabling zoxide
+  eval "$(zoxide init zsh)"
+#+end_src
+
+**** =fzf=
+I often use =fzf= in conjunction with =zsh= outside Emacs. It is available in Debian repositories.
+#+begin_src shell
+  sudo apt install fzf
+#+end_src
+
+Once installed, the following lines in .zshrc should enable =fzf= with =zsh=. This is for older versions of =fzf= and will probably have to chance in Debian 13.
+#+begin_src conf :tangle .zshrc
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  source /usr/share/doc/fzf/examples/completion.zsh
+#+end_src
+
+This is the code that is used for more recent versions of =fzf=. It will be useful in the future.
+#+begin_src conf :tangle nil
+  source <(fzf --zsh)
+  # Set up fzf key bindings and fuzzy completion
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#+end_src
+
+*** TODO Copyq
+Logiciel utilisé pour la gestion du presse-papier en-dehors de Emacs. Voir si une meilleure intégration est possible.
+
+#+begin_src shell :tangle no
+  sudo apt install copyq
+#+end_src
+
+** TODO Sway
+À utiliser éventuellement avec le Yoga. Voir [[https://www.getrichordevtryin.com/sway.html][Sway - Get Rich or Dev Tryin']].
+
+*** Configuration
+
+*** TODO Foot
+Logiciel par défaut qui semble être proposé avec Sway. À voir s'il s'agit d'une alternative intéressante à Alacritty.
+
+** TODO Gnome
+** TODO XFCE4
+** TODO GTK
+*** lxappearance
+Utilisé pour gérer l'apparence des applications GUI, à défaut de maintenir une configutation en fichier texte pour GTK 2, 3 et 4.
+
+#+begin_src shell :tangle no
+  sudo apt install lxappearance
+#+end_src
+
+***** TODO Voir si je peux me départir de lxappearance
+
+** TODO QT
+* Services
+Logiciels qui fonctionnent en backgroup, peu importe l'environnement que j'utilise.
+
+** Syncthing
+J'utilise la version qui vient par défaut des les dépôt de Debian comme elle offre tout ce que j'ai de besoin. Je n'ai pas besoin de la version GTK.
+
+#+begin_src shell :tangle no
+  sudo apt install syncthing
+#+end_src
+
+Après l'installation il est nécessaire d'activer un service avec systemd.
+
+#+begin_src shell :tangle no
+  systemctl enable syncthing@frdrcv.service
+  systemctl start syncthing@frdrcv.service
+#+end_src
+
+Syncthing peut être accédé par la suite par http://127.0.0.1:8384.
+
+* Polices
+En plus des polices par défaut de Linux, j'utilise certaines polices supplémentaires.
+
+Une fois une police ajoutée, il faut mettre à jour le cache:
+
+#+begin_src shell :tangle no
+  fc-cache -f -v
+#+end_src
+
+** TODO Iosevka
+
+** TODO Atkinson Hyperlegible
+
+** TODO Meslo
+Recommandé pour [[https://github.com/romkatv/powerlevel10k][GitHub - romkatv/powerlevel10k: A Zsh theme]].
+
+* Other tools
+** Git
+
+Pour configurer les autres logiciels, il convient de commencer par obtenir Git.
+
+#+begin_src shell :tangle no
+
+  sudo apt install git
+
+#+end_src
+
+Ensuite, il vaut mieux configurer tout de suite les comptes pour github:
+
+#+begin_src shell :tangle no
+
+  git config --global user.name "user_name"
+  git config --global user.email "email_id"
+
+#+end_src
+
+Il faut également importer la clé privée. Pour l'exporter d'un de mes ordinateurs:
+
+#+begin_src shell :tangle no
+
+  gpg --list-secret-keys
+  gpg --export-secret-keys -a <key-ID> > myprivkey.gpg
+
+#+end_src
+
+Une fois la clé transférée sur le bon ordinateur, il suffit de l'importer.
+
+#+begin_src shell :tangle no
+
+  gpg --import <privkey.gpg> 
+   gpg --list-secret-keys
+
+#+end_src
+
+Si jamais j'ai besoin d'envoyer ma clé publique à quelqu'un, voici comment procéder:
+#+begin_src shell :tangle no
+
+  gpg --list-keys
+  gpg --export -a <key-ID> > mypubkey.gpg
+
+#+end_src
+
+Pour plus d'informations, voir [[https://thelinuxcode.com/export-import-keys-with-gpg/][How to Export and Import Keys with GPG: An Expert’s In-Depth Guide – TheLinuxCode]]
+** MPV
+L'article [[https://mbork.pl/2022-10-24_Playing_videos_from_the_last_position_in_mpv][Marcin Borkowski: 2022-10-24 Playing videos from the last position in mpv]] 
+** Python
+:PROPERTIES:
+:ID:       f0102501-dcfe-4beb-b381-9fab14757911
+:END:
+Some software requires Pip for installation. To install it, we simply need to use apt since it is in the official repositories. More recent versions are also available, see [[https://phoenixnap.com/kb/install-pip-debian-12][How to Install Pip on Debian 12]].
+#+begin_src shell
+  sudo apt install python3-pip -y
+#+end_src
+
+** WAITING Latex
+:LOGBOOK:
+- Note taken on [2024-11-16 Sat 12:07] \\
+  It seems that the minted package now works but causes some problem with this file's exports with Latex. I will have to look into it eventually.
+:END:
+It is probably overkill, but since space nor time are not issues for me, I prefer to install a full texlive environment. It can be installed from Debian's repos.
+#+begin_src shell
+  sudo apt install texlive-full
+#+end_src
+
+By default, Org will use the =verbatim= environement for source blocks, which doesn't break lines. Instead, we can use the =minted= package to fix this issue and add syntax highlighting (see [[https://emacs.stackexchange.com/a/33018][org mode - How to word wrap within code blocks - Emacs Stack Exchange]]). =minted= depends on =Pygments= to work (see [[https://pygments.org/][Welcome! — Pygments]]), so we have to install it first. 
+#+begin_src shell
+  sudo apt install python3-pygments
+#+end_src
+
+Here are the =org= settings to use =minted= instead of =verbatim= (see [[https://emacs.stackexchange.com/a/27984][syntax highlighting - Export code blocks in org-mode with minted environment - Emacs Stack Exchange]]).
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq org-latex-listings 'minted
+	org-latex-packages-alist '(("" "minted"))
+	org-latex-pdf-process
+	'("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+	  "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+#+end_src
+
+To enable breaklines, we can use these settings:
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq org-latex-minted-options '(("breaklines" "true")
+				   ("breakanywhere" "true")))
+#+end_src
+
+** Flameshot
+** VPN
+For work I am using a vpn connection to get access to my remote desktop computer. We use openvpn to do so, which requires a few extra steps on Debian (see [[https://bbs.archlinux.org/viewtopic.php?pid=1550578#p1550578][[SOLVED] 'org.freedesktop.NetworkManager.openvpn' not installed / Networking, Server, and Protection / Arch Linux Forums]]). First, we need to install a plugin for NetworkManager:
+#+begin_src shell
+sudo apt install network-manager-openvpn
+#+end_src
+
+Even if this plugin is installed, the configuration screen of NetworkManager Applet won't give any options to import a ovpn file nor will it allow me to edit a pre-existing ovpn configuration if it was imported from the terminal. The only solution that seems to work at the moment is to install a gnome plugin according to this page: [[https://forums.linuxmint.com/viewtopic.php?t=175270][Solution to VPN [no valid VPN secrets] problem (LM 17) - Linux Mint Forums]]. Let's install it:
+#+begin_src shell
+sudo apt install network-manager-openvpn-gnome
+#+end_src
+
+** Zoom
+#+begin_src shell
+flatpak install us.zoom.Zoom
+#+end_src
+
+** Bottles
+#+begin_src shell
+flatpak install com.usebottles.bottles
+#+end_src
+
+** Espanso
+**** Installation
+Espanso could be installed on Debian with a home-made deb file provided from espanso's website, here : [[https://espanso.org/docs/install/linux/#deb-x11][Install on Linux | Espanso]]. Sadly, those instructions don't work on Debian 12.
+#+begin_src sh
+  wget https://github.com/espanso/espanso/releases/download/v2.2.1/espanso-debian-x11-amd64.deb &&
+  sudo apt install ./espanso-debian-x11-amd64.deb
+#+end_src
+
+Instead, the working solution is to use the appimage by following these instructions:
+#+begin_src shell
+  # Create the $HOME/opt destination folder
+  mkdir -p ~/opt
+  # Download the AppImage inside it
+  wget -O ~/opt/Espanso.AppImage 'https://github.com/espanso/espanso/releases/download/v2.2.1/Espanso-X11.AppImage'
+  # Make it executable
+  chmod u+x ~/opt/Espanso.AppImage
+  # Create the "espanso" command alias
+  sudo ~/opt/Espanso.AppImage env-path register
+#+end_src
+
+Once installed, the service has to be registered.
+#+begin_src shell
+  # Register espanso as a systemd service (required only once)
+  espanso service register
+  # Start espanso
+  espanso start
+#+end_src
+
+** Librewolf
+Even though I find that the ESR version of Firefox offered by default on Debian is doing a fine job and that I could use it perfectly well, I would prefer to use the more privacy inclined Librewolf as my main browser. Both browser are set up in the same way, so ESR can be a good fallback if I encounter problems with the less stable experience offered by Librewolf.
+
+To install it with flatpak and set it as default:
+#+begin_src shell
+  flatpak install flathub io.gitlab.librewolf-community
+  xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop
+#+end_src
+
+** Virtualbox
+As far as it goes, on 11/20/2024, the normal installation process doesn't work. I managed to make virtualbox work with these instructions : [[https://linuxiac.com/how-to-install-virtualbox-on-debian-12-bookworm/][How to Install VirtualBox on Debian 12 (Bookworm)]].
+
+** Zotero
+Il n'y a malheureusement pas de paquets /backports/ disponible sur Debian Bookworm pour Zotero et il ne semble pas exister de paquets dans les dépôts réguliers. Il est donc nécessaire d'installer Zotero manuellement ou d'utiliser Flatpak. J'ai choisi cette deuxième option.
+#+begin_src shell
+  flatpak install flathub org.zotero.Zotero
+#+end_src
+
+Comme j'ai une quantité très importante d'articles et d'autres références en format =.pdf= et que l'espace offert gratuitement par Zotero est très limité, je m'occupe moi-même de la gestion des pièces jointes. J'ai quand même un compte Zotero mais ce dernier ne sert qu'à synchroniser les entrées bibliographiques, qui sont elles-mêmes exportées automatiquement en fichier =.bib=. Avant de pouvoir aller trop loin, il est nécessaire de se connecter pour récupérer la liste de références.
+
+Pour que ce système fonctionne, il est nécessaire d'installer certains plugins. Notamment, pour la gestion des pièces jointes, j'utilise =zotmoov= qui remplace =zotfile= des anciennes versions de Zotero.
+
+*** =zotmoov=
+:PROPERTIES:
+:ID:       47bd99d2-7cff-4706-97e3-0e9ed67f18f5
+:END:
+Le plugin est disponible ici: [[https://github.com/wileyyugioh/zotmoov][GitHub - wileyyugioh/zotmoov: Zotero plugin to automatically move attachments and link them]]. Une fois installé, il est nécessaire de cocher toutes les options dans le menu de configuration, choisir le bon dossier pour déplacer les fichiers, et choisir comme patron pour les noms des sous-dossiers ={%A}=.
+
+*** =Better BibTeX=
+:PROPERTIES:
+:ID:       263bcff2-32ad-4aa3-9b32-dab4b7b47b02
+:END:
+Le plugin peut être récupéré à la page suivante: [[https://github.com/retorquere/zotero-better-bibtex][GitHub - retorquere/zotero-better-bibtex: Make Zotero effective for us LaTeX holdouts]].
+Une fois celui-ci installé, un export des préférences peut être importé de mon dossier =Sync=, synchronisé par =Syncthing=. Les options sont nombreuses et pour éviter les erreur il vaut vraiment mieux importer et exporter les préférence. Aussi, avant que le plugin puisse faire l'exportation automatique de la bibliographie, il faut faire une première exportation manuelle.
+
+** STARTED Calibre
+:LOGBOOK:
+- State "STARTED"    from              [2024-12-13 Fri 15:09]
+:END:
+Bien qu'il existe des paquets pour installer Calibre dans les dépôts de la plupart des distributions Linux, les développeurs de Calibre ne considèrent que la dernière version disponible sur le site internet comme version fonctionnelle. Pour l'installer et la mettre à jour, il suffit d'utiliser la commande suivante:
+#+begin_src shell
+  sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+#+end_src
+
+J'utilise également quelques plugins pour m'assurer que les fichiers epubs soient automatiquement transférés en tant que fichiers kepub qui sont mieux supportés par les liseuses Kobo, ainsi que le plugin =annotations= pour pouvoir importer les annotations de ma tablette. Voir l'article [[https://theaccountabilityblog.com/how-to-export-highlights-annotations-from-a-kobo-device/][How to Export Highlights & Annotations from a Kobo Device - the accountability blog]].
+
+** TODO Anki
+
+*** COMMENT Installation
+Le code utilisé est mis en commentaire pour éviter que le paquet soit constamment mis à jour à chaque ouverture de Emacs, s'il y a un nouveau commit. Il doit y avoir une meilleure manière de faire les choses mais, considérant l'arrivée prochaine de Emacs 30, je ne souhaite pas trouver une solution rendue caduc dans quelques mois.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (package-vc-install
+   '(anki-editor . (:url "https://github.com/anki-editor/anki-editor")))
+#+end_src
+
+*** Configuration du paquet
+Le gros de la configuration est reprise [[https://yiufung.net/post/anki-org/][de cet article]] par Cheong Yiufung.
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package anki-editor
+    :after org
+    :bind (:map org-mode-map
+                ("<f12>" . anki-editor-cloze-region-auto-incr)
+                ("<f11>" . anki-editor-cloze-region-dont-incr)
+                ("<f10>" . anki-editor-reset-cloze-number)
+                ("<f9>"  . anki-editor-push-tree))
+    :hook (org-capture-after-finalize . anki-editor-reset-cloze-number) ; Reset cloze-number after each capture.
+    :config
+    (setq anki-editor-create-decks t ;; Allow anki-editor to create a new deck if it doesn't exist
+          anki-editor-org-tags-as-anki-tags t)
+
+    (defun anki-editor-cloze-region-auto-incr (&optional arg)
+      "Cloze region without hint and increase card number."
+      (interactive)
+      (anki-editor-cloze-region my-anki-editor-cloze-number "")
+      (setq my-anki-editor-cloze-number (1+ my-anki-editor-cloze-number))
+      (forward-sexp))
+    (defun anki-editor-cloze-region-dont-incr (&optional arg)
+      "Cloze region without hint using the previous card number."
+      (interactive)
+      (anki-editor-cloze-region (1- my-anki-editor-cloze-number) "")
+      (forward-sexp))
+    (defun anki-editor-reset-cloze-number (&optional arg)
+      "Reset cloze number to ARG or 1"
+      (interactive)
+      (setq my-anki-editor-cloze-number (or arg 1)))
+    (defun anki-editor-push-tree ()
+      "Push all notes under a tree."
+      (interactive)
+      (anki-editor-push-notes '(4))
+      (anki-editor-reset-cloze-number))
+    ;; Initialize
+    (anki-editor-reset-cloze-number)
+    )
+#+end_src
+
+*** Anki et =org-capture=
+Encore une fois, j'emprunte cette idée de Cheong Yiufung.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; Org-capture templates
+  (setq org-my-anki-file "~/Git/my-anki-decks/anki.org")
+  (add-to-list 'org-capture-templates
+               '("a" "Anki"))
+  (add-to-list 'org-capture-templates
+               '("ae" "Anki basic español"
+                 entry
+                 (file+headline org-my-anki-file "Dispatch Shelf")
+                 "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: Español::Espagnol personnel\n:END:\n** Front\n%?\n** Back\n%x\n"))
+  (add-to-list 'org-capture-templates
+               '("aE" "Anki cloze español"
+                 entry
+                 (file+headline org-my-anki-file "Dispatch Shelf")
+                 "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Cloze\n:ANKI_DECK: Español::Espagnol personnel\n:END:\n** Text\n%x\n** Extra\n"))
+  (add-to-list 'org-capture-templates
+               '("as" "Anki basic esperanto"
+                 entry
+                 (file+headline org-my-anki-file "Dispatch Shelf")
+                 "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: Esperanto::Esperanto personnel\n:END:\n** Front\n%?\n** Back\n%x\n"))
+  (add-to-list 'org-capture-templates
+               '("aS" "Anki cloze esperanto"
+                 entry
+                 (file+headline org-my-anki-file "Dispatch Shelf")
+                 "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Cloze\n:ANKI_DECK: Esperanto::Esperanto personnel\n:END:\n** Text\n%x\n** Extra\n"))
+  (add-to-list 'org-capture-templates
+               '("ag" "Anki basic general"
+                 entry
+                 (file+headline org-my-anki-file "Dispatch Shelf")
+                 "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: Général\n:END:\n** Front\n%?\n** Back\n%x\n"))
+  (add-to-list 'org-capture-templates
+               '("aG" "Anki cloze general"
+                 entry
+                 (file+headline org-my-anki-file "Dispatch Shelf")
+                 "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Cloze\n:ANKI_DECK: Général\n:END:\n** Text\n%x\n** Extra\n"))
+
+  ;; Allow Emacs to access content from clipboard.
+  (setq x-select-enable-clipboard t
+        x-select-enable-primary t)
+#+end_src
+* Post-install things
+After a clean reinstall of Debian (or if I decide to try another distribution) here are additional things that need to be done.
+
+** Auto-mounting additional drives
+As of late 2024, my desktop computer has 2 drives, once used for Data storage, mostly games. To make sure this drive is available for Steam, here are the steps to follow.
+
+First, we need to get the UUID of the drive.
+#+begin_src shell
+  sudo blkid
+#+end_src
+
+And then create the mountpoint for the drive.
+#+begin_src shell
+  sudo mkdir /mnt/data
+#+end_src
+
+And updating the =/etc/fstab= file with the information from =blkid= and the mountpoint we just created.
+#+begin_src shell
+  UUID=20bdfff4-b615-4f23-93c7-dcc3b5825548       /mnt/data       ext4    defaults        0       2
+#+end_src
+
+** Making a =udev= rule to make my keyboard usable with VIA
+To install VIA to set up the keyboard, we have to install the latest version from here, a deb file is available here: [[https://github.com/the-via/releases/releases][Releases · the-via/releases · GitHub]].
+
+Once installed, we have to create a =udev= rule. First edit this file:
+#+begin_src shell
+  sudo vi /etc/udev/rules.d/99-vial.rules
+#+end_src
+
+And then paste this content:
+#+begin_src shell
+  # Keebio Iris Rev. 8
+  KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="cb10", ATTRS{idProduct}=="8256", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+#+end_src
+
+Once the rule is created, we can reload the rules.
+#+begin_src shell
+  sudo udevadm control --reload-rules && udevadm trigger
+#+end_src
+
+** Changing some keybinds with =keyd=
+#+begin_src emacs-lisp
+  [ids]
+
+  *
+
+  [main]
+
+  shift = oneshot(shift)
+  meta = meta
+  control = oneshot(control)
+  rightcontrol = layer(nav)
+  leftcontrol = layer(nav)
+
+  leftalt = oneshot(alt)
+  rightalt = oneshot(altgr)
+
+  # capslock = overload(control, esc)
+  capslock = oneshot(control)
+  insert = S-insert
+
+  [control]
+
+  capslock = toggle(control)
+
+  [nav]
+  h = left
+  j = down
+  k = up
+  l = right
+  o = pageup
+  p = pagedown
+#+end_src
+
+** TODO Automatically start ssh agent
+See [[https://www.getrichordevtryin.com/demarrer-ssh-agent-automatiquement.html][Démarrer ssh-agent automatiquement - Get Rich or Dev Tryin']].
+#+begin_src conf :tangle .config/systemd/user/ssh-agent.service
+  [Unit]
+  Description=SSH key agent
+
+  [Service]
+  Type=forking
+  Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+  ExecStart=/usr/bin/ssh-agent -a $SSH_AUTH_SOCK
+
+  [Install]
+  WantedBy=default.target
+#+end_src
+
+Ensuite, il faut exporter la variable pour le service:
+#+begin_src conf :tangle .zprofile
+  export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
+#+end_src
+
+Et ensuite on peut démarrer et activer le service:
+#+begin_src shell
+  systemctl --user start ssh-agent.service
+  systemctl --user enable ssh-agent.service
+#+end_src
+
+Enfin, il faut ajouter ceci à la configuration de SSH:
+#+begin_src conf :tangle .ssh/config
+  Host *
+      AddKeysToAgent yes
+      IdentityFile ~/.ssh/id_rsa
+#+end_src
+
+# Local Variables:
+# jinx-local-words: "backports"
+# End:

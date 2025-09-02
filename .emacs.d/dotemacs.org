@@ -1,0 +1,91 @@
+#+title: Emacs configuration
+#+author: Frédéric Vachon
+#+property: header-args:emacs-lisp :mkdirp yes
+#+STARTUP: content indent
+
+This is a new configuration for my own personal use of Emacs starting
+on September 1st of 2025. After a few years of playing with Emacs,
+using distributions, and copying code from a variety of sources, I've
+decided it was finally time to start afresh and actually write my very
+own personal configuration. I'll probably keep on integrating code
+from other configurations, but the goal is to be more careful and
+meticulous in my use of external code. Hopefully, this configuration
+will remain short enough to be manageable for me, considering my
+limited time and abilities. This whole decision is partly inspired by
+Jake's video on Emacs Bankruptcy which can be watched here: [[https://www.youtube.com/watch?v=dSlMmCD5quc&t=200s][Emacs
+bankruptcy – fix your Emacs and your life]].
+
+This configuration takes inspiration of a few Emacs users I've been
+following over the years and I would like to thank them for their
+contribution.
+- Protesilaos Stravou
+
+* TODO Early initialisation of Emacs (=early-init.el=)
+
+This is a new concept to me as I didn't use an =early-init.el= file
+before. From my understanding, since Emacs 27, this file is used to
+push configuration that are loaded very early during Emacs'
+initialization.
+
+I took heavy inspiration (understand, copying) from Prot's own
+configuration here, removing what seems to be pertinent in my own
+situation. I kept some settings useful in a tiling window manager
+configuration, like frame-resize-pixelwise, even though I tend to only
+use Gnome these days. Sway may make a return someday and I would
+rather avoid having to play with these settings later on.
+
+#+begin_src emacs-lisp :tangle "early-init.el"
+  (setq frame-resize-pixelwise t
+        frame-title-format '("%b")	; Name of file as the title of the frame
+        use-file-dialog nil
+        use-short-answers t
+        inhibit-startup-screen t
+        inhibit-x-resources t
+        inhibit-startup-echo-area-message user-login-name
+        inhibit-startup-buffer-menu t)
+#+end_src
+
+* TODO Emacs settings (=init.el=)
+
+In this larger part of my configuration, I list out all the settings
+that are part of the normal initialisation process.
+
+** TODO Emacs essential settings
+
+Considering I work on multiple machines, sometimes at the same time,
+and that I rely on Git for many config files, I prefer to
+automatically revert the buffers I'm using (files and dired buffers
+for example.
+
+** TODO Emacs windows settings
+
+I used to use a =M-o= to switch window quickly but in line with my
+goal of keeping things minimal and to stay close to Emacs' defaults, I
+want to get used to =C-x o=. I also used to use a package called
+=balanced-windows= but again I'm tempted to stay away from it for the
+moment, and get used to the command =C-x +=.
+#+begin_src emacs-lisp :tangle "init.el"
+
+#+end_src
+
+* TODO External packages settings (=init.el=)
+
+I decided to create a separate this from the precedent section to keep
+a closer eye on the specific packages I'm adding to my
+configuration. We will see if this will remain a sensible option as
+the configuration grows.
+
+* TODO Git
+
+For git, I tend to prefer Magit even though it is probably overkill
+considering my limited use of git in general. I do enjoy how the tool
+is structured and until I take the time to learn emacs own way of
+managing git and other software like this, I'll keep on using Magit.
+
+#+begin_src emacs-lisp :tangle "init.el"
+  (use-package magit
+    :ensure t)
+
+  (add-hook 'magit-process-find-password-functions
+  	  'magit-process-password-auth-source)
+#+end_src
