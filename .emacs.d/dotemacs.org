@@ -64,12 +64,72 @@ should help with faster boot time.
 (setq garbage-collection-messages nil)
 #+end_src
 
+Some settings related to packages, taken directly from crafted-emacs modules about early-init.
+
+#+begin_src emacs-lisp :tangle early-init.el
+
+  (require 'package)
+
+  ;;; Setup Emacs Lisp Package Archives (ELPAs)
+  ;; where to get packages to install
+  (when (version< emacs-version "28")
+    (add-to-list 'package-archives '("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+  (add-to-list 'package-archives '("stable" . "https://stable.melpa.org/packages/"))
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+
+  ;;; Configure ELPA priorities
+  ;; Prefer GNU sources and stable versions before development versions from MELPA.
+  (customize-set-variable 'package-archive-priorities
+                          '(("gnu"    . 99)   ; prefer GNU packages
+                            ("nongnu" . 80)   ; use non-gnu packages if
+                                          ; not found in GNU elpa
+                            ("stable" . 70)   ; prefer "released" versions
+                                          ; from melpa
+                            ("melpa"  . 0)))  ; if all else fails, get it
+                                          ; from melpa
+#+end_src
+
 * TODO Emacs settings (=init.el=)
 
 In this larger part of my configuration, I list out all the settings
 that are part of the normal initialisation process.
 
+** TODO Setting Use-package
+#+begin_src emacs-lisp :tangle init.el
+  ;; Built-in since Emacs 29
+  (require 'use-package)
+#+end_src
+
 ** TODO Emacs essential settings
+
+To use vertico at its fullest, it's better to set this package so
+history isn't lost when restarting Emacs.
+
+#+begin_src emacs-lisp :tangle "init.el"
+  (use-package savehist
+    :init
+    (savehist-mode))
+#+end_src
+
+Again for Vertico, we do need to change some configuration.
+
+#+begin_src emacs-lisp :tangle init.el
+;; Emacs minibuffer configurations.
+(use-package emacs
+  :custom
+  ;; Enable context menu. `vertico-multiform-mode' adds a menu in the minibuffer
+  ;; to switch display modes.
+  (context-menu-mode t)
+  ;; Support opening new minibuffers from inside existing minibuffers.
+  (enable-recursive-minibuffers t)
+  ;; Hide commands in M-x which do not work in the current mode.  Vertico
+  ;; commands are hidden in normal buffers. This setting is useful beyond
+  ;; Vertico.
+  (read-extended-command-predicate #'command-completion-default-include-p)
+  ;; Do not allow the cursor in the minibuffer prompt
+  (minibuffer-prompt-properties
+   '(read-only t cursor-intangible t face minibuffer-prompt)))
+#+end_src
 
 Considering I work on multiple machines, sometimes at the same time,
 and that I rely on Git for many config files, I prefer to
@@ -159,6 +219,21 @@ managing git and other software like this, I'll keep on using Magit.
   	  'magit-process-password-auth-source)
 #+end_src
 
+** TODO Vertico
+
+#+begin_src emacs-lisp :tangle init.el
+  ;; Enable Vertico.
+  (use-package vertico
+    :ensure t
+    :custom
+    ;; (vertico-scroll-margin 0) ;; Different scroll margin
+    ;; (vertico-count 20) ;; Show more candidates
+    ;; (vertico-resize t) ;; Grow and shrink the Vertico minibuffer
+    (vertico-cycle t) ;; Enable cycling for `vertico-next/previous'
+    :init
+    (vertico-mode))
+#+end_src
+
 ** TODO Orderless
 
 An essential external package. Allows to have more relevant results
@@ -174,6 +249,25 @@ when searching for something since order is not an issue anymore.
      '((file (styles partial-completion)))))
 #+end_src
 
+** TODO Marginalia
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package marginalia
+    ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
+    ;; available in the *Completions* buffer, add it to the
+    ;; `completion-list-mode-map'.
+    :bind (:map minibuffer-local-map
+           ("M-A" . marginalia-cycle))
+
+    ;; The :init section is always executed.
+    :init
+
+    ;; Marginalia must be activated in the :init section of use-package such that
+    ;; the mode gets enabled right away. Note that this forces loading the
+    ;; package.
+    (marginalia-mode))
+#+end_src
+
 ** TODO Org-mode
 
 *** TODO Org-tempo
@@ -182,12 +276,11 @@ This package allows us, at least, to add a few more templates to write
 quickly environments in an org file.
 #+begin_src emacs-lisp :tangle "init.el"
   (use-package org-tempo
-    :ensure nil
     :after org
     :config
     (dolist (item '(("sh" . "src shell")
 		    ("el" . "src emacs-lisp")
-		    ("cel" . "src emacs-lisp :tangle "init.el"")
+		    ("cel" . "src emacs-lisp :tangle init.el")
 		    ("cco" . "src conf :tangle DIR")
 		    ("py" . "src python")))
       (add-to-list 'org-structure-template-alist item)))
