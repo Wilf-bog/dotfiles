@@ -35,3 +35,14 @@
   (completion-category-defaults nil)
   (completion-category-overrides
    '((file (styles partial-completion)))))
+
+(use-package org-tempo
+  :ensure nil
+  :after org
+  :config
+  (dolist (item '(("sh" . "src shell")
+		    ("el" . "src emacs-lisp")
+		    ("cel" . "src emacs-lisp :tangle .emacs.d/init.el")
+		    ("cco" . "src conf :tangle DIR")
+		    ("py" . "src python")))
+    (add-to-list 'org-structure-template-alist item)))
