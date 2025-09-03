@@ -42,7 +42,26 @@ rather avoid having to play with these settings later on.
         inhibit-startup-screen t
         inhibit-x-resources t
         inhibit-startup-echo-area-message user-login-name
-        inhibit-startup-buffer-menu t)
+        inhibit-startup-buffer-menu t
+        visible-bell t
+        )
+#+end_src
+
+To make things faster at startup and for my own personal preferences,
+I disable early on the GUI parts of emacs.
+
+#+begin_src emacs-lisp :tangle "early-init.el"
+  (push '(menu-bar-lines . 0) default-frame-alist)
+  (push '(tool-bar-lines . 0) default-frame-alist)
+  (push '(vertical-scroll-bars . nil) default-frame-alist)
+#+end_src
+
+This is mysterious for me, but these settings for garbage-collection
+should help with faster boot time.
+
+#+begin_src emacs-lisp :tangle "early-init.el"
+(setq gc-cons-threshold (* 10 128 1024 1024))
+(setq garbage-collection-messages nil)
 #+end_src
 
 * TODO Emacs settings (=init.el=)
@@ -57,6 +76,16 @@ and that I rely on Git for many config files, I prefer to
 automatically revert the buffers I'm using (files and dired buffers
 for example.
 
+** Emacs custom-file
+
+Departing from Emacs Writing Studio defaults, I prefer to stop using
+Emacs' config file way of managing settings. Like Prot, I ask Emacs to
+rely a temporary file that won't be automatically reloaded.
+
+#+begin_src emacs-lisp :tangle "init.el"
+(setq custom-file (make-temp-file "emacs-custom-"))
+#+end_src
+
 ** TODO Emacs windows settings
 
 I used to use a =M-o= to switch window quickly but in line with my
@@ -68,14 +97,54 @@ moment, and get used to the command =C-x +=.
 
 #+end_src
 
+** TODO Usepackage settings
+
+For the moment, my configuration rely only on usepackage that I find
+intuiive. I do usually rely on MELPA for certain packages.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; Set package archives
+
+  (use-package package
+    :config
+    (add-to-list 'package-archives
+                 '("melpa" . "https://melpa.org/packages/"))
+    (package-initialize))
+
+  ;; Package Management
+
+  (use-package use-package
+    :custom
+    (use-package-always-ensure nil)	; older config had it true.
+    (package-native-compile t)
+    (warning-minimum-level :emergency))
+#+end_src
+
+** TODO Emacs theme settings
+
+To avoid getting asked about trusting themes, we can tell it to treat
+all themes as safe by default. I use only a few themes.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (setq custom-safe-themes t)
+#+end_src
+
+For now, I'm running =modus-vivendi-tinted=. I do intend on
+reimplementing a function to automatically switch between a dark and
+light theme depending on GNOME's settings.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (load-theme 'modus-vivendi-tinted :no-confirm)
+#+end_src
+
 * TODO External packages settings (=init.el=)
 
-I decided to create a separate this from the precedent section to keep
+I decided to create a separate section this from the precedent to keep
 a closer eye on the specific packages I'm adding to my
 configuration. We will see if this will remain a sensible option as
 the configuration grows.
 
-* TODO Git
+** TODO Git
 
 For git, I tend to prefer Magit even though it is probably overkill
 considering my limited use of git in general. I do enjoy how the tool
@@ -88,4 +157,19 @@ managing git and other software like this, I'll keep on using Magit.
 
   (add-hook 'magit-process-find-password-functions
   	  'magit-process-password-auth-source)
+#+end_src
+
+** TODO Orderless
+
+An essential external package. Allows to have more relevant results
+when searching for something since order is not an issue anymore.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package orderless
+    :ensure t
+    :custom
+    (completion-styles '(orderless basic))
+    (completion-category-defaults nil)
+    (completion-category-overrides
+     '((file (styles partial-completion)))))
 #+end_src
