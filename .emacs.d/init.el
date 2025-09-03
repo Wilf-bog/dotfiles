@@ -45,6 +45,19 @@
 
 (load-theme 'modus-vivendi-tinted :no-confirm)
 
+;; Recent files
+
+(use-package recentf
+  :config
+  (recentf-mode t)
+  (run-at-time nil (* 5 60)
+               (lambda () (let ((save-silently t))
+                            (recentf-save-list))))
+  :custom
+  (recentf-max-saved-items 50)
+  :bind
+  (("C-c w r" . recentf-open)))
+
 (use-package magit
   :ensure t)
 
