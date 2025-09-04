@@ -464,6 +464,9 @@ configurate correctly.
 ** TODO Minibuffer
 *** TODO Vertico
 
+Vertico has been my favorite package to expand vertically the
+minibuffer.
+
 #+begin_src emacs-lisp :tangle init.el
   ;; Enable Vertico.
   (use-package vertico
