@@ -25,6 +25,13 @@
 
 
 
+(use-package tab-bar
+  :ensure nil
+  :config
+  (setq tab-bar-new-button-show nil)
+  (setq tab-bar-close-button-show nil)
+  (setq tab-bar-show 1))
+
 ;; Set package archives
 
 (use-package package

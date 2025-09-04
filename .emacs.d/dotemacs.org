@@ -157,6 +157,25 @@ moment, and get used to the command =C-x +=.
 
 #+end_src
 
+** Emacs tabs
+
+I used to use tabs with the defaults options, which means the tabs are
+shown when used, and a button is used to delete tabs and another, to
+create a new one. By digging into Prot's configurations, I found out
+that it could be better to hide those buttons to avoid using the mouse
+for tabs management and learning the correct keybindings. We will see
+if it is actually useful since I do intend on trying to use Prot's
+package ~beframe~.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package tab-bar
+    :ensure nil
+    :config
+    (setq tab-bar-new-button-show nil)
+    (setq tab-bar-close-button-show nil)
+    (setq tab-bar-show 1))
+#+end_src
+
 ** TODO Usepackage settings
 
 For the moment, my configuration rely only on usepackage that I find
