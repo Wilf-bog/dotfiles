@@ -298,6 +298,11 @@
 		    ("py" . "src python")))
     (add-to-list 'org-structure-template-alist item)))
 
+(use-package org-modern
+  :ensure t
+  :hook
+  (org-mode . org-modern-mode))
+
 (use-package embark
   :ensure t
 

@@ -505,6 +505,17 @@ quickly environments in an org file.
       (add-to-list 'org-structure-template-alist item)))
 #+end_src
 
+*** TODO Org-modern
+
+This package improves the general look of Org.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package org-modern
+    :ensure t
+    :hook
+    (org-mode . org-modern-mode))
+#+end_src
+
 ** TODO Other
 *** TODO Embark
 #+begin_src emacs-lisp :tangle init.el
