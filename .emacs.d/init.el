@@ -143,6 +143,22 @@
   :config
   (consult-denote-mode 1))
 
+(use-package denote-silo
+  :ensure t
+  ;; Bind these commands to key bindings of your choice.
+  :commands ( denote-silo-create-note
+              denote-silo-open-or-create
+              denote-silo-select-silo-then-command
+              denote-silo-dired
+              denote-silo-cd )
+  :config
+  ;; Add your silos to this list.  By default, it only includes the
+  ;; value of the variable `denote-directory'.
+  (setq denote-silo-directories
+        (list denote-directory
+              "~/Documentos/notes/"
+              "~/Documentos/notes-exaequo/")))
+
 (use-package dired-preview
   :ensure t
   :hook (dired . dired-preview)
