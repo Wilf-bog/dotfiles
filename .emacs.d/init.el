@@ -129,6 +129,7 @@
   (denote-rename-buffer-mode 1))
 
 (use-package dired-preview
+  :ensure t
   :hook (dired . dired-preview)
   :config
   (setq dired-preview-delay 0.7

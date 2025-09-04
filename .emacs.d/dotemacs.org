@@ -307,10 +307,11 @@ managing git and other software like this, I'll keep on using Magit.
 
 ** TODO Dired
 #+begin_src emacs-lisp :tangle init.el
-    (use-package dired-preview
-      :hook (dired . dired-preview)
-      :config
-      (setq dired-preview-delay 0.7
+  (use-package dired-preview
+    :ensure t
+    :hook (dired . dired-preview)
+    :config
+    (setq dired-preview-delay 0.7
   	  dired-preview-max-size (expt 6 20)
   	  dired-preview-ignored-extensions-regexp (concat "\\."
   							  "\\(gz\\|"
@@ -323,8 +324,8 @@ managing git and other software like this, I'll keep on using Magit.
   							  "epub"
   							  "\\)"))
 
-      ;; Enable `dired-preview-mode' in a given Dired buffer or do it ;; globally:
-      (dired-preview-global-mode 1))
+    ;; Enable `dired-preview-mode' in a given Dired buffer or do it ;; globally:
+    (dired-preview-global-mode 1))
 #+end_src
 ** TODO Minibuffer
 *** TODO Vertico
