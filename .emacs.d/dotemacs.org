@@ -400,6 +400,29 @@ configuration.
     ;; Read the doc string of `denote-journal-title-format'.
     (setq denote-journal-title-format 'day-date-month-year))
 #+end_src
+
+** TODO Themes
+
+*** TODO COMMENT Theme-buffet
+
+To explore, but allows to automatically switch themes.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package theme-buffet
+        :after (modus-themes ef-themes)  ; add your favorite themes here
+        :init
+        ;; variable below needs to be set when you just want to use the timers mins/hours
+        (setq theme-buffet-menu 'modus-ef) ; changing default value from built-in to modus-ef
+        :config
+        ;;; one of the three below can be uncommented
+        ;; (theme-buffet-modus-ef)
+        ;; (theme-buffet-built-in)
+        ;; (theme-buffet-end-user)
+        ;;; two additional timers are available for theme change, both can be set
+        (theme-buffet-timer-mins 25)  ; change theme every 25m from now, similar below
+        (theme-buffet-timer-hours 2))
+#+end_src
+
 ** TODO Dired
 #+begin_src emacs-lisp :tangle init.el
   (use-package dired-preview
