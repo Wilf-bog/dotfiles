@@ -401,6 +401,17 @@ configuration.
     (setq denote-journal-title-format 'day-date-month-year))
 #+end_src
 
+** TODO Citar
+
+*** TODO General configuration
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package citar
+    :ensure t
+    :custom
+    (citar-bibliography '("~/Documentos/library/library.bib")))
+#+end_src
+
 ** TODO Themes
 
 *** TODO COMMENT Theme-buffet

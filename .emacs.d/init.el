@@ -179,6 +179,11 @@
     denote-org-dblock-insert-missing-links
     denote-org-dblock-insert-files-as-headings))
 
+(use-package citar
+  :ensure t
+  :custom
+  (citar-bibliography '("~/Documentos/library/library.bib")))
+
 (use-package dired-preview
   :ensure t
   :hook (dired . dired-preview)
