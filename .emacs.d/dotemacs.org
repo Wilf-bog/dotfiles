@@ -423,6 +423,11 @@ To explore, but allows to automatically switch themes.
         (theme-buffet-timer-hours 2))
 #+end_src
 
+** TODO Fonts
+
+To set the font, I used to use ~mixed-pitch~. I'll to look into
+configurate correctly.
+
 ** TODO Dired
 #+begin_src emacs-lisp :tangle init.el
   (use-package dired-preview
