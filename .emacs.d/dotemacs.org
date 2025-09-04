@@ -605,3 +605,46 @@ readability) by adding padding as the name implies.
     :init
     (spacious-padding-mode 1))
 #+end_src
+*** TODO COMMENT Beframe
+
+Eventually I would like to give ~beframe~ a try, but for now, this is
+only Prot's configuration I'll need to dig into.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package beframe
+    :ensure t
+    :hook (after-init . beframe-mode)
+    :config
+    (setq beframe-functions-in-frames '(project-prompt-project-dir))
+
+    ;; I use this instead of :bind because I am binding a keymap and the
+    ;; way `use-package' does it is by wrapping a lambda around it that
+    ;; then breaks `describe-key' for those keys.
+    (prot-emacs-keybind global-map
+  		      ;; Override the `set-fill-column' that I have no use for.
+  		      "C-x f" #'other-frame-prefix
+  		      ;; Bind Beframe commands to a prefix key. Notice the -map as I am
+  		      ;; binding keymap here, not a command.
+  		      "C-c b" #'beframe-prefix-map
+  		      ;; Replace the generic `buffer-menu'.  With a prefix argument, this
+  		      ;; commands prompts for a frame.  Call the `buffer-menu' via M-x if
+  		      ;; you absolutely need the global list of buffers.
+  		      "C-x C-b" #'beframe-buffer-menu
+  		      ;; Not specific to Beframe, but since it renames frames (by means
+  		      ;; of `beframe-mode') it is appropriate to have this here:
+  		      "C-x B" #'select-frame-by-name)
+
+    ;; Integration with the `consult-buffer' command.  It will show only
+    ;; buffers from the current frame.  To view all buffers, first input
+    ;; a space at the empty minibuffer prompt.  This enables the "hidden
+    ;; buffers" view.
+    (with-eval-after-load 'consult
+      (defun consult-beframe-buffer-list (&optional frame)
+        "Return the list of buffers from `beframe-buffer-names' sorted by visibility.
+  With optional argument FRAME, return the list of buffers of FRAME.
+
+  For use in `consult-buffer-list'."
+        (beframe-buffer-list frame :sort #'beframe-buffer-sort-visibility))
+
+      (setq consult-buffer-list #'consult-beframe-buffer-list)))
+#+end_src
