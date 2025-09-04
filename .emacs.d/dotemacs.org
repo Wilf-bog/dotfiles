@@ -375,6 +375,31 @@ managing git and other software like this, I'll keep on using Magit.
       denote-org-dblock-insert-missing-links
       denote-org-dblock-insert-files-as-headings))
 #+end_src
+*** TODO COMMENT Denote journal
+
+A package to manage a daily journal with Denote. I'm still not sure I
+want to use this, but for the moment, here is the default
+configuration.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package denote-journal
+    :ensure t
+    ;; Bind those to some key for your convenience.
+    :commands ( denote-journal-new-entry
+                denote-journal-new-or-existing-entry
+                denote-journal-link-or-create-entry )
+    :hook (calendar-mode . denote-journal-calendar-mode)
+    :config
+    ;; Use the "journal" subdirectory of the `denote-directory'.  Set this
+    ;; to nil to use the `denote-directory' instead.
+    (setq denote-journal-directory
+          (expand-file-name "journal" denote-directory))
+    ;; Default keyword for new journal entries. It can also be a list of
+    ;; strings.
+    (setq denote-journal-keyword "journal")
+    ;; Read the doc string of `denote-journal-title-format'.
+    (setq denote-journal-title-format 'day-date-month-year))
+#+end_src
 ** TODO Dired
 #+begin_src emacs-lisp :tangle init.el
   (use-package dired-preview
