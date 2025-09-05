@@ -126,6 +126,21 @@
 	  (put-text-property path-start path-end
 			     'invisible 'dired-hide-details-information)))))
 
+(use-package dired
+  :hook ((dired-mode . dired-hide-details-mode)
+	 (dired-after-readin . hide-dired-details-include-all-subdir-paths))
+  :ensure nil
+  :commands
+  (dired dired-jump)
+  :custom
+  (dired-listing-switches
+   "-goah --group-directories-first --time-style=long-iso")
+  (dired-dwim-target t)
+  (delete-by-moving-to-trash t)
+  :init
+  (put 'dired-find-alternate-file 'disabled nil))
+(autoload 'dired-omit-mode "dired-x")
+
 (use-package magit
   :ensure t)
 

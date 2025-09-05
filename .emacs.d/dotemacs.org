@@ -326,7 +326,7 @@ define it first before adding it to Dired's configuration.
 
 And now, dired's configuration.
 
-#+begin_src emacs-lisp :tangle .emacs.d/init.el
+#+begin_src emacs-lisp :tangle init.el
   (use-package dired
     :hook ((dired-mode . dired-hide-details-mode)
   	 (dired-after-readin . hide-dired-details-include-all-subdir-paths))
