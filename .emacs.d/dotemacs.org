@@ -20,7 +20,7 @@ following over the years and I would like to thank them for their
 contribution.
 - Protesilaos Stravou
 
-* TODO Early initialisation of Emacs (=early-init.el=)
+* Early initialisation of Emacs (=early-init.el=)
 
 This is a new concept to me as I didn't use an =early-init.el= file
 before. From my understanding, since Emacs 27, this file is used to
@@ -64,7 +64,8 @@ should help with faster boot time.
 (setq garbage-collection-messages nil)
 #+end_src
 
-Some settings related to packages, taken directly from crafted-emacs modules about early-init.
+Some settings related to packages, taken directly from crafted-emacs
+modules about early-init.
 
 #+begin_src emacs-lisp :tangle early-init.el
 
@@ -92,15 +93,20 @@ Some settings related to packages, taken directly from crafted-emacs modules abo
 * TODO Emacs settings (=init.el=)
 
 In this larger part of my configuration, I list out all the settings
-that are part of the normal initialisation process.
+that are part of the normal initialisation process as well as settings
+proper to Emacs' own packages.
 
-** TODO Setting Use-package
+** Setting Use-package
+
+First, this line force the use of use-package. I'm not sure if it is
+necessary anymore but it doesn't hurt to keep it (as far as I know).
+
 #+begin_src emacs-lisp :tangle init.el
   ;; Built-in since Emacs 29
   (require 'use-package)
 #+end_src
 
-** TODO Emacs essential settings
+** Vertico related emacs settings
 
 To use vertico at its fullest, it's better to set this package so
 history isn't lost when restarting Emacs.
@@ -131,31 +137,35 @@ Again for Vertico, we do need to change some configuration.
    '(read-only t cursor-intangible t face minibuffer-prompt)))
 #+end_src
 
+** Emacs settings about reverting
+
 Considering I work on multiple machines, sometimes at the same time,
 and that I rely on Git for many config files, I prefer to
 automatically revert the buffers I'm using (files and dired buffers
 for example.
 
 #+begin_src emacs-lisp :tangle init.el
-
   ;; Revert buffers when the underlying file has changed
-
   (global-auto-revert-mode 1)
   
   ;; Revert Dired and other buffers
-
   (setq global-auto-revert-non-file-buffers t)
 
   ;; Auto-save mode for org files
-
   (auto-save-visited-mode +1)
   (setq auto-save-visited-predicate
 	(lambda () (eq major-mode 'org-mode)))
-
 #+end_src
 
+** Using ibuffer for the buffer list
+
 I rarely make a list of buffers (with =C-x C-b=) but clearly,
-~ibuffer~ is a better tool so let's use it instead for that purpose.
+~ibuffer~ is a better tool so let's use it instead for that purpose. I
+could give it a try more regularly.
+
+Based on Prot's video, this can be very powerful to edit multiple
+buffers at the same time, combined with occur for example. See:
+https://www.youtube.com/watch?v=6KN_oSLFf-k.
 
 #+begin_src emacs-lisp :tangle init.el
   (global-set-key [remap list-buffers] 'ibuffer)
@@ -171,16 +181,17 @@ rely a temporary file that won't be automatically reloaded.
 (setq custom-file (make-temp-file "emacs-custom-"))
 #+end_src
 
-** TODO Emacs windows settings
+** Emacs windows settings
 
 I used to use a =M-o= to switch window quickly but in line with my
 goal of keeping things minimal and to stay close to Emacs' defaults, I
 want to get used to =C-x o=. I also used to use a package called
 =balanced-windows= but again I'm tempted to stay away from it for the
-moment, and get used to the command =C-x +=.
-#+begin_src emacs-lisp :tangle "init.el"
+moment, and get used to the command =C-x += which is the default
+keybinding to balance windows.
 
-#+end_src
+For now, no settings are changed until I decide I want to go back to
+my old ways.
 
 ** Emacs tabs
 
