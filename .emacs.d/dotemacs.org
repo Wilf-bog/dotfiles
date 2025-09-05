@@ -215,16 +215,15 @@ package ~beframe~.
 ** TODO Usepackage settings
 
 For the moment, my configuration rely only on usepackage that I find
-intuiive. I do usually rely on MELPA for certain packages.
+intuitive. To avoid dealing with long init time, I manually add ensure
+to all cases of use-package when it's pertinent.
 
 #+begin_src emacs-lisp :tangle "init.el"
   ;; Set package archives
 
-  (use-package package
-    :config
-    (add-to-list 'package-archives
-                 '("melpa" . "https://melpa.org/packages/"))
-    (package-initialize))
+  ;; (use-package package
+  ;;   :config
+  ;;   (package-initialize))
 
   ;; Package Management
 
@@ -243,6 +242,7 @@ all themes as safe by default. I use only a few themes.
 #+begin_src emacs-lisp :tangle "init.el"
   (setq custom-safe-themes t)
 #+end_src
+
 *** Modus themes
 
 I absolutely love Prot's modus-themes, especially modus-vivendi. I
@@ -266,10 +266,14 @@ inspired by ~Emacs Writing Studio~.
      ("C-c t s" . consult-theme)))
 #+end_src
 
-*** TODO Auto-dark
+*** TODO Ef themes
+I really like those teams to make a change of Modus themes. There is
+some configuration to be done though.
+
+*** Auto-dark
 
 I do prefer to switch theme based on light conditions, with Gnome. For
-this, I rely on the Auto-dark package.
+this, I rely on the Auto-dark package. So far it works perfectly well.
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package auto-dark
@@ -278,21 +282,16 @@ this, I rely on the Auto-dark package.
     (auto-dark-themes '((modus-vivendi) (modus-operandi)))
     (auto-dark-polling-interval-seconds 5)
     (auto-dark-allow-powershell nil)
-    ;; (auto-dark-detection-method nil) ;; dangerous to be set manually
-    :hook
-    (auto-dark-dark-mode
-     . (lambda ()
-         ;; something to execute when dark mode is detected
-         ))
-    (auto-dark-light-mode
-     . (lambda ()
-         ;; something to execute when light mode is detected
-         ))
     :init (auto-dark-mode))
 #+end_src
-** TODO Recent files
 
+** Recent files
 
+Emacs Writing Studio used to introduce some basic settings and
+especially a keybinding to list recently edited files. Considering
+~consult-buffer~ does a great job to present me the recently edited
+file, I didn't had a need for a specific keybinding. Prot's settings
+seem perfectly good for my own needs, with a few minor tweaks.
 
 #+begin_src emacs-lisp :tangle init.el
   ;; Recent files
@@ -302,15 +301,15 @@ this, I rely on the Auto-dark package.
     :hook (after-init . recentf-mode)
     :config
     (setq recentf-max-saved-items 100)
-    (setq recentf-max-menu-items 25) ; I don't use the `menu-bar-mode', but this is good to know
     (setq recentf-save-file-modes nil)
     (setq recentf-keep nil)
     (setq recentf-auto-cleanup nil)
     (setq recentf-initialize-file-name-history nil)
     (setq recentf-filename-handlers nil)
-    (setq recentf-show-file-shortcuts-flag nil))
+    (setq recentf-show-file-shortcuts-flag nil)) ; I don't use the recentf tool.
 #+end_src
-** TODO Dired
+
+** Dired
 
 Dired is my main non-GUI file manager, I've really learned to
 appreciate it, though many additional settings are necessary to make
@@ -346,8 +345,9 @@ And now, dired's configuration.
     (dired dired-jump)
     :custom
     (dired-listing-switches
-     "-goah --group-directories-first --time-style=long-iso")
-    (dired-dwim-target t)
+     "-goah --group-directories-first --time-style=long-iso") ; Customizing ls
+    (dired-dwim-target t)			; Allow to move stuff from a
+  					; window to another.
     (delete-by-moving-to-trash t)
     :init
     (put 'dired-find-alternate-file 'disabled nil))

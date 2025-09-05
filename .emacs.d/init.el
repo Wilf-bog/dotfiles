@@ -22,15 +22,12 @@
    '(read-only t cursor-intangible t face minibuffer-prompt)))
 
 ;; Revert buffers when the underlying file has changed
-
 (global-auto-revert-mode 1)
 
 ;; Revert Dired and other buffers
-
 (setq global-auto-revert-non-file-buffers t)
 
 ;; Auto-save mode for org files
-
 (auto-save-visited-mode +1)
 (setq auto-save-visited-predicate
 	(lambda () (eq major-mode 'org-mode)))
@@ -38,8 +35,6 @@
 (global-set-key [remap list-buffers] 'ibuffer)
 
 (setq custom-file (make-temp-file "emacs-custom-"))
-
-
 
 (use-package tab-bar
   :ensure nil
@@ -50,11 +45,9 @@
 
 ;; Set package archives
 
-(use-package package
-  :config
-  (add-to-list 'package-archives
-               '("melpa" . "https://melpa.org/packages/"))
-  (package-initialize))
+;; (use-package package
+;;   :config
+;;   (package-initialize))
 
 ;; Package Management
 
@@ -86,16 +79,6 @@
   (auto-dark-themes '((modus-vivendi) (modus-operandi)))
   (auto-dark-polling-interval-seconds 5)
   (auto-dark-allow-powershell nil)
-  ;; (auto-dark-detection-method nil) ;; dangerous to be set manually
-  :hook
-  (auto-dark-dark-mode
-   . (lambda ()
-       ;; something to execute when dark mode is detected
-       ))
-  (auto-dark-light-mode
-   . (lambda ()
-       ;; something to execute when light mode is detected
-       ))
   :init (auto-dark-mode))
 
 ;; Recent files
@@ -105,13 +88,12 @@
   :hook (after-init . recentf-mode)
   :config
   (setq recentf-max-saved-items 100)
-  (setq recentf-max-menu-items 25) ; I don't use the `menu-bar-mode', but this is good to know
   (setq recentf-save-file-modes nil)
   (setq recentf-keep nil)
   (setq recentf-auto-cleanup nil)
   (setq recentf-initialize-file-name-history nil)
   (setq recentf-filename-handlers nil)
-  (setq recentf-show-file-shortcuts-flag nil))
+  (setq recentf-show-file-shortcuts-flag nil)) ; I don't use the recentf tool.
 
 (defun hide-dired-details-include-all-subdir-paths ()
   (save-excursion
@@ -134,8 +116,9 @@
   (dired dired-jump)
   :custom
   (dired-listing-switches
-   "-goah --group-directories-first --time-style=long-iso")
-  (dired-dwim-target t)
+   "-goah --group-directories-first --time-style=long-iso") ; Customizing ls
+  (dired-dwim-target t)			; Allow to move stuff from a
+					; window to another.
   (delete-by-moving-to-trash t)
   :init
   (put 'dired-find-alternate-file 'disabled nil))
