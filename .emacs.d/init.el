@@ -132,12 +132,6 @@
 (add-hook 'magit-process-find-password-functions
 	  'magit-process-password-auth-source)
 
-;; Remember that the website version of this manual shows the latest
-;; developments, which may not be available in the package you are
-;; using.  Instead of copying from the web site, refer to the version
-;; of the documentation that comes with your package.  Evaluate:
-;;
-;;     (info "(denote) Sample configuration")
 (use-package denote
   :ensure t
   :hook
@@ -181,7 +175,7 @@
   :config
   ;; Remember to check the doc string of each of those variables.
   (setq denote-directory (expand-file-name "~/Documentos/notes/"))
-  (setq denote-save-buffers nil)
+  (setq denote-save-buffers t)
   (setq denote-known-keywords '("emacs" "philosophy" "politics" "economics"))
   (setq denote-infer-keywords t)
   (setq denote-sort-keywords t)
@@ -212,13 +206,20 @@
               denote-silo-select-silo-then-command
               denote-silo-dired
               denote-silo-cd )
+  :bind
+  (("C-c n s n" . denote-silo-create-note)
+   ("C-c n s o" . denote-silo-open-or-create)
+   ("C-c n s s" . denote-silo-select-silo-then-command)
+   ("C-c n s d" . denote-silo-dired)
+   ("C-c n s c" . denote-silo-cd))
   :config
   ;; Add your silos to this list.  By default, it only includes the
   ;; value of the variable `denote-directory'.
   (setq denote-silo-directories
         (list denote-directory
               "~/Documentos/notes/"
-              "~/Documentos/notes-exaequo/")))
+              "~/Documentos/notes-exaequo/"
+	      "~/Imágenes/")))
 
 (use-package denote-org
   :ensure t
@@ -240,6 +241,28 @@
     denote-org-dblock-insert-missing-links
     denote-org-dblock-insert-files-as-headings))
 
+(use-package denote-journal
+  :ensure t
+  ;; Bind those to some key for your convenience.
+  :commands ( denote-journal-new-entry
+              denote-journal-new-or-existing-entry
+              denote-journal-link-or-create-entry )
+  :bind
+  (("C-c n j n" . denote-journal-new-entry)
+   ("C-c n j o" . denote-journal-new-or-existing-entry)
+   ("C-n n j l" . denote-journal-link-or-create-entry))
+  :hook (calendar-mode . denote-journal-calendar-mode)
+  :config
+  ;; Use the "journal" subdirectory of the `denote-directory'.  Set this
+  ;; to nil to use the `denote-directory' instead.
+  (setq denote-journal-directory
+        (expand-file-name "journal" denote-directory))
+  ;; Default keyword for new journal entries. It can also be a list of
+  ;; strings.
+  (setq denote-journal-keyword "journal")
+  ;; Read the doc string of `denote-journal-title-format'.
+  (setq denote-journal-title-format 'day-date-month-year))
+
 (use-package citar
   :ensure t
   :custom
@@ -254,6 +277,44 @@
   :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
   :init
   (all-the-icons-completion-mode))
+
+;; Mixed-pitch
+
+;; (use-package mixed-pitch
+;;   :ensure nil
+;;   :hook
+;;   (text-mode . mixed-pitch-mode))
+
+;;  ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
+;; (if (eq system-name 'effondrement)
+;;     (set-face-attribute 'default nil
+;; 			:family "Martian Mono"
+;; 			:height 140
+;; 			:weight 'Regular)
+;;   (set-face-attribute 'default nil
+;;                       :family "Martian Mono"
+;;                       :height 105
+;;                       :weight 'Regular))
+;; (when (eq system-type 'windows-nt)
+;;   (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
+;; (when (eq system-type 'gnu/linux)
+;;   (set-face-attribute 'variable-pitch nil :family "Adwaita Sans")) ;Font for general text
+;; (set-face-attribute 'fixed-pitch nil :family "Martian Grotesk Lt Rg") ;Font for org-mode titles?
+
+(dolist (face '(default fixed-pitch))
+  (set-face-attribute `,face nil :font "Martian Mono-10.5"))
+(set-face-attribute 'variable-pitch nil :font "Martian Grotesk-10.5")
+
+;;;;; `variable-pitch-mode' setup
+(use-package face-remap
+  :ensure nil
+  :bind ( :map ctl-x-x-map
+          ("v" . variable-pitch-mode))
+  :hook ((text-mode notmuch-show-mode elfeed-show-mode) . wilf/enable-variable-pitch)
+  :config
+  (defun wilf/enable-variable-pitch ()	;originally, named after Prot.
+    (unless (derived-mode-p 'mhtml-mode 'nxml-mode 'yaml-mode)
+      (variable-pitch-mode 1))))
 
 (use-package dired-preview
   :ensure t
@@ -431,8 +492,29 @@
 
 (use-package org-modern
   :ensure t
+  ;; :custom
+  ;; (org-modern-table nil)
+  ;; (org-modern-keyword nil)
+  ;; (org-modern-timestamp nil)
+  ;; (org-modern-priority nil)
+  ;; (org-modern-checkbox nil)
+  ;; (org-modern-tag nil)
+  ;; (org-modern-block-name nil)
+  ;; (org-modern-keyword nil)
+  ;; (org-modern-footnote nil)
+  ;; (org-modern-internal-target nil)
+  ;; (org-modern-radio-target nil)
+  ;; (org-modern-statistics nil)
+  ;; (org-modern-progress nil)
   :hook
   (org-mode . org-modern-mode))
+
+;; Show hidden emphasis markers
+
+(use-package org-appear
+  :ensure t
+  :hook
+  (org-mode . org-appear-mode))
 
 (use-package embark
   :ensure t
@@ -477,7 +559,7 @@
 (use-package spacious-padding
   :ensure t
   :custom
-  (line-spacing 2)
+  (line-spacing 3)
   (setq spacious-padding-widths
         `( :internal-border-width 15
            :header-line-width 4

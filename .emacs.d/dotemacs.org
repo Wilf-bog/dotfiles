@@ -12,8 +12,9 @@ from other configurations, but the goal is to be more careful and
 meticulous in my use of external code. Hopefully, this configuration
 will remain short enough to be manageable for me, considering my
 limited time and abilities. This whole decision is partly inspired by
-Jake's video on Emacs Bankruptcy which can be watched here: [[https://www.youtube.com/watch?v=dSlMmCD5quc&t=200s][Emacs
-bankruptcy – fix your Emacs and your life]].
+Jake's video on Emacs Bankruptcy which can be watched here:
+[[https://www.youtube.com/watch?v=dSlMmCD5quc&t=200s][Emacs bankruptcy
+– fix your Emacs and your life]].
 
 This configuration takes inspiration of a few Emacs users I've been
 following over the years and I would like to thank them for their
@@ -361,6 +362,45 @@ And now, dired's configuration.
   (autoload 'dired-omit-mode "dired-x")
 #+end_src
 
+** TODO Org
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package org
+    :custom
+    (org-startup-indented t)
+    (org-hide-emphasis-markers t)
+    (org-startup-with-inline-images t)
+    (org-image-actual-width '(450))
+    (org-fold-catch-invisible-edits 'error)
+    (org-startup-with-latex-preview t)
+    (org-pretty-entities t)
+    (org-use-sub-superscripts "{}")
+    (org-id-link-to-org-use-id t))
+  #+end_src
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  ;; Org tags
+  (setq org-tag-alist
+  	'(;; Places
+  	  ("@home" . ?H)
+  	  ("@work" . ?W)
+
+  	  ;; Activities
+  	  ("@ménage" . ?m)
+  	  ("@lecture" . ?l)
+  	  ("@planning" . ?n)
+  	  ("@writing" . ?w)
+  	  ("@creative" . ?c)
+  	  ("@écouter" . ?é)
+  	  ("@visionner" . ?v)
+  	  ("@email" . ?e)
+  	  ("@calls" . ?a)
+  	  ("@errands" . ?r)))
+
+  ;; More TODO states
+  (setq org-todo-keywords
+  	'((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w!)" "|" "DONE(d!)" "DELEGATED(é!)" "CANCELED(c!)")))
+#+end_src
+
 * TODO External packages settings (=init.el=)
 
 I decided to create a separate section this from the precedent to keep
@@ -384,14 +424,24 @@ managing git and other software like this, I'll keep on using Magit.
 #+end_src
 
 ** TODO Denote
-*** TODO Denote general configuration
+
+One of the main reason I've switched to Emacs was how great Denote
+fitted in the way I've been wanting to write notes in my daily life. I
+used to use Obsidian to do so but I didn't like the fact that it was
+closed-source first and the rather limited options offered by the
+plugins. It always seemed a bit hacky to me and I tended to loose
+control of the structure of my notes directory. Denote encourages us
+to rely on it's naming format to keep things organized and I love
+that. It may seem rather rigid, but it not limited to a vault and can
+be used in all sorts of context. I do intend to use this fantastic
+tool in the long run.
+
+*** Denote general configuration
+
+The configuration offered by default by Prot is good to me. My
+modification are rather minor.
+
 #+begin_src emacs-lisp :tangle init.el
-  ;; Remember that the website version of this manual shows the latest
-  ;; developments, which may not be available in the package you are
-  ;; using.  Instead of copying from the web site, refer to the version
-  ;; of the documentation that comes with your package.  Evaluate:
-  ;;
-  ;;     (info "(denote) Sample configuration")
   (use-package denote
     :ensure t
     :hook
@@ -435,7 +485,7 @@ managing git and other software like this, I'll keep on using Magit.
     :config
     ;; Remember to check the doc string of each of those variables.
     (setq denote-directory (expand-file-name "~/Documentos/notes/"))
-    (setq denote-save-buffers nil)
+    (setq denote-save-buffers t)
     (setq denote-known-keywords '("emacs" "philosophy" "politics" "economics"))
     (setq denote-infer-keywords t)
     (setq denote-sort-keywords t)
@@ -450,7 +500,12 @@ managing git and other software like this, I'll keep on using Magit.
     ;; Automatically rename Denote buffers using the `denote-rename-buffer-format'.
     (denote-rename-buffer-mode 1))
 #+end_src
-*** TODO Consult-denote
+
+*** Consult-denote
+
+A very useful tool to search into the main note directory. Eventually
+I would like to find a way to change the silo, but for now, it's not
+necessary.
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package consult-denote
@@ -461,7 +516,13 @@ managing git and other software like this, I'll keep on using Magit.
     :config
     (consult-denote-mode 1))
 #+end_src
-*** TODO Denote-silo
+
+*** Denote-silo
+
+Considering I'm using multiple directories to take notes, silos are a
+useful tool to manage them. I also use a specific silo to make it
+easier to tag my pictures, since I can use the function to infer
+keywords from preexisting files in the directory.
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package denote-silo
@@ -472,14 +533,22 @@ managing git and other software like this, I'll keep on using Magit.
                 denote-silo-select-silo-then-command
                 denote-silo-dired
                 denote-silo-cd )
+    :bind
+    (("C-c n s n" . denote-silo-create-note)
+     ("C-c n s o" . denote-silo-open-or-create)
+     ("C-c n s s" . denote-silo-select-silo-then-command)
+     ("C-c n s d" . denote-silo-dired)
+     ("C-c n s c" . denote-silo-cd))
     :config
     ;; Add your silos to this list.  By default, it only includes the
     ;; value of the variable `denote-directory'.
     (setq denote-silo-directories
           (list denote-directory
                 "~/Documentos/notes/"
-                "~/Documentos/notes-exaequo/")))
+                "~/Documentos/notes-exaequo/"
+  	      "~/Imágenes/")))
 #+end_src
+
 *** TODO Denote Org
 
 #+begin_src emacs-lisp :tangle init.el
@@ -503,11 +572,12 @@ managing git and other software like this, I'll keep on using Magit.
       denote-org-dblock-insert-missing-links
       denote-org-dblock-insert-files-as-headings))
 #+end_src
-*** TODO COMMENT Denote journal
+
+*** Denote journal
 
 A package to manage a daily journal with Denote. I'm still not sure I
 want to use this, but for the moment, here is the default
-configuration.
+configuration with my own keybindings.
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package denote-journal
@@ -516,6 +586,10 @@ configuration.
     :commands ( denote-journal-new-entry
                 denote-journal-new-or-existing-entry
                 denote-journal-link-or-create-entry )
+    :bind
+    (("C-c n j n" . denote-journal-new-entry)
+     ("C-c n j o" . denote-journal-new-or-existing-entry)
+     ("C-n n j l" . denote-journal-link-or-create-entry))
     :hook (calendar-mode . denote-journal-calendar-mode)
     :config
     ;; Use the "journal" subdirectory of the `denote-directory'.  Set this
@@ -584,6 +658,59 @@ change for now. Maybe it could be worth it on Windows.
     :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
     :init
     (all-the-icons-completion-mode))
+#+end_src
+
+*** TODO Fonts selection
+
+Here I am setting my fonts. There is still work to be done to make
+sure things work well with these:
+- [X] desktop computer
+- [ ] laptop computer
+- [ ] work computer
+
+#+begin_src emacs-lisp :tangle init.el
+  ;; Mixed-pitch
+
+  ;; (use-package mixed-pitch
+  ;;   :ensure nil
+  ;;   :hook
+  ;;   (text-mode . mixed-pitch-mode))
+
+  ;;  ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
+  ;; (if (eq system-name 'effondrement)
+  ;;     (set-face-attribute 'default nil
+  ;; 			:family "Martian Mono"
+  ;; 			:height 140
+  ;; 			:weight 'Regular)
+  ;;   (set-face-attribute 'default nil
+  ;;                       :family "Martian Mono"
+  ;;                       :height 105
+  ;;                       :weight 'Regular))
+  ;; (when (eq system-type 'windows-nt)
+  ;;   (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
+  ;; (when (eq system-type 'gnu/linux)
+  ;;   (set-face-attribute 'variable-pitch nil :family "Adwaita Sans")) ;Font for general text
+  ;; (set-face-attribute 'fixed-pitch nil :family "Martian Grotesk Lt Rg") ;Font for org-mode titles?
+
+  (dolist (face '(default fixed-pitch))
+    (set-face-attribute `,face nil :font "Martian Mono-10.5"))
+  (set-face-attribute 'variable-pitch nil :font "Martian Grotesk-10.5")
+#+end_src
+
+Also, to make sure I'm using variable-pitch fonts, I'm borrowing
+Prot's settings for ~face-remap~ to set which modes are to use it.
+
+#+begin_src emacs-lisp :tangle init.el
+  ;;;;; `variable-pitch-mode' setup
+  (use-package face-remap
+    :ensure nil
+    :bind ( :map ctl-x-x-map
+            ("v" . variable-pitch-mode))
+    :hook ((text-mode notmuch-show-mode elfeed-show-mode) . wilf/enable-variable-pitch)
+    :config
+    (defun wilf/enable-variable-pitch ()	;originally, named after Prot.
+      (unless (derived-mode-p 'mhtml-mode 'nxml-mode 'yaml-mode)
+        (variable-pitch-mode 1))))
 #+end_src
 
 ** TODO External packages for Dired
@@ -827,8 +954,36 @@ This package improves the general look of Org.
 #+begin_src emacs-lisp :tangle init.el
   (use-package org-modern
     :ensure t
+    ;; :custom
+    ;; (org-modern-table nil)
+    ;; (org-modern-keyword nil)
+    ;; (org-modern-timestamp nil)
+    ;; (org-modern-priority nil)
+    ;; (org-modern-checkbox nil)
+    ;; (org-modern-tag nil)
+    ;; (org-modern-block-name nil)
+    ;; (org-modern-keyword nil)
+    ;; (org-modern-footnote nil)
+    ;; (org-modern-internal-target nil)
+    ;; (org-modern-radio-target nil)
+    ;; (org-modern-statistics nil)
+    ;; (org-modern-progress nil)
     :hook
     (org-mode . org-modern-mode))
+#+end_src
+
+*** Org-appear
+
+A small package that makes it easier to edit text with formating in
+Org.
+
+#+begin_src emacs-lisp :tangle init.el
+  ;; Show hidden emphasis markers
+
+  (use-package org-appear
+    :ensure t
+    :hook
+    (org-mode . org-appear-mode))
 #+end_src
 
 ** TODO Other
@@ -883,7 +1038,7 @@ readability) by adding padding as the name implies.
   (use-package spacious-padding
     :ensure t
     :custom
-    (line-spacing 2)
+    (line-spacing 3)
     (setq spacious-padding-widths
           `( :internal-border-width 15
              :header-line-width 4
