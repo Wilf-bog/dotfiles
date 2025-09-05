@@ -136,6 +136,31 @@ and that I rely on Git for many config files, I prefer to
 automatically revert the buffers I'm using (files and dired buffers
 for example.
 
+#+begin_src emacs-lisp :tangle init.el
+
+  ;; Revert buffers when the underlying file has changed
+
+  (global-auto-revert-mode 1)
+  
+  ;; Revert Dired and other buffers
+
+  (setq global-auto-revert-non-file-buffers t)
+
+  ;; Auto-save mode for org files
+
+  (auto-save-visited-mode +1)
+  (setq auto-save-visited-predicate
+	(lambda () (eq major-mode 'org-mode)))
+
+#+end_src
+
+I rarely make a list of buffers (with =C-x C-b=) but clearly,
+~ibuffer~ is a better tool so let's use it instead for that purpose.
+
+#+begin_src emacs-lisp :tangle init.el
+  (global-set-key [remap list-buffers] 'ibuffer)
+#+end_src
+
 ** Emacs custom-file
 
 Departing from Emacs Writing Studio defaults, I prefer to stop using
@@ -207,30 +232,115 @@ all themes as safe by default. I use only a few themes.
 #+begin_src emacs-lisp :tangle "init.el"
   (setq custom-safe-themes t)
 #+end_src
+*** Modus themes
 
-For now, I'm running =modus-vivendi-tinted=. I do intend on
-reimplementing a function to automatically switch between a dark and
-light theme depending on GNOME's settings.
+I absolutely love Prot's modus-themes, especially modus-vivendi. I
+used to use to tinted version but these days I like the simplicity of
+the original. I implemented shortcuts to help me switch theme easily,
+inspired by ~Emacs Writing Studio~.
 
 #+begin_src emacs-lisp :tangle "init.el"
-  (load-theme 'modus-vivendi-tinted :no-confirm)
+  (use-package modus-themes
+    :custom
+    (modus-themes-italic-constructs t)
+    (modus-themes-bold-constructs t)
+    (modus-themes-mixed-fonts t)
+    (modus-themes-to-toggle
+     '(modus-operandi modus-vivendi))
+    :init
+    (load-theme 'modus-vivendi :no-confirm)
+    :bind
+    (("C-c t t" . modus-themes-toggle)
+     ("C-c t m" . modus-themes-select)
+     ("C-c t s" . consult-theme)))
 #+end_src
 
+*** TODO Auto-dark
+
+I do prefer to switch theme based on light conditions, with Gnome. For
+this, I rely on the Auto-dark package.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package auto-dark
+    :ensure t
+    :custom
+    (auto-dark-themes '((modus-vivendi) (modus-operandi)))
+    (auto-dark-polling-interval-seconds 5)
+    (auto-dark-allow-powershell nil)
+    ;; (auto-dark-detection-method nil) ;; dangerous to be set manually
+    :hook
+    (auto-dark-dark-mode
+     . (lambda ()
+         ;; something to execute when dark mode is detected
+         ))
+    (auto-dark-light-mode
+     . (lambda ()
+         ;; something to execute when light mode is detected
+         ))
+    :init (auto-dark-mode))
+#+end_src
 ** TODO Recent files
+
+
 
 #+begin_src emacs-lisp :tangle init.el
   ;; Recent files
 
   (use-package recentf
+    :ensure nil
+    :hook (after-init . recentf-mode)
     :config
-    (recentf-mode t)
-    (run-at-time nil (* 5 60)
-                 (lambda () (let ((save-silently t))
-                              (recentf-save-list))))
+    (setq recentf-max-saved-items 100)
+    (setq recentf-max-menu-items 25) ; I don't use the `menu-bar-mode', but this is good to know
+    (setq recentf-save-file-modes nil)
+    (setq recentf-keep nil)
+    (setq recentf-auto-cleanup nil)
+    (setq recentf-initialize-file-name-history nil)
+    (setq recentf-filename-handlers nil)
+    (setq recentf-show-file-shortcuts-flag nil))
+#+end_src
+** TODO Dired
+
+Dired is my main non-GUI file manager, I've really learned to
+appreciate it, though many additional settings are necessary to make
+it shine.
+
+First, this new function will be used to add to the normal
+~dired-hide-details-information~ function, taken from EFS guides. We
+define it first before adding it to Dired's configuration.
+
+#+begin_src emacs-lisp :tangle init.el
+  (defun hide-dired-details-include-all-subdir-paths ()
+    (save-excursion
+      (goto-char (point-min))
+      (while (re-search-forward dired-subdir-regexp nil t)
+	(let* ((match-bounds (cons (match-beginning 1) (match-end 1)))
+	       (path (file-name-directory (buffer-substring (car match-bounds)
+							    (cdr match-bounds))))
+	       (path-start (car match-bounds))
+	       (path-end (+ (car match-bounds) (length path)))
+	       (inhibit-read-only t))
+	  (put-text-property path-start path-end
+			     'invisible 'dired-hide-details-information)))))
+#+end_src
+
+And now, dired's configuration.
+
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+  (use-package dired
+    :hook ((dired-mode . dired-hide-details-mode)
+  	 (dired-after-readin . hide-dired-details-include-all-subdir-paths))
+    :ensure nil
+    :commands
+    (dired dired-jump)
     :custom
-    (recentf-max-saved-items 50)
-    :bind
-    (("C-c w r" . recentf-open)))
+    (dired-listing-switches
+     "-goah --group-directories-first --time-style=long-iso")
+    (dired-dwim-target t)
+    (delete-by-moving-to-trash t)
+    :init
+    (put 'dired-find-alternate-file 'disabled nil))
+  (autoload 'dired-omit-mode "dired-x")
 #+end_src
 
 * TODO External packages settings (=init.el=)
@@ -439,7 +549,28 @@ To explore, but allows to automatically switch themes.
 To set the font, I used to use ~mixed-pitch~. I'll to look into
 configurate correctly.
 
-** TODO Dired
+*** TODO ~all-the-icons
+
+In addition to normal fonts, I use ~all-the-icons~ to improve the look
+and usability of tools like Dired. Nerd-icons seems to be an
+alternative worth considering but I don't really have the need to
+change for now. Maybe it could be worth it on Windows.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package all-the-icons
+    :ensure t)
+
+  (use-package all-the-icons-completion
+    :ensure t
+    :after (marginalia all-the-icons)
+    :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
+    :init
+    (all-the-icons-completion-mode))
+#+end_src
+
+** TODO External packages for Dired
+*** dired-preview
+
 #+begin_src emacs-lisp :tangle init.el
   (use-package dired-preview
     :ensure t
@@ -461,6 +592,35 @@ configurate correctly.
     ;; Enable `dired-preview-mode' in a given Dired buffer or do it ;; globally:
     (dired-preview-global-mode 1))
 #+end_src
+*** all-the-icons-dired
+
+To make dired a bit more approchable with some nice icons.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package all-the-icons-dired
+    :ensure t
+    :hook (dired-mode))
+#+end_src
+*** dired-subtree
+
+Now a package I use a lot, but it can be useful when making a lot of
+changes at the same time in multiple directories or to scan them
+quickly.
+
+#+begin_src emacs-lisp :tangle .init.el
+  (use-package dired-subtree
+    :ensure t
+    :after dired
+    :bind
+    ( :map dired-mode-map
+      ("<tab>" . dired-subtree-toggle)
+      ("TAB" . dired-subtree-toggle)
+      ("<backtab>" . dired-subtree-remove)
+      ("S-TAB" . dired-subtree-remove))
+    :config
+    (setq dired-subtree-use-backgrounds nil))
+#+end_src
+
 ** TODO Minibuffer
 *** TODO Vertico
 
@@ -765,4 +925,44 @@ only Prot's configuration I'll need to dig into.
         (beframe-buffer-list frame :sort #'beframe-buffer-sort-visibility))
 
       (setq consult-buffer-list #'consult-beframe-buffer-list)))
+#+end_src
+
+** TODO Filetype specifics
+
+*** TODO PDF
+
+I do use PDFs regurarly and I appreciate the ability to access them
+easily in Emacs. PDF-tools is particularly useful on Linux.
+
+#+begin_src emacs-lisp :tangle init.el
+
+  (when (eq system-type 'gnu/linux)	;For now, pdf-tools can't be installed on Windows
+    (use-package pdf-tools
+      :config
+      (pdf-tools-install)
+      (setq-default pdf-view-display-size 'fit-page)
+      :bind (:map pdf-view-mode-map
+		  ("\\" . hydra-pdftools/body)
+		  ("<s-spc>" .  pdf-view-scroll-down-or-next-page)
+		  ("g"  . pdf-view-first-page)
+		  ("G"  . pdf-view-last-page)
+		  ("l"  . image-forward-hscroll)
+		  ("h"  . image-backward-hscroll)
+		  ("j"  . pdf-view-next-page)
+		  ("k"  . pdf-view-previous-page)
+		  ("e"  . pdf-view-goto-page)
+		  ("u"  . pdf-view-revert-buffer)
+		  ("al" . pdf-annot-list-annotations)
+		  ("ad" . pdf-annot-delete)
+		  ("aa" . pdf-annot-attachment-dired)
+		  ("am" . pdf-annot-add-markup-annotation)
+		  ("at" . pdf-annot-add-text-annotation)
+		  ("y"  . pdf-view-kill-ring-save)
+		  ("i"  . pdf-misc-display-metadata)
+		  ("s"  . pdf-occur)
+		  ("b"  . pdf-view-set-slice-from-bounding-box)
+		  ("r"  . pdf-view-reset-slice)))
+
+    (pdf-tools-install))
+
 #+end_src

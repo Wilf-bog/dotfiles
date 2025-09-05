@@ -21,6 +21,22 @@
   (minibuffer-prompt-properties
    '(read-only t cursor-intangible t face minibuffer-prompt)))
 
+;; Revert buffers when the underlying file has changed
+
+(global-auto-revert-mode 1)
+
+;; Revert Dired and other buffers
+
+(setq global-auto-revert-non-file-buffers t)
+
+;; Auto-save mode for org files
+
+(auto-save-visited-mode +1)
+(setq auto-save-visited-predicate
+	(lambda () (eq major-mode 'org-mode)))
+
+(global-set-key [remap list-buffers] 'ibuffer)
+
 (setq custom-file (make-temp-file "emacs-custom-"))
 
 
@@ -50,20 +66,65 @@
 
 (setq custom-safe-themes t)
 
-(load-theme 'modus-vivendi-tinted :no-confirm)
+(use-package modus-themes
+  :custom
+  (modus-themes-italic-constructs t)
+  (modus-themes-bold-constructs t)
+  (modus-themes-mixed-fonts t)
+  (modus-themes-to-toggle
+   '(modus-operandi modus-vivendi))
+  :init
+  (load-theme 'modus-vivendi :no-confirm)
+  :bind
+  (("C-c t t" . modus-themes-toggle)
+   ("C-c t m" . modus-themes-select)
+   ("C-c t s" . consult-theme)))
+
+(use-package auto-dark
+  :ensure t
+  :custom
+  (auto-dark-themes '((modus-vivendi) (modus-operandi)))
+  (auto-dark-polling-interval-seconds 5)
+  (auto-dark-allow-powershell nil)
+  ;; (auto-dark-detection-method nil) ;; dangerous to be set manually
+  :hook
+  (auto-dark-dark-mode
+   . (lambda ()
+       ;; something to execute when dark mode is detected
+       ))
+  (auto-dark-light-mode
+   . (lambda ()
+       ;; something to execute when light mode is detected
+       ))
+  :init (auto-dark-mode))
 
 ;; Recent files
 
 (use-package recentf
+  :ensure nil
+  :hook (after-init . recentf-mode)
   :config
-  (recentf-mode t)
-  (run-at-time nil (* 5 60)
-               (lambda () (let ((save-silently t))
-                            (recentf-save-list))))
-  :custom
-  (recentf-max-saved-items 50)
-  :bind
-  (("C-c w r" . recentf-open)))
+  (setq recentf-max-saved-items 100)
+  (setq recentf-max-menu-items 25) ; I don't use the `menu-bar-mode', but this is good to know
+  (setq recentf-save-file-modes nil)
+  (setq recentf-keep nil)
+  (setq recentf-auto-cleanup nil)
+  (setq recentf-initialize-file-name-history nil)
+  (setq recentf-filename-handlers nil)
+  (setq recentf-show-file-shortcuts-flag nil))
+
+(defun hide-dired-details-include-all-subdir-paths ()
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward dired-subdir-regexp nil t)
+	(let* ((match-bounds (cons (match-beginning 1) (match-end 1)))
+	       (path (file-name-directory (buffer-substring (car match-bounds)
+							    (cdr match-bounds))))
+	       (path-start (car match-bounds))
+	       (path-end (+ (car match-bounds) (length path)))
+	       (inhibit-read-only t))
+	  (put-text-property path-start path-end
+			     'invisible 'dired-hide-details-information)))))
 
 (use-package magit
   :ensure t)
@@ -184,6 +245,16 @@
   :custom
   (citar-bibliography '("~/Documentos/library/library.bib")))
 
+(use-package all-the-icons
+  :ensure t)
+
+(use-package all-the-icons-completion
+  :ensure t
+  :after (marginalia all-the-icons)
+  :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
+  :init
+  (all-the-icons-completion-mode))
+
 (use-package dired-preview
   :ensure t
   :hook (dired . dired-preview)
@@ -203,6 +274,10 @@
 
   ;; Enable `dired-preview-mode' in a given Dired buffer or do it ;; globally:
   (dired-preview-global-mode 1))
+
+(use-package all-the-icons-dired
+  :ensure t
+  :hook (dired-mode))
 
 ;; Enable Vertico.
 (use-package vertico
@@ -419,3 +494,32 @@
            :header-line-inactive spacious-padding-line-inactive))
   :init
   (spacious-padding-mode 1))
+
+(when (eq system-type 'gnu/linux)	;For now, pdf-tools can't be installed on Windows
+  (use-package pdf-tools
+    :config
+    (pdf-tools-install)
+    (setq-default pdf-view-display-size 'fit-page)
+    :bind (:map pdf-view-mode-map
+		  ("\\" . hydra-pdftools/body)
+		  ("<s-spc>" .  pdf-view-scroll-down-or-next-page)
+		  ("g"  . pdf-view-first-page)
+		  ("G"  . pdf-view-last-page)
+		  ("l"  . image-forward-hscroll)
+		  ("h"  . image-backward-hscroll)
+		  ("j"  . pdf-view-next-page)
+		  ("k"  . pdf-view-previous-page)
+		  ("e"  . pdf-view-goto-page)
+		  ("u"  . pdf-view-revert-buffer)
+		  ("al" . pdf-annot-list-annotations)
+		  ("ad" . pdf-annot-delete)
+		  ("aa" . pdf-annot-attachment-dired)
+		  ("am" . pdf-annot-add-markup-annotation)
+		  ("at" . pdf-annot-add-text-annotation)
+		  ("y"  . pdf-view-kill-ring-save)
+		  ("i"  . pdf-misc-display-metadata)
+		  ("s"  . pdf-occur)
+		  ("b"  . pdf-view-set-slice-from-bounding-box)
+		  ("r"  . pdf-view-reset-slice)))
+
+  (pdf-tools-install))
