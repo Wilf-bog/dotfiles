@@ -157,6 +157,13 @@ for example.
 	(lambda () (eq major-mode 'org-mode)))
 #+end_src
 
+To be able to use the newly added bookmarks, this settings make them
+immediately available.
+
+#+begin_src emacs-lisp :tangle init.el
+  (customize-set-variable 'bookmark-save-flag 1)
+#+end_src
+
 ** Using ibuffer for the buffer list
 
 I rarely make a list of buffers (with =C-x C-b=) but clearly,

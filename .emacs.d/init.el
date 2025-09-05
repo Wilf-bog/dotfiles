@@ -32,6 +32,8 @@
 (setq auto-save-visited-predicate
 	(lambda () (eq major-mode 'org-mode)))
 
+(customize-set-variable 'bookmark-save-flag 1)
+
 (global-set-key [remap list-buffers] 'ibuffer)
 
 (setq custom-file (make-temp-file "emacs-custom-"))
