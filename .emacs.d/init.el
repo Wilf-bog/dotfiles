@@ -118,6 +118,87 @@
   (put 'dired-find-alternate-file 'disabled nil))
 (autoload 'dired-omit-mode "dired-x")
 
+(use-package org
+  :custom
+  (org-startup-indented t)
+  (org-hide-emphasis-markers t)
+  (org-startup-with-inline-images t)
+  (org-image-actual-width '(450))
+  (org-fold-catch-invisible-edits 'error)
+  (org-startup-with-latex-preview t)
+  (org-pretty-entities t)
+  (org-use-sub-superscripts "{}")
+  (org-id-link-to-org-use-id t))
+
+;; Org tags
+(setq org-tag-alist
+	'(;; Places
+	  ("@home" . ?H)
+	  ("@work" . ?W)
+
+	  ;; Activities
+	  ("@ménage" . ?m)
+	  ("@lecture" . ?l)
+	  ("@planning" . ?n)
+	  ("@writing" . ?w)
+	  ("@creative" . ?c)
+	  ("@écouter" . ?é)
+	  ("@visionner" . ?v)
+	  ("@email" . ?e)
+	  ("@calls" . ?a)
+	  ("@errands" . ?r)))
+
+;; More TODO states
+(setq org-todo-keywords
+	'((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w!)" "|" "DONE(d!)" "DELEGATED(é!)" "CANCELED(c!)")))
+
+(use-package org
+  :custom
+  (org-log-into-drawer t)
+  :bind
+  (("C-c a" . org-agenda)))
+
+(setq org-agenda-files '("~/Documentos/gtd/inbox.org"
+                         "~/Documentos/gtd/gtd.org"
+                         "~/Documentos/gtd/projets.org"
+                         "~/Documentos/gtd/tickler.org"))
+
+(setq org-refile-targets '(("~/Documentos/gtd/gtd.org" :maxlevel . 3)
+                           ("~/Documentos/gtd/someday.org" :level . 1)
+                           ("~/Documentos/gtd/projets.org" :maxlevel . 5)
+                           ("~/Documentos/gtd/tickler.org" :maxlevel . 2)))
+
+;; Fleeting notes
+
+(use-package org
+  :bind
+  (("C-c c" . org-capture)
+   ("C-c l" . org-store-link)))
+
+;; Capture templates
+
+(setq org-capture-templates
+ '(("f" "Fleeting note"
+    item
+    (file+headline org-default-notes-file "Notes")
+    "- %?")
+   ("p" "Permanent note" plain
+    (file denote-last-path)
+    #'denote-org-capture
+    :no-save t
+    :immediate-finish nil
+    :kill-buffer t
+    :jump-to-captured t)
+   ("t" "New task" entry
+    (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
+    "* TODO %i%? \n %U")
+   ("r" "Read article" entry
+    (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
+    "* %i%? \n %U")
+   ("T" "Tickler" entry
+    (file+headline "~/Documentos/gtd/tickler.org" "Tickler")
+    "* TODO %i%? \n %U")))
+
 (use-package magit
   :ensure t)
 
@@ -508,6 +589,13 @@
   :hook
   (org-mode . org-appear-mode))
 
+;; Easy insertion of weblinks
+
+(use-package org-web-tools
+  :ensure t
+  :bind
+  (("C-c w w" . org-web-tools-insert-link-for-url)))
+
 (use-package embark
   :ensure t
 
@@ -577,6 +665,47 @@
   :config
   (setq jinx-languages "en_CA"))
 
+;; Read RSS feeds with Elfeed
+
+(use-package elfeed
+  :ensure t
+  :custom
+  (elfeed-db-directory
+   (expand-file-name "elfeed" user-emacs-directory))
+  (elfeed-show-entry-switch 'display-buffer)
+  :bind
+  ("C-c e" . elfeed))
+
+;; Configure Elfeed with org mode
+
+(use-package elfeed-org
+  :ensure t
+  :config
+  (elfeed-org)
+  :custom
+  (rmh-elfeed-org-files
+   (list (concat (file-name-as-directory (getenv "HOME")) "/.emacs.d/elfeed/elfeed.org"))))
+
+;; Allow better synchronization
+;; See http://babbagefiles.blogspot.com/2017/03/take-elfeed-everywhere-mobile-rss.html
+
+;;functions to support syncing .elfeed between machines
+;;makes sure elfeed reads index from disk before launching
+(defun bjm/elfeed-load-db-and-open ()
+  "Wrapper to load the elfeed db from disk before opening"
+  (interactive)
+  (elfeed-db-load)
+  (elfeed)
+  (elfeed-search-update--force)
+  (elfeed-update))
+
+;;write to disk when quiting
+(defun bjm/elfeed-save-db-and-bury ()
+  "Wrapper to save the elfeed db to disk before burying buffer"
+  (interactive)
+  (elfeed-db-save)
+  (quit-window))
+
 (when (eq system-type 'gnu/linux)	;For now, pdf-tools can't be installed on Windows
   (use-package pdf-tools
     :ensure t
@@ -603,6 +732,26 @@
 		("i"  . pdf-misc-display-metadata)
 		("s"  . pdf-occur)
 		("b"  . pdf-view-set-slice-from-bounding-box)
-		("r"  . pdf-view-reset-slice)))
+		("r"  . pdf-view-reset-slice))))
 
-  (pdf-tools-install))
+(use-package doc-view
+  :ensure nil
+  :custom
+  (doc-view-resolution 300)
+  (large-file-warning-threshold (* 50 (expt 2 20))))
+
+(use-package nov
+  :ensure t
+  :init
+  (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
+
+;; Reading LibreOffice files
+;; Fixing a bug in Org Mode pre 9.7
+;; Org mode clobbers associations with office documents
+
+(use-package ox-odt
+  :ensure nil
+  :config
+  (add-to-list 'auto-mode-alist
+               '("\\.\\(?:OD[CFIGPST]\\|od[cfigpst]\\)\\'"
+                 . doc-view-mode-maybe)))

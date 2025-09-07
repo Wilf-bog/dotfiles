@@ -6,3 +6,9 @@
   (interactive)
   (dolist (theme custom-enabled-themes)
     (disable-theme theme)))
+
+;; A function to get a list of all todos in a buffer using Occur.
+
+(defun wilf-show-todos ()
+  (interactive)
+  (occur "* TODO\\|* NEXT\\|* STARTED\\|* WAITING"))
