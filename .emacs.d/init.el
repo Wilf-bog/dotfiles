@@ -60,6 +60,13 @@
   (modus-themes-mixed-fonts t)
   (modus-themes-to-toggle
    '(modus-operandi modus-vivendi))
+  (modus-themes-variable-pitch-ui t)
+  (modus-themes-completions '((t . (bold))))
+  (modus-themes-prompts '(bold))
+  (modus-themes-headings
+      '((agenda-structure . (variable-pitch light 2.2))
+        (agenda-date . (variable-pitch regular 1.3))
+        (t . (regular 1.15))))
   :init
   (load-theme 'modus-vivendi :no-confirm)
   :bind
@@ -163,7 +170,7 @@
                          "~/Documentos/gtd/projets.org"
                          "~/Documentos/gtd/tickler.org"))
 
-(setq org-refile-targets '(("~/Documentos/gtd/gtd.org" :maxlevel . 3)
+(setq org-refile-targets '(("~/Documentos/gtd/gtd.org" :maxlevel . 2)
                            ("~/Documentos/gtd/someday.org" :level . 1)
                            ("~/Documentos/gtd/projets.org" :maxlevel . 5)
                            ("~/Documentos/gtd/tickler.org" :maxlevel . 2)))
@@ -340,6 +347,29 @@
   :ensure t
   :custom
   (citar-bibliography '("~/Documentos/library/library.bib")))
+
+(use-package ef-themes
+  :ensure t
+  :demand t
+  :bind
+  (("<f5>" . ef-themes-rotate)
+   ("C-<f5>" . ef-themes-select))
+  :config
+  (setq ef-themes-variable-pitch-ui t
+        ef-themes-mixed-fonts t
+        ef-themes-to-rotate ef-themes-items
+        ef-themes-headings ; read the manual's entry of the doc string
+        '((0 . (variable-pitch light 1.9))
+          (1 . (variable-pitch light 1.8))
+          (2 . (variable-pitch regular 1.7))
+          (3 . (variable-pitch regular 1.6))
+          (4 . (variable-pitch regular 1.5))
+          (5 . (variable-pitch 1.4)) ; absence of weight means `bold'
+          (6 . (variable-pitch 1.3))
+          (7 . (variable-pitch 1.2))
+          (agenda-date . (semilight 1.5))
+          (agenda-structure . (variable-pitch light 1.9))
+          (t . (variable-pitch 1.1)))))
 
 (use-package all-the-icons
   :ensure t)
