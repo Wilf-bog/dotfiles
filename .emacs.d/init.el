@@ -45,14 +45,6 @@
   (setq tab-bar-close-button-show nil)
   (setq tab-bar-show 1))
 
-;; Set package archives
-
-;; (use-package package
-;;   :config
-;;   (package-initialize))
-
-;; Package Management
-
 (use-package use-package
   :custom
   (use-package-always-ensure nil)	; older config had it true.
@@ -201,11 +193,11 @@
 (use-package denote-silo
   :ensure t
   ;; Bind these commands to key bindings of your choice.
-  :commands ( denote-silo-create-note
-              denote-silo-open-or-create
-              denote-silo-select-silo-then-command
-              denote-silo-dired
-              denote-silo-cd )
+  ;; :commands ( denote-silo-create-note
+  ;;             denote-silo-open-or-create
+  ;;             denote-silo-select-silo-then-command
+  ;;             denote-silo-dired
+  ;;             denote-silo-cd )
   :bind
   (("C-c n s n" . denote-silo-create-note)
    ("C-c n s o" . denote-silo-open-or-create)
@@ -583,7 +575,7 @@
   :bind (("M-$" . jinx-correct)
          ("C-M-$" . jinx-languages))
   :config
-  (setq jinx-languages "fr,es_CO,en_CA"))
+  (setq jinx-languages "en_CA"))
 
 (when (eq system-type 'gnu/linux)	;For now, pdf-tools can't be installed on Windows
   (use-package pdf-tools

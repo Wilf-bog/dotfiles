@@ -227,14 +227,6 @@ intuitive. To avoid dealing with long init time, I manually add ensure
 to all cases of use-package when it's pertinent.
 
 #+begin_src emacs-lisp :tangle "init.el"
-  ;; Set package archives
-
-  ;; (use-package package
-  ;;   :config
-  ;;   (package-initialize))
-
-  ;; Package Management
-
   (use-package use-package
     :custom
     (use-package-always-ensure nil)	; older config had it true.
@@ -412,7 +404,7 @@ the configuration grows.
 
 For git, I tend to prefer Magit even though it is probably overkill
 considering my limited use of git in general. I do enjoy how the tool
-is structured and until I take the time to learn emacs own way of
+is structured and until I take the time to learn Emacs own way of
 managing git and other software like this, I'll keep on using Magit.
 
 #+begin_src emacs-lisp :tangle "init.el"
@@ -439,7 +431,7 @@ tool in the long run.
 *** Denote general configuration
 
 The configuration offered by default by Prot is good to me. My
-modification are rather minor.
+modifications are rather minor.
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package denote
@@ -528,11 +520,11 @@ keywords from preexisting files in the directory.
   (use-package denote-silo
     :ensure t
     ;; Bind these commands to key bindings of your choice.
-    :commands ( denote-silo-create-note
-                denote-silo-open-or-create
-                denote-silo-select-silo-then-command
-                denote-silo-dired
-                denote-silo-cd )
+    ;; :commands ( denote-silo-create-note
+    ;;             denote-silo-open-or-create
+    ;;             denote-silo-select-silo-then-command
+    ;;             denote-silo-dired
+    ;;             denote-silo-cd )
     :bind
     (("C-c n s n" . denote-silo-create-note)
      ("C-c n s o" . denote-silo-open-or-create)
@@ -1107,7 +1099,7 @@ only Prot's configuration I'll need to dig into.
     :bind (("M-$" . jinx-correct)
            ("C-M-$" . jinx-languages))
     :config
-    (setq jinx-languages "fr,es_CO,en_CA"))
+    (setq jinx-languages "en_CA"))
 #+end_src
 ** TODO Filetype specifics
 
