@@ -19,9 +19,9 @@ Jake's video on Emacs Bankruptcy which can be watched here:
 This configuration takes inspiration of a few Emacs users I've been
 following over the years and I would like to thank them for their
 contribution.
-- Protesilaos Stravou
+- Protesilaos Stavrou
 
-* Early initialisation of Emacs (=early-init.el=)
+* Early initialization of Emacs (=early-init.el=)
 
 This is a new concept to me as I didn't use an =early-init.el= file
 before. From my understanding, since Emacs 27, this file is used to
@@ -107,7 +107,7 @@ necessary anymore but it doesn't hurt to keep it (as far as I know).
   (require 'use-package)
 #+end_src
 
-** Vertico related emacs settings
+** Vertico related Emacs settings
 
 To use vertico at its fullest, it's better to set this package so
 history isn't lost when restarting Emacs.
@@ -220,7 +220,7 @@ package ~beframe~.
     (setq tab-bar-show 1))
 #+end_src
 
-** TODO Usepackage settings
+** TODO Use-package settings
 
 For the moment, my configuration rely only on usepackage that I find
 intuitive. To avoid dealing with long init time, I manually add ensure
@@ -245,7 +245,7 @@ all themes as safe by default. I use only a few themes.
 
 *** Modus themes
 
-I absolutely love Prot's modus-themes, especially modus-vivendi. I
+I absolutely love Prot's Modus themes, especially Modus Vivendi. I
 used to use to tinted version but these days I like the simplicity of
 the original. I implemented shortcuts to help me switch theme easily,
 inspired by ~Emacs Writing Studio~.
@@ -341,7 +341,7 @@ define it first before adding it to Dired's configuration.
 			     'invisible 'dired-hide-details-information)))))
 #+end_src
 
-And now, dired's configuration.
+And now, Dired configuration.
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package dired
@@ -787,7 +787,7 @@ sure things work well with these:
 
   (dolist (face '(default fixed-pitch))
     (set-face-attribute `,face nil :font "Martian Mono-10.5"))
-  (set-face-attribute 'variable-pitch nil :font "Martian Grotesk-10.5")
+  (set-face-attribute 'variable-pitch nil :font "Martian Grotesk-10.5" :height 1.0) ; :height 1.0 fix an issue with zooming on EWW
 #+end_src
 
 Also, to make sure I'm using variable-pitch fonts, I'm borrowing

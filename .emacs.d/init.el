@@ -406,7 +406,7 @@
 
 (dolist (face '(default fixed-pitch))
   (set-face-attribute `,face nil :font "Martian Mono-10.5"))
-(set-face-attribute 'variable-pitch nil :font "Martian Grotesk-10.5")
+(set-face-attribute 'variable-pitch nil :font "Martian Grotesk-10.5" :height 1.0) ; :height 1.0 fix an issue with zooming on EWW
 
 ;;;;; `variable-pitch-mode' setup
 (use-package face-remap
