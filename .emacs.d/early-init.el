@@ -9,9 +9,13 @@
       visible-bell t
       )
 
-(push '(menu-bar-lines . 0) default-frame-alist)
-(push '(tool-bar-lines . 0) default-frame-alist)
-(push '(vertical-scroll-bars . nil) default-frame-alist)
+;; (push '(menu-bar-lines . 0) default-frame-alist)
+    ;; (push '(tool-bar-lines . 0) default-frame-alist)
+    ;; (push '(vertical-scroll-bars . nil) default-frame-alist)
+
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
 
 (setq gc-cons-threshold (* 10 128 1024 1024))
 (setq garbage-collection-messages nil)

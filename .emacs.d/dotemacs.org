@@ -52,9 +52,13 @@ To make things faster at startup and for my own personal preferences,
 I disable early on the GUI parts of emacs.
 
 #+begin_src emacs-lisp :tangle "early-init.el"
-  (push '(menu-bar-lines . 0) default-frame-alist)
-  (push '(tool-bar-lines . 0) default-frame-alist)
-  (push '(vertical-scroll-bars . nil) default-frame-alist)
+      ;; (push '(menu-bar-lines . 0) default-frame-alist)
+      ;; (push '(tool-bar-lines . 0) default-frame-alist)
+      ;; (push '(vertical-scroll-bars . nil) default-frame-alist)
+
+  (tool-bar-mode -1)
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
 #+end_src
 
 This is mysterious for me, but these settings for garbage-collection
