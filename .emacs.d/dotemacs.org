@@ -766,10 +766,11 @@ To explore, but allows to automatically switch themes.
         (theme-buffet-timer-hours 2))
 #+end_src
 
-** TODO Modeline
+** Modeline
 
 For now, until I feel more comfortable playing with the modeline, I'm
-planning on using Doom modeline.
+planning on using Doom modeline. I don't have much settings to change
+from the default configuration, so I keep it /as is/.
 
 #+begin_src emacs-lisp :tangle init.el
 (use-package doom-modeline
@@ -777,12 +778,12 @@ planning on using Doom modeline.
   :hook (after-init . doom-modeline-mode))
 #+end_src
 
-** TODO Fonts
+** Fonts
 
-To set the font, I used to use ~mixed-pitch~. I'll to look into
-configurate correctly.
+In this section I set all the settings related to fonts / faces,
+including the emojis for additional symbols.
 
-*** TODO ~all-the-icons
+*** ~all-the-icons
 
 In addition to normal fonts, I use ~all-the-icons~ to improve the look
 and usability of tools like Dired. Nerd-icons seems to be an
@@ -801,9 +802,11 @@ change for now. Maybe it could be worth it on Windows.
     (all-the-icons-completion-mode))
 #+end_src
 
-*** TODO Fonts selection
+*** Fonts selection
 
-Here I am setting my fonts.
+Here I am setting my fonts. After some tries and errors Prot's
+aporetic is the only font that manages to look good on any OS without
+issues, like visual bugs on Windows or the absence of italics.
 
 #+begin_src emacs-lisp :tangle init.el
   ;; Fonts settings
