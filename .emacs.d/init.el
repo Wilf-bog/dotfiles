@@ -461,6 +461,18 @@
   :ensure t
   :hook (dired-mode))
 
+(use-package dired-subtree
+  :ensure t
+  :after dired
+  :bind
+  ( :map dired-mode-map
+    ("<tab>" . dired-subtree-toggle)
+    ("TAB" . dired-subtree-toggle)
+    ("<backtab>" . dired-subtree-remove)
+    ("S-TAB" . dired-subtree-remove))
+  :config
+  (setq dired-subtree-use-backgrounds nil))
+
 ;; Enable Vertico.
 (use-package vertico
   :ensure t
@@ -711,7 +723,7 @@
   :bind (("M-$" . jinx-correct)
          ("C-M-$" . jinx-languages))
   :config
-  (setq jinx-languages "en_CA"))
+  (setq jinx-languages "fr_CA es_CO en_CA"))
 
 ;; Read RSS feeds with Elfeed
 

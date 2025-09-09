@@ -877,7 +877,7 @@ Now a package I use a lot, but it can be useful when making a lot of
 changes at the same time in multiple directories or to scan them
 quickly.
 
-#+begin_src emacs-lisp :tangle .init.el
+#+begin_src emacs-lisp :tangle init.el
   (use-package dired-subtree
     :ensure t
     :after dired
@@ -1127,7 +1127,7 @@ capture, and archive Web pages in Org-mode]].
   (use-package org-web-tools
     :ensure t
     :bind
-    (("C-c C-w" . org-web-tools-insert-link-for-url)))
+    (("C-c w" . org-web-tools-insert-link-for-url)))
 #+end_src
 
 ** TODO Other
@@ -1251,7 +1251,7 @@ only Prot's configuration I'll need to dig into.
     :bind (("M-$" . jinx-correct)
            ("C-M-$" . jinx-languages))
     :config
-    (setq jinx-languages "en_CA"))
+    (setq jinx-languages "fr_CA es_CO en_CA"))
 #+end_src
 *** TODO Elfeed
 
