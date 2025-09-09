@@ -51,6 +51,8 @@
   (package-native-compile t)
   (warning-minimum-level :emergency))
 
+
+
 (setq custom-safe-themes t)
 
 (use-package modus-themes
@@ -371,6 +373,37 @@
           (agenda-structure . (variable-pitch light 1.9))
           (t . (variable-pitch 1.1)))))
 
+(use-package doric-themes
+  :ensure t
+  :demand t
+  :config
+  ;; These are the default values.
+  (setq doric-themes-to-toggle '(doric-light doric-dark))
+  (setq doric-themes-to-rotate doric-themes-collection)
+
+  (doric-themes-select 'doric-light)
+
+  ;; ;; To load a random theme instead, use something like one of these:
+  ;;
+  ;; (doric-themes-load-random)
+  ;; (doric-themes-load-random 'light)
+  ;; (doric-themes-load-random 'dark)
+
+  ;; ;; For optimal results, also define your preferred font family (or use my `fontaine' package):
+  ;;
+  ;; (set-face-attribute 'default nil :family "Aporetic Sans Mono" :height 160)
+  ;; (set-face-attribute 'variable-pitch nil :family "Aporetic Sans" :height 1.0)
+  ;; (set-face-attribute 'fixed-pitch nil :family "Aporetic Sans Mono" :height 1.0)
+
+  :bind
+  (("<f5>" . doric-themes-toggle)
+   ("C-<f5>" . doric-themes-select)
+   ("M-<f5>" . doric-themes-rotate)))
+
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode))
+
 (use-package all-the-icons
   :ensure t)
 
@@ -381,32 +414,17 @@
   :init
   (all-the-icons-completion-mode))
 
-;; Mixed-pitch
-
-;; (use-package mixed-pitch
-;;   :ensure nil
-;;   :hook
-;;   (text-mode . mixed-pitch-mode))
-
-;;  ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
-;; (if (eq system-name 'effondrement)
-;;     (set-face-attribute 'default nil
-;; 			:family "Martian Mono"
-;; 			:height 140
-;; 			:weight 'Regular)
-;;   (set-face-attribute 'default nil
-;;                       :family "Martian Mono"
-;;                       :height 105
-;;                       :weight 'Regular))
-;; (when (eq system-type 'windows-nt)
-;;   (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
-;; (when (eq system-type 'gnu/linux)
-;;   (set-face-attribute 'variable-pitch nil :family "Adwaita Sans")) ;Font for general text
-;; (set-face-attribute 'fixed-pitch nil :family "Martian Grotesk Lt Rg") ;Font for org-mode titles?
+;; Fonts settings
 
 (dolist (face '(default fixed-pitch))
-  (set-face-attribute `,face nil :font "Martian Mono-10.5"))
-(set-face-attribute 'variable-pitch nil :font "Martian Grotesk-10.5" :height 1.0) ; :height 1.0 fix an issue with zooming on EWW
+  (set-face-attribute `,face nil
+		      :font "Aporetic Sans Mono"
+		      :weight 'regular
+		      :height 120))
+(set-face-attribute 'variable-pitch nil
+		    :font "Aporetic Sans"
+		    :weight 'regular
+		    :height 1.0) ; :height 1.0 fix an issue with zooming on EWW
 
 ;;;;; `variable-pitch-mode' setup
 (use-package face-remap
@@ -624,7 +642,7 @@
 (use-package org-web-tools
   :ensure t
   :bind
-  (("C-c w w" . org-web-tools-insert-link-for-url)))
+  (("C-c C-w" . org-web-tools-insert-link-for-url)))
 
 (use-package embark
   :ensure t

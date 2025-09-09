@@ -238,6 +238,14 @@ to all cases of use-package when it's pertinent.
     (warning-minimum-level :emergency))
 #+end_src
 
+** TODO Emacs Web Wowser
+Mostly known as EWW, it's the web browser to use on Emacs. I do enjoy
+it to read my RSS articles.
+
+#+begin_src emacs-lisp :tangle init.el
+
+#+end_src
+
 ** TODO Emacs theme settings
 
 To avoid getting asked about trusting themes, we can tell it to treat
@@ -276,10 +284,6 @@ inspired by ~Emacs Writing Studio~.
      ("C-c t m" . modus-themes-select)
      ("C-c t s" . consult-theme)))
 #+end_src
-
-*** TODO Ef themes
-I really like those teams to make a change of Modus themes. There is
-some configuration to be done though.
 
 *** Auto-dark
 
@@ -681,7 +685,7 @@ configuration with my own keybindings.
 
 ** TODO Themes
 
-*** TODO Ef-themes
+*** TODO Ef themes
 
 When I want some change from =modus-themes=, =ef-themes= are my favorites
 alternatives. This configuration is taken from Prot's dotfiles. I
@@ -713,6 +717,35 @@ implement by default with the =modus-themes= too.
             (agenda-structure . (variable-pitch light 1.9))
             (t . (variable-pitch 1.1)))))
 #+end_src
+*** TODO Doric themes
+#+begin_src emacs-lisp :tangle init.el
+(use-package doric-themes
+  :ensure t
+  :demand t
+  :config
+  ;; These are the default values.
+  (setq doric-themes-to-toggle '(doric-light doric-dark))
+  (setq doric-themes-to-rotate doric-themes-collection)
+
+  (doric-themes-select 'doric-light)
+
+  ;; ;; To load a random theme instead, use something like one of these:
+  ;;
+  ;; (doric-themes-load-random)
+  ;; (doric-themes-load-random 'light)
+  ;; (doric-themes-load-random 'dark)
+
+  ;; ;; For optimal results, also define your preferred font family (or use my `fontaine' package):
+  ;;
+  ;; (set-face-attribute 'default nil :family "Aporetic Sans Mono" :height 160)
+  ;; (set-face-attribute 'variable-pitch nil :family "Aporetic Sans" :height 1.0)
+  ;; (set-face-attribute 'fixed-pitch nil :family "Aporetic Sans Mono" :height 1.0)
+
+  :bind
+  (("<f5>" . doric-themes-toggle)
+   ("C-<f5>" . doric-themes-select)
+   ("M-<f5>" . doric-themes-rotate)))
+#+end_src
 *** TODO COMMENT Theme-buffet
 
 To explore, but allows to automatically switch themes.
@@ -731,6 +764,17 @@ To explore, but allows to automatically switch themes.
         ;;; two additional timers are available for theme change, both can be set
         (theme-buffet-timer-mins 25)  ; change theme every 25m from now, similar below
         (theme-buffet-timer-hours 2))
+#+end_src
+
+** TODO Modeline
+
+For now, until I feel more comfortable playing with the modeline, I'm
+planning on using Doom modeline.
+
+#+begin_src emacs-lisp :tangle init.el
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode))
 #+end_src
 
 ** TODO Fonts
@@ -759,39 +803,20 @@ change for now. Maybe it could be worth it on Windows.
 
 *** TODO Fonts selection
 
-Here I am setting my fonts. There is still work to be done to make
-sure things work well with these:
-- [X] desktop computer
-- [X] laptop computer
-- [ ] work computer
+Here I am setting my fonts.
 
 #+begin_src emacs-lisp :tangle init.el
-  ;; Mixed-pitch
-
-  ;; (use-package mixed-pitch
-  ;;   :ensure nil
-  ;;   :hook
-  ;;   (text-mode . mixed-pitch-mode))
-
-  ;;  ;; Fonts 'default, 'fixed-pitch and 'variable-pitch
-  ;; (if (eq system-name 'effondrement)
-  ;;     (set-face-attribute 'default nil
-  ;; 			:family "Martian Mono"
-  ;; 			:height 140
-  ;; 			:weight 'Regular)
-  ;;   (set-face-attribute 'default nil
-  ;;                       :family "Martian Mono"
-  ;;                       :height 105
-  ;;                       :weight 'Regular))
-  ;; (when (eq system-type 'windows-nt)
-  ;;   (set-face-attribute 'variable-pitch nil :family "Iosevka Comfy Duo"))
-  ;; (when (eq system-type 'gnu/linux)
-  ;;   (set-face-attribute 'variable-pitch nil :family "Adwaita Sans")) ;Font for general text
-  ;; (set-face-attribute 'fixed-pitch nil :family "Martian Grotesk Lt Rg") ;Font for org-mode titles?
+  ;; Fonts settings
 
   (dolist (face '(default fixed-pitch))
-    (set-face-attribute `,face nil :font "Martian Mono-10.5"))
-  (set-face-attribute 'variable-pitch nil :font "Martian Grotesk-10.5" :height 1.0) ; :height 1.0 fix an issue with zooming on EWW
+    (set-face-attribute `,face nil
+  		      :font "Aporetic Sans Mono"
+  		      :weight 'regular
+  		      :height 120))
+  (set-face-attribute 'variable-pitch nil
+  		    :font "Aporetic Sans"
+  		    :weight 'regular
+  		    :height 1.0) ; :height 1.0 fix an issue with zooming on EWW
 #+end_src
 
 Also, to make sure I'm using variable-pitch fonts, I'm borrowing
@@ -1099,7 +1124,7 @@ capture, and archive Web pages in Org-mode]].
   (use-package org-web-tools
     :ensure t
     :bind
-    (("C-c w w" . org-web-tools-insert-link-for-url)))
+    (("C-c C-w" . org-web-tools-insert-link-for-url)))
 #+end_src
 
 ** TODO Other
