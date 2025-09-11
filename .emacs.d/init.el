@@ -1,6 +1,8 @@
 ;; Built-in since Emacs 29
 (require 'use-package)
 
+(which-key-mode)
+
 (use-package savehist
   :init
   (savehist-mode))
@@ -654,7 +656,7 @@
 (use-package org-web-tools
   :ensure t
   :bind
-  (("C-c C-w" . org-web-tools-insert-link-for-url)))
+  (("C-c w" . org-web-tools-insert-link-for-url)))
 
 (use-package embark
   :ensure t
@@ -716,6 +718,13 @@
            :header-line-inactive spacious-padding-line-inactive))
   :init
   (spacious-padding-mode 1))
+
+(use-package olivetti
+  :ensure t
+  :bind
+  ("C-c o" . olivetti-mode)
+  :custom
+  (olivetti-style 'fancy))
 
 (use-package jinx
   :ensure t
