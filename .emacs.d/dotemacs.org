@@ -479,6 +479,19 @@ And now, Dired configuration.
 
 #+end_src
 
+** TODO Bibtex
+These settings are the one recommended by Peter Provos on his website,
+see [[https://lucidmanager.org/productivity/emacs-bibtex-mode/][Manage Literature with Emacs BibTeX Mode]].
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package bibtex
+    :custom
+    (bibtex-dialect 'biblatex)
+    (bibtex-user-optional-fields
+     '(("keywords" "Keywords to describe the entry" "")
+       ("file" "Link to a document file." "" )))
+    (bibtex-align-at-equal-sign t))
+#+end_src
 * TODO External packages settings (=init.el=)
 
 I decided to create a separate section this from the precedent to keep
@@ -566,6 +579,7 @@ modifications are rather minor.
     (setq denote-save-buffers t)
     (setq denote-known-keywords '("emacs" "philosophy" "politics" "economics"))
     (setq denote-infer-keywords t)
+    (setq denote-file-type "org")
     (setq denote-sort-keywords t)
     (setq denote-prompts '(title keywords))
     (setq denote-excluded-directories-regexp nil)
@@ -689,9 +703,62 @@ configuration with my own keybindings.
   (use-package citar
     :ensure t
     :custom
-    (citar-bibliography '("~/Documentos/library/library.bib")))
+    (citar-bibliography '("~/Documentos/library/library.bib"))
+    :bind
+    (("C-c b o" . citar-open)))
 #+end_src
 
+*** TODO Citar and Denote
+
+My configuration is heavily inspired by Peter Provos work, as
+described in [[https://lucidmanager.org/productivity/bibliographic-notes-in-emacs-with-citar-denote/][Bibliographic Notes with the Citar-Denote Emacs Package]]
+as well as in his book Emacs Writing Studio.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package citar-denote
+    :ensure t
+    :custom
+    (citar-open-always-create-notes t)
+    :init
+    (citar-denote-mode)
+    :bind
+    (("C-c b c" . citar-create-note)
+     ("C-c b n" . citar-denote-open-note)
+     ("C-c b x" . citar-denote-nocite)
+     :map org-mode-map
+     ("C-c b k" . citar-denote-add-citekey)
+     ("C-c b K" . citar-denote-remove-citekey)
+     ("C-c b d" . citar-denote-dwim)
+     ("C-c b e" . citar-denote-open-reference-entry)))
+#+end_src
+
+To make sure we have the best performance with =citar-denote=, it's
+recommended to use ripgrep for the =xref= system.
+
+#+begin_src emacs-lisp :tangle init.el
+  (setq xref-search-program #'ripgrep)
+#+end_src
+
+*** TODO Consult and notes
+
+*** TODO Citar and embark
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package citar-embark
+    :ensure t
+    :after (citar embark)
+    :no-require
+    :config (citar-embark-mode))
+#+end_src
+
+** Biblio
+A small package to query metadata from a DOI. There is nothing else to
+be configured.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package biblio
+    :ensure t)
+#+end_src
 ** TODO Themes
 
 *** TODO Ef themes

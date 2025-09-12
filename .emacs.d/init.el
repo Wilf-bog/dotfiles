@@ -210,6 +210,14 @@
     (file+headline "~/Documentos/gtd/tickler.org" "Tickler")
     "* TODO %i%? \n %U")))
 
+(use-package bibtex
+  :custom
+  (bibtex-dialect 'biblatex)
+  (bibtex-user-optional-fields
+   '(("keywords" "Keywords to describe the entry" "")
+     ("file" "Link to a document file." "" )))
+  (bibtex-align-at-equal-sign t))
+
 (use-package magit
   :ensure t)
 
@@ -262,6 +270,7 @@
   (setq denote-save-buffers t)
   (setq denote-known-keywords '("emacs" "philosophy" "politics" "economics"))
   (setq denote-infer-keywords t)
+  (setq denote-file-type "org")
   (setq denote-sort-keywords t)
   (setq denote-prompts '(title keywords))
   (setq denote-excluded-directories-regexp nil)
@@ -350,7 +359,36 @@
 (use-package citar
   :ensure t
   :custom
-  (citar-bibliography '("~/Documentos/library/library.bib")))
+  (citar-bibliography '("~/Documentos/library/library.bib"))
+  :bind
+  (("C-c b o" . citar-open)))
+
+(use-package citar-denote
+  :ensure t
+  :custom
+  (citar-open-always-create-notes t)
+  :init
+  (citar-denote-mode)
+  :bind
+  (("C-c b c" . citar-create-note)
+   ("C-c b n" . citar-denote-open-note)
+   ("C-c b x" . citar-denote-nocite)
+   :map org-mode-map
+   ("C-c b k" . citar-denote-add-citekey)
+   ("C-c b K" . citar-denote-remove-citekey)
+   ("C-c b d" . citar-denote-dwim)
+   ("C-c b e" . citar-denote-open-reference-entry)))
+
+(setq xref-search-program #'ripgrep)
+
+(use-package citar-embark
+  :ensure t
+  :after (citar embark)
+  :no-require
+  :config (citar-embark-mode))
+
+(use-package biblio
+  :ensure t)
 
 (use-package ef-themes
   :ensure t
