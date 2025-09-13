@@ -21,7 +21,13 @@
   (read-extended-command-predicate #'command-completion-default-include-p)
   ;; Do not allow the cursor in the minibuffer prompt
   (minibuffer-prompt-properties
-   '(read-only t cursor-intangible t face minibuffer-prompt)))
+   '(read-only t cursor-intangible t face minibuffer-prompt))
+  :bind
+  (;; Keymap for buffers (Emacs28)
+   :map ctl-x-x-map
+   ("f" . follow-mode)  ; override `font-lock-update'
+   ("r" . rename-uniquely)
+   ("l" . visual-line-mode)))
 
 ;; Revert buffers when the underlying file has changed
 (global-auto-revert-mode 1)
