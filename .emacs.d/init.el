@@ -228,6 +228,39 @@
      ("file" "Link to a document file." "" )))
   (bibtex-align-at-equal-sign t))
 
+(use-package all-the-icons
+  :ensure t)
+
+(use-package all-the-icons-completion
+  :ensure t
+  :after (marginalia all-the-icons)
+  :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
+  :init
+  (all-the-icons-completion-mode))
+
+;; Fonts settings
+
+(dolist (face '(default fixed-pitch))
+  (set-face-attribute `,face nil
+		      :font "Aporetic Sans Mono"
+		      :weight 'regular
+		      :height 120))
+(set-face-attribute 'variable-pitch nil
+		    :font "Aporetic Sans"
+		    :weight 'regular
+		    :height 1.0) ; :height 1.0 fix an issue with zooming on EWW
+
+;;;;; `variable-pitch-mode' setup
+(use-package face-remap
+  :ensure nil
+  :bind ( :map ctl-x-x-map
+          ("v" . variable-pitch-mode))
+  :hook ((text-mode notmuch-show-mode elfeed-show-mode) . wilf/enable-variable-pitch)
+  :config
+  (defun wilf/enable-variable-pitch ()	;originally, named after Prot.
+    (unless (derived-mode-p 'mhtml-mode 'nxml-mode 'yaml-mode)
+      (variable-pitch-mode 1))))
+
 (use-package magit
   :ensure t)
 
@@ -369,6 +402,60 @@
 
 (use-package citar
   :ensure t
+  :demand t
+  :after all-the-icons
+  :init
+  (defvar citar-indicator-files-icons
+    (citar-indicator-create
+     :symbol (all-the-icons-faicon
+	      "file-o"
+	      :face 'all-the-icons-green
+	      :v-adjust -0.1)
+     :function #'citar-has-files
+     :padding "  "
+     :tag "has:files"))
+
+  (defvar citar-indicator-links-icons
+    (citar-indicator-create
+     :symbol (all-the-icons-octicon
+	      "link"
+	      :face 'all-the-icons-orange
+	      :v-adjust 0.01)
+     :function #'citar-has-links
+     :padding "  "
+     :tag "has:links"))
+
+  (defvar citar-indicator-notes-icons
+    (citar-indicator-create
+     :symbol (all-the-icons-material
+	      "speaker_notes"
+	      :face 'all-the-icons-blue
+	      :v-adjust -0.3)
+     :function #'citar-has-notes
+     :padding "  "
+     :tag "has:notes"))
+
+    (defvar citar-indicator-cited-icons
+    (citar-indicator-create
+     :symbol (all-the-icons-faicon
+              "circle-o"
+              :face 'all-the-icon-green)
+     :function #'citar-is-cited
+     :padding "  "
+     :tag "is:cited"))
+  
+  :hook
+  ;; set up citation completion for latex, org-mode, and markdown
+  (LaTeX-mode . citar-capf-setup)
+  (org-mode . citar-capf-setup)
+  (markdown-mode . citar-capf-setup)
+  
+  :config
+  (setq citar-indicators
+        (list citar-indicator-files-icons
+              citar-indicator-links-icons
+              citar-indicator-notes-icons
+              citar-indicator-cited-icons))
   :custom
   (citar-bibliography '("~/Documentos/library/library.bib"))
   :bind
@@ -454,39 +541,6 @@
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode))
-
-(use-package all-the-icons
-  :ensure t)
-
-(use-package all-the-icons-completion
-  :ensure t
-  :after (marginalia all-the-icons)
-  :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
-  :init
-  (all-the-icons-completion-mode))
-
-;; Fonts settings
-
-(dolist (face '(default fixed-pitch))
-  (set-face-attribute `,face nil
-		      :font "Aporetic Sans Mono"
-		      :weight 'regular
-		      :height 120))
-(set-face-attribute 'variable-pitch nil
-		    :font "Aporetic Sans"
-		    :weight 'regular
-		    :height 1.0) ; :height 1.0 fix an issue with zooming on EWW
-
-;;;;; `variable-pitch-mode' setup
-(use-package face-remap
-  :ensure nil
-  :bind ( :map ctl-x-x-map
-          ("v" . variable-pitch-mode))
-  :hook ((text-mode notmuch-show-mode elfeed-show-mode) . wilf/enable-variable-pitch)
-  :config
-  (defun wilf/enable-variable-pitch ()	;originally, named after Prot.
-    (unless (derived-mode-p 'mhtml-mode 'nxml-mode 'yaml-mode)
-      (variable-pitch-mode 1))))
 
 (use-package dired-preview
   :ensure t
