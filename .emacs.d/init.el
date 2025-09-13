@@ -253,6 +253,7 @@
     ;; easier to bind the link-related commands to the `global-map', as
     ;; shown here.  Otherwise follow the same pattern for `org-mode-map',
     ;; `markdown-mode-map', and/or `text-mode-map'.
+    ("C-c n i" . denote-link-or-create)
     ("C-c n l" . denote-link)
     ("C-c n L" . denote-add-links)
     ("C-c n b" . denote-backlinks)
@@ -349,7 +350,7 @@
   :bind
   (("C-c n j n" . denote-journal-new-entry)
    ("C-c n j o" . denote-journal-new-or-existing-entry)
-   ("C-n n j l" . denote-journal-link-or-create-entry))
+   ("C-c n j l" . denote-journal-link-or-create-entry))
   :hook (calendar-mode . denote-journal-calendar-mode)
   :config
   ;; Use the "journal" subdirectory of the `denote-directory'.  Set this
