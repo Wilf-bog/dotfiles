@@ -220,6 +220,27 @@
     (file+headline "~/Documentos/gtd/tickler.org" "Tickler")
     "* TODO %i%? \n %U")))
 
+;; Notes drawers
+(defun wilf-org-insert-notes-drawer ()
+  "Generate or open a NOTES drawer under the current heading."
+  (interactive)
+  (push-mark)
+  (org-previous-visible-heading 1)
+  (next-line)
+  (org-beginning-of-line)
+  (if (looking-at-p "^[ \t]*:NOTES:")
+      (progn
+        (org-fold-hide-drawer-toggle 'off)
+        (re-search-forward "^[ \t]*:END:" nil t)
+        (previous-line)
+        (org-end-of-line)
+        (org-return))
+    (org-insert-drawer nil "NOTES"))
+  (org-unlogged-message "Press <C-u C-SPACE> to return to the previous position."))
+
+(with-eval-after-load "org"
+  (define-key org-mode-map (kbd "C-c C-x n") #'ews-org-insert-notes-drawer))
+
 (use-package bibtex
   :custom
   (bibtex-dialect 'biblatex)

@@ -498,6 +498,39 @@ And now, Dired configuration.
 
 #+end_src
 
+*** Notes drawer
+
+One thing I particularly like of Emacs Writing Studio was the ability
+to easily and quickly add a note drawer under a Org header. It is
+possible to add drawers with the default configuration, using =C-c x d=
+but it's then necessary to name the drawer and it's going to be place
+where the point is, which is not what I find the most useful.
+
+Instead, I'm adding this function from Peter Provos.
+
+#+begin_src emacs-lisp :tangle init.el
+  ;; Notes drawers
+  (defun wilf-org-insert-notes-drawer ()
+    "Generate or open a NOTES drawer under the current heading."
+    (interactive)
+    (push-mark)
+    (org-previous-visible-heading 1)
+    (next-line)
+    (org-beginning-of-line)
+    (if (looking-at-p "^[ \t]*:NOTES:")
+        (progn
+          (org-fold-hide-drawer-toggle 'off)
+          (re-search-forward "^[ \t]*:END:" nil t)
+          (previous-line)
+          (org-end-of-line)
+          (org-return))
+      (org-insert-drawer nil "NOTES"))
+    (org-unlogged-message "Press <C-u C-SPACE> to return to the previous position."))
+
+  (with-eval-after-load "org"
+    (define-key org-mode-map (kbd "C-c C-x n") #'ews-org-insert-notes-drawer))
+#+end_src
+
 ** TODO Bibtex
 These settings are the one recommended by Peter Provos on his website,
 see [[https://lucidmanager.org/productivity/emacs-bibtex-mode/][Manage Literature with Emacs BibTeX Mode]].
