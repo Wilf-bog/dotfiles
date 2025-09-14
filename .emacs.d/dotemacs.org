@@ -157,6 +157,19 @@ Again for Vertico, we do need to change some configuration.
      ("l" . visual-line-mode)))
 #+end_src
 
+** TODO Backup and lockfiles
+
+Considering I'm relying on syncthing to be able to share files between
+computers and that my files are auto-saved, lockfiles and backups are
+always been a bit messy. Let's see if disabling those will help with
+that (as well as cleaning my directories!)
+
+#+begin_src emacs-lisp :tangle init.el
+(setq make-backup-files nil)
+(setq backup-inhibited nil) ; Not sure if needed, given `make-backup-files'
+(setq create-lockfiles nil)
+#+end_src
+
 ** Emacs settings about reverting
 
 Considering I work on multiple machines, sometimes at the same time,

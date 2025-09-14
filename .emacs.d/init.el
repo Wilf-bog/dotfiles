@@ -29,6 +29,10 @@
    ("r" . rename-uniquely)
    ("l" . visual-line-mode)))
 
+(setq make-backup-files nil)
+(setq backup-inhibited nil) ; Not sure if needed, given `make-backup-files'
+(setq create-lockfiles nil)
+
 ;; Revert buffers when the underlying file has changed
 (global-auto-revert-mode 1)
 
