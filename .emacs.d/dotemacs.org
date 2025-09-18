@@ -201,15 +201,26 @@ Again for Vertico, we do need to change some configuration.
 
 ** TODO Backup and lockfiles
 
-Considering I'm relying on syncthing to be able to share files between
-computers and that my files are auto-saved, lockfiles and backups are
-always been a bit messy. Let's see if disabling those will help with
-that (as well as cleaning my directories!)
+# Considering I'm relying on syncthing to be able to share files between
+# computers and that my files are auto-saved, lockfiles and backups are
+# always been a bit messy. Let's see if disabling those will help with
+# that (as well as cleaning my directories!)
+
+I tried for a moment to disable backup files in general, but I learned
+from
+https://git.sr.ht/~technomancy/better-defaults/tree/main/item/better-defaults.el
+that you can specify a specific directory to hold the backup files,
+which seems like a great idea to avoid moving those files around with
+Syncthing.
 
 #+begin_src emacs-lisp :tangle init.el
-(setq make-backup-files nil)
-(setq backup-inhibited nil) ; Not sure if needed, given `make-backup-files'
-(setq create-lockfiles nil)
+  (setq make-backup-files t)
+  (setq backup-inhibited nil) ; Not sure if needed, given `make-backup-files'
+  (setq create-lockfiles nil)
+
+  (unless backup-directory-alist
+    (setq backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                                   "backups")))))
 #+end_src
 
 ** Emacs settings about reverting

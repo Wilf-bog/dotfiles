@@ -48,9 +48,13 @@
    ("r" . rename-uniquely)
    ("l" . visual-line-mode)))
 
-(setq make-backup-files nil)
+(setq make-backup-files t)
 (setq backup-inhibited nil) ; Not sure if needed, given `make-backup-files'
 (setq create-lockfiles nil)
+
+(unless backup-directory-alist
+  (setq backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                                 "backups")))))
 
 ;; Revert buffers when the underlying file has changed
 (global-auto-revert-mode 1)
