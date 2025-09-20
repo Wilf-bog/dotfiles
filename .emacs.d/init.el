@@ -479,7 +479,7 @@
      :padding "  "
      :tag "has:notes"))
 
-    (defvar citar-indicator-cited-icons
+  (defvar citar-indicator-cited-icons
     (citar-indicator-create
      :symbol (all-the-icons-faicon
               "circle-o"
@@ -502,6 +502,15 @@
               citar-indicator-cited-icons))
   :custom
   (citar-bibliography '("~/Documentos/library/library.bib"))
+  :custom
+  (org-cite-global-bibliography '("~/Documentos/library/library.bib"))
+  (org-cite-insert-processor 'citar)
+  (org-cite-follow-processor 'citar)
+  (org-cite-activate-processor 'citar)
+  (citar-bibliography org-cite-global-bibliography)
+  ;; optional: org-cite-insert is also bound to C-c C-x C-@
+  :bind
+  (:map org-mode-map :package org ("C-c b b" . #'org-cite-insert))
   :bind
   (("C-c b o" . citar-open)))
 
