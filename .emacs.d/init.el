@@ -133,6 +133,20 @@
   (setq recentf-filename-handlers nil)
   (setq recentf-show-file-shortcuts-flag nil)) ; I don't use the recentf tool.
 
+;;;; Plain text (text-mode)
+(use-package text-mode
+  :ensure nil
+  :mode "\\`\\(README\\|CHANGELOG\\|COPYING\\|LICENSE\\)\\'"
+  :hook
+  ((text-mode . turn-on-auto-fill)
+   (prog-mode . (lambda () (setq-local sentence-end-double-space t))))
+  :config
+  (setq sentence-end-double-space nil)
+  (setq sentence-end-without-period nil)
+  (setq colon-double-space nil)
+  (setq use-hard-newlines nil)
+  (setq adaptive-fill-mode t))
+
 (defun hide-dired-details-include-all-subdir-paths ()
   (save-excursion
     (goto-char (point-min))

@@ -405,6 +405,37 @@ seem perfectly good for my own needs, with a few minor tweaks.
     (setq recentf-show-file-shortcuts-flag nil)) ; I don't use the recentf tool.
 #+end_src
 
+** TODO Text mode
+In this section, I'm taking inspiration from Prot's configuration to
+improve the experience of writing prose in Emacs. The reasoning comes
+from my experience trying to use =fill-mode= like Prot to make reading
+prose in text files easier outside of Emacs. After that, I wanted to
+make use of =forward-sentence= and =backward-sentence= but I quickly
+noticed it didn't work, Emacs considering by default that two spaces
+are separators between sentences, which is not a common practice here
+at all.
+
+I decided to keep some additional settings Prot added, like the
+ability to use text-mode based on the title of a file that may not use
+the usual filetypes, like org, txt, etc. I also decided to make use of
+=auto-fill-mode= at all times since I appreciate its use after a few
+weeks of using the command =fill-paragraph=.
+
+#+begin_src emacs-lisp :tangle init.el
+;;;; Plain text (text-mode)
+(use-package text-mode
+  :ensure nil
+  :mode "\\`\\(README\\|CHANGELOG\\|COPYING\\|LICENSE\\)\\'"
+  :hook
+  ((text-mode . turn-on-auto-fill)
+   (prog-mode . (lambda () (setq-local sentence-end-double-space t))))
+  :config
+  (setq sentence-end-double-space nil)
+  (setq sentence-end-without-period nil)
+  (setq colon-double-space nil)
+  (setq use-hard-newlines nil)
+  (setq adaptive-fill-mode t))
+#+end_src
 ** Dired
 
 Dired is my main non-GUI file manager, I've really learned to
