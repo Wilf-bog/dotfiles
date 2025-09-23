@@ -436,6 +436,121 @@ weeks of using the command =fill-paragraph=.
   (setq use-hard-newlines nil)
   (setq adaptive-fill-mode t))
 #+end_src
+
+*** TODO Cycling through different paragraph formats
+
+There are a few options to be able to easily toggle between filled and
+unfilled text. This package allows us to unfill a region, a paragraph, etc.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package unfill
+    :ensure t)
+#+end_src
+
+Sadly, it doesn't offer an easily way to cycle between options, but I
+still keep it for the potentially useful =unfill-region=.
+
+Instead, for now I'm relying on this function I took from this
+exchange: [[https://emacs.stackexchange.com/a/29699][key bindings - Key mapping: Push `M-q` once for
+fill-paragraph and twice for unfill-paragraph - Emacs Stack Exchange]].
+
+#+begin_src emacs-lisp :tangle init.el
+  (defun my-fill-paragraph (&optional arg)
+    "Fill or unfill paragraph.  If repeated, alternate.
+  A prefix arg for filling means justify (as for `fill-paragraph')."
+    (interactive "P")
+    (let ((fillp  (not (eq last-command 'fill-paragraph))))
+      (apply (setq this-command  (if fillp 'fill-paragraph 'unfill-paragraph))
+             (and fillp  arg  '(full t)))))
+  (keymap-global-set "M-q" #'my-fill-paragraph)
+
+#+end_src
+
+I found out on Sacha's blog some code that allows for cycling through
+different text formatting, something that appears to be potentially
+really useful. Sadly for now, this code relies on Emacs 31 integration
+of semantic line formatting. When I'll be ready to migrate to this
+version, I intend on implementing this to replace above code.
+
+#+begin_src emacs-lisp
+(defvar my-repeat-counter '()
+  "How often `my-repeat-next' was called in a row using the same command.
+This is an alist of (cat count list) so we can use it for different functions.")
+
+(defun my-unfill-paragraph ()
+  "Replace newline chars in current paragraph by single spaces.
+This command does the inverse of `fill-paragraph'."
+  (interactive)
+  (let ((fill-column most-positive-fixnum))
+    (fill-paragraph)))
+
+(defun my-fill-paragraph-semlf-long ()
+  (interactive)
+  (let ((fill-column most-positive-fixnum))
+    (fill-paragraph-semlf)))
+
+(defun my-repeat-next (category &optional element-list reset)
+  "Return the next element for CATEGORY.
+Initialize with ELEMENT-LIST if this is the first time."
+  (let* ((counter
+          (or (assoc category my-repeat-counter)
+              (progn
+                (push (list category -1 element-list)
+                      my-repeat-counter)
+                (assoc category my-repeat-counter)))))
+    (setf (elt (cdr counter) 0)
+          (mod
+           (if reset 0 (1+ (elt (cdr counter) 0)))
+           (length (elt (cdr counter) 1))))
+    (elt (elt (cdr counter) 1) (elt (cdr counter) 0))))
+
+(defun my-in-prefixed-comment-p ()
+  (or (member 'font-lock-comment-delimiter-face (face-at-point nil t))
+      (member 'font-lock-comment-face (face-at-point nil t))
+      (save-excursion
+        (beginning-of-line)
+        (comment-search-forward (line-end-position) t))))
+
+;; It might be nice to figure out what state we're
+;; in and then cycle to the next one if we're just
+;; working with a single paragraph. In the
+;; meantime, just going by repeats is fine.
+(defun my-reformat-paragraph-or-region ()
+  "Cycles the paragraph between three states: filled/unfilled/fill-sentences.
+If a region is selected, handle all paragraphs within that region."
+  (interactive)
+  (let ((func (my-repeat-next 'my-reformat-paragraph
+                              '(fill-paragraph my-unfill-paragraph fill-paragraph-semlf
+                                               my-fill-paragraph-semlf-long)
+                              (not (eq this-command last-command))))
+        (deactivate-mark nil))
+    (if (region-active-p)
+        (save-restriction
+          (save-excursion
+            (narrow-to-region (region-beginning) (region-end))
+            (goto-char (point-min))
+            (while (not (eobp))
+              (skip-syntax-forward " ")
+              (let ((elem (and (derived-mode-p 'org-mode)
+                               (org-element-context))))
+                (cond
+                 ((eq (org-element-type elem) 'headline)
+                  (org-forward-paragraph))
+                 ((member (org-element-type elem)
+                          '(src-block export-block headline property-drawer))
+                  (goto-char
+                   (org-element-end (org-element-context))))
+                 (t
+                  (funcall func)
+                  (if fill-forward-paragraph-function
+                      (funcall fill-forward-paragraph-function)
+                    (forward-paragraph)))))
+              )))
+      (funcall func))))
+
+(keymap-global-set "M-q" #'my-reformat-paragraph-or-region)
+#+end_src
+
 ** Dired
 
 Dired is my main non-GUI file manager, I've really learned to

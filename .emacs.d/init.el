@@ -147,6 +147,18 @@
   (setq use-hard-newlines nil)
   (setq adaptive-fill-mode t))
 
+(use-package unfill
+  :ensure t)
+
+(defun my-fill-paragraph (&optional arg)
+  "Fill or unfill paragraph.  If repeated, alternate.
+A prefix arg for filling means justify (as for `fill-paragraph')."
+  (interactive "P")
+  (let ((fillp  (not (eq last-command 'fill-paragraph))))
+    (apply (setq this-command  (if fillp 'fill-paragraph 'unfill-paragraph))
+           (and fillp  arg  '(full t)))))
+(keymap-global-set "M-q" #'my-fill-paragraph)
+
 (defun hide-dired-details-include-all-subdir-paths ()
   (save-excursion
     (goto-char (point-min))
