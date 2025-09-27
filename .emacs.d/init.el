@@ -331,6 +331,13 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
     (unless (derived-mode-p 'mhtml-mode 'nxml-mode 'yaml-mode)
       (variable-pitch-mode 1))))
 
+(use-package casual
+  :ensure t
+  :defer t)
+
+(require 'casual-agenda)
+(keymap-set org-agenda-mode-map "C-o" #'casual-agenda-tmenu)
+
 (use-package magit
   :ensure t)
 
