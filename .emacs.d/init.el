@@ -20,6 +20,9 @@
 ;; Built-in since Emacs 29
 (require 'use-package)
 
+(server-start)
+(require 'org-protocol)
+
 (which-key-mode)
 
 (use-package savehist
@@ -248,26 +251,57 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 ;; Capture templates
 
 (setq org-capture-templates
- '(("f" "Fleeting note"
-    item
-    (file+headline org-default-notes-file "Notes")
-    "- %?")
-   ("p" "Permanent note" plain
-    (file denote-last-path)
-    #'denote-org-capture
-    :no-save t
-    :immediate-finish nil
-    :kill-buffer t
-    :jump-to-captured t)
-   ("t" "New task" entry
-    (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
-    "* TODO %i%? \n %U")
-   ("r" "Read article" entry
-    (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
-    "* %i%? \n %U")
-   ("T" "Tickler" entry
-    (file+headline "~/Documentos/gtd/tickler.org" "Tickler")
-    "* TODO %i%? \n %U")))
+      '(("f" "Fleeting note"
+	 item
+	 (file+headline org-default-notes-file "Notes")
+	 "- %?")
+	("p" "Permanent note" plain
+	 (file denote-last-path)
+	 #'denote-org-capture
+	 :no-save t
+	 :immediate-finish nil
+	 :kill-buffer t
+	 :jump-to-captured t)
+	("t" "New task" entry
+	 (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
+	 "* TODO %i%? \n %U")
+	("r" "Read article" entry
+	 (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
+	 "* %i%? \n %U")
+	("bib" "BibTex Online Entry" plain
+         (file "~/Documentos/library/library.bib")
+         (function (lambda ()
+                     (string-join
+                      (list "@Online {,"
+                            "author = {%^{Author(s)}},"
+                            "organization = {%^{Organization}},"
+                            "title = {%:description},"
+                            "url = {%:link},"
+                            "date = {%<%Y-%m-%d>%?},"
+                            "notes = {"
+                            "%i"
+                            "}"
+                            "}")
+                      "\n")))
+         :prepend t
+         :empty-lines-after 1)
+	("T" "Tickler" entry
+	 (file+headline "~/Documentos/gtd/tickler.org" "Tickler")
+	 "* TODO %i%? \n %U")))
+
+(use-package org
+  :config
+  ;; Activer le module habit
+  (require 'org-habit)
+
+  ;; Optionnel : activer la colonne des graphes d'habitudes dans l’agenda
+  (add-to-list 'org-modules 'org-habit t)
+
+  ;; Quelques réglages utiles
+  (setq org-habit-show-habits-only-for-today nil
+        org-habit-show-all-today t
+        org-habit-preceding-days 7
+        org-habit-following-days 3))
 
 ;; Notes drawers
 (defun wilf-org-insert-notes-drawer ()

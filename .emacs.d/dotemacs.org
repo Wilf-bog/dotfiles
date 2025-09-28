@@ -153,6 +153,19 @@ necessary anymore but it doesn't hurt to keep it (as far as I know).
   (require 'use-package)
 #+end_src
 
+** TODO Setting up Emacs server for =org-protocol=
+:PROPERTIES:
+:ID:       974b41b3-86e8-405f-a9cc-f48c05ed1c07
+:END:
+
+The following code has been provided by this page [[https://orgmode.org/worg/org-contrib/org-protocol.html][org-protocol.el –
+Trigger actions in Emacs via a custom URL scheme]] to make it possible
+to run =org-protocol=.
+
+#+begin_src emacs-lisp :tangle init.el
+(server-start)
+(require 'org-protocol)
+#+end_src
 ** =which-key=
 
 Not necessary, but a nice addition, especially when using tools I'm
@@ -661,6 +674,18 @@ And now, Dired configuration.
 #+end_src
 
 *** TODO Capturing
+:PROPERTIES:
+:ID:       a8cdb92f-b229-4319-989b-e4f32a649d9f
+:END:
+
+This section is mostly centered around org-capture, a crucial tool to
+manage my todo-list and more.
+
+Recently, I followed the footsteps of Charles Choi and included his
+template to capture web page and a corresponding =BiBTeX= entry to my
+own library using =org-protocol=. See [[id:974b41b3-86e8-405f-a9cc-f48c05ed1c07][Setting up Emacs server for
+=org-protocol=]] as well as [[http://yummymelon.com/devnull/storing-a-link-from-your-web-browser-to-bibtex-using-org-protocol.html][nfdn: Storing a Link from your Web Browser
+to BibTeX using Org protocol]] for more details.
 
 #+begin_src emacs-lisp :tangle init.el
 
@@ -674,27 +699,61 @@ And now, Dired configuration.
   ;; Capture templates
 
   (setq org-capture-templates
-   '(("f" "Fleeting note"
-      item
-      (file+headline org-default-notes-file "Notes")
-      "- %?")
-     ("p" "Permanent note" plain
-      (file denote-last-path)
-      #'denote-org-capture
-      :no-save t
-      :immediate-finish nil
-      :kill-buffer t
-      :jump-to-captured t)
-     ("t" "New task" entry
-      (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
-      "* TODO %i%? \n %U")
-     ("r" "Read article" entry
-      (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
-      "* %i%? \n %U")
-     ("T" "Tickler" entry
-      (file+headline "~/Documentos/gtd/tickler.org" "Tickler")
-      "* TODO %i%? \n %U")))
+        '(("f" "Fleeting note"
+  	 item
+  	 (file+headline org-default-notes-file "Notes")
+  	 "- %?")
+  	("p" "Permanent note" plain
+  	 (file denote-last-path)
+  	 #'denote-org-capture
+  	 :no-save t
+  	 :immediate-finish nil
+  	 :kill-buffer t
+  	 :jump-to-captured t)
+  	("t" "New task" entry
+  	 (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
+  	 "* TODO %i%? \n %U")
+  	("r" "Read article" entry
+  	 (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
+  	 "* %i%? \n %U")
+  	("bib" "BibTex Online Entry" plain
+           (file "~/Documentos/library/library.bib")
+           (function (lambda ()
+                       (string-join
+                        (list "@Online {,"
+                              "author = {%^{Author(s)}},"
+                              "organization = {%^{Organization}},"
+                              "title = {%:description},"
+                              "url = {%:link},"
+                              "date = {%<%Y-%m-%d>%?},"
+                              "notes = {"
+                              "%i"
+                              "}"
+                              "}")
+                        "\n")))
+           :prepend t
+           :empty-lines-after 1)
+  	("T" "Tickler" entry
+  	 (file+headline "~/Documentos/gtd/tickler.org" "Tickler")
+  	 "* TODO %i%? \n %U")))
+#+end_src
 
+*** TODO Habits
+
+#+begin_src emacs-lisp :tangle init.el
+(use-package org
+  :config
+  ;; Activer le module habit
+  (require 'org-habit)
+
+  ;; Optionnel : activer la colonne des graphes d'habitudes dans l’agenda
+  (add-to-list 'org-modules 'org-habit t)
+
+  ;; Quelques réglages utiles
+  (setq org-habit-show-habits-only-for-today nil
+        org-habit-show-all-today t
+        org-habit-preceding-days 7
+        org-habit-following-days 3))
 #+end_src
 
 *** Notes drawer
