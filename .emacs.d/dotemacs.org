@@ -960,8 +960,8 @@ necessary.
   (use-package consult-denote
     :ensure t
     :bind
-    (("C-c n f" . consult-denote-find)
-     ("C-c n g" . consult-denote-grep))
+    (("C-c n F" . consult-denote-find)
+     ("C-c n G" . consult-denote-grep))
     :config
     (consult-denote-mode 1))
 #+end_src
@@ -974,23 +974,26 @@ try and see if =consult-denote= is still relevant for my needs, or if
 =consult-note= is offering more than I actually need.
 
 #+begin_src emacs-lisp :tangle init.el
-    (use-package consult-notes
-      :ensure t
-      :commands (consult-notes
-                 consult-notes-search-in-all-notes)
-                   :config
-      (setq consult-notes-file-dir-sources
-    	  '(("GTD"  ?g  "~/Documentos/gtd/")
-    	    ("Notes"  ?n  "~/Documentos/notes/")
-  	    ("Notes Ex aequo"  ?e  "~/Documentos/notes-exaequo/"))) ;; Set notes dir(s), see below
-      ;; Set org-roam integration, denote integration, or org-heading integration e.g.:
-      ;; (setq consult-notes-org-headings-files '("~/path/to/file1.org"
-      ;;                                          "~/path/to/file2.org"))
-      ;; (consult-notes-org-headings-mode)
-      ;; (when (locate-library "denote")
-      ;;   (consult-notes-denote-mode))
-     ;; search only for text files in denote dir
-      (setq consult-notes-denote-files-function (lambda () (denote-directory-files nil t t))))
+  (use-package consult-notes
+    :ensure t
+    :commands (consult-notes
+               consult-notes-search-in-all-notes)
+    :bind
+    (("C-c n f" . consult-notes)
+     ("C-c n g" . consult-notes-search-in-all-notes))
+    :config
+    (setq consult-notes-file-dir-sources
+  	'(("GTD"  ?g  "~/Documentos/gtd/")
+  	  ("Notes"  ?n  "~/Documentos/notes/")
+  	  ("Notes Ex aequo"  ?e  "~/Documentos/notes-exaequo/"))) ;; Set notes dir(s), see below
+    ;; Set org-roam integration, denote integration, or org-heading integration e.g.:
+    ;; (setq consult-notes-org-headings-files '("~/path/to/file1.org"
+    ;;                                          "~/path/to/file2.org"))
+    ;; (consult-notes-org-headings-mode)
+    ;; (when (locate-library "denote")
+    ;;   (consult-notes-denote-mode))
+    ;; search only for text files in denote dir
+    (setq consult-notes-denote-files-function (lambda () (denote-directory-files nil t t))))
 #+end_src
 
 *** Denote-silo
