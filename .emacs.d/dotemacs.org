@@ -833,7 +833,7 @@ change for now. Maybe it could be worth it on Windows.
     (all-the-icons-completion-mode))
 #+end_src
 
-*** Fonts selection
+*** COMMENT Fonts selection
 
 Here I am setting my fonts. After some tries and errors Prot's
 aporetic is the only font that manages to look good on any OS without
@@ -852,6 +852,8 @@ issues, like visual bugs on Windows or the absence of italics.
   		    :weight 'regular
   		    :height 1.0) ; :height 1.0 fix an issue with zooming on EWW
 #+end_src
+
+*** Variable pitch
 
 Also, to make sure I'm using variable-pitch fonts, I'm borrowing
 Prot's settings for ~face-remap~ to set which modes are to use it.
@@ -873,7 +875,7 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package fontaine
-    :ensure true
+    :ensure t
     :config
     (setq fontaine-latest-state-file
   	(locate-user-emacs-file "fontaine-latest-state.eld"))
@@ -890,6 +892,9 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
             (large
              :inherit medium
              :default-height 150)
+  	  (reading
+  	   :variable-pitch-family "Noto Serif"
+             :variable-pitch-height 200)
             (presentation
              :default-height 180)
             (t
@@ -914,11 +919,11 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
 
              :mode-line-active-family nil ; falls back to :default-family
              :mode-line-active-weight nil ; falls back to :default-weight
-             :mode-line-active-height 0.9
+             :mode-line-active-height 1.0
 
              :mode-line-inactive-family nil ; falls back to :default-family
              :mode-line-inactive-weight nil ; falls back to :default-weight
-             :mode-line-inactive-height 0.9
+             :mode-line-inactive-height 1.0
 
              :header-line-family nil ; falls back to :default-family
              :header-line-weight nil ; falls back to :default-weight

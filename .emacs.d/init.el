@@ -342,18 +342,6 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   :init
   (all-the-icons-completion-mode))
 
-;; Fonts settings
-
-(dolist (face '(default fixed-pitch))
-  (set-face-attribute `,face nil
-		      :font "Aporetic Sans Mono"
-		      :weight 'regular
-		      :height 120))
-(set-face-attribute 'variable-pitch nil
-		    :font "Aporetic Sans"
-		    :weight 'regular
-		    :height 1.0) ; :height 1.0 fix an issue with zooming on EWW
-
 ;;;;; `variable-pitch-mode' setup
 (use-package face-remap
   :ensure nil
@@ -366,7 +354,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
       (variable-pitch-mode 1))))
 
 (use-package fontaine
-  :ensure true
+  :ensure t
   :config
   (setq fontaine-latest-state-file
 	(locate-user-emacs-file "fontaine-latest-state.eld"))
@@ -383,6 +371,9 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
           (large
            :inherit medium
            :default-height 150)
+	  (reading
+	   :variable-pitch-family "Noto Serif"
+           :variable-pitch-height 200)
           (presentation
            :default-height 180)
           (t
@@ -407,11 +398,11 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 
            :mode-line-active-family nil ; falls back to :default-family
            :mode-line-active-weight nil ; falls back to :default-weight
-           :mode-line-active-height 0.9
+           :mode-line-active-height 1.0
 
            :mode-line-inactive-family nil ; falls back to :default-family
            :mode-line-inactive-weight nil ; falls back to :default-weight
-           :mode-line-inactive-height 0.9
+           :mode-line-inactive-height 1.0
 
            :header-line-family nil ; falls back to :default-family
            :header-line-weight nil ; falls back to :default-weight
