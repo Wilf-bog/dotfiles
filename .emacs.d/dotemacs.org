@@ -1363,6 +1363,14 @@ be configured.
   (use-package biblio
     :ensure t)
 #+end_src
+
+** TODO Recutils (=rec-mode=)
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package rec-mode
+    :ensure t)
+#+end_src
+
 ** TODO Themes
 
 *** TODO Ef themes

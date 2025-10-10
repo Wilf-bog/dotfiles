@@ -706,6 +706,9 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 (use-package biblio
   :ensure t)
 
+(use-package rec-mode
+  :ensure t)
+
 (use-package ef-themes
   :ensure t
   :demand t
