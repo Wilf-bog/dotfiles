@@ -2,7 +2,9 @@
 
 rec-mode
 
-(possession "name: " p n "type: " p n "location: " p n "price: " p n "acquired: " p n "state: " p n "status: " p n "notes: " p n "tag: " p n)
+(possession "name: " p n "type: " p n "location: " p n "price: " p n "acquired: " p n "state: " p n "status: " p n "notes: " p n "tag: " p n n) ; possessions.rec mostly
+(livre "title: " p n "author: " p n "publisher: " p n "year: " p n "pages: " p n "status: " p n "location: " p n "language: " p n n) ; livre.rec
+(exercice "date: " (format-time-string "%Y-%m-%d") n "exercice: " p n "sets: " p n "repetitions: " n p "comment: " p n n) ; fitness.rec
 
 ;; Local Variables:
 ;; mode: lisp-data

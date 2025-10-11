@@ -814,7 +814,7 @@ the configuration grows.
 In this section I set all the settings related to fonts / faces,
 including the emojis for additional symbols.
 
-*** ~all-the-icons
+*** Icons (=all-the-icons=)
 
 In addition to normal fonts, I use ~all-the-icons~ to improve the look
 and usability of tools like Dired. Nerd-icons seems to be an
