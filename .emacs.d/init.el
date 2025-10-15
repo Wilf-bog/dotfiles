@@ -1137,7 +1137,8 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 
 ;; Optional: Add tempel-collection.
 ;; The package is young and doesn't have comprehensive coverage.
-(use-package tempel-collection)
+(use-package tempel-collection
+  :ensure t)
 
 ;; Optional: Use the Corfu completion UI
 (use-package corfu

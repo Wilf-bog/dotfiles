@@ -112,7 +112,7 @@ modules about early-init.
                                           ; not found in GNU elpa
                             ("stable" . 70)   ; prefer "released" versions
                                           ; from melpa
-                            ("melpa"  . 0)))  ; if all else fails, get it
+                            ("melpa"  . 75)))  ; if all else fails, get it
                                           ; from melpa
 #+end_src
 
