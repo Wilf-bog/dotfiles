@@ -740,6 +740,9 @@ to BibTeX using Org protocol]] for more details.
 
 *** TODO Habits
 
+I'm still not sure about =org-habit=, this may be removed in favor or
+=GNU Recutils=.
+
 #+begin_src emacs-lisp :tangle init.el
 (use-package org
   :config
