@@ -710,6 +710,9 @@ to BibTeX using Org protocol]] for more details.
   	 :immediate-finish nil
   	 :kill-buffer t
   	 :jump-to-captured t)
+  	("c" "Calisthenics" entry
+           (file+headline "~/Documentos/gtd/fitness.org" "Journal d'entraînement")
+           "* %<%Y-%m-%d>\n%(wilf/org-capture-exercice-entry)\n")
   	("t" "New task" entry
   	 (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
   	 "* TODO %i%? \n %U")
@@ -965,6 +968,12 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
     ;;
     ;;     (info "(elisp) Key Binding Conventions")
     (define-key global-map (kbd "C-c f") #'fontaine-set-preset))
+#+end_src
+
+** Personal scripts
+
+#+begin_src emacs-lisp :tangle init.el
+  (add-to-list 'load-path "~/.emacs.d/lisp/")
 #+end_src
 
 ** TODO Casual
@@ -1759,6 +1768,32 @@ capture, and archive Web pages in Org-mode]].
     :ensure t
     :bind
     (("C-c w" . org-web-tools-insert-link-for-url)))
+#+end_src
+
+*** TODO COMMENT Personal Org scripts
+:PROPERTIES:
+:ID:       9581b8e3-3df7-4ada-875d-b8185e477a57
+:END:
+
+
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package calisthenics-exercises
+    :load-path "~/.emacs.d/lisp/"
+    :defer t)
+
+  (defun wilf/org-capture-exercice-entry ()
+        "Capture dynamique pour un exercice Hybrid Calisthenics."
+        (let* ((cats (mapcar #'car wilf/calisthenics-exercises-alist))
+               (chosen-cat (completing-read "Catégorie : " cats nil t))
+               (ex-list (cdr (assoc chosen-cat wilf/calisthenics-exercises-alist)))
+               (chosen-ex (completing-read (format "Exercice (%s) : " chosen-cat)
+                                           ex-list nil t))
+               (sets (read-string "Sets : "))
+               (reps (read-string "Répétitions : "))
+               (comment (read-string "Commentaire : ")))
+          (format "** %s — %s\n:PROPERTIES:\n:Category: %s\n:Sets: %s\n:Reps: %s\n:END:\n%s"
+                  chosen-cat chosen-ex chosen-cat sets reps comment)))
 #+end_src
 
 ** TODO Other

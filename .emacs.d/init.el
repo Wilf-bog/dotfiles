@@ -262,6 +262,9 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 	 :immediate-finish nil
 	 :kill-buffer t
 	 :jump-to-captured t)
+	("c" "Calisthenics" entry
+         (file+headline "~/Documentos/gtd/fitness.org" "Journal d'entraînement")
+         "* %<%Y-%m-%d>\n%(wilf/org-capture-exercice-entry)\n")
 	("t" "New task" entry
 	 (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
 	 "* TODO %i%? \n %U")
@@ -441,6 +444,8 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   ;;
   ;;     (info "(elisp) Key Binding Conventions")
   (define-key global-map (kbd "C-c f") #'fontaine-set-preset))
+
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (use-package casual
   :ensure t
