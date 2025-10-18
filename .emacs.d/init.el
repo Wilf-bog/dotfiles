@@ -262,9 +262,12 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 	 :immediate-finish nil
 	 :kill-buffer t
 	 :jump-to-captured t)
+	;; ("c" "Calisthenics" entry
+        ;;  (file+headline "~/Documentos/gtd/fitness.org" "Journal d'entraînement")
+         ;; "* %<%Y-%m-%d>\n%(wilf/org-capture-exercice-entry)\n")
 	("c" "Calisthenics" entry
-         (file+headline "~/Documentos/gtd/fitness.org" "Journal d'entraînement")
-         "* %<%Y-%m-%d>\n%(wilf/org-capture-exercice-entry)\n")
+	 (file+olp+datetree "~/Documentos/gtd/fitness.org" ("Journal d'entraînement"))
+	 "%(wilf/org-capture-exercice-entry)\n")
 	("t" "New task" entry
 	 (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
 	 "* TODO %i%? \n %U")
@@ -986,6 +989,10 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   :ensure t
   :bind
   (("C-c w" . org-web-tools-insert-link-for-url)))
+
+(use-package wilf-calisthenics-exercises
+  :load-path "~/.emacs.d/lisp/"
+  :commands (wilf/org-capture-exercice-entry wilf/get-exercises-for))
 
 (use-package embark
   :ensure t

@@ -1,5 +1,11 @@
-;;; calisthenics-exercises.el --- Hybrid Calisthenics exercises data -*- lexical-binding: t; -*-
-(defvar wilf/calisthenics-exercises-alist
+;;; wilf-calisthenics-exercises.el --- Hybrid Calisthenics exercises data -*- lexical-binding: t; -*-
+;;; Commentary:
+;; This file defines the list of Hybrid Calisthenics exercises and helper
+;; functions for use in Org capture templates or other Emacs tools.
+
+;;; Code:
+
+(defvar wilf-calisthenics-exercises-alist
   '(("Pushups"
      . ("Wall Pushups"
         "Incline Pushups"
@@ -80,6 +86,25 @@
         "Thick Bar Holds")))
   "Alist of categories → list of Hybrid Calisthenics exercises.")
 
+;;;###autoload
+(defun wilf/get-exercises-for (category)
+  "Return the list of exercises for CATEGORY from `wilf-calisthenics-exercises-alist`."
+  (cdr (assoc category wilf-calisthenics-exercises-alist)))
 
-(provide 'calisthenics-exercises)
-;;; calisthenics-exercises.el ends here
+;;;###autoload
+(defun wilf/org-capture-exercice-entry ()
+  "Capture dynamique pour un exercice Hybrid Calisthenics.
+Propose une catégorie et un exercice, puis construit une entrée Org formatée."
+  (let* ((cats (mapcar #'car wilf-calisthenics-exercises-alist))
+         (chosen-cat (completing-read "Catégorie : " cats nil t))
+         (ex-list (wilf/get-exercises-for chosen-cat))
+         (chosen-ex (completing-read (format "Exercice (%s) : " chosen-cat)
+                                     ex-list nil t))
+         (sets (read-string "Sets : "))
+         (reps (read-string "Répétitions : "))
+         (comment (read-string "Commentaire : ")))
+    (format "** %s — %s\n:PROPERTIES:\n:Category: %s\n:Sets: %s\n:Reps: %s\n:END:\n%s"
+            chosen-cat chosen-ex chosen-cat sets reps comment)))
+
+(provide 'wilf-calisthenics-exercises)
+;;; wilf-calisthenics-exercises.el ends here
