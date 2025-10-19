@@ -1056,7 +1056,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
            :header-line-active spacious-padding-line-active
            :header-line-inactive spacious-padding-line-inactive))
   :init
-  (spacious-padding-mode 1))
+  (spacious-padding-mode 0))
 
 (use-package olivetti
   :ensure t

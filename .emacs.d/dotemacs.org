@@ -1841,6 +1841,11 @@ capture, and archive Web pages in Org-mode]].
 Other package by Prot, this one improves the look of Emacs (and
 readability) by adding padding as the name implies.
 
+As of 2025-10-18, I will stop using it for a time for the added space
+and the not so bad aesthetics of the default padding. It is still a
+useful package and I'll keep it disabled by default in case it is
+needed.
+
 #+begin_src emacs-lisp :tangle init.el
   (use-package spacious-padding
     :ensure t
@@ -1861,7 +1866,7 @@ readability) by adding padding as the name implies.
              :header-line-active spacious-padding-line-active
              :header-line-inactive spacious-padding-line-inactive))
     :init
-    (spacious-padding-mode 1))
+    (spacious-padding-mode 0))
 #+end_src
 *** TODO Olivetti
 #+begin_src emacs-lisp :tangle init.el
