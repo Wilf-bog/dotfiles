@@ -76,6 +76,9 @@
 
 (setq custom-file (make-temp-file "emacs-custom-"))
 
+;; Switching window quickly
+(global-set-key (kbd "M-o") 'other-window)
+
 (use-package tab-bar
   :ensure nil
   :config

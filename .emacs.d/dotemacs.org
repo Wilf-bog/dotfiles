@@ -291,14 +291,21 @@ rely a temporary file that won't be automatically reloaded.
 
 I used to use a =M-o= to switch window quickly but in line with my
 goal of keeping things minimal and to stay close to Emacs' defaults, I
-want to get used to =C-x o=. I also used to use a package called
-=balanced-windows= but again I'm tempted to stay away from it for the
-moment, and get used to the command =C-x += which is the default
-keybinding to balance windows.
+want to get used to =C-x o=. But, when the number of windows get too
+high, using =C-x o= gets in the way, and I now prefer to use =M-o= again
+since I don't need that keybind for anything else.
+
+I also used to use a package called =balanced-windows= but again I'm
+tempted to stay away from it for the moment, and get used to the
+command =C-x += which is the default keybinding to balance windows.
 
 For now, no settings are changed until I decide I want to go back to
 my old ways.
 
+#+begin_src emacs-lisp :tangle init.el
+  ;; Switching window quickly
+  (global-set-key (kbd "M-o") 'other-window)
+#+end_src
 ** Emacs tabs
 
 I used to use tabs with the defaults options, which means the tabs are
