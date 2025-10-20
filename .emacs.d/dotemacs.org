@@ -1836,7 +1836,7 @@ capture, and archive Web pages in Org-mode]].
     :hook
     (embark-collect-mode . consult-preview-at-point-mode))
 #+end_src
-*** TODO Spacious-padding
+*** TODO COMMENT Spacious-padding
 
 Other package by Prot, this one improves the look of Emacs (and
 readability) by adding padding as the name implies.
@@ -1866,7 +1866,7 @@ needed.
              :header-line-active spacious-padding-line-active
              :header-line-inactive spacious-padding-line-inactive))
     :init
-    (spacious-padding-mode 0))
+    (spacious-padding-mode 1))
 #+end_src
 *** TODO Olivetti
 #+begin_src emacs-lisp :tangle init.el
