@@ -269,7 +269,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
         ;;  (file+headline "~/Documentos/gtd/fitness.org" "Journal d'entraînement")
          ;; "* %<%Y-%m-%d>\n%(wilf/org-capture-exercice-entry)\n")
 	("c" "Calisthenics" entry
-	 (file+olp+datetree "~/Documentos/gtd/fitness.org" ("Journal d'entraînement"))
+	 (file+olp+datetree "~/Documentos/gtd/fitness.org" "Journal d'entraînement")
 	 "%(wilf/org-capture-exercice-entry)\n")
 	("t" "New task" entry
 	 (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
