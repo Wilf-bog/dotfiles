@@ -190,6 +190,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   (dired-dwim-target t)			; Allow to move stuff from a
 					; window to another.
   (delete-by-moving-to-trash t)
+  (setq dired-vc-rename-file t)
   :init
   (put 'dired-find-alternate-file 'disabled nil))
 (autoload 'dired-omit-mode "dired-x")
