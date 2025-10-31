@@ -75,6 +75,12 @@
         "Assisted Dips"
         "Full Dips"
         "Weighted Dips"))
+    ("Calf raises"
+     . ("Calf raises"
+        "One Leg Calf Raise"
+        "Weighted One Leg Calf Raise"
+        "Suspended Calf Raise"
+        "Suspended One Leg Calf Raise"))
     ("Grips"
      . ("Towel Hangs"
         "Dead Hangs"
