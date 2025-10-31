@@ -734,7 +734,7 @@ to BibTeX using Org protocol]] for more details.
             (file "~/Documentos/library/library.bib")
             (function (lambda ()
                         (string-join
-                         (list "@Online {,"
+                         (list "@Online{,"
                                "author = {%^{Author(s)}},"
                                "organization = {%^{Organization}},"
                                "title = {%:description},"
