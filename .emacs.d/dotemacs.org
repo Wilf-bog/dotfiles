@@ -1031,7 +1031,20 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
   (keymap-set bibtex-mode-map "M-DEL" #'bibtex-kill-field)
 
 #+end_src
-
+** TODO Calibre
+#+begin_src emacs-lisp :tangle .emacs.d/init.el
+      (use-package calibredb
+        :defer t
+        :config
+        (setq calibredb-root-dir "~/Documentos/calibre")
+        (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir))
+        :bind
+        (("C-c w b l" . calibredb)))
+        ;; (setq calibredb-library-alist '(("~/OneDrive/Org/Doc/Calibre")
+        ;;                                 ("~/Documentos/Books Library")
+        ;;                                 ("~/Documentos/LIB1")
+        ;;                                 ("/Volumes/ShareDrive/Documents/Library/"))))
+#+end_src
 ** TODO Git
 
 For git, I tend to prefer Magit even though it is probably overkill
