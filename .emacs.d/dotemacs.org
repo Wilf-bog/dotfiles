@@ -2148,3 +2148,16 @@ Writing Studio.
                  '("\\.\\(?:OD[CFIGPST]\\|od[cfigpst]\\)\\'"
                    . doc-view-mode-maybe)))
 #+end_src
+
+*** TODO Video
+
+
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package ready-player
+    :ensure t
+    :config
+    (ready-player-mode +1)
+    (setq ready-player-my-media-collection-location "/var/mnt/data/Music/"))
+#+end_src
+

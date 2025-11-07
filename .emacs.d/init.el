@@ -282,7 +282,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
          (file "~/Documentos/library/library.bib")
          (function (lambda ()
                      (string-join
-                      (list "@Online {,"
+                      (list "@Online{,"
                             "author = {%^{Author(s)}},"
                             "organization = {%^{Organization}},"
                             "title = {%:description},"
@@ -1209,3 +1209,9 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   (add-to-list 'auto-mode-alist
                '("\\.\\(?:OD[CFIGPST]\\|od[cfigpst]\\)\\'"
                  . doc-view-mode-maybe)))
+
+(use-package ready-player
+  :ensure t
+  :config
+  (ready-player-mode +1)
+  (setq ready-player-my-media-collection-location "/var/mnt/data/Music/"))
