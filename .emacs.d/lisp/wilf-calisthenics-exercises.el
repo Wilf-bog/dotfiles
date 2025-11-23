@@ -84,12 +84,12 @@
     ("Grips"
      . ("Towel Hangs"
         "Dead Hangs"
-        "Farmer Carries"
-        "Plate Pinches"
-        "Finger Extensions"
-        "Captains of Crush"
-        "Towel Pullups"
-        "Thick Bar Holds")))
+        "Assisted Towel Hangs"
+        "One Arm Hangs"
+        "Double Towel Hangs"
+        "Rope Style Hangs"
+        "One Arm Towel Hangs"
+        "Advanced One Arm Tower Hangs")))
   "Alist of categories → list of Hybrid Calisthenics exercises.")
 
 ;;;###autoload
