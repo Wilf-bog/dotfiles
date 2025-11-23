@@ -176,6 +176,9 @@ less familiar with.
 #+end_src
 
 ** Vertico related Emacs settings
+:PROPERTIES:
+:ID:       38798e8d-d763-465a-9f29-a1046a904925
+:END:
 
 To use vertico at its fullest, it's better to set this package so
 history isn't lost when restarting Emacs.
@@ -213,6 +216,9 @@ Again for Vertico, we do need to change some configuration.
 #+end_src
 
 ** TODO Backup and lockfiles
+:PROPERTIES:
+:ID:       339ad8f1-d0a6-4553-b489-0d5bd31449f4
+:END:
 
 # Considering I'm relying on syncthing to be able to share files between
 # computers and that my files are auto-saved, lockfiles and backups are
@@ -1006,6 +1012,9 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
 #+end_src
 
 *** TODO COMMENT Casual and Bibtex
+:PROPERTIES:
+:ID:       907f679d-95b6-4b27-b0c4-91fafc20f24a
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   (require 'casual-bibtex)
