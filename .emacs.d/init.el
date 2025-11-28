@@ -1160,6 +1160,10 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   ;; useful beyond Corfu.
   (read-extended-command-predicate #'command-completion-default-include-p))
 
+(use-package ledger-mode
+  :config
+  (setq ledger-default-date-format "%Y-%m-%d"))
+
 (when (eq system-type 'gnu/linux)	;For now, pdf-tools can't be installed on Windows
   (use-package pdf-tools
     :ensure t

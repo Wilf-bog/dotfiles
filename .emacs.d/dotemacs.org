@@ -2076,6 +2076,12 @@ Some additional Emacs settings.
   ;; useful beyond Corfu.
   (read-extended-command-predicate #'command-completion-default-include-p))
 #+end_src
+*** TODO Ledger
+#+begin_src emacs-lisp :tangle init.el
+  (use-package ledger-mode
+    :config
+    (setq ledger-default-date-format "%Y-%m-%d"))
+#+end_src
 ** TODO Filetype specifics
 
 *** TODO PDF
