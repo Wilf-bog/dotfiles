@@ -1012,6 +1012,12 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   :bind
   (("C-c w" . org-web-tools-insert-link-for-url)))
 
+(straight-use-package
+ '(org-gtd :type git
+           :host github
+           :repo "Trevoke/org-gtd.el"
+           :branch "org-gtd-4"))
+
 (use-package wilf-calisthenics-exercises
   :load-path "~/.emacs.d/lisp/"
   :commands (wilf/org-capture-exercice-entry wilf/get-exercises-for))

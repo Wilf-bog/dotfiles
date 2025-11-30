@@ -1829,6 +1829,16 @@ capture, and archive Web pages in Org-mode]].
     (("C-c w" . org-web-tools-insert-link-for-url)))
 #+end_src
 
+*** Org-GTD
+
+#+begin_src emacs-lisp :tangle init.el
+  (straight-use-package
+   '(org-gtd :type git
+             :host github
+             :repo "Trevoke/org-gtd.el"
+             :branch "org-gtd-4"))
+#+end_src
+
 *** TODO Personal Org scripts
 :PROPERTIES:
 :ID:       9581b8e3-3df7-4ada-875d-b8185e477a57
