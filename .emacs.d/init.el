@@ -1037,13 +1037,14 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 (setq org-gtd-directory "~/gtd")
 
 ;; Add org-gtd files to your agenda
-(setq org-agenda-files (list org-gtd-directory))
+(setq add-to-list 'org-agenda-files org-gtd-directory)
 
 ;; REQUIRED: Enable org-edna for project dependencies
 (org-edna-mode 1)
 
 ;; Global keybindings for GTD commands
 ;; These work anywhere in Emacs
+(global-set-key (kbd "C-c d") #'org-gtd-command-center) ; Transient menu added manually
 (global-set-key (kbd "C-c d c") 'org-gtd-capture)
 (global-set-key (kbd "C-c d e") 'org-gtd-engage)
 (global-set-key (kbd "C-c d p") 'org-gtd-process-inbox)
