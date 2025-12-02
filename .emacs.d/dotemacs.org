@@ -1837,6 +1837,47 @@ capture, and archive Web pages in Org-mode]].
              :host github
              :repo "Trevoke/org-gtd.el"
              :branch "org-gtd-4"))
+
+  ;; Taken from the manual
+
+  ;; Configure org-mode TODO keywords
+  ;; All GTD keywords MUST be in the same sequence
+  (setq org-todo-keywords
+        '((sequence "TODO" "NEXT" "WAIT" "|" "DONE" "CNCL")))
+
+  ;; Map GTD semantic states to your keywords
+  (setq org-gtd-keyword-mapping
+        '((todo . "TODO")      ; tasks not ready to act on
+          (next . "NEXT")      ; tasks ready to act on immediately
+          (wait . "WAIT")      ; tasks blocked or delegated
+          (done . "DONE")      ; tasks successfully completed
+          (canceled . "CNCL"))) ; tasks that won't be completed
+
+  ;; Optional: Set GTD directory (defaults to ~/gtd/)
+  (setq org-gtd-directory "~/gtd")
+
+  ;; Add org-gtd files to your agenda
+  (setq org-agenda-files (list org-gtd-directory))
+
+  ;; REQUIRED: Enable org-edna for project dependencies
+  (org-edna-mode 1)
+
+  ;; Global keybindings for GTD commands
+  ;; These work anywhere in Emacs
+  (global-set-key (kbd "C-c d c") 'org-gtd-capture)
+  (global-set-key (kbd "C-c d e") 'org-gtd-engage)
+  (global-set-key (kbd "C-c d p") 'org-gtd-process-inbox)
+  (global-set-key (kbd "C-c d n") 'org-gtd-show-all-next)
+  (global-set-key (kbd "C-c d s") 'org-gtd-reflect-stuck-projects)
+
+  ;; Keybinding for clarify map
+  ;; This only works when you're in a clarify buffer
+  (with-eval-after-load 'org-gtd
+    (define-key org-gtd-clarify-map (kbd "C-c c") 'org-gtd-organize))
+
+  ;; Quick task actions in agenda view
+  (with-eval-after-load 'org-agenda
+    (define-key org-agenda-mode-map (kbd "C-c .") 'org-gtd-agenda-transient))
 #+end_src
 
 *** TODO Personal Org scripts
