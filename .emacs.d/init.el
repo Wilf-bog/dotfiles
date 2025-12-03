@@ -1034,10 +1034,10 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
         (canceled . "CNCL"))) ; tasks that won't be completed
 
 ;; Optional: Set GTD directory (defaults to ~/gtd/)
-(setq org-gtd-directory "~/gtd")
+(setq org-gtd-directory "~/Documentos/gtd")
 
 ;; Add org-gtd files to your agenda
-(setq add-to-list 'org-agenda-files org-gtd-directory)
+(add-to-list 'org-agenda-files org-gtd-directory)
 
 ;; REQUIRED: Enable org-edna for project dependencies
 (org-edna-mode 1)
@@ -1045,16 +1045,20 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 ;; Global keybindings for GTD commands
 ;; These work anywhere in Emacs
 (global-set-key (kbd "C-c d") #'org-gtd-command-center) ; Transient menu added manually
-(global-set-key (kbd "C-c d c") 'org-gtd-capture)
-(global-set-key (kbd "C-c d e") 'org-gtd-engage)
-(global-set-key (kbd "C-c d p") 'org-gtd-process-inbox)
-(global-set-key (kbd "C-c d n") 'org-gtd-show-all-next)
-(global-set-key (kbd "C-c d s") 'org-gtd-reflect-stuck-projects)
+;; (global-set-key (kbd "C-c d c") 'org-gtd-capture)
+;; (global-set-key (kbd "C-c d e") 'org-gtd-engage)
+;; (global-set-key (kbd "C-c d p") 'org-gtd-process-inbox)
+;; (global-set-key (kbd "C-c d n") 'org-gtd-show-all-next)
+;; (global-set-key (kbd "C-c d s") 'org-gtd-reflect-stuck-projects)
 
 ;; Keybinding for clarify map
 ;; This only works when you're in a clarify buffer
 (with-eval-after-load 'org-gtd
   (define-key org-gtd-clarify-map (kbd "C-c c") 'org-gtd-organize))
+
+;; This code has been produced by chatGPT since the last one didn't work
+(with-eval-after-load 'org-gtd
+  (define-key org-gtd-wip-mode-map (kbd "C-c c") #'org-gtd-organize))
 
 ;; Quick task actions in agenda view
 (with-eval-after-load 'org-agenda
