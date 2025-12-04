@@ -1074,6 +1074,20 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
        (filters . ((type . project)
                    (has-active-tasks . t)))))))
 
+;; This one works!
+
+(defun my-org-gtd-all-projects ()
+  "Show all projects, including completed ones."
+  (interactive)
+  (org-gtd-view-show
+   '((name . "All Projects")
+     (filters . ((type . project))))))
+
+;; Not sure about this binding since it removes the transient menu. To
+;; consider if I accumulate useful functions.
+
+;; (global-set-key (kbd "C-c d P") 'my-org-gtd-active-projects)
+
 (use-package wilf-calisthenics-exercises
   :load-path "~/.emacs.d/lisp/"
   :commands (wilf/org-capture-exercice-entry wilf/get-exercises-for))
