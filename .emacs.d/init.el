@@ -1064,6 +1064,16 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 (with-eval-after-load 'org-agenda
   (define-key org-agenda-mode-map (kbd "C-c .") 'org-gtd-agenda-transient))
 
+;; Exercice about views from the manual
+(with-eval-after-load 'org-gtd
+  (defun my-org-gtd-active-projects ()
+    "Show all active projects."
+    (interactive)
+    (org-gtd-view-show
+     '((name . "My Active Projects")
+       (filters . ((type . project)
+                   (has-active-tasks . t)))))))
+
 (use-package wilf-calisthenics-exercises
   :load-path "~/.emacs.d/lisp/"
   :commands (wilf/org-capture-exercice-entry wilf/get-exercises-for))
