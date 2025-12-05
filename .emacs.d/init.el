@@ -1056,12 +1056,14 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 
 ;; Keybinding for clarify map
 ;; This only works when you're in a clarify buffer
-(with-eval-after-load 'org-gtd
-  (define-key org-gtd-clarify-map (kbd "C-c c") 'org-gtd-organize))
 
-;; This code has been produced by chatGPT since the last one didn't work
-(with-eval-after-load 'org-gtd
-  (define-key org-gtd-wip-mode-map (kbd "C-c c") #'org-gtd-organize))
+;; (with-eval-after-load 'org-gtd
+;;   (define-key org-gtd-wip-mode-map (kbd "C-c c") #'org-gtd-organize))
+
+;; The precedent code didn't work, but this one does.
+(add-hook 'org-gtd-wip-mode-hook
+        (lambda ()
+          (local-set-key (kbd "C-c c") #'org-gtd-organize)))
 
 ;; Quick task actions in agenda view
 (with-eval-after-load 'org-agenda
