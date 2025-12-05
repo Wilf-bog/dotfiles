@@ -1083,6 +1083,13 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
    '((name . "All Projects")
      (filters . ((type . project))))))
 
+(defun my-org-gtd-active-projects ()
+  "Show active projects, excluding completed ones."
+  (interactive)
+  (org-gtd-view-show
+   '((name . "Active Projects")
+     (filters . ((type . active-project))))))
+
 ;; Not sure about this binding since it removes the transient menu. To
 ;; consider if I accumulate useful functions.
 
