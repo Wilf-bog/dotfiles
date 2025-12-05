@@ -1039,6 +1039,9 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 ;; Add org-gtd files to your agenda
 (add-to-list 'org-agenda-files org-gtd-directory)
 
+;; Enable choosing refiling target
+(setq org-gtd-refile-to-any-target nil)
+
 ;; REQUIRED: Enable org-edna for project dependencies
 (org-edna-mode 1)
 
