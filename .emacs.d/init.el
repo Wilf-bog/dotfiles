@@ -1058,10 +1058,10 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 ;; This only works when you're in a clarify buffer
 
 ;; (with-eval-after-load 'org-gtd
-;;   (define-key org-gtd-wip-mode-map (kbd "C-c c") #'org-gtd-organize))
+;;   (define-key org-gtd-clarify-mode-map (kbd "C-c c") #'org-gtd-organize))
 
 ;; The precedent code didn't work, but this one does.
-(add-hook 'org-gtd-wip-mode-hook
+(add-hook 'org-gtd-clarify-mode-hook
         (lambda ()
           (local-set-key (kbd "C-c c") #'org-gtd-organize)))
 
