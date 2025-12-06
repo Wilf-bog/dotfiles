@@ -233,19 +233,13 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 	  ("@outside" . ?o)
 
 	  ;; Activities
+	  ("@achat" . ?b)
 	  ("@lecture" . ?l)
-	  ("@cprf" . ?c)
-	  ("@syndicat" . ?s)
-	  ("@zfu" . ?z)
-	  ("@writing" . ?w)
+	  ("@écrire" . ?é)
 	  ("@visionner" . ?v)
 	  ("@email" . ?e)
-	  ("@calls" . ?a)
-	  ("@errands" . ?r)))
-
-;; More TODO states
-(setq org-todo-keywords
-	'((sequence "TODO(t)" "NEXT(n)" "STARTED(s!)" "WAITING(w!)" "|" "DONE(d!)" "DELEGATED(é!)" "CANCELED(c!)")))
+	  ("@appels" . ?a)
+	  ("@courses" . ?c)))
 
 (use-package org
   :custom
