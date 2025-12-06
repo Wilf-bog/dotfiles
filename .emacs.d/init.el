@@ -1042,6 +1042,12 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 ;; Enable choosing refiling target
 (setq org-gtd-refile-to-any-target nil)
 
+;; Setting my areas of focus
+(setq org-gtd-areas-of-focus '("Maison" "Santé" "Amitié et famille" "ZS" "CPRF" "Syndicat" "Travail"))
+
+;; Adding areas of focus and tags to items
+(setq org-gtd-organize-hooks '(org-gtd-set-area-of-focus org-set-tags-command))
+
 ;; REQUIRED: Enable org-edna for project dependencies
 (org-edna-mode 1)
 
