@@ -38,6 +38,8 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(straight-use-package 'org)
+
 (server-start)
 (require 'org-protocol)
 

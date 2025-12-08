@@ -160,6 +160,9 @@ necessary anymore but it doesn't hurt to keep it (as far as I know).
 #+end_src
 
 ** Setting Straight
+I've started using =straight= to be able to install the beta version of
+=org-gtd=. I still need to see if this is something I want to use in the
+future.
 
 #+begin_src emacs-lisp :tangle init.el
 (defvar bootstrap-version)
@@ -177,6 +180,13 @@ necessary anymore but it doesn't hurt to keep it (as far as I know).
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
+#+end_src
+
+To avoid mismatching versions of Org loaded, the following line is
+necessary:
+
+#+begin_src emacs-lisp :tangle init.el
+  (straight-use-package 'org)
 #+end_src
 
 ** TODO Setting up Emacs server for =org-protocol=
