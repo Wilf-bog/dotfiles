@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       ac0b83e1-602d-4fdd-aeb5-45d797d71a36
+:END:
 #+title: Emacs configuration
 #+author: Frédéric Vachon
 #+property: header-args:emacs-lisp :mkdirp yes
