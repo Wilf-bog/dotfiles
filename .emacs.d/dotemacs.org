@@ -25,6 +25,9 @@ contribution.
 - Protesilaos Stavrou
 
 * Early initialization of Emacs (=early-init.el=)
+:PROPERTIES:
+:ID:       98ac6540-9bf9-4557-908e-9144db5014f2
+:END:
 
 #+begin_src emacs-lisp :tangle early-init.el
 ;; Copyright (C) 2025  Frédéric Vachon
@@ -126,6 +129,9 @@ And some additional settings for =straight=:
 #+end_src
 
 * TODO Emacs settings (=init.el=)
+:PROPERTIES:
+:ID:       87c97ca1-b882-4c80-a068-db2eef5346d8
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
 ;; Copyright (C) 2025  Frédéric Vachon
@@ -153,6 +159,9 @@ that are part of the normal initialisation process as well as settings
 proper to Emacs' own packages.
 
 ** Setting Use-package
+:PROPERTIES:
+:ID:       3470f33d-4028-44fe-b8dc-a6deafcab59e
+:END:
 
 First, this line force the use of use-package. I'm not sure if it is
 necessary anymore but it doesn't hurt to keep it (as far as I know).
@@ -163,6 +172,9 @@ necessary anymore but it doesn't hurt to keep it (as far as I know).
 #+end_src
 
 ** Setting Straight
+:PROPERTIES:
+:ID:       517355b7-dd1b-40a9-be95-e882cd80c8bb
+:END:
 I've started using =straight= to be able to install the beta version of
 =org-gtd=. I still need to see if this is something I want to use in the
 future.
@@ -206,6 +218,9 @@ to run =org-protocol=.
 (require 'org-protocol)
 #+end_src
 ** =which-key=
+:PROPERTIES:
+:ID:       2f2f73a5-a5ec-4133-9bea-fc47c9a014d6
+:END:
 
 Not necessary, but a nice addition, especially when using tools I'm
 less familiar with.
@@ -282,6 +297,9 @@ Syncthing.
 #+end_src
 
 ** Emacs settings about reverting
+:PROPERTIES:
+:ID:       9c59311e-3bbf-44e3-825a-1f5ae075d46b
+:END:
 
 Considering I work on multiple machines, sometimes at the same time,
 and that I rely on Git for many config files, I prefer to
@@ -309,6 +327,9 @@ immediately available.
 #+end_src
 
 ** Using ibuffer for the buffer list
+:PROPERTIES:
+:ID:       91fbb6eb-7ba2-4535-9b48-b6987bf40b84
+:END:
 
 I rarely make a list of buffers (with =C-x C-b=) but clearly,
 ~ibuffer~ is a better tool so let's use it instead for that purpose. I
@@ -323,6 +344,9 @@ https://www.youtube.com/watch?v=6KN_oSLFf-k.
 #+end_src
 
 ** Emacs custom-file
+:PROPERTIES:
+:ID:       087d146d-13f1-463b-b745-0a9f8e5c00c3
+:END:
 
 Departing from Emacs Writing Studio defaults, I prefer to stop using
 Emacs' config file way of managing settings. Like Prot, I ask Emacs to
@@ -333,6 +357,9 @@ rely a temporary file that won't be automatically reloaded.
 #+end_src
 
 ** Emacs windows settings
+:PROPERTIES:
+:ID:       f2b05610-2cc9-4796-ae5d-927fb0b845a3
+:END:
 
 I used to use a =M-o= to switch window quickly but in line with my
 goal of keeping things minimal and to stay close to Emacs' defaults, I
@@ -352,6 +379,9 @@ my old ways.
   (global-set-key (kbd "M-o") 'other-window)
 #+end_src
 ** Emacs tabs
+:PROPERTIES:
+:ID:       c58a071e-711f-40e3-84d8-c9aec139438c
+:END:
 
 I used to use tabs with the defaults options, which means the tabs are
 shown when used, and a button is used to delete tabs and another, to
@@ -371,6 +401,9 @@ package ~beframe~.
 #+end_src
 
 ** TODO Use-package settings
+:PROPERTIES:
+:ID:       a3d49229-62f4-4e1d-9683-bea52dcd3975
+:END:
 
 For the moment, my configuration rely only on usepackage that I find
 intuitive. To avoid dealing with long init time, I manually add ensure
@@ -385,6 +418,9 @@ to all cases of use-package when it's pertinent.
 #+end_src
 
 ** TODO Emacs Web Wowser
+:PROPERTIES:
+:ID:       a9d7d689-de94-4a92-b5e2-8b6efe6ec032
+:END:
 Mostly known as EWW, it's the web browser to use on Emacs. I do enjoy
 it to read my RSS articles.
 
@@ -393,6 +429,9 @@ it to read my RSS articles.
 #+end_src
 
 ** TODO Emacs theme settings
+:PROPERTIES:
+:ID:       06aae92d-e34b-4db8-ba01-18ae7047de56
+:END:
 
 To avoid getting asked about trusting themes, we can tell it to treat
 all themes as safe by default. I use only a few themes.
@@ -402,6 +441,9 @@ all themes as safe by default. I use only a few themes.
 #+end_src
 
 *** Modus themes
+:PROPERTIES:
+:ID:       a0f454a4-1c99-424b-9140-56e9ed8bdcc9
+:END:
 
 I absolutely love Prot's Modus themes, especially Modus Vivendi. I
 used to use to tinted version but these days I like the simplicity of
@@ -432,6 +474,9 @@ inspired by ~Emacs Writing Studio~.
 #+end_src
 
 *** Auto-dark
+:PROPERTIES:
+:ID:       e9cd9943-0d93-4e2d-9b9a-67cafd4965f8
+:END:
 
 I do prefer to switch theme based on light conditions, with Gnome. For
 this, I rely on the Auto-dark package. So far it works perfectly well.
@@ -447,6 +492,9 @@ this, I rely on the Auto-dark package. So far it works perfectly well.
 #+end_src
 
 ** Recent files
+:PROPERTIES:
+:ID:       c4dec046-0c14-448b-9d54-f2e06ef46a34
+:END:
 
 Emacs Writing Studio used to introduce some basic settings and
 especially a keybinding to list recently edited files. Considering
@@ -471,6 +519,9 @@ seem perfectly good for my own needs, with a few minor tweaks.
 #+end_src
 
 ** TODO Text mode
+:PROPERTIES:
+:ID:       47726620-f620-4d6a-9125-f14f617ed822
+:END:
 In this section, I'm taking inspiration from Prot's configuration to
 improve the experience of writing prose in Emacs. The reasoning comes
 from my experience trying to use =fill-mode= like Prot to make reading
@@ -503,6 +554,9 @@ weeks of using the command =fill-paragraph=.
 #+end_src
 
 *** TODO Cycling through different paragraph formats
+:PROPERTIES:
+:ID:       3e0eef99-82d2-41d4-9387-a34d015b854a
+:END:
 
 There are a few options to be able to easily toggle between filled and
 unfilled text. This package allows us to unfill a region, a paragraph, etc.
@@ -617,6 +671,9 @@ If a region is selected, handle all paragraphs within that region."
 #+end_src
 
 ** Dired
+:PROPERTIES:
+:ID:       37757adb-2cf5-4702-8777-d6558f6d3451
+:END:
 
 Dired is my main non-GUI file manager, I've really learned to
 appreciate it, though many additional settings are necessary to make
@@ -665,6 +722,9 @@ And now, Dired configuration.
 ** TODO Org
 
 *** TODO Look and feel
+:PROPERTIES:
+:ID:       770bd131-f900-4eb6-945e-462587b63810
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package org
@@ -681,6 +741,9 @@ And now, Dired configuration.
   #+end_src
 
 *** TODO Tagging todos
+:PROPERTIES:
+:ID:       9ea08a8a-94c0-4558-9b00-e66fbbfbf9b3
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   ;; Org tags
@@ -702,6 +765,9 @@ And now, Dired configuration.
 #+end_src
 
 *** TODO Agenda
+:PROPERTIES:
+:ID:       8f6b0096-d833-4d79-99be-b026a3b389f7
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package org
@@ -793,6 +859,9 @@ to BibTeX using Org protocol]] for more details.
 #+end_src
 
 *** TODO Habits
+:PROPERTIES:
+:ID:       441a151f-374f-4bb6-aed2-e078fb0e5df9
+:END:
 
 I'm still not sure about =org-habit=, this may be removed in favor or
 =GNU Recutils=.
@@ -814,6 +883,9 @@ I'm still not sure about =org-habit=, this may be removed in favor or
 #+end_src
 
 *** Notes drawer
+:PROPERTIES:
+:ID:       5d4be2c1-60ed-43c8-8eed-38a4f405fb68
+:END:
 
 One thing I particularly like of Emacs Writing Studio was the ability
 to easily and quickly add a note drawer under a Org header. It is
@@ -847,6 +919,9 @@ Instead, I'm adding this function from Peter Provos.
 #+end_src
 
 ** TODO Bibtex
+:PROPERTIES:
+:ID:       227a1cb0-95db-4ce0-9fcc-a35f5ed2dcd7
+:END:
 These settings are the one recommended by Peter Provos on his website,
 see [[https://lucidmanager.org/productivity/emacs-bibtex-mode/][Manage Literature with Emacs BibTeX Mode]].
 
@@ -872,6 +947,9 @@ In this section I set all the settings related to fonts / faces,
 including the emojis for additional symbols.
 
 *** Icons (=all-the-icons=)
+:PROPERTIES:
+:ID:       43dbd8fe-5040-452e-aa7a-f34a003b3420
+:END:
 
 In addition to normal fonts, I use ~all-the-icons~ to improve the look
 and usability of tools like Dired. Nerd-icons seems to be an
@@ -911,6 +989,9 @@ issues, like visual bugs on Windows or the absence of italics.
 #+end_src
 
 *** Variable pitch
+:PROPERTIES:
+:ID:       0e925707-0b75-49d6-b89c-04a85957b633
+:END:
 
 Also, to make sure I'm using variable-pitch fonts, I'm borrowing
 Prot's settings for ~face-remap~ to set which modes are to use it.
@@ -929,6 +1010,9 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
 #+end_src
 
 *** Fontaine
+:PROPERTIES:
+:ID:       05d67abf-538e-4387-8648-9e8716b20354
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package fontaine
@@ -1022,6 +1106,9 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
 #+end_src
 
 ** Personal scripts
+:PROPERTIES:
+:ID:       b897125b-2c66-4cd6-b76c-63ce6d3f09ca
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   (add-to-list 'load-path "~/.emacs.d/lisp/")
@@ -1039,6 +1126,9 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
 #+end_src
 
 *** TODO Casual and Org-agenda
+:PROPERTIES:
+:ID:       4f6245ad-807a-4b6e-a164-e2f6f0ac7c3e
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   (require 'casual-agenda)
@@ -1075,6 +1165,9 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
 
 #+end_src
 ** TODO Calibre
+:PROPERTIES:
+:ID:       44b61146-9b6f-4ac6-ada1-dbaa8d276ae1
+:END:
 #+begin_src emacs-lisp :tangle .emacs.d/init.el
       (use-package calibredb
         :defer t
@@ -1089,6 +1182,9 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
         ;;                                 ("/Volumes/ShareDrive/Documents/Library/"))))
 #+end_src
 ** TODO Git
+:PROPERTIES:
+:ID:       35943844-edc9-4ebc-8f39-717074caecbb
+:END:
 
 For git, I tend to prefer Magit even though it is probably overkill
 considering my limited use of git in general. I do enjoy how the tool
@@ -1117,6 +1213,9 @@ be used in all sorts of context. I do intend to use this fantastic
 tool in the long run.
 
 *** Denote general configuration
+:PROPERTIES:
+:ID:       54751127-3492-4618-9b00-bc6fc178b323
+:END:
 
 The configuration offered by default by Prot is good to me. My
 modifications are rather minor.
@@ -1184,6 +1283,9 @@ modifications are rather minor.
 #+end_src
 
 *** Consult-denote
+:PROPERTIES:
+:ID:       51be6b72-8371-41f6-b088-0b8c6eef40b2
+:END:
 
 A very useful tool to search into the main note directory. Eventually
 I would like to find a way to change the silo, but for now, it's not
@@ -1200,6 +1302,9 @@ necessary.
 #+end_src
 
 *** TODO Consult-notes
+:PROPERTIES:
+:ID:       69c1b3ac-635b-4cbc-88a7-b73af636d302
+:END:
 
 An alternative to =consult-denote= is the similarly named =consult-note=
 which seems to have much options than Prot's package. I'll give it a
@@ -1230,6 +1335,9 @@ try and see if =consult-denote= is still relevant for my needs, or if
 #+end_src
 
 *** Denote-silo
+:PROPERTIES:
+:ID:       f5a1bebc-e6b9-4f22-902e-759ea4b4b398
+:END:
 
 Considering I'm using multiple directories to take notes, silos are a
 useful tool to manage them. I also use a specific silo to make it
@@ -1262,6 +1370,9 @@ keywords from preexisting files in the directory.
 #+end_src
 
 *** TODO Denote Org
+:PROPERTIES:
+:ID:       18ffb055-385d-4ce1-9dd0-bdf62687f3ad
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package denote-org
@@ -1286,6 +1397,9 @@ keywords from preexisting files in the directory.
 #+end_src
 
 *** Denote journal
+:PROPERTIES:
+:ID:       bb3b4403-0c12-4cc5-999e-556af6c1a690
+:END:
 
 A package to manage a daily journal with Denote. I'm still not sure I
 want to use this, but for the moment, here is the default
@@ -1318,6 +1432,9 @@ configuration with my own keybindings.
 ** TODO Citar
 
 *** TODO General configuration
+:PROPERTIES:
+:ID:       d6b9e608-d0cb-4061-b607-3969ef555c96
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package citar
@@ -1392,6 +1509,9 @@ configuration with my own keybindings.
 #+end_src
 
 *** TODO Citar and Denote
+:PROPERTIES:
+:ID:       e7d4f3e1-21a4-4819-8a41-a63f2f459da7
+:END:
 
 My configuration is heavily inspired by Peter Provos work, as
 described in [[https://lucidmanager.org/productivity/bibliographic-notes-in-emacs-with-citar-denote/][Bibliographic Notes with the Citar-Denote Emacs Package]]
@@ -1425,6 +1545,9 @@ recommended to use ripgrep for the =xref= system.
 *** TODO Consult and notes
 
 *** TODO Citar and embark
+:PROPERTIES:
+:ID:       cceef9dc-6c94-431e-b443-55c3bdd02d40
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package citar-embark
@@ -1435,6 +1558,9 @@ recommended to use ripgrep for the =xref= system.
 #+end_src
 
 ** Biblio
+:PROPERTIES:
+:ID:       7a0827c8-f52a-4d0e-9c98-544d151f8f49
+:END:
 A small package to query metadata from a DOI. There is nothing else to
 be configured.
 
@@ -1444,6 +1570,9 @@ be configured.
 #+end_src
 
 ** TODO Recutils (=rec-mode=)
+:PROPERTIES:
+:ID:       5d3d425b-6862-4b3e-a174-4df758f7c94b
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package rec-mode
@@ -1453,6 +1582,9 @@ be configured.
 ** TODO Themes
 
 *** TODO Ef themes
+:PROPERTIES:
+:ID:       7ddb50b8-208e-47c6-8c82-2cdf3d57b2a3
+:END:
 
 When I want some change from =modus-themes=, =ef-themes= are my favorites
 alternatives. This configuration is taken from Prot's dotfiles. I
@@ -1485,6 +1617,9 @@ implement by default with the =modus-themes= too.
             (t . (variable-pitch 1.1)))))
 #+end_src
 *** TODO Doric themes
+:PROPERTIES:
+:ID:       955e355f-2e92-4979-a210-aaaaddb06ece
+:END:
 #+begin_src emacs-lisp :tangle init.el
 (use-package doric-themes
   :ensure t
@@ -1534,6 +1669,9 @@ To explore, but allows to automatically switch themes.
 #+end_src
 
 ** Modeline
+:PROPERTIES:
+:ID:       17ae78b4-1865-4dc7-b499-6f70af67b40d
+:END:
 
 For now, until I feel more comfortable playing with the modeline, I'm
 planning on using Doom modeline. I don't have much settings to change
@@ -1547,6 +1685,9 @@ from the default configuration, so I keep it /as is/.
 
 ** TODO External packages for Dired
 *** dired-preview
+:PROPERTIES:
+:ID:       247b868e-8e64-42e6-9d41-3584ebb35fac
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package dired-preview
@@ -1570,6 +1711,9 @@ from the default configuration, so I keep it /as is/.
     (dired-preview-global-mode 1))
 #+end_src
 *** all-the-icons-dired
+:PROPERTIES:
+:ID:       11f1e746-6f7e-4b38-92e8-97612b3a3841
+:END:
 
 To make dired a bit more approchable with some nice icons.
 
@@ -1579,6 +1723,9 @@ To make dired a bit more approchable with some nice icons.
     :hook (dired-mode))
 #+end_src
 *** dired-subtree
+:PROPERTIES:
+:ID:       af317de8-9490-4c3e-8d8e-1bfd547d60b5
+:END:
 
 Now a package I use a lot, but it can be useful when making a lot of
 changes at the same time in multiple directories or to scan them
@@ -1600,6 +1747,9 @@ quickly.
 
 ** TODO Minibuffer
 *** TODO Vertico
+:PROPERTIES:
+:ID:       284efc23-d321-4241-a599-38ca416a694d
+:END:
 
 Vertico has been my favorite package to expand vertically the
 minibuffer.
@@ -1618,6 +1768,9 @@ minibuffer.
 #+end_src
 
 *** TODO Orderless
+:PROPERTIES:
+:ID:       7b288e62-3c2e-48e1-a0fb-4c1277282ad9
+:END:
 
 An essential external package. Allows to have more relevant results
 when searching for something since order is not an issue anymore.
@@ -1633,6 +1786,9 @@ when searching for something since order is not an issue anymore.
 #+end_src
 
 *** TODO Marginalia
+:PROPERTIES:
+:ID:       dc878ac3-3800-4d0c-a4b9-f7b65c56d463
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package marginalia
@@ -1653,6 +1809,9 @@ when searching for something since order is not an issue anymore.
 #+end_src
 
 *** TODO Consult
+:PROPERTIES:
+:ID:       4d8fd028-52c9-483b-b6c7-0369a31b199c
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
   ;; Example configuration for Consult
@@ -1764,6 +1923,9 @@ when searching for something since order is not an issue anymore.
 ** TODO Org-mode
 
 *** TODO Org-tempo
+:PROPERTIES:
+:ID:       d3fbf0b7-8ed9-4ff1-9842-1d1f7c8bf74d
+:END:
 
 This package allows us to add a few more templates to write
 quickly environments in an org file. The most important is "cel",
@@ -1782,6 +1944,9 @@ helping me to write the current document.
 #+end_src
 
 *** TODO Org-modern
+:PROPERTIES:
+:ID:       89e92502-664b-4806-b4d4-02c4e767ada7
+:END:
 
 This package improves the general look of Org.
 
@@ -1807,6 +1972,9 @@ This package improves the general look of Org.
 #+end_src
 
 *** Org-appear
+:PROPERTIES:
+:ID:       5a5d0424-eb8d-4096-a05b-e1a9fd29540b
+:END:
 
 A small package that makes it easier to edit text with formating in
 Org.
@@ -1821,6 +1989,9 @@ Org.
 #+end_src
 
 *** TODO Org-web-tools
+:PROPERTIES:
+:ID:       ca6ea8bb-e571-4816-ad00-9b27e6f5e404
+:END:
 
 This package offers a very good tool to easily create links with the
 actual name of the web page, but offers additional actions to create
@@ -1957,6 +2128,9 @@ capture, and archive Web pages in Org-mode]].
 
 ** TODO Other
 *** TODO Embark
+:PROPERTIES:
+:ID:       195a339a-48c7-4413-b542-f4679daab43d
+:END:
 #+begin_src emacs-lisp :tangle init.el
   (use-package embark
     :ensure t
@@ -2031,6 +2205,9 @@ needed.
     (spacious-padding-mode 1))
 #+end_src
 *** TODO Olivetti
+:PROPERTIES:
+:ID:       3293f69d-8fea-4e25-a07d-c1864cda8cc3
+:END:
 #+begin_src emacs-lisp :tangle init.el
   (use-package olivetti
     :ensure t
@@ -2083,6 +2260,9 @@ only Prot's configuration I'll need to dig into.
       (setq consult-buffer-list #'consult-beframe-buffer-list)))
 #+end_src
 *** TODO Jinx
+:PROPERTIES:
+:ID:       410861f1-e226-4f7d-9dca-e4c7c83bbd94
+:END:
 #+begin_src emacs-lisp :tangle init.el
   (use-package jinx
     :ensure t
@@ -2093,6 +2273,9 @@ only Prot's configuration I'll need to dig into.
     (setq jinx-languages "fr_CA es_CO en_CA"))
 #+end_src
 *** TODO Elfeed
+:PROPERTIES:
+:ID:       62544885-461c-40b0-8886-bc34ceb194cd
+:END:
 
 Probably my favorite RSS reader. There is still some work to be done
 to make sure I can synchronize the data between computers.
@@ -2142,6 +2325,9 @@ to make sure I can synchronize the data between computers.
 
 #+end_src
 *** TODO Tempel
+:PROPERTIES:
+:ID:       1fec6666-2242-496f-b986-796687ba5860
+:END:
 
 
 #+begin_src emacs-lisp :tangle init.el
@@ -2216,6 +2402,9 @@ Some additional Emacs settings.
   (read-extended-command-predicate #'command-completion-default-include-p))
 #+end_src
 *** TODO Ledger
+:PROPERTIES:
+:ID:       fe5971d6-8d76-4562-add2-652a521c214b
+:END:
 #+begin_src emacs-lisp :tangle init.el
   (use-package ledger-mode
     :config
@@ -2224,6 +2413,9 @@ Some additional Emacs settings.
 ** TODO Filetype specifics
 
 *** TODO PDF
+:PROPERTIES:
+:ID:       0b3fa809-ddf4-4bde-945c-3055be0e6dbd
+:END:
 
 I do use PDFs regurarly and I appreciate the ability to access them
 easily in Emacs. PDF-tools is particularly useful on Linux.
@@ -2271,6 +2463,9 @@ taking them as is.
 #+end_src
 
 *** TODO Epub
+:PROPERTIES:
+:ID:       44989523-3d9f-4d47-b788-330e61e388a3
+:END:
 
 For Epub files there is realistically only one good package to read
 them, and it's =nov=. I'm again taking the settings from Emacs Writing
@@ -2285,6 +2480,9 @@ only load when Epub files are opened.
 #+end_src
 
 *** TODO Odt
+:PROPERTIES:
+:ID:       78fa17a8-f272-4b9e-869c-4fa8ae4a2304
+:END:
 
 I sometimes have to deal with Odt files, so this can be useful, though
 I have to investigate into it. The configuration is taken from Emacs
@@ -2304,6 +2502,9 @@ Writing Studio.
 #+end_src
 
 *** TODO Video
+:PROPERTIES:
+:ID:       4d9b756c-903e-4907-924c-348cfc26ea4c
+:END:
 
 
 
