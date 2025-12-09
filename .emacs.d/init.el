@@ -1017,13 +1017,17 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 
 ;; Taken from the manual
 
+;; Activating org-gtd
+
+(org-gtd-mode 1)
+
 ;; Configure org-mode TODO keywords
 ;; All GTD keywords MUST be in the same sequence
 (setq org-todo-keywords
       '((sequence "TODO" "NEXT" "WAIT" "|" "DONE" "CNCL")))
 
 ;; Map GTD semantic states to your keywords
-(setq org-gtd-keyword-mapping
+(setopt org-gtd-keyword-mapping
       '((todo . "TODO")      ; tasks not ready to act on
         (next . "NEXT")      ; tasks ready to act on immediately
         (wait . "WAIT")      ; tasks blocked or delegated
