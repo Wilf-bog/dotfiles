@@ -230,9 +230,9 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 ;; Org tags
 (setq org-tag-alist
 	'(;; Places
-	  ("@home" . ?h)
-	  ("@work" . ?w)
-	  ("@outside" . ?o)
+	  ("@3619" . ?h)
+	  ("@exaequo" . ?w)
+	  ("@dehors" . ?d)
 
 	  ;; Activities
 	  ("@achat" . ?b)
@@ -240,8 +240,9 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 	  ("@écrire" . ?é)
 	  ("@visionner" . ?v)
 	  ("@email" . ?e)
+	  ("@ordinateur" . ?o)
 	  ("@appels" . ?a)
-	  ("@courses" . ?c)))
+	  ("@courses" . ?C)))
 
 (use-package org
   :custom

@@ -683,9 +683,9 @@ And now, Dired configuration.
   ;; Org tags
   (setq org-tag-alist
   	'(;; Places
-  	  ("@home" . ?h)
-  	  ("@work" . ?w)
-  	  ("@outside" . ?o)
+  	  ("@3619" . ?h)
+  	  ("@exaequo" . ?w)
+  	  ("@dehors" . ?d)
 
   	  ;; Activities
   	  ("@achat" . ?b)
@@ -693,8 +693,9 @@ And now, Dired configuration.
   	  ("@écrire" . ?é)
   	  ("@visionner" . ?v)
   	  ("@email" . ?e)
+  	  ("@ordinateur" . ?o)
   	  ("@appels" . ?a)
-  	  ("@courses" . ?c)))
+  	  ("@courses" . ?C)))
 #+end_src
 
 *** TODO Agenda
