@@ -1046,7 +1046,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 (add-to-list 'org-agenda-files org-gtd-directory)
 
 ;; Enable choosing refiling target
-(setq org-gtd-refile-to-any-target nil)
+(setq org-gtd-refile-to-any-target t)
 
 ;; Setting my areas of focus
 (setq org-gtd-areas-of-focus '("Maison" "Santé" "Amitié et famille" "ZS" "CPRF" "Syndicat" "Travail"))
