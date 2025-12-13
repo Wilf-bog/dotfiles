@@ -995,6 +995,11 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   :hook
   (org-mode . org-modern-mode))
 
+(use-package org-download
+  :ensure t
+  :config
+  (add-hook 'dired-mode-hook 'org-download-enable))
+
 ;; Show hidden emphasis markers
 
 (use-package org-appear

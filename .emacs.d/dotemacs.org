@@ -1971,6 +1971,19 @@ This package improves the general look of Org.
     (org-mode . org-modern-mode))
 #+end_src
 
+*** Org-download
+:PROPERTIES:
+:ID:       afaf375e-9f21-4c57-9442-ffd935876acd
+:END:
+#+begin_src emacs-lisp :tangle init.el
+  
+  (use-package org-download
+    :ensure t
+    :config
+    (add-hook 'dired-mode-hook 'org-download-enable))
+    
+#+end_src
+
 *** Org-appear
 :PROPERTIES:
 :ID:       5a5d0424-eb8d-4096-a05b-e1a9fd29540b
