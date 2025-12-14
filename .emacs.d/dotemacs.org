@@ -2186,6 +2186,9 @@ capture, and archive Web pages in Org-mode]].
     (embark-collect-mode . consult-preview-at-point-mode))
 #+end_src
 *** TODO COMMENT Spacious-padding
+:PROPERTIES:
+:ID:       40fb3efa-8f96-429e-bb4d-6bd78b79931b
+:END:
 
 Other package by Prot, this one improves the look of Emacs (and
 readability) by adding padding as the name implies.
