@@ -757,6 +757,7 @@ And now, Dired configuration.
   	  ("@achat" . ?b)
   	  ("@lecture" . ?l)
   	  ("@écrire" . ?é)
+  	  ("@écouter" . ?L)
   	  ("@visionner" . ?v)
   	  ("@email" . ?e)
   	  ("@ordinateur" . ?o)

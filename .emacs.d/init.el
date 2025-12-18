@@ -238,6 +238,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 	  ("@achat" . ?b)
 	  ("@lecture" . ?l)
 	  ("@écrire" . ?é)
+	  ("@écouter" . ?L)
 	  ("@visionner" . ?v)
 	  ("@email" . ?e)
 	  ("@ordinateur" . ?o)
