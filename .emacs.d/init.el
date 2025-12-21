@@ -251,15 +251,15 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   :bind
   (("C-c a" . org-agenda)))
 
-(setq org-agenda-files '("~/Documentos/gtd/inbox.org"
-                         "~/Documentos/gtd/gtd.org"
-                         "~/Documentos/gtd/projets.org"
-                         "~/Documentos/gtd/tickler.org"))
+;; (setq org-agenda-files '("~/Documentos/gtd/inbox.org"
+;;                          "~/Documentos/gtd/gtd.org"
+;;                          "~/Documentos/gtd/projets.org"
+;;                          "~/Documentos/gtd/tickler.org"))
 
-(setq org-refile-targets '(("~/Documentos/gtd/gtd.org" :maxlevel . 2)
-                           ("~/Documentos/gtd/someday.org" :level . 1)
-                           ("~/Documentos/gtd/projets.org" :maxlevel . 5)
-                           ("~/Documentos/gtd/tickler.org" :maxlevel . 2)))
+;; (setq org-refile-targets '(("~/Documentos/gtd/gtd.org" :maxlevel . 2)
+;;                            ("~/Documentos/gtd/someday.org" :level . 1)
+;;                            ("~/Documentos/gtd/projets.org" :maxlevel . 5)
+;;                            ("~/Documentos/gtd/tickler.org" :maxlevel . 2)))
 
 ;; Fleeting notes
 
