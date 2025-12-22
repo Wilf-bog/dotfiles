@@ -1046,8 +1046,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 (setq org-gtd-directory "~/Documentos/gtd")
 
 ;; Add org-gtd files to your agenda
-;; (add-to-list 'org-agenda-files org-gtd-directory) ;; If using other agenda files
-(setq org-agenda-files org-gtd-directory)
+(add-to-list 'org-agenda-files org-gtd-directory)
 
 ;; Enable choosing refiling target
 (setq org-gtd-refile-to-any-target t)
