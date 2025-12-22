@@ -869,19 +869,20 @@ I'm still not sure about =org-habit=, this may be removed in favor or
 =GNU Recutils=.
 
 #+begin_src emacs-lisp :tangle init.el
-(use-package org
-  :config
-  ;; Activer le module habit
-  (require 'org-habit)
+  (use-package org
+    :config
+    ;; Activer le module habit
+    (require 'org-habit)
 
-  ;; Optionnel : activer la colonne des graphes d'habitudes dans l’agenda
-  (add-to-list 'org-modules 'org-habit t)
+    ;; Optionnel : activer la colonne des graphes d'habitudes dans l’agenda
+    (add-to-list 'org-modules 'org-habit t)
 
-  ;; Quelques réglages utiles
-  (setq org-habit-show-habits-only-for-today nil
-        org-habit-show-all-today t
-        org-habit-preceding-days 7
-        org-habit-following-days 3))
+    ;; Quelques réglages utiles
+    (setq org-habit-show-habits-only-for-today nil
+  	org-habit-graph-column 90
+          org-habit-show-all-today t
+          org-habit-preceding-days 7
+          org-habit-following-days 3))
 #+end_src
 
 *** Notes drawer

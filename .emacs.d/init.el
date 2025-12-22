@@ -326,6 +326,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 
   ;; Quelques réglages utiles
   (setq org-habit-show-habits-only-for-today nil
+	org-habit-graph-column 90
         org-habit-show-all-today t
         org-habit-preceding-days 7
         org-habit-following-days 3))
