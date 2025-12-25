@@ -2191,7 +2191,7 @@ capture, and archive Web pages in Org-mode]].
     :hook
     (embark-collect-mode . consult-preview-at-point-mode))
 #+end_src
-*** TODO COMMENT Spacious-padding
+*** TODO Spacious-padding
 :PROPERTIES:
 :ID:       40fb3efa-8f96-429e-bb4d-6bd78b79931b
 :END:
@@ -2209,6 +2209,7 @@ needed.
     :ensure t
     :custom
     (line-spacing 3)
+    (setq spacious-padding-subtle-frame-lines t)
     (setq spacious-padding-widths
           `( :internal-border-width 15
              :header-line-width 4

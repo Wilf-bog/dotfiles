@@ -1162,6 +1162,28 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   :hook
   (embark-collect-mode . consult-preview-at-point-mode))
 
+(use-package spacious-padding
+  :ensure t
+  :custom
+  (line-spacing 3)
+  (setq spacious-padding-subtle-frame-lines t)
+  (setq spacious-padding-widths
+        `( :internal-border-width 15
+           :header-line-width 4
+           :mode-line-width 6
+           :tab-width 4
+           :right-divider-width 15
+           :scroll-bar-width ,(if x-toolkit-scroll-bars 8 6)
+           :left-fringe-width 20
+           :right-fringe-width 20))
+  (setq spacious-padding-subtle-frame-lines
+        '( :mode-line-active spacious-padding-line-active
+           :mode-line-inactive spacious-padding-line-inactive
+           :header-line-active spacious-padding-line-active
+           :header-line-inactive spacious-padding-line-inactive))
+  :init
+  (spacious-padding-mode 1))
+
 (use-package olivetti
   :ensure t
   :bind
