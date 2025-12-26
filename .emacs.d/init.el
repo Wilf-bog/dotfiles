@@ -1312,10 +1312,11 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 
 (when (eq system-type 'gnu/linux)	;For now, pdf-tools can't be installed on Windows
   (use-package pdf-tools
+    :mode ("\\.pdf\\'" . pdf-view-mode)
     :ensure t
     :config
     (pdf-tools-install)
-    (setq-default pdf-view-display-size 'fit-page)
+    (setq-default pdf-view-display-size 'fit-width)
     :bind (:map pdf-view-mode-map
 		("\\" . hydra-pdftools/body)
 		("<s-spc>" .  pdf-view-scroll-down-or-next-page)
