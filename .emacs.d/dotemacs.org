@@ -1525,7 +1525,7 @@ as well as in his book Emacs Writing Studio.
   (use-package citar-denote
     :ensure t
     :custom
-    (citar-open-always-create-notes t)
+    (citar-open-always-create-notes nil)	; I changed this since I only create one literature note normally.
     :init
     (citar-denote-mode)
     :bind

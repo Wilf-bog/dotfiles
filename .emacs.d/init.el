@@ -713,7 +713,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 (use-package citar-denote
   :ensure t
   :custom
-  (citar-open-always-create-notes t)
+  (citar-open-always-create-notes nil)	; I changed this since I only create one literature note normally.
   :init
   (citar-denote-mode)
   :bind
