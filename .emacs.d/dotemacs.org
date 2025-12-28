@@ -309,14 +309,15 @@ for example.
 #+begin_src emacs-lisp :tangle init.el
   ;; Revert buffers when the underlying file has changed
   (global-auto-revert-mode 1)
-  
+
   ;; Revert Dired and other buffers
   (setq global-auto-revert-non-file-buffers t)
 
   ;; Auto-save mode for org files
   (auto-save-visited-mode +1)
   (setq auto-save-visited-predicate
-	(lambda () (eq major-mode 'org-mode)))
+  	(lambda () (or (eq major-mode 'org-mode)
+  		       (eq major-mode 'bibtex-mode))))
 #+end_src
 
 To be able to use the newly added bookmarks, this settings make them

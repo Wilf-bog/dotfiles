@@ -88,7 +88,8 @@
 ;; Auto-save mode for org files
 (auto-save-visited-mode +1)
 (setq auto-save-visited-predicate
-	(lambda () (eq major-mode 'org-mode)))
+	(lambda () (or (eq major-mode 'org-mode)
+		       (eq major-mode 'bibtex-mode))))
 
 (customize-set-variable 'bookmark-save-flag 1)
 
