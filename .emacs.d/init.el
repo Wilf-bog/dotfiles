@@ -1059,7 +1059,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 (setq org-gtd-organize-hooks '(org-gtd-set-area-of-focus org-set-tags-command))
 
 ;; Showing horizons during the clarification process
-(setq org-gtd-clarify-show-horizons t )
+;; (setq org-gtd-clarify-show-horizons t)
 
 ;; REQUIRED: Enable org-edna for project dependencies
 (org-edna-mode 1)
