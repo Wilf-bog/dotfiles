@@ -351,7 +351,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   (org-unlogged-message "Press <C-u C-SPACE> to return to the previous position."))
 
 (with-eval-after-load "org"
-  (define-key org-mode-map (kbd "C-c C-x n") #'ews-org-insert-notes-drawer))
+  (define-key org-mode-map (kbd "C-c C-x n") #'wilf-org-insert-notes-drawer))
 
 (use-package bibtex
   :custom
