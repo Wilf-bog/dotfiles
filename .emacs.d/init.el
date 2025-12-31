@@ -803,7 +803,9 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 
 (use-package doom-modeline
   :ensure t
-  :hook (after-init . doom-modeline-mode))
+  :init
+  (doom-modeline-mode 1)
+  (setq doom-modeline-minor-modes t))
 
 (use-package dired-preview
   :ensure t

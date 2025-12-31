@@ -1693,9 +1693,11 @@ planning on using Doom modeline. I don't have much settings to change
 from the default configuration, so I keep it /as is/.
 
 #+begin_src emacs-lisp :tangle init.el
-(use-package doom-modeline
-  :ensure t
-  :hook (after-init . doom-modeline-mode))
+    (use-package doom-modeline
+      :ensure t
+      :init
+      (doom-modeline-mode 1)
+      (setq doom-modeline-minor-modes t))
 #+end_src
 
 ** TODO External packages for Dired
