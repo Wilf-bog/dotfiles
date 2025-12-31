@@ -1172,37 +1172,20 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
 :PROPERTIES:
 :ID:       44b61146-9b6f-4ac6-ada1-dbaa8d276ae1
 :END:
-#+begin_src emacs-lisp :tangle .emacs.d/init.el
-      (use-package calibredb
-        :defer t
-        :config
-        (setq calibredb-root-dir "~/Documentos/calibre")
-        (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir))
-        :bind
-        (("C-c w b l" . calibredb)))
-        ;; (setq calibredb-library-alist '(("~/OneDrive/Org/Doc/Calibre")
-        ;;                                 ("~/Documentos/Books Library")
-        ;;                                 ("~/Documentos/LIB1")
-        ;;                                 ("/Volumes/ShareDrive/Documents/Library/"))))
+#+begin_src emacs-lisp :tangle init.el
+  (use-package calibredb
+    :ensure t
+    :defer t
+    :config
+    (setq calibredb-root-dir "~/Documentos/calibre")
+    (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir))
+    :bind
+    (("C-c b C" . calibredb)))
+    ;; (setq calibredb-library-alist '(("~/OneDrive/Org/Doc/Calibre")
+    ;;                                 ("~/Documentos/Books Library")
+    ;;                                 ("~/Documentos/LIB1")
+    ;;                                 ("/Volumes/ShareDrive/Documents/Library/"))))
 #+end_src
-** TODO Git
-:PROPERTIES:
-:ID:       35943844-edc9-4ebc-8f39-717074caecbb
-:END:
-
-For git, I tend to prefer Magit even though it is probably overkill
-considering my limited use of git in general. I do enjoy how the tool
-is structured and until I take the time to learn Emacs own way of
-managing git and other software like this, I'll keep on using Magit.
-
-#+begin_src emacs-lisp :tangle "init.el"
-  (use-package magit
-    :ensure t)
-
-  (add-hook 'magit-process-find-password-functions
-  	  'magit-process-password-auth-source)
-#+end_src
-
 ** TODO Denote
 
 One of the main reason I've switched to Emacs was how great Denote

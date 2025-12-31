@@ -486,6 +486,19 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 (add-hook 'magit-process-find-password-functions
 	  'magit-process-password-auth-source)
 
+(use-package calibredb
+  :ensure t
+  :defer t
+  :config
+  (setq calibredb-root-dir "~/Documentos/calibre")
+  (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir))
+  :bind
+  (("C-c b C" . calibredb)))
+  ;; (setq calibredb-library-alist '(("~/OneDrive/Org/Doc/Calibre")
+  ;;                                 ("~/Documentos/Books Library")
+  ;;                                 ("~/Documentos/LIB1")
+  ;;                                 ("/Volumes/ShareDrive/Documents/Library/"))))
+
 (use-package denote
   :ensure t
   :hook
