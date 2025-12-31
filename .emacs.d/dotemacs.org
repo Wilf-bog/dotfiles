@@ -96,8 +96,17 @@ should help with faster boot time.
 (setq garbage-collection-messages nil)
 #+end_src
 
+We then disable ~package~ to avoid conflicts with ~elpaca~.
+
+#+begin_src emacs-lisp :tangle "early-init.el"
+(setq package-enable-at-startup nil)
+#+end_src
+
+** COMMENT Package
 Some settings related to packages, taken directly from crafted-emacs
 modules about early-init.
+
+They are currently disabled since I'm switching to elpaca.
 
 #+begin_src emacs-lisp :tangle early-init.el
 
@@ -158,50 +167,56 @@ In this larger part of my configuration, I list out all the settings
 that are part of the normal initialisation process as well as settings
 proper to Emacs' own packages.
 
-** Setting Use-package
+** Setting up ~elpaca~
 :PROPERTIES:
-:ID:       3470f33d-4028-44fe-b8dc-a6deafcab59e
+:ID:       a6ff5b9d-83f7-4ba5-aa71-ce640218dc21
 :END:
-
-First, this line force the use of use-package. I'm not sure if it is
-necessary anymore but it doesn't hurt to keep it (as far as I know).
-
 #+begin_src emacs-lisp :tangle init.el
-  ;; Built-in since Emacs 29
-  (require 'use-package)
+(defvar elpaca-installer-version 0.11)
+(defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
+(defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
+(defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
+(defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
+                              :ref nil :depth 1 :inherit ignore
+                              :files (:defaults "elpaca-test.el" (:exclude "extensions"))
+                              :build (:not elpaca--activate-package)))
+(let* ((repo  (expand-file-name "elpaca/" elpaca-repos-directory))
+       (build (expand-file-name "elpaca/" elpaca-builds-directory))
+       (order (cdr elpaca-order))
+       (default-directory repo))
+  (add-to-list 'load-path (if (file-exists-p build) build repo))
+  (unless (file-exists-p repo)
+    (make-directory repo t)
+    (when (<= emacs-major-version 28) (require 'subr-x))
+    (condition-case-unless-debug err
+        (if-let* ((buffer (pop-to-buffer-same-window "*elpaca-bootstrap*"))
+                  ((zerop (apply #'call-process `("git" nil ,buffer t "clone"
+                                                  ,@(when-let* ((depth (plist-get order :depth)))
+                                                      (list (format "--depth=%d" depth) "--no-single-branch"))
+                                                  ,(plist-get order :repo) ,repo))))
+                  ((zerop (call-process "git" nil buffer t "checkout"
+                                        (or (plist-get order :ref) "--"))))
+                  (emacs (concat invocation-directory invocation-name))
+                  ((zerop (call-process emacs nil buffer nil "-Q" "-L" "." "--batch"
+                                        "--eval" "(byte-recompile-directory \".\" 0 'force)")))
+                  ((require 'elpaca))
+                  ((elpaca-generate-autoloads "elpaca" repo)))
+            (progn (message "%s" (buffer-string)) (kill-buffer buffer))
+          (error "%s" (with-current-buffer buffer (buffer-string))))
+      ((error) (warn "%s" err) (delete-directory repo 'recursive))))
+  (unless (require 'elpaca-autoloads nil t)
+    (require 'elpaca)
+    (elpaca-generate-autoloads "elpaca" repo)
+    (let ((load-source-file-function nil)) (load "./elpaca-autoloads"))))
+(add-hook 'after-init-hook #'elpaca-process-queues)
+(elpaca `(,@elpaca-order))
 #+end_src
 
-** Setting Straight
-:PROPERTIES:
-:ID:       517355b7-dd1b-40a9-be95-e882cd80c8bb
-:END:
-I've started using =straight= to be able to install the beta version of
-=org-gtd=. I still need to see if this is something I want to use in the
-future.
-
 #+begin_src emacs-lisp :tangle init.el
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name
-        "straight/repos/straight.el/bootstrap.el"
-        (or (bound-and-true-p straight-base-dir)
-            user-emacs-directory)))
-      (bootstrap-version 7))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
-#+end_src
-
-To avoid mismatching versions of Org loaded, the following line is
-necessary:
-
-#+begin_src emacs-lisp :tangle init.el
-  (straight-use-package 'org)
+  ;; Install use-package support
+  (elpaca elpaca-use-package
+  ;; Enable use-package :ensure support for Elpaca.
+  (elpaca-use-package-mode))
 #+end_src
 
 ** TODO Setting up Emacs server for =org-protocol=
@@ -441,7 +456,7 @@ all themes as safe by default. I use only a few themes.
   (setq custom-safe-themes t)
 #+end_src
 
-*** Modus themes
+*** TODO Modus themes
 :PROPERTIES:
 :ID:       a0f454a4-1c99-424b-9140-56e9ed8bdcc9
 :END:
@@ -453,13 +468,14 @@ inspired by ~Emacs Writing Studio~.
 
 #+begin_src emacs-lisp :tangle "init.el"
   (use-package modus-themes
+    :ensure t
     :custom
     (modus-themes-italic-constructs t)
     (modus-themes-bold-constructs t)
     (modus-themes-mixed-fonts t)
     (modus-themes-to-toggle
      '(modus-operandi modus-vivendi))
-    (modus-themes-variable-pitch-ui t)
+    (modus-themse-variable-pitch-ui t)
     (modus-themes-completions '((t . (bold))))
     (modus-themes-prompts '(bold))
     (modus-themes-headings
@@ -1118,6 +1134,35 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
   (add-to-list 'load-path "~/.emacs.d/lisp/")
 #+end_src
 
+** Transient
+#+begin_src emacs-lisp :tangle "init.el"
+  (use-package transient
+    :ensure t (:package "transient" :source nil :protocol https :inherit t
+   :depth treeless :fetcher github :repo "magit/transient" :files ("*.el" "
+  ,*.el.in" "dir" "*.info" "*.texi" "*.texinfo" "doc/dir" "doc/*.info" "
+  doc/*.texi" "doc/*.texinfo" "lisp/*.el" "docs/dir" "docs/*.info" "
+  docs/*.texi" "docs/*.texinfo" (:exclude ".dir-locals.el" "test.el" "
+  tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
+
+#+end_src
+** TODO Git
+:PROPERTIES:
+:ID:       35943844-edc9-4ebc-8f39-717074caecbb
+:END:
+
+For git, I tend to prefer Magit even though it is probably overkill
+considering my limited use of git in general. I do enjoy how the tool
+is structured and until I take the time to learn Emacs own way of
+managing git and other software like this, I'll keep on using Magit.
+
+#+begin_src emacs-lisp :tangle "init.el"
+  (use-package magit
+    :ensure t)
+
+  (add-hook 'magit-process-find-password-functions
+  	  'magit-process-password-auth-source)
+#+end_src
+
 ** TODO Casual
 :PROPERTIES:
 :ID:       3e2f6b84-a45a-4e30-bb60-19da3eec3b4c
@@ -1129,7 +1174,7 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
     :defer t)
 #+end_src
 
-*** TODO Casual and Org-agenda
+*** TODO COMMENT Casual and Org-agenda
 :PROPERTIES:
 :ID:       4f6245ad-807a-4b6e-a164-e2f6f0ac7c3e
 :END:
@@ -1922,7 +1967,7 @@ when searching for something since order is not an issue anymore.
 
 ** TODO Org-mode
 
-*** TODO Org-tempo
+*** Org-tempo
 :PROPERTIES:
 :ID:       d3fbf0b7-8ed9-4ff1-9842-1d1f7c8bf74d
 :END:
@@ -1943,7 +1988,7 @@ helping me to write the current document.
       (add-to-list 'org-structure-template-alist item)))
 #+end_src
 
-*** TODO Org-modern
+*** Org-modern
 :PROPERTIES:
 :ID:       89e92502-664b-4806-b4d4-02c4e767ada7
 :END:
@@ -2027,106 +2072,107 @@ capture, and archive Web pages in Org-mode]].
 :END:
 
 #+begin_src emacs-lisp :tangle init.el
-  (straight-use-package
-   '(org-gtd :type git
-             :host github
-             :repo "Trevoke/org-gtd.el"
-             :branch "org-gtd-4"))
+    (use-package org-gtd
+      :ensure t (:host github
+    		   :repo "Wilf-bog/org-gtd.el"
+    		   :branch "org-gtd-4"
+  		   :depth 1)
+      :init
 
-  ;; Taken from the manual
+    ;; Taken from the manual
 
-  ;; Activating org-gtd
+    ;; Activating org-gtd
 
-  (org-gtd-mode 1)
+    (org-gtd-mode 1)
 
-  ;; Configure org-mode TODO keywords
-  ;; All GTD keywords MUST be in the same sequence
-  (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "WAIT(w)" "|" "DONE(d)" "CNCL(c)")))
+    ;; Configure org-mode TODO keywords
+    ;; All GTD keywords MUST be in the same sequence
+    (setq org-todo-keywords
+          '((sequence "TODO(t)" "NEXT(n)" "WAIT(w)" "|" "DONE(d)" "CNCL(c)")))
 
-  ;; Map GTD semantic states to your keywords
-  (setopt org-gtd-keyword-mapping
-        '((todo . "TODO")      ; tasks not ready to act on
-          (next . "NEXT")      ; tasks ready to act on immediately
-          (wait . "WAIT")      ; tasks blocked or delegated
-          (done . "DONE")      ; tasks successfully completed
-          (canceled . "CNCL"))) ; tasks that won't be completed
+    ;; Map GTD semantic states to your keywords
+    (setopt org-gtd-keyword-mapping
+          '((todo . "TODO")      ; tasks not ready to act on
+            (next . "NEXT")      ; tasks ready to act on immediately
+            (wait . "WAIT")      ; tasks blocked or delegated
+            (done . "DONE")      ; tasks successfully completed
+            (canceled . "CNCL"))) ; tasks that won't be completed
 
-  ;; Optional: Set GTD directory (defaults to ~/gtd/)
-  (setq org-gtd-directory "~/Documentos/gtd")
+    ;; Optional: Set GTD directory (defaults to ~/gtd/)
+    (setq org-gtd-directory "~/Documentos/gtd")
 
-  ;; Add org-gtd files to your agenda
-  (add-to-list 'org-agenda-files org-gtd-directory)
+    ;; Add org-gtd files to your agenda
+    (add-to-list 'org-agenda-files org-gtd-directory)
 
-  ;; Enable choosing refiling target
-  (setq org-gtd-refile-to-any-target t)
+    ;; Enable choosing refiling target
+    (setq org-gtd-refile-to-any-target t)
 
-  ;; Setting my areas of focus
-  (setq org-gtd-areas-of-focus '("Maison" "Santé" "Amitié et famille" "ZS" "CPRF" "Syndicat" "Travail"))
+    ;; Setting my areas of focus
+    (setq org-gtd-areas-of-focus '("Maison" "Santé" "Amitié et famille" "ZS" "CPRF" "Syndicat" "Travail"))
 
-  ;; Adding areas of focus and tags to items
-  (setq org-gtd-organize-hooks '(org-gtd-set-area-of-focus org-set-tags-command))
+    ;; Adding areas of focus and tags to items
+    (setq org-gtd-organize-hooks '(org-gtd-set-area-of-focus org-set-tags-command))
 
-  ;; Showing horizons during the clarification process
-  (setq org-gtd-clarify-show-horizons 'right)
+    ;; Showing horizons during the clarification process
+    (setq org-gtd-clarify-show-horizons 'right)
 
-  ;; REQUIRED: Enable org-edna for project dependencies
-  (org-edna-mode 1)
+    ;; REQUIRED: Enable org-edna for project dependencies
+    (org-edna-mode 1)
 
-  ;; Global keybindings for GTD commands
-  ;; These work anywhere in Emacs
-  (global-set-key (kbd "C-c d") #'org-gtd-command-center) ; Transient menu added manually
-  ;; (global-set-key (kbd "C-c d c") 'org-gtd-capture)
-  ;; (global-set-key (kbd "C-c d e") 'org-gtd-engage)
-  ;; (global-set-key (kbd "C-c d p") 'org-gtd-process-inbox)
-  ;; (global-set-key (kbd "C-c d n") 'org-gtd-show-all-next)
-  ;; (global-set-key (kbd "C-c d s") 'org-gtd-reflect-stuck-projects)
+    ;; Global keybindings for GTD commands
+    ;; These work anywhere in Emacs
+    (global-set-key (kbd "C-c d") #'org-gtd-command-center) ; Transient menu added manually
+    ;; (global-set-key (kbd "C-c d c") 'org-gtd-capture)
+    ;; (global-set-key (kbd "C-c d e") 'org-gtd-engage)
+    ;; (global-set-key (kbd "C-c d p") 'org-gtd-process-inbox)
+    ;; (global-set-key (kbd "C-c d n") 'org-gtd-show-all-next)
+    ;; (global-set-key (kbd "C-c d s") 'org-gtd-reflect-stuck-projects)
 
-  ;; Keybinding for clarify map
-  ;; This only works when you're in a clarify buffer
+    ;; Keybinding for clarify map
+    ;; This only works when you're in a clarify buffer
 
-  ;; (with-eval-after-load 'org-gtd
-  ;;   (define-key org-gtd-clarify-mode-map (kbd "C-c c") #'org-gtd-organize))
+    ;; (with-eval-after-load 'org-gtd
+    ;;   (define-key org-gtd-clarify-mode-map (kbd "C-c c") #'org-gtd-organize))
 
-  ;; The precedent code didn't work, but this one does.
-  (add-hook 'org-gtd-clarify-mode-hook
-          (lambda ()
-            (local-set-key (kbd "C-c c") #'org-gtd-organize)))
+    ;; The precedent code didn't work, but this one does.
+    (add-hook 'org-gtd-clarify-mode-hook
+            (lambda ()
+              (local-set-key (kbd "C-c c") #'org-gtd-organize)))
 
-  ;; Quick task actions in agenda view
-  (with-eval-after-load 'org-agenda
-    (define-key org-agenda-mode-map (kbd "C-c .") 'org-gtd-agenda-transient))
+    ;; Quick task actions in agenda view
+    (with-eval-after-load 'org-agenda
+      (define-key org-agenda-mode-map (kbd "C-c .") 'org-gtd-agenda-transient)))
 
-  ;; Exercice about views from the manual
-  (with-eval-after-load 'org-gtd
-    (defun my-org-gtd-active-projects ()
-      "Show all active projects."
+    ;; Exercice about views from the manual
+    (with-eval-after-load 'org-gtd
+      (defun my-org-gtd-active-projects ()
+        "Show all active projects."
+        (interactive)
+        (org-gtd-view-show
+         '((name . "My Active Projects")
+           (filters . ((type . project)
+                       (has-active-tasks . t)))))))
+
+    ;; This one works!
+
+    (defun my-org-gtd-all-projects ()
+      "Show all projects, including completed ones."
       (interactive)
       (org-gtd-view-show
-       '((name . "My Active Projects")
-         (filters . ((type . project)
-                     (has-active-tasks . t)))))))
+       '((name . "All Projects")
+         (filters . ((type . project))))))
 
-  ;; This one works!
+    (defun my-org-gtd-active-projects ()
+      "Show active projects, excluding completed ones."
+      (interactive)
+      (org-gtd-view-show
+       '((name . "Active Projects")
+         (filters . ((type . active-project))))))
 
-  (defun my-org-gtd-all-projects ()
-    "Show all projects, including completed ones."
-    (interactive)
-    (org-gtd-view-show
-     '((name . "All Projects")
-       (filters . ((type . project))))))
+    ;; Not sure about this binding since it removes the transient menu. To
+    ;; consider if I accumulate useful functions.
 
-  (defun my-org-gtd-active-projects ()
-    "Show active projects, excluding completed ones."
-    (interactive)
-    (org-gtd-view-show
-     '((name . "Active Projects")
-       (filters . ((type . active-project))))))
-
-  ;; Not sure about this binding since it removes the transient menu. To
-  ;; consider if I accumulate useful functions.
-
-  ;; (global-set-key (kbd "C-c d P") 'my-org-gtd-active-projects)
+    ;; (global-set-key (kbd "C-c d P") 'my-org-gtd-active-projects)
 #+end_src
 
 *** TODO Personal Org scripts
@@ -2427,6 +2473,7 @@ Some additional Emacs settings.
 :END:
 #+begin_src emacs-lisp :tangle init.el
   (use-package ledger-mode
+    :ensure t (:package "ledger-mode" :source nil :protocol https :inherit t :depth treeless :fetcher github :repo "ledger/ledger-mode" :files ("ledger-*.el" "doc/*.texi") :old-names (ldg-mode))
     :config
     (setq ledger-default-date-format "%Y-%m-%d"))
 #+end_src
@@ -2483,7 +2530,7 @@ taking them as is.
     (large-file-warning-threshold (* 50 (expt 2 20))))
 #+end_src
 
-*** TODO Epub
+*** Epub
 :PROPERTIES:
 :ID:       44989523-3d9f-4d47-b788-330e61e388a3
 :END:

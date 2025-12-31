@@ -1,5 +1,3 @@
-(setq package-enable-at-startup nil)
-
 ;; Copyright (C) 2025  Frédéric Vachon
 
 ;; Author: Frédéric Vachon <vachonfrederic@proton.me>
@@ -19,26 +17,49 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-;; Built-in since Emacs 29
-(require 'use-package)
+(defvar elpaca-installer-version 0.11)
+(defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
+(defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
+(defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
+(defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
+                              :ref nil :depth 1 :inherit ignore
+                              :files (:defaults "elpaca-test.el" (:exclude "extensions"))
+                              :build (:not elpaca--activate-package)))
+(let* ((repo  (expand-file-name "elpaca/" elpaca-repos-directory))
+       (build (expand-file-name "elpaca/" elpaca-builds-directory))
+       (order (cdr elpaca-order))
+       (default-directory repo))
+  (add-to-list 'load-path (if (file-exists-p build) build repo))
+  (unless (file-exists-p repo)
+    (make-directory repo t)
+    (when (<= emacs-major-version 28) (require 'subr-x))
+    (condition-case-unless-debug err
+        (if-let* ((buffer (pop-to-buffer-same-window "*elpaca-bootstrap*"))
+                  ((zerop (apply #'call-process `("git" nil ,buffer t "clone"
+                                                  ,@(when-let* ((depth (plist-get order :depth)))
+                                                      (list (format "--depth=%d" depth) "--no-single-branch"))
+                                                  ,(plist-get order :repo) ,repo))))
+                  ((zerop (call-process "git" nil buffer t "checkout"
+                                        (or (plist-get order :ref) "--"))))
+                  (emacs (concat invocation-directory invocation-name))
+                  ((zerop (call-process emacs nil buffer nil "-Q" "-L" "." "--batch"
+                                        "--eval" "(byte-recompile-directory \".\" 0 'force)")))
+                  ((require 'elpaca))
+                  ((elpaca-generate-autoloads "elpaca" repo)))
+            (progn (message "%s" (buffer-string)) (kill-buffer buffer))
+          (error "%s" (with-current-buffer buffer (buffer-string))))
+      ((error) (warn "%s" err) (delete-directory repo 'recursive))))
+  (unless (require 'elpaca-autoloads nil t)
+    (require 'elpaca)
+    (elpaca-generate-autoloads "elpaca" repo)
+    (let ((load-source-file-function nil)) (load "./elpaca-autoloads"))))
+(add-hook 'after-init-hook #'elpaca-process-queues)
+(elpaca `(,@elpaca-order))
 
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name
-        "straight/repos/straight.el/bootstrap.el"
-        (or (bound-and-true-p straight-base-dir)
-            user-emacs-directory)))
-      (bootstrap-version 7))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
-
-(straight-use-package 'org)
+;; Install use-package support
+(elpaca elpaca-use-package
+;; Enable use-package :ensure support for Elpaca.
+(elpaca-use-package-mode))
 
 (server-start)
 (require 'org-protocol)
@@ -118,13 +139,14 @@
 (setq custom-safe-themes t)
 
 (use-package modus-themes
+  :ensure t
   :custom
   (modus-themes-italic-constructs t)
   (modus-themes-bold-constructs t)
   (modus-themes-mixed-fonts t)
   (modus-themes-to-toggle
    '(modus-operandi modus-vivendi))
-  (modus-themes-variable-pitch-ui t)
+  (modus-themse-variable-pitch-ui t)
   (modus-themes-completions '((t . (bold))))
   (modus-themes-prompts '(bold))
   (modus-themes-headings
@@ -473,18 +495,23 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-(use-package casual
-  :ensure t
-  :defer t)
-
-(require 'casual-agenda)
-(keymap-set org-agenda-mode-map "C-o" #'casual-agenda-tmenu)
+(use-package transient
+  :ensure t (:package "transient" :source nil :protocol https :inherit t
+ :depth treeless :fetcher github :repo "magit/transient" :files ("*.el" "
+*.el.in" "dir" "*.info" "*.texi" "*.texinfo" "doc/dir" "doc/*.info" "
+doc/*.texi" "doc/*.texinfo" "lisp/*.el" "docs/dir" "docs/*.info" "
+docs/*.texi" "docs/*.texinfo" (:exclude ".dir-locals.el" "test.el" "
+tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
 
 (use-package magit
   :ensure t)
 
 (add-hook 'magit-process-find-password-functions
 	  'magit-process-password-auth-source)
+
+(use-package casual
+  :ensure t
+  :defer t)
 
 (use-package calibredb
   :ensure t
@@ -1044,11 +1071,12 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   :bind
   (("C-c w" . org-web-tools-insert-link-for-url)))
 
-(straight-use-package
- '(org-gtd :type git
-           :host github
-           :repo "Trevoke/org-gtd.el"
-           :branch "org-gtd-4"))
+(use-package org-gtd
+  :ensure t (:host github
+		   :repo "Wilf-bog/org-gtd.el"
+		   :branch "org-gtd-4"
+		   :depth 1)
+  :init
 
 ;; Taken from the manual
 
@@ -1085,7 +1113,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 (setq org-gtd-organize-hooks '(org-gtd-set-area-of-focus org-set-tags-command))
 
 ;; Showing horizons during the clarification process
-(setq org-gtd-clarify-show-horizons "right")
+(setq org-gtd-clarify-show-horizons 'right)
 
 ;; REQUIRED: Enable org-edna for project dependencies
 (org-edna-mode 1)
@@ -1112,7 +1140,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 
 ;; Quick task actions in agenda view
 (with-eval-after-load 'org-agenda
-  (define-key org-agenda-mode-map (kbd "C-c .") 'org-gtd-agenda-transient))
+  (define-key org-agenda-mode-map (kbd "C-c .") 'org-gtd-agenda-transient)))
 
 ;; Exercice about views from the manual
 (with-eval-after-load 'org-gtd
@@ -1334,6 +1362,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   (read-extended-command-predicate #'command-completion-default-include-p))
 
 (use-package ledger-mode
+  :ensure t (:package "ledger-mode" :source nil :protocol https :inherit t :depth treeless :fetcher github :repo "ledger/ledger-mode" :files ("ledger-*.el" "doc/*.texi") :old-names (ldg-mode))
   :config
   (setq ledger-default-date-format "%Y-%m-%d"))
 
