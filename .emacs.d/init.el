@@ -571,7 +571,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   ;; Remember to check the doc string of each of those variables.
   (setq denote-directory (expand-file-name "~/Documentos/notes/"))
   (setq denote-save-buffers t)
-  (setq denote-known-keywords '("emacs" "philosophy" "politics" "economics"))
+  (setq denote-known-keywords '("emacs" "philosophie" "politique" "économie"))
   (setq denote-infer-keywords t)
   (setq denote-file-type "org")
   (setq denote-sort-keywords t)
