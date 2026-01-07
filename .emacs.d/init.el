@@ -1221,7 +1221,6 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   :ensure t
   :custom
   (line-spacing 3)
-  (setq spacious-padding-subtle-frame-lines t)
   (setq spacious-padding-widths
         `( :internal-border-width 15
            :header-line-width 4
@@ -1231,13 +1230,15 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
            :scroll-bar-width ,(if x-toolkit-scroll-bars 8 6)
            :left-fringe-width 20
            :right-fringe-width 20))
-  (setq spacious-padding-subtle-frame-lines
-        '( :mode-line-active spacious-padding-line-active
-           :mode-line-inactive spacious-padding-line-inactive
-           :header-line-active spacious-padding-line-active
-           :header-line-inactive spacious-padding-line-inactive))
+  ;; (setq spacious-padding-subtle-frame-lines
+  ;;       '( :mode-line-active spacious-padding-line-active
+  ;;          :mode-line-inactive spacious-padding-line-inactive
+  ;;          :header-line-active spacious-padding-line-active
+  ;;          :header-line-inactive spacious-padding-line-inactive))
   :init
   (spacious-padding-mode 1))
+
+  (setq spacious-padding-subtle-frame-lines t)
 
 (use-package olivetti
   :ensure t
