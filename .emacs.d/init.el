@@ -383,6 +383,12 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
      ("file" "Link to a document file." "" )))
   (bibtex-align-at-equal-sign t))
 
+(setq tramp-smbclient-args
+      '("-m" "SMB3" "--quiet" "--option=unix charset=UTF-8"))
+(setq tramp-remote-file-name-inhibit-cache nil)
+(setq remote-file-name-inhibit-cache nil)
+(setq tramp-use-ssh-controlmaster-options nil)
+
 (use-package all-the-icons
   :ensure t)
 

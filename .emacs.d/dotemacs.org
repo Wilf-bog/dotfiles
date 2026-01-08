@@ -954,6 +954,17 @@ see [[https://lucidmanager.org/productivity/emacs-bibtex-mode/][Manage Literatur
        ("file" "Link to a document file." "" )))
     (bibtex-align-at-equal-sign t))
 #+end_src
+
+** TRAMP
+
+#+begin_src emacs-lisp :tangle init.el
+    (setq tramp-smbclient-args
+        '("-m" "SMB3" "--quiet" "--option=unix charset=UTF-8"))
+  (setq tramp-remote-file-name-inhibit-cache nil)
+  (setq remote-file-name-inhibit-cache nil)
+  (setq tramp-use-ssh-controlmaster-options nil)
+#+end_src
+
 * TODO External packages settings (=init.el=)
 
 I decided to create a separate section this from the precedent to keep
