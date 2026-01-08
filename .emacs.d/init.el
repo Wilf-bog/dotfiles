@@ -624,7 +624,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
 (use-package denote-silo
   :ensure t (:host github
   		   :repo "protesilaos/denote-silo"
-  		   :branch "master"
+  		   :branch "main"
 		   :depth 1)
   :bind
   (("C-c n s n" . denote-silo-create-note)
