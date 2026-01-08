@@ -1389,13 +1389,10 @@ keywords from preexisting files in the directory.
 
 #+begin_src emacs-lisp :tangle init.el
   (use-package denote-silo
-    :ensure t
-    ;; Bind these commands to key bindings of your choice.
-    ;; :commands ( denote-silo-create-note
-    ;;             denote-silo-open-or-create
-    ;;             denote-silo-select-silo-then-command
-    ;;             denote-silo-dired
-    ;;             denote-silo-cd )
+    :ensure t (:host github
+    		   :repo "protesilaos/denote-silo"
+    		   :branch "main"
+  		   :depth 1)
     :bind
     (("C-c n s n" . denote-silo-create-note)
      ("C-c n s o" . denote-silo-open-or-create)
@@ -1407,9 +1404,7 @@ keywords from preexisting files in the directory.
     ;; value of the variable `denote-directory'.
     (setq denote-silo-directories
           (list denote-directory
-                "~/Documentos/notes/"
-                "~/Documentos/notes-exaequo/"
-  	      "~/Imágenes/")))
+                "~/Documentos/notes-exaequo/")))
 #+end_src
 
 *** TODO Denote Org

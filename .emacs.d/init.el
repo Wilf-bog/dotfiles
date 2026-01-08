@@ -622,13 +622,10 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   (setq consult-notes-denote-files-function (lambda () (denote-directory-files nil t t))))
 
 (use-package denote-silo
-  :ensure t
-  ;; Bind these commands to key bindings of your choice.
-  ;; :commands ( denote-silo-create-note
-  ;;             denote-silo-open-or-create
-  ;;             denote-silo-select-silo-then-command
-  ;;             denote-silo-dired
-  ;;             denote-silo-cd )
+  :ensure t (:host github
+  		   :repo "protesilaos/denote-silo"
+  		   :branch "master"
+		   :depth 1)
   :bind
   (("C-c n s n" . denote-silo-create-note)
    ("C-c n s o" . denote-silo-open-or-create)
@@ -640,9 +637,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   ;; value of the variable `denote-directory'.
   (setq denote-silo-directories
         (list denote-directory
-              "~/Documentos/notes/"
-              "~/Documentos/notes-exaequo/"
-	      "~/Imágenes/")))
+              "~/Documentos/notes-exaequo/")))
 
 (use-package denote-org
   :ensure t
