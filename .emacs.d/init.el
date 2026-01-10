@@ -1174,6 +1174,10 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
 
 ;; (global-set-key (kbd "C-c d P") 'my-org-gtd-active-projects)
 
+(use-package org-noter
+  :ensure t
+  :demand t)
+
 (use-package wilf-calisthenics-exercises
   :load-path "~/.emacs.d/lisp/"
   :commands (wilf/org-capture-exercice-entry wilf/get-exercises-for))

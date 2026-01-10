@@ -2181,6 +2181,12 @@ capture, and archive Web pages in Org-mode]].
     ;; (global-set-key (kbd "C-c d P") 'my-org-gtd-active-projects)
 #+end_src
 
+*** Org-noter
+#+begin_src emacs-lisp :tangle init.el
+  (use-package org-noter
+    :ensure t
+    :demand t)
+#+end_src
 *** TODO Personal Org scripts
 :PROPERTIES:
 :ID:       9581b8e3-3df7-4ada-875d-b8185e477a57
