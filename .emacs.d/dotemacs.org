@@ -1366,7 +1366,7 @@ try and see if =consult-denote= is still relevant for my needs, or if
     (setq consult-notes-file-dir-sources
   	'(("GTD"  ?g  "~/Documentos/gtd/")
   	  ("Notes"  ?n  "~/Documentos/notes/")
-  	  ("Notes Ex aequo"  ?e  "~/Documentos/notes-exaequo/"))) ;; Set notes dir(s), see below
+  	  ("Notes Ex aequo"  ?e  "~/Documentos/notes-exaequo/")))) ;; Set notes dir(s), see below
     ;; Set org-roam integration, denote integration, or org-heading integration e.g.:
     ;; (setq consult-notes-org-headings-files '("~/path/to/file1.org"
     ;;                                          "~/path/to/file2.org"))
@@ -1374,7 +1374,7 @@ try and see if =consult-denote= is still relevant for my needs, or if
     ;; (when (locate-library "denote")
     ;;   (consult-notes-denote-mode))
     ;; search only for text files in denote dir
-    (setq consult-notes-denote-files-function (lambda () (denote-directory-files nil t t))))
+ ;   (setq consult-notes-denote-files-function (lambda () (denote-directory-files nil t t))))
 #+end_src
 
 *** Denote-silo

@@ -601,25 +601,25 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   (consult-denote-mode 1))
 
 (use-package consult-notes
-  :ensure t
-  :commands (consult-notes
-             consult-notes-search-in-all-notes)
-  :bind
-  (("C-c n f" . consult-notes)
-   ("C-c n g" . consult-notes-search-in-all-notes))
-  :config
-  (setq consult-notes-file-dir-sources
-	'(("GTD"  ?g  "~/Documentos/gtd/")
-	  ("Notes"  ?n  "~/Documentos/notes/")
-	  ("Notes Ex aequo"  ?e  "~/Documentos/notes-exaequo/"))) ;; Set notes dir(s), see below
-  ;; Set org-roam integration, denote integration, or org-heading integration e.g.:
-  ;; (setq consult-notes-org-headings-files '("~/path/to/file1.org"
-  ;;                                          "~/path/to/file2.org"))
-  ;; (consult-notes-org-headings-mode)
-  ;; (when (locate-library "denote")
-  ;;   (consult-notes-denote-mode))
-  ;; search only for text files in denote dir
-  (setq consult-notes-denote-files-function (lambda () (denote-directory-files nil t t))))
+   :ensure t
+   :commands (consult-notes
+              consult-notes-search-in-all-notes)
+   :bind
+   (("C-c n f" . consult-notes)
+    ("C-c n g" . consult-notes-search-in-all-notes))
+   :config
+   (setq consult-notes-file-dir-sources
+ 	'(("GTD"  ?g  "~/Documentos/gtd/")
+ 	  ("Notes"  ?n  "~/Documentos/notes/")
+ 	  ("Notes Ex aequo"  ?e  "~/Documentos/notes-exaequo/")))) ;; Set notes dir(s), see below
+   ;; Set org-roam integration, denote integration, or org-heading integration e.g.:
+   ;; (setq consult-notes-org-headings-files '("~/path/to/file1.org"
+   ;;                                          "~/path/to/file2.org"))
+   ;; (consult-notes-org-headings-mode)
+   ;; (when (locate-library "denote")
+   ;;   (consult-notes-denote-mode))
+   ;; search only for text files in denote dir
+;   (setq consult-notes-denote-files-function (lambda () (denote-directory-files nil t t))))
 
 (use-package denote-silo
   :ensure t (:host github
