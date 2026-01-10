@@ -2185,7 +2185,11 @@ capture, and archive Web pages in Org-mode]].
 #+begin_src emacs-lisp :tangle init.el
   (use-package org-noter
     :ensure t
-    :demand t)
+    :demand t
+    :config
+    (setq org-noter-doc-split-fraction '(0.65 . 0.65)
+  	org-noter-auto-save-last-location t
+  	org-noter-prefer-root-as-file-level t))
 #+end_src
 *** TODO Personal Org scripts
 :PROPERTIES:

@@ -1176,7 +1176,11 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
 
 (use-package org-noter
   :ensure t
-  :demand t)
+  :demand t
+  :config
+  (setq org-noter-doc-split-fraction '(0.65 . 0.65)
+	org-noter-auto-save-last-location t
+	org-noter-prefer-root-as-file-level t))
 
 (use-package wilf-calisthenics-exercises
   :load-path "~/.emacs.d/lisp/"
