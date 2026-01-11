@@ -1178,7 +1178,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   :ensure t
   :demand t
   :config
-  (setq org-noter-doc-split-fraction '(0.65 . 0.65)
+  (setq org-noter-doc-split-fraction '(0.60 . 0.60)
 	org-noter-auto-save-last-location t
 	org-noter-prefer-root-as-file-level t))
 
