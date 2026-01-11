@@ -1382,8 +1382,10 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
     :ensure t
     :config
     (pdf-tools-install)
-    (setq-default pdf-view-display-size 'fit-width
-		  pdf-view-themed-minor-mode t)
+    (setq-default pdf-view-display-size 'fit-width)
+    :hook
+    (pdf-view-mode . pdf-view-themed-minor-mode)
+    (pdf-view-mode . pdf-view-auto-slice-minor-mode)
     :bind (:map pdf-view-mode-map
 		("\\" . hydra-pdftools/body)
 		("<s-spc>" .  pdf-view-scroll-down-or-next-page)
