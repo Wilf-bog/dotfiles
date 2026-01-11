@@ -2501,7 +2501,7 @@ Some additional Emacs settings.
 :ID:       0b3fa809-ddf4-4bde-945c-3055be0e6dbd
 :END:
 
-I do use PDFs regurarly and I appreciate the ability to access them
+I do use PDFs regularly and I appreciate the ability to access them
 easily in Emacs. PDF-tools is particularly useful on Linux.
 
 #+begin_src emacs-lisp :tangle init.el
