@@ -1405,6 +1405,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
 		("y"  . pdf-view-kill-ring-save)
 		("i"  . pdf-misc-display-metadata)
 		("s"  . pdf-occur)
+		("S"  . pdf-view-auto-slice-minor-mode)
 		("b"  . pdf-view-set-slice-from-bounding-box)
 		("r"  . pdf-view-reset-slice))))
 

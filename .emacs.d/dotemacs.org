@@ -2534,6 +2534,7 @@ easily in Emacs. PDF-tools is particularly useful on Linux.
   		("y"  . pdf-view-kill-ring-save)
   		("i"  . pdf-misc-display-metadata)
   		("s"  . pdf-occur)
+  		("S"  . pdf-view-auto-slice-minor-mode)
   		("b"  . pdf-view-set-slice-from-bounding-box)
   		("r"  . pdf-view-reset-slice))))
 #+end_src
