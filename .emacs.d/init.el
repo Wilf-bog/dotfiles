@@ -379,6 +379,19 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 (with-eval-after-load "org"
   (define-key org-mode-map (kbd "C-c C-x n") #'wilf-org-insert-notes-drawer))
 
+(defun org-jump-to-heading-beginning ()
+  "Jump to the beginning of the line of the closest Org heading."
+  (interactive)
+  (org-back-to-heading)
+  (beginning-of-line))
+
+(setq org-use-speed-commands t
+      org-speed-command (cons '("w" . widen) org-speed-commands))
+(define-key org-mode-map (kbd "^") 'org-sort)
+(define-key org-mode-map (kbd "z") 'org-refile)
+(define-key org-mode-map (kbd "@") 'org-mark-subtree)
+(define-key org-mode-map (kbd "&*") 'org-jump-to-heading-beginning)
+
 (use-package bibtex
   :custom
   (bibtex-dialect 'biblatex)

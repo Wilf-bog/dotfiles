@@ -948,6 +948,25 @@ Instead, I'm adding this function from Peter Provos.
     (define-key org-mode-map (kbd "C-c C-x n") #'wilf-org-insert-notes-drawer))
 #+end_src
 
+*** Speed
+Based on Emacs Elements tutorial that can be found here: [[https://www.youtube.com/watch?v=QNzNR-K2biI][Org Speed
+Commands #emacs #orgmode #programming #coding - YouTube]]
+
+#+begin_src emacs-lisp :tangle init.el
+  (defun org-jump-to-heading-beginning ()
+    "Jump to the beginning of the line of the closest Org heading."
+    (interactive)
+    (org-back-to-heading)
+    (beginning-of-line))
+
+  (setq org-use-speed-commands t
+        org-speed-command (cons '("w" . widen) org-speed-commands))
+  (define-key org-mode-map (kbd "^") 'org-sort)
+  (define-key org-mode-map (kbd "z") 'org-refile)
+  (define-key org-mode-map (kbd "@") 'org-mark-subtree)
+  (define-key org-mode-map (kbd "&*") 'org-jump-to-heading-beginning)
+#+end_src
+
 ** TODO Bibtex
 :PROPERTIES:
 :ID:       227a1cb0-95db-4ce0-9fcc-a35f5ed2dcd7
