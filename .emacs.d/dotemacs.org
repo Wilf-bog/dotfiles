@@ -166,7 +166,10 @@ And some additional settings for =straight=:
 In this larger part of my configuration, I list out all the settings
 that are part of the normal initialisation process as well as settings
 proper to Emacs' own packages.
-
+** Hiding titlebar
+#+begin_src emacs-lisp :tangle init.el
+  (add-to-list 'default-frame-alist '(undecorated . t))
+#+end_src
 ** Setting up ~elpaca~
 :PROPERTIES:
 :ID:       a6ff5b9d-83f7-4ba5-aa71-ce640218dc21
