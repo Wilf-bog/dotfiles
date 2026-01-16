@@ -118,6 +118,8 @@
 
 (global-set-key [remap list-buffers] 'ibuffer)
 
+(setq-default set-mark-command-repeat-pop t)
+
 (setq custom-file (make-temp-file "emacs-custom-"))
 
 ;; Switching window quickly

@@ -362,6 +362,13 @@ https://www.youtube.com/watch?v=6KN_oSLFf-k.
   (global-set-key [remap list-buffers] 'ibuffer)
 #+end_src
 
+** Marks
+Inspired by this video [[https://www.youtube.com/watch?v=uhyr8kvKa2I][Efficiency With The Mark Ring in Emacs - EP2 -
+YouTube]].
+
+#+begin_src emacs-lisp :tangle init.el
+  (setq-default set-mark-command-repeat-pop t)
+#+end_src
 ** Emacs custom-file
 :PROPERTIES:
 :ID:       087d146d-13f1-463b-b745-0a9f8e5c00c3
