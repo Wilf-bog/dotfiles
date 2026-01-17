@@ -1391,6 +1391,14 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   :config
   (setq ledger-default-date-format "%Y-%m-%d"))
 
+(use-package tmr
+  :ensure t
+  :config
+  (define-key global-map (kbd "C-c t") #'tmr-prefix-map)
+  (setq tmr-sound-file "/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga"
+        tmr-notification-urgency 'normal
+        tmr-description-list 'tmr-description-history))
+
 (when (eq system-type 'gnu/linux)	;For now, pdf-tools can't be installed on Windows
   (use-package pdf-tools
     :mode ("\\.pdf\\'" . pdf-view-mode)
