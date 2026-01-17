@@ -2540,7 +2540,8 @@ easily in Emacs. PDF-tools is particularly useful on Linux.
       :ensure t
       :config
       (pdf-tools-install)
-      (setq-default pdf-view-display-size 'fit-width)
+      (setq-default pdf-view-display-size 'fit-width
+  		  pdf-view-continuous nil)
       :hook
       (pdf-view-mode . pdf-view-themed-minor-mode)
       (pdf-view-mode . pdf-view-auto-slice-minor-mode)

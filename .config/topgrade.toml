@@ -1,2 +1,3 @@
+[misc]
 [emacs]
 arguments = "--batch -l ~/.emacs.d/init-upgrade.el"
