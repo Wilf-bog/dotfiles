@@ -17,8 +17,6 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-(add-to-list 'default-frame-alist '(undecorated . t))
-
 (defvar elpaca-installer-version 0.11)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
 (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
@@ -1399,7 +1397,8 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
     :ensure t
     :config
     (pdf-tools-install)
-    (setq-default pdf-view-display-size 'fit-width)
+    (setq-default pdf-view-display-size 'fit-width
+		  pdf-view-continuous nil)
     :hook
     (pdf-view-mode . pdf-view-themed-minor-mode)
     (pdf-view-mode . pdf-view-auto-slice-minor-mode)
