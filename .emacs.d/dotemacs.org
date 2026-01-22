@@ -2523,6 +2523,19 @@ Some additional Emacs settings.
     :config
     (setq ledger-default-date-format "%Y-%m-%d"))
 #+end_src
+*** TMR
+Based on Prot's video tutorial and explanations found here: [[https://protesilaos.com/codelog/2026-01-19-emacs-timers-tmr-demo/][Emacs:
+easily set timers with TMR | Protesilaos Stavrou]].
+
+#+begin_src emacs-lisp :tangle init.el
+(use-package tmr
+  :ensure t
+  :config
+  (define-key global-map (kbd "C-c t") #'tmr-prefix-map)
+  (setq tmr-sound-file "/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga"
+        tmr-notification-urgency 'normal
+        tmr-description-list 'tmr-description-history))
+#+end_src
 ** TODO Filetype specifics
 
 *** TODO PDF
