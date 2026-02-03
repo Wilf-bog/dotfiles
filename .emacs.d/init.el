@@ -385,10 +385,10 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 
 (setq org-use-speed-commands t
       org-speed-command (cons '("w" . widen) org-speed-commands))
-(define-key org-mode-map (kbd "^") 'org-sort)
-(define-key org-mode-map (kbd "z") 'org-refile)
-(define-key org-mode-map (kbd "@") 'org-mark-subtree)
-(define-key org-mode-map (kbd "&*") 'org-jump-to-heading-beginning)
+;; (define-key org-mode-map (kbd "^") 'org-sort)
+;; (define-key org-mode-map (kbd "z") 'org-refile)
+;; (define-key org-mode-map (kbd "@") 'org-mark-subtree)
+;; (define-key org-mode-map (kbd "&*") 'org-jump-to-heading-beginning)
 
 (use-package bibtex
   :custom
