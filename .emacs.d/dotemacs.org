@@ -1763,6 +1763,16 @@ from the default configuration, so I keep it /as is/.
       (setq doom-modeline-minor-modes t))
 #+end_src
 
+** Winpulse
+
+#+begin_src emacs-lisp :tangle init.el
+(use-package winpulse
+  :vc (:url "https://github.com/xenodium/winpulse"
+       :rev :newest)
+  :config
+  (winpulse-mode +1))
+#+end_src
+
 ** TODO External packages for Dired
 *** dired-preview
 :PROPERTIES:

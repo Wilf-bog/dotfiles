@@ -863,6 +863,12 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   (doom-modeline-mode 1)
   (setq doom-modeline-minor-modes t))
 
+(use-package winpulse
+  :vc (:url "https://github.com/xenodium/winpulse"
+       :rev :newest)
+  :config
+  (winpulse-mode +1))
+
 (use-package dired-preview
   :ensure t
   :hook (dired . dired-preview)
