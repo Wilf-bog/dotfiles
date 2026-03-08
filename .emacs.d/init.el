@@ -1095,7 +1095,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
 
 (use-package org-gtd
   :ensure t (:host github
-		   :repo "Wilf-bog/org-gtd.el"
+		   :repo "Trevoke/org-gtd.el"
 		   :branch "master"
 		   :depth 1)
   :init

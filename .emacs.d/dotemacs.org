@@ -2119,7 +2119,7 @@ capture, and archive Web pages in Org-mode]].
 #+begin_src emacs-lisp :tangle init.el
     (use-package org-gtd
       :ensure t (:host github
-    		   :repo "Wilf-bog/org-gtd.el"
+    		   :repo "Trevoke/org-gtd.el"
     		   :branch "master"
   		   :depth 1)
       :init
