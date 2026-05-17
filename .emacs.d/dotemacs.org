@@ -363,6 +363,9 @@ https://www.youtube.com/watch?v=6KN_oSLFf-k.
 #+end_src
 
 ** Marks
+:PROPERTIES:
+:ID:       ab441d4c-9517-4f31-a08d-268acfa9f20f
+:END:
 Inspired by this video [[https://www.youtube.com/watch?v=uhyr8kvKa2I][Efficiency With The Mark Ring in Emacs - EP2 -
 YouTube]].
 
@@ -949,6 +952,9 @@ Instead, I'm adding this function from Peter Provos.
 #+end_src
 
 *** Speed
+:PROPERTIES:
+:ID:       af42d8cd-a66a-441f-8958-bb65b003a440
+:END:
 Based on Emacs Elements tutorial that can be found here: [[https://www.youtube.com/watch?v=QNzNR-K2biI][Org Speed
 Commands #emacs #orgmode #programming #coding - YouTube]]
 
@@ -985,6 +991,9 @@ see [[https://lucidmanager.org/productivity/emacs-bibtex-mode/][Manage Literatur
 #+end_src
 
 ** TRAMP
+:PROPERTIES:
+:ID:       828a50ad-874b-4590-9c49-315c56932817
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
     (setq tramp-smbclient-args
@@ -1175,6 +1184,9 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
 #+end_src
 
 ** Transient
+:PROPERTIES:
+:ID:       2440f173-2337-4f99-a223-ae9c423735e5
+:END:
 #+begin_src emacs-lisp :tangle "init.el"
   (use-package transient
     :ensure t (:package "transient" :source nil :protocol https :inherit t
@@ -1764,6 +1776,9 @@ from the default configuration, so I keep it /as is/.
 #+end_src
 
 ** Winpulse
+:PROPERTIES:
+:ID:       d7c1623d-4b8b-443b-9a1f-dee856fec0f1
+:END:
 
 #+begin_src emacs-lisp :tangle init.el
 (use-package winpulse
@@ -2221,6 +2236,9 @@ capture, and archive Web pages in Org-mode]].
 #+end_src
 
 *** Org-noter
+:PROPERTIES:
+:ID:       8f8fa860-e4b7-4a08-a133-19ab80c4693d
+:END:
 #+begin_src emacs-lisp :tangle init.el
   (use-package org-noter
     :ensure t
@@ -2534,6 +2552,9 @@ Some additional Emacs settings.
     (setq ledger-default-date-format "%Y-%m-%d"))
 #+end_src
 *** TMR
+:PROPERTIES:
+:ID:       93a653e4-0e74-4329-80cd-0e91d32e3ae5
+:END:
 Based on Prot's video tutorial and explanations found here: [[https://protesilaos.com/codelog/2026-01-19-emacs-timers-tmr-demo/][Emacs:
 easily set timers with TMR | Protesilaos Stavrou]].
 
@@ -2564,7 +2585,8 @@ easily in Emacs. PDF-tools is particularly useful on Linux.
       :config
       (pdf-tools-install)
       (setq-default pdf-view-display-size 'fit-width
-  		  pdf-view-continuous nil)
+  		  pdf-view-continuous nil
+  		  pdf-view-use-scaling nil)
       :hook
       (pdf-view-mode . pdf-view-themed-minor-mode)
       (pdf-view-mode . pdf-view-auto-slice-minor-mode)
