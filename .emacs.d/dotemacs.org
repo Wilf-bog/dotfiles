@@ -86,6 +86,7 @@ I disable early on the GUI parts of emacs.
   (tool-bar-mode -1)
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
+  (pixel-scroll-precision-mode 1)
 #+end_src
 
 This is mysterious for me, but these settings for garbage-collection
@@ -2585,11 +2586,12 @@ easily in Emacs. PDF-tools is particularly useful on Linux.
       :config
       (pdf-tools-install)
       (setq-default pdf-view-display-size 'fit-width
-  		  pdf-view-continuous nil
+  		  pdf-view-continuous t
   		  pdf-view-use-scaling nil)
       :hook
       (pdf-view-mode . pdf-view-themed-minor-mode)
       (pdf-view-mode . pdf-view-auto-slice-minor-mode)
+      (pdf-view-mode . pdf-view-roll-minor-mode)
       :bind (:map pdf-view-mode-map
   		("\\" . hydra-pdftools/body)
   		("<s-spc>" .  pdf-view-scroll-down-or-next-page)

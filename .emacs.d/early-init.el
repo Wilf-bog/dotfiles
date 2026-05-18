@@ -35,6 +35,7 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
+(pixel-scroll-precision-mode 1)
 
 (setq gc-cons-threshold (* 10 128 1024 1024))
 (setq garbage-collection-messages nil)
