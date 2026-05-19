@@ -365,8 +365,7 @@ https://www.youtube.com/watch?v=6KN_oSLFf-k.
 
 ** Marks
 :PROPERTIES:
-:ID:       ab441d4c-9517-4f31-a08d-268acfa9f20f
-:END:
+:ID:       4273c4c8-f63c-412e-b1d3-1b1cf951aa2e
 Inspired by this video [[https://www.youtube.com/watch?v=uhyr8kvKa2I][Efficiency With The Mark Ring in Emacs - EP2 -
 YouTube]].
 
@@ -954,7 +953,7 @@ Instead, I'm adding this function from Peter Provos.
 
 *** Speed
 :PROPERTIES:
-:ID:       af42d8cd-a66a-441f-8958-bb65b003a440
+:ID:       ce5bf3c5-860f-4da7-815f-b24a95f78dcb
 :END:
 Based on Emacs Elements tutorial that can be found here: [[https://www.youtube.com/watch?v=QNzNR-K2biI][Org Speed
 Commands #emacs #orgmode #programming #coding - YouTube]]
@@ -993,7 +992,7 @@ see [[https://lucidmanager.org/productivity/emacs-bibtex-mode/][Manage Literatur
 
 ** TRAMP
 :PROPERTIES:
-:ID:       828a50ad-874b-4590-9c49-315c56932817
+:ID:       629afe0b-9989-4b24-bf69-a6e3d31cccc5
 :END:
 
 #+begin_src emacs-lisp :tangle init.el
@@ -1205,7 +1204,7 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
 
 ** Transient
 :PROPERTIES:
-:ID:       2440f173-2337-4f99-a223-ae9c423735e5
+:ID:       7c90e4f9-4a9a-4fed-84d7-202e61a28a00
 :END:
 #+begin_src emacs-lisp :tangle "init.el"
   (use-package transient
@@ -1797,7 +1796,7 @@ from the default configuration, so I keep it /as is/.
 
 ** Winpulse
 :PROPERTIES:
-:ID:       d7c1623d-4b8b-443b-9a1f-dee856fec0f1
+:ID:       a2ad63db-72e6-4a8f-b6a1-24a9f5fa83d7
 :END:
 
 #+begin_src emacs-lisp :tangle init.el
@@ -2257,7 +2256,7 @@ capture, and archive Web pages in Org-mode]].
 
 *** Org-noter
 :PROPERTIES:
-:ID:       8f8fa860-e4b7-4a08-a133-19ab80c4693d
+:ID:       eaf90dc5-8ec0-43c0-b43f-087d02119bec
 :END:
 #+begin_src emacs-lisp :tangle init.el
   (use-package org-noter
@@ -2586,7 +2585,7 @@ Some additional Emacs settings.
 #+end_src
 *** TMR
 :PROPERTIES:
-:ID:       93a653e4-0e74-4329-80cd-0e91d32e3ae5
+:ID:       dd23ba71-3299-43b2-8fe9-8065a4244c3e
 :END:
 Based on Prot's video tutorial and explanations found here: [[https://protesilaos.com/codelog/2026-01-19-emacs-timers-tmr-demo/][Emacs:
 easily set timers with TMR | Protesilaos Stavrou]].
