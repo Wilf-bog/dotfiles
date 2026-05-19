@@ -514,6 +514,19 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   ;;     (info "(elisp) Key Binding Conventions")
   (define-key global-map (kbd "C-c f") #'fontaine-set-preset))
 
+(use-package eat
+  :elpaca
+  (:host codeberg
+   :repo "akib/emacs-eat"
+   :files ("*.el"
+           ("term" "term/*.el")
+           "*.texi"
+           "*.ti"
+           ("terminfo/e" "terminfo/e/*")
+           ("terminfo/65" "terminfo/65/*")
+           ("integration" "integration/*")
+           (:exclude ".dir-locals.el" "*-tests.el"))))
+
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (use-package transient

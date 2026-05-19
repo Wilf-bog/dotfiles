@@ -1175,6 +1175,25 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
     (define-key global-map (kbd "C-c f") #'fontaine-set-preset))
 #+end_src
 
+** Eat
+:PROPERTIES:
+:ID:       58f7e10a-452c-4d89-8ede-6ee14265f8c6
+:END:
+#+begin_src emacs-lisp :tangle init.el
+(use-package eat
+  :elpaca
+  (:host codeberg
+   :repo "akib/emacs-eat"
+   :files ("*.el"
+           ("term" "term/*.el")
+           "*.texi"
+           "*.ti"
+           ("terminfo/e" "terminfo/e/*")
+           ("terminfo/65" "terminfo/65/*")
+           ("integration" "integration/*")
+           (:exclude ".dir-locals.el" "*-tests.el"))))
+#+end_src
+
 ** Personal scripts
 :PROPERTIES:
 :ID:       b897125b-2c66-4cd6-b76c-63ce6d3f09ca
