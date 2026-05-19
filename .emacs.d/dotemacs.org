@@ -1625,7 +1625,7 @@ as well as in his book Emacs Writing Studio.
     (citar-denote-file-type 'org)
     (citar-denote-keyword "bib")
     (citar-denote-signature nil)
-    (citar-denote-subdir nil)
+    (citar-denote-subdir '("~/Documentos/notes/"))
     (citar-denote-template nil)
     (citar-denote-title-format "title")
     (citar-denote-title-format-andstr "and")
