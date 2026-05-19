@@ -2268,6 +2268,19 @@ capture, and archive Web pages in Org-mode]].
   	org-noter-auto-save-last-location t
   	org-noter-prefer-root-as-file-level t))
 #+end_src
+
+*** Djvu
+:PROPERTIES:
+:ID:       1d98301e-f5f3-476c-92ba-20efc0b100d4
+:END:
+Necessary for =org-noter=.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package djvu
+    :ensure t
+    :demand t)
+#+end_src
+
 *** TODO Personal Org scripts
 :PROPERTIES:
 :ID:       9581b8e3-3df7-4ada-875d-b8185e477a57

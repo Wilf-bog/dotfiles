@@ -1216,6 +1216,10 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
 	org-noter-auto-save-last-location t
 	org-noter-prefer-root-as-file-level t))
 
+(use-package djvu
+  :ensure t
+  :demand t)
+
 (use-package wilf-calisthenics-exercises
   :load-path "~/.emacs.d/lisp/"
   :commands (wilf/org-capture-exercice-entry wilf/get-exercises-for))
