@@ -365,6 +365,9 @@ https://www.youtube.com/watch?v=6KN_oSLFf-k.
 
 ** Marks
 :PROPERTIES:
+:ID:       a8b5038b-eade-44e4-a543-a023312efb4a
+:END:
+:PROPERTIES:
 :ID:       4273c4c8-f63c-412e-b1d3-1b1cf951aa2e
 Inspired by this video [[https://www.youtube.com/watch?v=uhyr8kvKa2I][Efficiency With The Mark Ring in Emacs - EP2 -
 YouTube]].
@@ -2641,7 +2644,7 @@ easily in Emacs. PDF-tools is particularly useful on Linux.
   		("at" . pdf-annot-add-text-annotation)
   		("tm" . pdf-view-midnight-minor-mode)
   		("tp" . pdf-view-printer-minor-mode)
-  		("tt" . pdf-view-themed-minor-mode)
+  		("<f6>" . pdf-view-themed-minor-mode)
   		("y"  . pdf-view-kill-ring-save)
   		("i"  . pdf-misc-display-metadata)
   		("s"  . pdf-occur)
