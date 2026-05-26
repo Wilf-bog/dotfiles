@@ -365,7 +365,7 @@ https://www.youtube.com/watch?v=6KN_oSLFf-k.
 
 ** Marks
 :PROPERTIES:
-:ID:       a8b5038b-eade-44e4-a543-a023312efb4a
+:ID:       425fcaf2-fa12-4b36-8d22-e41b32e484ee
 :END:
 :PROPERTIES:
 :ID:       4273c4c8-f63c-412e-b1d3-1b1cf951aa2e
@@ -1346,6 +1346,7 @@ modifications are rather minor.
       ("C-c n n" . denote)
       ("C-c n d" . denote-dired)
       ("C-c n g" . denote-grep)
+      ("C-c n o" . denote-open-or-create)
       ;; If you intend to use Denote with a variety of file types, it is
       ;; easier to bind the link-related commands to the `global-map', as
       ;; shown here.  Otherwise follow the same pattern for `org-mode-map',
@@ -1627,7 +1628,7 @@ as well as in his book Emacs Writing Studio.
     (citar-denote-file-type 'org)
     (citar-denote-keyword "bib")
     (citar-denote-signature nil)
-    (citar-denote-subdir '("~/Documentos/notes/"))
+    (citar-denote-subdir nil)
     (citar-denote-template nil)
     (citar-denote-title-format "title")
     (citar-denote-title-format-andstr "and")

@@ -579,6 +579,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
     ("C-c n n" . denote)
     ("C-c n d" . denote-dired)
     ("C-c n g" . denote-grep)
+    ("C-c n o" . denote-open-or-create)
     ;; If you intend to use Denote with a variety of file types, it is
     ;; easier to bind the link-related commands to the `global-map', as
     ;; shown here.  Otherwise follow the same pattern for `org-mode-map',
@@ -787,7 +788,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   (citar-denote-file-type 'org)
   (citar-denote-keyword "bib")
   (citar-denote-signature nil)
-  (citar-denote-subdir '("~/Documentos/notes/"))
+  (citar-denote-subdir nil)
   (citar-denote-template nil)
   (citar-denote-title-format "title")
   (citar-denote-title-format-andstr "and")
