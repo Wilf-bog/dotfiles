@@ -529,6 +529,9 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+(use-package wilf-cosmic-fullscreen
+  :load-path "lisp")
+
 (use-package transient
   :ensure t (:package "transient" :source nil :protocol https :inherit t
  :depth treeless :fetcher github :repo "magit/transient" :files ("*.el" "

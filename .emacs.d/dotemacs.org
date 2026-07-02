@@ -1205,6 +1205,15 @@ Prot's settings for ~face-remap~ to set which modes are to use it.
   (add-to-list 'load-path "~/.emacs.d/lisp/")
 #+end_src
 
+*** Wilf-cosmic-fullscreen
+:PROPERTIES:
+:ID:       72168d94-da8e-45fd-bc86-04be65137258
+:END:
+#+begin_src emacs-lisp :tangle init.el
+(use-package wilf-cosmic-fullscreen
+  :load-path "lisp")
+#+end_src
+
 ** Transient
 :PROPERTIES:
 :ID:       7c90e4f9-4a9a-4fed-84d7-202e61a28a00
