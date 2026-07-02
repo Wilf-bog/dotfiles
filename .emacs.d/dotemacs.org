@@ -2297,6 +2297,14 @@ Necessary for =org-noter=.
   :commands (wilf/org-capture-exercice-entry wilf/get-exercises-for))
 #+end_src
 
+*** Org cite
+:PROPERTIES:
+:ID:       890387fe-ba07-4800-9990-10b8838838c2
+:END:
+#+begin_src emacs-lisp :tangle init.el
+(setq org-cite-csl-locales-dir "~/.emacs.d/csl-locales")
+#+end_src
+
 ** TODO Other
 *** TODO Embark
 :PROPERTIES:

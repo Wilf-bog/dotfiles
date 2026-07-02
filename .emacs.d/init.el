@@ -1225,6 +1225,8 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   :load-path "~/.emacs.d/lisp/"
   :commands (wilf/org-capture-exercice-entry wilf/get-exercises-for))
 
+(setq org-cite-csl-locales-dir "~/.emacs.d/csl-locales")
+
 (use-package embark
   :ensure t
 
