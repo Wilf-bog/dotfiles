@@ -874,6 +874,14 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
    ("C-<f5>" . doric-themes-select)
    ("M-<f5>" . doric-themes-rotate)))
 
+(use-package modus-alabaster
+  :ensure t (:host github
+    		   :repo "dpassen/modus-alabaster"
+    		   :branch "main")
+  :demand t
+  :config
+  (load-theme 'modus-alabaster-light :no-confirm))
+
 (use-package doom-modeline
   :ensure t
   :init

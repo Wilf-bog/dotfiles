@@ -1770,6 +1770,16 @@ implement by default with the =modus-themes= too.
    ("C-<f5>" . doric-themes-select)
    ("M-<f5>" . doric-themes-rotate)))
 #+end_src
+*** Alabaster
+#+begin_src emacs-lisp :tangle init.el
+  (use-package modus-alabaster
+    :ensure t (:host github
+      		   :repo "dpassen/modus-alabaster"
+      		   :branch "main")
+    :demand t
+    :config
+    (load-theme 'modus-alabaster-light :no-confirm))
+#+end_src
 *** TODO COMMENT Theme-buffet
 
 To explore, but allows to automatically switch themes.
