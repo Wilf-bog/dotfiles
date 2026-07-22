@@ -1,4 +1,4 @@
-;; Copyright (C) 2025  Frédéric Vachon
+;; Copyright (C) 2025  Frédéric Vachon  -*- lexical-binding: t; -*-
 
 ;; Author: Frédéric Vachon <vachonfrederic@proton.me>
 

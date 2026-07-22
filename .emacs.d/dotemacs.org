@@ -30,24 +30,24 @@ contribution.
 :END:
 
 #+begin_src emacs-lisp :tangle early-init.el
-;; Copyright (C) 2025  Frédéric Vachon
+  ;; Copyright (C) 2025  Frédéric Vachon  -*- lexical-binding: t; -*-
 
-;; Author: Frédéric Vachon <vachonfrederic@proton.me>
+  ;; Author: Frédéric Vachon <vachonfrederic@proton.me>
 
-;; This file is NOT part of GNU Emacs.
+  ;; This file is NOT part of GNU Emacs.
 
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or (at
-;; your option) any later version.
-;;
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-;;
-;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ;; This program is free software; you can redistribute it and/or modify
+  ;; it under the terms of the GNU General Public License as published by
+  ;; the Free Software Foundation, either version 3 of the License, or (at
+  ;; your option) any later version.
+  ;;
+  ;; This program is distributed in the hope that it will be useful,
+  ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ;; GNU General Public License for more details.
+  ;;
+  ;; You should have received a copy of the GNU General Public License
+  ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #+end_src
 
 This is a new concept to me as I didn't use an =early-init.el= file
@@ -144,24 +144,24 @@ And some additional settings for =straight=:
 :END:
 
 #+begin_src emacs-lisp :tangle init.el
-;; Copyright (C) 2025  Frédéric Vachon
+  ;; Copyright (C) 2025  Frédéric Vachon  -*- lexical-binding: t; -*-
 
-;; Author: Frédéric Vachon <vachonfrederic@proton.me>
+  ;; Author: Frédéric Vachon <vachonfrederic@proton.me>
 
-;; This file is NOT part of GNU Emacs.
+  ;; This file is NOT part of GNU Emacs.
 
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or (at
-;; your option) any later version.
-;;
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-;;
-;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  ;; This program is free software; you can redistribute it and/or modify
+  ;; it under the terms of the GNU General Public License as published by
+  ;; the Free Software Foundation, either version 3 of the License, or (at
+  ;; your option) any later version.
+  ;;
+  ;; This program is distributed in the hope that it will be useful,
+  ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ;; GNU General Public License for more details.
+  ;;
+  ;; You should have received a copy of the GNU General Public License
+  ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #+end_src
 
 In this larger part of my configuration, I list out all the settings
@@ -1771,6 +1771,9 @@ implement by default with the =modus-themes= too.
    ("M-<f5>" . doric-themes-rotate)))
 #+end_src
 *** Alabaster
+:PROPERTIES:
+:ID:       2bb06e7c-62a2-4095-ab7b-7786eb489f94
+:END:
 #+begin_src emacs-lisp :tangle init.el
   (use-package modus-alabaster
     :ensure t (:host github
