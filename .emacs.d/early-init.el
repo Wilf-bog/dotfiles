@@ -41,3 +41,5 @@
 (setq garbage-collection-messages nil)
 
 (setq package-enable-at-startup nil)
+
+(setq org-gtd-update-ack "4.0.0")

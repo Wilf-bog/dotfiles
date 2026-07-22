@@ -103,6 +103,12 @@ We then disable ~package~ to avoid conflicts with ~elpaca~.
 (setq package-enable-at-startup nil)
 #+end_src
 
+Some settings necessary for org-gtd
+
+#+begin_src emacs-lisp :tangle early-init.el
+(setq org-gtd-update-ack "4.0.0")
+#+end_src
+
 ** COMMENT Package
 Some settings related to packages, taken directly from crafted-emacs
 modules about early-init.
