@@ -2702,6 +2702,18 @@ taking them as is.
     (large-file-warning-threshold (* 50 (expt 2 20))))
 #+end_src
 
+I want to eventually migrate to emacs-reader, which should replace
+most book formats. It doesn't play well with annotations for now, so
+I'll still need pdf-tools.
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package reader
+    :ensure (:host codeberg
+                   :repo "MonadicSheep/emacs-reader"
+                   :files ("*.el" "render-core.so")
+                   :pre-build (("make" "all"))))
+#+end_src
+
 *** Epub
 :PROPERTIES:
 :ID:       44989523-3d9f-4d47-b788-330e61e388a3
