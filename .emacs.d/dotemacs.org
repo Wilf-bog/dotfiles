@@ -369,6 +369,13 @@ https://www.youtube.com/watch?v=6KN_oSLFf-k.
   (global-set-key [remap list-buffers] 'ibuffer)
 #+end_src
 
+** Save last place visited in a butter
+:PROPERTIES:
+:ID:       3c2acc75-cdfa-4577-8f01-aaf2e3bcbcba
+:END:
+#+begin_src emacs-lisp :tangle init.el
+  (save-place-mode 1)
+#+end_src
 ** Marks
 :PROPERTIES:
 :ID:       425fcaf2-fa12-4b36-8d22-e41b32e484ee
