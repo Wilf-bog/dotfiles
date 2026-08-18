@@ -1704,6 +1704,23 @@ be configured.
     :ensure t)
 #+end_src
 
+** Ebib
+:PROPERTIES:
+:ID:       2e404a1f-7088-49c4-b9df-40dd682333d3
+:END:
+
+#+begin_src emacs-lisp :tangle init.el
+  (use-package ebib
+    :ensure t
+    :custom
+    (ebib-preload-bib-files '("~/Documentos/library/library.bib"))
+    (ebib-file-search-dirs '("~/Documentos/library/"))
+    (ebib-reading-list-file "~/Documentos/library/reading.org")
+    :bind
+    ("C-c b E" . ebib))
+    
+#+end_src
+
 ** TODO Recutils (=rec-mode=)
 :PROPERTIES:
 :ID:       5d3d425b-6862-4b3e-a174-4df758f7c94b

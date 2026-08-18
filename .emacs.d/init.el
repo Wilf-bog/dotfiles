@@ -823,6 +823,15 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
 (use-package biblio
   :ensure t)
 
+(use-package ebib
+  :ensure t
+  :custom
+  (ebib-preload-bib-files '("~/Documentos/library/library.bib"))
+  (ebib-file-search-dirs '("~/Documentos/library/"))
+  (ebib-reading-list-file "~/Documentos/library/reading.org")
+  :bind
+  ("C-c b E" . ebib))
+
 (use-package rec-mode
   :ensure t)
 
