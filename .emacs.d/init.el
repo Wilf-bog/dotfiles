@@ -828,7 +828,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   :custom
   (ebib-preload-bib-files '("~/Documentos/library/library.bib"))
   (ebib-file-search-dirs '("~/Documentos/library/"))
-  (ebib-reading-list-file "~/Documentos/library/reading.org")
+  (ebib-reading-list-file "~/Documentos/gtd/reading.org")
   :bind
   ("C-c b E" . ebib))
 
