@@ -1832,7 +1832,16 @@ To explore, but allows to automatically switch themes.
         (theme-buffet-timer-mins 25)  ; change theme every 25m from now, similar below
         (theme-buffet-timer-hours 2))
 #+end_src
-
+*** Modus-vague
+:PROPERTIES:
+:ID:       3c17701e-cd0b-44f9-9253-b41f8b04cf13
+:END:
+#+begin_src emacs-lisp :tangle init.el
+(use-package modus-vague
+  :vc (:url "https://github.com/paniash/modus-vague"
+       :rev :newest
+       :branch "main"))
+#+end_src
 ** Modeline
 :PROPERTIES:
 :ID:       17ae78b4-1865-4dc7-b499-6f70af67b40d

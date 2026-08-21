@@ -893,6 +893,11 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   :config
   (load-theme 'modus-alabaster-light :no-confirm))
 
+(use-package modus-vague
+  :vc (:url "https://github.com/paniash/modus-vague"
+       :rev :newest
+       :branch "main"))
+
 (use-package doom-modeline
   :ensure t
   :init
