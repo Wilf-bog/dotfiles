@@ -1497,12 +1497,6 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   (doc-view-resolution 300)
   (large-file-warning-threshold (* 50 (expt 2 20))))
 
-(use-package reader
-  :ensure (:host codeberg
-                 :repo "MonadicSheep/emacs-reader"
-                 :files ("*.el" "render-core.so")
-                 :pre-build (("make" "all"))))
-
 (use-package nov
   :ensure t
   :init
