@@ -2739,7 +2739,7 @@ I want to eventually migrate to emacs-reader, which should replace
 most book formats. It doesn't play well with annotations for now, so
 I'll still need pdf-tools.
 
-#+begin_src emacs-lisp :tangle init.el
+#+begin_src emacs-lisp
   (use-package reader
     :ensure (:host codeberg
                    :repo "MonadicSheep/emacs-reader"
