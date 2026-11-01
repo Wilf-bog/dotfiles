@@ -136,7 +136,7 @@ matches:
     replace: "défense collective des droits des personnes en situation de handicap"
   - trigger: ";dm"
     replace: "déficience motrice"
-  - trigger: "RM"
+  - trigger: ";rm"
     replace: "Rose-Marie"
   - trigger: ";lf"
     replace: "Louis-Fred"
