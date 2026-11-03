@@ -278,16 +278,16 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
   :bind
   (("C-c a" . org-agenda)))
 
-(setq org-agenda-files '("~/Documentos/gtd/org-gtd-tasks.org"))
-;; (setq org-agenda-files '("~/Documentos/gtd/inbox.org"
-;;                          "~/Documentos/gtd/gtd.org"
-;;                          "~/Documentos/gtd/projets.org"
-;;                          "~/Documentos/gtd/tickler.org"))
+(setq org-agenda-files '("~/Documents/gtd/org-gtd-tasks.org"))
+;; (setq org-agenda-files '("~/Documents/gtd/inbox.org"
+;;                          "~/Documents/gtd/gtd.org"
+;;                          "~/Documents/gtd/projets.org"
+;;                          "~/Documents/gtd/tickler.org"))
 
-;; (setq org-refile-targets '(("~/Documentos/gtd/gtd.org" :maxlevel . 2)
-;;                            ("~/Documentos/gtd/someday.org" :level . 1)
-;;                            ("~/Documentos/gtd/projets.org" :maxlevel . 5)
-;;                            ("~/Documentos/gtd/tickler.org" :maxlevel . 2)))
+;; (setq org-refile-targets '(("~/Documents/gtd/gtd.org" :maxlevel . 2)
+;;                            ("~/Documents/gtd/someday.org" :level . 1)
+;;                            ("~/Documents/gtd/projets.org" :maxlevel . 5)
+;;                            ("~/Documents/gtd/tickler.org" :maxlevel . 2)))
 
 ;; Fleeting notes
 
@@ -311,19 +311,19 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
 	 :kill-buffer t
 	 :jump-to-captured t)
 	;; ("c" "Calisthenics" entry
-        ;;  (file+headline "~/Documentos/gtd/fitness.org" "Journal d'entraînement")
+        ;;  (file+headline "~/Documents/gtd/fitness.org" "Journal d'entraînement")
          ;; "* %<%Y-%m-%d>\n%(wilf/org-capture-exercice-entry)\n")
 	("c" "Calisthenics" entry
-	 (file+olp+datetree "~/Documentos/gtd/fitness.org" "Journal d'entraînement")
+	 (file+olp+datetree "~/Documents/gtd/fitness.org" "Journal d'entraînement")
 	 "%(wilf/org-capture-exercice-entry)\n")
 	("t" "New task" entry
-	 (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
+	 (file+headline "~/Documents/gtd/inbox.org" "Tasks")
 	 "* TODO %i%? \n %U")
 	("r" "Read article" entry
-	 (file+headline "~/Documentos/gtd/inbox.org" "Tasks")
+	 (file+headline "~/Documents/gtd/inbox.org" "Tasks")
 	 "* %i%? \n %U")
 	("bib" "BibTex Online Entry" plain
-         (file "~/Documentos/library/library.bib")
+         (file "~/Documents/library/library.bib")
          (function (lambda ()
                      (string-join
                       (list "@Online{,"
@@ -340,7 +340,7 @@ A prefix arg for filling means justify (as for `fill-paragraph')."
          :prepend t
          :empty-lines-after 1)
 	("T" "Tickler" entry
-	 (file+headline "~/Documentos/gtd/tickler.org" "Tickler")
+	 (file+headline "~/Documents/gtd/tickler.org" "Tickler")
 	 "* TODO %i%? \n %U")))
 
 (use-package org
@@ -556,13 +556,13 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   :ensure t
   :defer t
   :config
-  (setq calibredb-root-dir "~/Documentos/calibre")
+  (setq calibredb-root-dir "~/Documents/calibre")
   (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir))
   :bind
   (("C-c b C" . calibredb)))
   ;; (setq calibredb-library-alist '(("~/OneDrive/Org/Doc/Calibre")
-  ;;                                 ("~/Documentos/Books Library")
-  ;;                                 ("~/Documentos/LIB1")
+  ;;                                 ("~/Documents/Books Library")
+  ;;                                 ("~/Documents/LIB1")
   ;;                                 ("/Volumes/ShareDrive/Documents/Library/"))))
 
 (use-package denote
@@ -609,7 +609,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
 
   :config
   ;; Remember to check the doc string of each of those variables.
-  (setq denote-directory (expand-file-name "~/Documentos/notes/"))
+  (setq denote-directory (expand-file-name "~/Documents/notes/"))
   (setq denote-save-buffers t)
   (setq denote-known-keywords '("emacs" "philosophie" "politique" "économie"))
   (setq denote-infer-keywords t)
@@ -643,9 +643,9 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
     ("C-c n g" . consult-notes-search-in-all-notes))
    :config
    (setq consult-notes-file-dir-sources
- 	'(("GTD"  ?g  "~/Documentos/gtd/")
- 	  ("Notes"  ?n  "~/Documentos/notes/")
- 	  ("Notes Ex aequo"  ?e  "~/Documentos/notes-exaequo/")))) ;; Set notes dir(s), see below
+ 	'(("GTD"  ?g  "~/Documents/gtd/")
+ 	  ("Notes"  ?n  "~/Documents/notes/")
+ 	  ("Notes Ex aequo"  ?e  "~/Documents/notes-exaequo/")))) ;; Set notes dir(s), see below
    ;; Set org-roam integration, denote integration, or org-heading integration e.g.:
    ;; (setq consult-notes-org-headings-files '("~/path/to/file1.org"
    ;;                                          "~/path/to/file2.org"))
@@ -671,7 +671,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   ;; value of the variable `denote-directory'.
   (setq denote-silo-directories
         (list denote-directory
-              "~/Documentos/notes-exaequo/")))
+              "~/Documents/notes-exaequo/")))
 
 (use-package denote-org
   :ensure t
@@ -772,9 +772,9 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
               citar-indicator-notes-icons
               citar-indicator-cited-icons))
   :custom
-  (citar-bibliography '("~/Documentos/library/library.bib"))
+  (citar-bibliography '("~/Documents/library/library.bib"))
   :custom
-  (org-cite-global-bibliography '("~/Documentos/library/library.bib"))
+  (org-cite-global-bibliography '("~/Documents/library/library.bib"))
   (org-cite-insert-processor 'citar)
   (org-cite-follow-processor 'citar)
   (org-cite-activate-processor 'citar)
@@ -826,9 +826,9 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
 (use-package ebib
   :ensure t
   :custom
-  (ebib-preload-bib-files '("~/Documentos/library/library.bib"))
-  (ebib-file-search-dirs '("~/Documentos/library/"))
-  (ebib-reading-list-file "~/Documentos/gtd/reading.org")
+  (ebib-preload-bib-files '("~/Documents/library/library.bib"))
+  (ebib-file-search-dirs '("~/Documents/library/"))
+  (ebib-reading-list-file "~/Documents/gtd/reading.org")
   :bind
   ("C-c b E" . ebib))
 
@@ -1161,7 +1161,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
         (canceled . "CNCL"))) ; tasks that won't be completed
 
 ;; Optional: Set GTD directory (defaults to ~/gtd/)
-(setq org-gtd-directory "~/Documentos/gtd")
+(setq org-gtd-directory "~/Documents/gtd")
 
 ;; Add org-gtd files to your agenda
 (add-to-list 'org-agenda-files org-gtd-directory)
