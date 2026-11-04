@@ -1870,7 +1870,7 @@ from the default configuration, so I keep it /as is/.
       :ensure t
       :init
       (doom-modeline-mode 1)
-      (setq doom-modeline-minor-modes t))
+      (setq doom-modeline-minor-modes nil))
 #+end_src
 
 ** Winpulse
