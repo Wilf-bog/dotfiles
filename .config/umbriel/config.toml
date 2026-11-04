@@ -208,17 +208,25 @@ left_handed = false
 "Mod+Up" = "window-focus-up"
 "Mod+Right" = "window-focus-right"
 "Mod+H" = "window-focus-or-output-left"
-"Mod+Ctrl+H" = "output-focus-left"
+"Mod+Alt+Ctrl+H" = "output-focus-left"
 "Mod+J" = "window-focus-or-workspace-down"
 "Mod+K" = "window-focus-or-workspace-up"
 "Mod+L" = "window-focus-or-output-right"
-"Mod+Ctrl+L" = "output-focus-right"
+"Mod+Alt+Ctrl+L" = "output-focus-right"
 "Mod+F1" = "window-focus-next"
 "Mod+Shift+H" = "column-move-left"
 "Mod+Shift+J" = "window-move-down"
 "Mod+Shift+K" = "window-move-up"
 "Mod+Shift+L" = "column-move-right"
 "Alt+Tab" = "spawn noctalia msg window-switcher hold"
+"Mod+Ctrl+H" = "window-modify-width-left 0.05"
+"Mod+Ctrl+L" = "window-modify-width-right 0.05"
+"Mod+Ctrl+J" = "window-modify-height-down 0.05"
+"Mod+Ctrl+K" = "window-modify-height-up 0.05"
+"Mod+Ctrl+Shift+H" = "window-modify-width-right -0.05"
+"Mod+Ctrl+Shift+L" = "window-modify-width-left -0.05"
+"Mod+Ctrl+Shift+J" = "window-modify-height-up -0.05"
+"Mod+Ctrl+Shift+K" = "window-modify-height-down -0.05"
 
 # Window state and layout
 "Mod+T" = { action = "window-toggle-floating", repeat = false }
@@ -233,8 +241,7 @@ left_handed = false
 "Mod+Period" = "window-consume-right"
 "Mod+Ctrl+Comma" = "window-consume-from-left"
 "Mod+Ctrl+Period" = "window-consume-from-right"
-# Needs layout.mode = "dwindle".
-# "Mod+Alt+T" = "layout-toggle-split"
+"Mod+Alt+T" = "layout-toggle-split"
 "Mod+W" = { action = "column-toggle-tabbed", repeat = false }
 "Mod+Alt+L" = "column-focus-tab-next"
 "Mod+Alt+H" = "column-focus-tab-previous"
