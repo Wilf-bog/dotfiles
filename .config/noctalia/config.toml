@@ -10,10 +10,11 @@ end = [
     "volume",
     "brightness",
     "battery",
+    "caffeine",
     "control-center",
     "session"
 ]
-start = [ "launcher", "wallpaper", "screenshot", "workspaces", "media" ]
+start = [ "launcher", "wallpaper", "screenshot", "bar", "workspaces", "media" ]
 
 [brightness]
 enable_ddcutil = true
@@ -33,6 +34,9 @@ auto_locate = true
 
 [nightlight]
 enabled = true
+
+[plugins]
+enabled = [ "noctalia/umbriel-companion" ]
 
 [shell]
 app_icon_color = "secondary"
@@ -58,6 +62,15 @@ wallpaper_scheme = "m3-content"
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt", "umbriel" ]
     community_ids = [ "discord", "telegram" ]
+
+[widget.bar]
+type = "noctalia/umbriel-companion:bar"
+
+    [widget.bar.actions]
+    left = "exec umbriel msg workspace-set-layout toggle scrolling stacking dwindle"
+
+[widget.clock]
+format = "{:%a %d %b} {:%H:%M}"
 
 [widget.network]
 show_label = false
