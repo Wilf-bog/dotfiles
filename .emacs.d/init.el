@@ -1319,7 +1319,7 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   ;;          :header-line-active spacious-padding-line-active
   ;;          :header-line-inactive spacious-padding-line-inactive))
   :init
-  (spacious-padding-mode 1))
+  (spacious-padding-mode 0))
 
   (setq spacious-padding-subtle-frame-lines t)
 
