@@ -1842,6 +1842,20 @@ To explore, but allows to automatically switch themes.
        :rev :newest
        :branch "main"))
 #+end_src
+
+*** Transparency
+:PROPERTIES:
+:ID:       b494d718-3c95-4540-87ac-697a3838c7b1
+:END:
+
+#+begin_src emacs-lisp :tangle init.el
+;; Set background transparency for current frame
+(set-frame-parameter nil 'alpha-background 80)
+
+;; Make transparency apply to all future frames
+(add-to-list 'default-frame-alist '(alpha-background . 80))
+#+end_src
+
 ** Modeline
 :PROPERTIES:
 :ID:       17ae78b4-1865-4dc7-b499-6f70af67b40d

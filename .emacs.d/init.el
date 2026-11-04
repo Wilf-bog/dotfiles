@@ -898,11 +898,17 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
        :rev :newest
        :branch "main"))
 
+;; Set background transparency for current frame
+(set-frame-parameter nil 'alpha-background 80)
+
+;; Make transparency apply to all future frames
+(add-to-list 'default-frame-alist '(alpha-background . 80))
+
 (use-package doom-modeline
   :ensure t
   :init
   (doom-modeline-mode 1)
-  (setq doom-modeline-minor-modes t))
+  (setq doom-modeline-minor-modes nil))
 
 (use-package winpulse
   :vc (:url "https://github.com/xenodium/winpulse"
