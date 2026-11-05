@@ -218,6 +218,10 @@ left_handed = false
 "Mod+Shift+J" = "window-move-down"
 "Mod+Shift+K" = "window-move-up"
 "Mod+Shift+L" = "column-move-right"
+"Mod+Alt+H" = "window-swap-left"
+"Mod+Alt+J" = "window-swap-down"
+"Mod+Alt+K" = "window-swap-up"
+"Mod+Alt+L" = "window-swap-right"
 "Alt+Tab" = "spawn noctalia msg window-switcher hold"
 "Mod+Ctrl+H" = "window-modify-width-left 0.05"
 "Mod+Ctrl+L" = "window-modify-width-right 0.05"
@@ -243,8 +247,8 @@ left_handed = false
 "Mod+Ctrl+Period" = "window-consume-from-right"
 "Mod+Alt+T" = "layout-toggle-split"
 "Mod+W" = { action = "column-toggle-tabbed", repeat = false }
-"Mod+Alt+L" = "column-focus-tab-next"
-"Mod+Alt+H" = "column-focus-tab-previous"
+"Mod+Alt+N" = "column-focus-tab-next"
+"Mod+Alt+P" = "column-focus-tab-previous"
 "Mod+WheelUp" = "window-focus-left"
 "Mod+WheelDown" = "window-focus-right"
 "Mod+O" = { action = "overview-toggle", repeat = false }
