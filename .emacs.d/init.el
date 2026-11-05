@@ -908,7 +908,9 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   :ensure t
   :init
   (doom-modeline-mode 1)
-  (setq doom-modeline-minor-modes nil))
+  (setq doom-modeline-minor-modes t))
+
+(setq mode-line-collapse-minor-modes '(not org-gtd-mode))
 
 (use-package winpulse
   :vc (:url "https://github.com/xenodium/winpulse"
