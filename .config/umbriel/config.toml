@@ -190,6 +190,8 @@ left_handed = false
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
 "Mod+E" = { action = "spawn emacsclient -c -n", repeat = false }
 "Print" = "spawn noctalia msg screenshot-region"
+"Mod+Z" = { action = "spawn emacsclient -c -e '(progn (org-gtd-engage) (delete-other-windows))'", repeat = false		 }
+"Mod+V" = "spawn noctalia msg panel-toggle clipboard"
 
 # Media, volume and brightness keys from any input device, routed through the
 # Noctalia shell so its OSDs show. Safe while the session is locked.
