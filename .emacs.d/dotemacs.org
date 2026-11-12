@@ -537,6 +537,17 @@ this, I rely on the Auto-dark package. So far it works perfectly well.
     :init (auto-dark-mode))
 #+end_src
 
+*** Making the dividers transparent
+:PROPERTIES:
+:ID:       cd2acc9e-702b-4d27-9071-df168d7539c8
+:END:
+#+begin_src emacs-lisp :tangle init.el
+    (setq window-divider-default-bottom-width 8)
+  (setq window-divider-default-right-width 8)
+
+    (window-divider-mode nil)
+#+end_src
+
 ** Recent files
 :PROPERTIES:
 :ID:       c4dec046-0c14-448b-9d54-f2e06ef46a34
@@ -1842,7 +1853,18 @@ To explore, but allows to automatically switch themes.
        :rev :newest
        :branch "main"))
 #+end_src
+*** Noctalia
+:PROPERTIES:
+:ID:       2581f153-d174-4694-a639-c53d5214ee39
+:END:
+Since I transitioned to Noctalia and Umbriel recently, I'm testing the
+integrated auto-theme.
 
+#+begin_src emacs-lisp :tangle init.el
+  ;; Load Noctalia theme
+  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+  (load-theme 'noctalia t)
+#+end_src
 *** Transparency
 :PROPERTIES:
 :ID:       b494d718-3c95-4540-87ac-697a3838c7b1

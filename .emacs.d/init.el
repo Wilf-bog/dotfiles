@@ -172,6 +172,11 @@
   (auto-dark-allow-powershell nil)
   :init (auto-dark-mode))
 
+(setq window-divider-default-bottom-width 8)
+(setq window-divider-default-right-width 8)
+
+  (window-divider-mode 1)
+
 ;; Recent files
 
 (use-package recentf
@@ -897,6 +902,10 @@ tests.el" "*-test.el" "*-tests.el" "LICENSE" "README*" "*-pkg.el"))))
   :vc (:url "https://github.com/paniash/modus-vague"
        :rev :newest
        :branch "main"))
+
+;; Load Noctalia theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'noctalia t)
 
 ;; Set background transparency for current frame
 (set-frame-parameter nil 'alpha-background 80)
